@@ -1,0 +1,18 @@
+{
+  "seed": 20261024,
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "models": ["mean", "ridge_asinh", "extra_trees", "extra_trees_equal_targets"],
+  "ridge_alpha": 1000.0,
+  "extra_trees": {"n_estimators": 300, "min_samples_leaf": 3, "max_features": 0.7},
+  "excluded_derived_features": ["kcalperc", "acids_sum", "esters_sum", "aroma_hops_sum", "sulfur_sum", "GFS", "unfermentables"],
+  "missing_rates": [0.05, 0.10, 0.20],
+  "missing_repeats": 3,
+  "bootstrap_repeats": 1000,
+  "generation_styles": ["Tripel", "Kriek", "Lambic"],
+  "generation_methods": ["resample", "interpolate", "latent_gaussian"],
+  "generation_count": 100,
+  "protected_features": ["DMS", "X2.3.butanedione", "X4VG", "X.E..2.nonenal"],
+  "transfer_steps": 40,
+  "scope": "Exploratory continuation. Nested selection excludes outer labels, but the dataset has previously informed the candidate family. Supplied-coordinate model designs, not physical brewing validation."
+}

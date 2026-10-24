@@ -1,0 +1,13 @@
+{
+  "primary_mae": 0.3421519557893493,
+  "mae_interval_95": [
+    0.33034237986126835,
+    0.35388536447254837
+  ],
+  "improvement_over_mean": 0.06772689993875687,
+  "improvement_interval_95": [
+    0.062120131698467466,
+    0.07393610391422596
+  ],
+  "scope": "fixed_OOF_predictions_style_stratified_sample_bootstrap_not_selection_or_refit_uncertainty"
+}

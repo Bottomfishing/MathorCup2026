@@ -1,0 +1,9 @@
+{
+  "config_sha256": "bdd62300b69a051c449013e72b2681a17ae139a4d6b5585c3a466c4c8cc4bd1a",
+  "source": "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+  "status": "completed",
+  "code_sha256": {
+    "D:\\Mathor cup\\scripts\\complete_modeling.py": "9ede3c23538be75f83ddfc0588e485d385a247e50f79f04c5b748bd1de0474bb",
+    "src\\beer_models\\final_model.py": "1bc969fc483c8629d6081241dacd431fb81ebbaddb406cc8f2f860af26c2fc32"
+  }
+}

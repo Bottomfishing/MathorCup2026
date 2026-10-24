@@ -1,0 +1,5 @@
+﻿model,inner_primary_mae
+mean,0.4091020095895324
+ridge_asinh,0.35581560579411803
+extra_trees,0.3405831850224965
+extra_trees_equal_targets,0.34092591967893304
