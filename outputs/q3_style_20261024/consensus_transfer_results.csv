@@ -1,0 +1,12 @@
+﻿beer,selected,status,blocking_fields,fraction,anchor,n_passed,source_target_distance,target_distance,distance_reduction_fraction,style_authenticated,physical_constraints_certified
+124,False,fixed_defect_outside_empirical_target_box,X.E..2.nonenal,,,,,,,,
+81,False,fixed_defect_outside_empirical_target_box,DMS,,,,,,,,
+218,False,fixed_defect_outside_empirical_target_box,X.E..2.nonenal,,,,,,,,
+96,True,three_proxy_empirical_candidate,,0.875,96.0,55.0,0.8730155718117175,0.5329363814254786,0.3895453888416821,False,False
+230,False,fixed_defect_outside_empirical_target_box,X.E..2.nonenal,,,,,,,,
+185,False,fixed_defect_outside_empirical_target_box,DMS,,,,,,,,
+139,True,three_proxy_empirical_candidate,,0.9249999999999999,112.0,80.0,0.7941180435143393,0.4149717429975339,0.4774432511807789,False,False
+209,True,three_proxy_empirical_candidate,,1.0,25.0,8.0,0.859327331249983,0.7097691467056961,0.17404099591099764,False,False
+119,False,source_defect_missing,,,,,,,,,
+90,False,fixed_defect_outside_empirical_target_box,DMS,,,,,,,,
+28,False,source_defect_missing,,,,,,,,,

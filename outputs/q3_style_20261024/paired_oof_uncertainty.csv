@@ -1,0 +1,5 @@
+﻿contrast,estimate,lower_95,upper_95,resamples,scope
+logistic_minus_nearest_centroid_accuracy,0.108,0.056,0.16,2000,paired style-stratified fixed OOF; excludes refitting and model-selection uncertainty
+extra_trees_minus_nearest_centroid_accuracy,0.204,0.148,0.26,2000,paired style-stratified fixed OOF; excludes refitting and model-selection uncertainty
+extra_trees_minus_logistic_accuracy,0.096,0.04,0.148,2000,paired style-stratified fixed OOF; excludes refitting and model-selection uncertainty
+focused_minus_previous_stale_mae,-0.009197726650470662,-0.022605795758611567,0.0035982860164460316,2000,paired style-stratified fixed OOF; excludes refitting and model-selection uncertainty

@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "style_fold_refits": 6,
+  "focused_stale_fold_refits": 3,
+  "generated_style_rows_verified": 300,
+  "strict_selected_verified": 3,
+  "three_proxy_status_counts": {
+    "fixed_defect_outside_empirical_target_box": 6,
+    "three_proxy_empirical_candidate": 3,
+    "source_defect_missing": 2
+  },
+  "models_sha256": {
+    "logistic": "eb0d907901c49fd7136df9fec9877b1d1240052d3ae658fd8322056c304742a4",
+    "extra_trees": "6c608d71552a09f2172c59ecd667ae6c79d4f647129a4a08ed5c4fac58ba7ed5",
+    "focused_stale": "362e62e2641fcd55b3d4ed85e235eb049d2773d2733b794ce8d898ea038230ca"
+  },
+  "checks": [
+    "source and Q1 model hashes",
+    "independent fold refits and training-only imputation",
+    "OOF labels and metrics",
+    "paired fixed-OOF uncertainty",
+    "generated style predictions",
+    "explicit path reconstruction and optimal selection within fixed grid",
+    "all-feature empirical box, two style classifiers, exact defects, stale proxies, sensory exports"
+  ],
+  "interpretation": "Three-proxy scenario is a stricter sensitivity analysis after observing model disagreement, not new validation data. Empirical ranges and model agreement do not certify real flavor, style or brewing feasibility."
+}

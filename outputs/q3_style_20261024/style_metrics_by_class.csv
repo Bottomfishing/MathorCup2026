@@ -1,0 +1,67 @@
+﻿method,style,n,recall
+logistic,Amber,12,0.16666666666666666
+logistic,Blond,31,0.5806451612903226
+logistic,Brett/cofermented,6,0.5
+logistic,Brown,12,0.25
+logistic,Brut,4,0.5
+logistic,Christmas,9,0.1111111111111111
+logistic,Dubbel,10,0.2
+logistic,Faro,3,0.0
+logistic,Flanders old brown,5,0.2
+logistic,Fruitbeer,8,0.875
+logistic,Hoppy,17,0.5882352941176471
+logistic,Kriek,10,0.8
+logistic,Lambic,11,0.7272727272727273
+logistic,Low/No alcohol,8,0.875
+logistic,Pils/Lager,11,0.8181818181818182
+logistic,Saison,10,0.4
+logistic,Scotch,5,0.4
+logistic,Stout/Porter,13,0.5384615384615384
+logistic,Strong ale,18,0.3333333333333333
+logistic,Tripel,28,0.5
+logistic,West Flanders ale,7,0.2857142857142857
+logistic,Wheat,12,0.8333333333333334
+extra_trees,Amber,12,0.5
+extra_trees,Blond,31,0.7096774193548387
+extra_trees,Brett/cofermented,6,0.8333333333333334
+extra_trees,Brown,12,0.0
+extra_trees,Brut,4,0.5
+extra_trees,Christmas,9,0.2222222222222222
+extra_trees,Dubbel,10,0.3
+extra_trees,Faro,3,0.0
+extra_trees,Flanders old brown,5,0.0
+extra_trees,Fruitbeer,8,0.875
+extra_trees,Hoppy,17,0.5882352941176471
+extra_trees,Kriek,10,0.9
+extra_trees,Lambic,11,0.8181818181818182
+extra_trees,Low/No alcohol,8,1.0
+extra_trees,Pils/Lager,11,0.9090909090909091
+extra_trees,Saison,10,0.4
+extra_trees,Scotch,5,0.4
+extra_trees,Stout/Porter,13,0.6923076923076923
+extra_trees,Strong ale,18,0.4444444444444444
+extra_trees,Tripel,28,0.6428571428571429
+extra_trees,West Flanders ale,7,0.7142857142857143
+extra_trees,Wheat,12,0.9166666666666666
+nearest_centroid,Amber,12,0.3333333333333333
+nearest_centroid,Blond,31,0.3225806451612903
+nearest_centroid,Brett/cofermented,6,0.0
+nearest_centroid,Brown,12,0.08333333333333333
+nearest_centroid,Brut,4,0.0
+nearest_centroid,Christmas,9,0.2222222222222222
+nearest_centroid,Dubbel,10,0.2
+nearest_centroid,Faro,3,0.0
+nearest_centroid,Flanders old brown,5,0.0
+nearest_centroid,Fruitbeer,8,0.75
+nearest_centroid,Hoppy,17,0.5294117647058824
+nearest_centroid,Kriek,10,0.9
+nearest_centroid,Lambic,11,0.8181818181818182
+nearest_centroid,Low/No alcohol,8,0.875
+nearest_centroid,Pils/Lager,11,0.9090909090909091
+nearest_centroid,Saison,10,0.4
+nearest_centroid,Scotch,5,0.6
+nearest_centroid,Stout/Porter,13,0.3076923076923077
+nearest_centroid,Strong ale,18,0.3333333333333333
+nearest_centroid,Tripel,28,0.10714285714285714
+nearest_centroid,West Flanders ale,7,0.2857142857142857
+nearest_centroid,Wheat,12,0.6666666666666666

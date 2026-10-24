@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "config": {
+    "seed": 20261024,
+    "logistic_C": 1.0,
+    "logistic_max_iter": 2000,
+    "n_estimators": 300,
+    "min_samples_leaf": 3,
+    "max_features": 0.7,
+    "transfer_steps": 40,
+    "target_distance_weight": 0.7,
+    "scope": "Prespecified style classifiers and one focused stale_hops regressor, fixed historical folds and inherited tree parameters. Strict transfer requires agreement of both style models and the empirical Tripel feature box. Model checks do not authenticate style or physical feasibility."
+  },
+  "config_sha256": "d6e7f2e890b04562e4a48f72f6da96cd97edfa8013698210ec9d1043b3bfe457",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "style_metrics": [
+    {
+      "method": "logistic",
+      "accuracy": 0.504,
+      "macro_recall": 0.4764979667946721
+    },
+    {
+      "method": "extra_trees",
+      "accuracy": 0.6,
+      "macro_recall": 0.5621046662210194
+    },
+    {
+      "method": "nearest_centroid",
+      "accuracy": 0.396,
+      "macro_recall": 0.3928956125717381
+    }
+  ],
+  "stale_metrics": [
+    {
+      "method": "mean",
+      "mae": 0.30896958271601754,
+      "rmse": 0.44148906456077563,
+      "r2": -0.003792201938909834
+    },
+    {
+      "method": "previous_multioutput",
+      "mae": 0.3083474889537273,
+      "rmse": 0.4375619363519456,
+      "r2": 0.013986214242448836
+    },
+    {
+      "method": "focused_single_target",
+      "mae": 0.2991497623032567,
+      "rmse": 0.432583218123093,
+      "r2": 0.03629691287973913
+    }
+  ],
+  "generated_consensus_fraction_by_style": {
+    "Kriek": 1.0,
+    "Lambic": 1.0,
+    "Tripel": 1.0
+  },
+  "strict_transfer_status_counts": {
+    "fixed_defect_outside_empirical_target_box": 6,
+    "strict_empirical_model_candidate": 3,
+    "source_defect_missing": 2
+  },
+  "checks": [
+    "fold-only imputer statistics",
+    "original sample folds reused",
+    "strict source blocks before imputation-based defect claims"
+  ],
+  "interpretation": "Both classifiers and empirical target box are additional model diagnostics, not true style authentication. Focused stale predictions are diagnostic only; no proxy is promoted to physical certification."
+}

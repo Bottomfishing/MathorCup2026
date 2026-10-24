@@ -1,0 +1,751 @@
+﻿beer,style,method,prediction
+10,Low/No alcohol,logistic,Low/No alcohol
+86,Low/No alcohol,logistic,Low/No alcohol
+2,Low/No alcohol,logistic,Low/No alcohol
+83,Low/No alcohol,logistic,Low/No alcohol
+40,Low/No alcohol,logistic,Pils/Lager
+247,Fruitbeer,logistic,Fruitbeer
+48,Dubbel,logistic,Brown
+165,Fruitbeer,logistic,Fruitbeer
+124,Pils/Lager,logistic,Pils/Lager
+207,Fruitbeer,logistic,Fruitbeer
+155,Low/No alcohol,logistic,Low/No alcohol
+141,Low/No alcohol,logistic,Low/No alcohol
+179,Flanders old brown,logistic,Kriek
+33,Fruitbeer,logistic,Fruitbeer
+50,Fruitbeer,logistic,Fruitbeer
+227,Fruitbeer,logistic,Fruitbeer
+88,Kriek,logistic,Kriek
+77,Blond,logistic,Blond
+22,Wheat,logistic,Wheat
+81,Pils/Lager,logistic,Pils/Lager
+202,Stout/Porter,logistic,Stout/Porter
+64,Blond,logistic,Wheat
+218,Pils/Lager,logistic,Pils/Lager
+96,Pils/Lager,logistic,Pils/Lager
+230,Pils/Lager,logistic,Pils/Lager
+44,Wheat,logistic,Wheat
+161,Flanders old brown,logistic,West Flanders ale
+195,Wheat,logistic,Blond
+142,Wheat,logistic,Wheat
+137,Amber,logistic,Blond
+236,Brett/cofermented,logistic,Brett/cofermented
+223,Low/No alcohol,logistic,Low/No alcohol
+211,Lambic,logistic,Faro
+190,Flanders old brown,logistic,Flanders old brown
+197,Wheat,logistic,Wheat
+228,Tripel,logistic,Dubbel
+185,Pils/Lager,logistic,Pils/Lager
+166,Saison,logistic,Hoppy
+216,Scotch,logistic,Scotch
+200,West Flanders ale,logistic,Flanders old brown
+116,Lambic,logistic,Lambic
+139,Pils/Lager,logistic,Pils/Lager
+183,Saison,logistic,Saison
+111,Dubbel,logistic,Stout/Porter
+46,Blond,logistic,Blond
+213,Hoppy,logistic,Saison
+250,Faro,logistic,Lambic
+158,Amber,logistic,Christmas
+224,Wheat,logistic,Wheat
+54,Kriek,logistic,Kriek
+5,Blond,logistic,Hoppy
+209,Pils/Lager,logistic,Pils/Lager
+58,Saison,logistic,Hoppy
+11,Amber,logistic,Tripel
+56,Saison,logistic,Saison
+84,West Flanders ale,logistic,Lambic
+172,Wheat,logistic,Wheat
+74,Faro,logistic,Lambic
+188,Stout/Porter,logistic,Stout/Porter
+20,Saison,logistic,Saison
+122,Brett/cofermented,logistic,Brett/cofermented
+169,Hoppy,logistic,Hoppy
+194,Dubbel,logistic,Strong ale
+160,Wheat,logistic,Wheat
+43,Amber,logistic,Blond
+100,Dubbel,logistic,Stout/Porter
+7,Saison,logistic,Hoppy
+62,Blond,logistic,Blond
+55,Hoppy,logistic,Hoppy
+26,West Flanders ale,logistic,West Flanders ale
+232,Kriek,logistic,Flanders old brown
+151,Faro,logistic,Lambic
+61,Stout/Porter,logistic,Stout/Porter
+156,Kriek,logistic,Fruitbeer
+138,Kriek,logistic,Kriek
+70,Blond,logistic,Blond
+113,Blond,logistic,Blond
+176,West Flanders ale,logistic,West Flanders ale
+105,Strong ale,logistic,Hoppy
+167,Flanders old brown,logistic,West Flanders ale
+59,Blond,logistic,Hoppy
+135,Tripel,logistic,Strong ale
+82,Kriek,logistic,Kriek
+241,Kriek,logistic,Kriek
+128,Amber,logistic,Amber
+244,West Flanders ale,logistic,Strong ale
+178,West Flanders ale,logistic,Lambic
+110,Blond,logistic,Blond
+231,Stout/Porter,logistic,Stout/Porter
+112,Brown,logistic,Blond
+219,Hoppy,logistic,Hoppy
+129,Brown,logistic,Christmas
+42,Lambic,logistic,Lambic
+72,Hoppy,logistic,Strong ale
+186,Strong ale,logistic,Stout/Porter
+109,Brown,logistic,Brown
+246,Blond,logistic,Tripel
+97,Hoppy,logistic,Blond
+87,Stout/Porter,logistic,Dubbel
+220,Kriek,logistic,Kriek
+201,Stout/Porter,logistic,Strong ale
+14,Brett/cofermented,logistic,Dubbel
+173,Stout/Porter,logistic,Stout/Porter
+37,Strong ale,logistic,Tripel
+119,Pils/Lager,logistic,Blond
+177,Fruitbeer,logistic,Fruitbeer
+106,Christmas,logistic,Blond
+159,Flanders old brown,logistic,Dubbel
+90,Pils/Lager,logistic,Pils/Lager
+92,Amber,logistic,Hoppy
+93,Tripel,logistic,Hoppy
+238,Blond,logistic,Saison
+76,Blond,logistic,Tripel
+107,Dubbel,logistic,Strong ale
+205,Brut,logistic,Brut
+206,Brown,logistic,Strong ale
+53,Brown,logistic,Dubbel
+24,Kriek,logistic,Kriek
+136,Blond,logistic,Blond
+69,Tripel,logistic,Tripel
+180,Christmas,logistic,Scotch
+49,Blond,logistic,Blond
+243,Wheat,logistic,Wheat
+134,Strong ale,logistic,Tripel
+193,Blond,logistic,Tripel
+39,Hoppy,logistic,Hoppy
+240,Tripel,logistic,Tripel
+12,Lambic,logistic,West Flanders ale
+150,Brett/cofermented,logistic,Amber
+23,Tripel,logistic,Blond
+226,Strong ale,logistic,Dubbel
+29,Saison,logistic,Blond
+132,Saison,logistic,Hoppy
+16,Dubbel,logistic,Dubbel
+47,Tripel,logistic,Blond
+164,Blond,logistic,Blond
+115,Lambic,logistic,Fruitbeer
+149,Blond,logistic,Blond
+80,Hoppy,logistic,Hoppy
+120,Hoppy,logistic,Hoppy
+222,Brett/cofermented,logistic,Brett/cofermented
+18,Lambic,logistic,Lambic
+98,Brown,logistic,Blond
+221,Dubbel,logistic,Christmas
+32,Amber,logistic,Christmas
+27,Hoppy,logistic,Hoppy
+13,Christmas,logistic,Blond
+174,Dubbel,logistic,Stout/Porter
+79,Hoppy,logistic,Stout/Porter
+118,West Flanders ale,logistic,Amber
+152,Wheat,logistic,Wheat
+184,Fruitbeer,logistic,Kriek
+19,Amber,logistic,Blond
+145,Saison,logistic,Saison
+125,Blond,logistic,Tripel
+6,Amber,logistic,Amber
+212,Stout/Porter,logistic,Stout/Porter
+78,Brown,logistic,Brown
+234,Blond,logistic,Tripel
+147,Tripel,logistic,Tripel
+66,Tripel,logistic,Tripel
+249,Blond,logistic,Saison
+104,Strong ale,logistic,Brown
+101,Blond,logistic,Blond
+237,Brown,logistic,Brown
+127,Blond,logistic,Blond
+245,Tripel,logistic,Tripel
+191,Tripel,logistic,Tripel
+60,Christmas,logistic,Hoppy
+51,Strong ale,logistic,Strong ale
+144,Lambic,logistic,Lambic
+28,Pils/Lager,logistic,Saison
+41,Lambic,logistic,Lambic
+153,Kriek,logistic,Kriek
+146,Scotch,logistic,Scotch
+168,Scotch,logistic,Blond
+30,Blond,logistic,Blond
+36,Brown,logistic,Strong ale
+126,Amber,logistic,Scotch
+162,Lambic,logistic,Lambic
+123,Stout/Porter,logistic,Strong ale
+130,Brut,logistic,Christmas
+8,Hoppy,logistic,Tripel
+31,Hoppy,logistic,Hoppy
+52,Stout/Porter,logistic,Stout/Porter
+9,Hoppy,logistic,Blond
+204,Tripel,logistic,Tripel
+94,Blond,logistic,Blond
+131,Scotch,logistic,Amber
+75,Lambic,logistic,Lambic
+34,Tripel,logistic,Tripel
+108,Brown,logistic,Tripel
+187,Dubbel,logistic,Dubbel
+45,Tripel,logistic,Strong ale
+154,Tripel,logistic,Blond
+121,Blond,logistic,Blond
+242,Saison,logistic,Hoppy
+208,Wheat,logistic,Wheat
+38,Christmas,logistic,Strong ale
+170,Strong ale,logistic,Tripel
+214,Christmas,logistic,Christmas
+35,Blond,logistic,Blond
+215,Blond,logistic,Tripel
+235,Strong ale,logistic,Christmas
+89,Brown,logistic,Stout/Porter
+114,Hoppy,logistic,Hoppy
+181,Christmas,logistic,Brown
+225,Strong ale,logistic,Strong ale
+57,Tripel,logistic,Tripel
+143,Hoppy,logistic,Hoppy
+133,Strong ale,logistic,Blond
+182,Stout/Porter,logistic,Dubbel
+17,Tripel,logistic,Tripel
+229,Wheat,logistic,Blond
+148,Strong ale,logistic,Brown
+248,Blond,logistic,Blond
+65,Hoppy,logistic,Saison
+73,Blond,logistic,Christmas
+198,Dubbel,logistic,Stout/Porter
+91,Strong ale,logistic,Strong ale
+217,Tripel,logistic,Blond
+163,Tripel,logistic,Tripel
+68,Tripel,logistic,Blond
+15,Tripel,logistic,Tripel
+1,Brut,logistic,Brut
+71,Blond,logistic,Amber
+102,Christmas,logistic,Strong ale
+140,Tripel,logistic,Wheat
+67,Stout/Porter,logistic,Hoppy
+210,Amber,logistic,Blond
+189,Tripel,logistic,Strong ale
+233,Scotch,logistic,Dubbel
+199,Tripel,logistic,Tripel
+63,Amber,logistic,Tripel
+95,Christmas,logistic,Strong ale
+25,Brown,logistic,Blond
+203,Brett/cofermented,logistic,Stout/Porter
+85,Tripel,logistic,Blond
+3,Blond,logistic,Blond
+21,Lambic,logistic,Lambic
+192,Brut,logistic,Tripel
+239,Tripel,logistic,Blond
+117,Strong ale,logistic,Strong ale
+171,Tripel,logistic,Tripel
+103,Stout/Porter,logistic,Scotch
+175,Strong ale,logistic,Dubbel
+196,Strong ale,logistic,Strong ale
+4,Strong ale,logistic,Strong ale
+99,Strong ale,logistic,Brut
+157,Tripel,logistic,Scotch
+10,Low/No alcohol,extra_trees,Low/No alcohol
+86,Low/No alcohol,extra_trees,Low/No alcohol
+2,Low/No alcohol,extra_trees,Low/No alcohol
+83,Low/No alcohol,extra_trees,Low/No alcohol
+40,Low/No alcohol,extra_trees,Low/No alcohol
+247,Fruitbeer,extra_trees,Fruitbeer
+48,Dubbel,extra_trees,Dubbel
+165,Fruitbeer,extra_trees,Fruitbeer
+124,Pils/Lager,extra_trees,Pils/Lager
+207,Fruitbeer,extra_trees,Fruitbeer
+155,Low/No alcohol,extra_trees,Low/No alcohol
+141,Low/No alcohol,extra_trees,Low/No alcohol
+179,Flanders old brown,extra_trees,West Flanders ale
+33,Fruitbeer,extra_trees,Fruitbeer
+50,Fruitbeer,extra_trees,Fruitbeer
+227,Fruitbeer,extra_trees,Fruitbeer
+88,Kriek,extra_trees,Kriek
+77,Blond,extra_trees,Pils/Lager
+22,Wheat,extra_trees,Wheat
+81,Pils/Lager,extra_trees,Pils/Lager
+202,Stout/Porter,extra_trees,Stout/Porter
+64,Blond,extra_trees,Wheat
+218,Pils/Lager,extra_trees,Pils/Lager
+96,Pils/Lager,extra_trees,Pils/Lager
+230,Pils/Lager,extra_trees,Pils/Lager
+44,Wheat,extra_trees,Wheat
+161,Flanders old brown,extra_trees,West Flanders ale
+195,Wheat,extra_trees,Wheat
+142,Wheat,extra_trees,Wheat
+137,Amber,extra_trees,Blond
+236,Brett/cofermented,extra_trees,Brett/cofermented
+223,Low/No alcohol,extra_trees,Low/No alcohol
+211,Lambic,extra_trees,Faro
+190,Flanders old brown,extra_trees,West Flanders ale
+197,Wheat,extra_trees,Wheat
+228,Tripel,extra_trees,Blond
+185,Pils/Lager,extra_trees,Pils/Lager
+166,Saison,extra_trees,Saison
+216,Scotch,extra_trees,Scotch
+200,West Flanders ale,extra_trees,Flanders old brown
+116,Lambic,extra_trees,Lambic
+139,Pils/Lager,extra_trees,Pils/Lager
+183,Saison,extra_trees,Saison
+111,Dubbel,extra_trees,Stout/Porter
+46,Blond,extra_trees,Blond
+213,Hoppy,extra_trees,Blond
+250,Faro,extra_trees,Lambic
+158,Amber,extra_trees,Blond
+224,Wheat,extra_trees,Wheat
+54,Kriek,extra_trees,Kriek
+5,Blond,extra_trees,Brett/cofermented
+209,Pils/Lager,extra_trees,Pils/Lager
+58,Saison,extra_trees,Saison
+11,Amber,extra_trees,Amber
+56,Saison,extra_trees,Blond
+84,West Flanders ale,extra_trees,Flanders old brown
+172,Wheat,extra_trees,Wheat
+74,Faro,extra_trees,Lambic
+188,Stout/Porter,extra_trees,Stout/Porter
+20,Saison,extra_trees,Saison
+122,Brett/cofermented,extra_trees,Brett/cofermented
+169,Hoppy,extra_trees,Hoppy
+194,Dubbel,extra_trees,Scotch
+160,Wheat,extra_trees,Wheat
+43,Amber,extra_trees,Blond
+100,Dubbel,extra_trees,Stout/Porter
+7,Saison,extra_trees,Wheat
+62,Blond,extra_trees,Blond
+55,Hoppy,extra_trees,Amber
+26,West Flanders ale,extra_trees,West Flanders ale
+232,Kriek,extra_trees,Kriek
+151,Faro,extra_trees,Lambic
+61,Stout/Porter,extra_trees,Stout/Porter
+156,Kriek,extra_trees,Fruitbeer
+138,Kriek,extra_trees,Kriek
+70,Blond,extra_trees,Blond
+113,Blond,extra_trees,Blond
+176,West Flanders ale,extra_trees,West Flanders ale
+105,Strong ale,extra_trees,Stout/Porter
+167,Flanders old brown,extra_trees,West Flanders ale
+59,Blond,extra_trees,Brett/cofermented
+135,Tripel,extra_trees,Hoppy
+82,Kriek,extra_trees,Kriek
+241,Kriek,extra_trees,Kriek
+128,Amber,extra_trees,Amber
+244,West Flanders ale,extra_trees,West Flanders ale
+178,West Flanders ale,extra_trees,West Flanders ale
+110,Blond,extra_trees,Blond
+231,Stout/Porter,extra_trees,Stout/Porter
+112,Brown,extra_trees,Amber
+219,Hoppy,extra_trees,Hoppy
+129,Brown,extra_trees,Scotch
+42,Lambic,extra_trees,Lambic
+72,Hoppy,extra_trees,Tripel
+186,Strong ale,extra_trees,Brown
+109,Brown,extra_trees,Hoppy
+246,Blond,extra_trees,Blond
+97,Hoppy,extra_trees,Blond
+87,Stout/Porter,extra_trees,Stout/Porter
+220,Kriek,extra_trees,Kriek
+201,Stout/Porter,extra_trees,Brown
+14,Brett/cofermented,extra_trees,Brett/cofermented
+173,Stout/Porter,extra_trees,Stout/Porter
+37,Strong ale,extra_trees,Strong ale
+119,Pils/Lager,extra_trees,Pils/Lager
+177,Fruitbeer,extra_trees,Kriek
+106,Christmas,extra_trees,Blond
+159,Flanders old brown,extra_trees,West Flanders ale
+90,Pils/Lager,extra_trees,Pils/Lager
+92,Amber,extra_trees,Amber
+93,Tripel,extra_trees,Amber
+238,Blond,extra_trees,Blond
+76,Blond,extra_trees,Blond
+107,Dubbel,extra_trees,Stout/Porter
+205,Brut,extra_trees,Brut
+206,Brown,extra_trees,Dubbel
+53,Brown,extra_trees,Dubbel
+24,Kriek,extra_trees,Kriek
+136,Blond,extra_trees,Blond
+69,Tripel,extra_trees,Tripel
+180,Christmas,extra_trees,Scotch
+49,Blond,extra_trees,Blond
+243,Wheat,extra_trees,Wheat
+134,Strong ale,extra_trees,Tripel
+193,Blond,extra_trees,Blond
+39,Hoppy,extra_trees,Hoppy
+240,Tripel,extra_trees,Tripel
+12,Lambic,extra_trees,Fruitbeer
+150,Brett/cofermented,extra_trees,Amber
+23,Tripel,extra_trees,Blond
+226,Strong ale,extra_trees,Dubbel
+29,Saison,extra_trees,Blond
+132,Saison,extra_trees,Hoppy
+16,Dubbel,extra_trees,Brown
+47,Tripel,extra_trees,Tripel
+164,Blond,extra_trees,Blond
+115,Lambic,extra_trees,Lambic
+149,Blond,extra_trees,Blond
+80,Hoppy,extra_trees,Hoppy
+120,Hoppy,extra_trees,Hoppy
+222,Brett/cofermented,extra_trees,Brett/cofermented
+18,Lambic,extra_trees,Lambic
+98,Brown,extra_trees,Scotch
+221,Dubbel,extra_trees,Stout/Porter
+32,Amber,extra_trees,Amber
+27,Hoppy,extra_trees,Hoppy
+13,Christmas,extra_trees,Brown
+174,Dubbel,extra_trees,Brown
+79,Hoppy,extra_trees,Stout/Porter
+118,West Flanders ale,extra_trees,West Flanders ale
+152,Wheat,extra_trees,Wheat
+184,Fruitbeer,extra_trees,Fruitbeer
+19,Amber,extra_trees,Amber
+145,Saison,extra_trees,Hoppy
+125,Blond,extra_trees,Blond
+6,Amber,extra_trees,Amber
+212,Stout/Porter,extra_trees,Stout/Porter
+78,Brown,extra_trees,Strong ale
+234,Blond,extra_trees,Brett/cofermented
+147,Tripel,extra_trees,Blond
+66,Tripel,extra_trees,Tripel
+249,Blond,extra_trees,Saison
+104,Strong ale,extra_trees,Brown
+101,Blond,extra_trees,Brut
+237,Brown,extra_trees,Strong ale
+127,Blond,extra_trees,Blond
+245,Tripel,extra_trees,Tripel
+191,Tripel,extra_trees,Tripel
+60,Christmas,extra_trees,Brown
+51,Strong ale,extra_trees,Strong ale
+144,Lambic,extra_trees,Lambic
+28,Pils/Lager,extra_trees,Saison
+41,Lambic,extra_trees,Lambic
+153,Kriek,extra_trees,Kriek
+146,Scotch,extra_trees,Scotch
+168,Scotch,extra_trees,Christmas
+30,Blond,extra_trees,Blond
+36,Brown,extra_trees,Stout/Porter
+126,Amber,extra_trees,Scotch
+162,Lambic,extra_trees,Lambic
+123,Stout/Porter,extra_trees,Scotch
+130,Brut,extra_trees,Kriek
+8,Hoppy,extra_trees,Tripel
+31,Hoppy,extra_trees,Hoppy
+52,Stout/Porter,extra_trees,Stout/Porter
+9,Hoppy,extra_trees,Blond
+204,Tripel,extra_trees,Tripel
+94,Blond,extra_trees,Blond
+131,Scotch,extra_trees,Brown
+75,Lambic,extra_trees,Lambic
+34,Tripel,extra_trees,Tripel
+108,Brown,extra_trees,Christmas
+187,Dubbel,extra_trees,Dubbel
+45,Tripel,extra_trees,Tripel
+154,Tripel,extra_trees,Tripel
+121,Blond,extra_trees,Blond
+242,Saison,extra_trees,Blond
+208,Wheat,extra_trees,Wheat
+38,Christmas,extra_trees,Strong ale
+170,Strong ale,extra_trees,Christmas
+214,Christmas,extra_trees,Christmas
+35,Blond,extra_trees,Blond
+215,Blond,extra_trees,Tripel
+235,Strong ale,extra_trees,Christmas
+89,Brown,extra_trees,Christmas
+114,Hoppy,extra_trees,Hoppy
+181,Christmas,extra_trees,Stout/Porter
+225,Strong ale,extra_trees,Strong ale
+57,Tripel,extra_trees,Tripel
+143,Hoppy,extra_trees,Hoppy
+133,Strong ale,extra_trees,Tripel
+182,Stout/Porter,extra_trees,Dubbel
+17,Tripel,extra_trees,Tripel
+229,Wheat,extra_trees,Tripel
+148,Strong ale,extra_trees,Strong ale
+248,Blond,extra_trees,Blond
+65,Hoppy,extra_trees,Hoppy
+73,Blond,extra_trees,Wheat
+198,Dubbel,extra_trees,Dubbel
+91,Strong ale,extra_trees,Strong ale
+217,Tripel,extra_trees,Tripel
+163,Tripel,extra_trees,Tripel
+68,Tripel,extra_trees,Blond
+15,Tripel,extra_trees,Blond
+1,Brut,extra_trees,Tripel
+71,Blond,extra_trees,Blond
+102,Christmas,extra_trees,Strong ale
+140,Tripel,extra_trees,Wheat
+67,Stout/Porter,extra_trees,Stout/Porter
+210,Amber,extra_trees,Brown
+189,Tripel,extra_trees,Tripel
+233,Scotch,extra_trees,Strong ale
+199,Tripel,extra_trees,Tripel
+63,Amber,extra_trees,Tripel
+95,Christmas,extra_trees,Christmas
+25,Brown,extra_trees,Dubbel
+203,Brett/cofermented,extra_trees,Brett/cofermented
+85,Tripel,extra_trees,Tripel
+3,Blond,extra_trees,Blond
+21,Lambic,extra_trees,Lambic
+192,Brut,extra_trees,Brut
+239,Tripel,extra_trees,Blond
+117,Strong ale,extra_trees,Strong ale
+171,Tripel,extra_trees,Tripel
+103,Stout/Porter,extra_trees,Scotch
+175,Strong ale,extra_trees,Strong ale
+196,Strong ale,extra_trees,Tripel
+4,Strong ale,extra_trees,Strong ale
+99,Strong ale,extra_trees,Christmas
+157,Tripel,extra_trees,Strong ale
+10,Low/No alcohol,nearest_centroid,Low/No alcohol
+86,Low/No alcohol,nearest_centroid,Low/No alcohol
+2,Low/No alcohol,nearest_centroid,Low/No alcohol
+83,Low/No alcohol,nearest_centroid,Low/No alcohol
+40,Low/No alcohol,nearest_centroid,Pils/Lager
+247,Fruitbeer,nearest_centroid,Fruitbeer
+48,Dubbel,nearest_centroid,Brown
+165,Fruitbeer,nearest_centroid,Fruitbeer
+124,Pils/Lager,nearest_centroid,Pils/Lager
+207,Fruitbeer,nearest_centroid,Faro
+155,Low/No alcohol,nearest_centroid,Low/No alcohol
+141,Low/No alcohol,nearest_centroid,Low/No alcohol
+179,Flanders old brown,nearest_centroid,Lambic
+33,Fruitbeer,nearest_centroid,Fruitbeer
+50,Fruitbeer,nearest_centroid,Fruitbeer
+227,Fruitbeer,nearest_centroid,Fruitbeer
+88,Kriek,nearest_centroid,Kriek
+77,Blond,nearest_centroid,Pils/Lager
+22,Wheat,nearest_centroid,Wheat
+81,Pils/Lager,nearest_centroid,Pils/Lager
+202,Stout/Porter,nearest_centroid,Hoppy
+64,Blond,nearest_centroid,Wheat
+218,Pils/Lager,nearest_centroid,Pils/Lager
+96,Pils/Lager,nearest_centroid,Pils/Lager
+230,Pils/Lager,nearest_centroid,Pils/Lager
+44,Wheat,nearest_centroid,Wheat
+161,Flanders old brown,nearest_centroid,Lambic
+195,Wheat,nearest_centroid,Saison
+142,Wheat,nearest_centroid,Wheat
+137,Amber,nearest_centroid,Blond
+236,Brett/cofermented,nearest_centroid,Hoppy
+223,Low/No alcohol,nearest_centroid,Low/No alcohol
+211,Lambic,nearest_centroid,West Flanders ale
+190,Flanders old brown,nearest_centroid,West Flanders ale
+197,Wheat,nearest_centroid,Wheat
+228,Tripel,nearest_centroid,Brown
+185,Pils/Lager,nearest_centroid,Pils/Lager
+166,Saison,nearest_centroid,Hoppy
+216,Scotch,nearest_centroid,Scotch
+200,West Flanders ale,nearest_centroid,Flanders old brown
+116,Lambic,nearest_centroid,Lambic
+139,Pils/Lager,nearest_centroid,Pils/Lager
+183,Saison,nearest_centroid,Saison
+111,Dubbel,nearest_centroid,Brown
+46,Blond,nearest_centroid,Pils/Lager
+213,Hoppy,nearest_centroid,Saison
+250,Faro,nearest_centroid,Lambic
+158,Amber,nearest_centroid,Christmas
+224,Wheat,nearest_centroid,Blond
+54,Kriek,nearest_centroid,Kriek
+5,Blond,nearest_centroid,Hoppy
+209,Pils/Lager,nearest_centroid,Pils/Lager
+58,Saison,nearest_centroid,Brett/cofermented
+11,Amber,nearest_centroid,Amber
+56,Saison,nearest_centroid,Saison
+84,West Flanders ale,nearest_centroid,Lambic
+172,Wheat,nearest_centroid,Wheat
+74,Faro,nearest_centroid,Flanders old brown
+188,Stout/Porter,nearest_centroid,Dubbel
+20,Saison,nearest_centroid,Saison
+122,Brett/cofermented,nearest_centroid,Hoppy
+169,Hoppy,nearest_centroid,Hoppy
+194,Dubbel,nearest_centroid,Blond
+160,Wheat,nearest_centroid,Wheat
+43,Amber,nearest_centroid,Saison
+100,Dubbel,nearest_centroid,Dubbel
+7,Saison,nearest_centroid,Hoppy
+62,Blond,nearest_centroid,Pils/Lager
+55,Hoppy,nearest_centroid,Hoppy
+26,West Flanders ale,nearest_centroid,West Flanders ale
+232,Kriek,nearest_centroid,Kriek
+151,Faro,nearest_centroid,West Flanders ale
+61,Stout/Porter,nearest_centroid,Stout/Porter
+156,Kriek,nearest_centroid,Fruitbeer
+138,Kriek,nearest_centroid,Kriek
+70,Blond,nearest_centroid,Blond
+113,Blond,nearest_centroid,Blond
+176,West Flanders ale,nearest_centroid,West Flanders ale
+105,Strong ale,nearest_centroid,Hoppy
+167,Flanders old brown,nearest_centroid,West Flanders ale
+59,Blond,nearest_centroid,Saison
+135,Tripel,nearest_centroid,Saison
+82,Kriek,nearest_centroid,Kriek
+241,Kriek,nearest_centroid,Kriek
+128,Amber,nearest_centroid,Amber
+244,West Flanders ale,nearest_centroid,Brown
+178,West Flanders ale,nearest_centroid,Lambic
+110,Blond,nearest_centroid,Blond
+231,Stout/Porter,nearest_centroid,Stout/Porter
+112,Brown,nearest_centroid,Blond
+219,Hoppy,nearest_centroid,Hoppy
+129,Brown,nearest_centroid,Scotch
+42,Lambic,nearest_centroid,Lambic
+72,Hoppy,nearest_centroid,Strong ale
+186,Strong ale,nearest_centroid,Dubbel
+109,Brown,nearest_centroid,Dubbel
+246,Blond,nearest_centroid,Brown
+97,Hoppy,nearest_centroid,Scotch
+87,Stout/Porter,nearest_centroid,Dubbel
+220,Kriek,nearest_centroid,Kriek
+201,Stout/Porter,nearest_centroid,Strong ale
+14,Brett/cofermented,nearest_centroid,Dubbel
+173,Stout/Porter,nearest_centroid,Dubbel
+37,Strong ale,nearest_centroid,Brown
+119,Pils/Lager,nearest_centroid,Pils/Lager
+177,Fruitbeer,nearest_centroid,Kriek
+106,Christmas,nearest_centroid,Tripel
+159,Flanders old brown,nearest_centroid,Dubbel
+90,Pils/Lager,nearest_centroid,Pils/Lager
+92,Amber,nearest_centroid,Hoppy
+93,Tripel,nearest_centroid,Amber
+238,Blond,nearest_centroid,Saison
+76,Blond,nearest_centroid,Tripel
+107,Dubbel,nearest_centroid,Strong ale
+205,Brut,nearest_centroid,Strong ale
+206,Brown,nearest_centroid,Christmas
+53,Brown,nearest_centroid,Dubbel
+24,Kriek,nearest_centroid,Kriek
+136,Blond,nearest_centroid,Tripel
+69,Tripel,nearest_centroid,Blond
+180,Christmas,nearest_centroid,Blond
+49,Blond,nearest_centroid,Brown
+243,Wheat,nearest_centroid,Wheat
+134,Strong ale,nearest_centroid,Pils/Lager
+193,Blond,nearest_centroid,Brown
+39,Hoppy,nearest_centroid,Hoppy
+240,Tripel,nearest_centroid,Tripel
+12,Lambic,nearest_centroid,West Flanders ale
+150,Brett/cofermented,nearest_centroid,Brut
+23,Tripel,nearest_centroid,Blond
+226,Strong ale,nearest_centroid,Dubbel
+29,Saison,nearest_centroid,Saison
+132,Saison,nearest_centroid,Hoppy
+16,Dubbel,nearest_centroid,Amber
+47,Tripel,nearest_centroid,Blond
+164,Blond,nearest_centroid,Blond
+115,Lambic,nearest_centroid,Lambic
+149,Blond,nearest_centroid,Blond
+80,Hoppy,nearest_centroid,Hoppy
+120,Hoppy,nearest_centroid,Brett/cofermented
+222,Brett/cofermented,nearest_centroid,Saison
+18,Lambic,nearest_centroid,Lambic
+98,Brown,nearest_centroid,Pils/Lager
+221,Dubbel,nearest_centroid,Amber
+32,Amber,nearest_centroid,Christmas
+27,Hoppy,nearest_centroid,Hoppy
+13,Christmas,nearest_centroid,Brown
+174,Dubbel,nearest_centroid,Brown
+79,Hoppy,nearest_centroid,Stout/Porter
+118,West Flanders ale,nearest_centroid,Amber
+152,Wheat,nearest_centroid,Tripel
+184,Fruitbeer,nearest_centroid,Fruitbeer
+19,Amber,nearest_centroid,Amber
+145,Saison,nearest_centroid,Hoppy
+125,Blond,nearest_centroid,Saison
+6,Amber,nearest_centroid,Amber
+212,Stout/Porter,nearest_centroid,Stout/Porter
+78,Brown,nearest_centroid,Christmas
+234,Blond,nearest_centroid,Brett/cofermented
+147,Tripel,nearest_centroid,Blond
+66,Tripel,nearest_centroid,Blond
+249,Blond,nearest_centroid,Saison
+104,Strong ale,nearest_centroid,Dubbel
+101,Blond,nearest_centroid,Brut
+237,Brown,nearest_centroid,Brown
+127,Blond,nearest_centroid,Blond
+245,Tripel,nearest_centroid,Christmas
+191,Tripel,nearest_centroid,Brown
+60,Christmas,nearest_centroid,Amber
+51,Strong ale,nearest_centroid,Christmas
+144,Lambic,nearest_centroid,Lambic
+28,Pils/Lager,nearest_centroid,Saison
+41,Lambic,nearest_centroid,Lambic
+153,Kriek,nearest_centroid,Kriek
+146,Scotch,nearest_centroid,Scotch
+168,Scotch,nearest_centroid,Scotch
+30,Blond,nearest_centroid,Dubbel
+36,Brown,nearest_centroid,Dubbel
+126,Amber,nearest_centroid,Scotch
+162,Lambic,nearest_centroid,Lambic
+123,Stout/Porter,nearest_centroid,Strong ale
+130,Brut,nearest_centroid,Christmas
+8,Hoppy,nearest_centroid,Scotch
+31,Hoppy,nearest_centroid,Hoppy
+52,Stout/Porter,nearest_centroid,Stout/Porter
+9,Hoppy,nearest_centroid,Christmas
+204,Tripel,nearest_centroid,Wheat
+94,Blond,nearest_centroid,Brown
+131,Scotch,nearest_centroid,Brown
+75,Lambic,nearest_centroid,Lambic
+34,Tripel,nearest_centroid,Brut
+108,Brown,nearest_centroid,Tripel
+187,Dubbel,nearest_centroid,Dubbel
+45,Tripel,nearest_centroid,Strong ale
+154,Tripel,nearest_centroid,Brett/cofermented
+121,Blond,nearest_centroid,Blond
+242,Saison,nearest_centroid,Brown
+208,Wheat,nearest_centroid,Wheat
+38,Christmas,nearest_centroid,Strong ale
+170,Strong ale,nearest_centroid,Tripel
+214,Christmas,nearest_centroid,Strong ale
+35,Blond,nearest_centroid,Tripel
+215,Blond,nearest_centroid,Blond
+235,Strong ale,nearest_centroid,Tripel
+89,Brown,nearest_centroid,Blond
+114,Hoppy,nearest_centroid,Hoppy
+181,Christmas,nearest_centroid,Amber
+225,Strong ale,nearest_centroid,Strong ale
+57,Tripel,nearest_centroid,Wheat
+143,Hoppy,nearest_centroid,Hoppy
+133,Strong ale,nearest_centroid,Tripel
+182,Stout/Porter,nearest_centroid,Brown
+17,Tripel,nearest_centroid,Strong ale
+229,Wheat,nearest_centroid,Tripel
+148,Strong ale,nearest_centroid,Brown
+248,Blond,nearest_centroid,Blond
+65,Hoppy,nearest_centroid,Saison
+73,Blond,nearest_centroid,Wheat
+198,Dubbel,nearest_centroid,Brown
+91,Strong ale,nearest_centroid,Strong ale
+217,Tripel,nearest_centroid,Blond
+163,Tripel,nearest_centroid,Tripel
+68,Tripel,nearest_centroid,Saison
+15,Tripel,nearest_centroid,Blond
+1,Brut,nearest_centroid,Strong ale
+71,Blond,nearest_centroid,Pils/Lager
+102,Christmas,nearest_centroid,Christmas
+140,Tripel,nearest_centroid,Wheat
+67,Stout/Porter,nearest_centroid,Brut
+210,Amber,nearest_centroid,Brown
+189,Tripel,nearest_centroid,Tripel
+233,Scotch,nearest_centroid,Dubbel
+199,Tripel,nearest_centroid,Amber
+63,Amber,nearest_centroid,Tripel
+95,Christmas,nearest_centroid,Christmas
+25,Brown,nearest_centroid,Dubbel
+203,Brett/cofermented,nearest_centroid,Brown
+85,Tripel,nearest_centroid,Amber
+3,Blond,nearest_centroid,Blond
+21,Lambic,nearest_centroid,Lambic
+192,Brut,nearest_centroid,Scotch
+239,Tripel,nearest_centroid,Blond
+117,Strong ale,nearest_centroid,Strong ale
+171,Tripel,nearest_centroid,Dubbel
+103,Stout/Porter,nearest_centroid,Brut
+175,Strong ale,nearest_centroid,Dubbel
+196,Strong ale,nearest_centroid,Strong ale
+4,Strong ale,nearest_centroid,Strong ale
+99,Strong ale,nearest_centroid,Strong ale
+157,Tripel,nearest_centroid,Brut
