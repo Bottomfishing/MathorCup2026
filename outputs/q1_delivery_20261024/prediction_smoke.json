@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "samples": 5,
+  "score_rows": 250,
+  "checks": [
+    "real model CLI",
+    "missing column",
+    "missing cell",
+    "reversed input column order",
+    "direct model comparison",
+    "grade comparison",
+    "string sample keys"
+  ],
+  "model_sha256": "2d1fac6b73982a0b5ae73eb03e43009aeb5a7b12f6dc77c4e059963e03ea6e2a"
+}

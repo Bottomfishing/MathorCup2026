@@ -252,13 +252,15 @@ def main():
     p.add_argument('--audit', type=Path, default=Path('outputs/p0_audit_20261023_final'))
     p.add_argument('--output', type=Path, default=Path('outputs/final_20261024'))
     p.add_argument('--config', type=Path, default=Path('configs/final_protocol.json'))
+    p.add_argument('--stage', choices=['q1', 'all'], default='all', help='Train Q1 only or run Q1 and Q3')
     args = p.parse_args(); config = json.loads(args.config.read_text(encoding='utf-8'))
     args.output.mkdir(parents=True, exist_ok=False)
     with threadpool_limits(limits=1):
         data = run_q1(args.source, args.audit, config, args.output / 'q1')
-        run_q3(*data, config, args.output / 'q3')
+        if args.stage == 'all':
+            run_q3(*data, config, args.output / 'q3')
     write_json(args.output / 'run_manifest.json', {'config_sha256': sha256(args.config),
-        'source': str(args.source.resolve()), 'status': 'completed',
+        'source': str(args.source.resolve()), 'status': 'completed', 'stage': args.stage,
         'code_sha256': {str(f): sha256(f) for f in [Path(__file__), Path('src/beer_models/final_model.py')]}})
 
 

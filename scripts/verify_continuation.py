@@ -18,7 +18,7 @@ def direct_grades(reference, values):
     return np.minimum(6, np.floor(7 * percentile)).astype(int)
 
 
-def verify(source, audit, out):
+def verify(source, audit, out, stage='all'):
     q1, q3 = out / 'q1', out / 'q3'
     manifest = json.loads((q1 / 'run_manifest.json').read_text(encoding='utf-8'))
     for name, digest in manifest['source_sha256'].items():
@@ -56,6 +56,17 @@ def verify(source, audit, out):
     stress = pd.read_csv(q1 / 'missingness.csv').set_index(['additional_missing_rate', 'repeat'])
     for key, values in missing.items():
         np.testing.assert_allclose(abs(values[:, primary] - y[:, primary]).mean(), stress.loc[key, 'macro_mae'], atol=1e-12)
+    if stage == 'q1':
+        result = {'status': 'passed', 'stage': 'q1', 'q1_oof_rows': len(selected),
+                  'q1_features': len(features), 'q1_primary_targets': int(primary.sum()),
+                  'missing_scenarios': len(missing),
+                  'checks': ['source and model hashes', 'fold model reload and OOF predictions',
+                             'training-only imputation', 'independent count-based grades',
+                             'metrics and missingness recomputation'],
+                  'original_scores_recovered': False}
+        write_json(out / 'verification_q1.json', result)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
     bundle = joblib.load(q1 / 'model.joblib')
     generated = pd.read_csv(q3 / 'generated_profiles.csv')
     metadata = pd.read_csv(q3 / 'generated_metadata.csv', dtype={'parent_1': str, 'parent_2': str})
@@ -106,6 +117,7 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--source', type=Path, required=True)
     p.add_argument('--audit', type=Path, default=Path('outputs/p0_audit_20261023_final'))
     p.add_argument('--output', type=Path, default=Path('outputs/final_20261024'))
+    p.add_argument('--stage', choices=['q1', 'all'], default='all')
     args = p.parse_args()
     with threadpool_limits(limits=1):
-        verify(args.source, args.audit, args.output)
+        verify(args.source, args.audit, args.output, args.stage)

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "stage": "q1",
+  "q1_oof_rows": 12500,
+  "q1_features": 224,
+  "q1_primary_targets": 45,
+  "missing_scenarios": 9,
+  "checks": [
+    "source and model hashes",
+    "fold model reload and OOF predictions",
+    "training-only imputation",
+    "independent count-based grades",
+    "metrics and missingness recomputation"
+  ],
+  "original_scores_recovered": false
+}
