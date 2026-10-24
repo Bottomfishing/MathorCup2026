@@ -1,0 +1,10 @@
+﻿beer,nearest_centroid_style,delivery_status,within_target_center_radius,nearest_tripel_distance,within_target_nn_radius,tripel_loo_nn_radius_p95,outside_tripel_feature_ranges,outside_protected_ranges,source_imputed_feature_count,selected_model_stale_delta,ridge_stale_delta
+124,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.2368808075839626,True,1.2871090773346168,1,1,0,-0.025457284165000094,-0.04791090561383973
+81,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.5032099897800638,True,1.2871090773346168,3,1,0,-0.7478730506323326,-0.12567466106598954
+218,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.5534138310388735,True,1.2871090773346168,4,1,0,-0.1037596360391111,-0.07219581008742898
+96,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.43135241005741026,True,1.2871090773346168,3,0,0,-0.3251401806692221,-0.01927263415067612
+230,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.49009227241247855,True,1.2871090773346168,1,1,0,-0.10416823819211109,-0.052227395030578654
+185,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.45605164507216384,True,1.2871090773346168,5,1,0,-0.09237006689722221,-0.03120221716251448
+139,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.4116685884476475,True,1.2871090773346168,1,0,0,-0.01923599928161117,-0.08439834348432049
+209,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.1971156729235275,True,1.2871090773346168,3,0,0,-0.19010177269772208,-0.014177078679764588
+90,Tripel,proxy_constraints_passed_style_not_authenticated,True,0.42555999608547807,True,1.2871090773346168,1,1,0,-0.009292386818500198,-0.001059380864151041

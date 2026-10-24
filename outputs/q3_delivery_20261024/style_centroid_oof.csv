@@ -1,0 +1,251 @@
+﻿beer,fold,style,nearest_centroid_style,correct
+83,0,Low/No alcohol,Low/No alcohol,True
+40,0,Low/No alcohol,Pils/Lager,False
+247,0,Fruitbeer,Fruitbeer,True
+141,0,Low/No alcohol,Low/No alcohol,True
+50,0,Fruitbeer,Fruitbeer,True
+227,0,Fruitbeer,Fruitbeer,True
+81,0,Pils/Lager,Pils/Lager,True
+202,0,Stout/Porter,Hoppy,False
+230,0,Pils/Lager,Pils/Lager,True
+44,0,Wheat,Wheat,True
+211,0,Lambic,West Flanders ale,False
+190,0,Flanders old brown,West Flanders ale,False
+197,0,Wheat,Wheat,True
+46,0,Blond,Pils/Lager,False
+54,0,Kriek,Kriek,True
+58,0,Saison,Brett/cofermented,False
+74,0,Faro,Flanders old brown,False
+20,0,Saison,Saison,True
+194,0,Dubbel,Blond,False
+43,0,Amber,Saison,False
+62,0,Blond,Pils/Lager,False
+26,0,West Flanders ale,West Flanders ale,True
+156,0,Kriek,Fruitbeer,False
+113,0,Blond,Blond,True
+241,0,Kriek,Kriek,True
+178,0,West Flanders ale,Lambic,False
+42,0,Lambic,Lambic,True
+87,0,Stout/Porter,Dubbel,False
+220,0,Kriek,Kriek,True
+14,0,Brett/cofermented,Dubbel,False
+37,0,Strong ale,Brown,False
+119,0,Pils/Lager,Pils/Lager,True
+92,0,Amber,Hoppy,False
+76,0,Blond,Tripel,False
+205,0,Brut,Strong ale,False
+53,0,Brown,Dubbel,False
+136,0,Blond,Tripel,False
+69,0,Tripel,Blond,False
+180,0,Christmas,Blond,False
+243,0,Wheat,Wheat,True
+39,0,Hoppy,Hoppy,True
+12,0,Lambic,West Flanders ale,False
+132,0,Saison,Hoppy,False
+16,0,Dubbel,Amber,False
+164,0,Blond,Blond,True
+149,0,Blond,Blond,True
+120,0,Hoppy,Brett/cofermented,False
+98,0,Brown,Pils/Lager,False
+27,0,Hoppy,Hoppy,True
+13,0,Christmas,Brown,False
+118,0,West Flanders ale,Amber,False
+6,0,Amber,Amber,True
+212,0,Stout/Porter,Stout/Porter,True
+234,0,Blond,Brett/cofermented,False
+147,0,Tripel,Blond,False
+237,0,Brown,Brown,True
+28,0,Pils/Lager,Saison,False
+30,0,Blond,Dubbel,False
+162,0,Lambic,Lambic,True
+31,0,Hoppy,Hoppy,True
+204,0,Tripel,Wheat,False
+131,0,Scotch,Brown,False
+34,0,Tripel,Brut,False
+187,0,Dubbel,Dubbel,True
+121,0,Blond,Blond,True
+242,0,Saison,Brown,False
+208,0,Wheat,Wheat,True
+38,0,Christmas,Strong ale,False
+170,0,Strong ale,Tripel,False
+89,0,Brown,Blond,False
+143,0,Hoppy,Hoppy,True
+133,0,Strong ale,Tripel,False
+148,0,Strong ale,Brown,False
+91,0,Strong ale,Strong ale,True
+217,0,Tripel,Blond,False
+68,0,Tripel,Saison,False
+67,0,Stout/Porter,Brut,False
+189,0,Tripel,Tripel,True
+63,0,Amber,Tripel,False
+203,0,Brett/cofermented,Brown,False
+85,0,Tripel,Amber,False
+192,0,Brut,Scotch,False
+171,0,Tripel,Dubbel,False
+99,0,Strong ale,Strong ale,True
+10,1,Low/No alcohol,Low/No alcohol,True
+2,1,Low/No alcohol,Low/No alcohol,True
+48,1,Dubbel,Brown,False
+207,1,Fruitbeer,Faro,False
+155,1,Low/No alcohol,Low/No alcohol,True
+179,1,Flanders old brown,Lambic,False
+33,1,Fruitbeer,Fruitbeer,True
+88,1,Kriek,Kriek,True
+22,1,Wheat,Wheat,True
+96,1,Pils/Lager,Pils/Lager,True
+185,1,Pils/Lager,Pils/Lager,True
+200,1,West Flanders ale,Flanders old brown,False
+183,1,Saison,Saison,True
+111,1,Dubbel,Brown,False
+213,1,Hoppy,Saison,False
+224,1,Wheat,Blond,False
+5,1,Blond,Hoppy,False
+209,1,Pils/Lager,Pils/Lager,True
+11,1,Amber,Amber,True
+188,1,Stout/Porter,Dubbel,False
+122,1,Brett/cofermented,Hoppy,False
+169,1,Hoppy,Hoppy,True
+160,1,Wheat,Wheat,True
+7,1,Saison,Hoppy,False
+232,1,Kriek,Kriek,True
+151,1,Faro,West Flanders ale,False
+167,1,Flanders old brown,West Flanders ale,False
+59,1,Blond,Saison,False
+135,1,Tripel,Saison,False
+244,1,West Flanders ale,Brown,False
+112,1,Brown,Blond,False
+72,1,Hoppy,Strong ale,False
+246,1,Blond,Brown,False
+201,1,Stout/Porter,Strong ale,False
+238,1,Blond,Saison,False
+107,1,Dubbel,Strong ale,False
+206,1,Brown,Christmas,False
+134,1,Strong ale,Pils/Lager,False
+193,1,Blond,Brown,False
+240,1,Tripel,Tripel,True
+226,1,Strong ale,Dubbel,False
+29,1,Saison,Saison,True
+47,1,Tripel,Blond,False
+115,1,Lambic,Lambic,True
+80,1,Hoppy,Hoppy,True
+222,1,Brett/cofermented,Saison,False
+18,1,Lambic,Lambic,True
+79,1,Hoppy,Stout/Porter,False
+152,1,Wheat,Tripel,False
+19,1,Amber,Amber,True
+78,1,Brown,Christmas,False
+249,1,Blond,Saison,False
+101,1,Blond,Brut,False
+127,1,Blond,Blond,True
+245,1,Tripel,Christmas,False
+191,1,Tripel,Brown,False
+51,1,Strong ale,Christmas,False
+144,1,Lambic,Lambic,True
+41,1,Lambic,Lambic,True
+153,1,Kriek,Kriek,True
+168,1,Scotch,Scotch,True
+126,1,Amber,Scotch,False
+52,1,Stout/Porter,Stout/Porter,True
+94,1,Blond,Brown,False
+108,1,Brown,Tripel,False
+45,1,Tripel,Strong ale,False
+114,1,Hoppy,Hoppy,True
+181,1,Christmas,Amber,False
+182,1,Stout/Porter,Brown,False
+73,1,Blond,Wheat,False
+198,1,Dubbel,Brown,False
+163,1,Tripel,Tripel,True
+1,1,Brut,Strong ale,False
+102,1,Christmas,Christmas,True
+140,1,Tripel,Wheat,False
+210,1,Amber,Brown,False
+233,1,Scotch,Dubbel,False
+95,1,Christmas,Christmas,True
+3,1,Blond,Blond,True
+239,1,Tripel,Blond,False
+175,1,Strong ale,Dubbel,False
+196,1,Strong ale,Strong ale,True
+4,1,Strong ale,Strong ale,True
+86,2,Low/No alcohol,Low/No alcohol,True
+165,2,Fruitbeer,Fruitbeer,True
+124,2,Pils/Lager,Pils/Lager,True
+77,2,Blond,Pils/Lager,False
+64,2,Blond,Wheat,False
+218,2,Pils/Lager,Pils/Lager,True
+161,2,Flanders old brown,Lambic,False
+195,2,Wheat,Saison,False
+142,2,Wheat,Wheat,True
+137,2,Amber,Blond,False
+236,2,Brett/cofermented,Hoppy,False
+223,2,Low/No alcohol,Low/No alcohol,True
+228,2,Tripel,Brown,False
+166,2,Saison,Hoppy,False
+216,2,Scotch,Scotch,True
+116,2,Lambic,Lambic,True
+139,2,Pils/Lager,Pils/Lager,True
+250,2,Faro,Lambic,False
+158,2,Amber,Christmas,False
+56,2,Saison,Saison,True
+84,2,West Flanders ale,Lambic,False
+172,2,Wheat,Wheat,True
+100,2,Dubbel,Dubbel,True
+55,2,Hoppy,Hoppy,True
+61,2,Stout/Porter,Stout/Porter,True
+138,2,Kriek,Kriek,True
+70,2,Blond,Blond,True
+176,2,West Flanders ale,West Flanders ale,True
+105,2,Strong ale,Hoppy,False
+82,2,Kriek,Kriek,True
+128,2,Amber,Amber,True
+110,2,Blond,Blond,True
+231,2,Stout/Porter,Stout/Porter,True
+219,2,Hoppy,Hoppy,True
+129,2,Brown,Scotch,False
+186,2,Strong ale,Dubbel,False
+109,2,Brown,Dubbel,False
+97,2,Hoppy,Scotch,False
+173,2,Stout/Porter,Dubbel,False
+177,2,Fruitbeer,Kriek,False
+106,2,Christmas,Tripel,False
+159,2,Flanders old brown,Dubbel,False
+90,2,Pils/Lager,Pils/Lager,True
+93,2,Tripel,Amber,False
+24,2,Kriek,Kriek,True
+49,2,Blond,Brown,False
+150,2,Brett/cofermented,Brut,False
+23,2,Tripel,Blond,False
+221,2,Dubbel,Amber,False
+32,2,Amber,Christmas,False
+174,2,Dubbel,Brown,False
+184,2,Fruitbeer,Fruitbeer,True
+145,2,Saison,Hoppy,False
+125,2,Blond,Saison,False
+66,2,Tripel,Blond,False
+104,2,Strong ale,Dubbel,False
+60,2,Christmas,Amber,False
+146,2,Scotch,Scotch,True
+36,2,Brown,Dubbel,False
+123,2,Stout/Porter,Strong ale,False
+130,2,Brut,Christmas,False
+8,2,Hoppy,Scotch,False
+9,2,Hoppy,Christmas,False
+75,2,Lambic,Lambic,True
+154,2,Tripel,Brett/cofermented,False
+214,2,Christmas,Strong ale,False
+35,2,Blond,Tripel,False
+215,2,Blond,Blond,True
+235,2,Strong ale,Tripel,False
+225,2,Strong ale,Strong ale,True
+57,2,Tripel,Wheat,False
+17,2,Tripel,Strong ale,False
+229,2,Wheat,Tripel,False
+248,2,Blond,Blond,True
+65,2,Hoppy,Saison,False
+15,2,Tripel,Blond,False
+71,2,Blond,Pils/Lager,False
+199,2,Tripel,Amber,False
+25,2,Brown,Dubbel,False
+21,2,Lambic,Lambic,True
+117,2,Strong ale,Strong ale,True
+103,2,Stout/Porter,Brut,False
+157,2,Tripel,Brut,False

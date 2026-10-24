@@ -21,6 +21,27 @@ from beer_models.baseline import load_data, make_splits, metric_vectors, mask_ob
 from beer_models.explain import stratified_draw
 from beer_models.final_model import estimator, relative_grades, projected_paths
 from beer_models.generation import StyleGenerator
+from beer_models.style_diagnostics import select_transfer
+
+
+def load_q1_artifacts(source, audit, q1):
+    manifest = json.loads((q1 / 'run_manifest.json').read_text(encoding='utf-8'))
+    for name, digest in manifest['source_sha256'].items():
+        if sha256(source / name) != digest:
+            raise ValueError('Source differs from Q1 training data: ' + name)
+    if sha256(q1 / 'model.joblib') != manifest['model_sha256']:
+        raise ValueError('Q1 model hash mismatch')
+    ids, xf, yf, _ = load_data(source, audit)
+    bundle = joblib.load(q1 / 'model.joblib')
+    if bundle['targets'] != yf.columns.tolist() or bundle['features'] != manifest['features']:
+        raise ValueError('Q1 feature or target order mismatch')
+    np.testing.assert_allclose(bundle['reference_y'], yf.to_numpy(float), rtol=0, atol=0)
+    saved = pd.read_csv(q1 / 'splits.csv', dtype={'beer': str}).set_index('beer')
+    if saved.index.duplicated().any() or set(saved.index) != set(ids.beer.astype(str)):
+        raise ValueError('Q1 sample split mismatch')
+    folds = saved.loc[ids.beer.astype(str), 'outer_test_fold'].to_numpy()
+    splits = [(np.flatnonzero(folds != f), np.flatnonzero(folds == f)) for f in sorted(set(folds))]
+    return ids, xf[bundle['features']], yf, bundle, splits
 
 
 def choose_model(x, y, styles, primary, config, seed):
@@ -213,13 +234,12 @@ def run_q3(ids, xf, yf, bundle, splits, config, out):
         good &= distances < before_distance - 1e-8
         nearest_style = np.array(style_order)[np.argmin(np.stack([np.mean((z - centers[s]) ** 2, axis=1) for s in style_order]), axis=0)]
         target_like = good & (nearest_style == 'Tripel') & (distances <= tripel_radius)
-        pool = np.flatnonzero(target_like if target_like.any() else good)
-        if not len(pool):
+        chosen = select_transfer(distances, change, good, target_like)
+        if chosen is None:
             transfers.append({'beer': beer, 'status': 'no_feasible_grid_candidate', 'selected': False,
                               'source_target_distance': before_distance, 'n_candidates': len(candidates)})
             continue
         # Keep historical 0.7/0.3 tradeoff, not tuned on successful transfers.
-        chosen = pool[np.argmin(.7 * distances[pool] + .3 * change[pool])]
         transfers.append({'beer': beer, 'status': 'target_style_model_design' if target_like[chosen] else 'partial_toward_target',
             'selected': True, 'source_target_distance': before_distance, 'target_distance': distances[chosen],
             'relative_distance_reduction': 1 - distances[chosen] / before_distance,
@@ -252,12 +272,14 @@ def main():
     p.add_argument('--audit', type=Path, default=Path('outputs/p0_audit_20261023_final'))
     p.add_argument('--output', type=Path, default=Path('outputs/final_20261024'))
     p.add_argument('--config', type=Path, default=Path('configs/final_protocol.json'))
-    p.add_argument('--stage', choices=['q1', 'all'], default='all', help='Train Q1 only or run Q1 and Q3')
+    p.add_argument('--stage', choices=['q1', 'q3', 'all'], default='all', help='Run only the requested stage; q3 reuses saved Q1')
+    p.add_argument('--q1', type=Path, default=Path('outputs/final_20261024/q1'), help='Saved Q1 directory for --stage q3')
     args = p.parse_args(); config = json.loads(args.config.read_text(encoding='utf-8'))
     args.output.mkdir(parents=True, exist_ok=False)
     with threadpool_limits(limits=1):
-        data = run_q1(args.source, args.audit, config, args.output / 'q1')
-        if args.stage == 'all':
+        data = (load_q1_artifacts(args.source, args.audit, args.q1) if args.stage == 'q3' else
+                run_q1(args.source, args.audit, config, args.output / 'q1'))
+        if args.stage in ['q3', 'all']:
             run_q3(*data, config, args.output / 'q3')
     write_json(args.output / 'run_manifest.json', {'config_sha256': sha256(args.config),
         'source': str(args.source.resolve()), 'status': 'completed', 'stage': args.stage,
