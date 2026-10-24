@@ -1,0 +1,43 @@
+{
+  "selection_rule": "Top 3 eligible absolute standardized coefficients of full-data asinh Ridge, alpha=1000; ties preserve original feature order. Network supplies co-variation context, not a centrality multiplier.",
+  "aliases": {
+    "X1.alpha.terpineol": {"expected_dataset_name": "Alpha-terpineol", "reference_compound": "1-α-terpineol", "basis": "Attachment field X1.alpha.terpineol retains the positional prefix; Supplementary Table S1 uses Greek alpha.", "support_url": "https://zenodo.org/records/10653704"},
+    "X2.3.butanedione": {"expected_dataset_name": "Diacetyl", "reference_compound": "2,3-butanedione", "basis": "Explicit synonym Diacetyl = 2,3-butanedione; source field retains 2,3-butanedione.", "support_url": "https://hfpappexternal.fda.gov/scripts/fdcc/index.cfm?id=DIACETYL&set=foodsubstances"},
+    "beta.phellandrene": {"expected_dataset_name": "Beta-phellandrene", "reference_compound": "β-phellandrene", "basis": "Exact beta versus Greek beta spelling. Alpha-phellandrene remains a different field.", "support_url": "https://zenodo.org/records/10653704"},
+    "ethyl_isovalerate": {"expected_dataset_name": "Ethyl 3-methylbutyrate", "reference_compound": "ethyl isovalerate", "basis": "FDA lists ethyl isovalerate and ethyl 3-methylbutyrate as synonyms, CAS 108-64-5. Do not merge ethyl 2-methylbutyrate.", "support_url": "https://hfpappexternal.fda.gov/scripts/fdcc/index.cfm?id=ETHYLISOVALERATE&set=FoodSubstances"}
+  },
+  "descriptor_terms": {
+    "malt_all": ["malt", "grain", "bread", "caramel", "burnt", "roasted", "nutty", "almond", "walnut", "chocolate", "cocoa"],
+    "malt_grain": ["grain", "cereal", "malt"],
+    "malt_bread": ["bread", "biscuit", "toast"],
+    "malt_cara": ["caramel", "toffee", "butterscotch"],
+    "malt_burn": ["burnt", "roasted", "smoky", "smoked"],
+    "hops_all": ["herbal", "citrus", "floral", "grassy", "woody", "pine"],
+    "hops_citrus": ["citrus", "lemon", "orange", "grapefruit"],
+    "hops_tropical": ["tropical", "passion", "mango", "pineapple"],
+    "hops_noble": ["grassy", "herbal", "green"],
+    "hops_woody": ["woody", "wood", "cedar"],
+    "esters_all": ["fruity", "banana", "apple", "pear", "floral", "pineapple"],
+    "esters_ethac": ["solvent", "nail polish", "paint", "ethereal"],
+    "esters_isoaa": ["banana"],
+    "esters_flower": ["floral", "flower", "rose", "lavender"],
+    "esters_fruity": ["fruity", "apple", "pear", "pineapple"],
+    "acidity": ["acidic", "sour", "vinegar"], "bitternes": ["bitter"],
+    "sweetness": ["sweet"], "X4vg": ["clove", "phenolic"],
+    "diacetyl": ["buttery", "butterscotch"], "dms": ["cooked vegetables", "corn"],
+    "metallic": ["metallic"], "stale_hops": ["stale hops", "cheesy"],
+    "t2n": ["cardboard", "paper"], "orange": ["orange", "citrus"],
+    "coriander": ["coriander"], "clove": ["clove"],
+    "lactic": ["acidic", "sour"], "acetic": ["vinegar"],
+    "barnyard": ["barnyard", "horse", "leathery", "animal"],
+    "alcohol": ["alcohol", "alcoholic"], "aftertaste": [], "body": [], "co2": [], "overall": []
+  },
+  "identity_markers": {
+    "X4vg": ["X4VG"], "diacetyl": ["X2.3.butanedione"], "dms": ["DMS"],
+    "metallic": ["iron"], "t2n": ["X.E..2.nonenal"],
+    "lactic": ["lactic_acid.mg.L."], "acetic": ["acetic_acid.g.L."],
+    "acidity": ["lactic_acid.mg.L.", "acetic_acid.g.L."],
+    "alcohol": ["ethanol..v.v."], "co2": ["CO2.PSI."]
+  },
+  "scope": "Transparent descriptive evidence annotation, not a validated mechanistic classifier. Descriptor terms are manually specified checks, not an exhaustive sensory ontology."
+}

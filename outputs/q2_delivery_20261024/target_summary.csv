@@ -1,0 +1,51 @@
+﻿target,primary,top3_fields,top3_names,minimum_refit_frequency,median_refit_frequency,n_with_reference_support,n_nonpositive_within_style_forest_importance,ridge_vs_forest_jaccard,full_vs_analytes_jaccard,global_vs_within_style_jaccard,full_model_r2,analytes_model_r2
+A_malt_all,True,X2.acetylfuran;methylpyrazine;X5.methylfurfural,2-acetylfuran;Methylpyrazine;5-methylfurfural,0.395,0.66,3,1,0.0,0.5,0.5,0.3769511325527139,0.2314935609542865
+A_malt_grain,True,Z.nerolidol;X5.methylfurfural;furfural,Z-nerolidol;5-methylfurfural;Furfural,0.245,0.38,0,1,0.0,0.2,0.5,0.0377665882652532,0.0474109565229493
+A_malt_bread,True,furfural;ethyl.tiglate;CO2.PSI.,Furfural;Ethyl tiglate;Carbon dioxide,0.145,0.195,1,0,0.0,0.2,0.5,0.0610146085064953,0.0643313151207621
+A_malt_cara,True,X2.acetylfuran;furfural;X5.methylfurfural,2-acetylfuran;Furfural;5-methylfurfural,0.32,0.605,1,1,0.0,0.2,0.2,0.3328449157177483,0.1882633977373318
+A_malt_burn,True,methylpyrazine;X2.acetylfuran;MeSH,Methylpyrazine;2-acetylfuran;Methanethiol,0.135,0.815,2,1,0.0,0.2,0.2,0.1884272669528305,0.0687472204079845
+A_hops_all,True,iron;DMS;ethyl_octanoate,Iron;Dimethyl sulfide;Ethyl octanoate,0.13,0.275,0,0,0.2,1.0,1.0,0.3644004657643093,0.3357444752408999
+A_hops_citrus,True,citronellol;X6.methyl.5.hepten.2.one;X.E.E..2.4.decadienal,"Citronellol;Methyl heptenone;E,E-2,4-decadienal",0.35,0.36,2,0,0.0,0.5,0.2,0.1415653628347747,0.1223004968659555
+A_hops_tropical,True,DMS;beta.phellandrene;CO2.PSI.,Dimethyl sulfide;Beta-phellandrene;Carbon dioxide,0.11,0.285,0,0,0.0,0.5,1.0,0.0978122747628891,0.1041807516967128
+A_hops_noble,True,ethyl_octanoate;ethyl_decanoate;iron,Ethyl octanoate;Ethyl decanoate;Iron,0.27,0.315,0,0,0.5,0.5,0.5,0.2936101461161595,0.2806653889177194
+A_hops_woody,True,car.3.en.2.one;X.E..ortho.methoxy.cinnamaldehyde;iron,Car-3-en-2-one;E-ortho-methoxy cinnamaldehyde;Iron,0.295,0.34,0,2,0.0,0.5,0.5,0.0733015623219142,0.0828100019751763
+A_esters_all,True,acetaldehyde;n.hexanol;lactic_acid.mg.L.,Acetaldehyde;N-hexanol;Lactic acid,0.08,0.31,2,0,0.2,0.5,0.5,0.1716569422544973,0.1652499020441548
+A_esters_ethac,True,acetaldehyde;ethyl_acetate;phenethyl_alcohol,Acetaldehyde;Ethyl acetate;Phenethyl alcohol,0.25,0.255,2,0,0.2,0.5,0.2,0.1182159061723739,0.1106299053708301
+A_esters_isoaa,True,n.hexanol;ethyl.hexadecanoate;benzaldehyde,N-hexanol;Ethyl hexadecanoate;Benzaldehyde,0.21,0.275,0,1,0.0,0.5,0.5,0.0719660337542502,0.0725373751020099
+A_esters_flower,True,X2.methyltetrahydrofuran.3.one;beta.phellandrene;X.E..alpha.ionone,2-methyltetrahydrofuran-3-one;Beta-phellandrene;E-α-ionone,0.195,0.385,1,0,0.2,0.5,0.2,0.073422671335562,0.0691311951411943
+A_esters_fruity,True,beta.phellandrene;X2.methyltetrahydrofuran.3.one;eugenol,Beta-phellandrene;2-methyltetrahydrofuran-3-one;Eugenol,0.47,0.525,1,2,0.2,0.5,0.5,0.039635442059998,0.0292790655887812
+F_malt_all,True,X2.acetylfuran;acetaldehyde;methylpyrazine,2-acetylfuran;Acetaldehyde;Methylpyrazine,0.695,0.7,2,1,0.0,0.2,0.2,0.4663704893237648,0.3437652661813828
+F_malt_grain,True,Z.nerolidol;X2.3.butanedione;X3.methyl.2.butenal,Z-nerolidol;Diacetyl;3-methyl-2-butenal,0.255,0.27,0,2,0.0,0.2,0.2,0.0538628544735979,0.0727624621086676
+F_malt_bread,True,caryophylla.4.12..8.13..dien.5.alpha.ol;ethyl.tiglate;X2.acetylfuran,"Caryophylla-4,8-dien-5-ol;Ethyl tiglate;2-acetylfuran",0.175,0.26,0,0,0.0,0.2,0.5,0.1946895826352231,0.2021515493824447
+F_malt_cara,True,acetaldehyde;phenethyl_alcohol;X2.acetylfuran,Acetaldehyde;Phenethyl alcohol;2-acetylfuran,0.2,0.275,0,1,0.0,0.5,0.5,0.3412888659351505,0.2385956747279298
+F_malt_burn,True,methylpyrazine;X2.acetylfuran;delta.terpinyl.acetate,Methylpyrazine;2-acetylfuran;Terpiryl acetate,0.255,0.525,2,1,0.0,0.2,0.2,0.3078064685021044,0.2018797759935321
+F_hops_all,True,iron;cis.dihydro.beta.terpineol;ethyl_isovalerate,Iron;Cis-dihydro-β-terpineol;Ethyl 3-methylbutyrate,0.31,0.495,0,0,0.2,0.5,0.5,0.4900141388429699,0.4663989774117991
+F_hops_citrus,True,geosmin;geraniol;X2.acetylfuran,Geosmin;Geraniol;2-acetylfuran,0.3,0.32,1,0,0.0,1.0,0.2,0.1991100456543699,0.1512809876694913
+F_hops_tropical,True,hexyl.acetate;DMS;X6.methyl.5.hepten.2.one,Hexyl acetate;Dimethyl sulfide;Methyl heptenone,0.27,0.36,0,0,0.0,0.5,0.2,0.1268814986280531,0.1354833368448135
+F_hops_noble,True,iron;X.E..2.nonenal;ethyl_octanoate,Iron;E-2-nonenal;Ethyl octanoate,0.17,0.455,0,0,0.2,0.5,0.5,0.3614192400374716,0.3529312115484729
+F_hops_woody,True,isobutanol;manool;X9.epi..E..caryophyllene,Isobutanol;Manool;9-epi-E-caryophyllene,0.105,0.3,0,2,0.0,1.0,1.0,0.1646367025622942,0.1618137263417268
+F_esters_all,True,acetaldehyde;phenethyl_alcohol;n.hexanol,Acetaldehyde;Phenethyl alcohol;N-hexanol,0.38,0.4,3,0,0.0,1.0,0.5,0.2631810958423405,0.2471080190812555
+F_esters_ethac,True,ethyl_acetate;acetaldehyde;car.3.en.2.one,Ethyl acetate;Acetaldehyde;Car-3-en-2-one,0.25,0.365,2,0,0.2,0.5,0.5,0.2161624742572145,0.1970617692278653
+F_esters_isoaa,True,n.hexanol;phenethyl_alcohol;acetaldehyde,N-hexanol;Phenethyl alcohol;Acetaldehyde,0.155,0.295,0,0,0.0,1.0,1.0,0.096388928595654,0.0980804712803448
+F_esters_flower,True,beta.phellandrene;X2.methyltetrahydrofuran.3.one;eucalyptol,Beta-phellandrene;2-methyltetrahydrofuran-3-one;Eucalyptol,0.36,0.38,0,0,0.2,1.0,0.2,0.0379677205809197,0.0396611156067638
+F_esters_fruity,True,beta.phellandrene;X1.10.di.epi.cubenol;phenethyl_alcohol,Beta-phellandrene;Epicubenol;Phenethyl alcohol,0.275,0.305,1,0,0.2,0.5,0.2,0.1122702009323153,0.1081128766944266
+acidity,True,lactic_acid.mg.L.;acetic_acid.g.L.;perillyl.acetate,Lactic acid;Acetic acid;Perillyl acetate,0.2,0.695,2,0,0.2,1.0,0.2,0.7270768925936231,0.7005296874246157
+bitternes,True,iron;ethyl_octanoate;ethyl_decanoate,Iron;Ethyl octanoate;Ethyl decanoate,0.38,0.875,0,0,0.5,1.0,0.5,0.5772107500359409,0.5455320746632071
+sweetness,True,ethyl_decanoate;iron;acetaldehyde,Ethyl decanoate;Iron;Acetaldehyde,0.365,0.395,0,0,0.0,0.5,0.2,0.23865484083147,0.2083066550783697
+X4vg,True,X4VG;delta.terpinyl.acetate;nerol,4-vinylguaiacol;Terpiryl acetate;Nerol,0.05,0.945,1,0,0.2,1.0,0.2,0.175977327931037,0.1796711208830067
+diacetyl,True,eugenol;beta.phellandrene;X2.methyl.benzofuran,Eugenol;Beta-phellandrene;2-methyl-benzofuran,0.185,0.305,0,2,0.0,1.0,0.5,0.0996036191105251,0.1083249194690803
+dms,True,SO2.mg.L.;E.nerolidol;caryophylla.4.12..8.13..dien.5.alpha.ol,"Sulfur dioxide;E-nerolidol;Caryophylla-4,8-dien-5-ol",0.175,0.22,0,0,0.0,0.0,0.0,0.0433968305632952,0.0171377667309844
+metallic,True,iron;ethyl_isovalerate;isopentyl.butanoate,Iron;Ethyl 3-methylbutyrate;Isopentyl butanoate,0.27,0.455,1,1,0.2,1.0,0.5,0.1184513642323968,0.1134233769809286
+stale_hops,True,X.E..ortho.methoxy.cinnamaldehyde;gamma.eudesmol;isobutanol,E-ortho-methoxy cinnamaldehyde;Gamma-eudesmol;Isobutanol,0.155,0.285,0,0,0.0,1.0,1.0,0.0186559478038613,0.0514589730150394
+t2n,True,germacrene.D;glycerol;alpha.phellandrene,Germacrene D;Glycerol;α-phellandrene,0.305,0.335,0,0,0.2,0.5,0.5,0.066560138214363,0.0684759576580075
+orange,True,X1.alpha.terpineol;limonene;X2.ethyl.1.hexanol,Alpha-terpineol;Limonene;2-ethyl-1-hexanol,0.25,0.66,2,0,0.2,0.5,0.2,0.0163406875599717,0.0311541590472667
+coriander,True,x.methyl.1.octanol;X1.alpha.terpineol;linalool,X-methyl-1-octanol;Alpha-terpineol;Linalool,0.51,0.535,0,0,0.2,0.5,0.5,0.1212837530586944,0.109173994370284
+clove,True,eucalyptol;linalool;limonene,Eucalyptol;Linalool;Limonene,0.76,0.785,0,0,0.2,0.5,0.5,0.0180438071307035,0.0301906575197186
+lactic,True,lactic_acid.mg.L.;acetic_acid.g.L.;prenyl.isobutyrate,Lactic acid;Acetic acid;Prenyl isobutyrate,0.315,0.475,1,0,0.2,0.5,0.5,0.6711781713335025,0.6403751751290668
+acetic,True,lactic_acid.mg.L.;acetic_acid.g.L.;DES,Lactic acid;Acetic acid;Diethyl sulfide,0.305,0.63,1,0,0.2,1.0,0.2,0.6476349308145406,0.6224613758355091
+barnyard,True,gamma.eudesmol;X.E..ortho.methoxy.cinnamaldehyde;propyl.acetate,Gamma-eudesmol;E-ortho-methoxy cinnamaldehyde;N-propyl acetate,0.195,0.295,0,0,0.0,0.2,0.2,0.03227633592535,0.0614628225352601
+alcohol,False,ethanol..v.v.;acetaldehyde;ethyl_hexanoate,Ethanol;Acetaldehyde;Ethyl hexanoate,0.5,0.68,1,0,0.2,1.0,0.5,0.6784476697371946,0.6525180205609319
+aftertaste,False,ethanol..v.v.;ethyl_isovalerate;acetaldehyde,Ethanol;Ethyl 3-methylbutyrate;Acetaldehyde,0.38,0.5,0,0,0.2,0.5,0.2,0.4380429544480945,0.4268163853307607
+body,False,ethanol..v.v.;glycerol;ethyl_hexanoate,Ethanol;Glycerol;Ethyl hexanoate,0.325,0.62,0,0,0.2,1.0,0.2,0.490750753544992,0.4356293394780079
+co2,False,ethyl_octanoate;CO2.PSI.;ethanol..v.v.,Ethyl octanoate;Carbon dioxide;Ethanol,0.265,0.395,1,0,0.5,1.0,1.0,0.2916620535493538,0.2840447908365493
+overall,False,ethyl_acetate;X2.butyloctanoate;cis.linalool.oxide,Ethyl acetate;2-butyl octanoate;Cis-linalool oxide,0.175,0.22,0,0,0.2,0.2,0.2,0.0611091164627,0.072519792749068
