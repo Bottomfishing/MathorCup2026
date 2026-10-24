@@ -1,0 +1,403 @@
+[
+  {
+    "sheet": "Supplementary File S1",
+    "rows": 251,
+    "columns": 234,
+    "first_columns": [
+      "beer",
+      "beer_id",
+      "tasting_category_fine",
+      "acetaldehyde",
+      "CS2",
+      "DES",
+      "DMS",
+      "ethyl_2.methyl_butyrate"
+    ]
+  },
+  {
+    "sheet": "Supplementary File S2",
+    "rows": 232,
+    "columns": 232,
+    "first_columns": [
+      "None",
+      "Acetaldehyde",
+      "Carbon disulfide",
+      "Diethyl sulfide",
+      "Dimethyl sulfide",
+      "Ethyl 2-methylbutyrate",
+      "Ethyl acetate",
+      "Ethyl decanoate"
+    ]
+  },
+  {
+    "sheet": "Supplementary File S3",
+    "rows": 101,
+    "columns": 33,
+    "first_columns": [
+      "None",
+      "Date",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None",
+      "None"
+    ]
+  },
+  {
+    "sheet": "Supplementary File S4",
+    "rows": 251,
+    "columns": 53,
+    "first_columns": [
+      "beer",
+      "beer_id",
+      "tasting_category_fine",
+      "A_malt_all",
+      "A_malt_grain",
+      "A_malt_bread",
+      "A_malt_cara",
+      "A_malt_burn"
+    ]
+  },
+  {
+    "sheet": "Supplementary File S5",
+    "rows": 52,
+    "columns": 51,
+    "first_columns": [
+      "Trained panel",
+      "Malt aroma - overall",
+      "Malt aroma - grain",
+      "Malt aroma - bread",
+      "Malt aroma - caramel",
+      "Malt aroma - smoked",
+      "Hops aroma - overall",
+      "Hops aroma - citrus"
+    ]
+  },
+  {
+    "sheet": "Supplementary File S6",
+    "rows": 45,
+    "columns": 51,
+    "first_columns": [
+      "Trained panel",
+      "Malt aroma - overall",
+      "Malt aroma - grain",
+      "Malt aroma - bread",
+      "Malt aroma - caramel",
+      "Malt aroma - smoked",
+      "Hops aroma - overall",
+      "Hops aroma - citrus"
+    ]
+  },
+  {
+    "sheet": "Supplementary File S7",
+    "rows": 251,
+    "columns": 189,
+    "first_columns": [
+      "beer",
+      "beer_id",
+      "tasting_category_fine",
+      "aroma_acetaldehyde",
+      "aroma_acetate",
+      "aroma_acetic",
+      "aroma_acidic",
+      "aroma_aftertaste"
+    ]
+  },
+  {
+    "sheet": "Supplementary Table S1",
+    "rows": 236,
+    "columns": 6,
+    "first_columns": [
+      "Compound ",
+      "Compound class ",
+      "Origin ",
+      "Method of detection ",
+      "Flavor ",
+      "Flavor reference"
+    ]
+  },
+  {
+    "sheet": "Supplementary Table S2",
+    "rows": 51,
+    "columns": 13,
+    "first_columns": [
+      "Attribute",
+      "Beer 23",
+      "Beer 37",
+      "Beer 75",
+      "Beer 114",
+      "Beer 127",
+      "Beer 139",
+      "Beer 185"
+    ]
+  },
+  {
+    "sheet": "Supplementary Table S3",
+    "rows": 51,
+    "columns": 11,
+    "first_columns": [
+      "aspect",
+      "AdaBoost",
+      "ExtraTrees",
+      "GradientBoost",
+      "Lasso interactions",
+      "LinearModel interactions",
+      "MLPRegressor",
+      "PLS"
+    ]
+  },
+  {
+    "sheet": "Supplementary Table S4",
+    "rows": 7,
+    "columns": 11,
+    "first_columns": [
+      "aspect",
+      "AdaBoost",
+      "ExtraTrees",
+      "GradientBoost",
+      "Lasso interactions",
+      "LinearModel interactions",
+      "MLPRegressor",
+      "PLS"
+    ]
+  },
+  {
+    "sheet": "Supplementary Table S5",
+    "rows": 83,
+    "columns": 4,
+    "first_columns": [
+      "Compound",
+      "CAS-number",
+      "Supplier",
+      "Reference number"
+    ]
+  },
+  {
+    "sheet": "Supplementary Table S6",
+    "rows": 99,
+    "columns": 4,
+    "first_columns": [
+      "Software",
+      "Packages",
+      "Version",
+      "Citation Nature"
+    ]
+  },
+  {
+    "sheet": "Supplementary Table S7",
+    "rows": 23,
+    "columns": 4,
+    "first_columns": [
+      "Test",
+      "Principle",
+      "Reagents",
+      "Reference"
+    ]
+  },
+  {
+    "sheet": "Sensory thresholds",
+    "rows": 262,
+    "columns": 11,
+    "first_columns": [
+      "field_name_python",
+      "field_name_R",
+      "chemical_name",
+      "chemical_name_short",
+      "calibrated",
+      "origin_paper",
+      "unit",
+      "aging"
+    ]
+  },
+  {
+    "sheet": "Sensory names",
+    "rows": 102,
+    "columns": 8,
+    "first_columns": [
+      "dataset",
+      "R_name",
+      "Category_Paper",
+      "Category",
+      "CleanName_Paper",
+      "CleanName_PaperLong",
+      "CleanName_PanelFeedback",
+      "DataType"
+    ]
+  },
+  {
+    "sheet": "Validation Results 1",
+    "rows": 43,
+    "columns": 16,
+    "first_columns": [
+      "Time",
+      "Name",
+      "Beer",
+      "Malt",
+      "Sweetness",
+      "Hops",
+      "Bitterness",
+      "Esters"
+    ]
+  },
+  {
+    "sheet": "Validation Results 2",
+    "rows": 27,
+    "columns": 16,
+    "first_columns": [
+      "Time",
+      "Name",
+      "Beer",
+      "Malt",
+      "Sweetness",
+      "Hops",
+      "Bitterness",
+      "Esters"
+    ]
+  },
+  {
+    "sheet": "Validation Results 3",
+    "rows": 27,
+    "columns": 16,
+    "first_columns": [
+      "Time",
+      "Name",
+      "Beer",
+      "Malt",
+      "Sweetness",
+      "Hops",
+      "Bitterness",
+      "Esters"
+    ]
+  },
+  {
+    "sheet": "Validation Concentrations",
+    "rows": 6,
+    "columns": 9,
+    "first_columns": [
+      "BeerStyle",
+      "SetName",
+      "Ethanol (v/v)",
+      "Ethyl acetate (mg/l)",
+      "Ethyl hexanoate (mg/l)",
+      "Isoamyl acetate (mg/l)",
+      "Phenylethyl acetate (mg/l)",
+      "Glycerol (g/l)"
+    ]
+  },
+  {
+    "sheet": "Validation Details",
+    "rows": 159,
+    "columns": 11,
+    "first_columns": [
+      "Date",
+      "Set",
+      "Code",
+      "BaseBeer",
+      "BeerStyle",
+      "SampleName",
+      "SetName",
+      "CompoundsConc"
+    ]
+  },
+  {
+    "sheet": "GBM importance MDI",
+    "rows": 232,
+    "columns": 2,
+    "first_columns": [
+      "None",
+      "0"
+    ]
+  },
+  {
+    "sheet": "GBM SHAP Values",
+    "rows": 501,
+    "columns": 236,
+    "first_columns": [
+      "data",
+      "beer",
+      "beer_id",
+      "tasting_category_fine",
+      "acetaldehyde",
+      "CS2",
+      "DES",
+      "DMS"
+    ]
+  },
+  {
+    "sheet": "Calibrated chemical dataset",
+    "rows": 251,
+    "columns": 73,
+    "first_columns": [
+      "beer",
+      "beer_id",
+      "tasting_category_fine",
+      "acetaldehyde",
+      "CS2",
+      "DES",
+      "DMS",
+      "ethyl_2.methyl_butyrate"
+    ]
+  },
+  {
+    "sheet": "Beer Prices",
+    "rows": 251,
+    "columns": 11,
+    "first_columns": [
+      "beer",
+      "beer_id",
+      "tasting_category",
+      "ABV",
+      "Price_TotalWine_USA",
+      "Price_Colruyt_Belgium",
+      "Price_Delhaize_Belgium",
+      "Price_BeerHawk_UK"
+    ]
+  },
+  {
+    "sheet": "Performance of 100 models",
+    "rows": 101,
+    "columns": 4,
+    "first_columns": [
+      "Iteration",
+      "GBM",
+      "RF",
+      "ET"
+    ]
+  },
+  {
+    "sheet": "100 models feature importance",
+    "rows": 1387,
+    "columns": 103,
+    "first_columns": [
+      "Model",
+      "Score",
+      "Compound",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "sheet": "GBM model on merged dataset",
+    "rows": 233,
+    "columns": 3,
+    "first_columns": [
+      "Compound",
+      "MDI",
+      "SHAP"
+    ]
+  },
+  {
+    "sheet": "GBM model with style informatio",
+    "rows": 254,
+    "columns": 3,
+    "first_columns": [
+      "Compound",
+      "MDI",
+      "SHAP"
+    ]
+  }
+]

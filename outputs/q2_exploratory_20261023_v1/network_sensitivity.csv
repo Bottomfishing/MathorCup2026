@@ -1,0 +1,4 @@
+﻿threshold,nodes,edges,positive_edges,negative_edges,isolated_nodes,components,largest_component
+0.5,231,645,629,16,48,52,175
+0.6,231,266,263,3,101,114,99
+0.7,231,109,109,0,150,169,15

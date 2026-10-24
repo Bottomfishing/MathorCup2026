@@ -1,0 +1,37 @@
+{
+  "stage": "P1 exploratory standardized-score baseline",
+  "started_protocol": "configs/baseline_v1.json",
+  "finished_utc": "2026-10-23T15:14:09.785310+00:00",
+  "duration_seconds": 91.27409290000014,
+  "python": "3.12.10",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "sklearn": "1.7.2",
+  "source": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+  "audit": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\p0_audit_20261023_final",
+  "config_sha256": "f63c3594cd0f87431363d544505dbe5ca9863f5c09a39ffebd9d9e5d01763a93",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "audit_mapping_sha256": "b571aebc111ff48d6267eb48623eda87c2204d6450546792a8ff9fcbe08a2787",
+  "code_sha256": {
+    "src\\beer_audit\\__init__.py": "75185430e485b9d5bdf59167948e7f1569423898ad0bc054a068e18ea343b1c8",
+    "src\\beer_audit\\__main__.py": "8a02124383a356c66ee2363a54986548b9f6f67d0d9b14b6cf2ca895f4b1be1a",
+    "src\\beer_audit\\audit.py": "eff1028a86a495d67eed591b90dc180fd2367fd537f8812fb2d5161eac07d6a1",
+    "src\\beer_audit\\checks.py": "c732b0667a68624398a9dd86c2afcef70e1e9c32d01c5cf66d26861a3e252685",
+    "src\\beer_models\\__init__.py": "5e7f187ab71d9d58ff5b1d8d4913b70db0147da187eba69087164953243d1d85",
+    "src\\beer_models\\baseline.py": "61bd9c5f7629a4ab2b532122f68562886f9e721cedabc68b1a04ffefd973092c"
+  },
+  "original_0_6_scale_identified": false,
+  "warnings": [
+    "Exploratory model comparison, not independent evaluation of a post-hoc selected winner.",
+    "Supplied labels were normalized upstream by panelist; original raw scale is unavailable.",
+    "Ridge/PLS hyperparameters selected by inner mean MAE across all 50 targets.",
+    "Fixed tree settings chosen before this run; no outer-fold tuning.",
+    "Random additional missingness is a stress test, not evidence of the real missingness mechanism.",
+    "Style is used for splitting/diagnostics only, not as model input.",
+    "Persisted joblib models are for trusted local use only."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "oof_rows": 62500,
+  "models_reloaded": 15,
+  "target_model_metric_groups_checked": 250,
+  "max_prediction_reload_abs_difference": 3.552713678800501e-15,
+  "train_only_imputation_checked": true,
+  "outer_test_absent_from_inner_cv": true,
+  "source_files_unchanged": true,
+  "scope": "independent metric recomputation and saved-model replay; no full retraining"
+}

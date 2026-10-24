@@ -1,0 +1,16 @@
+[
+  {
+    "file": "README.txt",
+    "url": "https://zenodo.org/api/records/10653704/files/README.txt/content",
+    "published_checksum": "md5:e17db170c85fa4a5c323efb6b17bfd74",
+    "sha256": "d7a7f24e6417512ec89d0af722bd359a981cb8111f59668b0e2d17c9511d7d64",
+    "access_date": "2026-10-23"
+  },
+  {
+    "file": "Supplemental Files and Figure source files.xlsx",
+    "url": "https://zenodo.org/api/records/10653704/files/Supplemental%20Files%20and%20Figure%20source%20files.xlsx/content",
+    "published_checksum": "md5:52645e38d90aafda272532e19e2fea1c",
+    "sha256": "e0a10635c4fbc3c62dc7e06e553cce9fad98c768ea6af5c8adc8a836098d1474",
+    "access_date": "2026-10-23"
+  }
+]

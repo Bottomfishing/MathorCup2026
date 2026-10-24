@@ -1,0 +1,41 @@
+{
+  "seed": 20261023,
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "models": [
+    "mean",
+    "ridge",
+    "pls",
+    "extra_trees",
+    "gradient_boosting"
+  ],
+  "ridge_alphas": [
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "pls_components": [
+    2,
+    5,
+    10
+  ],
+  "extra_trees": {
+    "n_estimators": 300,
+    "min_samples_leaf": 3,
+    "max_features": 0.7
+  },
+  "gradient_boosting": {
+    "n_estimators": 100,
+    "max_depth": 2,
+    "learning_rate": 0.05,
+    "min_samples_leaf": 3
+  },
+  "missing_rates": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "missing_repeats": 3,
+  "scope": "exploratory fixed-protocol baseline; no original 0-6 scale claims"
+}

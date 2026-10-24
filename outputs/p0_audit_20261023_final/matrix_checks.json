@@ -1,0 +1,34 @@
+{
+  "2.csv": {
+    "rows": 231,
+    "columns": 231,
+    "same_ordered_axes": true,
+    "nonfinite": 0,
+    "out_of_bounds": 0,
+    "symmetry_max_abs_error": 0.0,
+    "diagonal_max_abs_error": 0.0,
+    "ambiguous_aliases_excluded": [],
+    "mapped_columns": 231,
+    "unmapped_columns": []
+  },
+  "5.csv": {
+    "rows": 50,
+    "columns": 50,
+    "same_ordered_axes": true,
+    "nonfinite": 0,
+    "out_of_bounds": 0,
+    "symmetry_max_abs_error": 0.0,
+    "diagonal_max_abs_error": 0.0,
+    "ambiguous_aliases_excluded": [],
+    "mapped_columns": 49,
+    "unmapped_columns": [
+      "Overall appreciation\r\n(Trained panel)"
+    ]
+  },
+  "6.csv": {
+    "rows": 44,
+    "columns": 50,
+    "nonfinite": 0,
+    "out_of_bounds": 0
+  }
+}

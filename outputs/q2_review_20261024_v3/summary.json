@@ -1,0 +1,16 @@
+{
+  "source": "Q2 exploratory, not frozen final results",
+  "candidate_rows": 600,
+  "unique_candidate_compounds": 82,
+  "exact_metadata_matches": 78,
+  "metadata_with_flavor_description": 64,
+  "mean_jaccard": {
+    "ridge_vs_forest_jaccard": 0.12200000000000001,
+    "full_vs_analytes_jaccard": 0.59,
+    "global_vs_within_style_jaccard": 0.424
+  },
+  "analytes_targets_nonpositive_r2": 0,
+  "global_top3_with_nonpositive_within_style_importance": 12,
+  "global_top3_median_importance": 0.00540240375352815,
+  "same_candidates_median_within_style_importance": 0.00101483696790785
+}

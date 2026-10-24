@@ -1,0 +1,32 @@
+{
+  "stage": "Q2 exploratory network and association",
+  "finished_utc": "2026-10-23T15:29:57.610799+00:00",
+  "source": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+  "bootstrap_repeats": 200,
+  "alpha": 1000.0,
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "config_sha256": "3f3ac0f70e51110002ede11899c6301bf90536ed162ea11522a762b5305db1b5",
+  "python_versions_reference": "requirements-lock.txt",
+  "code_sha256": {
+    "src\\beer_audit\\__init__.py": "75185430e485b9d5bdf59167948e7f1569423898ad0bc054a068e18ea343b1c8",
+    "src\\beer_audit\\__main__.py": "8a02124383a356c66ee2363a54986548b9f6f67d0d9b14b6cf2ca895f4b1be1a",
+    "src\\beer_audit\\audit.py": "eff1028a86a495d67eed591b90dc180fd2367fd537f8812fb2d5161eac07d6a1",
+    "src\\beer_audit\\checks.py": "c732b0667a68624398a9dd86c2afcef70e1e9c32d01c5cf66d26861a3e252685",
+    "src\\beer_models\\__init__.py": "5e7f187ab71d9d58ff5b1d8d4913b70db0147da187eba69087164953243d1d85",
+    "src\\beer_models\\baseline.py": "85f3918b138109645606cf07369c0369b4c850af52f99d0add9c6e0f222aad35",
+    "src\\beer_models\\explain.py": "cb5a7f679e19d4b98b575f3405abaf22ba3985890a7e170904a388374f3adcb7",
+    "src\\beer_models\\transforms.py": "b9e5baa2a94b94f1ff73a3906aa944b5d3f8be2d43d95212af956a2c1a87d980"
+  },
+  "limitations": [
+    "Full-data descriptive associations; no causal interpretation.",
+    "Ridge alpha fixed; bootstrap frequency is conditional on model and within-style resampling.",
+    "Coefficients measure one SD of transformed input, not original concentration effects.",
+    "Marginal Spearman and adjusted ridge measure different associations.",
+    "Network centrality is not per-target importance; chemical rationale remains unreviewed."
+  ]
+}

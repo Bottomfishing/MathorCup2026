@@ -1,0 +1,4 @@
+﻿method,mean_heldout_wasserstein,mean_variance_ratio,mean_copy_fraction,mean_clipped_fraction
+resample,0.47220117497539926,0.9840367407859983,1.0,0.0
+interpolate,0.48179756289974135,0.6515559670438743,0.0,0.0
+latent_gaussian,0.4640724000560719,0.36466943807786006,0.0,0.24490751672569855

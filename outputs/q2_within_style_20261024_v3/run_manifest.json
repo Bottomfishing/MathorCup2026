@@ -1,0 +1,24 @@
+{
+  "parent": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q2_permutation_20261024_v2",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "config": {
+    "seed": 20261024,
+    "permutation_repeats": 10,
+    "validation_bootstrap_repeats": 200,
+    "group_abs_spearman_threshold": 0.7,
+    "prediction_batch_groups": 16,
+    "variants": [
+      "full",
+      "analytes_only"
+    ],
+    "loss": "absolute_error_per_target",
+    "scope": "exploratory held-out permutation; correlated groups learned only on each training fold; fixed-model validation bootstrap is not training bootstrap"
+  },
+  "script_sha256": "2a1bdda96d59df2c3245d3d77872b38fb45b81cc04bb38a894ccc6e8e52e676a",
+  "permutation_module_sha256": "7ccde72edd079e750ce47e3cca63488624fec63a54add32c2e118547b13f3463",
+  "limitation": "Within-style unconditional permutations; small held-out style cells and frozen singleton cells reduce perturbation. Not causal adjustment."
+}

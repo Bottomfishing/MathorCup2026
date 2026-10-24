@@ -1,0 +1,13 @@
+{
+  "seed": 20261024,
+  "permutation_repeats": 10,
+  "validation_bootstrap_repeats": 200,
+  "group_abs_spearman_threshold": 0.7,
+  "prediction_batch_groups": 16,
+  "variants": [
+    "full",
+    "analytes_only"
+  ],
+  "loss": "absolute_error_per_target",
+  "scope": "exploratory held-out permutation; correlated groups learned only on each training fold; fixed-model validation bootstrap is not training bootstrap"
+}

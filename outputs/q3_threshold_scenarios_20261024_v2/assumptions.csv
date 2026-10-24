@@ -1,0 +1,7 @@
+﻿scenario,field,assumed_source_transform,assumed_unit,threshold,source_url,sheet,excel_row,status
+median,DMS,log10,ug/L,19.0,https://zenodo.org/records/10653704,Sensory thresholds,155,reference_scenario_not_validated_for_matrix_or_style
+median,X2.3.butanedione,identity,mg/L,0.09,https://zenodo.org/records/10653704,Sensory thresholds,127,reference_scenario_not_validated_for_matrix_or_style
+median,X4VG,log10,mg/L,0.2,https://zenodo.org/records/10653704,Sensory thresholds,146,reference_scenario_not_validated_for_matrix_or_style
+mean,DMS,log10,ug/L,17.25,https://zenodo.org/records/10653704,Sensory thresholds,155,reference_scenario_not_validated_for_matrix_or_style
+mean,X2.3.butanedione,identity,mg/L,0.29925,https://zenodo.org/records/10653704,Sensory thresholds,127,reference_scenario_not_validated_for_matrix_or_style
+mean,X4VG,log10,mg/L,0.206333333,https://zenodo.org/records/10653704,Sensory thresholds,146,reference_scenario_not_validated_for_matrix_or_style

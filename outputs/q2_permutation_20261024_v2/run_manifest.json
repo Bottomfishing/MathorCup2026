@@ -1,0 +1,19 @@
+{
+  "finished_utc": "2026-10-24T01:35:45.429553+00:00",
+  "source": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+  "baseline": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\p1_baseline_20261023_v1",
+  "previous_q2": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q2_exploratory_20261023_v1",
+  "config_sha256": "f92fba2258f16d31005e58a8403b894f394f505f157ae330371cac44e07d4d97",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "limitations": [
+    "Extra Trees chosen after P1 exploration; not independent model selection confirmation.",
+    "Unconditional permutations can produce unrealistic combinations; grouped permutation only preserves within-group dependence.",
+    "Fixed-model validation resampling measures sample sensitivity; not training/model-selection uncertainty and not causal confidence intervals.",
+    "Training-only groups differ by fold and their importances must not be naively pooled as identical groups.",
+    "Signed importance is error increase, not the direction of a chemical effect."
+  ]
+}

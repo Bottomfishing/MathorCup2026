@@ -1,0 +1,4 @@
+﻿fold,model_path,model_sha256,n_train,n_test,correlation_groups,multi_member_groups
+0,C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\outputs\q2_permutation_20261024_v2\analytes_only\model_fold0.joblib,e1867e387cd0c6f83cc17af6e8da0e49e75a31be23886c3fa7854216d3275f20,166,84,185,27
+1,C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\outputs\q2_permutation_20261024_v2\analytes_only\model_fold1.joblib,e63a058d2b14033495808914d01bc2c321132821790744715438b0cfab31a9d2,167,83,182,28
+2,C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\outputs\q2_permutation_20261024_v2\analytes_only\model_fold2.joblib,361d1f6815ff3a52862090fd75079ce4013f9eb8a7c64b0a110231d41b99098d,167,83,185,23

@@ -1,0 +1,17 @@
+{
+  "started_at_utc": "2026-10-23T15:01:51.872388+00:00",
+  "source": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+  "output": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\p0_audit_20261023_final",
+  "python": "3.12.14",
+  "pandas": "3.0.1",
+  "numpy": "2.3.5",
+  "openpyxl": "3.1.5",
+  "code_sha256": {
+    "src\\beer_audit\\__init__.py": "75185430e485b9d5bdf59167948e7f1569423898ad0bc054a068e18ea343b1c8",
+    "src\\beer_audit\\__main__.py": "8a02124383a356c66ee2363a54986548b9f6f67d0d9b14b6cf2ca895f4b1be1a",
+    "src\\beer_audit\\audit.py": "eff1028a86a495d67eed591b90dc180fd2367fd537f8812fb2d5161eac07d6a1",
+    "src\\beer_audit\\checks.py": "c732b0667a68624398a9dd86c2afcef70e1e9c32d01c5cf66d26861a3e252685"
+  },
+  "stage": "P0 audit only; no models trained",
+  "ai_assistance": "OpenAI Codex (GPT-6), 2026-10-23"
+}

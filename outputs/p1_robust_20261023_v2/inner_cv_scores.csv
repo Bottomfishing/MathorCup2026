@@ -1,0 +1,22 @@
+﻿fold,model,parameters,mean_validation_mae,selected
+0,ridge_asinh,"{""model__alpha"": 1.0}",0.468769755948156,False
+0,ridge_asinh,"{""model__alpha"": 10.0}",0.43256964790540997,False
+0,ridge_asinh,"{""model__alpha"": 100.0}",0.36949116709114677,False
+0,ridge_asinh,"{""model__alpha"": 1000.0}",0.36467724564772286,True
+0,pls_asinh,"{""model__n_components"": 2}",0.38815637052229646,False
+0,pls_asinh,"{""model__n_components"": 5}",0.3684541009155209,True
+0,pls_asinh,"{""model__n_components"": 10}",0.37219822244147244,False
+1,ridge_asinh,"{""model__alpha"": 1.0}",0.4811942792569681,False
+1,ridge_asinh,"{""model__alpha"": 10.0}",0.4433638322844209,False
+1,ridge_asinh,"{""model__alpha"": 100.0}",0.37643833851942965,False
+1,ridge_asinh,"{""model__alpha"": 1000.0}",0.37260533958552017,True
+1,pls_asinh,"{""model__n_components"": 2}",0.39106531029279157,False
+1,pls_asinh,"{""model__n_components"": 5}",0.3767321138763767,True
+1,pls_asinh,"{""model__n_components"": 10}",0.37678223575899433,False
+2,ridge_asinh,"{""model__alpha"": 1.0}",0.47717882571775505,False
+2,ridge_asinh,"{""model__alpha"": 10.0}",0.4412302853212422,False
+2,ridge_asinh,"{""model__alpha"": 100.0}",0.3719019095695843,False
+2,ridge_asinh,"{""model__alpha"": 1000.0}",0.363817755032529,True
+2,pls_asinh,"{""model__n_components"": 2}",0.3767970994507436,False
+2,pls_asinh,"{""model__n_components"": 5}",0.365291258672842,True
+2,pls_asinh,"{""model__n_components"": 10}",0.37163387265584125,False

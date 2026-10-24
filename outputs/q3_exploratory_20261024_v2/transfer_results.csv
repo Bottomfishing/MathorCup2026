@@ -1,0 +1,12 @@
+﻿beer,source_style,target_style,selected_candidate_id,diagnostic_candidate_id,candidate_method,status,n_sampled_screen_passed,physical_constraints_certified,source_missing_screen_fields,diagnostic_target_distance,diagnostic_change_distance,source_target_distance,objective
+124,Pils/Lager,Tripel,,transfer_candidate_1335,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.25332805214784493,0.7489125565246698,0.8109911182837863,0.4020034034608924
+81,Pils/Lager,Tripel,,transfer_candidate_1076,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.24611753886282794,0.7258788708230642,0.7725857121647782,0.39004593845089885
+218,Pils/Lager,Tripel,,transfer_candidate_1076,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.24611753886282794,0.711497975780886,0.7405791076932416,0.38573166993824537
+96,Pils/Lager,Tripel,,transfer_candidate_1076,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.24611753886282794,0.8284211983368642,0.8943898972779873,0.4208086367050389
+230,Pils/Lager,Tripel,,transfer_candidate_1076,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.24611753886282794,0.7821731095086445,0.8242575674392044,0.40693421005657293
+185,Pils/Lager,Tripel,,transfer_candidate_1076,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.24611753886282794,0.725382374571832,0.7963433188877967,0.38989698957552915
+139,Pils/Lager,Tripel,,transfer_candidate_1076,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.24611753886282794,0.7584453227345261,0.8036454460286288,0.3998158740243374
+209,Pils/Lager,Tripel,,transfer_candidate_1076,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.24611753886282794,0.7588810204744088,0.8673815186160805,0.3999465833463022
+119,Pils/Lager,Tripel,,transfer_candidate_1657,latent_gaussian,source_protected_value_missing,0,False,1,0.2480121501957407,0.6160611678254968,0.690120501969071,0.3584268554846676
+90,Pils/Lager,Tripel,,transfer_candidate_1505,latent_gaussian,no_sampled_candidate_passed,0,False,0,0.26043584158811434,0.7163832275658988,0.790837131677046,0.3972200573814497
+28,Pils/Lager,Tripel,,transfer_candidate_1524,latent_gaussian,source_protected_value_missing,0,False,1,0.2484500928935978,0.7398197322714536,0.7805078223699762,0.3958609847069546

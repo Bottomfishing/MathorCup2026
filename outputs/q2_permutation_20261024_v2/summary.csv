@@ -1,0 +1,3 @@
+﻿variant,n_features,median_top3_validation_frequency,primary_macro_mae,primary_macro_r2
+full,231,0.745,0.34185210699800594,0.20993304496254422
+analytes_only,219,0.825,0.3495623137811039,0.18838979878062245

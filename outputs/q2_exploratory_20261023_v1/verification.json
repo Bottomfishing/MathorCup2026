@@ -1,0 +1,16 @@
+{
+  "tests_passed": 27,
+  "top3_rows": 150,
+  "bootstrap_selection_rows": 30000,
+  "bootstrap_draw_shape": [
+    200,
+    250
+  ],
+  "frequency_recomputed": true,
+  "style_counts_preserved": true,
+  "sources_unchanged": true,
+  "median_top3_frequency": 0.3825,
+  "mean_method_jaccard": 0.23199999999999996,
+  "top3_rows_frequency_below_half": 93,
+  "limitation": "No saved-model replay; chemistry rationale and nonlinear importance not yet checked."
+}

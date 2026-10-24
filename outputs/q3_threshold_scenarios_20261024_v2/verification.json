@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "source_scenario_pairs": 22,
+  "selected_diagnostic_checks": 110,
+  "candidate_constraints_per_scenario_source": 2000,
+  "physical_certification": false
+}

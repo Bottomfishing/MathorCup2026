@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "variants": [
+    "full",
+    "analytes_only"
+  ],
+  "models_replayed": 6,
+  "individual_feature_fold_replays": 18,
+  "group_fold_replays": 6,
+  "metrics_recomputed": 100,
+  "train_only_imputation_and_correlations": true,
+  "bootstrap_draws_and_counts_recomputed": true,
+  "full_oof_matches_P1": true,
+  "source_files_unchanged": true,
+  "scope": "All metrics, bootstrap summaries and saved predictions checked; selected permutation replay; no complete retraining."
+}

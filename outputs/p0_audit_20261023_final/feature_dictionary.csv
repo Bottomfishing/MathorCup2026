@@ -1,0 +1,232 @@
+﻿field_name_R,field_name_python,chemical_name,chemical_name_short,calibrated,origin_paper,unit,aging,off_flavors,threshold_mean,threshold_median,alias_status,transform_status,candidate_transform,role,unit_status
+acetaldehyde,acetaldehyde,Acetaldehyde,Acetaldehyde,yes,Yeast,mg/L,increase,"pungent, rotten-apples, green apple",50.0,50.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+CS2,CS2,Carbon disulfide,Carbon disulfide,yes,Yeast,ug/L,,,50.0,50.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+DES,DES,Diethyl sulfide,Diethyl sulfide,yes,Yeast,ug/L,,rotting vegetables,1.2,1.2,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+DMS,DMS,Dimethyl sulfide,Dimethyl sulfide,yes,Malt,ug/L,increase,"cooked vegetables, onion, garlic, corn, black currant, sulfidic, cabbage, tinned tomato, baked beans",17.25,19.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl_2.methyl_butyrate,ethyl 2-methyl butyrate,Ethyl 2-methylbutyrate,Ethyl 2-methylbutyrate,yes_gcms,Others,mg/L,increase,,0.027,0.027,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl_acetate,ethyl acetate,Ethyl acetate,Ethyl acetate,yes,Yeast,mg/L,decrease,,24.0,23.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl_decanoate,ethyl decanoate,Ethyl decanoate,Ethyl decanoate,"yes_gcms, yes",Yeast,mg/L,decrease,,1.035,1.035,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl_hexanoate,ethyl hexanoate,Ethyl hexanoate,Ethyl hexanoate,"yes_gcms,yes",Yeast,mg/L,decrease,,0.23,0.225,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl_isovalerate,ethyl isovalerate,Ethyl 3-methylbutyrate,Ethyl 3-methylbutyrate,"yes_gcms,yes",Others,mg/L,increase,,0.1,0.1,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl_octanoate,ethyl octanoate,Ethyl octanoate,Ethyl octanoate,"yes_gcms, yes",Yeast,mg/L,decrease,,0.7,0.75,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl_propionate,ethyl propionate,Ethyl propionate,Ethyl propionate,"yes_gcms, yes",Yeast,mg/L,,,10.0,10.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+H2S,H2S,Hydrogen sulfide,Hydrogen sulfide,yes,Yeast,ug/L,,"sulfidic, rotten eggs",3.5,3.5,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+isoamyl_alcohol,isoamyl alcohol,Isoamyl alcohol,Isoamyl alcohol,"yes_gcms,yes",Yeast,mg/L,,,40.015,45.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+isobutanol,isobutanol,Isobutanol,Isobutanol,"yes_gcms,yes",Yeast,mg/L,increase,,80.0,100.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+isobutyl_acetate,isobutyl acetate,Isobutyl acetate,Isobutyl acetate,"yes_gcms,yes",Yeast,mg/L,,,1.0,1.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+isopentyl_acetate,isopentyl acetate,Isoamyl acetate,Isoamyl acetate,"yes_gcms,yes",Yeast,mg/L,decrease,,0.603333333,0.6,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+MeSH,MeSH,Methanethiol,Methanethiol,yes,Yeast,ug/L,,"putrefaction, drains, rotting vegetables, estery",,,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+octyl_acetate,octyl acetate,Octyl acetate,Octyl acetate,"yes_gcms,yes",Yeast,mg/L,,,0.5,0.5,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+phenethyl_acetate,phenethyl acetate,Phenethyl acetate,Phenethyl acetate,"yes_gcms,yes",Yeast,mg/L,,,1.763333333,1.29,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+phenethyl_alcohol,phenethyl alcohol,Phenethyl alcohol,Phenethyl alcohol,"yes_gcms, yes",Yeast,mg/L,,,35.01,32.5,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X4VG,X4VG,4-vinylguaiacol,4-vinylguaiacol,yes_gcms,Yeast,mg/L,,,0.206333333,0.2,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+SO2.mg.L.,SO2-mg.L.,Sulfur dioxide,Sulfur dioxide,yes,Yeast,mg/L,,Burnt matches,15.33333333,11.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+acetic_acid.g.L.,acetic acid.g.L.,Acetic acid,Acetic acid,yes,Wild flora,g/L,,,0.14025,0.145,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ammonia.mg.L.,ammonia,Ammonia,Ammonia,yes,Malt,mg/L,,,2.6,2.6,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+color.EBC.,color.EBC.,Color,Color,yes,Malt,EBC,,,,,both,positive_pairs_match,log10,physical_or_bulk_parameter,reference_unit_not_automatically_source_unit
+betaglucan.mg.L.,betaglucan,Betaglucan,Betaglucan,yes,Malt,mg/L,,,,,both,positive_pairs_match,log10,physical_or_bulk_parameter,reference_unit_not_automatically_source_unit
+lactic_acid.mg.L.,lactic acid,Lactic acid,Lactic acid,yes,Wild flora,mg/L,,,416.6666667,400.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+glycerol,glycerol,Glycerol,Glycerol,yes,Yeast,g/L,,,4.433333333,2.0,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+iron,iron,Iron,Iron,yes,Others,mg/L,,,0.1,0.1,both,positive_pairs_match,log10,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+pH,pH,pH,pH,yes,Others,pH,,,,,both,positive_pairs_match,log10,physical_or_bulk_parameter,reference_unit_not_automatically_source_unit
+protein.g.L.,protein.g.L.,Protein,Protein,yes,Others,g/L,,,1.023933,0.846,both,positive_pairs_match,log10,physical_or_bulk_parameter,reference_unit_not_automatically_source_unit
+bitterness,bitterness,Iso-alpha acids,Iso-alpha acids,yes,Hops,IBU,,,5.0,5.0,both,positive_pairs_match,log10,physical_or_bulk_parameter,reference_unit_not_automatically_source_unit
+GFS,GFS,Sugars,Sugars,yes,Malt,g/L,,,2.9,2.9,both,positive_pairs_match,log10,aggregate_candidate_verify_definition,reference_unit_not_automatically_source_unit
+ethanol..v.v.,ethanol..v.v.,Ethanol,Ethanol,yes,Yeast,v/v,,,1.757256,1.737199,both,positive_pairs_match,log10,physical_or_bulk_parameter,reference_unit_not_automatically_source_unit
+CO2.PSI.,CO2-PSI.,Carbon dioxide,Carbon dioxide,yes,Others,PSI,,,,,both,positive_pairs_match,log10,physical_or_bulk_parameter,reference_unit_not_automatically_source_unit
+unfermentables,unfermentables,Unfermentables,Unfermentables,yes,Malt,,,,,,both,positive_pairs_match,log10,aggregate_candidate_verify_definition,unknown
+kcalperc,kcalperc,Caloric value,Caloric value,yes,Others,kcal%,,,,,both,positive_pairs_match,log10,aggregate_candidate_verify_definition,reference_unit_not_automatically_source_unit
+X1.propanol,1-propanol,1-propanol,1-propanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.3.butanedione,"2,3-butanedione",Diacetyl,Diacetyl,yes_gcms,Yeast,mg/L,increase,"butterscotch, popcorn, oily, milky",0.29925,0.09,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X3.methylbutanal,3-methylbutanal,3-methylbutanal,3-methylbutanal,,Malt,A.U.,increase,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+propylene.glycol,propylene glycol,Propylene glycol,Propylene glycol,,Others,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+propyl.acetate,propyl acetate,N-propyl acetate,N-propyl acetate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+n.pentanol,n-pentanol,N-pentanol,N-pentanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.methyl.1.butanol,2-methyl-1-butanol,2-methyl-1-butanol,2-methyl-1-butanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+isopentyl.formate,isopentyl-formate,Isopentyl formate,Isopentyl formate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.isobutyrate,ethyl isobutyrate,Ethyl isobutyrate,Ethyl isobutyrate,yes_gcms,Yeast,mg/L,,,2.6,2.6,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X3.methyl.2.butenal,3-methyl-2-butenal,3-methyl-2-butenal,3-methyl-2-butenal,,Internal standard solution,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,2-methyltetrahydrofuran-3-one,2-methyltetrahydrofuran-3-one,yes_gcms,Malt,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl.butyrate,ethyl butyrate,Ethyl butyrate,Ethyl butyrate,yes_gcms,Yeast,mg/L,,,0.45,0.45,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+butyl.acetate,butyl acetate,Butyl acetate,Butyl acetate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+methylpyrazine,methylpyrazine,Methylpyrazine,Methylpyrazine,yes_gcms,Malt,mg/L,,,1.0,1.0,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+furfural,furfural,Furfural,Furfural,yes_gcms,Malt,mg/L,increase,,60.0,37.5,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl.lactate,ethyl lactate,Ethyl lactate,Ethyl lactate,,Others,,increase,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X3Z.hexenol,3Z-hexenol,Cis-3-hexenol,Cis-3-hexenol,yes_gcms,Hops,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+n.hexanol,n-hexanol,N-hexanol,N-hexanol,yes_gcms,Yeast,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+styrene,styrene,Styrene,Styrene,yes_gcms,Yeast,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X2.furanmethanol,2-furanmethanol,Furfuryl alcohol,Furfuryl alcohol,,Others,,increase,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X3.methyl.2.hexanol,3-methyl-2-hexanol,3-methyl-2-hexanol,3-methyl-2-hexanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X3.furanmethanol,3-furanmethanol,3-furanmethanol,3-furanmethanol,,Malt,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.acetylfuran,2-acetylfuran,2-acetylfuran,2-acetylfuran,,Malt,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.6.dimethyl.pyrazine,"2,6-dimethyl-pyrazine","2,6-dimethylpyrazine","2,6-dimethylpyrazine",,Malt,A.U.,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+amyl.acetate,amyl acetate,Amyl acetate,Amyl acetate,yes_gcms,Yeast,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl.tiglate,ethyl tiglate,Ethyl tiglate,Ethyl tiglate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+benzaldehyde,benzaldehyde,Benzaldehyde,Benzaldehyde,yes_gcms,Yeast,mg/L,increase,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X5.methylfurfural,5-methylfurfural,5-methylfurfural,5-methylfurfural,yes_gcms,Malt,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+n.heptanol,n-heptanol,N-heptanol,N-heptanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X1.octen.3.ol,1-octen-3-ol,1-octen-3-ol,1-octen-3-ol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X3.methylthio.propanol,3-methylthio-propanol,Methionol,Methionol,,Others,,increase,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+isomaltol,isomaltol,Isomaltol,Isomaltol,,Malt,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X6.methyl.5.hepten.2.one,6-methyl-5-hepten-2-one,Methyl heptenone,Methyl heptenone,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.pentyl.furan,2-pentyl furan,2-pentyl furan,2-pentyl furan,,Malt,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.hex..3E..enoate,ethyl-hex-(3E)-enoate,Ethyl 3-hexanoate,Ethyl 3-hexanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+alpha.phellandrene,alpha-phellandrene,Î±-phellandrene,Î±-phellandrene,,Hops,A.U.,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+dehydroxy.cis.linalool.oxide,dehydroxy-cis-linalool oxide,Dehydroxy-cis-linalool oxide,Dehydroxy-cis-linalool oxide,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+hexyl.acetate,hexyl acetate,Hexyl acetate,Hexyl acetate,yes_gcms,Yeast,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+isopentyl.butanoate,isopentyl butanoate,Isopentyl butanoate,Isopentyl butanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.ethyl.1.hexanol,2-ethyl-1-hexanol,2-ethyl-1-hexanol,2-ethyl-1-hexanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+beta.phellandrene,beta-phellandrene,Beta-phellandrene,Î²-phellandrene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+limonene,limonene,Limonene,Limonene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+eucalyptol,eucalyptol,Eucalyptol,Eucalyptol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+benzyl.alcohol,benzyl alcohol,Benzyl alcohol,Benzyl alcohol,yes_gcms,Hops,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl.hex..2E..enoate,ethyl-hex-(2E)-enoate,Ethyl 2-hexenoate,Ethyl 2-hexenoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+phenylacetaldehyde,phenylacetaldehyde,Phenylacetaldehyde,Phenylacetaldehyde,yes_gcms,Others,mg/L,increase,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X.E..beta.ocimene,(E)-beta-ocimene,E-Î²-ocimene,E-Î²-ocimene,yes_gcms,Hops,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+prenyl.isobutyrate,prenyl isobutyrate,Prenyl isobutyrate,Prenyl isobutyrate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.furoate,ethyl furoate,Ethyl furoate,Ethyl furoate,,Malt,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ortho.cresol,ortho-cresol,O-cresol,O-cresol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.5.methylhexanoate,ethyl 5-methylhexanoate,Ethyl 5-methylhexanoate,Ethyl 5-methylhexanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.acetylpyrrole,2-acetylpyrrole,2-acetylpyrrole,2-acetylpyrrole,,Malt,A.U.,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+isoamyl.lactate,isoamyl lactate,Isoamyl lactate,Isoamyl lactate,,Wild flora,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+n.octanol,n-octanol,N-octanol,N-octanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+cis.linalool.oxide,cis-linalool oxide,Cis-linalool oxide,Cis-linalool oxide,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+meta.cymenene,meta-cymenene,Meta-cymenene,Meta-cymenene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+terpinolene,terpinolene,Terpinolene,Terpinolene,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+linalool,linalool,Linalool,Linalool,yes_gcms,Hops,mg/L,decrease,,0.027285,0.0045,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+nonan.2.ol,nonan-2-ol,2-nonanol,2-nonanol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+n.nonanal,n-nonanal,N-nonanal,N-nonanal,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.methyl.benzofuran,2-methyl-benzofuran,2-methyl-benzofuran,2-methyl-benzofuran,,Malt,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+heptyl.acetate,heptyl acetate,Heptyl acetate,Heptyl acetate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X4.methyl.1.pentanol,4-methyl-1-pentanol,4-methyl-1-pentanol,4-methyl-1-pentanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+neo.allo.ocimene,neo-allo-ocimene,Neo-allo-ocimene,Neo-allo-ocimene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+x.methyl.1.octanol,x-methyl-1-octanol,X-methyl-1-octanol,X-methyl-1-octanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+trans.dihydro.beta.terpineol,trans-dihydro-beta-terpineol,Trans-dihydro-Î²-terpineol,Trans-dihydro-Î²-terpineol,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+cis.beta.terpineol,cis-beta-terpineol,Cis-Î²-terpineol,Cis-Î²-terpineol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+y.methyl.1.octanol,y-methyl-1-octanol,Y-methyl-1-octanol,Y-methyl-1-octanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+camphor,camphor,Camphor,Camphor,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+isobutyl.hexanoate,isobutyl-hexanoate,Isobutyl hexanoate,Isobutyl hexanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+nerol.oxide,nerol oxide,Nerol oxide,Nerol oxide,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.E..2.nonenal,(E)-2-nonenal,E-2-nonenal,E-2-nonenal,yes_gcms,Others,mg/L,increase,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+cis.dihydro.beta.terpineol,cis-dihydro-beta-terpineol,Cis-dihydro-Î²-terpineol,Cis-dihydro-Î²-terpineol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X4.ethyl.phenol,4-ethyl-phenol,4-ethyl-phenol,4-ethyl-phenol,,Wild flora,A.U.,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+isoborneol,isoborneol,Isoborneol,Isoborneol,,Others,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.benzoate,ethyl benzoate,Ethyl benzoate,Ethyl benzoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+n.nonanol,n-nonanol,N-nonanol,N-nonanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+terpinen.4.ol,terpinen-4-ol,Terpinen-4-ol,Terpinen-4-ol,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+diethyl.succinate,diethyl succinate,Diethyl succinate,Diethyl succinate,yes_gcms,Yeast,mg/L,,,,,both,positive_pairs_match,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+vinyl.caprylate,vinyl caprylate,Vinyl caprylate,Vinyl caprylate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X1.alpha.terpineol,1-alpha-terpineol,Alpha-terpineol,Î±-terpineol,yes_gcms,Hops,mg/L,,,1.5,1.5,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl..E..linalool,ethyl-(E)-linalool,Ethyl linalool,Ethyl linalool,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.nicotinate,ethyl nicotinate,Ethyl nicotinate,Ethyl nicotinate,yes_gcms,Others,mg/L,increase,,6.0,6.0,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+citronellol,citronellol,Citronellol,Citronellol,yes_gcms,Hops,mg/L,,,0.0245,0.0245,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+nerol,nerol,Nerol,Nerol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+hydroxy.methyl.furfural,hydroxy methyl furfural,5-hydroxymethylfurfural,5-hydroxymethylfurfural,,Malt,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+E.ocimenone,E-ocimenone,Ocimenone,Ocimenone,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+cumin.aldehyde,cumin aldehyde,Cumin aldehyde,Cumin aldehyde,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.phenylacetate,ethyl-phenylacetate,Ethyl phenylacetate,Ethyl phenylacetate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+isopentyl.hexanoate,isopentyl-hexanoate,Isopentyl hexanoate,Isopentyl hexanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+geraniol,geraniol,Geraniol,Geraniol,yes_gcms,Hops,mg/L,decrease,,0.0315,0.023,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+beta.cyclohomocitral,beta-cyclohomocitral,Î²-cyclohomocitral,Î’-cyclohomocitral,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+E.cinnamaldehyde,E-cinnamaldehyde,Cinnamaldehyde,Cinnamaldehyde,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+n.decanol,n-decanol,N-decanol,N-decanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+neryl.formate,neryl formate,Neryl formate,Neryl formate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X4.ethyl.guaiacol,4-ethyl-guaiacol,4-ethyl-guaiacol,4-ethyl-guaiacol,,Wild flora,A.U.,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X2.undecanone,2-undecanone,2-undecanone,2-undecanone,,Hops,A.U.,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+trans.dihydro.alpha.terpinyl.acetate,trans-dihydro-alpha-terpinyl acetate,Trans-dihydro-Î±-terpinyl acetate,Trans-dihydro-Î±-terpinyl acetate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+terpinen.4.ol.acetate,terpinen-4-ol acetate,Terpinen-4-ol acetate,Terpinen-4-ol acetate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.undecanol,2-undecanol,2-undecanol,2-undecanol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+delta.terpinyl.acetate,delta-terpinyl acetate,Terpiryl acetate,Terpiryl acetate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.E.E..2.4.decadienal,"(E,E)-2,4-decadienal","E,E-2,4-decadienal","E,E-2,4-decadienal",yes_gcms,Others,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+methyl.geranate,methyl geranate,Methyl geranate,Methyl geranate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+car.3.en.2.one,car-3-en-2-one,Car-3-en-2-one,Car-3-en-2-one,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+dimethoxy..E..citral,dimethoxy-(E)-citral,Dimethoxy-E-citral,Dimethoxy-E-citral,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.butyloctanoate,2-butyloctanoate,2-butyl octanoate,2-butyl octanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X4.methoxysalicylaldehyde,4-methoxysalicylaldehyde,4-methoxysalicylaldehyde,4-methoxysalicylaldehyde,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.hydrocinnamate,ethyl-hydrocinnamate,Ethyl hydrocinnamate,Ethyl hydrocinnamate,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+eugenol,eugenol,Eugenol,Eugenol,yes_gcms,Spices,mg/L,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+gamma.nonalactone,gamma-nonalactone,Gamma-nonalactone,Gamma-nonalactone,yes_gcms,Yeast,mg/L,increase,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+methyl.para.anisate,methyl para-anisate,Methyl para-anisate,Methyl para-anisate,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.E..beta.damascenone,(E)-beta-damascenone,E-Î²-damascenone,E-Î²-damascenone,yes_gcms,Hops,mg/L,increase,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+ethyl..9..decenoate,ethyl-(9)-decenoate,Ethyl 9-decenoate,Ethyl 9-decenoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+vanillin,vanillin,Vanillin,Vanillin,,Others,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+geosmin,geosmin,Geosmin,Geosmin,,Wild flora,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+dodecanal,dodecanal,Dodecanal,Dodecanal,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X4.8.alpha.epoxy.caryophyllane,"4,8-alpha-epoxy-caryophyllane","4,8-Î±-epoxy-caryophyllane","4,8-Î±-epoxy-caryophyllane",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+E.caryophyllene,E-caryophyllene,Caryophyllene,Caryophyllene,yes_gcms,Hops,mg/L,,,0.28,0.23,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X.E..alpha.ionone,(E)-alpha-ionone,E-Î±-ionone,E-Î±-ionone,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+perillyl.acetate,perillyl acetate,Perillyl acetate,Perillyl acetate,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+beta.humulene,beta-humulene,Î²-humulene,Î²-humulene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.phenyl.ethyl.butyrate,2-phenyl ethyl butyrate,2-phenyl ethyl butyrate,2-phenyl ethyl butyrate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.Z..beta.farnesene,(Z)-beta-farnesene,Z-Î²-farnesene,Z-Î²-farnesene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+pentyl.octanoate,pentyl-octanoate,Pentyl octanoate,Pentyl octanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.E..beta.farnesene,(E)-beta-farnesene,E-Î²-farnesene,E-Î²-farnesene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.methylbutyl.octanoate,2-methylbutyl octanoate,2-methylbutyl octanoate,2-methylbutyl octanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+alpha.humulene,alpha-humulene,Alpha-humulene,Î±-humulene,yes_gcms,Hops,mg/L,,,0.625,0.625,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+neryl.propanoate,neryl propanoate,Neryl propanoate,Neryl propanoate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X9.epi..E..caryophyllene,9-epi-(E)-caryophyllene,9-epi-E-caryophyllene,9-epi-E-caryophyllene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl..E..cinnamate,ethyl-(E)-cinnamate,Ethyl cinnamate,Ethyl cinnamate,,Others,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+linalool.isovalerate,linalool isovalerate,Linalool isovalerate,Linalool isovalerate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+alpha.terpinyl.isobutanoate,alpha-terpinyl isobutanoate,Î±-terpinyl isobutanoate,Î±-terpinyl isobutanoate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+n.dodecanol,n-dodecanol,N-dodecanol,N-dodecanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+germacrene.D,germacrene D,Germacrene D,Germacrene D,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.E..beta.ionone,(E)-beta-ionone,E-Î²-ionone,E-Î²-ionone,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+valencene,valencene,Valencene,Valencene,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+neryl.isobutanoate,neryl isobutanoate,Neryl isobutanoate,Neryl isobutanoate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+E.methyl.isoeugenol,E-methyl isoeugenol,Methyl isoeugenol,Methyl isoeugenol,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.Z..dihydro.apofarnesal,(Z)-dihydro-apofarnesal,Z-dihydro-apofarnesal,Z-dihydro-apofarnesal,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+butylated.hydroxytoluene,butylated hydroxytoluene,Butylated hydroxytoluene,Butylated hydroxytoluene,,Others,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X.E..dihydro.apofarnesal,(E)-dihydro-apofarnesal,E-dihydro-apofarnesal,E-dihydro-apofarnesal,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+Z.nerolidol,Z-nerolidol,Z-nerolidol,Z-nerolidol,yes_gcms,Hops,mg/L,,,25.0,25.0,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X.E..ortho.methoxy.cinnamaldehyde,(E)-ortho-methoxy cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+alpha.calacorene,alpha-calacorene,Î±-calacorene,Î±-calacorene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+E.nerolidol,E-nerolidol,E-nerolidol,E-nerolidol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+dihydroisocaryophyllene.epoxide,dihydroisocaryophyllene epoxide,Tobacarol,Tobacarol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+caryophyllene.alcohol,caryophyllene alcohol,Caryophyllene alcohol,Caryophyllene alcohol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+neryl.isovalerate,neryl isovalerate,Neryl isovalerate,Neryl isovalerate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+spathulenol,spathulenol,Spathulenol,Spathulenol,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+caryophyllene.oxide,caryophyllene oxide,Caryophyllene oxide,Caryophyllene oxide,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+humulene.epoxide.II,humulene epoxide II,Humulene epoxide II,Humulene epoxide II,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+alloaromadendrene.epoxide,alloaromadendrene epoxide,Allo-aromadendrene epoxide,Allo-aromadendrene epoxide,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X1.10.di.epi.cubenol,"1,10-di-epi-cubenol",Epicubenol,Epicubenol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+isopropyl.laurate,isopropyl laurate,Isopropyl laurate,Isopropyl laurate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+caryophylla.4.12..8.13..dien.5.alpha.ol,"caryophylla-4(12),8(13)-dien-5-alpha-ol","Caryophylla-4,8-dien-5-ol","Caryophylla-4,8-dien-5-ol",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+gamma.eudesmol,gamma-eudesmol,Gamma-eudesmol,Gamma-eudesmol,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+alpha.muurolol,alpha-muurolol,Î±-muurolol,Î±-muurolol,,Hops,A.U.,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+X1.2.dihydro.8.hydroxy..2E..linalool,"1,2-dihydro-8-hydroxy-(2E)-linalool","1,2-dihydro-8-hydroxy-2E-linalool","1,2-dihydro-8-hydroxy-2E-linalool",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+tau.cadinol,tau-cadinol,Tau-cadinol,Tau-cadinol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+selin.11.en.4.alpha.ol,selin-11-en-4-alpha-ol,Kongol,Kongol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+alpha.eudesmol,alpha-eudesmol,Î±-eudesmol,Î±-eudesmol,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X14.hydroxy.9.epi..E..caryophyllene,14-hydroxy-9-epi-(E)-caryophyllene,14-hydroxy-9-epi-(E)-caryophyllene,14-hydroxy-9-epi-(E)-caryophyllene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+tau.muurolol,tau-muurolol,Tau-muurolol,Tau-muurolol,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+n.tetradecanol,n-tetradecanol,N-tetradecanol,N-tetradecanol,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+foeniculin,foeniculin,Eoeniculin,Eoeniculin,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+cadalene,cadalene,Cadalene,Cadalene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.3.dihydro.farnesol,"2,3-dihydro-farnesol","2,3-dihydro-farnesol","2,3-dihydro-farnesol",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2E.6Z.farnesal,"2E,6Z-farnesal","E,Z-farnesal","E,Z-farnesal",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+caryophyllene.acetate,caryophyllene acetate,Caryophyllene acetate,Caryophyllene acetate,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X14.hydroxy.alpha.humulene,14-hydroxy-alpha-humulene,14-hydroxy-Î±-humulene,14-hydroxy-Î±-humulene,,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2Z.6E.farnesal,"2Z,6E-farnesal","Z,E-farnesal","Z,E-farnesal",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2Z.6Z.farnesol,"2Z,6Z-farnesol","Z,Z-farnesol","Z,Z-farnesol",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2Z.6E.farnesol,"2Z,6E-farnesol","Z,E-farnesol","Z,E-farnesol",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ambroxide,ambroxide,Ambroxide,Ambroxide,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+benzyl.benzoate,benzyl benzoate,Benzyl benzoate,Benzyl benzoate,,Others,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2E.6E.methyl.farnesoate,"2E,6E-methyl farnesoate","2E,6E-methyl farnesoate","2E,6E-methyl farnesoate",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.tetradecanoate,ethyl tetradecanoate,Ethyl tetradecanoate,Ethyl tetradecanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X2.ethylhexylsalicylate,2-ethylhexylsalicylate,2-ethylhexyl acrylate,2-ethylhexyl acrylate,,Others,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+isopropyl.tetradecanoate,isopropyl-tetradecanoate,Isopropyl tetradecanoate,Isopropyl tetradecanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.pentadecanoate,ethyl pentadecanoate,Ethyl pentadecanoate,Ethyl pentadecanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+methyl.hexadecanoate,methyl hexadecanoate,Methyl hexadecanoate,Methyl hexadecanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+Z.Z.geranyl.linalool,"Z,Z-geranyl linalool","Z,Z-geranyl linalool","Z,Z-geranyl linalool",,Hops,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.hexadecanoate,ethyl hexadecanoate,Ethyl hexadecanoate,Ethyl hexadecanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+manool.oxide,manool oxide,Manool oxide,Manool oxide,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+X13.epi.manool.oxide,13-epi-manool oxide,13-epi manool oxide,13-epi manool oxide,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+isopropyl.hexadecanoate,isopropyl hexadecanoate,Isopropyl hexadecanoate,Isopropyl hexadecanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+manool,manool,Manool,Manool,,Spices,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.octadecanoate,ethyl octadecanoate,Ethyl octadecanoate,Ethyl octadecanoate,,Yeast,,,,,,both,not_checked_no_calibrated_pair,,chemical_or_other_measurement_verify_definition,unknown
+ethyl.pentanoate,ethyl pentanoate,Ethyl pentanoate,Ethyl pentanoate,,Yeast,,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,unknown
+X2.ethyl.3.methylpyrazine,2-ethyl-3-methylpyrazine,2-ethyl-3-methylpyrazine,2-ethyl-3-methylpyrazine,,Malt,A.U.,,,,,both,partial_match_conflicts,identity,chemical_or_other_measurement_verify_definition,reference_unit_not_automatically_source_unit
+esters_sum,esters_sum,Total ester compounds,Total ester compounds,,,,,,,,both,not_checked_no_calibrated_pair,,aggregate_candidate_verify_definition,unknown
+aroma_hops_sum,aroma_hops_sum,Total hop aroma compounds,Total hop aroma compounds,,,,,,,,both,not_checked_no_calibrated_pair,,aggregate_candidate_verify_definition,unknown
+acids_sum,acids_sum,Total acids,Total acids,,,,,,,,both,not_checked_no_calibrated_pair,,aggregate_candidate_verify_definition,unknown
+sulfur_sum,sulfur_sum,Total sulfur compounds,Total sulfur compounds,,,,,,,,both,not_checked_no_calibrated_pair,,aggregate_candidate_verify_definition,unknown

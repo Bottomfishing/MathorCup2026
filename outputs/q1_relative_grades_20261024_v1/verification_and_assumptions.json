@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "rows": 12500,
+  "primary_shape": [
+    250,
+    45
+  ],
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "baseline": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\p1_baseline_20261023_v1",
+  "input_oof_sha256": "98d128b2cde1b3b478769ffea9b653f73fa0f7747276718db819aa57e4626682",
+  "script_sha256": "19ea9f330dcb40afafbd1d030c3072613fa0c72666acea76b9b7ffbc1fe349fb",
+  "method": "floor(7 * midrank empirical CDF of outer-training labels), clipped to 0..6",
+  "independent_count_recomputation": true,
+  "outer_test_excluded_from_reference": true,
+  "original_score_recovered": false,
+  "official_acceptance_confirmed": false,
+  "limitations": [
+    "User authorized explicitly labelled assumptions; no organizer clarification available.",
+    "Grade 0 means a low relative rank, not absence of flavor; grade 6 is not maximum physical intensity.",
+    "Different targets and folds use different empirical reference distributions.",
+    "Model selected after exploratory baseline comparison; no raw-grade accuracy can be measured.",
+    "This is an OOF provisional table, not a fitted deployment scoring service."
+  ]
+}

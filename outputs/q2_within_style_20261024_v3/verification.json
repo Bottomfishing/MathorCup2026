@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "within_style_permutations_checked": 30,
+  "feature_fold_replays": 9,
+  "bootstrap_draws_recomputed": 200,
+  "importance_cells": 10950,
+  "all_target_top3_checked": true
+}

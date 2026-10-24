@@ -1,0 +1,18 @@
+{
+  "seed": 20261024,
+  "methods": ["resample", "interpolate", "latent_gaussian"],
+  "latent_components": 10,
+  "covariance_prior_sample_size": 10.0,
+  "validation_samples_per_style": 100,
+  "generation_styles": ["Tripel", "Kriek", "Lambic"],
+  "generation_samples_per_style_method": 100,
+  "transfer_source_style": "Pils/Lager",
+  "transfer_target_style": "Tripel",
+  "transfer_candidates_per_method": 1000,
+  "transfer_methods": ["interpolate", "latent_gaussian"],
+  "chemical_screen_fields": ["DMS", "X2.3.butanedione", "X4VG", "X.E..2.nonenal"],
+  "sensory_screen_targets": ["dms", "diacetyl", "X4vg", "t2n", "stale_hops"],
+  "transfer_target_distance_weight": 0.7,
+  "physical_threshold_certification": false,
+  "scope": "Exploratory supplied-coordinate profiles and model-estimated standardized sensory values; unknown physical thresholds, aggregate identities and brewing feasibility remain unresolved."
+}

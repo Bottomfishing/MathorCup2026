@@ -1,0 +1,5 @@
+﻿file,method,matched_columns,pairs,mae,max_abs_error,note
+2.csv,pearson,231,26565,0.08768352770151427,1.1234263749065518,Spearman re-ranks complete pairs; source preprocessing/rounding may cause differences
+2.csv,spearman,231,26565,2.1235723887252962e-16,1.7208456881689926e-15,Spearman re-ranks complete pairs; source preprocessing/rounding may cause differences
+5.csv,pearson,49,1176,0.051935970846234226,0.5406449806734213,Spearman re-ranks complete pairs; source preprocessing/rounding may cause differences
+5.csv,spearman,49,1176,2.0698777030315443e-16,1.1102230246251565e-15,Spearman re-ranks complete pairs; source preprocessing/rounding may cause differences

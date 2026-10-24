@@ -1,0 +1,270 @@
+{
+  "created": "2024-02-13T16:31:08.367415+00:00",
+  "modified": "2024-03-27T12:30:59.095745+00:00",
+  "id": 10653704,
+  "conceptrecid": "10441668",
+  "doi": "10.5281/zenodo.10653704",
+  "conceptdoi": "10.5281/zenodo.10441668",
+  "doi_url": "https://doi.org/10.5281/zenodo.10653704",
+  "metadata": {
+    "title": "Data from: Predicting and improving complex beer flavor through machine learning",
+    "doi": "10.5281/zenodo.10653704",
+    "publication_date": "2024-01-15",
+    "description": "<p>This repository contains all the supplemental files and scripts for the Nature Communications paper 'Predicting and Improving Complex Beer Flavor through Machine Learning'.<br><br><strong>Init_modeling.py</strong></p>\n<p>Helper script that contains some functions for model performance evaluation and storage.</p>\n<p>&nbsp;</p>\n<p><strong>Jupyter Notebook for training machine learning models.ipynb</strong></p>\n<p>Jupyter notebook containing the code to train the 10 different machine learning models of the research article, including hyperparameter optimization and model performance evaluation.</p>\n<p>The 10 models included are:</p>\n<ul>\n<li>Linear regression</li>\n<li>Lasso regression</li>\n<li>Partial least squares regression</li>\n<li>Random Forest regression</li>\n<li>Extra-trees regression</li>\n<li>Adaboosted regression</li>\n<li>Gradient boosting regression</li>\n<li>XGBoosting regression</li>\n<li>Support vector regression</li>\n<li>Multi-layered perception</li>\n</ul>\n<p>&nbsp;</p>\n<p><strong>Machine learning models transcript.py</strong></p>\n<p>A direct copy of the Jupyter Notebook, as a regular Python script.</p>\n<p>&nbsp;</p>\n<p><strong>Main figure generator.Rmd</strong></p>\n<p>R Markdown file that generates the figures from the paper's main text.</p>\n<p>&nbsp;</p>\n<p><strong>Sensory data quality control - ANOVA on repeated samples.Rmd</strong></p>\n<p>R Markdown file that performs ANOVA on the beer samples that were repeated in multiple sessions with the trained panel.</p>\n<p>&nbsp;</p>\n<p><strong>Supplemental Figure generator.Rmd</strong></p>\n<p>R Markdown file that generates the supplemental figures of the paper.</p>\n<p>&nbsp;</p>\n<p><strong>Supplemental Files and Figure source files.xlsx</strong></p>\n<p>Excel file containing all the supplemental files and tables, and the raw data underlying every figure (main and supplemental) in the manuscript.</p>\n<p>&nbsp;</p>\n<p><strong>RateBeer_Appreciation_Gradient_Boost_Regressor.pkl</strong></p>\n<p>Pickled version of the best-performing model for predicting RateBeer Appreciation from chemical composition (Python version 3.9.16).</p>\n<p>&nbsp;</p>\n<p><strong>RateBeer_Full_Model_Gradient_Boost_Regressor.pkl</strong></p>\n<p>Pickled version of the best-performing model for predicting all RateBeer scores, from beer chemical composition (Python version 3.9.16).</p>\n<p>&nbsp;</p>\n<p><strong>SHAP analysis.ipynb</strong></p>\n<p>Jupyter Notebook that performs SHAP analysis on the models. It also extracts the SHAP values in a CSV file to make a customized SHAP plot in R with the \"Main Figure Generator.Rmd\" script.</p>\n<p>&nbsp;</p>\n<p><strong>Partial Dependence Plots with SHAP.ipynb</strong></p>\n<p>Jupyter Notebook that generates Partial Dependence Plots of your model for compounds of your choice.</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><br><strong>SYSTEM REQUIREMENTS</strong></p>\n<p>Any operating system capable of running Python v3.9.16 and R v4.2.2</p>\n<p>Python v3.9.16 packages:</p>\n<p>anaconda &nbsp; &nbsp;2023.07<br>conda &nbsp; &nbsp;23.5.0<br>joblib &nbsp; &nbsp;1.2.0<br>numpy &nbsp; &nbsp;1.24.3<br>pandas &nbsp; &nbsp;1.5.3<br>scikit-learn &nbsp; &nbsp;1.2.2<br>seaborn &nbsp; &nbsp;0.12.2<br>shap &nbsp; &nbsp;0.41.0<br>xgboost &nbsp; &nbsp;1.7.3</p>\n<p><br>R v4.2.2 packages:<br>factoextra &nbsp; &nbsp;1.0.7<br>forcats &nbsp; &nbsp;1.0.0<br>ggbeeswarm &nbsp; &nbsp;0.7.1<br>ggpmisc &nbsp; &nbsp;0.5.2<br>ggpubr &nbsp; &nbsp;0.6.0<br>ggsignif &nbsp; &nbsp;0.6.4<br>ggtext &nbsp; &nbsp;0.1.2<br>grid &nbsp; &nbsp;4.2.2<br>gridExtra &nbsp; &nbsp;2.3<br>Hmisc &nbsp; &nbsp;4.8.0<br>naniar &nbsp; &nbsp;1.0.0<br>psycho &nbsp; &nbsp;0.6.1<br>RColorBrewer &nbsp; &nbsp;1.1.3<br>shapes &nbsp; &nbsp;1.2.7<br>stats &nbsp; &nbsp;4.2.2<br>svglite &nbsp; &nbsp;2.1.1<br>tidyquant &nbsp; &nbsp;1.0.6<br>tidyverse &nbsp; &nbsp;2.0.0</p>\n<p>&nbsp;</p>\n<p><strong>INSTALLATION GUIDE</strong></p>\n<p>Download and install Python from Python or Anaconda.<br>Download and install R from CRAN.</p>\n<p>Packages are installed with the built-in package installers.</p>\n<p>&nbsp;</p>\n<p><strong>DEMO / INSTRUCTIONS FOR USE</strong></p>\n<p>All available data is included in the file \"Supplemental Files and Figure source files.xlsx\".<br>Open the worksheet of your choise and save this as a .CSV file.</p>\n<p>All scripts refer to the corresponding worksheet names whenever the data is required.</p>\n<p>The expected output is identical to the figures, tables and supplemental files presented in the manuscript.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Schreurs, Michiel",
+        "affiliation": null,
+        "orcid": "0000-0002-9449-5619"
+      },
+      {
+        "name": "Piampongsant, Supinya",
+        "affiliation": null,
+        "orcid": "0000-0002-5727-3523"
+      },
+      {
+        "name": "Roncoroni, Miguel",
+        "affiliation": "VIB-KU Leuven Center for Microbiology",
+        "orcid": "0000-0001-7461-1427"
+      },
+      {
+        "name": "Cool, Lloyd",
+        "affiliation": "VIB-KU Leuven Center for Microbiology",
+        "orcid": "0000-0001-9936-3124"
+      },
+      {
+        "name": "Malaver, Beatriz Herrera",
+        "affiliation": "VIB-KU Leuven Center for Microbiology"
+      },
+      {
+        "name": "Vanderaa, Christophe",
+        "affiliation": "KU Leuven",
+        "orcid": "0000-0001-7443-5427"
+      },
+      {
+        "name": "Thesseling, Florian",
+        "affiliation": "VIB-KU Leuven Center for Microbiology",
+        "orcid": "0000-0002-7868-6204"
+      },
+      {
+        "name": "Kreft, Lukasz",
+        "affiliation": "VIB Bioinformatics Core",
+        "orcid": "0000-0001-7620-4657"
+      },
+      {
+        "name": "Botzki, Alexander",
+        "affiliation": "VIB Bioinformatics Core",
+        "orcid": "0000-0001-6691-4233"
+      },
+      {
+        "name": "Malcorps, Philippe",
+        "affiliation": "Anheuser-Busch InBev (Belgium)"
+      },
+      {
+        "name": "Daenen, Luk",
+        "affiliation": "Anheuser-Busch InBev (Belgium)"
+      },
+      {
+        "name": "Wenseleers, Tom",
+        "affiliation": "KU Leuven",
+        "orcid": "0000-0002-1434-861X"
+      },
+      {
+        "name": "Verstrepen, Kevin J.",
+        "affiliation": "VIB-KU Leuven Center for Microbiology",
+        "orcid": "0000-0002-3077-6219"
+      }
+    ],
+    "resource_type": {
+      "title": "Data paper",
+      "type": "publication",
+      "subtype": "datapaper"
+    },
+    "journal": {
+      "issue": "2368",
+      "title": "Nature Communications",
+      "volume": "15"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 2,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "10441668"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Data from: Predicting and improving complex beer flavor through machine learning",
+  "links": {
+    "self": "https://zenodo.org/api/records/10653704",
+    "self_html": "https://zenodo.org/records/10653704",
+    "preview_html": "https://zenodo.org/records/10653704?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.10653704",
+    "self_doi": "https://doi.org/10.5281/zenodo.10653704",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.10653704",
+    "reserve_doi": "https://zenodo.org/api/records/10653704/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/10441668",
+    "parent_html": "https://zenodo.org/records/10441668",
+    "parent_doi": "https://doi.org/10.5281/zenodo.10441668",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.10441668",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:10653704/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:10653704/sequence/default",
+    "files": "https://zenodo.org/api/records/10653704/files",
+    "media_files": "https://zenodo.org/api/records/10653704/media-files",
+    "latest": "https://zenodo.org/api/records/10653704/versions/latest",
+    "latest_html": "https://zenodo.org/records/10653704/latest",
+    "versions": "https://zenodo.org/api/records/10653704/versions",
+    "draft": "https://zenodo.org/api/records/10653704/draft",
+    "access_links": "https://zenodo.org/api/records/10653704/access/links",
+    "access_grants": "https://zenodo.org/api/records/10653704/access/grants",
+    "access_users": "https://zenodo.org/api/records/10653704/access/users",
+    "access_request": "https://zenodo.org/api/records/10653704/access/request",
+    "access": "https://zenodo.org/api/records/10653704/access",
+    "communities": "https://zenodo.org/api/records/10653704/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/10653704/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/10653704/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/10653704/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/10653704/quota-increase",
+    "requests": "https://zenodo.org/api/records/10653704/requests"
+  },
+  "updated": "2024-03-27T12:30:59.095745+00:00",
+  "recid": "10653704",
+  "revision": 6,
+  "files": [
+    {
+      "id": "2f262fea-936e-4006-af30-60aedd5156aa",
+      "key": "Jupyter Notebook for training machine learning models.ipynb",
+      "size": 250420,
+      "checksum": "md5:6b311c6c3575f8dc27070fbed7bf916a",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/Jupyter%20Notebook%20for%20training%20machine%20learning%20models.ipynb/content"
+      }
+    },
+    {
+      "id": "636a6dfa-ff15-4237-a345-bbe6d7e75276",
+      "key": "SHAP analysis.ipynb",
+      "size": 473829,
+      "checksum": "md5:7ae8b28243945344d6f0059a1fedc491",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/SHAP%20analysis.ipynb/content"
+      }
+    },
+    {
+      "id": "d937b91e-f7a8-4504-a9eb-9e11723d91b1",
+      "key": "README.txt",
+      "size": 3469,
+      "checksum": "md5:e17db170c85fa4a5c323efb6b17bfd74",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/README.txt/content"
+      }
+    },
+    {
+      "id": "dd3bb1b4-6c99-4f75-9fc2-ef1ceadfb1da",
+      "key": "Supplemental Figure generator.Rmd",
+      "size": 42184,
+      "checksum": "md5:5ca72605a1d90a53670c224ebaa04f88",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/Supplemental%20Figure%20generator.Rmd/content"
+      }
+    },
+    {
+      "id": "935e2e0f-373f-4d2e-9383-301b0eadf2fb",
+      "key": "Sensory data quality control - ANOVA on repeated samples.Rmd",
+      "size": 2708,
+      "checksum": "md5:159e670db065576fe8416f52786aaec2",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/Sensory%20data%20quality%20control%20-%20ANOVA%20on%20repeated%20samples.Rmd/content"
+      }
+    },
+    {
+      "id": "b739d114-1874-4ffb-852d-23d221e368cc",
+      "key": "init_modeling.py",
+      "size": 10425,
+      "checksum": "md5:c02fab431d33b40a06c0235cbbc61998",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/init_modeling.py/content"
+      }
+    },
+    {
+      "id": "fc156e7e-6d29-406d-ab1c-f7a2047cabe7",
+      "key": "RateBeer_Appreciation_Gradient_Boost_Regressor.pkl",
+      "size": 6525344,
+      "checksum": "md5:337efb929cfa6ddf407a3f8fa2e5a3de",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/RateBeer_Appreciation_Gradient_Boost_Regressor.pkl/content"
+      }
+    },
+    {
+      "id": "c63f7b50-9651-47ed-b086-764304f70bc2",
+      "key": "RateBeer_Full_Model_Gradient_Boost_Regressor.pkl",
+      "size": 39482520,
+      "checksum": "md5:b4b675fa380e1b6c5f518d015199db42",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/RateBeer_Full_Model_Gradient_Boost_Regressor.pkl/content"
+      }
+    },
+    {
+      "id": "701aa9cf-2325-4c61-b547-939a1b69a50c",
+      "key": "Machine learning models transcript.py",
+      "size": 34678,
+      "checksum": "md5:06bffe872df9b6f109c6d8dca78ecfd7",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/Machine%20learning%20models%20transcript.py/content"
+      }
+    },
+    {
+      "id": "b2ea56d9-0667-44c7-bc99-b1e5d7e04868",
+      "key": "Partial Dependence Plots with SHAP.ipynb",
+      "size": 246764,
+      "checksum": "md5:d7015e3002a2408a06bf2146c8cecf83",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/Partial%20Dependence%20Plots%20with%20SHAP.ipynb/content"
+      }
+    },
+    {
+      "id": "96804131-5339-4591-9850-45c879bd24ab",
+      "key": "Main Figure Generator.Rmd",
+      "size": 72845,
+      "checksum": "md5:ebaee5c79bd6f469a8141b3a7a65f77f",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/Main%20Figure%20Generator.Rmd/content"
+      }
+    },
+    {
+      "id": "1093bd42-6b5b-4d39-bfb6-a3ef743ea649",
+      "key": "Supplemental Files and Figure source files.xlsx",
+      "size": 5261473,
+      "checksum": "md5:52645e38d90aafda272532e19e2fea1c",
+      "links": {
+        "self": "https://zenodo.org/api/records/10653704/files/Supplemental%20Files%20and%20Figure%20source%20files.xlsx/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "620820"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 6860,
+    "unique_downloads": 5650,
+    "views": 3692,
+    "unique_views": 3284,
+    "version_downloads": 6856,
+    "version_unique_downloads": 5646,
+    "version_unique_views": 3153,
+    "version_views": 3547
+  },
+  "state": "done",
+  "submitted": true
+}

@@ -1,0 +1,151 @@
+﻿target,primary,rank,field,chemical_name,ridge_signed_coef,bootstrap_frequency,marginal_spearman,in_marginal_top3,reference_unit,reference_origin_category,reference_off_flavors,chemical_rationale_status,interpretation
+A_malt_all,True,1,X2.acetylfuran,2-acetylfuran,0.029764608996992178,0.925,0.25206725106061983,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_all,True,2,methylpyrazine,Methylpyrazine,0.027160269544278325,0.66,0.35605742650672,True,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_all,True,3,X5.methylfurfural,5-methylfurfural,0.024104762201629156,0.395,0.2732048370987286,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_grain,True,1,Z.nerolidol,Z-nerolidol,0.015129356059468102,0.55,0.11179498364901211,False,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_grain,True,2,X5.methylfurfural,5-methylfurfural,0.013383379603441593,0.38,0.1447903958453682,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_grain,True,3,furfural,Furfural,0.012246379066956014,0.245,0.1915733724679627,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_bread,True,1,furfural,Furfural,0.015504267331283695,0.455,0.14997023879851604,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_bread,True,2,ethyl.tiglate,Ethyl tiglate,0.01316805861301798,0.145,0.23837749566994287,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_bread,True,3,CO2.PSI.,Carbon dioxide,0.012556974797253682,0.195,0.21277377055675215,False,PSI,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_cara,True,1,X2.acetylfuran,2-acetylfuran,0.02313823039606225,0.765,0.24256928623415183,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_cara,True,2,furfural,Furfural,0.022109467611877372,0.605,0.3022311901992722,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_cara,True,3,X5.methylfurfural,5-methylfurfural,0.018419311106643375,0.32,0.2818265658988962,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_burn,True,1,methylpyrazine,Methylpyrazine,0.03643424921415899,0.925,0.1696934253856053,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_burn,True,2,X2.acetylfuran,2-acetylfuran,0.02358836241549596,0.815,0.12208579835744811,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_malt_burn,True,3,MeSH,Methanethiol,0.017147808578959985,0.135,0.20554813561883242,False,ug/L,Yeast,"putrefaction, drains, rotting vegetables, estery",pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_all,True,1,iron,Iron,-0.01837803950300327,0.505,-0.36061620199046296,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_all,True,2,DMS,Dimethyl sulfide,0.01681854103344146,0.275,0.3964266671685008,False,ug/L,Malt,"cooked vegetables, onion, garlic, corn, black currant, sulfidic, cabbage, tinned tomato, baked beans",pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_all,True,3,ethyl_octanoate,Ethyl octanoate,0.015187592603477238,0.13,0.4637453760825003,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_citrus,True,1,citronellol,Citronellol,0.013545079904475153,0.385,0.36973609647866107,True,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_citrus,True,2,X6.methyl.5.hepten.2.one,Methyl heptenone,0.013216710910858739,0.35,0.27131197321448264,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_citrus,True,3,X.E.E..2.4.decadienal,"E,E-2,4-decadienal",0.01275134152196973,0.36,0.24555769145046605,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_tropical,True,1,DMS,Dimethyl sulfide,0.019929934826210284,0.615,0.31418123458289887,True,ug/L,Malt,"cooked vegetables, onion, garlic, corn, black currant, sulfidic, cabbage, tinned tomato, baked beans",pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_tropical,True,2,beta.phellandrene,Beta-phellandrene,0.01558033081243154,0.11,0.23065452359990937,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_tropical,True,3,CO2.PSI.,Carbon dioxide,0.014931940110900552,0.285,0.2241506780777075,False,PSI,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_noble,True,1,ethyl_octanoate,Ethyl octanoate,0.01586305789456426,0.585,0.4818289933535472,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_noble,True,2,ethyl_decanoate,Ethyl decanoate,0.014668208670702225,0.27,0.46927926928157754,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_noble,True,3,iron,Iron,-0.014354018429281804,0.315,-0.33534550772839183,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_woody,True,1,car.3.en.2.one,Car-3-en-2-one,-0.00973751663751059,0.295,-0.12156293780567004,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_woody,True,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.009518485941634135,0.34,0.24142779059135203,False,,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+A_hops_woody,True,3,iron,Iron,-0.009473417176944747,0.37,-0.11721394500448185,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_all,True,1,acetaldehyde,Acetaldehyde,0.02231989654969417,0.85,0.35302952047232755,True,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_all,True,2,n.hexanol,N-hexanol,0.016759999949617948,0.31,0.3568521231808531,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_all,True,3,lactic_acid.mg.L.,Lactic acid,0.015277439634041106,0.08,0.2829638274491254,False,mg/L,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_ethac,True,1,acetaldehyde,Acetaldehyde,0.013230395418863162,0.49,0.335028150635333,True,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_ethac,True,2,ethyl_acetate,Ethyl acetate,0.012460753533354641,0.25,0.35550458495645076,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_ethac,True,3,phenethyl_alcohol,Phenethyl alcohol,0.011099294419736205,0.255,0.18851852001313563,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_isoaa,True,1,n.hexanol,N-hexanol,0.018954844560328327,0.67,0.3399301837491132,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_isoaa,True,2,ethyl.hexadecanoate,Ethyl hexadecanoate,-0.014290889510443914,0.21,-0.022698621629061104,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_isoaa,True,3,benzaldehyde,Benzaldehyde,0.014019556867373651,0.275,0.16251993237647006,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_flower,True,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.013611078527948878,0.475,0.11605519033406184,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_flower,True,2,beta.phellandrene,Beta-phellandrene,0.013338115741847985,0.385,0.1957636012469321,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_flower,True,3,X.E..alpha.ionone,E-α-ionone,0.011462963085163301,0.195,0.09328769951318215,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_fruity,True,1,beta.phellandrene,Beta-phellandrene,0.019346054613350767,0.825,0.23194316771416154,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_fruity,True,2,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.017567970365297274,0.525,0.08046172987434766,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+A_esters_fruity,True,3,eugenol,Eugenol,0.015569379061015057,0.47,0.19288819255676615,True,mg/L,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_all,True,1,X2.acetylfuran,2-acetylfuran,0.02565242278898916,0.805,0.17046052373891574,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_all,True,2,acetaldehyde,Acetaldehyde,0.025371527490911015,0.7,0.4712102803092673,True,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_all,True,3,methylpyrazine,Methylpyrazine,0.02495747781962797,0.695,0.31049989618738044,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_grain,True,1,Z.nerolidol,Z-nerolidol,0.012068809261101246,0.255,0.0579269650753958,False,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_grain,True,2,X2.3.butanedione,Diacetyl,-0.011645850070111345,0.275,-0.2000682847392227,False,mg/L,Yeast,"butterscotch, popcorn, oily, milky",pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_grain,True,3,X3.methyl.2.butenal,3-methyl-2-butenal,0.011593306910359773,0.27,0.13359921923856038,False,,Internal standard solution,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_bread,True,1,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",0.013240425076900923,0.26,0.06984964930424198,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_bread,True,2,ethyl.tiglate,Ethyl tiglate,0.013130889900907295,0.28,0.3124387588279668,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_bread,True,3,X2.acetylfuran,2-acetylfuran,0.01188063063587611,0.175,0.16231433375843857,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_cara,True,1,acetaldehyde,Acetaldehyde,0.020991479782480726,0.86,0.4327631620805657,True,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_cara,True,2,phenethyl_alcohol,Phenethyl alcohol,0.014316970422153835,0.275,0.16224020009087198,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_cara,True,3,X2.acetylfuran,2-acetylfuran,0.01427995315121707,0.2,0.18783027642413436,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_burn,True,1,methylpyrazine,Methylpyrazine,0.03485869054636917,0.97,0.22901133706870386,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_burn,True,2,X2.acetylfuran,2-acetylfuran,0.021812767693740128,0.525,0.07239162525701746,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_malt_burn,True,3,delta.terpinyl.acetate,Terpiryl acetate,-0.019984619903188644,0.255,-0.1541988046023331,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_all,True,1,iron,Iron,-0.02228789922476887,0.705,-0.40845249640638265,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_all,True,2,cis.dihydro.beta.terpineol,Cis-dihydro-β-terpineol,0.020563909397976594,0.495,0.4497791372956319,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_all,True,3,ethyl_isovalerate,Ethyl 3-methylbutyrate,0.019680599302074154,0.31,0.11760705946307505,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_citrus,True,1,geosmin,Geosmin,0.012164880204689948,0.37,0.25745722742368593,False,,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_citrus,True,2,geraniol,Geraniol,0.011716529478045475,0.3,0.23780292172148332,False,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_citrus,True,3,X2.acetylfuran,2-acetylfuran,-0.011538010750126549,0.32,-0.23879838160234443,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_tropical,True,1,hexyl.acetate,Hexyl acetate,0.016190885020275346,0.585,0.280912095311276,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_tropical,True,2,DMS,Dimethyl sulfide,0.013713013305117799,0.27,0.27540412762061445,True,ug/L,Malt,"cooked vegetables, onion, garlic, corn, black currant, sulfidic, cabbage, tinned tomato, baked beans",pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_tropical,True,3,X6.methyl.5.hepten.2.one,Methyl heptenone,0.012373910472238934,0.36,0.24112984483106015,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_noble,True,1,iron,Iron,-0.02172980682341543,0.79,-0.4258424998429319,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_noble,True,2,X.E..2.nonenal,E-2-nonenal,0.018435368758451254,0.455,0.4030397984733075,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_noble,True,3,ethyl_octanoate,Ethyl octanoate,0.016894134939947243,0.17,0.5050875132149669,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_woody,True,1,isobutanol,Isobutanol,0.016170220151761457,0.84,0.3224575474324363,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_woody,True,2,manool,Manool,-0.011159082272630436,0.3,-0.08488730989676176,False,,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+F_hops_woody,True,3,X9.epi..E..caryophyllene,9-epi-E-caryophyllene,-0.010417620922621077,0.105,-0.2930722058243745,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_all,True,1,acetaldehyde,Acetaldehyde,0.023038189662016102,0.915,0.40387193395094323,True,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_all,True,2,phenethyl_alcohol,Phenethyl alcohol,0.017453471230325084,0.4,0.2157519320309125,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_all,True,3,n.hexanol,N-hexanol,0.01695840113991391,0.38,0.3763949751231701,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_ethac,True,1,ethyl_acetate,Ethyl acetate,0.015123882514692868,0.58,0.5030965444139196,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_ethac,True,2,acetaldehyde,Acetaldehyde,0.012836658112895647,0.365,0.3854411051794281,False,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_ethac,True,3,car.3.en.2.one,Car-3-en-2-one,-0.012507977217832254,0.25,-0.21533513632819895,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_isoaa,True,1,n.hexanol,N-hexanol,0.017523772771405852,0.495,0.3053935951028972,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_isoaa,True,2,phenethyl_alcohol,Phenethyl alcohol,0.015025509655547161,0.295,0.14041952016050005,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_isoaa,True,3,acetaldehyde,Acetaldehyde,0.01433259454455594,0.155,0.2438238205804399,True,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_flower,True,1,beta.phellandrene,Beta-phellandrene,0.012608981950070857,0.42,0.2336305359445712,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_flower,True,2,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.01234547357263507,0.38,0.12989475247281929,False,mg/L,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_flower,True,3,eucalyptol,Eucalyptol,0.011642968135903263,0.36,0.16739686415425442,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_fruity,True,1,beta.phellandrene,Beta-phellandrene,0.01544477441109974,0.555,0.22806854353712383,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_fruity,True,2,X1.10.di.epi.cubenol,Epicubenol,-0.013868884632545153,0.305,-0.13330343079546642,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+F_esters_fruity,True,3,phenethyl_alcohol,Phenethyl alcohol,0.012051716286280293,0.275,0.06051994985663642,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+acidity,True,1,lactic_acid.mg.L.,Lactic acid,0.034199751774525534,0.995,0.318740361063481,False,mg/L,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+acidity,True,2,acetic_acid.g.L.,Acetic acid,0.029137236204715325,0.695,0.41599979976074986,False,g/L,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+acidity,True,3,perillyl.acetate,Perillyl acetate,0.024177941436044386,0.2,0.41696538356679175,True,,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+bitternes,True,1,iron,Iron,-0.02891229302175555,0.945,-0.4993708143944291,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+bitternes,True,2,ethyl_octanoate,Ethyl octanoate,0.02628110998748305,0.875,0.5926743859641476,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+bitternes,True,3,ethyl_decanoate,Ethyl decanoate,0.023233791611357534,0.38,0.558886811414095,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+sweetness,True,1,ethyl_decanoate,Ethyl decanoate,-0.02155372429522413,0.57,-0.3911617061026004,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+sweetness,True,2,iron,Iron,0.02033495775192604,0.395,0.3593089210197287,True,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+sweetness,True,3,acetaldehyde,Acetaldehyde,0.01985988618902986,0.365,0.12306676758359512,False,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+X4vg,True,1,X4VG,4-vinylguaiacol,0.04721925911761758,1.0,0.47261752961228276,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+X4vg,True,2,delta.terpinyl.acetate,Terpiryl acetate,0.02950272445615688,0.945,0.3992235813990057,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+X4vg,True,3,nerol,Nerol,0.017776995748060905,0.05,0.19774774040990467,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+diacetyl,True,1,eugenol,Eugenol,-0.016224597327148423,0.585,-0.3231876035649345,True,mg/L,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+diacetyl,True,2,beta.phellandrene,Beta-phellandrene,-0.013981348045969162,0.305,-0.21721701386930148,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+diacetyl,True,3,X2.methyl.benzofuran,2-methyl-benzofuran,-0.012341355762722371,0.185,-0.1291770308064507,False,,Malt,,pending_primary_source_review,association_candidate_not_causal_driver
+dms,True,1,SO2.mg.L.,Sulfur dioxide,0.016073631427387575,0.59,0.15169414017127253,False,mg/L,Yeast,Burnt matches,pending_primary_source_review,association_candidate_not_causal_driver
+dms,True,2,E.nerolidol,E-nerolidol,0.01346420317133233,0.22,0.19438930625644038,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+dms,True,3,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",0.012472129205993162,0.175,0.1608911012122198,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+metallic,True,1,iron,Iron,0.02195100149949097,0.965,0.2441312687216218,True,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+metallic,True,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,-0.01468709164588855,0.455,-0.2503577577242976,True,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+metallic,True,3,isopentyl.butanoate,Isopentyl butanoate,-0.012977051013043323,0.27,-0.22814155441317602,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+stale_hops,True,1,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.011398522934079008,0.29,0.24825155143737518,False,,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+stale_hops,True,2,gamma.eudesmol,Gamma-eudesmol,0.010892199577112861,0.285,0.24686211208762007,False,,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+stale_hops,True,3,isobutanol,Isobutanol,0.010386972734399317,0.155,0.06857772713253456,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+t2n,True,1,germacrene.D,Germacrene D,-0.011557250314564737,0.415,-0.09480325014374685,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+t2n,True,2,glycerol,Glycerol,-0.011135837992441248,0.335,-0.17854851056753543,False,g/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+t2n,True,3,alpha.phellandrene,α-phellandrene,-0.010663783962534106,0.305,-0.1863435465404029,False,A.U.,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+orange,True,1,X1.alpha.terpineol,Alpha-terpineol,0.0333102071331802,0.845,0.21253225568887982,False,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+orange,True,2,limonene,Limonene,0.027168222994267483,0.66,0.2960482247188436,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+orange,True,3,X2.ethyl.1.hexanol,2-ethyl-1-hexanol,-0.022674576649017765,0.25,0.04206107102855178,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+coriander,True,1,x.methyl.1.octanol,X-methyl-1-octanol,-0.02040153581988445,0.9,-0.02003531133973621,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+coriander,True,2,X1.alpha.terpineol,Alpha-terpineol,0.016405578126101373,0.51,0.162710901348179,False,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+coriander,True,3,linalool,Linalool,0.01628581705442516,0.535,0.17735070058689376,False,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+clove,True,1,eucalyptol,Eucalyptol,0.022287446617885773,0.82,0.23640723063158983,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+clove,True,2,linalool,Linalool,0.02176106348121581,0.76,0.13262288214830398,False,mg/L,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+clove,True,3,limonene,Limonene,0.021416956207241863,0.785,0.3423166863770367,True,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver
+lactic,True,1,lactic_acid.mg.L.,Lactic acid,0.028954492693439318,0.97,0.4475322568342476,True,mg/L,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+lactic,True,2,acetic_acid.g.L.,Acetic acid,0.023952377187074436,0.475,0.41034388977727804,False,g/L,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+lactic,True,3,prenyl.isobutyrate,Prenyl isobutyrate,0.02251559537414542,0.315,0.4291064329231378,True,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+acetic,True,1,lactic_acid.mg.L.,Lactic acid,0.027636564351575583,0.835,0.3436732479539584,False,mg/L,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+acetic,True,2,acetic_acid.g.L.,Acetic acid,0.02554469627129911,0.63,0.3543263650185447,False,g/L,Wild flora,,pending_primary_source_review,association_candidate_not_causal_driver
+acetic,True,3,DES,Diethyl sulfide,-0.02396292116594182,0.305,-0.27914159074677375,False,ug/L,Yeast,rotting vegetables,pending_primary_source_review,association_candidate_not_causal_driver
+barnyard,True,1,gamma.eudesmol,Gamma-eudesmol,0.012096496921523309,0.395,0.26406631635814015,False,,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+barnyard,True,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.010903380524381707,0.195,0.22380577812655242,False,,Spices,,pending_primary_source_review,association_candidate_not_causal_driver
+barnyard,True,3,propyl.acetate,N-propyl acetate,-0.010855544406665703,0.295,-0.09001720178563234,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+alcohol,False,1,ethanol..v.v.,Ethanol,0.037689865726724225,1.0,0.8171474389230694,True,v/v,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+alcohol,False,2,acetaldehyde,Acetaldehyde,0.02806280109757502,0.68,0.6033738415248973,False,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+alcohol,False,3,ethyl_hexanoate,Ethyl hexanoate,0.026071555549037884,0.5,0.6187675046902604,False,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+aftertaste,False,1,ethanol..v.v.,Ethanol,0.022038884300122952,0.915,0.5174503923780841,True,v/v,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+aftertaste,False,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,0.01997340973481566,0.5,0.43927672089079056,False,mg/L,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+aftertaste,False,3,acetaldehyde,Acetaldehyde,0.01872858065595412,0.38,0.3740154562473,False,mg/L,Yeast,"pungent, rotten-apples, green apple",pending_primary_source_review,association_candidate_not_causal_driver
+body,False,1,ethanol..v.v.,Ethanol,0.02443766181229379,1.0,0.7191068880476088,True,v/v,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+body,False,2,glycerol,Glycerol,0.019287448977685466,0.62,0.5726252913087868,True,g/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+body,False,3,ethyl_hexanoate,Ethyl hexanoate,0.017823397772033043,0.325,0.5546743672775246,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+co2,False,1,ethyl_octanoate,Ethyl octanoate,0.018773495746071834,0.665,0.5526871335738771,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+co2,False,2,CO2.PSI.,Carbon dioxide,0.016924596376760706,0.395,0.4611183774867171,False,PSI,Others,,pending_primary_source_review,association_candidate_not_causal_driver
+co2,False,3,ethanol..v.v.,Ethanol,0.01656018109927171,0.265,0.4984285409056317,True,v/v,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+overall,False,1,ethyl_acetate,Ethyl acetate,0.015047615980810652,0.55,0.3249986079777276,True,mg/L,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+overall,False,2,X2.butyloctanoate,2-butyl octanoate,0.012728331456069492,0.175,0.22348212117226782,False,,Yeast,,pending_primary_source_review,association_candidate_not_causal_driver
+overall,False,3,cis.linalool.oxide,Cis-linalool oxide,-0.012237864489930833,0.22,-0.20110284096879466,False,,Hops,,pending_primary_source_review,association_candidate_not_causal_driver

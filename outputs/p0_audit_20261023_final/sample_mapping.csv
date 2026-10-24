@@ -1,0 +1,251 @@
+﻿beer,beer_id,tasting_category_fine,beer_id_4.csv,barcode_exact_match_4.csv,beer_id_7.csv,barcode_exact_match_7.csv,join_basis
+10,5410228202929,Low/No alcohol,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+86,5410783031019,Low/No alcohol,5.41078E+12,False,5.41078E+12,False,unique_beer_key_and_matching_style
+2,5410228142003,Low/No alcohol,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+83,54055520,Low/No alcohol,54055520,True,54055520,True,unique_beer_key_and_matching_style
+40,5410228141181,Low/No alcohol,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+247,5411081000264,Fruitbeer,5.41108E+12,False,5.41108E+12,False,unique_beer_key_and_matching_style
+48,8711406995211,Dubbel,8.71141E+12,False,8.71141E+12,False,unique_beer_key_and_matching_style
+165,5411081000363,Fruitbeer,5.41108E+12,False,5.41108E+12,False,unique_beer_key_and_matching_style
+124,5412186002658,Pils/Lager,5.41219E+12,False,5.41219E+12,False,unique_beer_key_and_matching_style
+207,5411223030036,Fruitbeer,5.41122E+12,False,5.41122E+12,False,unique_beer_key_and_matching_style
+155,5410228188704,Low/No alcohol,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+141,5410228141174,Low/No alcohol,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+179,5411081004736,Flanders old brown,5.41108E+12,False,5.41108E+12,False,unique_beer_key_and_matching_style
+33,5425005660465,Fruitbeer,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+50,5411223030043,Fruitbeer,5.41122E+12,False,5.41122E+12,False,unique_beer_key_and_matching_style
+227,5411223030098,Fruitbeer,5.41122E+12,False,5.41122E+12,False,unique_beer_key_and_matching_style
+88,5411081003654,Kriek,5.41108E+12,False,5.41108E+12,False,unique_beer_key_and_matching_style
+77,8711406023563,Blond,8.71141E+12,False,8.71141E+12,False,unique_beer_key_and_matching_style
+22,5411663001276,Wheat,5.41166E+12,False,5.41166E+12,False,unique_beer_key_and_matching_style
+81,8715608222557,Pils/Lager,8.71561E+12,False,8.71561E+12,False,unique_beer_key_and_matching_style
+202,5425029020047,Stout/Porter,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+64,5410908000128,Blond,5.41091E+12,False,5.41091E+12,False,unique_beer_key_and_matching_style
+218,54057142,Pils/Lager,54057142,True,54057142,True,unique_beer_key_and_matching_style
+96,5411681080000,Pils/Lager,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+230,5410228141235,Pils/Lager,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+44,5411633250055,Wheat,5.41163E+12,False,5.41163E+12,False,unique_beer_key_and_matching_style
+161,5411686700057,Flanders old brown,5.41169E+12,False,5.41169E+12,False,unique_beer_key_and_matching_style
+195,8711406995631,Wheat,8.71141E+12,False,8.71141E+12,False,unique_beer_key_and_matching_style
+142,54112087,Wheat,54112087,True,54112087,True,unique_beer_key_and_matching_style
+137,54057012,Amber,54057012,True,54057012,True,unique_beer_key_and_matching_style
+236,54107052,Brett/cofermented,54107052,True,54107052,True,unique_beer_key_and_matching_style
+223,5410228231325,Low/No alcohol,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+211,5411223030050,Lambic,5.41122E+12,False,5.41122E+12,False,unique_beer_key_and_matching_style
+190,875213000068,Flanders old brown,8.75213E+11,False,8.75213E+11,False,unique_beer_key_and_matching_style
+197,5412896000111,Wheat,5.4129E+12,False,5.4129E+12,False,unique_beer_key_and_matching_style
+228,5411663002945,Tripel,5.41166E+12,False,5.41166E+12,False,unique_beer_key_and_matching_style
+185,54055001,Pils/Lager,54055001,True,54055001,True,unique_beer_key_and_matching_style
+166,5425029020252,Saison,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+216,5410228201076,Scotch,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+200,54125001,West Flanders ale,54125001,True,54125001,True,unique_beer_key_and_matching_style
+116,5411656051097,Lambic,5.41166E+12,False,5.41166E+12,False,unique_beer_key_and_matching_style
+139,5410228142027,Pils/Lager,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+183,5410702000805,Saison,5.4107E+12,False,5.4107E+12,False,unique_beer_key_and_matching_style
+111,5411276100540,Dubbel,5.41128E+12,False,5.41128E+12,False,unique_beer_key_and_matching_style
+46,5411276200325,Blond,5.41128E+12,False,5.41128E+12,False,unique_beer_key_and_matching_style
+213,5410783004099,Hoppy,5.41078E+12,False,5.41078E+12,False,unique_beer_key_and_matching_style
+250,5411223030067,Faro,5.41122E+12,False,5.41122E+12,False,unique_beer_key_and_matching_style
+158,54107014,Amber,54107014,True,54107014,True,unique_beer_key_and_matching_style
+224,5410228141884,Wheat,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+54,549619093094,Kriek,5.49619E+11,False,5.49619E+11,False,unique_beer_key_and_matching_style
+5,5400000000006,Blond,5.4E+12,False,5.4E+12,False,unique_beer_key_and_matching_style
+209,54085107,Pils/Lager,54085107,True,54085107,True,unique_beer_key_and_matching_style
+58,5425024151210,Saison,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+11,8718754310017,Amber,8.71875E+12,False,8.71875E+12,False,unique_beer_key_and_matching_style
+56,5413963600012,Saison,5.41396E+12,False,5.41396E+12,False,unique_beer_key_and_matching_style
+84,5411516000517,West Flanders ale,5.41152E+12,False,5.41152E+12,False,unique_beer_key_and_matching_style
+172,5411681400310,Wheat,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+74,5412783054012,Faro,5.41278E+12,False,5.41278E+12,False,unique_beer_key_and_matching_style
+188,8711406017487,Stout/Porter,8.71141E+12,False,8.71141E+12,False,unique_beer_key_and_matching_style
+20,5425005660205,Saison,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+122,5425029020191,Brett/cofermented,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+169,5411676710004,Hoppy,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+194,5411098730307,Dubbel,5.4111E+12,False,5.4111E+12,False,unique_beer_key_and_matching_style
+160,54055438,Wheat,54055438,True,54055438,True,unique_beer_key_and_matching_style
+43,5041300503,Amber,5041300503,True,5041300503,True,unique_beer_key_and_matching_style
+100,875213000082,Dubbel,8.75213E+11,False,8.75213E+11,False,unique_beer_key_and_matching_style
+7,5425025910809,Saison,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+62,5410228134879,Blond,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+55,5425023990698,Hoppy,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+26,54125032,West Flanders ale,54125032,True,54125032,True,unique_beer_key_and_matching_style
+232,5411686700637,Kriek,5.41169E+12,False,5.41169E+12,False,unique_beer_key_and_matching_style
+151,5411516001491,Faro,5.41152E+12,False,5.41152E+12,False,unique_beer_key_and_matching_style
+61,5410702001314,Stout/Porter,5.4107E+12,False,5.4107E+12,False,unique_beer_key_and_matching_style
+156,5410228193371,Kriek,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+138,5411223010557,Kriek,5.41122E+12,False,5.41122E+12,False,unique_beer_key_and_matching_style
+70,54085190,Blond,54085190,True,54085190,True,unique_beer_key_and_matching_style
+113,5425006700016,Blond,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+176,5411858000183,West Flanders ale,5.41186E+12,False,5.41186E+12,False,unique_beer_key_and_matching_style
+105,5425006700405,Strong ale,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+167,5411858000077,Flanders old brown,5.41186E+12,False,5.41186E+12,False,unique_beer_key_and_matching_style
+59,5425005660601,Blond,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+135,5410908000029,Tripel,5.41091E+12,False,5.41091E+12,False,unique_beer_key_and_matching_style
+82,5411516002269,Kriek,5.41152E+12,False,5.41152E+12,False,unique_beer_key_and_matching_style
+241,608782666133,Kriek,6.08783E+11,False,6.08783E+11,False,unique_beer_key_and_matching_style
+128,5425014681017,Amber,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+244,5413784109060,West Flanders ale,5.41378E+12,False,5.41378E+12,False,unique_beer_key_and_matching_style
+178,620670293948,West Flanders ale,6.2067E+11,False,6.2067E+11,False,unique_beer_key_and_matching_style
+110,5411098730291,Blond,5.4111E+12,False,5.4111E+12,False,unique_beer_key_and_matching_style
+231,5425025390090,Stout/Porter,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+112,5410908000012,Brown,5.41091E+12,False,5.41091E+12,False,unique_beer_key_and_matching_style
+219,5411681401775,Hoppy,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+129,5410228146162,Brown,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+42,5411024000047,Lambic,5.41102E+12,False,5.41102E+12,False,unique_beer_key_and_matching_style
+72,54121096,Hoppy,54121096,True,54121096,True,unique_beer_key_and_matching_style
+186,112161945,Strong ale,112161945,True,112161945,True,unique_beer_key_and_matching_style
+109,5412858000067,Brown,5.41286E+12,False,5.41286E+12,False,unique_beer_key_and_matching_style
+246,5410783001432,Blond,5.41078E+12,False,5.41078E+12,False,unique_beer_key_and_matching_style
+97,5411676700005,Hoppy,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+87,5412896001507,Stout/Porter,5.4129E+12,False,5.4129E+12,False,unique_beer_key_and_matching_style
+220,5412783053015,Kriek,5.41278E+12,False,5.41278E+12,False,unique_beer_key_and_matching_style
+201,741360987296,Stout/Porter,7.41361E+11,False,7.41361E+11,False,unique_beer_key_and_matching_style
+14,54040014,Brett/cofermented,54040014,True,54040014,True,unique_beer_key_and_matching_style
+173,5425005660809,Stout/Porter,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+37,5410908000036,Strong ale,5.41091E+12,False,5.41091E+12,False,unique_beer_key_and_matching_style
+119,5411831000742,Pils/Lager,5.41183E+12,False,5.41183E+12,False,unique_beer_key_and_matching_style
+177,5425100322608,Fruitbeer,5.4251E+12,False,5.4251E+12,False,unique_beer_key_and_matching_style
+106,5413977000044,Christmas,5.41398E+12,False,5.41398E+12,False,unique_beer_key_and_matching_style
+159,5411686700668,Flanders old brown,5.41169E+12,False,5.41169E+12,False,unique_beer_key_and_matching_style
+90,54017016,Pils/Lager,54017016,True,54017016,True,unique_beer_key_and_matching_style
+92,9120041150685,Amber,9.12004E+12,False,9.12004E+12,False,unique_beer_key_and_matching_style
+93,5425006700139,Tripel,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+238,5412896000432,Blond,5.4129E+12,False,5.4129E+12,False,unique_beer_key_and_matching_style
+76,5412583240837,Blond,5.41258E+12,False,5.41258E+12,False,unique_beer_key_and_matching_style
+107,5412343152332,Dubbel,5.41234E+12,False,5.41234E+12,False,unique_beer_key_and_matching_style
+205,793573165763,Brut,7.93573E+11,False,7.93573E+11,False,unique_beer_key_and_matching_style
+206,54085015,Brown,54085015,True,54085015,True,unique_beer_key_and_matching_style
+53,5411681037004,Brown,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+24,5411656050212,Kriek,5.41166E+12,False,5.41166E+12,False,unique_beer_key_and_matching_style
+136,54085176,Blond,54085176,True,54085176,True,unique_beer_key_and_matching_style
+69,5411081000332,Tripel,5.41108E+12,False,5.41108E+12,False,unique_beer_key_and_matching_style
+180,5411633330047,Christmas,5.41163E+12,False,5.41163E+12,False,unique_beer_key_and_matching_style
+49,5410228208358,Blond,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+243,5412138802510,Wheat,5.41214E+12,False,5.41214E+12,False,unique_beer_key_and_matching_style
+134,54004238,Strong ale,54004238,True,54004238,True,unique_beer_key_and_matching_style
+193,5411098700034,Blond,5.4111E+12,False,5.4111E+12,False,unique_beer_key_and_matching_style
+39,5430000193009,Hoppy,5.43E+12,False,5.43E+12,False,unique_beer_key_and_matching_style
+240,5410783004594,Tripel,5.41078E+12,False,5.41078E+12,False,unique_beer_key_and_matching_style
+12,5410228141587,Lambic,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+150,5425024150275,Brett/cofermented,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+23,5411681014005,Tripel,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+226,5412186000715,Strong ale,5.41219E+12,False,5.41219E+12,False,unique_beer_key_and_matching_style
+29,5410702000331,Saison,5.4107E+12,False,5.4107E+12,False,unique_beer_key_and_matching_style
+132,5410702000379,Saison,5.4107E+12,False,5.4107E+12,False,unique_beer_key_and_matching_style
+16,5411098700003,Dubbel,5.4111E+12,False,5.4111E+12,False,unique_beer_key_and_matching_style
+47,5412583240363,Tripel,5.41258E+12,False,5.41258E+12,False,unique_beer_key_and_matching_style
+164,5425007658828,Blond,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+115,5411516001453,Lambic,5.41152E+12,False,5.41152E+12,False,unique_beer_key_and_matching_style
+149,5425031010012,Blond,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+80,5415152000313,Hoppy,5.41515E+12,False,5.41515E+12,False,unique_beer_key_and_matching_style
+120,850413005204,Hoppy,8.50413E+11,False,8.50413E+11,False,unique_beer_key_and_matching_style
+222,5425029490055,Brett/cofermented,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+18,1882,Lambic,1882,True,1882,True,unique_beer_key_and_matching_style
+98,54055315,Brown,54055315,True,54055315,True,unique_beer_key_and_matching_style
+221,5412896000067,Dubbel,5.4129E+12,False,5.4129E+12,False,unique_beer_key_and_matching_style
+32,54050051,Amber,54050051,True,54050051,True,unique_beer_key_and_matching_style
+27,5425036850019,Hoppy,5.42504E+12,False,5.42504E+12,False,unique_beer_key_and_matching_style
+13,5410228196600,Christmas,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+174,5412583240356,Dubbel,5.41258E+12,False,5.41258E+12,False,unique_beer_key_and_matching_style
+79,5425029020054,Hoppy,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+118,5411364151119,West Flanders ale,5.41136E+12,False,5.41136E+12,False,unique_beer_key_and_matching_style
+152,5410702001307,Wheat,5.4107E+12,False,5.4107E+12,False,unique_beer_key_and_matching_style
+184,5412783055019,Fruitbeer,5.41278E+12,False,5.41278E+12,False,unique_beer_key_and_matching_style
+19,5425030060032,Amber,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+145,5415152000450,Saison,5.41515E+12,False,5.41515E+12,False,unique_beer_key_and_matching_style
+125,5413963300011,Blond,5.41396E+12,False,5.41396E+12,False,unique_beer_key_and_matching_style
+6,8711406031766,Amber,8.71141E+12,False,8.71141E+12,False,unique_beer_key_and_matching_style
+212,5425006700054,Stout/Porter,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+78,5425006240017,Brown,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+234,5425029490024,Blond,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+147,5412107000466,Tripel,5.41211E+12,False,5.41211E+12,False,unique_beer_key_and_matching_style
+66,5413977000037,Tripel,5.41398E+12,False,5.41398E+12,False,unique_beer_key_and_matching_style
+249,9120041150784,Blond,9.12004E+12,False,9.12004E+12,False,unique_beer_key_and_matching_style
+104,5412858000081,Strong ale,5.41286E+12,False,5.41286E+12,False,unique_beer_key_and_matching_style
+101,5425036450004,Blond,5.42504E+12,False,5.42504E+12,False,unique_beer_key_and_matching_style
+237,5400000000008,Brown,5.4E+12,False,5.4E+12,False,unique_beer_key_and_matching_style
+127,54138278,Blond,54138278,True,54138278,True,unique_beer_key_and_matching_style
+245,5412186000098,Tripel,5.41219E+12,False,5.41219E+12,False,unique_beer_key_and_matching_style
+191,5411098700010,Tripel,5.4111E+12,False,5.4111E+12,False,unique_beer_key_and_matching_style
+60,5425029020078,Christmas,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+51,5411081000523,Strong ale,5.41108E+12,False,5.41108E+12,False,unique_beer_key_and_matching_style
+144,5411516002306,Lambic,5.41152E+12,False,5.41152E+12,False,unique_beer_key_and_matching_style
+28,5425036580008,Pils/Lager,5.42504E+12,False,5.42504E+12,False,unique_beer_key_and_matching_style
+41,5411656010315,Lambic,5.41166E+12,False,5.41166E+12,False,unique_beer_key_and_matching_style
+153,5425007810806,Kriek,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+146,54004009,Scotch,54004009,True,54004009,True,unique_beer_key_and_matching_style
+168,5410263060034,Scotch,5.41026E+12,False,5.41026E+12,False,unique_beer_key_and_matching_style
+30,5430000043014,Blond,5.43E+12,False,5.43E+12,False,unique_beer_key_and_matching_style
+36,5412896000074,Brown,5.4129E+12,False,5.4129E+12,False,unique_beer_key_and_matching_style
+126,54085060,Amber,54085060,True,54085060,True,unique_beer_key_and_matching_style
+162,5425018070015,Lambic,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+123,5425026960018,Stout/Porter,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+130,5425025910410,Brut,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+8,5425006241304,Hoppy,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+31,5411681401164,Hoppy,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+52,8715951011112,Stout/Porter,8.71595E+12,False,8.71595E+12,False,unique_beer_key_and_matching_style
+9,5411081005368,Hoppy,5.41108E+12,False,5.41108E+12,False,unique_beer_key_and_matching_style
+204,5425006240024,Tripel,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+94,5412186003013,Blond,5.41219E+12,False,5.41219E+12,False,unique_beer_key_and_matching_style
+131,5410769200088,Scotch,5.41077E+12,False,5.41077E+12,False,unique_beer_key_and_matching_style
+75,5412783052018,Lambic,5.41278E+12,False,5.41278E+12,False,unique_beer_key_and_matching_style
+34,5411681038001,Tripel,5.41168E+12,False,5.41168E+12,False,unique_beer_key_and_matching_style
+108,5425007658880,Brown,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+187,5425017240075,Dubbel,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+45,5412343201337,Tripel,5.41234E+12,False,5.41234E+12,False,unique_beer_key_and_matching_style
+154,5425029490017,Tripel,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+121,5414239000093,Blond,5.41424E+12,False,5.41424E+12,False,unique_beer_key_and_matching_style
+242,5412138333311,Saison,5.41214E+12,False,5.41214E+12,False,unique_beer_key_and_matching_style
+208,54079052,Wheat,54079052,True,54079052,True,unique_beer_key_and_matching_style
+38,541286000975,Christmas,5.41286E+11,False,5.41286E+11,False,unique_beer_key_and_matching_style
+170,5411663002716,Strong ale,5.41166E+12,False,5.41166E+12,False,unique_beer_key_and_matching_style
+214,5425006240147,Christmas,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+35,8711406995075,Blond,8.71141E+12,False,8.71141E+12,False,unique_beer_key_and_matching_style
+215,5413963100017,Blond,5.41396E+12,False,5.41396E+12,False,unique_beer_key_and_matching_style
+235,5412858000104,Strong ale,5.41286E+12,False,5.41286E+12,False,unique_beer_key_and_matching_style
+89,5412983140027,Brown,5.41298E+12,False,5.41298E+12,False,unique_beer_key_and_matching_style
+114,5410769300085,Hoppy,5.41077E+12,False,5.41077E+12,False,unique_beer_key_and_matching_style
+181,5412896532032,Christmas,5.4129E+12,False,5.4129E+12,False,unique_beer_key_and_matching_style
+225,5411663002600,Strong ale,5.41166E+12,False,5.41166E+12,False,unique_beer_key_and_matching_style
+57,5410228141921,Tripel,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+143,5410228225928,Hoppy,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+133,5412896000081,Strong ale,5.4129E+12,False,5.4129E+12,False,unique_beer_key_and_matching_style
+182,5425028290311,Stout/Porter,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+17,5425014687019,Tripel,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+229,62067029172,Wheat,62067029172,True,62067029172,True,unique_beer_key_and_matching_style
+148,5400000000012,Strong ale,5.4E+12,False,5.4E+12,False,unique_beer_key_and_matching_style
+248,5410263015669,Blond,5.41026E+12,False,5.41026E+12,False,unique_beer_key_and_matching_style
+65,5411283000017,Hoppy,5.41128E+12,False,5.41128E+12,False,unique_beer_key_and_matching_style
+73,5410769100081,Blond,5.41077E+12,False,5.41077E+12,False,unique_beer_key_and_matching_style
+198,54079007,Dubbel,54079007,True,54079007,True,unique_beer_key_and_matching_style
+91,8711406995495,Strong ale,8.71141E+12,False,8.71141E+12,False,unique_beer_key_and_matching_style
+217,5425006241687,Tripel,5.42501E+12,False,5.42501E+12,False,unique_beer_key_and_matching_style
+163,5425017240457,Tripel,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+68,9999999999,Tripel,9999999999,True,9999999999,True,unique_beer_key_and_matching_style
+15,54079045,Tripel,54079045,True,54079045,True,unique_beer_key_and_matching_style
+1,5413970150111,Brut,5.41397E+12,False,5.41397E+12,False,unique_beer_key_and_matching_style
+71,5410228218791,Blond,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+102,5411911001768,Christmas,5.41191E+12,False,5.41191E+12,False,unique_beer_key_and_matching_style
+140,54050082,Tripel,54050082,True,54050082,True,unique_beer_key_and_matching_style
+67,5425026610197,Stout/Porter,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+210,5413982001005,Amber,5.41398E+12,False,5.41398E+12,False,unique_beer_key_and_matching_style
+189,5410228145912,Tripel,5.41023E+12,False,5.41023E+12,False,unique_beer_key_and_matching_style
+233,5413023000264,Scotch,5.41302E+12,False,5.41302E+12,False,unique_beer_key_and_matching_style
+199,5411858000145,Tripel,5.41186E+12,False,5.41186E+12,False,unique_beer_key_and_matching_style
+63,701197206052,Amber,7.01197E+11,False,7.01197E+11,False,unique_beer_key_and_matching_style
+95,5412138303314,Christmas,5.41214E+12,False,5.41214E+12,False,unique_beer_key_and_matching_style
+25,54079014,Brown,54079014,True,54079014,True,unique_beer_key_and_matching_style
+203,5425017241164,Brett/cofermented,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+85,54112018,Tripel,54112018,True,54112018,True,unique_beer_key_and_matching_style
+3,54055308,Blond,54055308,True,54055308,True,unique_beer_key_and_matching_style
+21,5412783052247,Lambic,5.41278E+12,False,5.41278E+12,False,unique_beer_key_and_matching_style
+192,5410693100324,Brut,5.41069E+12,False,5.41069E+12,False,unique_beer_key_and_matching_style
+239,54055049,Tripel,54055049,True,54055049,True,unique_beer_key_and_matching_style
+117,9120041150678,Strong ale,9.12004E+12,False,9.12004E+12,False,unique_beer_key_and_matching_style
+171,5425033240028,Tripel,5.42503E+12,False,5.42503E+12,False,unique_beer_key_and_matching_style
+103,5425024150108,Stout/Porter,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style
+175,5410263013665,Strong ale,5.41026E+12,False,5.41026E+12,False,unique_beer_key_and_matching_style
+196,5411551300818,Strong ale,5.41155E+12,False,5.41155E+12,False,unique_beer_key_and_matching_style
+4,54079021,Strong ale,54079021,True,54079021,True,unique_beer_key_and_matching_style
+99,5413970140396,Strong ale,5.41397E+12,False,5.41397E+12,False,unique_beer_key_and_matching_style
+157,5425024150107,Tripel,5.42502E+12,False,5.42502E+12,False,unique_beer_key_and_matching_style

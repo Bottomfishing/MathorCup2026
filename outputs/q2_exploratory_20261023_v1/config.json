@@ -1,0 +1,27 @@
+{
+  "seed": 20261023,
+  "bootstrap_repeats": 200,
+  "ridge_alpha": 1000.0,
+  "network_thresholds": [
+    0.5,
+    0.6,
+    0.7
+  ],
+  "exclude_from_compound_top3": [
+    "pH",
+    "color.EBC.",
+    "bitterness",
+    "GFS",
+    "unfermentables",
+    "kcalperc",
+    "esters_sum",
+    "aroma_hops_sum",
+    "acids_sum",
+    "sulfur_sum",
+    "protein.g.L.",
+    "betaglucan.mg.L."
+  ],
+  "scope": "exploratory full-data association, not causal or independently validated explanation",
+  "bootstrap_scheme": "within_style_fixed_counts; refit imputation, asinh, scaling and ridge each time",
+  "alpha_basis": "1000 selected in each P1 robust ridge outer-training inner-CV; held fixed here, no bootstrap retuning"
+}

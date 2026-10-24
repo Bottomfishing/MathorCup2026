@@ -1,0 +1,4 @@
+﻿fold,model_path,model_sha256,n_train,n_test,correlation_groups,multi_member_groups
+0,C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\outputs\p1_baseline_20261023_v1\models\extra_trees_fold0.joblib,ec6e368b63ab9ed01b182ca0affb62cb39c5e2690499d34cf70941b5aaa23fc7,166,84,192,31
+1,C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\outputs\p1_baseline_20261023_v1\models\extra_trees_fold1.joblib,0c0340824ce57e710cc86e2df6d9e2ed6aa96134efa8b4fdb6308958057b9c85,167,83,189,32
+2,C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\outputs\p1_baseline_20261023_v1\models\extra_trees_fold2.joblib,d86f1c3ce937173595011ac61ff97918903992367866a9ce3c6a2dc97f115a97,167,83,192,27

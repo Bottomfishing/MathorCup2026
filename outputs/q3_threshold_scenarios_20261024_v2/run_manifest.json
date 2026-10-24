@@ -1,0 +1,12 @@
+{
+  "parent": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q3_exploratory_20261024_v2",
+  "reference": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx",
+  "reference_sha256": "e0a10635c4fbc3c62dc7e06e553cce9fad98c768ea6af5c8adc8a836098d1474",
+  "script_sha256": "d3f798396b2e0bf8f6059c627290654c9d6137e73188c7d6f2b67c6ae779c22f",
+  "scope": "Explicit reference mean/median scenarios; no threshold invented for nonenal or stale hops.",
+  "limitations": [
+    "Source transformations and threshold applicability are assumptions, not final calibrated physical constraints.",
+    "Nonenal remains a supplied-coordinate nonincrease gate; stale hops remains a model proxy.",
+    "All scenarios retain physical_constraints_certified=false; finite candidate search does not prove feasibility or infeasibility in real brewing."
+  ]
+}

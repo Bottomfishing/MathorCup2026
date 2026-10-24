@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "generated_profiles_replayed": 900,
+  "generated_sensory_values_checked": 45000,
+  "fold_generators_refitted": 3,
+  "validation_style_fold_method_groups_recomputed": 198,
+  "transfer_candidate_profiles": 2000,
+  "transfer_sources_checked": 11,
+  "physical_certification": false
+}

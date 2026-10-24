@@ -1,0 +1,8 @@
+{
+  "unit_tests_passed": 13,
+  "deterministic_output_files": 15,
+  "differences": [],
+  "independent_csv_counts": "250 unique samples and 73 missing cells confirmed",
+  "environment": "same bundled Python; clean-environment reproduction not yet performed",
+  "source_hashes_unchanged": true
+}
