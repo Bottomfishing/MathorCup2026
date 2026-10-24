@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "primary_grade_metrics": {
+    "n_samples": 250.0,
+    "n_targets": 45.0,
+    "relative_grade_mae": 1.6174222222222223,
+    "exact_accuracy": 0.19404444444444444,
+    "within_one_accuracy": 0.5304888888888889
+  },
+  "confusion_count": 11250,
+  "grade_scale": "relative_to_outer_training_labels",
+  "source_sha256": {
+    "oof_predictions.csv": "b60cb63ece9772620e71a0f957e641030f93f573f6783380a3586797e042f6b1",
+    "q1_scores_all50_long.csv": "d49e30202e74e57716a73dc296235783eee422f78ffa6ad1792ccfd5fb87ee92",
+    "missingness.csv": "5f148a47e021b84859f1aadc1eb848fd908d2fc495a6b7cf222188e6275bcedf",
+    "calibration.json": "e75148d46276dc0c4bc376d6c673276c82b159f701beebb99c3fce5fea2d6eb2"
+  },
+  "interpretation": "Accuracy concerns constructed relative grades, not recovered original panel ratings. Missingness SD uses 3 mask repetitions, not a confidence interval."
+}

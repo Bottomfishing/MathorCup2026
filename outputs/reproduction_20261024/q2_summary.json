@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "selection_rule": "Top 3 eligible absolute standardized coefficients of full-data asinh Ridge, alpha=1000; ties preserve original feature order. Network supplies co-variation context, not a centrality multiplier.",
+  "rows_all50": 150,
+  "rows_primary45": 135,
+  "resolved_compound_names": 82,
+  "explicit_aliases": 4,
+  "refit_frequency_median": 0.3825,
+  "n_below_half_refit_frequency": 93,
+  "chemical_evidence_counts": {
+    "target_specific_evidence_insufficient": 114,
+    "reference_descriptor_overlap": 28,
+    "named_marker_matches_target": 8
+  },
+  "n_negative_coefficients_with_reference_support": 1,
+  "n_nonpositive_within_style_forest_importance": 19,
+  "network_nodes": 231,
+  "network_edges_0_6": 266,
+  "mean_jaccard": {
+    "ridge_vs_forest_jaccard": 0.12200000000000001,
+    "full_vs_analytes_jaccard": 0.59,
+    "global_vs_within_style_jaccard": 0.424
+  },
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "reference_sha256": "e0a10635c4fbc3c62dc7e06e553cce9fad98c768ea6af5c8adc8a836098d1474",
+  "config_sha256": "166ace39bdd6350954b03e3bf5145c5f14fddd759918be84162f6cb910d893ac",
+  "checks": [
+    "source and reference hashes",
+    "one-fit coefficient and frozen ranking reproduction",
+    "30000 bootstrap selections recounted",
+    "82 unique exact or explicit name matches",
+    "supplied graph reconstructed and node degrees compared"
+  ],
+  "scope": "Descriptive full-data associations with target-specific evidence annotations. Descriptor matching is a documented manual-lexicon heuristic, not independent mechanistic validation. Refitting bootstrap and fixed-model validation bootstrap are distinct."
+}

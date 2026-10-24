@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "q1_oof_rows": 12500,
+  "q1_features": 224,
+  "q1_primary_targets": 45,
+  "missing_scenarios": 9,
+  "generated_profiles": 300,
+  "generated_sensory_rows": 15000,
+  "selected_transfers": 9,
+  "missing_defect_sources": 2,
+  "checks": [
+    "source hashes",
+    "fold model reload and OOF predictions",
+    "training-only imputation statistics",
+    "independent count-based grades",
+    "metrics and missingness recomputation",
+    "generation parent reconstruction",
+    "sensory predictions",
+    "transfer defect equality and dual proxy checks"
+  ],
+  "limitations": "Does not establish original rating recovery, causal effects, brewing feasibility or final competition acceptance."
+}
