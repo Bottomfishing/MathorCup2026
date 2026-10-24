@@ -1,0 +1,18 @@
+{
+  "seed": 20261024,
+  "radius_training_iqr_fractions": [
+    0.0,
+    0.001,
+    0.005,
+    0.01,
+    0.025
+  ],
+  "monte_carlo_spot_checks": 32,
+  "protected_features": [
+    "DMS",
+    "X2.3.butanedione",
+    "X4VG",
+    "X.E..2.nonenal"
+  ],
+  "scope": "Sensitivity scenarios in supplied coordinates, not measured assay errors. All boxes are intersected with target support for nondefects, chemical upper caps and nonnegative identity-coordinate defects. Only fitted Stale predictions are bounded; style labels across the entire box and physical outcomes are not certified."
+}

@@ -1,0 +1,464 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-24T14:36:08.772580+00:00",
+  "git_commit": "cf37705bdf3e3596e8dbb9233e001bec0b35b2cb",
+  "python": "3.12.10",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.2"
+  },
+  "reused_base": false,
+  "include_q1_q2": true,
+  "include_diagnostics": true,
+  "steps": [
+    {
+      "name": "tests",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 3.068
+    },
+    {
+      "name": "base_training",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/complete_modeling.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling"
+      ],
+      "exit_code": 0,
+      "seconds": 31.431
+    },
+    {
+      "name": "base_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_continuation.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling"
+      ],
+      "exit_code": 0,
+      "seconds": 5.46
+    },
+    {
+      "name": "style_training",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q3_style_study.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--q3",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q3",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style"
+      ],
+      "exit_code": 0,
+      "seconds": 11.039
+    },
+    {
+      "name": "style_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q3_style_study.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--q3",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q3",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style"
+      ],
+      "exit_code": 0,
+      "seconds": 9.54
+    },
+    {
+      "name": "resolution_training",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/resolve_q3.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--style-models",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\resolution"
+      ],
+      "exit_code": 0,
+      "seconds": 34.065
+    },
+    {
+      "name": "resolution_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q3_resolution.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--style-models",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\resolution"
+      ],
+      "exit_code": 0,
+      "seconds": 3.514
+    },
+    {
+      "name": "reference_design",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q3_measured_reference.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--style-models",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style",
+        "--resolution",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\resolution",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference"
+      ],
+      "exit_code": 0,
+      "seconds": 3.47
+    },
+    {
+      "name": "reference_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q3_reference.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--style-models",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style",
+        "--resolution",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\resolution",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference"
+      ],
+      "exit_code": 0,
+      "seconds": 3.221
+    },
+    {
+      "name": "ordinal_training",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q1_ordinal_experiment.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\ordinal"
+      ],
+      "exit_code": 0,
+      "seconds": 16.838
+    },
+    {
+      "name": "q2_reliability",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q2_reliability_study.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\q2_reliability"
+      ],
+      "exit_code": 0,
+      "seconds": 6.448
+    },
+    {
+      "name": "latest_additions_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_latest_additions.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--root",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024"
+      ],
+      "exit_code": 0,
+      "seconds": 6.111
+    },
+    {
+      "name": "reference_holdout",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q3_reference_holdout.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_holdout"
+      ],
+      "exit_code": 0,
+      "seconds": 11.095
+    },
+    {
+      "name": "holdout_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q3_reference_holdout.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_holdout"
+      ],
+      "exit_code": 0,
+      "seconds": 9.187
+    },
+    {
+      "name": "reference_boxes",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q3_reference_box_study.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--style-models",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style",
+        "--resolution",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\resolution",
+        "--reference",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_boxes"
+      ],
+      "exit_code": 0,
+      "seconds": 5.496
+    },
+    {
+      "name": "box_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q3_reference_box.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_boxes"
+      ],
+      "exit_code": 0,
+      "seconds": 6.19
+    },
+    {
+      "name": "reference_robust",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q3_reference_robust.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--style-models",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style",
+        "--resolution",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\resolution",
+        "--reference",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_robust"
+      ],
+      "exit_code": 0,
+      "seconds": 6.395
+    },
+    {
+      "name": "robust_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q3_reference_robust.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_robust"
+      ],
+      "exit_code": 0,
+      "seconds": 10.19
+    },
+    {
+      "name": "diagnostic_figures",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/report_q3_reference_diagnostics.py",
+        "--holdout",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_holdout",
+        "--box",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\reference_boxes",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\diagnostic_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 3.503
+    },
+    {
+      "name": "grade_probability",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/q1_probability_diagnostics.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--ordinal",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\ordinal",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\grade_probability"
+      ],
+      "exit_code": 0,
+      "seconds": 4.257
+    },
+    {
+      "name": "probability_verification",
+      "command": [
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q1_probability_diagnostics.py",
+        "--source",
+        "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\modeling\\q1",
+        "--ordinal",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\ordinal",
+        "--output",
+        "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\grade_probability"
+      ],
+      "exit_code": 0,
+      "seconds": 4.529
+    }
+  ],
+  "table_comparisons": [
+    {
+      "actual": "modeling\\q1\\model_comparison.csv",
+      "reference": "outputs\\final_20261024\\q1\\model_comparison.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "modeling\\q1\\q1_scores_primary45.csv",
+      "reference": "outputs\\final_20261024\\q1\\q1_scores_primary45.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "modeling\\q3\\generated_profiles.csv",
+      "reference": "outputs\\final_20261024\\q3\\generated_profiles.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "modeling\\q3\\validation_summary.csv",
+      "reference": "outputs\\final_20261024\\q3\\validation_summary.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "style\\style_metrics.csv",
+      "reference": "outputs\\q3_style_20261024\\style_metrics.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "style\\stale_metrics.csv",
+      "reference": "outputs\\q3_style_20261024\\stale_metrics.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "style\\style_oof.csv",
+      "reference": "outputs\\q3_style_20261024\\style_oof.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "style\\stale_oof.csv",
+      "reference": "outputs\\q3_style_20261024\\stale_oof.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "resolution\\transfer_profiles.csv",
+      "reference": "outputs\\q3_resolution_20261024\\transfer_profiles.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "resolution\\transfer_results.csv",
+      "reference": "outputs\\q3_resolution_20261024\\transfer_results.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "resolution\\stale_loss_comparison.csv",
+      "reference": "outputs\\q3_resolution_20261024\\stale_loss_comparison.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "resolution\\defect_checks.csv",
+      "reference": "outputs\\q3_resolution_20261024\\defect_checks.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference\\transfer_profiles.csv",
+      "reference": "outputs\\q3_reference_20261024\\transfer_profiles.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference\\transfer_results.csv",
+      "reference": "outputs\\q3_reference_20261024\\transfer_results.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference\\transfer_sensory.csv",
+      "reference": "outputs\\q3_reference_20261024\\transfer_sensory.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference\\stale_reference_checks.csv",
+      "reference": "outputs\\q3_reference_20261024\\stale_reference_checks.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference_holdout\\metrics.csv",
+      "reference": "outputs\\q3_reference_holdout_20261024\\metrics.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference_holdout\\paired_uncertainty.csv",
+      "reference": "outputs\\q3_reference_holdout_20261024\\paired_uncertainty.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference_boxes\\scenario_results.csv",
+      "reference": "outputs\\q3_reference_box_20261024\\scenario_results.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference_robust\\transfer_profiles.csv",
+      "reference": "outputs\\q3_reference_robust_20261024\\transfer_profiles.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "reference_robust\\transfer_results.csv",
+      "reference": "outputs\\q3_reference_robust_20261024\\transfer_results.csv",
+      "status": "passed"
+    },
+    {
+      "actual": "grade_probability\\metrics.csv",
+      "reference": "outputs\\q1_probability_diagnostics_20261024\\metrics.csv",
+      "status": "passed"
+    }
+  ],
+  "scope": "Local environment rebuild and independent verification of current Q1/Q3 base plus latest Q3 extensions; not intervention validation or a fresh-environment audit.",
+  "finished_utc": "2026-10-24T14:39:24.585168+00:00"
+}

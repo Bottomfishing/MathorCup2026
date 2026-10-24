@@ -26,6 +26,9 @@ def run(model, input_path, output):
         'score_scale': 'provided_standardized_panel_score',
         'grade_semantics': 'relative_midrank_ECDF_of_full_training_targets_not_raw_panel_rating',
         'grade_method': bundle.get('grade_method', 'continuous_prediction_then_training_ECDF'),
+        'grade_interval_kind': ('uncalibrated_equal_tail_forecast_interval' if 'grade_model' in bundle else 'not_available_for_continuous_only_bundle'),
+        'grade_interval_nominal_level': .9 if 'grade_model' in bundle else None,
+        'grade_probability_calibrated': False if 'grade_model' in bundle else None,
         'evaluation_use': 'full_training_model_predictions_are_not_OOF_accuracy_estimates'})
     print(f'Predicted {len(frame)} samples; output: {output}')
 

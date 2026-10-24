@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "selected_sources": 11,
+  "complete_measured_references": 23,
+  "pairs": 253,
+  "unchanged_measured_coordinates_per_transfer": 220,
+  "source_and_reference_chemical_cap_checks": 88,
+  "anchored_stale_checks": 33,
+  "sensory_rows": 550,
+  "checks": [
+    "source, parent and model hashes",
+    "complete reference membership",
+    "exact 220 measured coordinates",
+    "four chemical caps against source and reference",
+    "reference observed Stale not higher",
+    "three anchored Stale corrections",
+    "source-prediction guards reported only as diagnostic",
+    "dual style labels",
+    "distance and full sensory reconstruction"
+  ],
+  "paired_intervention_validation_available": false
+}

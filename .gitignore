@@ -26,3 +26,17 @@ outputs/q3_threshold_scenarios_20261024/
 *.key
 .DS_Store
 Thumbs.db
+
+# Local rebuilds duplicate versioned scientific tables; publish their reports/logs.
+outputs/revalidation_20261024/modeling/
+outputs/revalidation_20261024/style/
+outputs/revalidation_20261024/resolution/
+outputs/revalidation_20261024/reference/
+outputs/revalidation_20261024/ordinal/
+outputs/revalidation_20261024/q2_reliability/
+outputs/revalidation_20261024/ordinal_prediction_smoke/*.csv
+outputs/revalidation_20261024/ordinal_prediction_with_intervals/*.csv
+outputs/reproduction_latest_20261024/*
+!outputs/reproduction_latest_20261024/latest_revalidation.json
+!outputs/reproduction_latest_20261024/latest_logs/
+outputs/q3_reference_diagnostics_20261024/

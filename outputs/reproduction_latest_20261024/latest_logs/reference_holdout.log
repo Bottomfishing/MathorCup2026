@@ -1,0 +1,18 @@
+Reference holdout fold 0 complete
+Reference holdout fold 1 complete
+Reference holdout fold 2 complete
+ scope                   method  n  eligible_queries      mae     rmse  mean_bias  fraction_prediction_ge_observed                        coverage_interpretation
+Tripel   training_global_median 28                28 0.279673 0.601479  -0.148944                         0.535714 empirical_sign_fraction_not_a_calibrated_bound
+Tripel    training_style_median 28                28 0.277302 0.604423  -0.158836                         0.535714 empirical_sign_fraction_not_a_calibrated_bound
+Tripel       reference_observed 28                28 0.767389 1.260994   0.291315                         0.571429 empirical_sign_fraction_not_a_calibrated_bound
+Tripel          direct_selected 28                28 0.321743 0.586031  -0.021187                         0.678571 empirical_sign_fraction_not_a_calibrated_bound
+Tripel             direct_ridge 28                28 0.325954 0.575730  -0.010345                         0.714286 empirical_sign_fraction_not_a_calibrated_bound
+Tripel           direct_focused 28                28 0.299094 0.557555  -0.017945                         0.714286 empirical_sign_fraction_not_a_calibrated_bound
+Tripel four_coordinate_selected 28                28 0.760753 1.243943   0.286056                         0.571429 empirical_sign_fraction_not_a_calibrated_bound
+Tripel    four_coordinate_ridge 28                28 0.769174 1.260373   0.291766                         0.571429 empirical_sign_fraction_not_a_calibrated_bound
+Tripel  four_coordinate_focused 28                28 0.765571 1.256227   0.290377                         0.571429 empirical_sign_fraction_not_a_calibrated_bound
+Tripel full_coordinate_selected 28                28 0.571881 0.909347   0.181092                         0.642857 empirical_sign_fraction_not_a_calibrated_bound
+Tripel    full_coordinate_ridge 28                28 0.749231 1.190048   0.259921                         0.607143 empirical_sign_fraction_not_a_calibrated_bound
+Tripel  full_coordinate_focused 28                28 0.486151 0.794905   0.153550                         0.678571 empirical_sign_fraction_not_a_calibrated_bound
+Tripel     four_coordinate_max3 28                28 0.769229 1.259921   0.295587                         0.571429 empirical_sign_fraction_not_a_calibrated_bound
+Tripel     full_coordinate_max3 28                28 0.704101 1.148944   0.377566                         0.714286 empirical_sign_fraction_not_a_calibrated_bound

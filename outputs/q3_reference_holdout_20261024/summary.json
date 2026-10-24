@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "n_queries": 250,
+  "n_matched": 250,
+  "n_Tripel": 28,
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "q1": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\revalidation_20261024\\modeling\\q1",
+  "config_sha256": "9c07353a56a228326c8586f379b9c829cd612ac15566ff29e0a9f9e488ae6f6a",
+  "script_sha256": "a27262837e5098b2a827d7dc9e06bbd5ccc00f78a7ebed0979fa438685b02c2d",
+  "limitations": [
+    "Held-out observational prediction diagnostic. Query and reference differ in other chemistry; this does not validate a four-coordinate intervention or physical nonworsening. Historical folds already informed exploration.",
+    "Reference selected without query outcomes; design-time outcome screening in actual transfers is a different process.",
+    "Other 220 coordinates of a held-out query differ from its reference. Error is not an isolated four-coordinate intervention effect.",
+    "Maximum of three point predictions is not a confidence bound; its observed coverage is diagnostic only."
+  ]
+}

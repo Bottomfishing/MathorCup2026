@@ -1,0 +1,5 @@
+﻿scope,method,comparator,mae_difference,fixed_oof_p025,fixed_oof_p975,scope_note
+Tripel,four_coordinate_max3,reference_observed,0.0018398746104108263,-0.0011819571463411792,0.0063324162504866,"Exploratory paired fixed-OOF resampling; not refit, model selection or intervention uncertainty."
+Tripel,four_coordinate_max3,training_style_median,0.49192615639612514,0.1860612604857417,0.842577597446256,"Exploratory paired fixed-OOF resampling; not refit, model selection or intervention uncertainty."
+all_styles,four_coordinate_max3,reference_observed,0.0001750581559830821,-0.0015133514923375445,0.0017200463084715606,"Exploratory paired fixed-OOF resampling; not refit, model selection or intervention uncertainty."
+all_styles,four_coordinate_max3,training_style_median,0.08788853712398308,0.041769826787030166,0.14191907383320523,"Exploratory paired fixed-OOF resampling; not refit, model selection or intervention uncertainty."

@@ -1,0 +1,10 @@
+{
+  "seed": 20261024,
+  "primary_style": "Tripel",
+  "protected_features": ["DMS", "X2.3.butanedione", "X4VG", "X.E..2.nonenal"],
+  "matching": "nearest complete same-style training reference on 220 nonprotected robust-asinh coordinates; no outcome-based matching",
+  "primary_method": "four_coordinate_max3",
+  "primary_comparators": ["reference_observed", "training_style_median"],
+  "bootstrap_repeats": 2000,
+  "scope": "Held-out observational prediction diagnostic. Query and reference differ in other chemistry; this does not validate a four-coordinate intervention or physical nonworsening. Historical folds already informed exploration."
+}

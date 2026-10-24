@@ -1,0 +1,94 @@
+Stale loss comparison fold 0 complete
+Stale loss comparison fold 1 complete
+Stale loss comparison fold 2 complete
+Q3 beer 124: 12 candidates, selected preserve, distance reduction 30.72%
+Q3 beer 81: 1356 candidates, selected preserve, distance reduction 45.06%
+Q3 beer 218: 1324 candidates, selected preserve, distance reduction 42.96%
+Q3 beer 96: 110 candidates, selected preserve, distance reduction 38.95%
+Q3 beer 230: 1276 candidates, selected preserve, distance reduction 46.20%
+Q3 beer 185: 60 candidates, selected preserve, distance reduction 31.49%
+Q3 beer 139: 160 candidates, selected preserve, distance reduction 47.74%
+Q3 beer 209: 16 candidates, selected preserve, distance reduction 17.40%
+Q3 beer 119: 1134 candidates, selected reduce, distance reduction 43.59%
+Q3 beer 90: 110 candidates, selected preserve, distance reduction 44.46%
+Q3 beer 28: 2735 candidates, selected preserve, distance reduction 48.55%
+{
+  "status": "completed",
+  "config": {
+    "seed": 20261024,
+    "transfer_steps": 40,
+    "target_distance_weight": 0.7,
+    "defect_policies": [
+      "preserve",
+      "reduce"
+    ],
+    "protected_features": [
+      "DMS",
+      "X2.3.butanedione",
+      "X4VG",
+      "X.E..2.nonenal"
+    ],
+    "support_rule": "Target empirical upper bounds for all features and lower bounds for nondefects only. Do not increase defects to satisfy target minima.",
+    "missing_rule": "Only missing diacetyl with an explicit zero in attachment 8 receives a zero cap. This is a nonnegative-concentration bound, not median imputation or recovery of a raw CSV measurement.",
+    "stale_loss_comparison": "Fixed mean/median baselines, previous squared-error tree, absolute-error tree and absolute-error boosting; no repeated tuning. Retain existing three proxy guards. No new reliable Stale predictor is presumed."
+  },
+  "config_sha256": "d50bcb33a6daa1eafcd1a6104f775cc9d0382f27243f539ae13a00233a490908",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "style_models_sha256": {
+    "logistic": "eb0d907901c49fd7136df9fec9877b1d1240052d3ae658fd8322056c304742a4",
+    "extra_trees": "6c608d71552a09f2172c59ecd667ae6c79d4f647129a4a08ed5c4fac58ba7ed5",
+    "focused_stale": "362e62e2641fcd55b3d4ed85e235eb049d2773d2733b794ce8d898ea038230ca"
+  },
+  "style_model_directory": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\reproduction_latest_20261024\\style",
+  "anchor_seed": 20351024,
+  "selected": 11,
+  "n_sources": 11,
+  "reference_zero_capped_beers": [
+    "119",
+    "28"
+  ],
+  "stale_loss_metrics": [
+    {
+      "method": "mean",
+      "mae": 0.3089695827160176,
+      "rmse": 0.4414890645607757,
+      "r2": -0.003792201938910056
+    },
+    {
+      "method": "previous_multioutput",
+      "mae": 0.3083474889537273,
+      "rmse": 0.4375619363519456,
+      "r2": 0.013986214242448836
+    },
+    {
+      "method": "focused_squared_tree",
+      "mae": 0.29914976230325663,
+      "rmse": 0.432583218123093,
+      "r2": 0.03629691287973924
+    },
+    {
+      "method": "median",
+      "mae": 0.28342390658399996,
+      "rmse": 0.4675262750975141,
+      "r2": -0.12568262451707635
+    },
+    {
+      "method": "absolute_tree",
+      "mae": 0.2981129308820466,
+      "rmse": 0.4350469148582344,
+      "r2": 0.02528847260327627
+    },
+    {
+      "method": "absolute_boosting",
+      "mae": 0.2847014277148056,
+      "rmse": 0.4363156282653522,
+      "r2": 0.019595142931281506
+    }
+  ],
+  "stale_predictor_reliable_improvement_established": false,
+  "interpretation": "All design checks are explicit model assumptions. Safer defect lower values are permitted; zero caps do not recover missing raw values. No reliable Stale predictor or observed post-transfer outcome has been established. Residual-anchored scores assume source model bias remains unchanged."
+}

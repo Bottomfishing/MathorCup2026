@@ -10,7 +10,10 @@ ACTIVE=[
  'outputs/p0_audit_20261023_final','outputs/p1_baseline_20261023_v1','outputs/p1_robust_20261023_v2',
  'outputs/p1_review_20261023','outputs/q2_exploratory_20261023_v1','outputs/q2_permutation_20261024_v2',
  'outputs/q2_within_style_20261024_v3','outputs/q2_review_20261024_v3','outputs/q3_exploratory_20261024_v2',
- 'outputs/q3_review_20261024','outputs/q3_threshold_scenarios_20261024_v2','outputs/q1_relative_grades_20261024_v1']
+ 'outputs/q3_review_20261024','outputs/q3_threshold_scenarios_20261024_v2','outputs/q1_relative_grades_20261024_v1',
+ 'outputs/reproduction_latest_20261024','outputs/q3_reference_holdout_20261024','outputs/q3_reference_box_20261024',
+ 'outputs/q3_reference_robust_20261024','outputs/q3_reference_diagnostics_20261024_v2','outputs/q1_probability_diagnostics_20261024',
+ 'outputs/q3_guard_witness_search_20261024']
 
 
 def digest(path):
@@ -23,7 +26,7 @@ def digest(path):
 def create(project,out):
     out.mkdir(parents=True,exist_ok=False)
     files=set()
-    for name in ['src','scripts','tests','configs','docs']:
+    for name in ['src','scripts','tests','configs','docs','.github']:
         for p in (project/name).rglob('*'):
             if p.is_file() and '__pycache__' not in p.parts:files.add(p)
     for pattern in ['README.md','requirements*.txt','*.ps1']:

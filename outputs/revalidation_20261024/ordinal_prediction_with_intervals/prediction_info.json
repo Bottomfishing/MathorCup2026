@@ -1,0 +1,27 @@
+{
+  "samples": 250,
+  "targets": 50,
+  "model": "extra_trees",
+  "model_sha256": "524c936b1078498249206f2f60c4a94266bbd0f11c801bb4e63411e2520b1ee3",
+  "input_sha256": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+  "missing_columns_imputed": [],
+  "ignored_input_columns": [
+    "beer_id",
+    "tasting_category_fine",
+    "GFS",
+    "unfermentables",
+    "kcalperc",
+    "esters_sum",
+    "aroma_hops_sum",
+    "acids_sum",
+    "sulfur_sum"
+  ],
+  "input_scale": "same_supplied_coordinates_as_attachment_1_no_automatic_log_transform",
+  "score_scale": "provided_standardized_panel_score",
+  "grade_semantics": "relative_midrank_ECDF_of_full_training_targets_not_raw_panel_rating",
+  "grade_method": "direct_relative_grade_conditional_median",
+  "grade_interval_kind": "uncalibrated_equal_tail_forecast_interval",
+  "grade_interval_nominal_level": 0.9,
+  "grade_probability_calibrated": false,
+  "evaluation_use": "full_training_model_predictions_are_not_OOF_accuracy_estimates"
+}

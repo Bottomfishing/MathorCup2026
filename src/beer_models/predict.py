@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from beer_audit.checks import numeric_frame
 from .final_model import relative_grades
-from .ordinal import grade_decisions, seven_level_probabilities
+from .ordinal import grade_decisions, seven_level_probabilities, central_grade_interval
 
 
 def predict_frame(frame, bundle):
@@ -25,7 +25,9 @@ def predict_frame(frame, bundle):
     if 'grade_model' in bundle:
         grade_model = bundle['grade_model']
         imputed = grade_model.named_steps['impute'].transform(values)
-        grades = grade_decisions(seven_level_probabilities(grade_model.named_steps['model'], imputed))['conditional_median']
+        probabilities = seven_level_probabilities(grade_model.named_steps['model'], imputed)
+        grades = grade_decisions(probabilities)['conditional_median']
+        lower, upper = central_grade_interval(probabilities)
     else:
         grades = relative_grades(bundle['reference_y'], prediction)
     long = pd.DataFrame({'beer': np.repeat(beer.to_numpy(), len(targets)),
@@ -34,6 +36,11 @@ def predict_frame(frame, bundle):
         'standardized_prediction': prediction.ravel(), 'relative_grade_0_6': grades.ravel(),
         'observed_feature_count': np.repeat(observed, len(targets)),
         'missing_feature_fraction': np.repeat(1 - observed / len(features), len(targets))})
+    if 'grade_model' in bundle:
+        long['relative_grade_forecast_lower90'] = lower.ravel()
+        long['relative_grade_forecast_upper90'] = upper.ravel()
+        long['grade_max_class_probability'] = probabilities.max(axis=2).ravel()
+        long['grade_probability_calibrated'] = False
     primary_targets = np.asarray(targets)[bundle['primary']].tolist()
     wide = long.pivot(index='beer', columns='target', values='relative_grade_0_6').loc[beer, primary_targets].reset_index()
     samples = pd.DataFrame({'beer': beer.to_numpy(), 'observed_feature_count': observed,

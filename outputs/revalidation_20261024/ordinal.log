@@ -1,0 +1,11 @@
+Ordinal fold 0 complete
+Ordinal fold 1 complete
+Ordinal fold 2 complete
+               method  grade_mae  exact_accuracy  within_one_accuracy
+      training_median   1.716800        0.143556             0.426667
+continuous_then_grade   1.617422        0.194044             0.530489
+   conditional_median   1.471556        0.200089             0.548711
+     conditional_mode   1.721778        0.255467             0.528444
+            method  grade_mae_improvement  fixed_oof_bootstrap_p025  fixed_oof_bootstrap_p975
+conditional_median               0.145867                  0.123553                  0.165869
+  conditional_mode              -0.104356                 -0.142947                 -0.066462

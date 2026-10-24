@@ -1,0 +1,7 @@
+{
+  "radius_training_iqr_fraction": 0.01,
+  "target_distance_weight": 0.7,
+  "protected_features": ["DMS", "X2.3.butanedione", "X4VG", "X.E..2.nonenal"],
+  "selection_note": "Exploratory criterion added after the nominal-candidate sensitivity study. Radius is a declared 1%-IQR coordinate scenario, not an assay-error estimate or independently validated tuning parameter.",
+  "scope": "Select among the original nominally feasible measured-reference candidates. Require all three conservative fitted-model upper bounds to satisfy the original reference-anchored guard over the scenario box. Physical outcomes and entire-box style remain unverified."
+}

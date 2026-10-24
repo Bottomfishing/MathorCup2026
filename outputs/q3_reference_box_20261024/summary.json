@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "config_sha256": "405bf9bc580a3955bedc95a54858eba910c0931941bc75aad75d3edc63052ab3",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "q1": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\revalidation_20261024\\modeling\\q1",
+  "style_models": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\revalidation_20261024\\style",
+  "resolution": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\revalidation_20261024\\resolution",
+  "reference": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\revalidation_20261024\\reference",
+  "parent_summary_sha256": "a3ebe8e33f18f8f742fc22986c232db1a8f09dbd8b476f175b19a720a4087b87",
+  "n_model_box_bounds": 165,
+  "model_bounds_scope": "Fitted prediction functions only; reference error-invariance assumption remains unvalidated.",
+  "limitations": [
+    "Sensitivity scenarios in supplied coordinates, not measured assay errors. All boxes are intersected with target support for nondefects, chemical upper caps and nonnegative identity-coordinate defects. Only fitted Stale predictions are bounded; style labels across the entire box and physical outcomes are not certified.",
+    "Forest sum-of-leaf extrema can be conservative because different trees need not attain their maxima together.",
+    "Failure of a conservative bound does not prove that any point violates the model guard.",
+    "No label uncertainty, causal error, mass balance or fermentation constraints are included."
+  ]
+}

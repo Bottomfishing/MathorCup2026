@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "forecast_rows_checked": 12500,
+  "training_prior_rows": 1050,
+  "metric_groups": 18,
+  "independent_six_threshold_scores": true,
+  "forecast_quantiles_checked": true,
+  "bootstrap_draws_checked": 2000,
+  "coverage_guaranteed": false,
+  "raw_rating_recovery": false
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "matched_queries_replayed": 250,
+  "model_fold_replays": 9,
+  "metrics_recomputed": 28,
+  "query_labels_excluded_from_matching": true,
+  "bootstrap_summaries_recomputed": 4,
+  "intervention_validated": false
+}

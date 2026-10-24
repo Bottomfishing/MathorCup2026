@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "candidate_pairs_independently_recomputed": 131,
+  "model_ranges_recomputed": 393,
+  "selected_profiles": 10,
+  "sensory_rows": 500,
+  "original_criterion_preserved": true,
+  "physical_certification": false
+}

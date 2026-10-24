@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "matching_scientific_tables": 12,
+  "tables": [
+    "outputs\\revalidation_20261024\\ordinal\\model_comparison.csv",
+    "outputs\\revalidation_20261024\\ordinal\\metrics_by_target.csv",
+    "outputs\\revalidation_20261024\\ordinal\\metrics_by_observed_grade.csv",
+    "outputs\\revalidation_20261024\\ordinal\\oof_predictions.csv",
+    "outputs\\revalidation_20261024\\ordinal\\missingness.csv",
+    "outputs\\revalidation_20261024\\ordinal\\paired_uncertainty.csv",
+    "outputs\\revalidation_20261024\\q2_reliability\\family_scope_top3.csv",
+    "outputs\\revalidation_20261024\\q2_reliability\\original_top3_reliability.csv",
+    "outputs\\revalidation_20261024\\q2_reliability\\target_diagnostics.csv",
+    "outputs\\revalidation_20261024\\q2_reliability\\named_marker_diagnostics.csv",
+    "outputs\\revalidation_20261024\\q2_reliability\\null_max_family.csv",
+    "outputs\\revalidation_20261024\\q2_reliability\\null_max_strict.csv"
+  ],
+  "ordinal_probability_rows": 12500,
+  "optimal_absolute_grade_actions_checked": true,
+  "training_only_constructed_grade_labels_checked": true,
+  "q2_target_p_and_BY_groups_recomputed": 100,
+  "independent_permutation_pipeline_refits": 3,
+  "null_statistics_checked": 300,
+  "raw_grade_recovery": false,
+  "causal_certification": false
+}

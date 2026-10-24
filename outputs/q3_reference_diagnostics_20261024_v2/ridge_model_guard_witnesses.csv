@@ -1,0 +1,3 @@
+﻿witness_id,beer,radius,model,anchored_prediction,source_observed_stale,model_guard_violation,logistic_label,extra_trees_label,scope
+124_radius_0.01,124,0.01,ridge,-0.35132270260178444,-0.355194378,0.003871675398215535,Tripel,Tripel,coordinate-box fitted-model counterexample; not a measured physical outcome
+124_radius_0.025,124,0.025,ridge,-0.33752857844339534,-0.355194378,0.017665799556604633,Tripel,Tripel,coordinate-box fitted-model counterexample; not a measured physical outcome

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "rows_checked": 12500,
+  "interval_columns_present": true,
+  "continuous_and_grade_outputs_retained": true,
+  "coverage_guaranteed": false,
+  "evaluation_scope": "Full-training model CLI smoke test; not OOF accuracy."
+}

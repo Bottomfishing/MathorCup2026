@@ -58,6 +58,13 @@ class PredictTests(unittest.TestCase):
         new, _, _ = predict_frame(frame, bundle)
         np.testing.assert_allclose(old.standardized_prediction, new.standardized_prediction)
         np.testing.assert_array_equal(new.relative_grade_0_6, [0, 6])
+        self.assertTrue((new.relative_grade_forecast_lower90<=new.relative_grade_0_6).all())
+        self.assertTrue((new.relative_grade_forecast_upper90>=new.relative_grade_0_6).all())
+        self.assertTrue(new.relative_grade_forecast_lower90.between(0,6).all())
+        self.assertTrue(new.relative_grade_forecast_upper90.between(0,6).all())
+        self.assertTrue(new.grade_max_class_probability.between(0,1).all())
+        self.assertFalse(new.grade_probability_calibrated.any())
+        self.assertNotIn('relative_grade_forecast_lower90',old)
 
 
 if __name__ == '__main__':

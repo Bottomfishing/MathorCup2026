@@ -1,0 +1,15 @@
+Q1 fold 0: selected extra_trees
+Q1 fold 1: selected extra_trees
+Q1 fold 2: selected extra_trees_equal_targets
+Q3 joint validation fold 0
+Q3 joint validation fold 1
+Q3 joint validation fold 2
+Q3 transfer 124: target_style_model_design
+Q3 transfer 81: target_style_model_design
+Q3 transfer 218: target_style_model_design
+Q3 transfer 96: target_style_model_design
+Q3 transfer 230: target_style_model_design
+Q3 transfer 185: target_style_model_design
+Q3 transfer 139: target_style_model_design
+Q3 transfer 209: target_style_model_design
+Q3 transfer 90: target_style_model_design

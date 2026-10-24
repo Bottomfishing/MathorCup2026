@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "coordinate_boxes_reconstructed": 55,
+  "model_ranges_independently_recomputed": 165,
+  "method": "accumulated tree-path intersections and affine corners",
+  "physical_or_intervention_certification": false,
+  "joint_style_verification": false
+}

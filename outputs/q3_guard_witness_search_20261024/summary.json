@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "parent": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q3_reference_robust_20261024",
+  "parent_summary_sha256": "0c6bf670941da214124c983e6c72e794e0707d0c8fe3e4a63ef56c4aadd64a5e",
+  "seed": 20261024,
+  "initial_random_points": 64,
+  "max_greedy_iterations": 24,
+  "tested_model_pairs": 8,
+  "witnesses_found": 8,
+  "script_sha256": "48b6b73311986dde4aa314c660ac0375e63c9f3d0ac4b32130877406751e8cba",
+  "interpretation": "A found point disproves only a fitted-model guard over this coordinate scenario. An unsuccessful finite search proves neither model safety nor physical safety. Radius and original candidate family are unchanged."
+}

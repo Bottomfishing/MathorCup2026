@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "rows_checked": 12500,
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "ordinal_oof_sha256": "9f6ed21d0951c20b49b2856e689db6d38f1e89773ebdd0becfd46a02df5e9a9c",
+  "script_sha256": "045c03e75ef8ac1838c73e4ed5b4ab543f72f807e758eeeabbbdb45694ab3884",
+  "primary_rps_difference_from_training_prior": -0.024436790719020378,
+  "fixed_oof_rps_difference_p025": -0.02668936370748567,
+  "fixed_oof_rps_difference_p975": -0.022189858851697376,
+  "checks": [
+    "six-threshold direct RPS recomputation",
+    "intervals contain at least 90% of their own forecast mass",
+    "prior labels use only outer training folds"
+  ],
+  "limitations": [
+    "Intervals use uncalibrated forecast distributions; their empirical coverage is measured, not guaranteed.",
+    "All targets are constructed relative grades, not original panel ratings.",
+    "Fixed OOF sample bootstrap omits refitting and model-selection uncertainty. Existing folds are exploratory."
+  ]
+}
