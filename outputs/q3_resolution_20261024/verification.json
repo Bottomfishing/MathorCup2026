@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "transfers_verified": 11,
+  "chemical_constraints": 44,
+  "stale_proxy_constraints": 33,
+  "sensory_rows": 550,
+  "reference_zero_capped": [
+    "119",
+    "28"
+  ],
+  "checks": [
+    "source/model hashes",
+    "reference zero provenance without raw measurement recovery",
+    "129 anchors regenerated",
+    "independent path reconstruction",
+    "defect-aware target bounds",
+    "dual style labels",
+    "all four chemical bounds and three stale proxies",
+    "source-observed and residual-anchored sensory values",
+    "OOF metrics and median baseline"
+  ],
+  "actual_post_transfer_stale_validated": false
+}

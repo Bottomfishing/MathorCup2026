@@ -1,0 +1,6 @@
+﻿method,mae_difference,lower_95,upper_95,resamples,scope
+mean,0.025545676132017615,0.008529683974782503,0.041624382953361766,2000,paired style-stratified fixed OOF; no refitting uncertainty
+previous_multioutput,0.02492358236972734,0.003964965454355431,0.04472176493840654,2000,paired style-stratified fixed OOF; no refitting uncertainty
+focused_squared_tree,0.015725855719256686,-0.009078623600924693,0.03904437624016145,2000,paired style-stratified fixed OOF; no refitting uncertainty
+absolute_tree,0.014689024298046652,-0.005129438132001689,0.034549524086684984,2000,paired style-stratified fixed OOF; no refitting uncertainty
+absolute_boosting,0.0012775211308056486,-0.012558317504546675,0.015156863598233991,2000,paired style-stratified fixed OOF; no refitting uncertainty

@@ -1,0 +1,10 @@
+{
+  "seed": 20261024,
+  "transfer_steps": 40,
+  "target_distance_weight": 0.7,
+  "defect_policies": ["preserve", "reduce"],
+  "protected_features": ["DMS", "X2.3.butanedione", "X4VG", "X.E..2.nonenal"],
+  "support_rule": "Target empirical upper bounds for all features and lower bounds for nondefects only. Do not increase defects to satisfy target minima.",
+  "missing_rule": "Only missing diacetyl with an explicit zero in attachment 8 receives a zero cap. This is a nonnegative-concentration bound, not median imputation or recovery of a raw CSV measurement.",
+  "stale_loss_comparison": "Fixed mean/median baselines, previous squared-error tree, absolute-error tree and absolute-error boosting; no repeated tuning. Retain existing three proxy guards. No new reliable Stale predictor is presumed."
+}

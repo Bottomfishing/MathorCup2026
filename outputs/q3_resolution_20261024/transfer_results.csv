@@ -1,0 +1,12 @@
+﻿beer,selected,status,policy,anchor,fraction,source_target_distance,target_distance,change_distance,distance_reduction_fraction,n_candidates,n_range_passed,n_range_style_passed,n_all_passed,below_target_minimum_defect_fields,uses_reference_zero_cap,style_authenticated,stale_observed_nonworsening_verified,physical_constraints_certified
+124,True,defect_aware_model_candidate,preserve,6,0.95,0.7964216677415286,0.5517711887361286,0.816221835944139,0.3071871207361463,10320,1932,1680,12,X.E..2.nonenal,False,False,False,False
+81,True,defect_aware_model_candidate,preserve,112,0.85,0.7734383115847215,0.42491387040184153,0.6266941062909557,0.4506169864649936,10320,1594,1536,1356,DMS,False,False,False,False
+218,True,defect_aware_model_candidate,preserve,112,0.85,0.7332285877848069,0.41820048322297987,0.5941613098082024,0.42964514724333647,10320,1832,1758,1324,X.E..2.nonenal,False,False,False,False
+96,True,defect_aware_model_candidate,preserve,96,0.875,0.8730155718117175,0.5329363814254786,0.7429194940283436,0.3895453888416821,10320,1078,1064,110,,False,False,False,False
+230,True,defect_aware_model_candidate,preserve,112,0.825,0.8162496862512534,0.4391590509305117,0.6123882589526641,0.46197951640580204,10320,2416,2089,1276,X.E..2.nonenal,False,False,False,False
+185,True,defect_aware_model_candidate,preserve,113,0.85,0.7841396143724371,0.5371899228468963,0.6363512037418172,0.3149307687039631,10320,1658,1548,60,DMS,False,False,False,False
+139,True,defect_aware_model_candidate,preserve,112,0.9249999999999999,0.7941180435143393,0.4149717429975339,0.7001029403229287,0.4774432511807789,10320,1408,1396,160,,False,False,False,False
+209,True,defect_aware_model_candidate,preserve,25,1.0,0.859327331249983,0.7097691467056961,0.8359379620244718,0.17404099591099764,10320,1956,1810,16,,False,False,False,False
+119,True,defect_aware_model_candidate,reduce,112,0.7999999999999999,0.686462034883961,0.38721291252462203,0.6055291386197166,0.43592960302593253,10320,2700,1918,1134,X2.3.butanedione,True,False,False,False
+90,True,defect_aware_model_candidate,preserve,112,0.85,0.7852822560695416,0.43617935801592933,0.6005425337330952,0.444557221757341,10320,1820,1734,110,DMS,False,False,False,False
+28,True,defect_aware_model_candidate,preserve,112,0.7,0.7840849401349291,0.4034137929662522,0.5842505233163052,0.4854973328567811,10320,3916,3600,2735,X2.3.butanedione,True,False,False,False

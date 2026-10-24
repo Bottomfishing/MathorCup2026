@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "selected": 11,
+  "n_complete_measured_references": 23,
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "parent_resolution_summary_sha256": "94e876dcd5202b9e34ac4a2e18d890d51c8b5b4ff4ea3a6604c914ef552c3040",
+  "assumption": "The model error at a measured reference remains unchanged after decreasing only four defect coordinates. All three reference-anchored estimates must not exceed the observed source Stale score. This assumption has no paired intervention validation in the attachments.",
+  "candidate_rule": "Complete observed Tripel rows; four defects capped by both source and reference; two style classifiers, three reference-anchored guards, lower measured reference Stale, improved target distance; inherited 0.7/0.3 objective. Original prediction-vs-prediction guards are diagnostic only in this separate observed-reference method.",
+  "uncertainty_scope": "Max of three point estimates is a model-disagreement envelope, not a confidence bound or observed after score.",
+  "actual_after_stale_validated": false
+}
