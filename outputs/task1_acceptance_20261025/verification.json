@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "meaning": "Scope audit passed; not model or three-question completion",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "7.csv": "2083138df46640e20b46f7e76ec32cf9b380fd34e019269afd819edeb546ff5e",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "statement_sha256": "494025cf76c5d47af576927fcf6cd3a073d61db5842d56aaf0ad4da5f4660a78",
+  "statement_requirement_page": 2,
+  "script_sha256": "7f2dde153e1a4ab90916cf2079a516ae48b710ca31bb0a75807bed314831df14",
+  "samples": 250,
+  "chemical_coordinates": 231,
+  "styles": 22,
+  "scorecards_checked": 12,
+  "template_items": 52,
+  "template_main_content_items": 47,
+  "supplementary_items": 5,
+  "existing_panel_targets": 50,
+  "existing_primary_targets": 45,
+  "template_only_missing_panel_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "score_formula_cells_in_example_card": 54,
+  "excluded_unnamed_or_comment_formulas": [
+    "AG62",
+    "AG94"
+  ],
+  "checkbox_parent_relations": 24,
+  "original_inputs_filled": 0,
+  "existing_models_retrained": false,
+  "checks": [
+    "six attachment hashes match original audit",
+    "sample identifiers and styles align",
+    "all 52 label/formula locations agree across 12 cards",
+    "all 50 panel targets and three summary aliases mapped",
+    "47 content items and five supplements distinguished",
+    "54 score formulas account for 52 named items and two unused/comment cells",
+    "current model target metadata matches the 50 panel fields",
+    "two template-only items lack panel labels",
+    "all referenced scorecard inputs remain blank",
+    "five named defects mapped without invented physical thresholds"
+  ]
+}
