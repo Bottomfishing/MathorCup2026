@@ -15,9 +15,8 @@ from beer_models.explain import top_indices
 from beer_models.evidence import resolve_compound, annotate_relation
 
 
-def run(source, reference, output):
-    audit = Path('outputs/p0_audit_20261023_final')
-    previous = Path('outputs/q2_exploratory_20261023_v1')
+def run(source, reference, output, audit=Path('outputs/p0_audit_20261023_final'),
+        previous=Path('outputs/q2_exploratory_20261023_v1')):
     permutation = Path('outputs/q2_permutation_20261024_v2')
     within = Path('outputs/q2_within_style_20261024_v3')
     review = Path('outputs/q2_review_20261024_v3')
@@ -155,6 +154,8 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('--source', type=Path, required=True)
     p.add_argument('--reference', type=Path, default=Path('data/reference/zenodo10653704/Supplemental Files and Figure source files.xlsx'))
     p.add_argument('--output', type=Path, default=Path('outputs/q2_delivery_20261024'))
+    p.add_argument('--audit', type=Path, default=Path('outputs/p0_audit_20261023_final'))
+    p.add_argument('--exploratory', type=Path, default=Path('outputs/q2_exploratory_20261023_v1'))
     args = p.parse_args()
     with threadpool_limits(limits=1):
-        run(args.source, args.reference, args.output)
+        run(args.source, args.reference, args.output, args.audit, args.exploratory)
