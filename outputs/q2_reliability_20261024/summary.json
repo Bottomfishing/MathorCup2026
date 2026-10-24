@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "config": {
+    "seed": 20261024,
+    "within_style_permutations": 1999,
+    "ridge_alpha": 1000.0,
+    "bootstrap_seed": 20261023,
+    "bootstrap_repeats": 200,
+    "family_indicator": "bitterness",
+    "family_indicator_name": "Iso-alpha acids (IBU assay; chemical-family indicator, not a single molecule)",
+    "primary_source": "https://www.nature.com/articles/s41467-024-46346-0.pdf",
+    "scope": "Fixed-model descriptive reliability study. Complete within-style pairing-exchangeability null; max statistic corrects selection over eligible inputs within each target. Not a causal test or a claim of strong family-wise control under partial nulls."
+  },
+  "config_sha256": "76d30fe2f675da996b05ef0cf2906bd34ef4c9a411b7242328d8c2722024ba1c",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "strict_candidates": 219,
+  "family_scope_candidates": 220,
+  "targets_with_family_indicator_in_top3": [
+    "F_hops_all",
+    "F_hops_noble",
+    "F_hops_woody",
+    "acidity",
+    "bitternes",
+    "lactic",
+    "acetic"
+  ],
+  "n_targets_BY_0_05": 0,
+  "targets_BY_0_05": [],
+  "original_top3_candidates_max_p_le_0_05": 17,
+  "bootstrap_strict_selections_reproduced": 30000,
+  "checks": [
+    "closed-form coefficient projection equals fitted Ridge",
+    "all permutation indices stay within style",
+    "all 30000 original bootstrap selections reproduced before applying expanded scope"
+  ],
+  "interpretation": "Permutation evidence is conditional on within-style exchangeability; neither small p-values, sign consistency nor family indicators prove direct sensory or causal effects.",
+  "n_family_scope_targets_BY_0_05": 5,
+  "family_scope_targets_BY_0_05": [
+    "bitternes",
+    "X4vg",
+    "metallic",
+    "orange",
+    "alcohol"
+  ]
+}

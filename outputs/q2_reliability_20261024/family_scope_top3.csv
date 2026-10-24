@@ -1,0 +1,151 @@
+﻿target,primary,rank,field,chemical_name,reference_unit,ridge_signed_coef,bootstrap_frequency,sign_agreement_all_refits,within_style_selection_max_p,target_family_scope_BY_q,chemical_scope,source_interpretation
+A_malt_all,True,1,X2.acetylfuran,2-acetylfuran,,0.0297646089969921,0.925,1.0,0.0175,0.3578913337307496,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_all,True,2,methylpyrazine,Methylpyrazine,mg/L,0.0271602695442783,0.66,1.0,0.077,0.3578913337307496,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_all,True,3,X5.methylfurfural,5-methylfurfural,mg/L,0.0241047622016291,0.395,1.0,0.306,0.3578913337307496,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_grain,True,1,Z.nerolidol,Z-nerolidol,mg/L,0.0151293560594681,0.55,1.0,0.113,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_grain,True,2,X5.methylfurfural,5-methylfurfural,mg/L,0.0133833796034415,0.38,0.995,0.364,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_grain,True,3,furfural,Furfural,mg/L,0.012246379066956,0.245,0.99,0.6585,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_bread,True,1,furfural,Furfural,mg/L,0.0155042673312836,0.455,0.995,0.3215,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_bread,True,2,ethyl.tiglate,Ethyl tiglate,,0.0131680586130179,0.145,1.0,0.822,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_bread,True,3,CO2.PSI.,Carbon dioxide,PSI,0.0125569747972536,0.195,1.0,0.907,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_cara,True,1,X2.acetylfuran,2-acetylfuran,,0.0231382303960622,0.765,1.0,0.0215,0.4030538115586775,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_cara,True,2,furfural,Furfural,mg/L,0.0221094676118773,0.605,1.0,0.0585,0.4030538115586775,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_cara,True,3,X5.methylfurfural,5-methylfurfural,mg/L,0.0184193111066433,0.32,1.0,0.484,0.4030538115586775,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_burn,True,1,methylpyrazine,Methylpyrazine,mg/L,0.0364342492141589,0.925,1.0,0.0075,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_burn,True,2,X2.acetylfuran,2-acetylfuran,,0.0235883624154959,0.815,1.0,0.294,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_malt_burn,True,3,MeSH,Methanethiol,ug/L,0.0171478085789599,0.135,1.0,0.902,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_all,True,1,iron,Iron,mg/L,-0.0183780395030032,0.505,1.0,0.674,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_all,True,2,DMS,Dimethyl sulfide,ug/L,0.0168185410334414,0.27,1.0,0.9055,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_all,True,3,ethyl_octanoate,Ethyl octanoate,mg/L,0.0151875926034772,0.13,1.0,0.9925,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_citrus,True,1,citronellol,Citronellol,mg/L,0.0135450799044751,0.385,1.0,0.6275,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_citrus,True,2,X6.methyl.5.hepten.2.one,Methyl heptenone,,0.0132167109108587,0.35,1.0,0.6875,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_citrus,True,3,X.E.E..2.4.decadienal,"E,E-2,4-decadienal",mg/L,0.0127513415219697,0.36,1.0,0.769,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_tropical,True,1,DMS,Dimethyl sulfide,ug/L,0.0199299348262102,0.615,1.0,0.349,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_tropical,True,2,beta.phellandrene,Beta-phellandrene,,0.0155803308124315,0.11,1.0,0.9195,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_tropical,True,3,CO2.PSI.,Carbon dioxide,PSI,0.0149319401109005,0.285,1.0,0.966,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_noble,True,1,ethyl_octanoate,Ethyl octanoate,mg/L,0.0158630578945642,0.585,1.0,0.402,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_noble,True,2,ethyl_decanoate,Ethyl decanoate,mg/L,0.0146682086707022,0.27,1.0,0.6605,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_noble,True,3,iron,Iron,mg/L,-0.0143540184292818,0.315,1.0,0.7295,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_woody,True,1,car.3.en.2.one,Car-3-en-2-one,,-0.0097375166375105,0.295,1.0,0.7385,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_woody,True,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,,0.0095184859416341,0.34,1.0,0.794,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_hops_woody,True,3,iron,Iron,mg/L,-0.0094734171769447,0.37,1.0,0.8065,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_all,True,1,acetaldehyde,Acetaldehyde,mg/L,0.0223198965496941,0.85,1.0,0.0295,0.510486759541223,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_all,True,2,n.hexanol,N-hexanol,mg/L,0.0167599999496179,0.31,1.0,0.668,0.510486759541223,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_all,True,3,lactic_acid.mg.L.,Lactic acid,mg/L,0.0152774396340411,0.08,1.0,0.911,0.510486759541223,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_ethac,True,1,acetaldehyde,Acetaldehyde,mg/L,0.0132303954188631,0.49,1.0,0.557,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_ethac,True,2,ethyl_acetate,Ethyl acetate,mg/L,0.0124607535333546,0.25,1.0,0.7685,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_ethac,True,3,phenethyl_alcohol,Phenethyl alcohol,mg/L,0.0110992944197362,0.255,0.99,0.968,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_isoaa,True,1,n.hexanol,N-hexanol,mg/L,0.0189548445603283,0.67,1.0,0.0875,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_isoaa,True,2,ethyl.hexadecanoate,Ethyl hexadecanoate,,-0.0142908895104439,0.21,1.0,0.795,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_isoaa,True,3,benzaldehyde,Benzaldehyde,mg/L,0.0140195568673736,0.275,1.0,0.846,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_flower,True,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,mg/L,0.0136110785279488,0.475,0.96,0.295,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_flower,True,2,beta.phellandrene,Beta-phellandrene,,0.0133381157418479,0.385,1.0,0.3475,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_flower,True,3,X.E..alpha.ionone,E-α-ionone,,0.0114629630851633,0.195,1.0,0.7715,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_fruity,True,1,beta.phellandrene,Beta-phellandrene,,0.0193460546133507,0.82,1.0,0.3295,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_fruity,True,2,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,mg/L,0.0175679703652972,0.52,0.97,0.56,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+A_esters_fruity,True,3,eugenol,Eugenol,mg/L,0.015569379061015,0.47,1.0,0.8365,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_all,True,1,X2.acetylfuran,2-acetylfuran,,0.0256524227889891,0.805,1.0,0.063,0.8857810509836053,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_all,True,2,acetaldehyde,Acetaldehyde,mg/L,0.025371527490911,0.7,1.0,0.0775,0.8857810509836053,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_all,True,3,methylpyrazine,Methylpyrazine,mg/L,0.0249574778196279,0.69,1.0,0.099,0.8857810509836053,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_grain,True,1,Z.nerolidol,Z-nerolidol,mg/L,0.0120688092611012,0.255,1.0,0.561,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_grain,True,2,X2.3.butanedione,Diacetyl,mg/L,-0.0116458500701113,0.275,1.0,0.673,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_grain,True,3,X3.methyl.2.butenal,3-methyl-2-butenal,,0.0115933069103597,0.27,0.995,0.688,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_bread,True,1,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",,0.0132404250769009,0.26,1.0,0.5665,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_bread,True,2,ethyl.tiglate,Ethyl tiglate,,0.0131308899009072,0.28,1.0,0.591,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_bread,True,3,X2.acetylfuran,2-acetylfuran,,0.0118806306358761,0.175,1.0,0.8775,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_cara,True,1,acetaldehyde,Acetaldehyde,mg/L,0.0209914797824807,0.86,1.0,0.0445,0.7150522769844977,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_cara,True,2,phenethyl_alcohol,Phenethyl alcohol,mg/L,0.0143169704221538,0.275,1.0,0.931,0.7150522769844977,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_cara,True,3,X2.acetylfuran,2-acetylfuran,,0.014279953151217,0.2,1.0,0.936,0.7150522769844977,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_burn,True,1,methylpyrazine,Methylpyrazine,mg/L,0.0348586905463691,0.97,1.0,0.008,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_burn,True,2,X2.acetylfuran,2-acetylfuran,,0.0218127676937401,0.505,1.0,0.5315,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_malt_burn,True,3,delta.terpinyl.acetate,Terpiryl acetate,,-0.0199846199031886,0.24,1.0,0.7335,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_all,True,1,iron,Iron,mg/L,-0.0222878992247688,0.63,1.0,0.305,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_all,True,2,bitterness,Iso-alpha acids,IBU,0.0210080089355221,0.54,1.0,0.5145,1.0,chemical_family_IBU_indicator,Iso-alpha acids labelled by source; IBU assay does not identify one molecule or certify exact concentration.
+F_hops_all,True,3,cis.dihydro.beta.terpineol,Cis-dihydro-β-terpineol,,0.0205639093979765,0.415,1.0,0.589,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_citrus,True,1,geosmin,Geosmin,,0.0121648802046899,0.37,1.0,0.774,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_citrus,True,2,geraniol,Geraniol,mg/L,0.0117165294780454,0.3,1.0,0.8535,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_citrus,True,3,X2.acetylfuran,2-acetylfuran,,-0.0115380107501265,0.32,1.0,0.8785,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_tropical,True,1,hexyl.acetate,Hexyl acetate,mg/L,0.0161908850202753,0.585,0.995,0.5465,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_tropical,True,2,DMS,Dimethyl sulfide,ug/L,0.0137130133051177,0.27,1.0,0.9,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_tropical,True,3,X6.methyl.5.hepten.2.one,Methyl heptenone,,0.0123739104722389,0.36,0.995,0.98,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_noble,True,1,iron,Iron,mg/L,-0.0217298068234154,0.765,1.0,0.1185,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_noble,True,2,X.E..2.nonenal,E-2-nonenal,mg/L,0.0184353687584512,0.4,1.0,0.5285,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_noble,True,3,bitterness,Iso-alpha acids,IBU,0.0183449783327875,0.345,1.0,0.543,1.0,chemical_family_IBU_indicator,Iso-alpha acids labelled by source; IBU assay does not identify one molecule or certify exact concentration.
+F_hops_woody,True,1,isobutanol,Isobutanol,mg/L,0.0161702201517614,0.84,1.0,0.162,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_hops_woody,True,2,bitterness,Iso-alpha acids,IBU,0.0112773554424181,0.195,1.0,0.9635,1.0,chemical_family_IBU_indicator,Iso-alpha acids labelled by source; IBU assay does not identify one molecule or certify exact concentration.
+F_hops_woody,True,3,manool,Manool,,-0.0111590822726304,0.275,0.995,0.9715,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_all,True,1,acetaldehyde,Acetaldehyde,mg/L,0.0230381896620161,0.915,1.0,0.004,0.1499735112776474,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_all,True,2,phenethyl_alcohol,Phenethyl alcohol,mg/L,0.017453471230325,0.4,1.0,0.281,0.1499735112776474,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_all,True,3,n.hexanol,N-hexanol,mg/L,0.0169584011399139,0.38,1.0,0.375,0.1499735112776474,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_ethac,True,1,ethyl_acetate,Ethyl acetate,mg/L,0.0151238825146928,0.58,1.0,0.2825,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_ethac,True,2,acetaldehyde,Acetaldehyde,mg/L,0.0128366581128956,0.365,1.0,0.808,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_ethac,True,3,car.3.en.2.one,Car-3-en-2-one,,-0.0125079772178322,0.25,1.0,0.8795,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_isoaa,True,1,n.hexanol,N-hexanol,mg/L,0.0175237727714058,0.495,1.0,0.226,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_isoaa,True,2,phenethyl_alcohol,Phenethyl alcohol,mg/L,0.0150255096555471,0.295,0.995,0.662,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_isoaa,True,3,acetaldehyde,Acetaldehyde,mg/L,0.0143325945445559,0.155,1.0,0.8025,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_flower,True,1,beta.phellandrene,Beta-phellandrene,,0.0126089819500708,0.42,1.0,0.421,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_flower,True,2,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,mg/L,0.012345473572635,0.38,0.99,0.4795,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_flower,True,3,eucalyptol,Eucalyptol,,0.0116429681359032,0.36,1.0,0.6465,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_fruity,True,1,beta.phellandrene,Beta-phellandrene,,0.0154447744110997,0.555,1.0,0.5125,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_fruity,True,2,X1.10.di.epi.cubenol,Epicubenol,,-0.0138688846325451,0.305,1.0,0.801,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+F_esters_fruity,True,3,phenethyl_alcohol,Phenethyl alcohol,mg/L,0.0120517162862802,0.275,1.0,0.98,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+acidity,True,1,lactic_acid.mg.L.,Lactic acid,mg/L,0.0341997517745255,0.985,1.0,0.65,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+acidity,True,2,acetic_acid.g.L.,Acetic acid,g/L,0.0291372362047153,0.625,1.0,0.994,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+acidity,True,3,bitterness,Iso-alpha acids,IBU,-0.0282564937179667,0.59,1.0,0.9995,1.0,chemical_family_IBU_indicator,Iso-alpha acids labelled by source; IBU assay does not identify one molecule or certify exact concentration.
+bitternes,True,1,bitterness,Iso-alpha acids,IBU,0.0340360751903923,0.995,1.0,0.0005,0.0374933778194118,chemical_family_IBU_indicator,Iso-alpha acids labelled by source; IBU assay does not identify one molecule or certify exact concentration.
+bitternes,True,2,iron,Iron,mg/L,-0.0289122930217555,0.865,1.0,0.0335,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+bitternes,True,3,ethyl_octanoate,Ethyl octanoate,mg/L,0.026281109987483,0.665,1.0,0.1735,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+sweetness,True,1,ethyl_decanoate,Ethyl decanoate,mg/L,-0.0215537242952241,0.57,1.0,0.136,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+sweetness,True,2,iron,Iron,mg/L,0.020334957751926,0.395,1.0,0.2435,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+sweetness,True,3,acetaldehyde,Acetaldehyde,mg/L,0.0198598861890298,0.365,1.0,0.306,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+X4vg,True,1,X4VG,4-vinylguaiacol,mg/L,0.0472192591176175,1.0,1.0,0.0005,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+X4vg,True,2,delta.terpinyl.acetate,Terpiryl acetate,,0.0295027244561568,0.945,1.0,0.003,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+X4vg,True,3,nerol,Nerol,,0.0177769957480609,0.05,1.0,0.6115,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+diacetyl,True,1,eugenol,Eugenol,mg/L,-0.0162245973271484,0.585,1.0,0.161,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+diacetyl,True,2,beta.phellandrene,Beta-phellandrene,,-0.0139813480459691,0.305,1.0,0.531,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+diacetyl,True,3,X2.methyl.benzofuran,2-methyl-benzofuran,,-0.0123413557627223,0.185,0.995,0.897,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+dms,True,1,SO2.mg.L.,Sulfur dioxide,mg/L,0.0160736314273875,0.59,1.0,0.18,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+dms,True,2,E.nerolidol,E-nerolidol,,0.0134642031713323,0.22,1.0,0.6545,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+dms,True,3,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",,0.0124721292059931,0.175,1.0,0.8585,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+metallic,True,1,iron,Iron,mg/L,0.0219510014994909,0.965,1.0,0.001,0.0449920533832942,individual_analyte_candidate,Same individual-analyte scope as original ranking
+metallic,True,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,mg/L,-0.0146870916458885,0.455,1.0,0.3095,0.0449920533832942,individual_analyte_candidate,Same individual-analyte scope as original ranking
+metallic,True,3,isopentyl.butanoate,Isopentyl butanoate,,-0.0129770510130433,0.27,1.0,0.7005,0.0449920533832942,individual_analyte_candidate,Same individual-analyte scope as original ranking
+stale_hops,True,1,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,,0.011398522934079,0.29,1.0,0.6655,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+stale_hops,True,2,gamma.eudesmol,Gamma-eudesmol,,0.0108921995771128,0.285,1.0,0.784,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+stale_hops,True,3,isobutanol,Isobutanol,mg/L,0.0103869727343993,0.155,1.0,0.8695,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+t2n,True,1,germacrene.D,Germacrene D,,-0.0115572503145647,0.41,1.0,0.45,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+t2n,True,2,glycerol,Glycerol,g/L,-0.0111358379924412,0.335,1.0,0.5645,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+t2n,True,3,alpha.phellandrene,α-phellandrene,A.U.,-0.0106637839625341,0.305,1.0,0.6755,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+orange,True,1,X1.alpha.terpineol,Alpha-terpineol,mg/L,0.0333102071331802,0.845,1.0,0.001,0.0449920533832942,individual_analyte_candidate,Same individual-analyte scope as original ranking
+orange,True,2,limonene,Limonene,,0.0271682229942674,0.66,1.0,0.02,0.0449920533832942,individual_analyte_candidate,Same individual-analyte scope as original ranking
+orange,True,3,X2.ethyl.1.hexanol,2-ethyl-1-hexanol,,-0.0226745766490177,0.25,1.0,0.1535,0.0449920533832942,individual_analyte_candidate,Same individual-analyte scope as original ranking
+coriander,True,1,x.methyl.1.octanol,X-methyl-1-octanol,,-0.0204015358198844,0.895,1.0,0.0065,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+coriander,True,2,X1.alpha.terpineol,Alpha-terpineol,mg/L,0.0164055781261013,0.51,1.0,0.105,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+coriander,True,3,linalool,Linalool,mg/L,0.0162858170544251,0.535,1.0,0.111,0.1799682135331769,individual_analyte_candidate,Same individual-analyte scope as original ranking
+clove,True,1,eucalyptol,Eucalyptol,,0.0222874466178857,0.82,1.0,0.0515,0.7723635830798844,individual_analyte_candidate,Same individual-analyte scope as original ranking
+clove,True,2,linalool,Linalool,mg/L,0.0217610634812158,0.76,1.0,0.065,0.7723635830798844,individual_analyte_candidate,Same individual-analyte scope as original ranking
+clove,True,3,limonene,Limonene,,0.0214169562072418,0.785,1.0,0.0805,0.7723635830798844,individual_analyte_candidate,Same individual-analyte scope as original ranking
+lactic,True,1,bitterness,Iso-alpha acids,IBU,-0.0292850517750553,0.865,1.0,0.602,1.0,chemical_family_IBU_indicator,Iso-alpha acids labelled by source; IBU assay does not identify one molecule or certify exact concentration.
+lactic,True,2,lactic_acid.mg.L.,Lactic acid,mg/L,0.0289544926934393,0.94,1.0,0.643,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+lactic,True,3,acetic_acid.g.L.,Acetic acid,g/L,0.0239523771870744,0.33,1.0,0.9915,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+acetic,True,1,lactic_acid.mg.L.,Lactic acid,mg/L,0.0276365643515755,0.79,1.0,0.7135,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+acetic,True,2,bitterness,Iso-alpha acids,IBU,-0.0264251854185205,0.665,1.0,0.855,1.0,chemical_family_IBU_indicator,Iso-alpha acids labelled by source; IBU assay does not identify one molecule or certify exact concentration.
+acetic,True,3,acetic_acid.g.L.,Acetic acid,g/L,0.0255446962712991,0.56,1.0,0.9285,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+barnyard,True,1,gamma.eudesmol,Gamma-eudesmol,,0.0120964969215233,0.395,1.0,0.544,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+barnyard,True,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,,0.0109033805243817,0.195,1.0,0.824,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+barnyard,True,3,propyl.acetate,N-propyl acetate,,-0.0108555444066657,0.295,0.99,0.8345,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+alcohol,False,1,ethanol..v.v.,Ethanol,v/v,0.0376898657267242,1.0,1.0,0.0005,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+alcohol,False,2,acetaldehyde,Acetaldehyde,mg/L,0.028062801097575,0.68,1.0,0.994,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+alcohol,False,3,ethyl_hexanoate,Ethyl hexanoate,mg/L,0.0260715555490378,0.5,1.0,1.0,0.0374933778194118,individual_analyte_candidate,Same individual-analyte scope as original ranking
+aftertaste,False,1,ethanol..v.v.,Ethanol,v/v,0.0220388843001229,0.91,1.0,0.2405,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+aftertaste,False,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,mg/L,0.0199734097348156,0.485,1.0,0.693,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+aftertaste,False,3,acetaldehyde,Acetaldehyde,mg/L,0.0187285806559541,0.38,1.0,0.8885,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+body,False,1,ethanol..v.v.,Ethanol,v/v,0.0244376618122937,1.0,1.0,0.0055,0.1767544954343702,individual_analyte_candidate,Same individual-analyte scope as original ranking
+body,False,2,glycerol,Glycerol,g/L,0.0192874489776854,0.62,1.0,0.839,0.1767544954343702,individual_analyte_candidate,Same individual-analyte scope as original ranking
+body,False,3,ethyl_hexanoate,Ethyl hexanoate,mg/L,0.017823397772033,0.325,1.0,0.9815,0.1767544954343702,individual_analyte_candidate,Same individual-analyte scope as original ranking
+co2,False,1,ethyl_octanoate,Ethyl octanoate,mg/L,0.0187734957460718,0.665,1.0,0.0895,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+co2,False,2,CO2.PSI.,Carbon dioxide,PSI,0.0169245963767607,0.395,1.0,0.36,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+co2,False,3,ethanol..v.v.,Ethanol,v/v,0.0165601810992717,0.265,1.0,0.437,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+overall,False,1,ethyl_acetate,Ethyl acetate,mg/L,0.0150476159808106,0.55,1.0,0.478,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+overall,False,2,X2.butyloctanoate,2-butyl octanoate,,0.0127283314560694,0.175,1.0,0.944,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking
+overall,False,3,cis.linalool.oxide,Cis-linalool oxide,,-0.0122378644899308,0.22,1.0,0.978,1.0,individual_analyte_candidate,Same individual-analyte scope as original ranking

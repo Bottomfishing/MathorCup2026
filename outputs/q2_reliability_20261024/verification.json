@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "direct_pipeline_null_refits": 3,
+  "max_statistics_checked": 300,
+  "target_p_values_recounted": 50,
+  "bootstrap_original_selections_reproduced": 30000,
+  "scope": "Direct pipeline refits independently check the fixed-X algebraic acceleration; does not validate exchangeability or causality."
+}

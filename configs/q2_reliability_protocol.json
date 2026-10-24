@@ -1,0 +1,11 @@
+{
+  "seed": 20261024,
+  "within_style_permutations": 1999,
+  "ridge_alpha": 1000.0,
+  "bootstrap_seed": 20261023,
+  "bootstrap_repeats": 200,
+  "family_indicator": "bitterness",
+  "family_indicator_name": "Iso-alpha acids (IBU assay; chemical-family indicator, not a single molecule)",
+  "primary_source": "https://www.nature.com/articles/s41467-024-46346-0.pdf",
+  "scope": "Fixed-model descriptive reliability study. Complete within-style pairing-exchangeability null; max statistic corrects selection over eligible inputs within each target. Not a causal test or a claim of strong family-wise control under partial nulls."
+}
