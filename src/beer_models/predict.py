@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from beer_audit.checks import numeric_frame
 from .final_model import relative_grades
+from .ordinal import grade_decisions, seven_level_probabilities
 
 
 def predict_frame(frame, bundle):
@@ -21,9 +22,15 @@ def predict_frame(frame, bundle):
     if (observed == 0).any():
         raise ValueError('No observed model features for samples: ' + ', '.join(beer[observed == 0].astype(str)))
     prediction = bundle['model'].predict(values)
-    grades = relative_grades(bundle['reference_y'], prediction)
+    if 'grade_model' in bundle:
+        grade_model = bundle['grade_model']
+        imputed = grade_model.named_steps['impute'].transform(values)
+        grades = grade_decisions(seven_level_probabilities(grade_model.named_steps['model'], imputed))['conditional_median']
+    else:
+        grades = relative_grades(bundle['reference_y'], prediction)
     long = pd.DataFrame({'beer': np.repeat(beer.to_numpy(), len(targets)),
         'target': np.tile(targets, len(frame)), 'primary': np.tile(bundle['primary'], len(frame)),
+        'grade_method': bundle.get('grade_method', 'continuous_prediction_then_training_ECDF'),
         'standardized_prediction': prediction.ravel(), 'relative_grade_0_6': grades.ravel(),
         'observed_feature_count': np.repeat(observed, len(targets)),
         'missing_feature_fraction': np.repeat(1 - observed / len(features), len(targets))})

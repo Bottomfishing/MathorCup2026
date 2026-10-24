@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "config": {
+    "seed": 20261024,
+    "n_estimators": 300,
+    "min_samples_leaf": 3,
+    "max_features": 0.7,
+    "primary_decision": "conditional_median_minimizes_expected_absolute_grade_loss",
+    "secondary_decision": "conditional_mode_maximizes_exact_grade_accuracy",
+    "missing_rates": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "missing_repeats": 3,
+    "bootstrap_repeats": 1000,
+    "scope": "One prespecified direct relative-grade classifier; parameters inherited from existing tree protocol. Same exploratory outer folds; no original raw-grade claim."
+  },
+  "config_sha256": "29dd8ed0cb9876cc1d594203b48fa9919972fba01b718145667a57b00b1991c1",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "model_sha256": "05e44510f06a2923318ab203dc99736436a9e320dc6e9f79b116d0e372864850",
+  "base_continuous_model_sha256": "2d1fac6b73982a0b5ae73eb03e43009aeb5a7b12f6dc77c4e059963e03ea6e2a",
+  "identifiability_counterexample": {
+    "raw_scores_a": [
+      0.0,
+      1.0,
+      2.0,
+      3.0
+    ],
+    "raw_scores_b": [
+      1.0,
+      2.0,
+      3.0,
+      4.0
+    ],
+    "identical_standardized_values": [
+      -1.3416407864998738,
+      -0.4472135954999579,
+      0.4472135954999579,
+      1.3416407864998738
+    ]
+  },
+  "raw_scale_identified": false,
+  "grade_reference": "outer_training_labels_only",
+  "uncertainty_scope": "paired_style_stratified_fixed_OOF_sample_bootstrap_not_retraining_uncertainty",
+  "main_decision": "conditional_median_prespecified_for_absolute_grade_error",
+  "limitations": [
+    "Relative-grade labels are constructed, not recovered raw ratings.",
+    "Existing dataset and folds have informed the candidate family; exploratory evidence.",
+    "Mode is a secondary decision for exact accuracy, not a separately tuned model."
+  ]
+}

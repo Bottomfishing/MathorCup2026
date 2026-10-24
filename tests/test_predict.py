@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import Ridge
+from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.pipeline import make_pipeline
 from beer_models.predict import predict_frame
 
@@ -43,6 +44,20 @@ class PredictTests(unittest.TestCase):
         long, wide, _ = predict_frame(pd.DataFrame({'a': [1.], 'b': [2.]}), self.bundle)
         self.assertEqual(wide.beer.tolist(), ['row_000001'])
         self.assertTrue(long.relative_grade_0_6.between(0, 6).all())
+
+    def test_direct_grade_model_preserves_continuous_predictions(self):
+        grade_model = make_pipeline(SimpleImputer(strategy='median'), ExtraTreesClassifier(n_estimators=5, random_state=1))
+        x = np.array([[1., 2.], [2., 4.], [4., 3.], [3., 1.]])
+        grade_model.fit(x, np.array([[0, 6], [0, 6], [6, 0], [6, 0]]))
+        # Prediction expects named stages, as in the saved deployment bundle.
+        from sklearn.pipeline import Pipeline
+        named = Pipeline([('impute', grade_model.steps[0][1]), ('model', grade_model.steps[1][1])])
+        bundle = dict(self.bundle, grade_model=named, grade_method='direct_relative_grade_conditional_median')
+        frame = pd.DataFrame({'a': [1.], 'b': [2.]})
+        old, _, _ = predict_frame(frame, self.bundle)
+        new, _, _ = predict_frame(frame, bundle)
+        np.testing.assert_allclose(old.standardized_prediction, new.standardized_prediction)
+        np.testing.assert_array_equal(new.relative_grade_0_6, [0, 6])
 
 
 if __name__ == '__main__':

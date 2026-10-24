@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "oof_distributions_checked": 12500,
+  "checks": [
+    "probability normalization",
+    "independent expected absolute loss minimum for all median decisions",
+    "mode probability maximum",
+    "exported bundle reload",
+    "real CLI with missing column and cell",
+    "continuous model unchanged"
+  ],
+  "deployment_interface_rows": 250
+}

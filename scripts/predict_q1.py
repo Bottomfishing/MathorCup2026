@@ -25,6 +25,7 @@ def run(model, input_path, output):
         'input_scale': 'same_supplied_coordinates_as_attachment_1_no_automatic_log_transform',
         'score_scale': 'provided_standardized_panel_score',
         'grade_semantics': 'relative_midrank_ECDF_of_full_training_targets_not_raw_panel_rating',
+        'grade_method': bundle.get('grade_method', 'continuous_prediction_then_training_ECDF'),
         'evaluation_use': 'full_training_model_predictions_are_not_OOF_accuracy_estimates'})
     print(f'Predicted {len(frame)} samples; output: {output}')
 
