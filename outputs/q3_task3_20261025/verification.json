@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "generated_profiles": 300,
+  "generated_score_rows": 15600,
+  "transfer_sources": 11,
+  "transfer_before_after_score_pairs": 572,
+  "five_defect_checks": 55,
+  "stale_proxy_checks": 33,
+  "coordinate_changes": 2464,
+  "conditional_zero_cap_sources": [
+    "119",
+    "28"
+  ],
+  "actual_after_stale_validated": false,
+  "checks": [
+    "source and parent hashes",
+    "300 parent reconstructions, seeds and source missingness",
+    "generated spectra, style diagnostics and no exact training copies",
+    "11 paths reconstructed from source and anchors",
+    "44 coordinate inequalities and supported conditional zero caps",
+    "33 fitted Stale deltas and 11 task2 grade changes",
+    "16744 task2 score rows independently matched to classifier probabilities and threshold rule",
+    "52/47-column wide tables and 156 fingerprint summaries",
+    "retained generation/baseline/holdout evidence",
+    "all 11 source statuses, measured observations and separate reference-box scope"
+  ],
+  "interpretation": "Implementation and declared model scenarios checked; not a causal or physical nonworsening certificate."
+}

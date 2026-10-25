@@ -1,0 +1,11 @@
+{
+  "main_generation": "interpolate",
+  "main_transfer": "resolved_source_paths",
+  "main_transfer_selection": "Reuse the minimum 0.7 target-distance + 0.3 change-distance point in the verified fixed path grid; also check the task2 conditional-median Stale grade does not increase. No new search if the recorded optimum passes.",
+  "protected_features": ["DMS", "X2.3.butanedione", "X4VG", "X.E..2.nonenal"],
+  "chemical_policy": "Supplied monotone coordinates must not increase; this is more conservative than threshold excess and assumes the same monotone coordinate map before and after. Reference-zero caps for missing Diacetyl are conditional nonnegative-concentration assumptions, not recovered measurements.",
+  "stale_policy": "All three retained standardized Stale point proxies and the task2 relative-grade point estimate must not increase. Model agreement is not a calibrated bound or a measured outcome.",
+  "reference_decision": "Keep measured-reference and 1% IQR results as supplementary scenarios. The held-out reference correction has no predictive advantage; do not use reference-anchored scores as the primary sensory fingerprint.",
+  "grade_semantics": "Same task2 conditional-median relative grades for 50 labelled targets plus two explicitly marked reference-threshold scenarios; no raw card intensity recovery.",
+  "scope": "Q3 main delivery only. Reuse existing generation comparison and Stale diagnostics; no new model family, tuning, brewing validation, paper or Q2 work."
+}

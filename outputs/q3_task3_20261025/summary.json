@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "config": {
+    "main_generation": "interpolate",
+    "main_transfer": "resolved_source_paths",
+    "main_transfer_selection": "Reuse the minimum 0.7 target-distance + 0.3 change-distance point in the verified fixed path grid; also check the task2 conditional-median Stale grade does not increase. No new search if the recorded optimum passes.",
+    "protected_features": [
+      "DMS",
+      "X2.3.butanedione",
+      "X4VG",
+      "X.E..2.nonenal"
+    ],
+    "chemical_policy": "Supplied monotone coordinates must not increase; this is more conservative than threshold excess and assumes the same monotone coordinate map before and after. Reference-zero caps for missing Diacetyl are conditional nonnegative-concentration assumptions, not recovered measurements.",
+    "stale_policy": "All three retained standardized Stale point proxies and the task2 relative-grade point estimate must not increase. Model agreement is not a calibrated bound or a measured outcome.",
+    "reference_decision": "Keep measured-reference and 1% IQR results as supplementary scenarios. The held-out reference correction has no predictive advantage; do not use reference-anchored scores as the primary sensory fingerprint.",
+    "grade_semantics": "Same task2 conditional-median relative grades for 50 labelled targets plus two explicitly marked reference-threshold scenarios; no raw card intensity recovery.",
+    "scope": "Q3 main delivery only. Reuse existing generation comparison and Stale diagnostics; no new model family, tuning, brewing validation, paper or Q2 work."
+  },
+  "input_sha256": {
+    "configs\\q3_task3_protocol.json": "3d3e9536006fff4f19a8fe21c5b230505ecf81e7e9edaca49f7c61d91178bed2",
+    "outputs\\q1_task2_20261025\\summary.json": "678b1f784de775c21addf836e2785d7214a488ba89bce10a56a6b5cd263f94e2",
+    "outputs\\q1_task2_20261025\\verification.json": "a340864be620b75e29f4d3609e162db813e5125a3341504872cc66b035baed1b",
+    "outputs\\q3_resolution_20261024\\verification.json": "a139a8b1cb1d2420be99de28e6cb69dad140239e7282a3ddf0257760408d4fd8",
+    "outputs\\q3_resolution_20261024\\summary.json": "94e876dcd5202b9e34ac4a2e18d890d51c8b5b4ff4ea3a6604c914ef552c3040",
+    "outputs\\final_20261024\\q1\\run_manifest.json": "d5a07003292643b24c7378813d38a49eaa543e01a0a50accadb23e6b3c6fce5e",
+    "outputs\\final_20261024\\q1\\model.joblib": "2d1fac6b73982a0b5ae73eb03e43009aeb5a7b12f6dc77c4e059963e03ea6e2a",
+    "outputs\\q1_task2_20261025\\model.joblib": "5186077c066c9dd73001ad9c070cb4c55813df4b6150ca1f457fe0ce1a57825e",
+    "outputs\\q3_style_20261024\\logistic.joblib": "eb0d907901c49fd7136df9fec9877b1d1240052d3ae658fd8322056c304742a4",
+    "outputs\\q3_style_20261024\\extra_trees.joblib": "6c608d71552a09f2172c59ecd667ae6c79d4f647129a4a08ed5c4fac58ba7ed5",
+    "outputs\\q3_style_20261024\\focused_stale.joblib": "362e62e2641fcd55b3d4ed85e235eb049d2773d2733b794ce8d898ea038230ca",
+    "outputs\\final_20261024\\q3\\generator.joblib": "cdf6ed42f1e637b2e65cd18a0f5591ce52661bfdcee0aca92e5daab540b98ae8",
+    "outputs\\final_20261024\\q3\\generated_profiles.csv": "ac967a07e8dc1b954abea44840bda307fef5784d89755d80953f79c9d453cf93",
+    "outputs\\final_20261024\\q3\\generated_metadata.csv": "8387bb99ceb055151d4da2aa00657d681f2e0fc2a4e334e019696a67cb9a8870",
+    "outputs\\q3_delivery_20261024\\generated_profile_diagnostics.csv": "5c4ae33fefb6a35269301b3cd314afe856f6055f53fa4ea324130488ee0ce38a",
+    "outputs\\q3_style_20261024\\generated_style_diagnostics.csv": "fa93dda98e8514d84291e50f604f3774f1bfc77ac6020d0c0763653b633a7bac",
+    "outputs\\final_20261024\\q3\\validation_summary.csv": "6140a8de0d8c9ed282fa3806a22255e96b67ccb1280e339c87f2c3593b99c906",
+    "outputs\\final_20261024\\q3\\validation_by_style_fold.csv": "9d7d8142e219546461d71ab0d1e85ebe3476933b587e9eb828a15a3dc9a1c86d",
+    "outputs\\q3_resolution_20261024\\source_defect_evidence.csv": "e529d111ed97571c17fb6ac2ff1ad8453651ee92cfc2c92d261b8875433c7646",
+    "outputs\\q3_resolution_20261024\\transfer_results.csv": "a69b407a4cc46d6c0dee99dc4cc460a977436775b81784dc6d3e46f554f9ded6",
+    "outputs\\q3_resolution_20261024\\transfer_profiles.csv": "22d68735c4b3185e222a85d5a0d7b818837eeeba12c31ae4b7b2177c7b99f913",
+    "outputs\\q3_resolution_20261024\\anchors.csv": "5efada8a21ce2a251407c1fb269c24e9be9a693acd82e08c843d164ad6311806",
+    "outputs\\task1_acceptance_20261025\\defect_scope.csv": "ff7aa59829482f16533bf3823d713515cc43ffc08e8c3f38260b0805f73611cc",
+    "outputs\\q3_reference_20261024\\transfer_results.csv": "f2b45a088359358d13ac2c4f0824b0d23ba27750a487601a455c072e373f1ffd",
+    "outputs\\q3_reference_robust_20261024\\transfer_results.csv": "ddf6d87f4897d4871ffff1304909578a9a6415586c1cac579be94d8bdc3131c3",
+    "outputs\\q3_resolution_20261024\\stale_loss_comparison.csv": "1061c748d9193f07e0fac227510f7b972b491e3d434a92c296f8eef3a08280ae",
+    "outputs\\q3_reference_holdout_20261024\\metrics.csv": "48d38f3075a86aa717bbf7fb7e054a3bfa94779b303612d1eb953338bef8a8ad"
+  },
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "generated_profiles": 300,
+  "generated_score_rows": 15600,
+  "fingerprint_rows": 156,
+  "transfer_sources": 11,
+  "transfer_score_rows": 572,
+  "five_defect_rows": 55,
+  "transfer_status_counts": {
+    "model_candidate_under_proxy_constraints": 9,
+    "model_candidate_with_reference_zero_assumption": 2
+  },
+  "new_models_trained": 0,
+  "new_candidate_searches": 0,
+  "original_card_intensity_recovered": false,
+  "actual_after_stale_validated": false,
+  "main_path_1pct_box_verified": false,
+  "limitations": [
+    "Grades are task2 relative or threshold-scenario estimates, not recovered raw card intensity.",
+    "Stale regressors do not reliably beat the median baseline; all guards are fitted-model scenarios.",
+    "Reference holdout diagnostics do not establish an advantage; reference 1% IQR checks concern separate designs.",
+    "No paired intervention data, physical mass balance or brewing validation is supplied."
+  ]
+}
