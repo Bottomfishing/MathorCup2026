@@ -15,7 +15,14 @@ from beer_audit.audit import sha256,write_json
 
 def compare_csv(actual, expected):
     import pandas as pd
-    pd.testing.assert_frame_equal(pd.read_csv(actual),pd.read_csv(expected),check_exact=False,atol=1e-10,rtol=1e-10)
+    frames=[pd.read_csv(actual),pd.read_csv(expected)]
+    # Excel cells can contain CRLF while a fresh pandas write retains LF.
+    # Normalize only this representation difference, never labels or numbers.
+    for frame in frames:
+        for column in frame:
+            if pd.api.types.is_string_dtype(frame[column].dtype):
+                frame[column]=frame[column].str.replace('\r\n','\n',regex=False)
+    pd.testing.assert_frame_equal(*frames,check_exact=False,atol=1e-10,rtol=1e-10)
 
 
 def run(source, output, reference=None, statement=None):
