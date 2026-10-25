@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "base_commit": "c32e698",
+  "task": "1: preserve historical review hashes across Git checkout line endings",
+  "checks": [
+    {
+      "check": "unit_tests",
+      "exit_code": 0,
+      "log": "unit_tests.txt"
+    },
+    {
+      "check": "q2_q3_original_cli",
+      "exit_code": 0,
+      "log": "q2_q3_original_cli.txt"
+    },
+    {
+      "check": "q1_original_cli",
+      "exit_code": 0,
+      "log": "q1_original_cli.txt"
+    }
+  ],
+  "unit_test_count": 97,
+  "checkout_regressions": {
+    "autocrlf_true": "passed",
+    "autocrlf_false": "passed",
+    "protected_files": 6
+  },
+  "attributes_sha256": "14c16e448476b9e95f8d6259b721f2648de1de9b4a581b5ea794bcde5a545ab7",
+  "verification_scripts_modified": false,
+  "historical_hashes_rewritten": false,
+  "raw_source_hashing_modified": false,
+  "full_training_pipeline_rerun": false,
+  "later_optimization_tasks_started": false,
+  "validation_scope": "Original Q2/Q3 verifier replayed 24 Ridge fits and 6 selected Q3 models; original Q1 verifier replayed masks, labels and summaries. No monkeypatch or hash bypass."
+}

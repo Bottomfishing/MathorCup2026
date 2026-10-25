@@ -1,0 +1,5 @@
+# Preserve the byte representation recorded by the existing review manifests.
+configs/review_*_20261025.json text eol=lf
+outputs/q3_task3_20261025/transfer_source_profiles.csv text eol=crlf
+outputs/q3_task3_20261025/transfer_profiles.csv text eol=crlf
+outputs/q3_task3_20261025/transfer_results.csv text eol=crlf
