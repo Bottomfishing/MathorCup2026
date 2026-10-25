@@ -50,3 +50,5 @@ outputs/current_reproduction_20261025/*
 
 # Explicit task2 full-training CLI checks duplicate model inference, not OOF evidence.
 outputs/task2_ordinal_20261025/prediction_smoke/*.csv
+# R2 CLI smoke repeats the full-fit prediction tables; retain its metadata only.
+outputs/r2_raw_q1_20261026/prediction_smoke/*.csv

@@ -1,0 +1,17 @@
+﻿context,method,inner_raw_rating_mae,selected
+outer_0,training_median,0.8382342677402919,False
+outer_0,extra_trees,0.8081635024948278,True
+outer_0,gbr_depth1,0.820883196009702,False
+outer_0,gbr_depth2,0.8167810721184215,False
+outer_1,training_median,0.8219267042006562,False
+outer_1,extra_trees,0.795467563374749,True
+outer_1,gbr_depth1,0.8083028962055908,False
+outer_1,gbr_depth2,0.8025712391401014,False
+outer_2,training_median,0.8297737163590456,False
+outer_2,extra_trees,0.797699030953522,True
+outer_2,gbr_depth1,0.807949002151098,False
+outer_2,gbr_depth2,0.8085962338836591,False
+full_training,training_median,0.8287872574462575,False
+full_training,extra_trees,0.7986953499093499,True
+full_training,gbr_depth1,0.8110471462611463,False
+full_training,gbr_depth2,0.8090403216783216,False

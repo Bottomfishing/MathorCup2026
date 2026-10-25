@@ -1,0 +1,11 @@
+﻿method,stage,checked_pairs,violations
+training_median,before_parent_cap,6000,0
+training_median,after_parent_cap,6000,0
+extra_trees,before_parent_cap,6000,0
+extra_trees,after_parent_cap,6000,0
+gbr_depth1,before_parent_cap,6000,0
+gbr_depth1,after_parent_cap,6000,0
+gbr_depth2,before_parent_cap,6000,3
+gbr_depth2,after_parent_cap,6000,0
+inner_selected,before_parent_cap,6000,0
+inner_selected,after_parent_cap,6000,0

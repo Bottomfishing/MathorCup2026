@@ -14,6 +14,28 @@ from beer_models.scorecard import predict_scorecard_frame
 def run(model, input_path, output):
     bundle = joblib.load(model)
     frame = pd.read_csv(input_path, dtype=str)
+    if bundle.get('bundle_kind') == 'r2_raw_panel':
+        from beer_models.raw_panel import predict_raw_frame
+        long, primary, wide, samples = predict_raw_frame(frame, bundle)
+        output.mkdir(parents=True, exist_ok=False)
+        save_csv(output, 'scores_all52_long.csv', long)
+        save_csv(output, 'estimated_grades_primary47.csv', primary)
+        save_csv(output, 'estimated_grades_all52.csv', wide)
+        save_csv(output, 'sample_quality.csv', samples)
+        write_json(output / 'prediction_info.json', {
+            'samples': len(frame), 'targets': 52, 'labelled_panel_targets': len(bundle['targets']),
+            'model': bundle['selected_model'], 'model_sha256': sha256(model), 'input_sha256': sha256(input_path),
+            'score_scale': 'original_0_6_individual_rating_scale',
+            'grade_semantics': 'integer_balanced_panel_conditional_median_with_parent_cap',
+            'grade_method': 'r2_raw_panel_median', 'grade_probability_calibrated': False,
+            'missing_columns_imputed': [f for f in bundle['features'] if f not in frame],
+            'unlabelled_card_targets': bundle['protocol']['unlabelled_card_targets'],
+            'raw_source_sha256': bundle['raw_source_sha256'],
+            'qualified_on_historical_grouped_folds': bundle['qualified_on_historical_grouped_folds'],
+            'input_scale': 'same_supplied_coordinates_as_attachment_1_no_automatic_log_transform',
+            'evaluation_use': 'full_training_model_predictions_are_not_OOF_accuracy_estimates'})
+        print(f'Predicted {len(frame)} samples on raw 0-6 scale; output: {output}')
+        return
     complete_card = 'scorecard_protocol' in bundle
     if complete_card:
         long, wide, all_items, samples = predict_scorecard_frame(frame, bundle)
@@ -54,7 +76,7 @@ def run(model, input_path, output):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--model', type=Path, default=Path('outputs/q1_task2_20261025/model.joblib'))
+    p.add_argument('--model', type=Path, default=Path('outputs/r2_raw_q1_20261026/model.joblib'))
     p.add_argument('--input', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
