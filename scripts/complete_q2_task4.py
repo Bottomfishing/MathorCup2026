@@ -128,10 +128,10 @@ def run(args):
     slots=slots.merge(strict,on=['target','rank'],how='left',validate='one_to_one')
     slots['slot_status']=np.where(slots.field.notna(),'ranked_panel_association','unidentified_no_panel_response')
     slots['counts_as_identified_factor']=slots.field.notna()
-    auxiliary=read(Path('outputs/q1_task2_20261025/auxiliary_evidence.csv')).set_index('target')
-    task2_summary=meta(Path('outputs/q1_task2_20261025/summary.json'))
+    auxiliary=read(args.scorecard/'auxiliary_evidence.csv').set_index('target')
+    task2_summary=meta(args.scorecard/'summary.json')
     assert task2_summary['source_sha256']['7.csv']==sha256(args.source/'7.csv')
-    card=read(Path('outputs/q1_task2_20261025/estimated_grades_all52.csv'))
+    card=read(args.scorecard/'estimated_grades_all52.csv')
     extra=[];missing=[];target_rows=[]
     for row in scope.itertuples():
         t=row.target_id;selected=strict.loc[strict.target.eq(t)].sort_values('rank')
@@ -194,7 +194,8 @@ def parser():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--source',type=Path,required=True)
     for name,default in {'audit':'outputs/p0_audit_20261023_final','delivery':'outputs/q2_delivery_20261024',
         'reliability':'outputs/q2_reliability_20261024','exploratory':'outputs/q2_exploratory_20261023_v1',
-        'reference':'data/reference/zenodo10653704/Supplemental Files and Figure source files.xlsx','output':'outputs/q2_task4_20261025'}.items():
+        'reference':'data/reference/zenodo10653704/Supplemental Files and Figure source files.xlsx',
+        'scorecard':'outputs/q1_task2_20261025','output':'outputs/q2_task4_20261025'}.items():
         p.add_argument('--'+name,type=Path,default=Path(default))
     return p
 

@@ -135,6 +135,7 @@ def verify(args):
         assert row.network_degree_0_6==nodes.loc[row.field,'degree'] and row.network_component_size_0_6==nodes.loc[row.field,'component_size']
     # Missing panel targets retain named-chemical evidence but no invented rank or uncertainty.
     extra=read('extra_target_evidence.csv').set_index('target')
+    scorecard=pd.read_csv(args.scorecard/'estimated_grades_all52.csv')
     forum=pd.read_csv(args.source/'7.csv',dtype={'beer':str}).set_index('beer').loc[ids.beer.astype(str)]
     for target,field in [('A_acetaldehyde','aroma_acetaldehyde'),('F_acetaldehyde','taste_acetaldehyde')]:
         r=extra.loc[target];values=forum[field]
@@ -144,7 +145,8 @@ def verify(args):
         assert r.forum_nonmodal==values.ne(values.mode().iloc[0]).sum()
         correlation=pd.Series(values.to_numpy()).corr(pd.Series(xf.acetaldehyde.to_numpy()),method='spearman')
         np.testing.assert_allclose(correlation,r.forum_spearman_with_chemical_coordinate,atol=1e-12)
-        assert r.threshold_proxy_distinct_values==1 and not r.threshold_proxy_treated_as_response
+        assert r.threshold_proxy_distinct_values==scorecard[target].nunique()==1 and scorecard[target].eq(0).all()
+        assert not r.threshold_proxy_treated_as_response
     coverage=read('target_summary52.csv').set_index('target')
     assert len(coverage)==52 and coverage.identified_statistical_factors.sum()==150 and coverage.unfilled_top3_slots.sum()==6
     for target in targets:
