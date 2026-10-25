@@ -1,0 +1,978 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-25T01:37:43.283813+00:00",
+  "git_commit": "b610962c03375990cf665df49b11925b6deab551",
+  "working_tree_dirty": false,
+  "python": "3.12.14",
+  "executable": "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+  "system": "Windows-11-10.0.26100-SP0",
+  "source": "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+  "steps": [
+    {
+      "name": "dependency_check",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.492,
+      "log": "logs\\dependency_check.log"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 2.018,
+      "log": "logs\\tests.log"
+    },
+    {
+      "name": "source_audit",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "-m",
+        "beer_audit",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\audit"
+      ],
+      "exit_code": 0,
+      "seconds": 2.819,
+      "log": "logs\\source_audit.log"
+    },
+    {
+      "name": "scope_audit",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/audit_task1_scope.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--statement",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\2026年MathorCup大数据挑战赛-赛道A初赛.pdf",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\scope"
+      ],
+      "exit_code": 0,
+      "seconds": 22.305,
+      "log": "logs\\scope_audit.log"
+    },
+    {
+      "name": "base_training",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/complete_modeling.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--audit",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\audit",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling"
+      ],
+      "exit_code": 0,
+      "seconds": 21.58,
+      "log": "logs\\base_training.log"
+    },
+    {
+      "name": "base_verification",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/verify_continuation.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--audit",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\audit",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling"
+      ],
+      "exit_code": 0,
+      "seconds": 3.672,
+      "log": "logs\\base_verification.log"
+    },
+    {
+      "name": "ordinal_training",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/q1_ordinal_experiment.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\ordinal"
+      ],
+      "exit_code": 0,
+      "seconds": 13.279,
+      "log": "logs\\ordinal_training.log"
+    },
+    {
+      "name": "q1_assembly",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/complete_q1_task2.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--ordinal",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\ordinal",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q1"
+      ],
+      "exit_code": 0,
+      "seconds": 4.517,
+      "log": "logs\\q1_assembly.log"
+    },
+    {
+      "name": "prediction_interface",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/predict_q1.py",
+        "--model",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q1\\model.joblib",
+        "--input",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件\\1.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\prediction_interface"
+      ],
+      "exit_code": 0,
+      "seconds": 2.543,
+      "log": "logs\\prediction_interface.log"
+    },
+    {
+      "name": "q1_verification",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/verify_q1_task2.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--ordinal",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\ordinal",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q1",
+        "--smoke",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\prediction_interface"
+      ],
+      "exit_code": 0,
+      "seconds": 3.564,
+      "log": "logs\\q1_verification.log"
+    },
+    {
+      "name": "style_training",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/q3_style_study.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--q3",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q3",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\style"
+      ],
+      "exit_code": 0,
+      "seconds": 7.883,
+      "log": "logs\\style_training.log"
+    },
+    {
+      "name": "style_verification",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/verify_q3_style_study.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--q3",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q3",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\style"
+      ],
+      "exit_code": 0,
+      "seconds": 6.911,
+      "log": "logs\\style_verification.log"
+    },
+    {
+      "name": "path_design",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/resolve_q3.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--style-models",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\style",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\paths"
+      ],
+      "exit_code": 0,
+      "seconds": 24.553,
+      "log": "logs\\path_design.log"
+    },
+    {
+      "name": "path_verification",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/verify_q3_resolution.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--style-models",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\style",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\paths"
+      ],
+      "exit_code": 0,
+      "seconds": 2.593,
+      "log": "logs\\path_verification.log"
+    },
+    {
+      "name": "generation_diagnostics",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/complete_q3.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--audit",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\audit",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--q3",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q3",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\generation_diagnostics"
+      ],
+      "exit_code": 0,
+      "seconds": 9.259,
+      "log": "logs\\generation_diagnostics.log"
+    },
+    {
+      "name": "q3_assembly",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/complete_q3_task3.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--scorecard",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q1",
+        "--q3",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q3",
+        "--style-models",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\style",
+        "--resolution",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\paths",
+        "--delivery",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\generation_diagnostics",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q3"
+      ],
+      "exit_code": 0,
+      "seconds": 3.38,
+      "log": "logs\\q3_assembly.log"
+    },
+    {
+      "name": "q3_verification",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/verify_q3_task3.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q1",
+        "--scorecard",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q1",
+        "--q3",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\modeling\\q3",
+        "--style-models",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\style",
+        "--resolution",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\paths",
+        "--delivery",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\generation_diagnostics",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q3"
+      ],
+      "exit_code": 0,
+      "seconds": 4.047,
+      "log": "logs\\q3_verification.log"
+    },
+    {
+      "name": "q2_assembly",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/complete_q2_task4.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--reference",
+        "D:\\Mathor cup\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx",
+        "--audit",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\audit",
+        "--scorecard",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q1",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q2"
+      ],
+      "exit_code": 0,
+      "seconds": 1.702,
+      "log": "logs\\q2_assembly.log"
+    },
+    {
+      "name": "q2_verification",
+      "command": [
+        "D:\\Mathor cup\\checkpoints\\reproduction_env_20261024\\Scripts\\python.exe",
+        "scripts/verify_q2_task4.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--reference",
+        "D:\\Mathor cup\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx",
+        "--audit",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\audit",
+        "--scorecard",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q1",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task5_verified_checkout_20261025\\outputs\\current_delivery_local\\q2"
+      ],
+      "exit_code": 0,
+      "seconds": 3.189,
+      "log": "logs\\q2_verification.log"
+    }
+  ],
+  "table_comparisons": [
+    {
+      "rebuilt": "audit\\feature_dictionary.csv",
+      "reference": "outputs\\p0_audit_20261023_final\\feature_dictionary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2a17bf7619e78181f2207f1029ca80ddede852a3aff8c63f6553c8d39693332c",
+      "reference_sha256": "2a17bf7619e78181f2207f1029ca80ddede852a3aff8c63f6553c8d39693332c"
+    },
+    {
+      "rebuilt": "audit\\sensory_mapping.csv",
+      "reference": "outputs\\p0_audit_20261023_final\\sensory_mapping.csv",
+      "status": "passed",
+      "rebuilt_sha256": "b571aebc111ff48d6267eb48623eda87c2204d6450546792a8ff9fcbe08a2787",
+      "reference_sha256": "c3cec869f59a8c1feddd06bdd62fa2ec1780b3a9b370d035d46e26586731fefb"
+    },
+    {
+      "rebuilt": "audit\\correlation_method_comparison.csv",
+      "reference": "outputs\\p0_audit_20261023_final\\correlation_method_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "00282b51fcd99cb398f4dc8c6cfe6a732279d36314314e18c8c030391b9cbf2d",
+      "reference_sha256": "00282b51fcd99cb398f4dc8c6cfe6a732279d36314314e18c8c030391b9cbf2d"
+    },
+    {
+      "rebuilt": "scope\\scorecard_scope.csv",
+      "reference": "outputs\\task1_acceptance_20261025\\scorecard_scope.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d",
+      "reference_sha256": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d"
+    },
+    {
+      "rebuilt": "scope\\defect_scope.csv",
+      "reference": "outputs\\task1_acceptance_20261025\\defect_scope.csv",
+      "status": "passed",
+      "rebuilt_sha256": "ff7aa59829482f16533bf3823d713515cc43ffc08e8c3f38260b0805f73611cc",
+      "reference_sha256": "ff7aa59829482f16533bf3823d713515cc43ffc08e8c3f38260b0805f73611cc"
+    },
+    {
+      "rebuilt": "q1\\acetaldehyde_missingness.csv",
+      "reference": "outputs\\q1_task2_20261025\\acetaldehyde_missingness.csv",
+      "status": "passed",
+      "rebuilt_sha256": "afa5052fe39c91f209f1a82977d565aeac5093447ee85d107f6e36710be3016b",
+      "reference_sha256": "afa5052fe39c91f209f1a82977d565aeac5093447ee85d107f6e36710be3016b"
+    },
+    {
+      "rebuilt": "q1\\auxiliary_evidence.csv",
+      "reference": "outputs\\q1_task2_20261025\\auxiliary_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "c226926542e89d05965b415d2dbe0e72318efe7bbbda7b63ab4eac870bcb7291",
+      "reference_sha256": "c226926542e89d05965b415d2dbe0e72318efe7bbbda7b63ab4eac870bcb7291"
+    },
+    {
+      "rebuilt": "q1\\estimated_grades_all52.csv",
+      "reference": "outputs\\q1_task2_20261025\\estimated_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "62d1d8ad89709ff917e381e5f452a3574e8c5beb670c106fdb921cb866056e37",
+      "reference_sha256": "62d1d8ad89709ff917e381e5f452a3574e8c5beb670c106fdb921cb866056e37"
+    },
+    {
+      "rebuilt": "q1\\estimated_grades_primary47.csv",
+      "reference": "outputs\\q1_task2_20261025\\estimated_grades_primary47.csv",
+      "status": "passed",
+      "rebuilt_sha256": "325dfc297fa50ffd9ce84ffc8a8080eac1e1a27c8cceabdcb95128497a3384a1",
+      "reference_sha256": "325dfc297fa50ffd9ce84ffc8a8080eac1e1a27c8cceabdcb95128497a3384a1"
+    },
+    {
+      "rebuilt": "q1\\hierarchy_diagnostics.csv",
+      "reference": "outputs\\q1_task2_20261025\\hierarchy_diagnostics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "50b2d5dc646c1e49fd5132d4fb834b6697d51e0d8e955ef0e349dd017b9523ce",
+      "reference_sha256": "50b2d5dc646c1e49fd5132d4fb834b6697d51e0d8e955ef0e349dd017b9523ce"
+    },
+    {
+      "rebuilt": "q1\\model_comparison.csv",
+      "reference": "outputs\\q1_task2_20261025\\model_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "815dae6d70aabc82aad25e9329225131b9c156fd02ec1e0988e1158bb0b5c8a0",
+      "reference_sha256": "815dae6d70aabc82aad25e9329225131b9c156fd02ec1e0988e1158bb0b5c8a0"
+    },
+    {
+      "rebuilt": "q1\\score_semantics.csv",
+      "reference": "outputs\\q1_task2_20261025\\score_semantics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "5431f60dba8f63e092f2f5f8e8e74fb123cfac005dd9338e403fffe4ad69d763",
+      "reference_sha256": "5431f60dba8f63e092f2f5f8e8e74fb123cfac005dd9338e403fffe4ad69d763"
+    },
+    {
+      "rebuilt": "q1\\scores_all52_long.csv",
+      "reference": "outputs\\q1_task2_20261025\\scores_all52_long.csv",
+      "status": "passed",
+      "rebuilt_sha256": "fe95d6d72dcd9d826184a2dd7d6c3763e299f2919523f1ad74e225a7a38529e9",
+      "reference_sha256": "fe95d6d72dcd9d826184a2dd7d6c3763e299f2919523f1ad74e225a7a38529e9"
+    },
+    {
+      "rebuilt": "q1\\selected_metrics_by_observed_grade.csv",
+      "reference": "outputs\\q1_task2_20261025\\selected_metrics_by_observed_grade.csv",
+      "status": "passed",
+      "rebuilt_sha256": "9b1fb18662f4324873e8952967ee7643cd343953b3cc3eb594e11aa16f31e5ba",
+      "reference_sha256": "9b1fb18662f4324873e8952967ee7643cd343953b3cc3eb594e11aa16f31e5ba"
+    },
+    {
+      "rebuilt": "q1\\selected_metrics_by_target.csv",
+      "reference": "outputs\\q1_task2_20261025\\selected_metrics_by_target.csv",
+      "status": "passed",
+      "rebuilt_sha256": "966c9f9ff0772fc35e40060f00aede205e8492c3e1082c3b161a2b30dedee020",
+      "reference_sha256": "966c9f9ff0772fc35e40060f00aede205e8492c3e1082c3b161a2b30dedee020"
+    },
+    {
+      "rebuilt": "q1\\selected_missingness.csv",
+      "reference": "outputs\\q1_task2_20261025\\selected_missingness.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1da52b0a38ebfd494f0bb06b944b2ee864a6ef3b2c51e0da6f6192a2928f5d80",
+      "reference_sha256": "1da52b0a38ebfd494f0bb06b944b2ee864a6ef3b2c51e0da6f6192a2928f5d80"
+    },
+    {
+      "rebuilt": "q1\\threshold_sensitivity.csv",
+      "reference": "outputs\\q1_task2_20261025\\threshold_sensitivity.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e2057237da0304ba0ce38889cad8ffa9c35387524e171ab193c81c3a7b23ee57",
+      "reference_sha256": "e2057237da0304ba0ce38889cad8ffa9c35387524e171ab193c81c3a7b23ee57"
+    },
+    {
+      "rebuilt": "q3\\five_defect_checks.csv",
+      "reference": "outputs\\q3_task3_20261025\\five_defect_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "189d77341c4b23f96b786e301745070729f6993820bc01b5bc4634e18abca4f3",
+      "reference_sha256": "189d77341c4b23f96b786e301745070729f6993820bc01b5bc4634e18abca4f3"
+    },
+    {
+      "rebuilt": "q3\\generated_diagnostics.csv",
+      "reference": "outputs\\q3_task3_20261025\\generated_diagnostics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "51f22744434fc29d11e1812a8a4f7d204842caad45e2d506a0965ad484121955",
+      "reference_sha256": "51f22744434fc29d11e1812a8a4f7d204842caad45e2d506a0965ad484121955"
+    },
+    {
+      "rebuilt": "q3\\generated_grades_all52.csv",
+      "reference": "outputs\\q3_task3_20261025\\generated_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "80394bae05c6fc7926fa3915df022ec314afc2634d232d62dc742c3f2484f977",
+      "reference_sha256": "80394bae05c6fc7926fa3915df022ec314afc2634d232d62dc742c3f2484f977"
+    },
+    {
+      "rebuilt": "q3\\generated_grades_primary47.csv",
+      "reference": "outputs\\q3_task3_20261025\\generated_grades_primary47.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1ff03710b3e0532dbbc08d7a9732f6746bfef0df64b3bbe444f86ed2e243ad3d",
+      "reference_sha256": "1ff03710b3e0532dbbc08d7a9732f6746bfef0df64b3bbe444f86ed2e243ad3d"
+    },
+    {
+      "rebuilt": "q3\\generated_metadata.csv",
+      "reference": "outputs\\q3_task3_20261025\\generated_metadata.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7e7635d121c5132931b17f5e39f5ec8597982cdb9ea071a8fa8125e38d40d6de",
+      "reference_sha256": "7e7635d121c5132931b17f5e39f5ec8597982cdb9ea071a8fa8125e38d40d6de"
+    },
+    {
+      "rebuilt": "q3\\generated_profiles.csv",
+      "reference": "outputs\\q3_task3_20261025\\generated_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "311d9076f473bc348e0fcbcd658692b5f364e10a1700d2cbffab166097ea63f6",
+      "reference_sha256": "311d9076f473bc348e0fcbcd658692b5f364e10a1700d2cbffab166097ea63f6"
+    },
+    {
+      "rebuilt": "q3\\generated_sensory52_long.csv",
+      "reference": "outputs\\q3_task3_20261025\\generated_sensory52_long.csv",
+      "status": "passed",
+      "rebuilt_sha256": "92a8fbbdcad48f3c34c0130ff5049d235cda864e7e2dd36ce33bd44a610e1334",
+      "reference_sha256": "92a8fbbdcad48f3c34c0130ff5049d235cda864e7e2dd36ce33bd44a610e1334"
+    },
+    {
+      "rebuilt": "q3\\generation_model_comparison.csv",
+      "reference": "outputs\\q3_task3_20261025\\generation_model_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "47f966cb04217b083433e9389d2bf4acc4cd4ae05dcd85b7eaac10f47173b078",
+      "reference_sha256": "47f966cb04217b083433e9389d2bf4acc4cd4ae05dcd85b7eaac10f47173b078"
+    },
+    {
+      "rebuilt": "q3\\generation_validation_by_style_fold.csv",
+      "reference": "outputs\\q3_task3_20261025\\generation_validation_by_style_fold.csv",
+      "status": "passed",
+      "rebuilt_sha256": "6dfd844a9e56bfb25540a46d5e85bf03d944e0eac202a798891ae3184614116f",
+      "reference_sha256": "6dfd844a9e56bfb25540a46d5e85bf03d944e0eac202a798891ae3184614116f"
+    },
+    {
+      "rebuilt": "q3\\reference_holdout_metrics.csv",
+      "reference": "outputs\\q3_task3_20261025\\reference_holdout_metrics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a6a10da7aaaf735b3591e4936427bb0b3a67a854ef233c01515fe38c58880194",
+      "reference_sha256": "a6a10da7aaaf735b3591e4936427bb0b3a67a854ef233c01515fe38c58880194"
+    },
+    {
+      "rebuilt": "q3\\sensory_fingerprints52.csv",
+      "reference": "outputs\\q3_task3_20261025\\sensory_fingerprints52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "22550bd89318494f9e8b1948ec8bf0e5a7515bf7b4afbfd42055de122a698e89",
+      "reference_sha256": "22550bd89318494f9e8b1948ec8bf0e5a7515bf7b4afbfd42055de122a698e89"
+    },
+    {
+      "rebuilt": "q3\\source_defect_evidence.csv",
+      "reference": "outputs\\q3_task3_20261025\\source_defect_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e529d111ed97571c17fb6ac2ff1ad8453651ee92cfc2c92d261b8875433c7646",
+      "reference_sha256": "e529d111ed97571c17fb6ac2ff1ad8453651ee92cfc2c92d261b8875433c7646"
+    },
+    {
+      "rebuilt": "q3\\stale_loss_comparison.csv",
+      "reference": "outputs\\q3_task3_20261025\\stale_loss_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "76e133c465d3f0fa1adde8425698686d3d2912d5744f7f05841d333f90806d20",
+      "reference_sha256": "76e133c465d3f0fa1adde8425698686d3d2912d5744f7f05841d333f90806d20"
+    },
+    {
+      "rebuilt": "q3\\stale_proxy_checks.csv",
+      "reference": "outputs\\q3_task3_20261025\\stale_proxy_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "fa2861746c9eb7d3c0a52ab443fdfcf11b22578d395950c92a93c8e45e1c9966",
+      "reference_sha256": "fa2861746c9eb7d3c0a52ab443fdfcf11b22578d395950c92a93c8e45e1c9966"
+    },
+    {
+      "rebuilt": "q3\\transfer_coordinate_changes.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_coordinate_changes.csv",
+      "status": "passed",
+      "rebuilt_sha256": "15cd53f8541882f7bd86c9134d6a73bd8f1afdfa804ebb4ebf350b15edb2baf0",
+      "reference_sha256": "15cd53f8541882f7bd86c9134d6a73bd8f1afdfa804ebb4ebf350b15edb2baf0"
+    },
+    {
+      "rebuilt": "q3\\transfer_grades_after_all52.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_grades_after_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f4d7ff383ec6370985563ad0fcffd0ed91c68e9c95ddcd8b2f84bc4a2bd73f03",
+      "reference_sha256": "f4d7ff383ec6370985563ad0fcffd0ed91c68e9c95ddcd8b2f84bc4a2bd73f03"
+    },
+    {
+      "rebuilt": "q3\\transfer_grades_after_primary47.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_grades_after_primary47.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2b3bdd1265dc69ddf05b0814ce3369d4e402721086c873fb6d8baee7a7971960",
+      "reference_sha256": "2b3bdd1265dc69ddf05b0814ce3369d4e402721086c873fb6d8baee7a7971960"
+    },
+    {
+      "rebuilt": "q3\\transfer_grades_before_all52.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_grades_before_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a72cf474a4e174cc0004eea78bb225e0740e3d478b8cd850a378d60750a22828",
+      "reference_sha256": "a72cf474a4e174cc0004eea78bb225e0740e3d478b8cd850a378d60750a22828"
+    },
+    {
+      "rebuilt": "q3\\transfer_method_comparison.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_method_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "ab474331d85c83b0e7f863a30ad089a1a571226d13b5072e0275bfd88f698496",
+      "reference_sha256": "ab474331d85c83b0e7f863a30ad089a1a571226d13b5072e0275bfd88f698496"
+    },
+    {
+      "rebuilt": "q3\\transfer_profiles.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "44d5de29f21f425667177c3896055fdc15cf0ffa103b3f00046a496f22d6ddbf",
+      "reference_sha256": "44d5de29f21f425667177c3896055fdc15cf0ffa103b3f00046a496f22d6ddbf"
+    },
+    {
+      "rebuilt": "q3\\transfer_results.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_results.csv",
+      "status": "passed",
+      "rebuilt_sha256": "c0a880079514b1d9d7ab04ed3733fede0343185995b6cde4c89cd9b06eebd04a",
+      "reference_sha256": "c0a880079514b1d9d7ab04ed3733fede0343185995b6cde4c89cd9b06eebd04a"
+    },
+    {
+      "rebuilt": "q3\\transfer_sensory52_long.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_sensory52_long.csv",
+      "status": "passed",
+      "rebuilt_sha256": "57c77a1c4927bec722f780959fc60f2840e78e10bf83d5b9ac136f15a8d77ed8",
+      "reference_sha256": "57c77a1c4927bec722f780959fc60f2840e78e10bf83d5b9ac136f15a8d77ed8"
+    },
+    {
+      "rebuilt": "q3\\transfer_source_profiles.csv",
+      "reference": "outputs\\q3_task3_20261025\\transfer_source_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "373e0b99ea796d81c2a3527d2d16338e9d3d003727bd6f15fd8cc00a4797c5d7",
+      "reference_sha256": "373e0b99ea796d81c2a3527d2d16338e9d3d003727bd6f15fd8cc00a4797c5d7"
+    },
+    {
+      "rebuilt": "q2\\compound_name_evidence.csv",
+      "reference": "outputs\\q2_task4_20261025\\compound_name_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1dcb93d0b972061cb3303fabfa40880b90f553bf1b98bd9896c079f811770ab2",
+      "reference_sha256": "11131668f7741adece347fa12cee758173b30783e25d61917cb4bbd4b8d04eb9"
+    },
+    {
+      "rebuilt": "q2\\correlation_method_evidence.csv",
+      "reference": "outputs\\q2_task4_20261025\\correlation_method_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2b3cbca9f8dc483c6c5ca94e547672a931e0867a75ae0be1c2318aca711fe1dd",
+      "reference_sha256": "2b3cbca9f8dc483c6c5ca94e547672a931e0867a75ae0be1c2318aca711fe1dd"
+    },
+    {
+      "rebuilt": "q2\\extra_target_evidence.csv",
+      "reference": "outputs\\q2_task4_20261025\\extra_target_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "826c59b1060a3b69b7058f2e9ab2b4e79d99f4c61bf938dc2bffa34b51cbda7b",
+      "reference_sha256": "826c59b1060a3b69b7058f2e9ab2b4e79d99f4c61bf938dc2bffa34b51cbda7b"
+    },
+    {
+      "rebuilt": "q2\\family_scope_top3_supplement.csv",
+      "reference": "outputs\\q2_task4_20261025\\family_scope_top3_supplement.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a77241ffe882f9433edeeb6d8581a32702e5186b0854932310724cfd0fe9b2d7",
+      "reference_sha256": "a77241ffe882f9433edeeb6d8581a32702e5186b0854932310724cfd0fe9b2d7"
+    },
+    {
+      "rebuilt": "q2\\named_marker_diagnostics.csv",
+      "reference": "outputs\\q2_task4_20261025\\named_marker_diagnostics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f46a51f1a13abd5a6e04ac67ac7296e3b06a791565e3ba1a4bd179f1e3d3a754",
+      "reference_sha256": "f46a51f1a13abd5a6e04ac67ac7296e3b06a791565e3ba1a4bd179f1e3d3a754"
+    },
+    {
+      "rebuilt": "q2\\network_edges_0_6.csv",
+      "reference": "outputs\\q2_task4_20261025\\network_edges_0_6.csv",
+      "status": "passed",
+      "rebuilt_sha256": "97903f20f6e5f9458061d61e1d184c665bd139b23ecf9bb57313c56b90da52f2",
+      "reference_sha256": "97903f20f6e5f9458061d61e1d184c665bd139b23ecf9bb57313c56b90da52f2"
+    },
+    {
+      "rebuilt": "q2\\network_nodes.csv",
+      "reference": "outputs\\q2_task4_20261025\\network_nodes.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2a99116a1417cea5660398dab6bc224d7500b666ad442194ad292cdfda696d79",
+      "reference_sha256": "2a99116a1417cea5660398dab6bc224d7500b666ad442194ad292cdfda696d79"
+    },
+    {
+      "rebuilt": "q2\\network_sensitivity.csv",
+      "reference": "outputs\\q2_task4_20261025\\network_sensitivity.csv",
+      "status": "passed",
+      "rebuilt_sha256": "9ca3e893b253414003405380c8492f9e0ac7028547d592c78c76da68b0a14da0",
+      "reference_sha256": "9ca3e893b253414003405380c8492f9e0ac7028547d592c78c76da68b0a14da0"
+    },
+    {
+      "rebuilt": "q2\\target_scope_comparison.csv",
+      "reference": "outputs\\q2_task4_20261025\\target_scope_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e5c33551a0e7022dfe529c2b881d1bf495311cf30d215d0201f2d61ec8fe946a",
+      "reference_sha256": "e5c33551a0e7022dfe529c2b881d1bf495311cf30d215d0201f2d61ec8fe946a"
+    },
+    {
+      "rebuilt": "q2\\target_summary52.csv",
+      "reference": "outputs\\q2_task4_20261025\\target_summary52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f3babafe3619f3a5a58a02bd4416a14d9c5d836c9b9fcf58931d6b9c75f9703e",
+      "reference_sha256": "f3babafe3619f3a5a58a02bd4416a14d9c5d836c9b9fcf58931d6b9c75f9703e"
+    },
+    {
+      "rebuilt": "q2\\top3_all52_slots.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_all52_slots.csv",
+      "status": "passed",
+      "rebuilt_sha256": "fd49d4225a9e992ea7e21a2db39bfc54ff4166c4bce09e3052134c2af44427bb",
+      "reference_sha256": "fd49d4225a9e992ea7e21a2db39bfc54ff4166c4bce09e3052134c2af44427bb"
+    },
+    {
+      "rebuilt": "q2\\top3_panel_all50.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_panel_all50.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f8f02c1cdd5e2d0080978aba9476fecb12d01033709dd8acfa4a094571394c82",
+      "reference_sha256": "f8f02c1cdd5e2d0080978aba9476fecb12d01033709dd8acfa4a094571394c82"
+    },
+    {
+      "rebuilt": "q2\\top3_panel_primary45.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_panel_primary45.csv",
+      "status": "passed",
+      "rebuilt_sha256": "dc464210f2a903229abb032b94539a2f28890206ee1b84e35155b4947b0a40e7",
+      "reference_sha256": "dc464210f2a903229abb032b94539a2f28890206ee1b84e35155b4947b0a40e7"
+    },
+    {
+      "rebuilt": "q2\\top3_primary47_slots.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_primary47_slots.csv",
+      "status": "passed",
+      "rebuilt_sha256": "454f22fdd720bb5f72d9442969e45c0aacb6b64c423136fc159da5f95b1d80fe",
+      "reference_sha256": "454f22fdd720bb5f72d9442969e45c0aacb6b64c423136fc159da5f95b1d80fe"
+    },
+    {
+      "rebuilt": "q2\\unfilled_rank_requirements.csv",
+      "reference": "outputs\\q2_task4_20261025\\unfilled_rank_requirements.csv",
+      "status": "passed",
+      "rebuilt_sha256": "385c0f7276c3b930605ce9d7cbbeae672f7e0b9bea5e06f94422052ff2cb09c7",
+      "reference_sha256": "385c0f7276c3b930605ce9d7cbbeae672f7e0b9bea5e06f94422052ff2cb09c7"
+    }
+  ],
+  "rebuilt": [
+    "Q1 continuous fold/full models",
+    "Q1 ordinal fold/full models and task2 bundle",
+    "Q3 generator, style classifiers, focused Stale and resolved paths",
+    "task2/3/4 primary tables"
+  ],
+  "retained_evidence": [
+    "versioned audit definitions and task1 scope (independently rechecked)",
+    "Q2 200-refit selections and 1999-permutation nulls, forest comparisons and original annotations",
+    "Q3 separate measured-reference, 1% IQR and reference-holdout diagnostics"
+  ],
+  "interpretation": "Current selected workflow rebuild, not a retraining of every historical experiment or validation of raw intensity, causal effects or brewing outcomes.",
+  "packages": {
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "et_xmlfile": "2.0.0",
+    "fonttools": "4.67.0",
+    "joblib": "1.5.2",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.10.7",
+    "networkx": "3.5",
+    "numpy": "2.3.5",
+    "openpyxl": "3.1.5",
+    "packaging": "26.3",
+    "pandas": "3.0.1",
+    "pillow": "13.0.0",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "3.0.0",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.16.3",
+    "six": "1.17.0",
+    "threadpoolctl": "3.6.0",
+    "tzdata": "2026.5"
+  },
+  "code_sha256": {
+    "src\\beer_audit\\audit.py": "ca78d7577d039feac4aed63c4f69c20a2a792aa5f4ce5d4954587a0c7268618d",
+    "src\\beer_audit\\checks.py": "ad65c90020b6b9d7aa51f73cf4f94ad2bf84ce2c0575a3d2b278d94aec84c07e",
+    "src\\beer_audit\\__init__.py": "cf7c75e83e94cef8290cc158f7e44fcf60c9ca92341acd3531781f7252c4cb78",
+    "src\\beer_audit\\__main__.py": "4f4b7032a825205965670207011fe571f1c4927ee51e17ef48cedd67f5ad9f00",
+    "src\\beer_models\\baseline.py": "37c90d56d1014b352723471a6ffc51023e26165214f1c1bee7bf7ba209f5326b",
+    "src\\beer_models\\defect_constraints.py": "e78ef6a6331d99d889dbc85317b8f8fe1c0a25a37c2a77584fec01aa146cac83",
+    "src\\beer_models\\evidence.py": "f04038cc20911eadc2e5af4bb618863321c66138bdb465a7b984a6122492b170",
+    "src\\beer_models\\explain.py": "4aeb2d706678da50cc018f639188da4c4447c9bd43f4d7d639a968e09ee84740",
+    "src\\beer_models\\final_model.py": "f7d009a4f10a1c0f9facdab0510e30c17d2229c82991418cd7ac0c7d4cad06b5",
+    "src\\beer_models\\generation.py": "069f8dd33c7d9fc7a5d13b81b52b4784359959f7317ecf271db6c559254dd06a",
+    "src\\beer_models\\interval_bounds.py": "fcdb4af24d1dde5d2a0aed8d965b859f9a3ffe64d289c74d85ff55697b66e70b",
+    "src\\beer_models\\ordinal.py": "96c40abe16c9d54530f418eb7444a27a29792ef154c63bc4b9930e36840ea54e",
+    "src\\beer_models\\permutation.py": "f3a7f60cf4f063d348f8f0a1eaed49822cf596a2f446dc87d5dec88c928371b9",
+    "src\\beer_models\\predict.py": "444da51dcccd4a08af5b0aee519b45d876b30580a76535c105f5cf8d5bdfbeb2",
+    "src\\beer_models\\reference_validation.py": "455da7fbfa58c8d84ae98442e1a977dec7fc5d2934c8a93eed9656fb3541e2db",
+    "src\\beer_models\\reliability.py": "533fe1fad525407504be661ab047f2d17fec17ed85f82d69eae153a0f0498b75",
+    "src\\beer_models\\scorecard.py": "3d145fb5f1f8e21f24a868e062e3f3585a0b6d210de29c02a7c460c2e2d03faa",
+    "src\\beer_models\\style_diagnostics.py": "efcc84f0f10192cf736d03b54d6cb035eb61ecd7fdc166d86035842e9ef6799c",
+    "src\\beer_models\\style_models.py": "b9d54c9e52eb7afbec4133aba1c78b7e351a99e845c297e0c7460b348a1b1d6f",
+    "src\\beer_models\\transfer_checks.py": "2f313461be2275c5d23ecfd5a5aed4228912e2deffa3b092ea22b667882dcd69",
+    "src\\beer_models\\transforms.py": "3a88c1874f8c800d3c3064c5db0649c060ab06650f7b42d6011228171caa1747",
+    "src\\beer_models\\__init__.py": "d8eefe2f7229748c36e79bf5fbffc1ea91b0e23d2a8dfee3f53edc7dcb56b189",
+    "scripts\\audit_task1_scope.py": "a840e027fea19df138e75a8eeffb7c35d28186379080391d5b9c4c55157b4d7e",
+    "scripts\\checkpoint.py": "4da7b2cc22a40d6fbdff86ac16ebcd3da5b84814d33aba9373c46bba4a9925df",
+    "scripts\\complete_modeling.py": "6cf18c4580c5a9187c656037bbb8cbe17508ca3d595034dad6efb6b866c3041c",
+    "scripts\\complete_q1_task2.py": "eabd4bf1df01d086ae2673db841c0c8de3c0e2bb0ba35b070c445bb39f4b077c",
+    "scripts\\complete_q2.py": "a5d374dd3d1d63fdf4b87f365b111756932feee6a25a9fb8b097edaa50c9c268",
+    "scripts\\complete_q2_task4.py": "523f6e6c29e397fc91a499cc945906e64d6000f5144f82df2f88c42ecb4a7056",
+    "scripts\\complete_q3.py": "1ff4578559edbc42813ef6e80293c999279b0896e1bcc1a0c079028186929482",
+    "scripts\\complete_q3_task3.py": "4f98eefe73785dbcae037d4f472acf83e0c07c6c787c2fc5aca316e8ead82f50",
+    "scripts\\fetch_reference.py": "3ffcc9f151cce79dde945f9996c65cb783d18ee164df6aa22aaffb6ba1170e6c",
+    "scripts\\predict_q1.py": "895ee42801c9f1bb02480a322c2ef175bab6794a9f5ae84855c65db860e0828b",
+    "scripts\\q1_ordinal_experiment.py": "c76b152b340a53b4d674f1fee19c2d4b0fba276697b4177ee00b8d33d3313dd0",
+    "scripts\\q1_probability_diagnostics.py": "6ec0ca0039b57382c868b108e908f79ea871512a3ad3b1f19694605234bc6726",
+    "scripts\\q2_reliability_study.py": "1a4ef36f642827d9311844ef9537d56e142a4a7f24644f71d08f055034c4567a",
+    "scripts\\q3_guard_witness_search.py": "a820d132fecf66eb5dab9ff6ee8f4fd4430ca957c9a61d21505c047139fcb0a0",
+    "scripts\\q3_measured_reference.py": "d9e5f345ba8db24ab5fd3d656cd5d0ec72b6d33df281f48ff08e893d05b25a69",
+    "scripts\\q3_reference_box_study.py": "b9014b22cf761eb1213d328bbc49778d1504138430b2a4aed1e7fb942634cb6d",
+    "scripts\\q3_reference_holdout.py": "067e25a1ced0f31ee293685184c56533a3338da9805ac4a1968a0db2b4037a5a",
+    "scripts\\q3_reference_robust.py": "6a351f85ca96f8ee343dc2d5db554e5b7471082fc8c0a9351d4de51a0708a112",
+    "scripts\\q3_style_study.py": "26bc780568229d59a036b681d6777ae21f18a68de4e9cdc4e7288880f7cb1306",
+    "scripts\\relative_grades.py": "6afce6a84f4a7cfcbcf496f7359250398f44ba4a59890541c45f97c8bf7908dd",
+    "scripts\\report_baseline.py": "9265516a4e709e781551b94e3229b377d12710df84b66ea1bf943c2ba5216165",
+    "scripts\\report_generation.py": "57a9b0386fca89fcf9aca8668bd91d26b10589ec7ea2d05253809c1370f8660a",
+    "scripts\\report_q2.py": "8434a44ed4683cb9c1e98175f1b25227c72f0062a6a86514afc6f7378d8a0285",
+    "scripts\\report_q3_delivery.py": "f6d109415830947a867b8a2bc37485c12d1cf9dfdf3a2426bdfd204b09a8bf61",
+    "scripts\\report_q3_reference_diagnostics.py": "b04aa7cdf394b0394e611476c4dd1ec3b93f6a08e1c048e2eca0fc2678a9bf78",
+    "scripts\\reproduce_current.py": "c654602d3e16523fcc05992cbd64545ff1f54e93d6e9236c9775354b0cdd0e24",
+    "scripts\\reproduce_delivery.py": "a414dd380a4877fe0bb539c57822c605f1236b2ccfc9f9c15bf2b956d2096c3b",
+    "scripts\\resolve_q3.py": "385e612c3ebcbd580b07f677e878b7eb0c48f6f212ca9b055c0a55e3b46e7370",
+    "scripts\\revalidate_latest.py": "2dba54096b05ebc0a8c9cdbff5722c8527d35b9b515a18ee45a46a7a5d608290",
+    "scripts\\run_generation.py": "953b3fc94d602a66a9787fcb5fd57a1138327acd60d0490b4a952b85f55e5515",
+    "scripts\\summarize_q1.py": "dd03a4b9b1eedf88558499f7c56168b978bdcab01f9809af77aed965a3207048",
+    "scripts\\threshold_scenarios.py": "3afbd46bb3b8d509a540eb20b737e2f2aeaaac8a770b357ace9b2a746a609a66",
+    "scripts\\verify_baseline.py": "dc726066b911c476e815941d02f23bcf88f27862ca2ce30341398d32f7707f16",
+    "scripts\\verify_continuation.py": "b74307ac6d03bae3b31cfe948bfabb30bd3fb823f7b0382f967c22c0fe4872d6",
+    "scripts\\verify_generation.py": "1c797ec1c5af9cd872440c72b978ef048ecccff988f3cfd7056b4ab309d99ea1",
+    "scripts\\verify_latest_additions.py": "ad5ae255bc2c1f83fc68924a4e5b1b37cf5b86d67e175c8ee91fb3904461b4e7",
+    "scripts\\verify_permutation.py": "b2620aa8a3393e1afb1fa5ab328c3b44cf74cf408167b6c6f5a74f5915635f5f",
+    "scripts\\verify_q1_probability_diagnostics.py": "79f43b256e2476731f8e27682f59ff52d6de344740ce88206a4f3c48e34ed4d9",
+    "scripts\\verify_q1_task2.py": "47de07bb640d8db9be429aadae28cb1507f06b0752f46829061a8527a67fe605",
+    "scripts\\verify_q2_task4.py": "fd4f043bf9e39d3088890171fc56d67636bb37f65f14f0714224d3b8bee3414d",
+    "scripts\\verify_q3_guard_witnesses.py": "a85323f371f70499728d028de3deb5a534a51d6bdad676a4c778bf90d1f8d865",
+    "scripts\\verify_q3_reference.py": "7c5cfc8344cbf42f2b1f8143967a61f44db3abc13f957a92018a680c36f82eb6",
+    "scripts\\verify_q3_reference_box.py": "e425e1a26f039c23e2d9c24db96cc354485cac62008136fe93da1f3aad9625b7",
+    "scripts\\verify_q3_reference_holdout.py": "95725b9bdf4a9209a990d6b76abcae853abf55bf3297930e14a5ffbdcdb0b0b8",
+    "scripts\\verify_q3_reference_robust.py": "59ff341610e5847f1bc5fa53c6667a2a040e25cad1163a77aedbb92ab041fa23",
+    "scripts\\verify_q3_resolution.py": "2018ffde10a595bd1b5fd02cc3aee49f053bf4c3684f7229808e6eedcf1e70e0",
+    "scripts\\verify_q3_style_study.py": "0636e16a2b1237b46c4a5640e32d6ec56fd516692f1e9e894cf2f274cbdbbaa3",
+    "scripts\\verify_q3_task3.py": "d81ac0befa4f3dd54024961d21cf3e85043ea5501b3519c98995ff36fc3f1c9d",
+    "scripts\\verify_threshold_scenarios.py": "a72c83391f800480d745a706b6c052cd6ebc57d0bbde9632ec3bc60a54adbe45",
+    "scripts\\verify_within_style.py": "c096e4708e0501c51379ef8aee5b26fd92cc1de43289392857bcb20cd4900ce1",
+    "scripts\\within_style_permutation.py": "711673e341f69d9e26191829d2ba16f2ac01f28e0d7a1c5106697ea1b47c510d",
+    "configs\\baseline_robust_v2.json": "4f2ebd91d17ef0bacdce2b9b9383d9a0b915eeeead1e09e7e476daa641bbb4a1",
+    "configs\\baseline_v1.json": "9b5c2032dc395adba02afd9699ca74d631243761bcb0805b2b05de74b1940ead",
+    "configs\\final_protocol.json": "c119de85068681230b2373a98ea91befe472e27f3c3a2a0d839547e72eeafa08",
+    "configs\\q1_ordinal_protocol.json": "8623f0c71279db4b0756f293876041e096a4c76d88d0ed085c73b64d0f173527",
+    "configs\\q1_task2_protocol.json": "708d1221346edd61dce8a3133710e7887cee5b4efab7351d07a8b2bfa153e7ea",
+    "configs\\q2_evidence.json": "166ace39bdd6350954b03e3bf5145c5f14fddd759918be84162f6cb910d893ac",
+    "configs\\q2_exploratory_v1.json": "5369048d7b6be1b83c943786cdbd77fefbe071841c654bcd2806bd2c855e5e11",
+    "configs\\q2_permutation_v2.json": "e280f12e8cf2db89b71672f5bbf6850e89acd7bbbe492f7b591810d7a90e30aa",
+    "configs\\q2_reliability_protocol.json": "d292cdf65cd2d40f9880eefe948a8644e9a6539efbe5dc6da3513e11763d855b",
+    "configs\\q2_task4_protocol.json": "2082f5745914b9b0605005b731002c1af13bff83bcf5fcc4c891e25c0f7ce536",
+    "configs\\q3_exploratory_v1.json": "affab8a37f07951dbc4bf40d2afecd1dbba223ace05b6122aa1e86ba03cc8297",
+    "configs\\q3_reference_box_protocol.json": "aebc5f2b164598d016774f714590261d8538b0b0a1397259b73202f0abc2cb24",
+    "configs\\q3_reference_holdout.json": "2031c5cb13643a6109a025ee7638ecc0fc59dbb9f38842cf0e6c8a3fbb0a3bd8",
+    "configs\\q3_reference_robust_protocol.json": "187c992bd0034b5a15cef152fce07a7edad85bef973e6ff485766a824ab3c748",
+    "configs\\q3_resolution_protocol.json": "d50bcb33a6daa1eafcd1a6104f775cc9d0382f27243f539ae13a00233a490908",
+    "configs\\q3_style_protocol.json": "4f52a2f28b4603824ef20912248d0a647f188348a09ee57f8bb328a6abef096d",
+    "configs\\q3_task3_protocol.json": "bfcb2c86befce00f90544c8ab15ac8c004653bff05e990de5388b825b75169a4"
+  },
+  "reference": {
+    "path": "D:\\Mathor cup\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx",
+    "sha256": "e0a10635c4fbc3c62dc7e06e553cce9fad98c768ea6af5c8adc8a836098d1474"
+  },
+  "graph_comparison": "passed",
+  "checks": {
+    "q1": {
+      "status": "passed",
+      "score_rows": 13000,
+      "primary_items": 47,
+      "supplementary_items": 5,
+      "panel_OOF_rows_verified": 12500,
+      "proxy_rows_verified_under_reference_threshold_assumption": 500,
+      "panel_accuracy_evaluation_items": 45,
+      "cli_rows_verified": 13000,
+      "original_absolute_card_scale_identified": false,
+      "extra_targets_have_panel_labels": false,
+      "checks": [
+        "source, parent, scope and model hashes",
+        "independent fold-reference grade counting",
+        "all seven actions expected absolute loss",
+        "50-target OOF decisions and continuous predictions",
+        "52/47-item wide tables",
+        "500 threshold scenarios without invented expert labels or probabilities",
+        "hierarchy and clipped-decision diagnostics",
+        "threshold sensitivity",
+        "nine retained panel missingness scenarios and nine separate proxy consistency scenarios",
+        "unchanged underlying full-data predictor and training-median imputation",
+        "real default CLI output"
+      ],
+      "interpretation": "Checks establish implementation and provenance. They do not calibrate original card intensity or validate the threshold assumption against missing panel labels."
+    },
+    "q2": {
+      "status": "passed",
+      "identified_panel_associations": 150,
+      "ranked_panel_targets": 50,
+      "scope_items": 52,
+      "all_rank_slots": 156,
+      "unfilled_rank_slots": 6,
+      "all_template_top3_identified": false,
+      "deterministic_Ridge_verification_refits": 1,
+      "recounted_bootstrap_selections": 30000,
+      "candidate_p_values_checked": 300,
+      "target_p_and_BY_q_pairs_checked": 100,
+      "network_nodes": 231,
+      "network_edges": 266,
+      "new_permutations": 0,
+      "new_bootstrap_refits": 0,
+      "causal_effects_established": false,
+      "checks": [
+        "parent and source hashes",
+        "strict/family ranking and coefficients from one fixed Ridge refit",
+        "saved 1999 null draws per scope: candidate maximum-statistic p and independent 50-target BY",
+        "30000 strict bootstrap selections recounted; family frequencies retained from verified parent",
+        "individual compound identity and descriptor annotations; separate IBU family-assay type",
+        "signed attachment2 graph, GraphML, degrees/components and three thresholds",
+        "52-target coverage with six genuinely empty slots; no manufactured coefficients or p-values",
+        "two named-marker records and sparse forum evidence kept separate from panel responses"
+      ],
+      "interpretation": "Verification establishes assembly and declared computations, not six missing factors, stability of all rankings, mechanism or causality."
+    },
+    "q3": {
+      "status": "passed",
+      "generated_profiles": 300,
+      "generated_score_rows": 15600,
+      "transfer_sources": 11,
+      "transfer_before_after_score_pairs": 572,
+      "five_defect_checks": 55,
+      "stale_proxy_checks": 33,
+      "coordinate_changes": 2464,
+      "conditional_zero_cap_sources": [
+        "119",
+        "28"
+      ],
+      "actual_after_stale_validated": false,
+      "checks": [
+        "source and parent hashes",
+        "300 parent reconstructions, seeds and source missingness",
+        "generated spectra, style diagnostics and no exact training copies",
+        "11 paths reconstructed from source and anchors",
+        "44 coordinate inequalities and supported conditional zero caps",
+        "33 fitted Stale deltas and 11 task2 grade changes",
+        "16744 task2 score rows independently matched to classifier probabilities and threshold rule",
+        "52/47-column wide tables and 156 fingerprint summaries",
+        "retained generation/baseline/holdout evidence",
+        "all 11 source statuses, measured observations and separate reference-box scope"
+      ],
+      "interpretation": "Implementation and declared model scenarios checked; not a causal or physical nonworsening certificate."
+    }
+  },
+  "scientific_limitations": {
+    "q1_original_card_intensity_recovered": false,
+    "q2_unidentified_rank_slots": 6,
+    "q2_causal_effects_established": false,
+    "q3_actual_after_stale_validated": false
+  },
+  "rebuilt_model_files": [
+    "ordinal\\model.joblib",
+    "q1\\model.joblib",
+    "style\\extra_trees.joblib",
+    "style\\focused_stale.joblib",
+    "style\\logistic.joblib",
+    "modeling\\q1\\fold0.joblib",
+    "modeling\\q1\\fold1.joblib",
+    "modeling\\q1\\fold2.joblib",
+    "modeling\\q1\\model.joblib",
+    "modeling\\q3\\generator.joblib"
+  ],
+  "finished_utc": "2026-10-25T01:40:10.561476+00:00"
+}

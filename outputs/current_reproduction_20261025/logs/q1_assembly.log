@@ -1,0 +1,7 @@
+                                     method           scope  n_labelled_scores  grade_mae  exact_accuracy  within_one_accuracy  original_panel_score_recovered
+                            training_median panel_primary45              11250   1.716800        0.143556             0.426667                           False
+                      continuous_then_grade panel_primary45              11250   1.617422        0.194044             0.530489                           False
+                         conditional_median panel_primary45              11250   1.471556        0.200089             0.548711                           False
+                           conditional_mode panel_primary45              11250   1.721778        0.255467             0.528444                           False
+conditional_median_child_clipped_diagnostic panel_primary45              11250   1.485867        0.198933             0.547022                           False
+Delivered 13000 estimates, 47 primary and 5 supplementary items; absolute card scale remains unidentified.

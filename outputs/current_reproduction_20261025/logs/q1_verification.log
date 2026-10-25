@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "score_rows": 13000,
+  "primary_items": 47,
+  "supplementary_items": 5,
+  "panel_OOF_rows_verified": 12500,
+  "proxy_rows_verified_under_reference_threshold_assumption": 500,
+  "panel_accuracy_evaluation_items": 45,
+  "cli_rows_verified": 13000,
+  "original_absolute_card_scale_identified": false,
+  "extra_targets_have_panel_labels": false,
+  "checks": [
+    "source, parent, scope and model hashes",
+    "independent fold-reference grade counting",
+    "all seven actions expected absolute loss",
+    "50-target OOF decisions and continuous predictions",
+    "52/47-item wide tables",
+    "500 threshold scenarios without invented expert labels or probabilities",
+    "hierarchy and clipped-decision diagnostics",
+    "threshold sensitivity",
+    "nine retained panel missingness scenarios and nine separate proxy consistency scenarios",
+    "unchanged underlying full-data predictor and training-median imputation",
+    "real default CLI output"
+  ],
+  "interpretation": "Checks establish implementation and provenance. They do not calibrate original card intensity or validate the threshold assumption against missing panel labels."
+}

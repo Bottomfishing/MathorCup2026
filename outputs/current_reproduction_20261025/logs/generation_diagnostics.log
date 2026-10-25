@@ -1,0 +1,52 @@
+Q3 sensitivity 124 complete
+Q3 sensitivity 81 complete
+Q3 sensitivity 218 complete
+Q3 sensitivity 96 complete
+Q3 sensitivity 230 complete
+Q3 sensitivity 185 complete
+Q3 sensitivity 139 complete
+Q3 sensitivity 209 complete
+Q3 sensitivity 90 complete
+{
+  "status": "passed",
+  "generated_profiles": 300,
+  "sensory_fingerprint_rows": 150,
+  "generated_centroid_match_by_style": {
+    "Kriek": 1.0,
+    "Lambic": 0.99,
+    "Tripel": 0.6
+  },
+  "generated_nn_radius_pass_by_style": {
+    "Kriek": 1.0,
+    "Lambic": 1.0,
+    "Tripel": 1.0
+  },
+  "generated_exact_training_copies": 0,
+  "generated_profiles_outside_style_feature_ranges": 0,
+  "centroid_oof_accuracy": 0.396,
+  "centroid_oof_macro_recall": 0.3928956125717381,
+  "default_transfer_model_designs": 9,
+  "transfers_outside_target_feature_ranges": 9,
+  "transfers_inside_target_nn_radius": 9,
+  "sensitivity_scenarios": 9,
+  "sensitivity_source_scenarios": 99,
+  "stale_hops_oof_mae": 0.3083474889537273,
+  "stale_hops_oof_r2": 0.0139862142424488,
+  "style_authentication_established": false,
+  "physical_constraints_certified": false,
+  "model_sha256": "2d1fac6b73982a0b5ae73eb03e43009aeb5a7b12f6dc77c4e059963e03ea6e2a",
+  "generator_sha256": "cdf6ed42f1e637b2e65cd18a0f5591ce52661bfdcee0aca92e5daab540b98ae8",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "checks": [
+    "Q1 source/model identity",
+    "all generated parent reconstructions",
+    "all generated sensory predictions",
+    "all four protected coordinates for every sensitivity candidate",
+    "default transfer selection replayed against stored profiles and distances"
+  ],
+  "interpretation": "Nearest-center and NN-radius checks are descriptive diagnostics, not style authentication. Stale hops constraints use imperfect model predictions. Model-space designs are not brewing or physical-threshold certification."
+}

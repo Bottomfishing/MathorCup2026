@@ -40,3 +40,8 @@ outputs/reproduction_latest_20261024/*
 !outputs/reproduction_latest_20261024/latest_revalidation.json
 !outputs/reproduction_latest_20261024/latest_logs/
 outputs/q3_reference_diagnostics_20261024/
+
+# Current selected workflow: keep its report/logs, not duplicate rebuilt tables/models.
+outputs/current_reproduction_20261025/*
+!outputs/current_reproduction_20261025/reproduction.json
+!outputs/current_reproduction_20261025/logs/
