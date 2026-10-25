@@ -21,7 +21,7 @@ def compare_csv(actual, expected):
     for frame in frames:
         for column in frame:
             if pd.api.types.is_string_dtype(frame[column].dtype):
-                frame[column]=frame[column].str.replace('\r\n','\n',regex=False)
+                frame[column]=frame[column].map(lambda value:value.replace('\r\n','\n') if isinstance(value,str) else value)
     pd.testing.assert_frame_equal(*frames,check_exact=False,atol=1e-10,rtol=1e-10)
 
 

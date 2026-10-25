@@ -23,5 +23,12 @@ class ReproductionComparisonTests(unittest.TestCase):
                 pd.DataFrame({'label':[label],'value':[value]}).to_csv(b,index=False)
                 with self.assertRaises(AssertionError):compare_csv(a,b)
 
+    def test_nullable_boolean_objects_are_not_treated_as_strings(self):
+        with tempfile.TemporaryDirectory() as folder:
+            a,b=Path(folder)/'a.csv',Path(folder)/'b.csv'
+            pd.DataFrame({'label':['Panel\r\nscore','Other'],'flag':[True,None]}).to_csv(a,index=False,lineterminator='\n')
+            pd.DataFrame({'label':['Panel\nscore','Other'],'flag':[True,None]}).to_csv(b,index=False,lineterminator='\n')
+            compare_csv(a,b)
+
 
 if __name__=='__main__':unittest.main()
