@@ -1,0 +1,232 @@
+﻿field,chemical_name,degree,component_size,eligible_strict219,eligible_family220
+acetaldehyde,Acetaldehyde,2,99,True,True
+CS2,Carbon disulfide,0,1,True,True
+DES,Diethyl sulfide,0,1,True,True
+DMS,Dimethyl sulfide,1,3,True,True
+ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate,2,99,True,True
+ethyl_acetate,Ethyl acetate,4,99,True,True
+ethyl_decanoate,Ethyl decanoate,6,99,True,True
+ethyl_hexanoate,Ethyl hexanoate,6,99,True,True
+ethyl_isovalerate,Ethyl 3-methylbutyrate,1,99,True,True
+ethyl_octanoate,Ethyl octanoate,3,99,True,True
+ethyl_propionate,Ethyl propionate,0,1,True,True
+H2S,Hydrogen sulfide,1,3,True,True
+isoamyl_alcohol,Isoamyl alcohol,5,99,True,True
+isobutanol,Isobutanol,3,99,True,True
+isobutyl_acetate,Isobutyl acetate,5,99,True,True
+isopentyl_acetate,Isoamyl acetate,4,99,True,True
+MeSH,Methanethiol,0,1,True,True
+octyl_acetate,Octyl acetate,0,1,True,True
+phenethyl_acetate,Phenethyl acetate,2,99,True,True
+phenethyl_alcohol,Phenethyl alcohol,0,1,True,True
+X4VG,4-vinylguaiacol,0,1,True,True
+SO2.mg.L.,Sulfur dioxide,0,1,True,True
+acetic_acid.g.L.,Acetic acid,1,2,True,True
+ammonia.mg.L.,Ammonia,0,1,True,True
+color.EBC.,Color,1,2,False,False
+betaglucan.mg.L.,Betaglucan,0,1,False,False
+lactic_acid.mg.L.,Lactic acid,0,1,True,True
+glycerol,Glycerol,5,99,True,True
+iron,Iron,0,1,True,True
+pH,pH,0,1,False,False
+protein.g.L.,Protein,1,2,False,False
+bitterness,Iso-alpha acids,0,1,False,True
+GFS,Sugars,0,1,False,False
+ethanol..v.v.,Ethanol,10,99,True,True
+CO2.PSI.,Carbon dioxide,0,1,True,True
+unfermentables,Unfermentables,0,1,False,False
+kcalperc,Caloric value,6,99,False,False
+X1.propanol,1-propanol,2,5,True,True
+X2.3.butanedione,Diacetyl,1,2,True,True
+X3.methylbutanal,3-methylbutanal,0,1,True,True
+propylene.glycol,Propylene glycol,0,1,True,True
+propyl.acetate,N-propyl acetate,1,2,True,True
+n.pentanol,N-pentanol,3,5,True,True
+X2.methyl.1.butanol,2-methyl-1-butanol,4,5,True,True
+isopentyl.formate,Isopentyl formate,2,5,True,True
+ethyl.isobutyrate,Ethyl isobutyrate,1,99,True,True
+X3.methyl.2.butenal,3-methyl-2-butenal,1,2,True,True
+X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0,1,True,True
+ethyl.butyrate,Ethyl butyrate,1,99,True,True
+butyl.acetate,Butyl acetate,0,1,True,True
+methylpyrazine,Methylpyrazine,0,1,True,True
+furfural,Furfural,0,1,True,True
+ethyl.lactate,Ethyl lactate,0,1,True,True
+X3Z.hexenol,Cis-3-hexenol,0,1,True,True
+n.hexanol,N-hexanol,3,99,True,True
+styrene,Styrene,0,1,True,True
+X2.furanmethanol,Furfuryl alcohol,1,99,True,True
+X3.methyl.2.hexanol,3-methyl-2-hexanol,8,99,True,True
+X3.furanmethanol,3-furanmethanol,4,99,True,True
+X2.acetylfuran,2-acetylfuran,5,99,True,True
+X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine",1,99,True,True
+amyl.acetate,Amyl acetate,0,1,True,True
+ethyl.tiglate,Ethyl tiglate,0,1,True,True
+benzaldehyde,Benzaldehyde,0,1,True,True
+X5.methylfurfural,5-methylfurfural,1,99,True,True
+n.heptanol,N-heptanol,4,99,True,True
+X1.octen.3.ol,1-octen-3-ol,6,99,True,True
+X3.methylthio.propanol,Methionol,0,1,True,True
+isomaltol,Isomaltol,1,99,True,True
+X6.methyl.5.hepten.2.one,Methyl heptenone,0,1,True,True
+X2.pentyl.furan,2-pentyl furan,0,1,True,True
+ethyl.hex..3E..enoate,Ethyl 3-hexanoate,1,99,True,True
+alpha.phellandrene,α-phellandrene,0,1,True,True
+dehydroxy.cis.linalool.oxide,Dehydroxy-cis-linalool oxide,0,1,True,True
+hexyl.acetate,Hexyl acetate,0,1,True,True
+isopentyl.butanoate,Isopentyl butanoate,0,1,True,True
+X2.ethyl.1.hexanol,2-ethyl-1-hexanol,1,99,True,True
+beta.phellandrene,Beta-phellandrene,3,99,True,True
+limonene,Limonene,0,1,True,True
+eucalyptol,Eucalyptol,0,1,True,True
+benzyl.alcohol,Benzyl alcohol,0,1,True,True
+ethyl.hex..2E..enoate,Ethyl 2-hexenoate,2,99,True,True
+phenylacetaldehyde,Phenylacetaldehyde,0,1,True,True
+X.E..beta.ocimene,E-β-ocimene,1,99,True,True
+prenyl.isobutyrate,Prenyl isobutyrate,5,99,True,True
+ethyl.furoate,Ethyl furoate,3,99,True,True
+ortho.cresol,O-cresol,7,99,True,True
+ethyl.5.methylhexanoate,Ethyl 5-methylhexanoate,2,99,True,True
+X2.acetylpyrrole,2-acetylpyrrole,2,99,True,True
+isoamyl.lactate,Isoamyl lactate,2,99,True,True
+n.octanol,N-octanol,4,99,True,True
+cis.linalool.oxide,Cis-linalool oxide,0,1,True,True
+meta.cymenene,Meta-cymenene,0,1,True,True
+terpinolene,Terpinolene,2,99,True,True
+linalool,Linalool,3,99,True,True
+nonan.2.ol,2-nonanol,0,1,True,True
+n.nonanal,N-nonanal,0,1,True,True
+X2.methyl.benzofuran,2-methyl-benzofuran,0,1,True,True
+heptyl.acetate,Heptyl acetate,0,1,True,True
+X4.methyl.1.pentanol,4-methyl-1-pentanol,4,99,True,True
+neo.allo.ocimene,Neo-allo-ocimene,0,1,True,True
+x.methyl.1.octanol,X-methyl-1-octanol,1,99,True,True
+trans.dihydro.beta.terpineol,Trans-dihydro-β-terpineol,0,1,True,True
+cis.beta.terpineol,Cis-β-terpineol,0,1,True,True
+y.methyl.1.octanol,Y-methyl-1-octanol,1,99,True,True
+camphor,Camphor,1,99,True,True
+isobutyl.hexanoate,Isobutyl hexanoate,7,99,True,True
+nerol.oxide,Nerol oxide,12,99,True,True
+X.E..2.nonenal,E-2-nonenal,2,99,True,True
+cis.dihydro.beta.terpineol,Cis-dihydro-β-terpineol,2,99,True,True
+X4.ethyl.phenol,4-ethyl-phenol,2,99,True,True
+isoborneol,Isoborneol,3,99,True,True
+ethyl.benzoate,Ethyl benzoate,2,99,True,True
+n.nonanol,N-nonanol,2,99,True,True
+terpinen.4.ol,Terpinen-4-ol,5,99,True,True
+diethyl.succinate,Diethyl succinate,1,2,True,True
+vinyl.caprylate,Vinyl caprylate,0,1,True,True
+X1.alpha.terpineol,Alpha-terpineol,3,99,True,True
+ethyl..E..linalool,Ethyl linalool,4,99,True,True
+ethyl.nicotinate,Ethyl nicotinate,1,2,True,True
+citronellol,Citronellol,2,99,True,True
+nerol,Nerol,0,1,True,True
+hydroxy.methyl.furfural,5-hydroxymethylfurfural,0,1,True,True
+E.ocimenone,Ocimenone,1,99,True,True
+cumin.aldehyde,Cumin aldehyde,1,99,True,True
+ethyl.phenylacetate,Ethyl phenylacetate,8,99,True,True
+isopentyl.hexanoate,Isopentyl hexanoate,14,99,True,True
+geraniol,Geraniol,0,1,True,True
+beta.cyclohomocitral,β-cyclohomocitral,0,1,True,True
+E.cinnamaldehyde,Cinnamaldehyde,0,1,True,True
+n.decanol,N-decanol,0,1,True,True
+neryl.formate,Neryl formate,5,99,True,True
+X4.ethyl.guaiacol,4-ethyl-guaiacol,2,99,True,True
+X2.undecanone,2-undecanone,0,1,True,True
+trans.dihydro.alpha.terpinyl.acetate,Trans-dihydro-α-terpinyl acetate,13,99,True,True
+terpinen.4.ol.acetate,Terpinen-4-ol acetate,0,1,True,True
+X2.undecanol,2-undecanol,6,99,True,True
+delta.terpinyl.acetate,Terpiryl acetate,0,1,True,True
+X.E.E..2.4.decadienal,"E,E-2,4-decadienal",0,1,True,True
+methyl.geranate,Methyl geranate,7,99,True,True
+car.3.en.2.one,Car-3-en-2-one,1,2,True,True
+dimethoxy..E..citral,Dimethoxy-E-citral,1,2,True,True
+X2.butyloctanoate,2-butyl octanoate,13,99,True,True
+X4.methoxysalicylaldehyde,4-methoxysalicylaldehyde,0,1,True,True
+ethyl.hydrocinnamate,Ethyl hydrocinnamate,1,99,True,True
+eugenol,Eugenol,0,1,True,True
+gamma.nonalactone,Gamma-nonalactone,1,2,True,True
+methyl.para.anisate,Methyl para-anisate,0,1,True,True
+X.E..beta.damascenone,E-β-damascenone,1,2,True,True
+ethyl..9..decenoate,Ethyl 9-decenoate,7,99,True,True
+vanillin,Vanillin,0,1,True,True
+geosmin,Geosmin,0,1,True,True
+dodecanal,Dodecanal,0,1,True,True
+X4.8.alpha.epoxy.caryophyllane,"4,8-α-epoxy-caryophyllane",0,1,True,True
+E.caryophyllene,Caryophyllene,0,1,True,True
+X.E..alpha.ionone,E-α-ionone,0,1,True,True
+perillyl.acetate,Perillyl acetate,2,99,True,True
+beta.humulene,β-humulene,0,1,True,True
+X2.phenyl.ethyl.butyrate,2-phenyl ethyl butyrate,11,99,True,True
+X.Z..beta.farnesene,Z-β-farnesene,12,99,True,True
+pentyl.octanoate,Pentyl octanoate,14,99,True,True
+X.E..beta.farnesene,E-β-farnesene,0,1,True,True
+X2.methylbutyl.octanoate,2-methylbutyl octanoate,16,99,True,True
+alpha.humulene,Alpha-humulene,0,1,True,True
+neryl.propanoate,Neryl propanoate,6,99,True,True
+X9.epi..E..caryophyllene,9-epi-E-caryophyllene,0,1,True,True
+ethyl..E..cinnamate,Ethyl cinnamate,0,1,True,True
+linalool.isovalerate,Linalool isovalerate,0,1,True,True
+alpha.terpinyl.isobutanoate,α-terpinyl isobutanoate,0,1,True,True
+n.dodecanol,N-dodecanol,3,99,True,True
+germacrene.D,Germacrene D,2,99,True,True
+X.E..beta.ionone,E-β-ionone,3,99,True,True
+valencene,Valencene,0,1,True,True
+neryl.isobutanoate,Neryl isobutanoate,0,1,True,True
+E.methyl.isoeugenol,Methyl isoeugenol,1,2,True,True
+X.Z..dihydro.apofarnesal,Z-dihydro-apofarnesal,0,1,True,True
+butylated.hydroxytoluene,Butylated hydroxytoluene,1,2,True,True
+X.E..dihydro.apofarnesal,E-dihydro-apofarnesal,0,1,True,True
+Z.nerolidol,Z-nerolidol,0,1,True,True
+X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0,1,True,True
+alpha.calacorene,α-calacorene,8,99,True,True
+E.nerolidol,E-nerolidol,3,5,True,True
+dihydroisocaryophyllene.epoxide,Tobacarol,3,5,True,True
+caryophyllene.alcohol,Caryophyllene alcohol,2,99,True,True
+neryl.isovalerate,Neryl isovalerate,0,1,True,True
+spathulenol,Spathulenol,0,1,True,True
+caryophyllene.oxide,Caryophyllene oxide,4,99,True,True
+humulene.epoxide.II,Humulene epoxide II,8,99,True,True
+alloaromadendrene.epoxide,Allo-aromadendrene epoxide,9,99,True,True
+X1.10.di.epi.cubenol,Epicubenol,11,99,True,True
+isopropyl.laurate,Isopropyl laurate,0,1,True,True
+caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",13,99,True,True
+gamma.eudesmol,Gamma-eudesmol,0,1,True,True
+alpha.muurolol,α-muurolol,8,99,True,True
+X1.2.dihydro.8.hydroxy..2E..linalool,"1,2-dihydro-8-hydroxy-2E-linalool",14,99,True,True
+tau.cadinol,Tau-cadinol,0,1,True,True
+selin.11.en.4.alpha.ol,Kongol,2,99,True,True
+alpha.eudesmol,α-eudesmol,0,1,True,True
+X14.hydroxy.9.epi..E..caryophyllene,14-hydroxy-9-epi-(E)-caryophyllene,1,5,True,True
+tau.muurolol,Tau-muurolol,7,99,True,True
+n.tetradecanol,N-tetradecanol,2,99,True,True
+foeniculin,Eoeniculin,0,1,True,True
+cadalene,Cadalene,0,1,True,True
+X2.3.dihydro.farnesol,"2,3-dihydro-farnesol",4,5,True,True
+X2E.6Z.farnesal,"E,Z-farnesal",1,5,True,True
+caryophyllene.acetate,Caryophyllene acetate,0,1,True,True
+X14.hydroxy.alpha.humulene,14-hydroxy-α-humulene,0,1,True,True
+X2Z.6E.farnesal,"Z,E-farnesal",0,1,True,True
+X2Z.6Z.farnesol,"Z,Z-farnesol",0,1,True,True
+X2Z.6E.farnesol,"Z,E-farnesol",3,5,True,True
+ambroxide,Ambroxide,0,1,True,True
+benzyl.benzoate,Benzyl benzoate,0,1,True,True
+X2E.6E.methyl.farnesoate,"2E,6E-methyl farnesoate",0,1,True,True
+ethyl.tetradecanoate,Ethyl tetradecanoate,12,99,True,True
+X2.ethylhexylsalicylate,2-ethylhexyl acrylate,0,1,True,True
+isopropyl.tetradecanoate,Isopropyl tetradecanoate,1,99,True,True
+ethyl.pentadecanoate,Ethyl pentadecanoate,12,99,True,True
+methyl.hexadecanoate,Methyl hexadecanoate,0,1,True,True
+Z.Z.geranyl.linalool,"Z,Z-geranyl linalool",4,99,True,True
+ethyl.hexadecanoate,Ethyl hexadecanoate,12,99,True,True
+manool.oxide,Manool oxide,1,2,True,True
+X13.epi.manool.oxide,13-epi manool oxide,0,1,True,True
+isopropyl.hexadecanoate,Isopropyl hexadecanoate,1,2,True,True
+manool,Manool,1,99,True,True
+ethyl.octadecanoate,Ethyl octadecanoate,4,99,True,True
+ethyl.pentanoate,Ethyl pentanoate,1,2,True,True
+X2.ethyl.3.methylpyrazine,2-ethyl-3-methylpyrazine,0,1,True,True
+esters_sum,Total ester compounds,9,99,False,False
+aroma_hops_sum,Total hop aroma compounds,3,99,False,False
+acids_sum,Total acids,1,2,False,False
+sulfur_sum,Total sulfur compounds,2,3,False,False

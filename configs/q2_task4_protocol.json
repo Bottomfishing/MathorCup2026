@@ -1,0 +1,10 @@
+{
+  "primary_scope": "strict_219_individual_analyte_candidates",
+  "supplementary_scope": "220_candidates_including_Iso_alpha_acids_IBU_family_indicator",
+  "selection": "Retain the three largest absolute full-data asinh-and-standardized Ridge coefficients, alpha=1000, ties in attachment feature order. Ridge fits all 231 predictors; the 219/220 restrictions apply to the ranking candidate pool, not separate predictor fits.",
+  "network": "Attachment2 signed matrix, known from source audit to match pairwise Spearman. Main absolute threshold 0.6, sensitivity 0.5 and 0.7. Full-data descriptive graph, not causal or an independently tested network.",
+  "evidence": "Keep refit bootstrap frequency, all-refit sign agreement, cross-method Jaccard, candidate maximum-statistic permutation p, target-level 50-target BY q, and chemical descriptor evidence as separate quantities. Do not create a composite confidence score.",
+  "missing_targets": "A_acetaldehyde and F_acetaldehyde have no attachment4 panel response. Preserve three explicitly unfilled rank slots each, provide the named chemical marker and traceable reference/auxiliary evidence separately. Neither a constant threshold proxy nor a forum descriptor becomes an expert panel label.",
+  "interpretation": "Descriptive associations with the attachment4 standardized sensory targets, not explanations of the task2 ordinal classifier, concentration effects or causal mechanisms.",
+  "scope": "Task4 Q2 delivery only. Reuse the verified 200-refit and 1999-permutation experiments, with a single deterministic Ridge refit during independent verification. No new search, tuning, paper or task5 work."
+}

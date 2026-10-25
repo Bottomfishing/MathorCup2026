@@ -1,0 +1,12 @@
+﻿target,field,chemical_name,absolute_coefficient_rank_in_strict_scope,signed_coefficient,within_style_selection_max_p,interpretation
+X4vg,X4VG,4-vinylguaiacol,1,0.0472192591176175,0.0005,Named marker is not forced into a statistical Top-3.
+diacetyl,X2.3.butanedione,Diacetyl,149,-0.0020552468414902,1.0,Named marker is not forced into a statistical Top-3.
+dms,DMS,Dimethyl sulfide,53,0.0057412885783473,1.0,Named marker is not forced into a statistical Top-3.
+metallic,iron,Iron,1,0.0219510014994909,0.001,Named marker is not forced into a statistical Top-3.
+t2n,X.E..2.nonenal,E-2-nonenal,152,0.0014641804429462,1.0,Named marker is not forced into a statistical Top-3.
+lactic,lactic_acid.mg.L.,Lactic acid,1,0.0289544926934393,0.567,Named marker is not forced into a statistical Top-3.
+acetic,acetic_acid.g.L.,Acetic acid,2,0.0255446962712991,0.921,Named marker is not forced into a statistical Top-3.
+acidity,lactic_acid.mg.L.,Lactic acid,1,0.0341997517745255,0.6435,Named marker is not forced into a statistical Top-3.
+acidity,acetic_acid.g.L.,Acetic acid,2,0.0291372362047153,0.993,Named marker is not forced into a statistical Top-3.
+alcohol,ethanol..v.v.,Ethanol,1,0.0376898657267242,0.0005,Named marker is not forced into a statistical Top-3.
+co2,CO2.PSI.,Carbon dioxide,2,0.0169245963767607,0.36,Named marker is not forced into a statistical Top-3.

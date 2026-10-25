@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "identified_panel_associations": 150,
+  "ranked_panel_targets": 50,
+  "scope_items": 52,
+  "all_rank_slots": 156,
+  "unfilled_rank_slots": 6,
+  "all_template_top3_identified": false,
+  "deterministic_Ridge_verification_refits": 1,
+  "recounted_bootstrap_selections": 30000,
+  "candidate_p_values_checked": 300,
+  "target_p_and_BY_q_pairs_checked": 100,
+  "network_nodes": 231,
+  "network_edges": 266,
+  "new_permutations": 0,
+  "new_bootstrap_refits": 0,
+  "causal_effects_established": false,
+  "checks": [
+    "parent and source hashes",
+    "strict/family ranking and coefficients from one fixed Ridge refit",
+    "saved 1999 null draws per scope: candidate maximum-statistic p and independent 50-target BY",
+    "30000 strict bootstrap selections recounted; family frequencies retained from verified parent",
+    "individual compound identity and descriptor annotations; separate IBU family-assay type",
+    "signed attachment2 graph, GraphML, degrees/components and three thresholds",
+    "52-target coverage with six genuinely empty slots; no manufactured coefficients or p-values",
+    "two named-marker records and sparse forum evidence kept separate from panel responses"
+  ],
+  "interpretation": "Verification establishes assembly and declared computations, not six missing factors, stability of all rankings, mechanism or causality."
+}
