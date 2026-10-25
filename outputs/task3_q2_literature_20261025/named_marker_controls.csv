@@ -1,0 +1,10 @@
+﻿target,field,source_ids,evidence_type,assessment,ranking_scope,strict_top3_selected,strict_rank,family_top3_rank,rank_provenance
+bitternes,bitterness,BIT01;BIT02,beer_family_sensory_support,IBU家族指标，另列220候选补充表第1；不能替换严格单体Top3,family_220,False,,1,family_supplement_only
+A_esters_isoaa,isopentyl_acetate,ME03,beer_compound_detection,同名乙酸异戊酯有啤酒阈值实验；当前严格Top3未入选，不推算完整名次,strict_219,False,,,not_in_strict_top3_full_rank_not_recorded
+A_esters_ethac,ethyl_acetate,ME03,beer_compound_detection,啤酒阈值检出支持；不等于当前条件系数效应,strict_219,True,2,2,strict_top3
+F_esters_isoaa,isopentyl_acetate,ME03,beer_compound_detection,同名乙酸异戊酯有啤酒阈值实验；当前严格Top3未入选，不推算完整名次,strict_219,False,,,not_in_strict_top3_full_rank_not_recorded
+F_esters_ethac,ethyl_acetate,ME03,beer_compound_detection,啤酒阈值检出支持；不等于当前条件系数效应,strict_219,True,1,1,strict_top3
+X4vg,X4VG,DEF01;DEF02,independent_brewing_sensory_association,途径与酿造感官关联，非单分子感官干预,strict_219,True,1,1,strict_top3
+diacetyl,X2.3.butanedione,DEF03,beer_spiking_detection,同名标记感官检测；不为其余Top3负系数背书,strict_219,False,149,,existing_named_marker_diagnostic
+dms,DMS,DEF03;DEF05,beer_spiking_detection_and_pathway,感官检测及DMSO转化途径；不是SO2,strict_219,False,53,,existing_named_marker_diagnostic
+t2n,X.E..2.nonenal,DEF04,isotope_pathway,同名标记老化形成与释放；不证明其他负系数的保护作用,strict_219,False,152,,existing_named_marker_diagnostic

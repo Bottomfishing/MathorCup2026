@@ -1,0 +1,856 @@
+{
+  "task": "optimization_task3_q2_target_specific_literature",
+  "baseline_commit": "04968f6",
+  "checked_on": "2026-10-25",
+  "focus_targets": [
+    "A_malt_all",
+    "A_malt_cara",
+    "F_malt_all",
+    "F_malt_cara",
+    "A_esters_all",
+    "F_esters_all",
+    "A_esters_isoaa",
+    "F_esters_isoaa",
+    "A_esters_ethac",
+    "F_esters_ethac",
+    "bitternes",
+    "X4vg",
+    "diacetyl",
+    "dms",
+    "stale_hops",
+    "t2n"
+  ],
+  "sources": [
+    {
+      "source_id": "ME01",
+      "authors": "Su X; Yu M; Wu S; et al.",
+      "year": 2022,
+      "title": "Sensory lexicon and aroma volatiles analysis of brewing malt",
+      "doi": "10.1038/s41538-022-00135-5",
+      "url": "https://www.nature.com/articles/s41538-022-00135-5",
+      "access_scope": "full_text",
+      "matrix": "商业麦芽热浸麦汁",
+      "method": "感官与HS-SPME-GC-MS-O",
+      "locator": "Methods; Table 4; Figure 3",
+      "supported_claim": "2-乙酰呋喃、糠醛、5-甲基糠醛在麦芽麦汁中有嗅闻依据",
+      "limitations": "不证明成品啤酒焦糖或口腔风味单体效应；不能用其他取代吡嗪代替甲基吡嗪",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "ME02",
+      "authors": "Yahya H; Linforth RST; Cook DJ",
+      "year": 2014,
+      "title": "Flavour generation during commercial barley and malt roasting operations: A time course study",
+      "doi": "10.1016/j.foodchem.2013.08.046",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0308814613011187",
+      "access_scope": "abstract_and_section_excerpts",
+      "matrix": "商业焙烤大麦及麦芽",
+      "method": "时间过程取样与挥发物测定",
+      "locator": "Abstract; Chemicals; Conclusions",
+      "supported_claim": "甲基吡嗪及5-甲基糠醛有焙烤过程测定依据",
+      "limitations": "可见节选不足以核对独立感官效应及完整浓度轨迹",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "ME03",
+      "authors": "Engan S",
+      "year": 1972,
+      "title": "Organoleptic threshold values of some alcohols and esters in beer",
+      "doi": "10.1002/j.2050-0416.1972.tb03425.x",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/j.2050-0416.1972.tb03425.x",
+      "access_scope": "abstract",
+      "matrix": "挪威全麦芽皮尔森啤酒",
+      "method": "单体及混合物感官阈值实验",
+      "locator": "Abstract",
+      "supported_claim": "乙酸乙酯、乙酸异戊酯、2-苯乙醇等具有啤酒感官检出证据",
+      "limitations": "未获取完整实验表；不移植数值阈值，不校准本数据A/F或0～6等级",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "ME04",
+      "authors": "Zhang et al.",
+      "year": 2024,
+      "title": "Characterization of Key Odor-Active Compounds in Draft Beers for the Chinese Market Using Molecular Sensory Science Approaches",
+      "doi": "10.3390/molecules29112537",
+      "url": "https://www.mdpi.com/1420-3049/29/11/2537",
+      "access_scope": "full_text",
+      "matrix": "四种生啤",
+      "method": "GC×GC-O-MS、AEDA、定量及整体重组",
+      "locator": "2.2–2.7; Table 1; 3.5–3.9",
+      "supported_claim": "正己醇果香样嗅闻、苯乙醇花香及乙醛青味参照，支持其他属性解释",
+      "limitations": "整体重组不拆分各分子效应；其他属性不证明isoaa、总酯香或焦糖",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "ME05",
+      "authors": "Fritsch HT; Schieberle P",
+      "year": 2005,
+      "title": "Identification Based on Quantitative Measurements and Aroma Recombination of the Character Impact Odorants in a Bavarian Pilsner-type Beer",
+      "doi": "10.1021/jf051167k",
+      "url": "https://portal.fis.tum.de/de/publications/identification-based-on-quantitative-measurements-and-aroma-recom/",
+      "access_scope": "author_institution_abstract",
+      "matrix": "巴伐利亚皮尔森啤酒及乙醇水重组",
+      "method": "AEDA、定量、阈值与整体重组",
+      "locator": "Abstract",
+      "supported_claim": "乙醛在该啤酒中有较高气味活性",
+      "limitations": "未验证乙醛对本研究总酯香、麦芽或焦糖的独立效应",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "ME06",
+      "authors": "Castro et al.",
+      "year": 2018,
+      "title": "Correlation Between Sensory Descriptive Analysis and Volatile Composition of Beer Using Multivariate Analysis: The Effect of the Nonvolatile Matrix on the Sensory Perception and Volatile Fraction Behavior",
+      "doi": "10.1080/03610470.2018.1433943",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/03610470.2018.1433943",
+      "access_scope": "abstract",
+      "matrix": "模拟啤酒",
+      "method": "调节非挥发基质并检测挥发物释放和感官",
+      "locator": "Abstract",
+      "supported_claim": "研究区分苯甲醛杏仁与乙酸异戊酯香蕉参照",
+      "limitations": "同处一个实验不等于两分子对isoaa具有同一作用",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "DEF01",
+      "authors": "McMurrough I; et al.",
+      "year": 1996,
+      "title": "Control of Ferulic Acid and 4-Vinyl Guaiacol in Brewing",
+      "doi": "10.1002/j.2050-0416.1996.tb00918.x",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/j.2050-0416.1996.tb00918.x",
+      "access_scope": "abstract",
+      "matrix": "制麦、麦汁、发酵及储藏",
+      "method": "过程操控与HPLC",
+      "locator": "Abstract",
+      "supported_claim": "支持阿魏酸释放和4VG形成的工艺及酵母关联",
+      "limitations": "不是仅改变4VG的感官加标实验",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "DEF02",
+      "authors": "Kumar A; Warburton A; Silcock P; Bremer PJ; Eyres GT",
+      "year": 2023,
+      "title": "Yeast Strain Influences the Hop-Derived Sensory Properties and Volatile Composition of Beer",
+      "doi": "10.3390/foods12051064",
+      "url": "https://www.mdpi.com/2304-8158/12/5/1064/pdf?version=1677752512",
+      "access_scope": "full_text",
+      "matrix": "同一Motueka麦汁的12种酵母发酵啤酒",
+      "method": "自由分类感官及HS-SPME-GC/MS",
+      "locator": "Abstract; Analysis of the Relationship between the Sensory and GC-MS Data; Figures 2b, 3a",
+      "supported_claim": "4VG较高样品与辛香/丁香特征有关联",
+      "limitations": "酵母同时改变多种挥发物，非单物质因果试验",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "DEF03",
+      "authors": "Brown DGW; Clapperton JF; Meilgaard MC; Moll M",
+      "year": 1978,
+      "title": "Flavor Thresholds of Added Substances",
+      "doi": "10.1094/ASBCJ-36-0073",
+      "url": "https://www.tandfonline.com/doi/abs/10.1094/ASBCJ-36-0073",
+      "access_scope": "publisher_search_abstract_direct_403",
+      "matrix": "啤酒与3.5%乙醇",
+      "method": "三实验室加标感官阈值比较",
+      "locator": "Abstract",
+      "supported_claim": "双乙酰和DMS可被检测，受本底及品评者影响",
+      "limitations": "仅可核对摘要，不导入数值阈值或额外描述强度；1978为卷期年",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "DEF04",
+      "authors": "Noël S; Liégeois C; Lermusieau G; Bodart E; Badot C; Collin S",
+      "year": 1999,
+      "title": "Release of deuterated nonenal during beer aging from labeled precursors synthesized in the boiling kettle",
+      "doi": "10.1021/jf990211r",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10552809/",
+      "access_scope": "abstract",
+      "matrix": "煮沸麦汁及老化啤酒",
+      "method": "氘标记前体追踪",
+      "locator": "Abstract",
+      "supported_claim": "支持nonenal的结合及老化释放途径",
+      "limitations": "不证明当前其他负系数候选能防止纸板味；不是单体感官剂量实验",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "DEF05",
+      "authors": "Hansen J",
+      "year": 1999,
+      "title": "Inactivation of MXR1 Abolishes Formation of Dimethyl Sulfide from Dimethyl Sulfoxide in Saccharomyces cerevisiae",
+      "doi": "10.1128/aem.65.9.3915-3919.1999",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC99720/",
+      "access_scope": "full_text",
+      "matrix": "麦汁及培养基",
+      "method": "基因失活和酶学",
+      "locator": "Abstract; Table 1; Discussion",
+      "supported_claim": "支持DMSO到DMS的形成途径",
+      "limitations": "SO2不是DMSO；不能为SO2/dms的精确作用背书",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "DEF06",
+      "authors": "Tanigawa C; Otori S; Takoi K; Tanigawa A; Kiyosaki T",
+      "year": 2024,
+      "title": "Effects of branched-chain fatty acids derived from aged hops on the aroma of beer brewed with flavour hop varieties",
+      "doi": "10.23763/BrSc24-09tanigawa",
+      "url": "https://brewingscience.de/index.php/brewingscience/article/download/101/44",
+      "access_scope": "full_text_pdf",
+      "matrix": "老化酒花、模拟啤酒及试酿啤酒",
+      "method": "五种酒花储藏、组合加标与酿造",
+      "locator": "pp.118–134; model beer spiking and test brewing",
+      "supported_claim": "支链脂肪酸作用依赖组合与用量，可影响酸败及果香相关表现",
+      "limitations": "实验指标不等同赛题stale_hops；异丁醇不等于异丁酸；不绑定Top3字段",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "BIT01",
+      "authors": "Guinard JX; Zoumas-Morse C; Dietz J; Goldberg S; Holz M; Heck E; Amoros A",
+      "year": 1996,
+      "title": "Does consumption of beer, alcohol, and bitter substances affect bitterness perception?",
+      "doi": "10.1016/0031-9384(95)02124-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8778845/",
+      "access_scope": "abstract",
+      "matrix": "啤酒及苦味刺激",
+      "method": "40名成人、阈值与时间强度感官实验",
+      "locator": "Abstract",
+      "supported_claim": "异葎草酮等苦味刺激具有啤酒感官实验依据",
+      "limitations": "不将IBU当单分子浓度，不校准当前模型系数",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "BIT02",
+      "authors": "Hahn CD; Lafontaine SR; Pereira CB; Shellhammer TH",
+      "year": 2018,
+      "title": "Evaluation of Nonvolatile Chemistry Affecting Sensory Bitterness Intensity of Highly Hopped Beers",
+      "doi": "10.1021/acs.jafc.7b05784",
+      "url": "https://foodsci.oregonstate.edu/publication/evaluation-nonvolatile-chemistry-affecting-sensory-bitterness-intensity-highly-hopped",
+      "access_scope": "author_institution_abstract",
+      "matrix": "120余种商业啤酒",
+      "method": "感官苦味、BU及HPLC组成关联",
+      "locator": "Abstract",
+      "supported_claim": "BU与感官苦味非线性，异葎草酮、humulinones及乙醇共同建模",
+      "limitations": "独立观察研究不是单体干预；不验证铁或乙酯的直接苦味作用",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "BIT03",
+      "authors": "Kunz T; Frenzel J; Wietstock PC; Methner FJ",
+      "year": 2014,
+      "title": "Possibilities to improve the antioxidative capacity of beer by optimized hopping regimes",
+      "doi": "10.1002/jib.162",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/jib.162",
+      "access_scope": "full_text",
+      "matrix": "1.5hL试酿、新鲜及强制老化啤酒",
+      "method": "酒花工艺干预、原子吸收、ESR和感官",
+      "locator": "Abstract; Experimental procedures; Results; Table 3",
+      "supported_claim": "改变酒花添加工艺可伴随未异构化α酸升高和铁降低",
+      "limitations": "α酸不等于异α酸；过程共变不证明铁直接抑制苦味",
+      "independent_of_dataset": true,
+      "checked_on": "2026-10-25"
+    },
+    {
+      "source_id": "DATA01",
+      "authors": "Schreurs et al.",
+      "year": 2024,
+      "title": "Predicting and improving complex beer flavor through machine learning",
+      "doi": "10.1038/s41467-024-46346-0",
+      "url": "https://www.nature.com/articles/s41467-024-46346-0",
+      "access_scope": "full_text",
+      "matrix": "本赛题来源的250种啤酒",
+      "method": "化学、专家感官、机器学习及混合物实验",
+      "locator": "Chemical composition and sensory properties; Iron is anti-correlated paragraph",
+      "supported_claim": "记录铁、酒花及乙酯相关性及原作者的可能解释",
+      "limitations": "同一数据来源不计作独立重复；原作者提出的混杂或螯合解释不是已证因果",
+      "independent_of_dataset": false,
+      "checked_on": "2026-10-25"
+    }
+  ],
+  "pair_assessments": [
+    {
+      "target": "A_malt_all",
+      "rank": 1,
+      "field": "X2.acetylfuran",
+      "evidence_type": "related_matrix_gc_o",
+      "source_ids": [
+        "ME01"
+      ],
+      "assessment": "麦芽/麦汁有气味活性；不是成品啤酒总麦芽剂量效应"
+    },
+    {
+      "target": "A_malt_all",
+      "rank": 2,
+      "field": "methylpyrazine",
+      "evidence_type": "roasting_process_measurement",
+      "source_ids": [
+        "ME02"
+      ],
+      "assessment": "同分子参与焙烤过程的实测；保留过程标记解释"
+    },
+    {
+      "target": "A_malt_all",
+      "rank": 3,
+      "field": "X5.methylfurfural",
+      "evidence_type": "related_matrix_gc_o",
+      "source_ids": [
+        "ME01",
+        "ME02"
+      ],
+      "assessment": "原料嗅闻和热加工证据；无成品啤酒单体干预"
+    },
+    {
+      "target": "A_malt_cara",
+      "rank": 1,
+      "field": "X2.acetylfuran",
+      "evidence_type": "related_matrix_gc_o",
+      "source_ids": [
+        "ME01"
+      ],
+      "assessment": "报告土味；不足以直接支持焦糖属性"
+    },
+    {
+      "target": "A_malt_cara",
+      "rank": 2,
+      "field": "furfural",
+      "evidence_type": "related_matrix_gc_o",
+      "source_ids": [
+        "ME01"
+      ],
+      "assessment": "报告红枣及烘焙共变；焦糖精确效应未建立"
+    },
+    {
+      "target": "A_malt_cara",
+      "rank": 3,
+      "field": "X5.methylfurfural",
+      "evidence_type": "related_matrix_gc_o",
+      "source_ids": [
+        "ME01",
+        "ME02"
+      ],
+      "assessment": "报告咖啡/巧克力；焦糖精确效应未建立"
+    },
+    {
+      "target": "F_malt_all",
+      "rank": 1,
+      "field": "X2.acetylfuran",
+      "evidence_type": "related_matrix_gc_o",
+      "source_ids": [
+        "ME01"
+      ],
+      "assessment": "原料香气证据；未直接验证口腔风味目标"
+    },
+    {
+      "target": "F_malt_all",
+      "rank": 2,
+      "field": "acetaldehyde",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04",
+        "ME05"
+      ],
+      "assessment": "支持整体气味/青味；麦芽属性支持不足"
+    },
+    {
+      "target": "F_malt_all",
+      "rank": 3,
+      "field": "methylpyrazine",
+      "evidence_type": "roasting_process_measurement",
+      "source_ids": [
+        "ME02"
+      ],
+      "assessment": "过程标记；未验证口腔风味目标"
+    },
+    {
+      "target": "F_malt_cara",
+      "rank": 1,
+      "field": "acetaldehyde",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04",
+        "ME05"
+      ],
+      "assessment": "精确焦糖目标未支持"
+    },
+    {
+      "target": "F_malt_cara",
+      "rank": 2,
+      "field": "phenethyl_alcohol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME03",
+        "ME04"
+      ],
+      "assessment": "为苯乙醇，花香/感官可检出；精确焦糖目标未支持"
+    },
+    {
+      "target": "F_malt_cara",
+      "rank": 3,
+      "field": "X2.acetylfuran",
+      "evidence_type": "related_matrix_gc_o",
+      "source_ids": [
+        "ME01"
+      ],
+      "assessment": "不足以直接支持成品啤酒焦糖风味"
+    },
+    {
+      "target": "A_esters_all",
+      "rank": 1,
+      "field": "acetaldehyde",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04",
+        "ME05"
+      ],
+      "assessment": "整体气味活性不能证明增强总酯香"
+    },
+    {
+      "target": "A_esters_all",
+      "rank": 2,
+      "field": "n.hexanol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04"
+      ],
+      "assessment": "果香样嗅闻不等于酯总香的单体贡献"
+    },
+    {
+      "target": "A_esters_all",
+      "rank": 3,
+      "field": "lactic_acid.mg.L.",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "本次未找到独立精确目标证据；原Nature混合加标不是独立确认"
+    },
+    {
+      "target": "F_esters_all",
+      "rank": 1,
+      "field": "acetaldehyde",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04",
+        "ME05"
+      ],
+      "assessment": "未证明酯总风味属性"
+    },
+    {
+      "target": "F_esters_all",
+      "rank": 2,
+      "field": "phenethyl_alcohol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME03",
+        "ME04"
+      ],
+      "assessment": "苯乙醇不是乙酸苯乙酯；花香不等于总酯风味"
+    },
+    {
+      "target": "F_esters_all",
+      "rank": 3,
+      "field": "n.hexanol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04"
+      ],
+      "assessment": "本次无酯总风味的精确单体作用证据"
+    },
+    {
+      "target": "A_esters_isoaa",
+      "rank": 1,
+      "field": "n.hexanol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04"
+      ],
+      "assessment": "正己醇不是异戊醇/乙酸异戊酯；isoaa支持不足"
+    },
+    {
+      "target": "A_esters_isoaa",
+      "rank": 2,
+      "field": "ethyl.hexadecanoate",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "棕榈酸乙酯不是乙酸异戊酯；未找到精确作用证据"
+    },
+    {
+      "target": "A_esters_isoaa",
+      "rank": 3,
+      "field": "benzaldehyde",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [
+        "ME06"
+      ],
+      "assessment": "同基质实验中苯甲醛对应杏仁；未支持香蕉/isoaa作用"
+    },
+    {
+      "target": "F_esters_isoaa",
+      "rank": 1,
+      "field": "n.hexanol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04"
+      ],
+      "assessment": "无乙酸异戊酯风味精确证据"
+    },
+    {
+      "target": "F_esters_isoaa",
+      "rank": 2,
+      "field": "phenethyl_alcohol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME03",
+        "ME04"
+      ],
+      "assessment": "苯乙醇花香不能替代isoaa作用"
+    },
+    {
+      "target": "F_esters_isoaa",
+      "rank": 3,
+      "field": "acetaldehyde",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04",
+        "ME05"
+      ],
+      "assessment": "无乙酸异戊酯风味精确证据"
+    },
+    {
+      "target": "A_esters_ethac",
+      "rank": 1,
+      "field": "acetaldehyde",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04",
+        "ME05"
+      ],
+      "assessment": "乙醛不是乙酸乙酯；无精确目标确认"
+    },
+    {
+      "target": "A_esters_ethac",
+      "rank": 2,
+      "field": "ethyl_acetate",
+      "evidence_type": "beer_target_sensory_threshold",
+      "source_ids": [
+        "ME03"
+      ],
+      "assessment": "同分子啤酒阈值；未证明当前数据剂量效应"
+    },
+    {
+      "target": "A_esters_ethac",
+      "rank": 3,
+      "field": "phenethyl_alcohol",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME03",
+        "ME04"
+      ],
+      "assessment": "同为发酵物不等于增强乙酸乙酯香"
+    },
+    {
+      "target": "F_esters_ethac",
+      "rank": 1,
+      "field": "ethyl_acetate",
+      "evidence_type": "beer_target_sensory_threshold",
+      "source_ids": [
+        "ME03"
+      ],
+      "assessment": "支持啤酒中可检出性；不量化A/F独立贡献"
+    },
+    {
+      "target": "F_esters_ethac",
+      "rank": 2,
+      "field": "acetaldehyde",
+      "evidence_type": "beer_other_attribute_aroma_activity",
+      "source_ids": [
+        "ME04",
+        "ME05"
+      ],
+      "assessment": "精确乙酸乙酯风味证据不足"
+    },
+    {
+      "target": "F_esters_ethac",
+      "rank": 3,
+      "field": "car.3.en.2.one",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "未找到啤酒该精确目标的一手作用证据"
+    },
+    {
+      "target": "bitternes",
+      "rank": 1,
+      "field": "iron",
+      "evidence_type": "process_covariation",
+      "source_ids": [
+        "BIT03",
+        "DATA01"
+      ],
+      "assessment": "酒花工艺可伴随铁变化；负条件系数不证明铁抑制苦味"
+    },
+    {
+      "target": "bitternes",
+      "rank": 2,
+      "field": "ethyl_octanoate",
+      "evidence_type": "same_dataset_association_context",
+      "source_ids": [
+        "DATA01"
+      ],
+      "assessment": "原研究的乙酯与苦味关联来自同一数据；没有独立直接苦味效应支持"
+    },
+    {
+      "target": "bitternes",
+      "rank": 3,
+      "field": "ethyl_decanoate",
+      "evidence_type": "same_dataset_association_context",
+      "source_ids": [
+        "DATA01"
+      ],
+      "assessment": "原研究的乙酯与苦味关联来自同一数据；没有独立直接苦味效应支持"
+    },
+    {
+      "target": "X4vg",
+      "rank": 1,
+      "field": "X4VG",
+      "evidence_type": "independent_brewing_sensory_association",
+      "source_ids": [
+        "DEF01",
+        "DEF02"
+      ],
+      "assessment": "同分子有形成途径及独立酿造感官关联；多物质共同变化，不证明本系数"
+    },
+    {
+      "target": "X4vg",
+      "rank": 2,
+      "field": "delta.terpinyl.acetate",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "本次未核实该精确候选—目标的一手作用证据"
+    },
+    {
+      "target": "X4vg",
+      "rank": 3,
+      "field": "nerol",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "本次未核实该精确候选—目标的一手作用证据"
+    },
+    {
+      "target": "diacetyl",
+      "rank": 1,
+      "field": "eugenol",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "负Ridge条件系数不是提高浓度即可抑制缺陷的证据"
+    },
+    {
+      "target": "diacetyl",
+      "rank": 2,
+      "field": "beta.phellandrene",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "负Ridge条件系数不是提高浓度即可抑制缺陷的证据"
+    },
+    {
+      "target": "diacetyl",
+      "rank": 3,
+      "field": "X2.methyl.benzofuran",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "负Ridge条件系数不是提高浓度即可抑制缺陷的证据"
+    },
+    {
+      "target": "dms",
+      "rank": 1,
+      "field": "SO2.mg.L.",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "SO2不是DMS或DMSO；不能套用其文献证明本配对"
+    },
+    {
+      "target": "dms",
+      "rank": 2,
+      "field": "E.nerolidol",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "本次未核实该精确候选—目标的一手作用证据"
+    },
+    {
+      "target": "dms",
+      "rank": 3,
+      "field": "caryophylla.4.12..8.13..dien.5.alpha.ol",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "本次未核实该精确候选—目标的一手作用证据"
+    },
+    {
+      "target": "stale_hops",
+      "rank": 1,
+      "field": "X.E..ortho.methoxy.cinnamaldehyde",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "本次未核实该精确候选—目标的一手作用证据"
+    },
+    {
+      "target": "stale_hops",
+      "rank": 2,
+      "field": "gamma.eudesmol",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "本次未核实该精确候选—目标的一手作用证据"
+    },
+    {
+      "target": "stale_hops",
+      "rank": 3,
+      "field": "isobutanol",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "异丁醇不是老化酒花实验中的异丁酸"
+    },
+    {
+      "target": "t2n",
+      "rank": 1,
+      "field": "germacrene.D",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "负Ridge条件系数不是提高浓度即可抑制缺陷的证据"
+    },
+    {
+      "target": "t2n",
+      "rank": 2,
+      "field": "glycerol",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "负Ridge条件系数不是提高浓度即可抑制缺陷的证据"
+    },
+    {
+      "target": "t2n",
+      "rank": 3,
+      "field": "alpha.phellandrene",
+      "evidence_type": "target_specific_evidence_not_found",
+      "source_ids": [],
+      "assessment": "负Ridge条件系数不是提高浓度即可抑制缺陷的证据"
+    }
+  ],
+  "marker_controls": [
+    {
+      "target": "bitternes",
+      "field": "bitterness",
+      "source_ids": [
+        "BIT01",
+        "BIT02"
+      ],
+      "evidence_type": "beer_family_sensory_support",
+      "assessment": "IBU家族指标，另列220候选补充表第1；不能替换严格单体Top3",
+      "ranking_scope": "family_220"
+    },
+    {
+      "target": "A_esters_isoaa",
+      "field": "isopentyl_acetate",
+      "source_ids": [
+        "ME03"
+      ],
+      "evidence_type": "beer_compound_detection",
+      "assessment": "同名乙酸异戊酯有啤酒阈值实验；当前严格Top3未入选，不推算完整名次",
+      "ranking_scope": "strict_219"
+    },
+    {
+      "target": "A_esters_ethac",
+      "field": "ethyl_acetate",
+      "source_ids": [
+        "ME03"
+      ],
+      "evidence_type": "beer_compound_detection",
+      "assessment": "啤酒阈值检出支持；不等于当前条件系数效应",
+      "ranking_scope": "strict_219"
+    },
+    {
+      "target": "F_esters_isoaa",
+      "field": "isopentyl_acetate",
+      "source_ids": [
+        "ME03"
+      ],
+      "evidence_type": "beer_compound_detection",
+      "assessment": "同名乙酸异戊酯有啤酒阈值实验；当前严格Top3未入选，不推算完整名次",
+      "ranking_scope": "strict_219"
+    },
+    {
+      "target": "F_esters_ethac",
+      "field": "ethyl_acetate",
+      "source_ids": [
+        "ME03"
+      ],
+      "evidence_type": "beer_compound_detection",
+      "assessment": "啤酒阈值检出支持；不等于当前条件系数效应",
+      "ranking_scope": "strict_219"
+    },
+    {
+      "target": "X4vg",
+      "field": "X4VG",
+      "source_ids": [
+        "DEF01",
+        "DEF02"
+      ],
+      "evidence_type": "independent_brewing_sensory_association",
+      "assessment": "途径与酿造感官关联，非单分子感官干预",
+      "ranking_scope": "strict_219"
+    },
+    {
+      "target": "diacetyl",
+      "field": "X2.3.butanedione",
+      "source_ids": [
+        "DEF03"
+      ],
+      "evidence_type": "beer_spiking_detection",
+      "assessment": "同名标记感官检测；不为其余Top3负系数背书",
+      "ranking_scope": "strict_219"
+    },
+    {
+      "target": "dms",
+      "field": "DMS",
+      "source_ids": [
+        "DEF03",
+        "DEF05"
+      ],
+      "evidence_type": "beer_spiking_detection_and_pathway",
+      "assessment": "感官检测及DMSO转化途径；不是SO2",
+      "ranking_scope": "strict_219"
+    },
+    {
+      "target": "t2n",
+      "field": "X.E..2.nonenal",
+      "source_ids": [
+        "DEF04"
+      ],
+      "evidence_type": "isotope_pathway",
+      "assessment": "同名标记老化形成与释放；不证明其他负系数的保护作用",
+      "ranking_scope": "strict_219"
+    }
+  ],
+  "target_contexts": [
+    {
+      "target": "stale_hops",
+      "source_ids": [
+        "DEF06"
+      ],
+      "evidence_type": "mixture_spiking_and_brewing",
+      "assessment": "老化酒花为组合及基质依赖现象；不分配给任何单个Top3字段"
+    }
+  ],
+  "causal_effect_established": false,
+  "input_semantic_sha256": {
+    "top3_panel_all50.csv": "27459101604e6954b7bfd79eb1614775ffa4dbc230d082d7e26fbdb5277b4692",
+    "top3_all52_slots.csv": "d3d322d3963fd21a0f5952b8f024c8556d06f01e1131275c5c9bb249e3ff4a64",
+    "named_marker_diagnostics.csv": "ce6655daadcd71d025956de11914411de1cac8d9239aad8f6176a11796aeee82",
+    "family_scope_top3_supplement.csv": "20a5262ec6e1a866a05d11040bcb81cfeaacf5adabc432e398e1860499baad1c"
+  }
+}

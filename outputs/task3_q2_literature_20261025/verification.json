@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "baseline_commit": "04968f6",
+  "config_content_sha256": "a7e9645823520573aa088ae7fa084e54c98a8f320d5eb51b4062b90fb968936f",
+  "input_semantic_sha256": {
+    "top3_panel_all50.csv": "27459101604e6954b7bfd79eb1614775ffa4dbc230d082d7e26fbdb5277b4692",
+    "top3_all52_slots.csv": "d3d322d3963fd21a0f5952b8f024c8556d06f01e1131275c5c9bb249e3ff4a64",
+    "named_marker_diagnostics.csv": "ce6655daadcd71d025956de11914411de1cac8d9239aad8f6176a11796aeee82",
+    "family_scope_top3_supplement.csv": "20a5262ec6e1a866a05d11040bcb81cfeaacf5adabc432e398e1860499baad1c"
+  },
+  "unchanged_original_columns": 46,
+  "unchanged_panel_rows": 150,
+  "unchanged_all52_slots": 156,
+  "preserved_unidentified_slots": 6,
+  "focus_targets": 16,
+  "reviewed_pairs": 48,
+  "not_reviewed_panel_pairs": 102,
+  "sources": 16,
+  "independent_sources": 15,
+  "marker_controls": 9,
+  "target_contexts": 1,
+  "evidence_type_counts": {
+    "target_specific_evidence_not_found": 18,
+    "beer_other_attribute_aroma_activity": 15,
+    "related_matrix_gc_o": 7,
+    "roasting_process_measurement": 2,
+    "beer_target_sensory_threshold": 2,
+    "same_dataset_association_context": 2,
+    "process_covariation": 1,
+    "independent_brewing_sensory_association": 1
+  },
+  "dataset_causal_effect_established": false,
+  "checks": [
+    "all_original_cells_preserved",
+    "exact_focus_pair_coverage",
+    "all_source_references_resolve",
+    "same_dataset_not_counted_independent",
+    "markers_separate_from_ranking",
+    "saved_tables_match_curated_ledger"
+  ]
+}
