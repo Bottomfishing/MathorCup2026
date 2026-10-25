@@ -1,0 +1,68 @@
+{
+  "status": "completed",
+  "config": {
+    "main_panel_grade_method": "direct_relative_grade_conditional_median",
+    "main_selection_metric": "primary45_fixed_OOF_grade_MAE_with_grade6_and_missingness_reported",
+    "scorecard_scope": "outputs/task1_acceptance_20261025/scorecard_scope.csv",
+    "extra_targets": [
+      "A_acetaldehyde",
+      "F_acetaldehyde"
+    ],
+    "chemical_field": "acetaldehyde",
+    "threshold_sheet": "Sensory thresholds",
+    "threshold_statistic": "threshold_median",
+    "threshold_unit": "mg/L",
+    "threshold_sensitivity_multipliers": [
+      0.2,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "extra_rule": "Below the attachment8 reference threshold, assume intensity grade zero in both modalities. At or above threshold, no 1-6 point grade can be inferred from a threshold alone.",
+    "parent_rule": "Diagnostic only: separately ranked panel marginals are not raw-card intensities; do not clip children to parent and silently change the scoring definition.",
+    "scope": "One primary52 scorecard view: 50 panel-relative estimates plus two separately identified chemical-threshold scenarios. No original-card absolute calibration claim, no crowd-to-panel label substitution, no new predictive model family."
+  },
+  "config_sha256": "eb8c96f1718f666d07a5312561808663abf24e17f1143919e441458c5371401b",
+  "scope_sha256": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "7.csv": "2083138df46640e20b46f7e76ec32cf9b380fd34e019269afd819edeb546ff5e",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "parent_q1_model_sha256": "2d1fac6b73982a0b5ae73eb03e43009aeb5a7b12f6dc77c4e059963e03ea6e2a",
+  "parent_ordinal_model_sha256": "05e44510f06a2923318ab203dc99736436a9e320dc6e9f79b116d0e372864850",
+  "parent_ordinal_oof_sha256": "9f6ed21d0951c20b49b2856e689db6d38f1e89773ebdd0becfd46a02df5e9a9c",
+  "model_sha256": "5186077c066c9dd73001ad9c070cb4c55813df4b6150ca1f457fe0ce1a57825e",
+  "score_items": 52,
+  "primary_items": 47,
+  "panel_targets": 50,
+  "labelled_primary_targets": 45,
+  "extra_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "reference_threshold_mg_L": 50.0,
+  "reference_threshold_excel_row": 50,
+  "acetaldehyde_concentration_range_mg_L": [
+    0.012507500012802946,
+    18.562120001593847
+  ],
+  "acetaldehyde_positive_calibration_pairs": 249,
+  "acetaldehyde_zero_reference_beers": [
+    "40"
+  ],
+  "main_complete_numeric_rows": 13000,
+  "rows": 13000,
+  "new_predictive_models_trained": 0,
+  "original_absolute_card_scale_identified": false,
+  "csv_median_boundary_ties_preserving_verified_recorded_action": 1,
+  "main_panel_selection": "Conditional median: lowest pre-existing primary45 OOF MAE; clipping worsens this metric and does not recover raw-card semantics.",
+  "limitations": [
+    "Panel grades remain relative estimates, not original 0-6 intensity recovery.",
+    "The two zero grades require the reference threshold to apply to both modalities; no expert labels or separate modality calibration exists.",
+    "A threshold alone identifies no above-threshold 1-6 intensity; such future inputs receive no invented point grade.",
+    "Do not include 500 proxy estimates in panel accuracy metrics. Historical OOF folds informed exploration."
+  ]
+}

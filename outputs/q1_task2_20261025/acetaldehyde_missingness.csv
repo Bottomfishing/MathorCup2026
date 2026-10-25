@@ -1,0 +1,10 @@
+﻿additional_missing_rate,repeat,source_samples,chemical_inputs_imputed_training_fold_only,proxy_rule_changed_count,interpretation
+0.05,0,250,18,0,Rule consistency only; no panel label exists to measure accuracy
+0.05,1,250,10,0,Rule consistency only; no panel label exists to measure accuracy
+0.05,2,250,12,0,Rule consistency only; no panel label exists to measure accuracy
+0.1,0,250,29,0,Rule consistency only; no panel label exists to measure accuracy
+0.1,1,250,25,0,Rule consistency only; no panel label exists to measure accuracy
+0.1,2,250,26,0,Rule consistency only; no panel label exists to measure accuracy
+0.2,0,250,56,0,Rule consistency only; no panel label exists to measure accuracy
+0.2,1,250,46,0,Rule consistency only; no panel label exists to measure accuracy
+0.2,2,250,45,0,Rule consistency only; no panel label exists to measure accuracy

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "input": "checkpoints/q1_task2_edge_inputs.csv",
+  "new_rows": 104,
+  "legacy_rows": 100,
+  "checks": [
+    "string_ids_and_reordered_columns_preserved",
+    "above_threshold_has_no_invented_intensity",
+    "missing_chemical_uses_flagged_training_imputation",
+    "two_unlabelled_items_have_no_panel_probabilities",
+    "all_50_panel_predictions_equal_explicit_legacy_model",
+    "legacy_output_names_preserved"
+  ]
+}

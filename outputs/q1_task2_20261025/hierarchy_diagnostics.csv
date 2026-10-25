@@ -1,0 +1,7 @@
+﻿method,n_child_parent_pairs,child_above_parent_count,fraction,interpretation
+constructed_observed_relative_grades,6000,2416,0.4026666666666667,Separately ranked marginals; this is not proof of an impossible raw individual scorecard
+training_median,6000,0,0.0,Separately ranked marginals; this is not proof of an impossible raw individual scorecard
+continuous_then_grade,6000,2654,0.44233333333333336,Separately ranked marginals; this is not proof of an impossible raw individual scorecard
+conditional_median,6000,1527,0.2545,Separately ranked marginals; this is not proof of an impossible raw individual scorecard
+conditional_mode,6000,2206,0.36766666666666664,Separately ranked marginals; this is not proof of an impossible raw individual scorecard
+conditional_median_child_clipped_diagnostic,6000,0,0.0,Separately ranked marginals; this is not proof of an impossible raw individual scorecard

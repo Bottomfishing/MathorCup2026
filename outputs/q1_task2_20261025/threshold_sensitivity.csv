@@ -1,0 +1,5 @@
+﻿threshold_multiplier,threshold_mg_L,below_threshold_zero_count,at_or_above_threshold_intensity_unidentified_count,source_samples,scope
+0.2,10.0,232,18,250,declared_threshold_scenario_not_a_confidence_interval_or_human_accuracy
+0.5,25.0,250,0,250,declared_threshold_scenario_not_a_confidence_interval_or_human_accuracy
+1.0,50.0,250,0,250,declared_threshold_scenario_not_a_confidence_interval_or_human_accuracy
+2.0,100.0,250,0,250,declared_threshold_scenario_not_a_confidence_interval_or_human_accuracy

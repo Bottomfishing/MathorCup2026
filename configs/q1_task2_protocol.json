@@ -1,0 +1,14 @@
+{
+  "main_panel_grade_method": "direct_relative_grade_conditional_median",
+  "main_selection_metric": "primary45_fixed_OOF_grade_MAE_with_grade6_and_missingness_reported",
+  "scorecard_scope": "outputs/task1_acceptance_20261025/scorecard_scope.csv",
+  "extra_targets": ["A_acetaldehyde", "F_acetaldehyde"],
+  "chemical_field": "acetaldehyde",
+  "threshold_sheet": "Sensory thresholds",
+  "threshold_statistic": "threshold_median",
+  "threshold_unit": "mg/L",
+  "threshold_sensitivity_multipliers": [0.2, 0.5, 1.0, 2.0],
+  "extra_rule": "Below the attachment8 reference threshold, assume intensity grade zero in both modalities. At or above threshold, no 1-6 point grade can be inferred from a threshold alone.",
+  "parent_rule": "Diagnostic only: separately ranked panel marginals are not raw-card intensities; do not clip children to parent and silently change the scoring definition.",
+  "scope": "One primary52 scorecard view: 50 panel-relative estimates plus two separately identified chemical-threshold scenarios. No original-card absolute calibration claim, no crowd-to-panel label substitution, no new predictive model family."
+}
