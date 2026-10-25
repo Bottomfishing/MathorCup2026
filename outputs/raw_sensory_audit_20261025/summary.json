@@ -1,0 +1,68 @@
+{
+  "status": "audit_completed",
+  "baseline_commit": "339bf21",
+  "config_content_sha256": "b6380b8a2192c3e523f985267c93db629bed810cca99de2cffc7845caaca1abf",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c"
+  },
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "provenance_manifest_content_sha256": "7c802c72f9e0ac8840ef10d83c411083c04c1ab5f4d34e035fa13141345e4605",
+  "scorecard_scope_content_sha256": "42bd2e56353f152cd880096e8a52807a8ecc33948276475f17673c79be0701b9",
+  "raw_release_doi": "10.5281/zenodo.23624915",
+  "raw_release_date": "2026-10-24",
+  "records": 2197,
+  "beers": 250,
+  "tasters": 16,
+  "sessions": 37,
+  "raw_session_style_labels": 15,
+  "contest_fine_styles": 22,
+  "observed_targets": 50,
+  "observed_rating_cells": 109850,
+  "missing_card_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "original_integer_score_range": [
+    0,
+    6
+  ],
+  "identity_dimensions": 38,
+  "identity_linked_beers": 250,
+  "identity_max_abs_difference": 2.8338009281556642e-08,
+  "identity_min_second_best_rmse": 0.19983403693651414,
+  "mapping_is_official_crosswalk": false,
+  "all_row_positions_agree": true,
+  "raw_id_direct_join_matches": 0,
+  "normalization_zero_variance_groups": 15,
+  "normalization_affected_targets": 12,
+  "normalization_all_50_recipe_reproduced": false,
+  "full_record_duplicates": 0,
+  "duplicate_session_beer_taster_excess_rows": 98,
+  "duplicate_session_position_taster_events": 0,
+  "beers_in_multiple_sessions": 12,
+  "repeated_within_session_beer_groups": 12,
+  "beers_with_repeat_presentations": 17,
+  "raw_ratings_per_beer_range": [
+    3,
+    31
+  ],
+  "tasters_per_beer_range": [
+    3,
+    14
+  ],
+  "aggregation_weighting_changes_beers": 13,
+  "aggregation_weighting_max_score_difference": 0.4605128205128204,
+  "hierarchy_pairs": 24,
+  "hierarchy_checked_cells": 52728,
+  "hierarchy_violations": 0,
+  "grouped_outer_folds": 3,
+  "grouped_fold_seed": 20261024,
+  "split_scope": "registered_grouping_for_later_experiment_no_prediction_performance",
+  "decision": "raw_0_6_records_usable_for_50_targets_with_verified_numeric_identity",
+  "next_task": "define_panel_target_and_run_limited_Q1_comparison_only_after_user_instruction",
+  "label_aggregation_selected": false,
+  "models_trained": 0,
+  "official_model_replaced": false
+}

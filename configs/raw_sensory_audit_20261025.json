@@ -1,0 +1,20 @@
+{
+  "task": "raw_sensory_source_identity_and_label_audit",
+  "baseline_commit": "339bf21",
+  "matching_atol": 1e-7,
+  "tolerance_basis": "Attachment 4 contains rounded scientific-notation values: 4VG and t2n have two residuals between 1e-8 and 1e-7. Other nonconstant-target residuals are below 5e-10.",
+  "identity_rule": "Use only targets with positive within-taster SD for every taster; require exactly one beer match in each direction within the per-cell tolerance. Row order and same-number IDs are diagnostics, not linkage rules.",
+  "normalization_diagnostics": [
+    ["sample_sd_omit_undefined", 1, false, false],
+    ["sample_sd_zero_undefined", 1, true, false],
+    ["population_sd_omit_undefined", 0, false, false],
+    ["sample_sd_equal_taster_after_standardization", 1, false, true]
+  ],
+  "normalization_scope": "Retrospective provenance diagnostics, not a preregistered model comparison. Never estimate missing zero-SD constants from attachment 4 and call that independent reproduction.",
+  "repeat_policy": "Retain all session-position-taster events; same beer tasted at different positions or sessions is not an accidental duplicate.",
+  "label_policy": "Report record-weighted mean/median and equal-taster mean as alternatives. No final aggregation, rounding rule, or new training target is selected in this task.",
+  "outer_folds": 3,
+  "fold_seed": 20261024,
+  "fold_basis": "Reuse current final_protocol.json split settings, stratify contest fine styles at beer level, then propagate each beer's fold to all raw rating records.",
+  "models_to_train": 0
+}

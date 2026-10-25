@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "tables_checked": 12,
+  "identity_beers": 250,
+  "identity_dimensions": 38,
+  "original_score_cells_checked": 109850,
+  "candidate_label_rows": 12500,
+  "grouped_rating_records": 2197,
+  "checks": [
+    "pinned_raw_MD5_SHA256_size",
+    "frozen_contest_source_hashes",
+    "integer_0_6_without_missing_scores",
+    "unique_bidirectional_numeric_identity",
+    "all_52_card_targets_accounted_for",
+    "all_raw_events_retained",
+    "one_fold_per_beer_and_all_its_ratings",
+    "saved_tables_recomputed_from_sources"
+  ],
+  "normalization_all_50_recipe_reproduced": false,
+  "models_trained": 0
+}

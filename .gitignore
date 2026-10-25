@@ -10,6 +10,8 @@ outputs/**/source_snapshot/
 
 # Downloaded reference workbook contains participant metadata; fetch locally.
 data/reference/**/*.xlsx
+# External raw panel records are fetched by checksum; do not publish comments in Git.
+data/reference/zenodo23624915/Raw sensory data anonymized.csv
 
 # Superseded development outputs. Keep the documented active runs.
 outputs/p0_audit_20261023_v1/

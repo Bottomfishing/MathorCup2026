@@ -1,0 +1,16 @@
+﻿taster,target,n_ratings,constant_raw_score,sample_sd
+1,A_esters_flower,191,0,0.0
+1,stale_hops,191,0,0.0
+1,barnyard,191,0,0.0
+6,A_esters_fruity,128,0,0.0
+6,F_esters_flower,128,0,0.0
+6,F_esters_fruity,128,0,0.0
+7,A_hops_woody,57,0,0.0
+7,F_hops_woody,57,0,0.0
+7,lactic,57,0,0.0
+7,acetic,57,0,0.0
+9,clove,34,0,0.0
+9,lactic,34,0,0.0
+9,acetic,34,0,0.0
+10,lactic,30,0,0.0
+14,F_hops_tropical,78,0,0.0
