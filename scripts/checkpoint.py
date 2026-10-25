@@ -13,7 +13,12 @@ ACTIVE=[
  'outputs/q3_review_20261024','outputs/q3_threshold_scenarios_20261024_v2','outputs/q1_relative_grades_20261024_v1',
  'outputs/reproduction_latest_20261024','outputs/q3_reference_holdout_20261024','outputs/q3_reference_box_20261024',
  'outputs/q3_reference_robust_20261024','outputs/q3_reference_diagnostics_20261024_v2','outputs/q1_probability_diagnostics_20261024',
- 'outputs/q3_guard_witness_search_20261024']
+ 'outputs/q3_guard_witness_search_20261024',
+ 'outputs/task1_acceptance_20261025','outputs/q1_task2_20261025','outputs/q2_task4_20261025',
+ 'outputs/q3_task3_20261025','outputs/current_reproduction_20261025',
+ 'outputs/review_q1_missingness_20261025','outputs/review_q2_scope_20261025',
+ 'outputs/review_q3_fixed_paths_20261025','outputs/review_path_tradeoff_20261025',
+ 'outputs/review_delivery_20261025']
 
 
 def digest(path):

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "scenario_rows": 500000,
+  "mask_cells": 2372,
+  "checks": [
+    "all training-only donors and exact random masks",
+    "all clean grades and constructed truths",
+    "all 40 scenario metrics",
+    "all 49 confusion cells"
+  ],
+  "limitation": "Mask generation, labels and summaries independently replayed; masked classifier predictions not refitted by this verifier."
+}

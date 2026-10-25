@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "replayed_ridge_fits": 24,
+  "bootstrap_rows": 60000,
+  "oof_rows": 75000,
+  "checks": [
+    "paired draws",
+    "full original and strict rankings",
+    "first and last paired refits",
+    "all 18 repeated-CV fits and truths",
+    "all top frequencies and components",
+    "all scope overlaps",
+    "pooled errors"
+  ]
+}

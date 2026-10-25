@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "clean_main_grades_reproduced": 12500,
+  "scenario_prediction_rows": 500000,
+  "confusion_count": 11250,
+  "scope": "Clean OOF equality, key uniqueness, finite-only new masks, confusion counts; not a second independent replay of every prediction."
+}

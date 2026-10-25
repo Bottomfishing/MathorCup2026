@@ -1,0 +1,13 @@
+{
+  "seed": 20261025,
+  "bootstrap_repeats": 200,
+  "split_seeds": [
+    20261025,
+    20261026,
+    20261027
+  ],
+  "folds": 3,
+  "ridge_alpha": 1000.0,
+  "nonincrease_tolerance": 1e-10,
+  "scope": "Frozen diagnostic protocol before execution. Paired style-stratified refits; no retuning, replacement of main results, new significance tests or causal claims. Repeated CV is split sensitivity on an already explored dataset, not independent confirmation. Q3 evaluates fixed current task3 paths, never searches new candidates with these models."
+}

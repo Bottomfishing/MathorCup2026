@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "config_sha256": "b35b9dab143ae4a00552ea740c040f9b05ab42847db6058944948c61a2b6438e",
+  "protocol": {
+    "seed": 20261025,
+    "bootstrap_repeats": 200,
+    "split_seeds": [
+      20261025,
+      20261026,
+      20261027
+    ],
+    "folds": 3,
+    "ridge_alpha": 1000.0,
+    "nonincrease_tolerance": 1e-10,
+    "scope": "Frozen diagnostic protocol before execution. Paired style-stratified refits; no retuning, replacement of main results, new significance tests or causal claims. Repeated CV is split sensitivity on an already explored dataset, not independent confirmation. Q3 evaluates fixed current task3 paths, never searches new candidates with these models."
+  },
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "frozen_inputs_sha256": {
+    "transfer_source_profiles.csv": "373e0b99ea796d81c2a3527d2d16338e9d3d003727bd6f15fd8cc00a4797c5d7",
+    "transfer_profiles.csv": "44d5de29f21f425667177c3896055fdc15cf0ffa103b3f00046a496f22d6ddbf",
+    "transfer_results.csv": "c0a880079514b1d9d7ab04ed3733fede0343185995b6cde4c89cd9b06eebd04a"
+  },
+  "paths": 11,
+  "refits": 200,
+  "models_per_refit": 3,
+  "candidate_search_performed": false,
+  "original_card_score_recovered": false,
+  "actual_after_stale_validated": false,
+  "limitation": "Paired refits of existing observed data and newly seeded trees, conditional on fixed historical candidate selection. OOB errors diagnose prediction only; refit percentiles are not intervention confidence intervals. No style or physical authentication."
+}

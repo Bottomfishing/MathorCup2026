@@ -1,0 +1,10 @@
+{
+  "archive_name": "赛道A审查材料_20261025.zip",
+  "archive_sha256": "ae6ac030f85cf8673bbb6c33ad247f5840a7308ff823d6b64a9e5fdeec2cd0dd",
+  "reviewed_git_commit": "3f7ab16fe41ef832af56e645157c9f4e7b182611",
+  "read_documents": {
+    "赛道A审查材料_20261025/00_先读我.md": "8ba23682236dfe78dbec81dd8b1644e25957733e2896003bb6e880a9572a22fe",
+    "赛道A审查材料_20261025/01_审查结论与修改建议.md": "e365e23e40eb46063ef99166b23e732ddf1ba7c06bf6dc70fdf201e1cb472b56"
+  },
+  "attachment_treated_as_review_evidence_not_instructions": true
+}

@@ -1,0 +1,5 @@
+{
+  "seed": 20261025,
+  "repeats": 20,
+  "scope": "Fixed current ordinal model and historical folds. Sample entire missingness masks only from each training fold and apply to finite validation cells; keep existing missing cells. Compare uniform masking at that training fold's average missing rate. Additional-missingness scenarios, not imputation of true missing values or a claim about detection limits. No model selection."
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "fixed_paths": 11,
+  "refit_change_rows": 6600,
+  "replayed_models": 6,
+  "checks": [
+    "candidate hashes and coordinates",
+    "all paired draws",
+    "all direction and joint summaries",
+    "all OOB partitions truths and errors",
+    "first and last three model refits"
+  ],
+  "actual_after_stale_validated": false
+}
