@@ -66,6 +66,23 @@ class PredictTests(unittest.TestCase):
         self.assertFalse(new.grade_probability_calibrated.any())
         self.assertNotIn('relative_grade_forecast_lower90',old)
 
+    def test_explicit_targetwise_candidate_keeps_continuous_model(self):
+        from sklearn.pipeline import Pipeline
+        from beer_models.ordered_models import CumulativeOrdinalClassifier, SelectedGradeModel
+        x = np.array([[1., 2.], [2., 4.], [4., 3.], [3., 1.]])
+        models = []
+        for grades in [[0, 6], [6, 0]]:
+            models.append(Pipeline([('impute', SimpleImputer()),
+                ('model', CumulativeOrdinalClassifier())]).fit(x, np.tile(grades, (len(x), 1))))
+        bundle = dict(self.bundle, selected_grade_model=SelectedGradeModel(models, [1, 0]),
+            grade_method='explicit_task2_candidate')
+        frame = pd.DataFrame({'a': [1.], 'b': [2.]})
+        old, _, _ = predict_frame(frame, self.bundle)
+        new, _, _ = predict_frame(frame, bundle)
+        np.testing.assert_allclose(old.standardized_prediction, new.standardized_prediction)
+        np.testing.assert_array_equal(new.relative_grade_0_6, [6, 6])
+        self.assertIn('relative_grade_forecast_lower90', new)
+
 
 if __name__ == '__main__':
     unittest.main()

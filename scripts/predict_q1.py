@@ -28,7 +28,7 @@ def run(model, input_path, output):
         save_csv(output, 'scores_all50_long.csv', long)
         save_csv(output, 'relative_grades_primary45.csv', wide)
     save_csv(output, 'sample_quality.csv', samples)
-    write_json(output / 'prediction_info.json', {'samples': len(frame), 'targets': long.target.nunique(),
+    info = {'samples': len(frame), 'targets': long.target.nunique(),
         'labelled_panel_targets': len(bundle['targets']), 'complete_scorecard_view': complete_card,
         'model': bundle['selected_model'], 'model_sha256': sha256(model), 'input_sha256': sha256(input_path),
         'missing_columns_imputed': [f for f in bundle['features'] if f not in frame],
@@ -43,7 +43,12 @@ def run(model, input_path, output):
         'grade_probability_calibrated': False if 'grade_model' in bundle else None,
         'grade_interval_scope': 'panel_relative_targets_only_no_interval_for_unlabelled_proxies',
         'scorecard_protocol': bundle.get('scorecard_protocol'),
-        'evaluation_use': 'full_training_model_predictions_are_not_OOF_accuracy_estimates'})
+        'evaluation_use': 'full_training_model_predictions_are_not_OOF_accuracy_estimates'}
+    if 'selected_grade_model' in bundle:
+        info.update(task2_official_default=bundle['task2_official_default'],
+            task2_qualified_on_historical_partition=bundle['task2_qualified'],
+            task2_protocol=bundle['task2_protocol'])
+    write_json(output / 'prediction_info.json', info)
     print(f'Predicted {len(frame)} samples; output: {output}')
 
 

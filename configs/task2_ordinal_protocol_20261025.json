@@ -1,0 +1,21 @@
+{
+  "seed": 20261025,
+  "outer_split_seed": 20261023,
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "candidates": ["current_multioutput_tree", "cumulative_logit_C0.1", "cumulative_logit_C1"],
+  "logit_C": [0.1, 1.0],
+  "logit_max_iter": 1000,
+  "logit_tol": 0.000001,
+  "current_tree_seed": 20261024,
+  "n_estimators": 300,
+  "min_samples_leaf": 3,
+  "max_features": 0.7,
+  "selection": "Per target, minimum pooled inner-validation absolute grade error; ties use the candidate order. Every inner fit constructs grades and imputes/scales features using its own training subset only.",
+  "prediction": "Fit six binary events grade > k per target; project each six-probability vector to nonincreasing values by least-squares isotonic regression; recover seven grade probabilities and use their conditional median.",
+  "evaluation": "One historical outer three-fold partition; all 50 labelled targets reported, primary comparison is 45 aroma/flavour targets. Report both individual fixed candidates and the inner-selected workflow. Do not select a winner from outer scores.",
+  "uncertainty_repeats": 2000,
+  "candidate_qualification": "Inner-selected workflow must improve primary45 MAE with positive lower endpoint of the paired fixed-OOF 95% bootstrap improvement interval, and must not worsen either grade-0 or grade-6 MAE or exact recall. This is exploratory qualification, not automatic promotion.",
+  "promotion": "Keep current official outputs/default model. A candidate may be explicitly loaded; formal promotion requires the later authorized task5 repeated validation and task4 downstream checks.",
+  "scope": "Task2 only. Two ordinal settings frozen before running; no post-result grid expansion. Labels are relative ranks, not original absolute intensity. No two unlabelled acetaldehyde proxies in accuracy denominators."
+}

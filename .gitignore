@@ -45,3 +45,6 @@ outputs/q3_reference_diagnostics_20261024/
 outputs/current_reproduction_20261025/*
 !outputs/current_reproduction_20261025/reproduction.json
 !outputs/current_reproduction_20261025/logs/
+
+# Explicit task2 full-training CLI checks duplicate model inference, not OOF evidence.
+outputs/task2_ordinal_20261025/prediction_smoke/*.csv

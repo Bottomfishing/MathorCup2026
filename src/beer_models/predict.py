@@ -22,10 +22,14 @@ def predict_frame(frame, bundle):
     if (observed == 0).any():
         raise ValueError('No observed model features for samples: ' + ', '.join(beer[observed == 0].astype(str)))
     prediction = bundle['model'].predict(values)
-    if 'grade_model' in bundle:
+    has_distribution = 'grade_model' in bundle or 'selected_grade_model' in bundle
+    if 'selected_grade_model' in bundle:
+        probabilities = seven_level_probabilities(bundle['selected_grade_model'], values)
+    elif 'grade_model' in bundle:
         grade_model = bundle['grade_model']
         imputed = grade_model.named_steps['impute'].transform(values)
         probabilities = seven_level_probabilities(grade_model.named_steps['model'], imputed)
+    if has_distribution:
         grades = grade_decisions(probabilities)['conditional_median']
         lower, upper = central_grade_interval(probabilities)
     else:
@@ -36,7 +40,7 @@ def predict_frame(frame, bundle):
         'standardized_prediction': prediction.ravel(), 'relative_grade_0_6': grades.ravel(),
         'observed_feature_count': np.repeat(observed, len(targets)),
         'missing_feature_fraction': np.repeat(1 - observed / len(features), len(targets))})
-    if 'grade_model' in bundle:
+    if has_distribution:
         long['relative_grade_forecast_lower90'] = lower.ravel()
         long['relative_grade_forecast_upper90'] = upper.ravel()
         long['grade_max_class_probability'] = probabilities.max(axis=2).ravel()

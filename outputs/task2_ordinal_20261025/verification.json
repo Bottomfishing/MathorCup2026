@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "outer_models_refitted": 9,
+  "OOF_rows_checked": 50000,
+  "inner_rows_checked": 112500,
+  "inner_contexts_checked": 4,
+  "CLI_rows_checked": 13000,
+  "baseline_OOF_reproduced": 12500,
+  "original_absolute_scale_recovered": false,
+  "checks": [
+    "training-only split memberships and independent grade counting",
+    "per-target choices from inner data only",
+    "all nine outer models refitted",
+    "seven-level probabilities and selected column assembly",
+    "all metrics/confusion/distributions",
+    "2000 paired fixed-OOF resamples and qualification",
+    "full-data choices and explicit CLI"
+  ],
+  "limitation": "Outer fits replayed; inner stored predictions and full-data coefficients were not all independently refitted. No later task5 repeated validation.",
+  "unit_tests_passed": 103
+}
