@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "saved_model_replays": 29,
+  "fresh_refit_outer_contexts": 1,
+  "independently_refit_inner_models": false,
+  "reconstructed_selection_contexts": 10,
+  "policies_per_source": 24,
+  "grouped_splits_verified": true,
+  "cli_rows": 13000,
+  "unlabelled_blank_rows": 500,
+  "experiment_success": false,
+  "integrated": false,
+  "model_sha256": "de98834c01e5b0fa8a388da2d5d4f1edf482371a2beb3fe7d7a71ccc67970456"
+}

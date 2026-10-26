@@ -1,0 +1,15 @@
+{
+  "base_commit": "2c81417",
+  "official_tracked_paths_unchanged": true,
+  "checked_paths": [
+    "src",
+    "scripts",
+    "configs",
+    "outputs",
+    "README.md",
+    "docs"
+  ],
+  "independent_experiment_only": true,
+  "integrated": false,
+  "q3_executed": false
+}

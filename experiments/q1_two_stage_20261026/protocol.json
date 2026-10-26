@@ -1,0 +1,23 @@
+{
+  "base_commit": "2c81417",
+  "status": "independent_experiment_no_official_integration",
+  "hypothesis": "Learn high-score chemistry directly using per-target nonlinear P(Y>=5) and P(Y=6|Y>=5), rather than only changing decisions on the old shared forest probabilities.",
+  "labels": "Unchanged original individual 0-6 distributions; equal beers and equal tasters within beer, repeated presentations split taster weight. No fabricated labels or acetaldehyde scores.",
+  "model": {"n_estimators": 100, "learning_rate": 0.05, "max_depth": 2, "min_samples_leaf": 6, "max_features": 0.7, "loss": "log_loss"},
+  "weighting": "Expand each unique beer into weighted binary outcomes. Stage1 negative/positive masses are q0+...+q4 and q5+q6; stage2 are q5 and q6. Exclude zero-weight outcomes. Balance total class masses using current training data only, then analytically undo the class-prior odds shift. This is not fitted probability calibration. Six expanded rows per leaf guarantee at least three unique beers; sparse/one-class stages use observed training conditional prior.",
+  "low_grades": "Use the original ET conditional distribution over grades0-4, rescaled to 1-P(Y>=5); high5=(1-P6givenHigh)*PHigh, high6=P6givenHigh*PHigh. Low prior fallback is learned only from training beers. All new probabilities remain uncalibrated experimental individual-rating estimates, not defect safety probabilities.",
+  "repeat_outer_seeds": [20261027, 20261028, 20261029],
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "seed": 20261026,
+  "jobs": 4,
+  "decision_mae_penalties": [0.25, 0.5, 1, 2, 4, 8],
+  "decision_fp_penalties": [0, 1, 2, 4],
+  "selection": "Apply the same 24 selective exact-tail utility policies to old and new probabilities, using the original ET grade as the baseline action in both. Fit each inner-fold class priors only on inner training beers. Apply the existing final child<=parent cap. Eligible policies: individual MAE increase<=.02 versus original ET median, individual and panel high FPR<=.02 in BOTH all50 and primary45. Choose maximum minimum individual5/6 recall on primary45, then maximum mean individual5/6 recall there, then lowest primary45 MAE, then declared policy order. No eligible policy => original ET median. This operating-point selection does not itself certify the final success criteria.",
+  "fixed_controls": "Original ET median, training prior median, published previous selective workflow, fixed policy(lambda1,mu2) on old/new probabilities, and median on new probabilities. Compare new and old with the same inner selector to separate estimator benefit from decision changes. Never choose an outer-test best policy.",
+  "success": {"maximum_mae_increase": 0.02, "maximum_high_fpr": 0.02, "minimum_individual_recall_each5_6": 0.05, "minimum_panel_recall_each5_6": 0.05, "minimum_primary_high_precision": 0.5, "minimum_primary_exact6_precision": 0.25, "scope": "Every repeat in both all50 and primary45 must pass MAE, recall and FPR gates. Primary45 precision floors apply every repeat. Beer-averaged paired bootstrap upper95 MAE increase<=.02 in both scopes. These are team experiment gates, not contest requirements; pass only means worth considering integration, not permission to integrate."},
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261026,
+  "validation": "Same historically inspected 250 beers, existing repeat splits, post-development repeated nested validation; not an unseen or external test. Only inner predictions determine policies; outer results do not change candidates, parameters or gates. Average repeated losses per beer before bootstrap, never treat 750 predictions as independent.",
+  "isolation": "All new code/models/results live here. Existing src, official predictor/defaults, original data, delivery folder, Q2/Q3 and old results stay unchanged. No integration without separate user approval. No model binary or raw ratings in Git."
+}

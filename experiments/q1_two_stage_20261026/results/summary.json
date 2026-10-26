@@ -1,0 +1,30 @@
+{
+  "status": "experiment_completed",
+  "experiment_success": false,
+  "integrated": false,
+  "protocol_sha256": "8353cf69e7a5ed40e358ae3a4e2f34997a063948555e585033439167044a8696",
+  "n_beers": 250,
+  "n_repeated_predictions": 750,
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "parent_evidence_sha256": {
+    "outputs\\q1_target_20261026\\oof_probabilities.csv.gz": "d5656a0d0bb1e830ac68c91e6fd0deebe291f28b5fe188f5ea424c0215560eee",
+    "outputs\\q1_target_20261026\\inner_r0_f0.csv.gz": "8778d5b1f4422cb269c0acf16f33265d88b2ed55ada51c75907bbaa206f1fc1c",
+    "outputs\\q1_target_20261026\\inner_r0_f1.csv.gz": "4f4263ea6abb5b1e2b207f087b2766e7b9ffcd0ea988a92722a4ce100be08187",
+    "outputs\\q1_target_20261026\\inner_r0_f2.csv.gz": "1ae533e5436f1a36ab2a670f0a82de7f40a0ebc5ae7b99be3429c8aec00aeab8",
+    "outputs\\q1_target_20261026\\inner_r1_f0.csv.gz": "2b2b54ad050eb5c7acc77c3aa6ce5472c560347a9f45e2f7d24a6ed59770842d",
+    "outputs\\q1_target_20261026\\inner_r1_f1.csv.gz": "bb34b13cf55e36d7a1bc35b99c3fb356ca1c69a12e9d926eaad0e9388d0d4614",
+    "outputs\\q1_target_20261026\\inner_r1_f2.csv.gz": "0cf7ee923d2d122506633934bd947b01a908392350c714b324837863e183ae6c",
+    "outputs\\q1_target_20261026\\inner_r2_f0.csv.gz": "1a3970253cb812a4c2e68dd5d4a076d6c442475f2facb97180fbdccaa9dbcea5",
+    "outputs\\q1_target_20261026\\inner_r2_f1.csv.gz": "2a1f7129282effc5a32c2a39014cebb46cabfd9011f8ba55deb155c5ff98655d",
+    "outputs\\q1_target_20261026\\inner_r2_f2.csv.gz": "5e2a676bb47c8d1d035f0567c6722ee134cdfa18bd094149c4835d7209edd33f",
+    "outputs\\q1_target_20261026\\inner_full_training.csv.gz": "de0b47fed299a80cba06f5d9a0cb49b9d89e9134809903651941318ded98b885"
+  },
+  "model_sha256": "de98834c01e5b0fa8a388da2d5d4f1edf482371a2beb3fe7d7a71ccc67970456",
+  "q3_started": false
+}

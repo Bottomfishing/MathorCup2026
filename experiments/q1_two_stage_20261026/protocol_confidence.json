@@ -1,0 +1,8 @@
+{
+  "family": "joint_forest_with_training_only_confidence_filter",
+  "development": "Frozen after inspecting the joint forest's improved six recall but inadequate precision. Same historically inspected 250 beers, not independent test confirmation. No new probability estimator or retraining, no threshold grid, no changed success gates.",
+  "support": "For each outer-training context, reconstruct the already selected global policy on its two inner validation folds using each inner training prior. Use pre-parent-cap proposed actions. An individual target may issue high grades only if at least three unique inner-validation beers were predicted>=5 and their observed weighted P(Y>=5) averages>=.50. Exact6 additionally requires at least three proposed6 beers and observed P(Y=6) average>=.25. No adequate support => fallback.",
+  "decision": "Start with original ET grades. Accepted high proposals become5; accepted6 become6 only if the target's exact6 gate also passes. All others retain original grades. Propagate an accepted child's grade upward to its parent by max, justified by the verified raw scorecard child<=parent identity. Do not cap a strong accepted child downward by a weaker parent prediction. This is a joint constrained point decision, not calibrated marginal probabilities or label copying.",
+  "controls": "Apply the same confidence filter and upward hierarchy to the old-probability/common-selector control. Reuse existing selected policies, splits, model parameters and frozen success gates. No outer-label target selection or handpicked target names.",
+  "scope": "Independent experimental candidate only. Original predictor and all Q2/Q3 modules remain unchanged. No integration or phase2."
+}

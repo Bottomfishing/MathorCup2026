@@ -1,0 +1,7 @@
+﻿repeat,scope,mae_ok,recall_ok,fpr_ok,precision_ok,pass
+0,all50,True,False,False,True,False
+0,primary45,True,False,True,False,False
+1,all50,True,False,False,True,False
+1,primary45,True,False,True,False,False
+2,all50,True,False,True,True,False
+2,primary45,True,False,True,False,False

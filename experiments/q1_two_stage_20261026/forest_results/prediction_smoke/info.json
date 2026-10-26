@@ -1,0 +1,17 @@
+{
+  "model_sha256": "57d79e62c156928978d6168d8798e987ef38bd3c018d7d0ba478bd762be90f4d",
+  "input_sha256": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+  "samples": 250,
+  "independent_experiment": true,
+  "official_integration": false,
+  "experiment_success": false,
+  "policy": [
+    4,
+    1
+  ],
+  "score_semantics": "selective_tail_decision_on_original_0_6_scale_not_conditional_median",
+  "probability_status": "class_weight_odds_restored_but_uncalibrated_not_defect_safety",
+  "training_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "original_official_predictor_changed": false,
+  "evaluation_use": "full_fit_inference_not_OOF_accuracy"
+}

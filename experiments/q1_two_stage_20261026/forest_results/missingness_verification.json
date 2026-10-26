@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "heldout_masks": 27,
+  "baseline_models_refit": 9,
+  "original_missingness_preserved": true,
+  "labels_and_policies_not_refit": true,
+  "scope": "Fixed MCAR additional masking; no informative-missingness or external-test claim"
+}

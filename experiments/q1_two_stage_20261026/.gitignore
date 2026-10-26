@@ -1,0 +1,6 @@
+results/prediction_smoke/*.csv
+forest_results/prediction_smoke/*.csv
+confidence_results/prediction_smoke/*.csv
+# Training caches are rebuilt by run.py; preserve locally without duplicating Git data.
+results/inner_*.csv.gz
+forest_results/inner_*.csv.gz

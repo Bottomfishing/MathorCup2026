@@ -1,0 +1,12 @@
+{
+  "status": "experiment_completed",
+  "experiment_success": false,
+  "integrated": false,
+  "protocol_sha256": "771704e9d0a5e5c7e1adb60e0f28f40038601de489cf4c9f9cd531bf0ea6fb5c",
+  "parent_model_sha256": "57d79e62c156928978d6168d8798e987ef38bd3c018d7d0ba478bd762be90f4d",
+  "model_sha256": "9704ab108325afeaab51bcd60dd6ec30eb65c533192af0b765ae60e0b859f4bf",
+  "independent_beers": 250,
+  "repeated_predictions": 750,
+  "probability_models_refit": 0,
+  "q3_started": false
+}

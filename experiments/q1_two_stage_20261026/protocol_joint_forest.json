@@ -1,0 +1,54 @@
+{
+  "base_commit": "2c81417",
+  "status": "independent_experiment_no_official_integration",
+  "hypothesis": "After the failed two-stage boosted model, test a single bagged low/5/6 learner per target using all beers. Joint learning restores low-score negatives for six and avoids conditioning the six-vs-five learner on only sparse high events. Squared split losses are weighted by inverse training class prevalence; leaf predictions remain original beer-fraction averages.",
+  "labels": "Unchanged original individual 0-6 distributions; equal beers and equal tasters within beer, repeated presentations split taster weight. No fabricated labels or acetaldehyde scores.",
+  "model": {
+    "n_estimators": 300,
+    "max_features": 0.7,
+    "min_samples_leaf": 3,
+    "bootstrap": true
+  },
+  "weighting": "Each unique beer is one row with true fractions for low/5/6. Divide the three responses by square roots of current-training class prevalences for split learning; undo response scales in probability predictions. An absent class remains identically zero. Bootstrap operates on unique beers, not repeated ratings. No fitted probability calibration.",
+  "low_grades": "Use the original ET conditional distribution over grades0-4, rescaled to 1-P(Y>=5); high5=(1-P6givenHigh)*PHigh, high6=P6givenHigh*PHigh. Low prior fallback is learned only from training beers. All new probabilities remain uncalibrated experimental individual-rating estimates, not defect safety probabilities.",
+  "repeat_outer_seeds": [
+    20261027,
+    20261028,
+    20261029
+  ],
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "seed": 20261026,
+  "jobs": 4,
+  "decision_mae_penalties": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8
+  ],
+  "decision_fp_penalties": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "selection": "Apply the same 24 selective exact-tail utility policies to old and new probabilities, using the original ET grade as the baseline action in both. Fit each inner-fold class priors only on inner training beers. Apply the existing final child<=parent cap. Eligible policies: individual MAE increase<=.02 versus original ET median, individual and panel high FPR<=.02 in BOTH all50 and primary45. Choose maximum minimum individual5/6 recall on primary45, then maximum mean individual5/6 recall there, then lowest primary45 MAE, then declared policy order. No eligible policy => original ET median. This operating-point selection does not itself certify the final success criteria.",
+  "fixed_controls": "Original ET median, training prior median, published previous selective workflow, fixed policy(lambda1,mu2) on old/new probabilities, and median on new probabilities. Compare new and old with the same inner selector to separate estimator benefit from decision changes. Never choose an outer-test best policy.",
+  "success": {
+    "maximum_mae_increase": 0.02,
+    "maximum_high_fpr": 0.02,
+    "minimum_individual_recall_each5_6": 0.05,
+    "minimum_panel_recall_each5_6": 0.05,
+    "minimum_primary_high_precision": 0.5,
+    "minimum_primary_exact6_precision": 0.25,
+    "scope": "Every repeat in both all50 and primary45 must pass MAE, recall and FPR gates. Primary45 precision floors apply every repeat. Beer-averaged paired bootstrap upper95 MAE increase<=.02 in both scopes. These are team experiment gates, not contest requirements; pass only means worth considering integration, not permission to integrate."
+  },
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261026,
+  "validation": "Same historically inspected 250 beers, existing repeat splits, post-development repeated nested validation; not an unseen or external test. Only inner predictions determine policies; outer results do not change candidates, parameters or gates. Average repeated losses per beer before bootstrap, never treat 750 predictions as independent.",
+  "isolation": "All new code/models/results live here. Existing src, official predictor/defaults, original data, delivery folder, Q2/Q3 and old results stay unchanged. No integration without separate user approval. No model binary or raw ratings in Git.",
+  "family": "joint_tail_forest",
+  "development_disclosure": "Frozen after viewing the failed two-stage boosted outer results; reuses the same 250 beers and historical splits. Adaptive development, not independent test confirmation. Original acceptance gates and common decoder are unchanged; this is the only replacement family in this run."
+}

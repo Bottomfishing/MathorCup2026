@@ -1,0 +1,13 @@
+test_absent_six_has_no_artificial_auc_from_cumulative_roundoff (test_two_stage.TwoStageTests.test_absent_six_has_no_artificial_auc_from_cumulative_roundoff) ... ok
+test_balancing_is_undone_in_probability_predictions (test_two_stage.TwoStageTests.test_balancing_is_undone_in_probability_predictions) ... ok
+test_conditional_stage_weights_and_low_distribution_are_preserved (test_two_stage.TwoStageTests.test_conditional_stage_weights_and_low_distribution_are_preserved) ... ok
+test_confidence_support_and_upward_parent_rule (test_two_stage.TwoStageTests.test_confidence_support_and_upward_parent_rule) ... ok
+test_full_summary_keeps_original_and_tail_metrics (test_two_stage.TwoStageTests.test_full_summary_keeps_original_and_tail_metrics) ... ok
+test_joint_forest_undoes_response_scale_and_does_not_invent_six (test_two_stage.TwoStageTests.test_joint_forest_undoes_response_scale_and_does_not_invent_six) ... ok
+test_old_probability_control_has_exact_same_decisions (test_two_stage.TwoStageTests.test_old_probability_control_has_exact_same_decisions) ... ok
+test_unobserved_high_stage_does_not_create_fake_six_labels (test_two_stage.TwoStageTests.test_unobserved_high_stage_does_not_create_fake_six_labels) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.117s
+
+OK

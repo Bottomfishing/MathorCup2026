@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "training_only_gate_rows_verified": 1000,
+  "outer_predictions_checked": 37500,
+  "cli_rows": 13000,
+  "missing_labels_blank": 500,
+  "probability_models_refit": 0,
+  "experiment_success": false,
+  "integrated": false,
+  "model_sha256": "9704ab108325afeaab51bcd60dd6ec30eb65c533192af0b765ae60e0b859f4bf"
+}
