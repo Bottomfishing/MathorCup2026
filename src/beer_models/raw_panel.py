@@ -120,7 +120,7 @@ def predict_raw_frame(frame, bundle):
     rows = pd.DataFrame({'beer': np.repeat(beer.to_numpy(), len(targets)),
         'target': np.tile(targets, len(frame)), 'estimated_grade_0_6': predicted['grade'].ravel(),
         'raw_median_estimate': predicted['raw_median_estimate'].ravel(),
-        'score_status': 'raw_panel_balanced_median_prediction', 'panel_target_available': True})
+        'score_status': bundle.get('score_status', 'raw_panel_balanced_median_prediction'), 'panel_target_available': True})
     missing = pd.DataFrame([{'beer': b, 'target': target, 'estimated_grade_0_6': pd.NA,
         'raw_median_estimate': np.nan, 'score_status': 'no_raw_panel_label', 'panel_target_available': False}
         for b in beer for target in bundle['protocol']['unlabelled_card_targets']])

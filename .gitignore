@@ -52,3 +52,6 @@ outputs/current_reproduction_20261025/*
 outputs/task2_ordinal_20261025/prediction_smoke/*.csv
 # R2 CLI smoke repeats the full-fit prediction tables; retain its metadata only.
 outputs/r2_raw_q1_20261026/prediction_smoke/*.csv
+# R2b: retain final CLI metadata, not repeated inference CSVs or the earlier smoke.
+outputs/r2b_tail_risk_20261026/prediction_smoke/
+outputs/r2b_tail_risk_20261026/prediction_smoke_final/

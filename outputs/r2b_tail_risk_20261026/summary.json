@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "baseline_commit": "3e4dcb8",
+  "protocol_content_sha256": "99bb42baee226ef5ad39bb1aa77a7f0458be133d8bd0812e8f2919abb6bfa1d8",
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "n_beers": 250,
+  "n_targets": 50,
+  "n_raw_ratings": 2197,
+  "base_model_fits": 25,
+  "full_training_point_choice": "extra_trees__median",
+  "deployed_point_choice": "extra_trees__median",
+  "tail_point_qualified": false,
+  "selected_point_metrics": {
+    "raw_rating_mae": 0.7952135744255744,
+    "raw_recall_5": 0.0,
+    "panel_recall_5": 0.0,
+    "raw_recall_6": 0.0,
+    "panel_recall_6": 0.0,
+    "raw_high_fpr": 0.0,
+    "panel_high_fpr": 0.0
+  },
+  "selected_raw_mae_increase": 0.0,
+  "increase_upper95": 0.0,
+  "risk_status": {
+    "diacetyl": "historical_nonzero_probability_support_not_safety",
+    "dms": "historical_nonzero_probability_support_not_safety",
+    "X4vg": "historical_nonzero_probability_support_not_safety",
+    "t2n": "historical_nonzero_probability_support_not_safety",
+    "stale_hops": "insufficient_heldout_probability_support"
+  },
+  "grade_semantics": "integer_balanced_panel_conditional_median_with_parent_cap",
+  "model_sha256": "b8252c029f161520cb384f8f6031ced14ed23c206d8f36b3bcdbfc7cb702a529",
+  "safety_certified": false,
+  "unlabelled_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "task_R3_started": false,
+  "full_point_fallback_matches_R2": true
+}
