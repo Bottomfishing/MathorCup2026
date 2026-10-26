@@ -106,8 +106,9 @@ def build(run, output):
           [12, 25, 22, 22, 22], 'MAE与个人5/6分精确召回不同；SD只在完整汇总CSV中报告。')
     intervals = read('validation', 'paired_beer_averaged_intervals.csv')
     risk = intervals[intervals.metric != 'raw_MAE_gain'][['metric','method','target','mean_gain','lower','upper']]
+    assert set(intervals.loc[intervals.metric != 'raw_MAE_gain','level']) == {0.99}
     sheet('缺陷概率区间', '缺陷概率｜相对训练先验的Brier改善', risk,
-          [25, 24, 24, 18, 18, 18], '95%固定OOF配对bootstrap区间；先按250款啤酒平均重复损失；不含完整重拟合不确定性。')
+          [25, 24, 24, 18, 18, 18], '99%固定OOF配对bootstrap区间；先按250款啤酒平均重复损失；不含完整重拟合不确定性。')
     ranks = read('q2_standardized','top3_panel_all50.csv')
     cols = ['target','rank','field','chemical_name','bootstrap_frequency','target_passes_BY_0_05']
     sheet('Q2标准化主表', 'Q2｜历史标准化响应关联 · 150条', ranks[cols],

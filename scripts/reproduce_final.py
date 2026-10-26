@@ -59,8 +59,9 @@ def locked_packages():
 def run(args):
     source, output = args.source.resolve(), args.output.resolve()
     statement = (args.statement or source.parent / '2026年MathorCup大数据挑战赛-赛道A初赛.pdf').resolve()
-    output.mkdir(parents=True, exist_ok=False)
-    (output / 'logs').mkdir()
+    if not args.resume:
+        output.mkdir(parents=True, exist_ok=False)
+        (output / 'logs').mkdir()
     env = dict(os.environ, PYTHONPATH=str(ROOT / 'src'), PYTHONIOENCODING='utf-8',
                MPLCONFIGDIR=str(output / 'matplotlib_cache'))
     report = dict(status='running', started_utc=datetime.now(timezone.utc).isoformat(),
@@ -84,10 +85,32 @@ def run(args):
                      'R2b fit_log.csv': 'historical 25-row log includes superseded full-forest seed; new run has 24 valid fits',
                      'binary/plot metadata': 'compare numerical arrays/tables, not joblib, ZIP timestamps or rendering bytes'},
                   interpretation='Numerical reproduction on the same 250 development beers; not external validation or a brewing intervention.')
+    if args.resume:
+        previous = json.loads((output/'reproduction.json').read_text(encoding='utf-8'))
+        if previous['status'] != 'failed' or previous['source'] != str(source):
+            raise ValueError('Resume requires a failed run with the same source directory')
+        # Successful model stages remain usable only while their implementation is unchanged.
+        # The runner and reader-view packaging may be repaired without retraining models.
+        presentation = {'scripts/reproduce_final.py', 'scripts/build_paper_takeout.py'}
+        for name, expected in previous['code_sha256'].items():
+            if name.replace('\\', '/') not in presentation and sha256(ROOT/name) != expected:
+                raise ValueError('Completed-stage code changed; start a new run: '+name)
+        previous.setdefault('recovery', []).append(dict(
+            prior_error=previous.pop('error'), resumed_utc=datetime.now(timezone.utc).isoformat(),
+            git_commit=report['git_commit'], working_tree_dirty=report['working_tree_dirty'],
+            presentation_code_sha256={name:sha256(ROOT/name) for name in presentation}))
+        report = previous
+        report['status'] = 'running'
+    successful = {s['name']:s for s in report['steps'] if s['exit_code'] == 0}
     def save():
         write_json(output / 'reproduction.json', report)
     def step(name, *arguments):
         command = [sys.executable, *map(str, arguments)]
+        if name in successful:
+            if successful[name]['command'] != command:
+                raise ValueError('Resume command differs: '+name)
+            print('Retained successful step '+name, flush=True)
+            return
         start = time.perf_counter()
         log = output / 'logs' / (name + '.log')
         print('Starting ' + name, flush=True)
@@ -112,6 +135,7 @@ def run(args):
                 compare_npz(a, b)
             else:
                 compare_csv(a, b, ignore_timing=name in ('fit_log.csv', 'model_fit_log.csv'))
+            report['comparisons'] = [r for r in report['comparisons'] if r['rebuilt'] != str(a.relative_to(output))]
             report['comparisons'].append(dict(rebuilt=str(a.relative_to(output)),
                 reference=str(b.relative_to(ROOT)), status='passed', rebuilt_sha256=sha256(a), reference_sha256=sha256(b)))
         save()
@@ -196,4 +220,5 @@ if __name__ == '__main__':
     p.add_argument('--statement', type=Path)
     p.add_argument('--reference', type=Path, help='Offline copy of the pinned public workbook')
     p.add_argument('--raw', type=Path, help='Offline copy of the pinned anonymized scores')
+    p.add_argument('--resume', action='store_true', help='Continue a failed run; successful stages require unchanged scientific code and commands')
     run(p.parse_args())

@@ -4,6 +4,7 @@ import tempfile
 import unittest
 
 import numpy as np
+import pandas as pd
 
 
 spec = importlib.util.spec_from_file_location('final_reproduction',
@@ -13,6 +14,15 @@ spec.loader.exec_module(repro)
 
 
 class FinalComparisonTests(unittest.TestCase):
+    def test_unlabelled_oof_rows_do_not_claim_fitted_calibration(self):
+        frame = pd.read_csv(Path(__file__).resolve().parents[1]/
+            'outputs/r2b_tail_risk_20261026/oof_scores_all52.csv')
+        missing = frame.target.isin(['A_acetaldehyde','F_acetaldehyde'])
+        self.assertEqual(int(missing.sum()), 500)
+        columns = ['estimated_grade_0_6','probability_rating_ge1','probability_rating_ge5',
+                   'probability_rating_6','calibration_quality_status']
+        self.assertTrue(frame.loc[missing,columns].isna().all().all())
+
     def test_csv_only_normalizes_line_endings_and_optional_runtime(self):
         with tempfile.TemporaryDirectory() as folder:
             a, b = Path(folder)/'a.csv', Path(folder)/'b.csv'
