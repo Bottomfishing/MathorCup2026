@@ -3,7 +3,6 @@ import numpy as np
 from sklearn.base import BaseEstimator
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.impute import SimpleImputer
-from sklearn.isotonic import isotonic_regression
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -16,8 +15,22 @@ def cumulative_probabilities(survival):
     q = np.asarray(survival, float)
     if q.ndim != 3 or q.shape[-1] != 6 or not np.isfinite(q).all() or ((q < 0) | (q > 1)).any():
         raise ValueError('Expected finite sample-by-target-by-six probabilities')
-    fixed = np.array([isotonic_regression(row, increasing=False)
-                      for row in q.reshape(-1, 6)]).reshape(q.shape)
+    # Equal-weight decreasing isotonic projection:
+    # fitted[i] = min_{a<=i} max_{b>=i} mean(q[a:b+1]).
+    # There are only six cutoffs. Vectorizing across samples/targets avoids
+    # invoking sklearn's validation and solver once per row in large grids.
+    prefix = np.concatenate([np.zeros(q.shape[:2] + (1,)), q.cumsum(axis=2)], axis=2)
+    fixed = np.empty_like(q)
+    for i in range(6):
+        value = np.full(q.shape[:2], np.inf)
+        for a in range(i+1):
+            maximum = np.full(q.shape[:2], -np.inf)
+            for b in range(i, 6):
+                maximum = np.maximum(maximum, (prefix[:, :, b+1]-prefix[:, :, a])/(b-a+1))
+            value = np.minimum(value, maximum)
+        fixed[:, :, i] = value
+    # Roundoff in prefix differences can exceed the original [0,1] support.
+    fixed = np.minimum.accumulate(np.clip(fixed, 0, 1), axis=2)
     endpoints = np.concatenate([np.ones(q.shape[:2] + (1,)), fixed,
                                 np.zeros(q.shape[:2] + (1,))], axis=2)
     return endpoints[:, :, :-1] - endpoints[:, :, 1:]

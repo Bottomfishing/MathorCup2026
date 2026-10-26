@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "protocol": {
+    "baseline_commit": "fe8f25a",
+    "input": "outputs/task4_raw_q3_20261026/migration_grid_checks.csv.gz",
+    "defects": [
+      "dms",
+      "diacetyl",
+      "X4vg",
+      "t2n",
+      "stale_hops"
+    ],
+    "tolerance": 1e-10,
+    "diagnostic_tie_break": [
+      "maximum_positive_probability_delta",
+      "number_positive_probability_deltas",
+      "0.7_target_distance_plus_0.3_change_distance",
+      "candidate_id"
+    ],
+    "scope": "Exact enumeration of the 32 subsets of five defect groups within the frozen historical candidate pool. Each group retains its integer-grade guard and six calibrated/uncalibrated probability guards. A minimal blocking group set means no candidate in this finite pool satisfies those groups but every proper subset has a witness. It is not global infeasibility or a causal finding.",
+    "nearest_candidate": "Among structurally eligible candidates passing all five integer grades, report the smallest worst positive probability delta. This is a diagnostic lower bound on uniform probability slack in this fixed pool, not an authorized tolerance, accepted candidate or physical risk bound.",
+    "main_results_replaced": false
+  },
+  "input_sha256": "e155d52e81402938a33b276afb6b22b272b931ef1f6a04e4705bc516836dee04",
+  "protocol_sha256": "4bae9c57b74defbed5b8d16fb12df3f8c9d18a233aee22582d502ef91c82f51c",
+  "sources": 11,
+  "frozen_candidates": 8293,
+  "minimal_blocker_count": 22,
+  "complete_pass_count": 0,
+  "new_candidate_search": false,
+  "main_results_replaced": false,
+  "scientific_scope": "Exact finite-pool diagnosis of current modeled scenarios; extra probability guards are team choices, not quoted contest requirements. No new concentration threshold or evidence of actual intervention effect."
+}

@@ -1,4 +1,7 @@
 __pycache__/
+outputs/local_r2b_rebuild_20261026/
+# Interrupted before publication; the completed full-grid run uses the v2 directory.
+outputs/q3_full_grid_20261026/
 *.pyc
 .venv/
 

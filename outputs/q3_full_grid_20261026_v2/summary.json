@@ -1,0 +1,55 @@
+{
+  "status": "completed",
+  "protocol": {
+    "baseline_commit": "fe8f25a",
+    "source_styles": [
+      "Pils/Lager"
+    ],
+    "target_style": "Tripel",
+    "anchors": "outputs/q3_resolution_20261024/anchors.csv",
+    "steps": 40,
+    "policies": [
+      "preserve",
+      "reduce"
+    ],
+    "weight": 0.7,
+    "nonincrease_tolerance": 1e-10,
+    "defect_targets": [
+      "dms",
+      "diacetyl",
+      "X4vg",
+      "t2n",
+      "stale_hops"
+    ],
+    "protected_features": [
+      "DMS",
+      "X2.3.butanedione",
+      "X4VG",
+      "X.E..2.nonenal"
+    ],
+    "scope": "Revisit the original 129 anchors x 40 steps x 2 policies for all eleven fixed Pils/Lager source profiles without the obsolete standardized-response filter. Keep empirical target ranges, two style classifiers, chemical caps, target-distance improvement, all five raw integer-grade guards and all 30 calibrated/uncalibrated raw probability guards. No new anchors, fractions, concentration threshold, slack, random-seed search or relaxed defect condition.",
+    "control": "All 8293 historically eligible candidate IDs must be reconstructed with the same coordinates, distances, raw guard deltas and pass flags within 1e-10. Any control mismatch stops publication.",
+    "selection": "Minimum frozen 0.7 target distance + 0.3 change distance among complete model-scenario passes. A passing result is supplementary and does not automatically replace the task6 main result, establish stable refit behavior or physical feasibility. Empty sets remain empty."
+  },
+  "protocol_sha256": "a12cc1114c66d4a931595c6126c9668bb397b75b87939031a45e423d010b910d",
+  "input_sha256": {
+    "outputs/q3_task3_20261025/transfer_source_profiles.csv": "373e0b99ea796d81c2a3527d2d16338e9d3d003727bd6f15fd8cc00a4797c5d7",
+    "outputs/q3_resolution_20261024/anchors.csv": "5efada8a21ce2a251407c1fb269c24e9be9a693acd82e08c843d164ad6311806",
+    "outputs/task4_raw_q3_20261026/migration_grid_checks.csv.gz": "e155d52e81402938a33b276afb6b22b272b931ef1f6a04e4705bc516836dee04"
+  },
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "model_sha256": "1c1c77d318b34aa1afe6b1d6563b8a5405ecc76825f17fda300a55924c8b0777",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "full_grid_size": 113520,
+  "historical_control_size": 8293,
+  "selected_sources": 0,
+  "complete_pass_count": 0,
+  "main_results_replaced": false,
+  "physical_feasibility_certified": false,
+  "actual_after_measured": false,
+  "refit_stability_validated": false
+}

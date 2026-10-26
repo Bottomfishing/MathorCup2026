@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "tables_compared": 21,
+  "tables": [
+    "calibration_parameters.csv",
+    "defect_risk_validation.csv",
+    "estimated_grades_all52.csv",
+    "estimated_grades_primary47.csv",
+    "full_fit_grades_all52.csv",
+    "full_fit_scores_all52.csv",
+    "inner_probabilities.csv.gz",
+    "inner_splits.csv",
+    "oof_base_probabilities.csv.gz",
+    "oof_point_predictions.csv.gz",
+    "oof_rating_risks.csv",
+    "oof_risk_probabilities.csv.gz",
+    "oof_scores_all52.csv",
+    "outer_folds.csv",
+    "point_comparison.csv",
+    "point_inner_selection.csv",
+    "point_uncertainty.csv",
+    "risk_inner_selection.csv",
+    "risk_metrics.csv",
+    "risk_reliability.csv",
+    "sample_quality.csv"
+  ],
+  "excluded": "fit_log.csv contains a documented superseded historical fit and elapsed times; not a scientific result table",
+  "absolute_and_relative_tolerance": 1e-10,
+  "full_pipeline_rerun": false
+}

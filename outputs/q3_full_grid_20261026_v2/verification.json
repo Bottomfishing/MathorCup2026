@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "full_grid_rows": 113520,
+  "historical_control_rows": 8293,
+  "independently_reconstructed_spectra": 113520,
+  "style_predictions_replayed": 227040,
+  "raw_prediction_points_replayed": 33,
+  "selected_sources": 0,
+  "scope": "All path identities, coordinates, distances, structural gates, saved raw-gate logic and selections verified. All 8293 historical controls matched. Raw predictions replayed at three fixed grid points per source and any selected point, not every newly explored point. No physical or refit-stability validation.",
+  "raw_only_rejections_additionally_checked": 4
+}

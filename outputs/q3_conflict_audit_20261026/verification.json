@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "frozen_candidate_rows": 8293,
+  "all_subsets_checked": 352,
+  "minimal_blockers_checked": 22,
+  "proper_subset_witnesses_checked": 24,
+  "individual_guards_checked": 385,
+  "nearest_candidates_checked": 11,
+  "positive_violations_checked": 117,
+  "scope": "Independent set intersections and exhaustive subset certificates plus independent minimax ordering; consumes frozen model predictions, does not refit them or establish physical infeasibility."
+}

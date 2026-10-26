@@ -18,7 +18,11 @@ ACTIVE=[
  'outputs/q3_task3_20261025','outputs/current_reproduction_20261025',
  'outputs/review_q1_missingness_20261025','outputs/review_q2_scope_20261025',
  'outputs/review_q3_fixed_paths_20261025','outputs/review_path_tradeoff_20261025',
- 'outputs/review_delivery_20261025']
+ 'outputs/review_delivery_20261025','outputs/raw_sensory_audit_20261025',
+ 'outputs/r2_raw_q1_20261026','outputs/r2b_tail_risk_20261026','outputs/r3_raw_explanation_20261026',
+ 'outputs/task4_raw_q3_20261026','outputs/task5_repeated_nested_20261026','outputs/task6_final_20261026',
+ 'outputs/q3_conflict_audit_20261026','outputs/q3_full_grid_20261026_v2',
+ 'outputs/local_r2b_rebuild_20261026']
 
 
 def digest(path):

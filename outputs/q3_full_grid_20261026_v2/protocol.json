@@ -1,0 +1,31 @@
+{
+  "baseline_commit": "fe8f25a",
+  "source_styles": [
+    "Pils/Lager"
+  ],
+  "target_style": "Tripel",
+  "anchors": "outputs/q3_resolution_20261024/anchors.csv",
+  "steps": 40,
+  "policies": [
+    "preserve",
+    "reduce"
+  ],
+  "weight": 0.7,
+  "nonincrease_tolerance": 1e-10,
+  "defect_targets": [
+    "dms",
+    "diacetyl",
+    "X4vg",
+    "t2n",
+    "stale_hops"
+  ],
+  "protected_features": [
+    "DMS",
+    "X2.3.butanedione",
+    "X4VG",
+    "X.E..2.nonenal"
+  ],
+  "scope": "Revisit the original 129 anchors x 40 steps x 2 policies for all eleven fixed Pils/Lager source profiles without the obsolete standardized-response filter. Keep empirical target ranges, two style classifiers, chemical caps, target-distance improvement, all five raw integer-grade guards and all 30 calibrated/uncalibrated raw probability guards. No new anchors, fractions, concentration threshold, slack, random-seed search or relaxed defect condition.",
+  "control": "All 8293 historically eligible candidate IDs must be reconstructed with the same coordinates, distances, raw guard deltas and pass flags within 1e-10. Any control mismatch stops publication.",
+  "selection": "Minimum frozen 0.7 target distance + 0.3 change distance among complete model-scenario passes. A passing result is supplementary and does not automatically replace the task6 main result, establish stable refit behavior or physical feasibility. Empty sets remain empty."
+}
