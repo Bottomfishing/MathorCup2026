@@ -4,4 +4,4 @@ outputs/q3_task3_20261025/transfer_source_profiles.csv text eol=crlf
 outputs/q3_task3_20261025/transfer_profiles.csv text eol=crlf
 outputs/q3_task3_20261025/transfer_results.csv text eol=crlf
 # The shareable final package includes SHA256 manifests; preserve its file bytes.
-outputs/task6_final_20261026/** -text
+outputs/task6_final_20261026/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
