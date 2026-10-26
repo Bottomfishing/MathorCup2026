@@ -55,7 +55,7 @@ def verify(args):
     for name,prob in po.items():
         for cost,weights in p['cost_weights'].items():
             np.testing.assert_array_equal(point_matrices[name+'__'+cost],cost_decision(prob,weights,d['parents'])[0])
-    old=pd.read_csv(ROOT/'outputs/r2_raw_q1_20261026/oof_predictions.csv.gz')
+    old=pd.read_csv(args.r2_output/'oof_predictions.csv.gz')
     np.testing.assert_array_equal(point_matrices['extra_trees__median'],matrix(old.loc[old.method.eq('extra_trees')],'predicted_grade'))
 
     split_log=read('inner_splits.csv');choices=read('point_inner_selection.csv');risk_choices=read('risk_inner_selection.csv')
@@ -162,4 +162,6 @@ if __name__=='__main__':
     parser.add_argument('--source',type=Path,required=True)
     parser.add_argument('--raw',type=Path,default=RAW_MANIFEST.parent/'Raw sensory data anonymized.csv')
     parser.add_argument('--output',type=Path,required=True);parser.add_argument('--smoke',type=Path,required=True)
+    parser.add_argument('--r2-output',type=Path,default=ROOT/'outputs/r2_raw_q1_20261026',
+                        help='Rebuilt R2 baseline directory; defaults to the versioned historical baseline')
     with threadpool_limits(limits=1):verify(parser.parse_args())
