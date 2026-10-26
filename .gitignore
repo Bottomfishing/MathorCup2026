@@ -58,3 +58,7 @@ outputs/r2_raw_q1_20261026/prediction_smoke/*.csv
 # R2b: retain final CLI metadata, not repeated inference CSVs or the earlier smoke.
 outputs/r2b_tail_risk_20261026/prediction_smoke/
 outputs/r2b_tail_risk_20261026/prediction_smoke_final/
+# Q1 20261026: inference CSVs repeat the full-fit data; keep provenance JSONs.
+outputs/q1_target_20261026/prediction_smoke/*.csv
+outputs/q1_selective_tail_20261026/prediction_smoke/*.csv
+outputs/q1_selective_tail_20261026/experimental_smoke/*.csv

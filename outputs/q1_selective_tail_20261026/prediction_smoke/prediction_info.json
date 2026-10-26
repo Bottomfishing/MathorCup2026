@@ -1,0 +1,32 @@
+{
+  "samples": 250,
+  "targets": 52,
+  "labelled_panel_targets": 50,
+  "model": "extra_trees__median",
+  "model_sha256": "79f373e2f79d167dda580832ea4d68babdb53f043f2797c55d773a4eef8c7a0b",
+  "input_sha256": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+  "score_scale": "original_0_6_individual_rating_scale",
+  "grade_semantics": "integer_balanced_panel_conditional_median_with_parent_cap",
+  "grade_method": "r2_raw_panel_median",
+  "grade_probability_calibrated": false,
+  "missing_columns_imputed": [],
+  "unlabelled_card_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "qualified_on_historical_grouped_folds": true,
+  "input_scale": "same_supplied_coordinates_as_attachment_1_no_automatic_log_transform",
+  "evaluation_use": "full_training_model_predictions_are_not_OOF_accuracy_estimates",
+  "tail_point_qualified": false,
+  "point_deployment_status": "provisional_baseline_tail_not_qualified",
+  "risk_meaning": "Chance that a taster rating is >=k under equal-taster/equal-presentation weighting; not the chance of exceeding a chemical threshold or proof of safety.",
+  "risk_calibration_method": "inner_OOF_sigmoid_then_order_projection_or_training_prior",
+  "risk_probabilities_universally_validated": false,
+  "safety_certified": false,
+  "point_validation_status": "Designed after inspecting the first target-specific experiment and historical R2b. The same 250 beers and three historical repeat splits are reused for post-development nested evaluation; no unseen-test or external validation claim. No further candidate additions after this protocol.",
+  "risk_provenance": "Unchanged R2b risk workflow; restored from historical full_training inner OOF; not new point probabilities",
+  "point_model_distribution_status": "uncalibrated_comparison_only_separate_from_deployed_risk",
+  "experimental_tail": false,
+  "official_point_replacement": false
+}

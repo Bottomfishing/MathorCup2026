@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "tail_metric_rows": 90,
+  "target_tail_rows": 2250,
+  "missingness_replays": 162,
+  "original_missing_cells_preserved": true,
+  "no_refitting_on_heldout_data": true,
+  "tail_precision_zero_predictions": "undefined blank, not zero",
+  "deployment": "shared_et"
+}

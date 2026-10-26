@@ -11,8 +11,18 @@ from beer_models.predict import predict_frame
 from beer_models.scorecard import predict_scorecard_frame
 
 
-def run(model, input_path, output):
+def run(model, input_path, output, experimental_tail=False):
     bundle = joblib.load(model)
+    if experimental_tail:
+        if 'experimental_point_model' not in bundle:
+            raise ValueError('This bundle has no explicit experimental tail decision')
+        bundle = dict(bundle)
+        bundle.update(raw_panel_model=bundle['experimental_point_model'],
+            selected_model='experimental_selective_tail_not_adopted',
+            score_status='experimental_selective_tail_not_adopted',
+            point_semantics='selective_exact_tail_utility_not_conditional_median',
+            point_deployment_status='experimental_not_adopted_tail_stability_gate_failed',
+            grade_method='q1_selective_tail_decision', tail_point_qualified_on_historical_folds=False)
     frame = pd.read_csv(input_path, dtype=str)
     if bundle.get('bundle_kind') in ['r2_raw_panel', 'r2b_raw_panel']:
         from beer_models.raw_panel import predict_raw_frame
@@ -32,7 +42,7 @@ def run(model, input_path, output):
             'model': bundle['selected_model'], 'model_sha256': sha256(model), 'input_sha256': sha256(input_path),
             'score_scale': 'original_0_6_individual_rating_scale',
             'grade_semantics': bundle.get('point_semantics', 'integer_balanced_panel_conditional_median_with_parent_cap'),
-            'grade_method': 'r2_raw_panel_median', 'grade_probability_calibrated': False,
+            'grade_method': bundle.get('grade_method', 'r2_raw_panel_median'), 'grade_probability_calibrated': False,
             'missing_columns_imputed': [f for f in bundle['features'] if f not in frame],
             'unlabelled_card_targets': bundle['protocol']['unlabelled_card_targets'],
             'raw_source_sha256': bundle['raw_source_sha256'],
@@ -45,6 +55,16 @@ def run(model, input_path, output):
                 risk_meaning=bundle['r2b_protocol']['risk_meaning'],
                 risk_calibration_method='inner_OOF_sigmoid_then_order_projection_or_training_prior',
                 risk_probabilities_universally_validated=False, safety_certified=False)
+        if 'q1_target_protocol' in bundle:
+            info.update(grade_method='q1_target_distribution_median',
+                point_validation_status=bundle['q1_target_protocol']['validation_status'],
+                risk_provenance=bundle['risk_provenance'],
+                point_model_distribution_status='uncalibrated_comparison_only_separate_from_deployed_risk')
+        if 'q1_selective_protocol' in bundle:
+            info.update(grade_method=bundle['grade_method'],
+                point_validation_status=bundle['q1_selective_protocol']['development_disclosure'],
+                experimental_tail=bool(experimental_tail), official_point_replacement=False if experimental_tail else
+                    bundle['tail_point_qualified_on_historical_folds'])
         write_json(output / 'prediction_info.json', info)
         print(f'Predicted {len(frame)} samples on raw 0-6 scale; output: {output}')
         return
@@ -88,9 +108,10 @@ def run(model, input_path, output):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--model', type=Path, default=Path('outputs/r2b_tail_risk_20261026/model.joblib'))
+    p.add_argument('--model', type=Path, default=Path('outputs/q1_selective_tail_20261026/model.joblib'))
     p.add_argument('--input', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--experimental-tail', action='store_true', help='Explicitly use the unadopted selective high-score candidate; not the official median')
     args = p.parse_args()
     with threadpool_limits(limits=1):
-        run(args.model, args.input, args.output)
+        run(args.model, args.input, args.output, args.experimental_tail)

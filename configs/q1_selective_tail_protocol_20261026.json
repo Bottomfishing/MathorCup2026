@@ -1,0 +1,20 @@
+{
+  "baseline_commit": "d42b20a",
+  "parent_experiment": "q1_target_protocol_20261026.json: failed adoption; fixed family retained as a negative result",
+  "hypothesis": "The shared forest ranks high-rating risks above chance but median and absolute-tail-cost decisions suppress exact grade6. A direct class-balanced exact-match reward distinguishes a correct6 from predicting5, while explicit expected MAE and high false-positive penalties limit broad upward shifts.",
+  "development_disclosure": "Designed after inspecting the first target-specific experiment and historical R2b. The same 250 beers and three historical repeat splits are reused for post-development nested evaluation; no unseen-test or external validation claim. No further candidate additions after this protocol.",
+  "model": "Unchanged shared R2 Extra Trees probability estimator; reuse models and inner OOF probabilities actually fitted in the parent experiment. No new fitted probability model or calibration.",
+  "mae_penalties": [0.25, 0.5, 1, 2, 4, 8],
+  "false_positive_penalties": [0, 1, 2, 4],
+  "decision": "Actions are baseline capped median,5,6. Utility relative to baseline = half*(p5/prior5*I(action5)+p6/prior6*I(action6)-baseline_reward) - lambda*(expected absolute loss(action)-baseline loss) - mu*P(Y<5)*(I(action>=5)-I(baseline>=5)). Priors are global balanced grade proportions learned on current training beers only. No reward for an unobserved training grade. Baseline wins ties. Apply child<=parent cap after decisions. These are selective tail decisions, not conditional medians.",
+  "inner_selection": "For each outer-training context reconstruct two inner folds. Candidate decision priors are fitted on each inner-training partition, applied to that partition's saved inner-validation probabilities. Aggregate inner-OOF metrics; a candidate must satisfy the original R2b .02 MAE-increase, >=.05 exact recall for EACH individual5/6 and EACH panel-median5/6, <=.02 individual and panel high-FPR limits. Among eligible candidates maximize mean individual5/6 exact recall, then minimize MAE, then declared lambda/mu order. No eligible candidate => baseline.",
+  "repeat_outer_seeds": [20261027, 20261028, 20261029],
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "seed": 20261026,
+  "point_limits": {"maximum_raw_mae_increase": 0.02, "minimum_each_raw_grade5_grade6_recall": 0.05, "minimum_each_panel_median5_median6_recall": 0.05, "maximum_raw_high_false_positive_rate": 0.02, "maximum_panel_high_false_positive_rate": 0.02},
+  "adoption": "Require original R2b limits on pooled repeated predictions and on every repeat, and upper95 paired beer-averaged fixed-OOF MAE increase <=.02. Never replace median on tail recall alone. All high-score failures stay visible. No threshold relaxation from outcomes.",
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261026,
+  "deployment": "Keep current probability/risk model and all missing-label slots. Replace point only if the declared gate passes; otherwise preserve the median and expose candidate results as failed development. No Q3 execution in this stage."
+}

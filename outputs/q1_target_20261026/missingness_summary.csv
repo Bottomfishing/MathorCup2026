@@ -1,0 +1,7 @@
+﻿method,additional_missing_rate,raw_rating_mae,changed_grade_fraction,scope
+inner_selected,0.05,0.7955531750759528,0.015146666666666666,Artificial MCAR masks over observed held-out cells; not validation of informative missingness
+inner_selected,0.1,0.7968535497301052,0.025644444444444442,Artificial MCAR masks over observed held-out cells; not validation of informative missingness
+inner_selected,0.2,0.7998959929288819,0.04527111111111111,Artificial MCAR masks over observed held-out cells; not validation of informative missingness
+shared_et,0.05,0.7963761045333267,0.016035555555555556,Artificial MCAR masks over observed held-out cells; not validation of informative missingness
+shared_et,0.1,0.7980368361268362,0.02632,Artificial MCAR masks over observed held-out cells; not validation of informative missingness
+shared_et,0.2,0.8018423746541524,0.04582222222222222,Artificial MCAR masks over observed held-out cells; not validation of informative missingness
