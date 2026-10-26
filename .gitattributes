@@ -8,3 +8,5 @@ outputs/task6_final_20261026/** -text whitespace=blank-at-eol,blank-at-eof,space
 # Stage-1 probability evidence has cross-file SHA256 references; preserve bytes.
 outputs/q1_target_20261026/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 outputs/q1_selective_tail_20261026/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Stage-2 output hashes refer to preserved historical evidence bytes.
+outputs/q3_stage2_20261026/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

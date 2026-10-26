@@ -1,0 +1,75 @@
+{
+  "base_commit": "0be10db",
+  "phase": "Q3_stage2_only_Q1_high_score_work_deferred_not_adopted",
+  "formal_question": "Generate style fingerprints and propose Pils/Lager to Tripel transfers without worsening the specified above-threshold defects. The question does not prescribe thirty CDF guards, empirical boxes, a classifier pair, a success quota, or real brewing before mathematical delivery.",
+  "source_style": "Pils/Lager",
+  "target_style": "Tripel",
+  "defects": [
+    "dms",
+    "diacetyl",
+    "X4vg",
+    "t2n",
+    "stale_hops"
+  ],
+  "protected_coordinates": [
+    "DMS",
+    "X2.3.butanedione",
+    "X4VG",
+    "X.E..2.nonenal"
+  ],
+  "supported_probability_targets": [
+    "dms",
+    "diacetyl",
+    "X4vg",
+    "t2n"
+  ],
+  "main_domain": "yeast_block",
+  "domains": [
+    "yeast_block",
+    "expanded_sensitivity"
+  ],
+  "domain_definition": "Main: modify only modeled fields annotated origin_paper=Yeast in attachment8 dictionary, excluding four protected coordinates. Lock all Hops/Malt/other fields and the four protected coordinates. Sensitivity: allow all modeled nonprotected fields, separately labeled; never automatically promote this to the main domain. These are statistical block controls, not independent causal brewing knobs.",
+  "local_support": "For each source/domain choose five nearest measured Tripel profiles in the training robust-asinh RMS over mutable fields, before sensory predictions. Move mutable fields toward an arbitrary nonnegative convex combination of those five profiles, with a progress parameter in[.1,1]. Fixed fields stay at source. This searches a local multidimensional simplex, not a denser original single-anchor line grid. Interpolation is in supplied coordinates and is NOT literal volume blending or a physical recipe.",
+  "source_missingness": "Use the official training imputer only for model coordinates, with every missing field recorded. Missing Diacetyl in beers119/28 receives the existing attachment8 zero upper-bound scenario, explicitly conditional on nonnegative concentration and fixed identity scale; do not call it a recovered raw measurement. Also report raw-missing versus zero-scenario baseline sensitivity.",
+  "chemical_main": "Preserve all four protected supplied coordinates exactly, stronger than nonincreasing max(c/T-1,0) under a fixed compatible measurement mapping and fixed threshold. Do not uniformly exponentiate fields. Reference threshold ratios are supplementary and only computed for compatible positive reference pairs; zero/censored references, mapping conflicts and missing t2n threshold remain explicit unknowns.",
+  "structural_main": "Require both existing fixed style classifiers predict Tripel, robust-asinh distance to observed Tripel center improves at least10%, and nearest measured-beer RMS stays within the95th percentile of global leave-one-beer-out nearest distances. Bounds and support are team modeling assumptions, not physical laws.",
+  "sensory_main": "Require all five official integer grades nonincrease plus selected-uncalibrated P(rating>=1) nonincrease for the four targets with historical nonzero probability support. This is a data-based conservative proxy screen, not a chemical threshold or causal guarantee. Stale grade is only interface consistency, not safety evidence.",
+  "stale_main": "Always mark true Stale nonworsening unestablished. Locking measured hop-origin coordinates and no grade change cannot prove Stale safety: age, storage, processing and matrix effects are unobserved. Every selected main spectrum is CONDITIONAL, never a fully certified five-defect success. Report calibrated/uncalibrated risk changes and operational assumptions separately.",
+  "sensitivity": [
+    "add_Stale_uncalibrated_nonzero_guard",
+    "all_five_calibrated_and_uncalibrated_nonzero_guards",
+    "original_five_integer_plus_thirty_probability_guards",
+    "old_full_target_empirical_box",
+    "expanded_nondefect_domain",
+    "source_raw_missing_vs_conditional_zero"
+  ],
+  "objective": {
+    "target_distance_weight": 0.7,
+    "change_distance_weight": 0.3
+  },
+  "selection": "Within each source/domain choose minimum objective among main computational passes, tie by generation order. If none, keep a clearly labeled closest restricted proposal, not a passing transfer. Main and each sensitivity selection remain separate. No condition relaxed from observed pass counts.",
+  "search": {
+    "seed": 20261026,
+    "nearest_targets": 5,
+    "sobol_power": 9,
+    "refinement_rounds": 4,
+    "refinement_size": 128,
+    "elite_size": 32,
+    "refinement_scales": [
+      0.15,
+      0.1,
+      0.075,
+      0.05
+    ]
+  },
+  "search_ranking": "Lexicographic structural violation count, sensory-main violation count, sum positive supported nonzero deltas, frozen objective. Do not optimize an unsupported Stale safety score.",
+  "minimum_distance_improvement": 0.1,
+  "support_quantile": 0.95,
+  "numeric_tolerance": 1e-10,
+  "bootstrap_repeats": 10,
+  "bootstrap_seed": 20261026,
+  "stability": "Ten paired style-stratified beer bootstrap refits of both style classifiers and original raw ET on fixed newly selected spectra; imputation fits resampled unique-beer occurrences with proper rating weights. No reselection, no original sigmoid reuse on new forests, no claim of intervention validation. Parameter sensitivity uses32 fixed .01-unit jitter draws around selected simplex parameters, not assay-error bounds.",
+  "generation": "Reuse the existing300 interpolated Tripel/Kriek/Lambic spectra and existing generation comparison evidence, refresh their official-Q1 sensory outputs only. Preserve variance shrinkage/near-duplicate limitations and do not call these brewing measurements.",
+  "historical_control": "Derive guard-specific counts from old113520 saved rows, do not refit or re-search the old grid. Replay three fixed grid points per source with the current official Q1 five-defect predictions and retain their comparison scope. Old zero result is for old thirty-guard scenario, not global infeasibility.",
+  "delivery": "Implement, run, verify, report all11 source statuses and current model fingerprint, then push main and stop. No Q1 experimental model integration, no phase3 cleanup, no raw data or model binaries uploaded."
+}

@@ -1,0 +1,9 @@
+{
+  "command": "PYTHONPATH=src python -m unittest discover -s tests",
+  "tests_run": 160,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "status": "OK",
+  "scope": "Implementation checks, not predictive or brewing quality certification"
+}

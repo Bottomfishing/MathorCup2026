@@ -1,0 +1,10 @@
+{
+  "fixed_plan_refits": 10,
+  "raw_ET_fits": 10,
+  "style_classifier_fits": 20,
+  "parameter_perturbations": 704,
+  "selection_repeated": false,
+  "original_sigmoids_attached_to_refit_forests": false,
+  "source_OOB_counts_reported": true,
+  "evidence": "model_and_parameter_sensitivity_on_same_250_beers_not_intervention_or_external_validation"
+}

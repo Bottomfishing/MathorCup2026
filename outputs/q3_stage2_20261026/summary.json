@@ -1,0 +1,39 @@
+{
+  "status": "completed_computational_search_not_real_brewing_certification",
+  "protocol_sha256": "09ffe69e27f07488373b13ed294a6fa638b039030672fdf6f940360d5bda784c",
+  "q1_model_sha256": "79f373e2f79d167dda580832ea4d68babdb53f043f2797c55d773a4eef8c7a0b",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "n_sources": 11,
+  "mutable_main_fields": 76,
+  "main_conditional_plans": 0,
+  "expanded_sensitivity_plans": 6,
+  "fully_evidence_certified_transfers": 0,
+  "stale_status": "insufficient_heldout_probability_support",
+  "historical_control": {
+    "old_grid_rows": 113520,
+    "old_grid_prediction_replays": 33,
+    "stored_old_complete_passes": 0
+  },
+  "new_candidate_count": 22638,
+  "support_radius": 0.9516701320252172,
+  "generations_reused": 300,
+  "q1_experimental_models_adopted": false,
+  "phase3_started": false,
+  "evidence_sha256": {
+    "outputs/p0_audit_20261023_final/feature_dictionary.csv": "2a17bf7619e78181f2207f1029ca80ddede852a3aff8c63f6553c8d39693332c",
+    "outputs/q3_resolution_20261024/source_defect_evidence.csv": "e529d111ed97571c17fb6ac2ff1ad8453651ee92cfc2c92d261b8875433c7646",
+    "outputs/q3_full_grid_20261026_v2/full_grid_checks.csv.gz": "06e31d80899e3323fda1aa02fc25d30774227c040cd2c8d3d16a48f8820389e4",
+    "outputs/task4_raw_q3_20261026/generated_profiles.csv": "56773ed32559d4f1d724a01f93db831ea109cfe9742f54d9ba3bfc82f542b58e"
+  },
+  "adopted_reliable_transfers": 0,
+  "expanded_plan_joint_refit_fraction_range": [
+    0.0,
+    0.3
+  ]
+}

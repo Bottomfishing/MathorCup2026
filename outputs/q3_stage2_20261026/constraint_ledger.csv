@@ -1,0 +1,12 @@
+﻿kind,condition,meaning
+question,Pils/Lager_to_Tripel,Style transfer and style-conditioned generated spectra with sensory profiles
+question,specified_above_threshold_defects_nonworsening,Chemical threshold exceedance and predicted sensory proxies must be distinguished; Stale remains unestablished
+data_implementation,four_locked_chemical_coordinates,No inferred concentration increase under a fixed compatible scale; zero references and missing source values remain conditional
+data_implementation,four_uncalibrated_nonzero_guards,"Historically supported predictive association, not causal threshold severity"
+data_implementation,all_five_integer_nonincrease,Official Q1 interface consistency; near-zero grades alone are weak evidence
+team_extra,yeast_only_main_domain,Preserve Hops/Malt/other coordinates; yeast-origin annotation is not independent controllability
+team_extra,local_simplex_and_support,"Five nearest measured Tripels, global empirical support radius and ten-percent distance improvement"
+team_extra,both_style_classifiers,"Two fixed classifiers, with limited historical OOF accuracy"
+team_extra,thirty_probability_guards,"Five targets times three cuts times calibrated/uncalibrated, retained sensitivity only"
+team_extra,expanded_nondefect_domain,Predeclared broader recipe-coordinate alternative; not promoted after outcomes
+team_extra,old_full_target_box,Historical range comparison only; a defect below target minimum need not be increased
