@@ -1,0 +1,7 @@
+﻿outer_fold,candidate,inner_raw_mae,selected
+0,gbr_depth1,0.820883196009702,False
+0,gbr_depth2,0.8167810721184215,True
+1,gbr_depth1,0.8083028962055908,False
+1,gbr_depth2,0.8025712391401014,True
+2,gbr_depth1,0.807949002151098,True
+2,gbr_depth2,0.8085962338836591,False

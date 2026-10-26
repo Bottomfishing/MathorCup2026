@@ -1,0 +1,56 @@
+{
+  "status": "completed",
+  "protocol_content_sha256": "1712d494aa0ec3b1c8c86f9c70dd1e99773d4c4a60b8de1dfcd109f6b4323fae",
+  "baseline_commit": "efbe7a0",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.7.2",
+    "shap": "0.49.1",
+    "numba": "0.68.0",
+    "llvmlite": "0.50.0"
+  },
+  "n_beers": 250,
+  "n_targets": 50,
+  "n_features": 224,
+  "n_eligible": 219,
+  "base_fits": 18,
+  "selected_GBR_depths": [
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth1"
+  ],
+  "overall_raw_mae": {
+    "training_median": 0.8290789066859067,
+    "gbr_selected": 0.8075658165538165,
+    "ridge_raw_mean": 0.9484129670329672
+  },
+  "supported_targets": {
+    "gbr_selected": 10,
+    "ridge_raw_mean": 11
+  },
+  "max_additivity_error": 2.518048036748155e-08,
+  "rank_rows": 201,
+  "causal_effect_established": false,
+  "migration_control_validated": false,
+  "historical_Q2_replaced": false,
+  "Q1_model_replaced": false,
+  "task4_started": false,
+  "attribution_sha256": {
+    "gbr_selected_OOF_attributions.npz": "0a44e7d0c5e502dd3524a0f14b67b466c464781659f7f1ff27e882152947124c",
+    "ridge_raw_mean_OOF_attributions.npz": "320c66cbf96005d07d2fa40abfc8282f691bb45164cb48b8a3220bd2fd93fe0d"
+  },
+  "input_lf_normalized_sha256": {
+    "configs/r2_raw_panel_protocol_20261026.json": "ca266403e1e676433e79714c813f7f23ec6403ea7d2ae1fce49806545500ffe6",
+    "outputs/q2_task4_20261025/top3_panel_all50.csv": "1051ea0a15724569f5220dd579e7422ae1344e002957640a2506a021c154d142",
+    "outputs/task3_q2_literature_20261025/top3_all50_literature.csv": "80d934059a193abaa03064c8c5667d434c1e79b6158d2fdb2749fea28992875a",
+    "outputs/p0_audit_20261023_final/feature_dictionary.csv": "33ce762df33201c134b3f740656be154bd8c5c7654c83c9d7af9ccbe43698948",
+    "configs/q2_exploratory_v1.json": "3f3ac0f70e51110002ede11899c6301bf90536ed162ea11522a762b5305db1b5"
+  }
+}
