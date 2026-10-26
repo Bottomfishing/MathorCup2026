@@ -13,7 +13,7 @@ TABLES = {
     'raw_sensory': ['target_coverage52.csv'],
     'q1': ['point_comparison.csv', 'point_uncertainty.csv', 'defect_risk_validation.csv',
            'risk_metrics.csv', 'oof_scores_all52.csv', 'full_fit_scores_all52.csv'],
-    'q2_standardized': ['top3_panel_all50.csv', 'top3_all52_slots.csv'],
+    'q2_standardized': ['top3_panel_all50.csv', 'top3_all52_slots.csv', 'network_nodes.csv', 'network_edges_0_6.csv'],
     'q2_literature': ['top3_all50_literature.csv', 'source_catalog.csv'],
     'q2_raw': ['predictive_metrics.csv', 'top3_raw_all50.csv', 'top3_raw_all52_slots.csv',
                'rank_stability.csv', 'historical_rank_comparison.csv'],
@@ -23,7 +23,7 @@ TABLES = {
            'original_fixed_path_five_defect_checks.csv', 'fixed_path_joint_refit_comparison.csv'],
     'validation': ['q1_metrics_by_repeat.csv', 'q1_repeat_summary.csv', 'risk_repeat_summary.csv',
                    'paired_beer_averaged_intervals.csv', 'q2_rank_coverage.csv', 'q2_rank_stability.csv',
-                   'generation_repeat_summary.csv', 'fixed_historical_path_joint.csv'],
+                   'generation_metrics_by_repeat.csv', 'generation_repeat_summary.csv', 'fixed_historical_path_joint.csv'],
 }
 
 
@@ -59,6 +59,13 @@ def build(run, output):
     for stage, names in TABLES.items():
         for name in names:
             include(run/stage/name, tables/(stage+'__'+name), stage, 'table')
+    for stage in ('raw_sensory', 'r2', 'q1', 'q2_standardized', 'q2_literature', 'q2_raw', 'q3', 'validation'):
+        destination = output/'evidence'/stage
+        destination.mkdir(parents=True)
+        for name in ('summary.json', 'verification.json', 'protocol.json'):
+            if (run/stage/name).exists():
+                include(run/stage/name, destination/name, stage, 'evidence')
+    include(run/'q2_standardized/network_0_6.graphml', output/'evidence/network_0_6.graphml', 'q2_standardized', 'evidence')
     for stage in ('q1', 'q2_raw', 'q3', 'validation'):
         for source in sorted((run/stage).iterdir()):
             if source.suffix.lower() in ('.png', '.svg'):
@@ -146,7 +153,7 @@ Excel若随交付提供，只展示这些已核验数值，不重新训练或计
 
 ## 文件与图
 
-`tables/`：按阶段前缀区分，保留原字段与数值。`figures/`：沿用各阶段已核验数据绘图，PNG便于预览、SVG便于排版。图源CSV在索引中按同一阶段查找；图中旧阶段数值不得替代重复验证汇总。
+`tables/`：按阶段前缀区分，保留原字段与数值。`figures/`：沿用各阶段已核验数据绘图，PNG便于预览、SVG便于排版。图源CSV在索引中按同一阶段查找；图中旧阶段数值不得替代重复验证汇总。`evidence/`包含引用的摘要、核验范围、生成协议及相关网络。
 
 `source_checks.json`保留各阶段核验范围；复现总报告及日志在本包上一级。Q2历史200次重训/1999次置换、文献标注和历史迁移池按版本复用；这次重建不宣称重新做过所有历史实验。
 

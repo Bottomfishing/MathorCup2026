@@ -134,7 +134,7 @@ def run(args):
             if name.endswith('.npz'):
                 compare_npz(a, b)
             else:
-                compare_csv(a, b, ignore_timing=name in ('fit_log.csv', 'model_fit_log.csv'))
+                compare_csv(a, b, ignore_timing=name.endswith('fit_log.csv'))
             report['comparisons'] = [r for r in report['comparisons'] if r['rebuilt'] != str(a.relative_to(output))]
             report['comparisons'].append(dict(rebuilt=str(a.relative_to(output)),
                 reference=str(b.relative_to(ROOT)), status='passed', rebuilt_sha256=sha256(a), reference_sha256=sha256(b)))
