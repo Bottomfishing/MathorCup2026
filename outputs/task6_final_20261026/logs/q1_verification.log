@@ -1,0 +1,27 @@
+Refit outer 0 extra_trees
+Refit outer 0 raw_ordinal
+Refit outer 1 extra_trees
+Refit outer 1 raw_ordinal
+Refit outer 2 extra_trees
+Refit outer 2 raw_ordinal
+{
+  "status": "passed",
+  "protocol_content_sha256": "99bb42baee226ef5ad39bb1aa77a7f0458be133d8bd0812e8f2919abb6bfa1d8",
+  "source_beers": 250,
+  "raw_rating_cells": 109850,
+  "inner_probability_rows": 112500,
+  "outer_base_probability_rows": 25000,
+  "outer_risk_probability_rows": 37500,
+  "point_prediction_rows": 87500,
+  "outer_base_models_independently_refitted": 6,
+  "training_only_calibration_contexts_rebuilt": 4,
+  "point_limits_recomputed": true,
+  "risk_losses_reliability_and_intervals_recomputed": true,
+  "actual_cli_rows": 13000,
+  "blank_unlabelled_card_rows": 500,
+  "tail_point_qualified": false,
+  "full_fallback_matches_R2": true,
+  "full_R2_fallback_independently_refitted": true,
+  "safety_certified": false,
+  "scope": "Outer models refitted; inner base models and full-data ordinal model not all independently refitted."
+}

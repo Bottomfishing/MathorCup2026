@@ -1,0 +1,90 @@
+Fit outer_0_inner_0 training_median: 83 beers
+Fit outer_0_inner_0 extra_trees: 83 beers
+Fit outer_0_inner_0 gbr_depth1: 83 beers
+Fit outer_0_inner_0 gbr_depth2: 83 beers
+Fit outer_0_inner_1 training_median: 83 beers
+Fit outer_0_inner_1 extra_trees: 83 beers
+Fit outer_0_inner_1 gbr_depth1: 83 beers
+Fit outer_0_inner_1 gbr_depth2: 83 beers
+Selected outer_0: extra_trees
+Fit outer_0_final training_median: 166 beers
+Fit outer_0_final extra_trees: 166 beers
+Fit outer_0_final gbr_depth1: 166 beers
+Fit outer_0_final gbr_depth2: 166 beers
+Fit outer_1_inner_0 training_median: 83 beers
+Fit outer_1_inner_0 extra_trees: 83 beers
+Fit outer_1_inner_0 gbr_depth1: 83 beers
+Fit outer_1_inner_0 gbr_depth2: 83 beers
+Fit outer_1_inner_1 training_median: 84 beers
+Fit outer_1_inner_1 extra_trees: 84 beers
+Fit outer_1_inner_1 gbr_depth1: 84 beers
+Fit outer_1_inner_1 gbr_depth2: 84 beers
+Selected outer_1: extra_trees
+Fit outer_1_final training_median: 167 beers
+Fit outer_1_final extra_trees: 167 beers
+Fit outer_1_final gbr_depth1: 167 beers
+Fit outer_1_final gbr_depth2: 167 beers
+Fit outer_2_inner_0 training_median: 83 beers
+Fit outer_2_inner_0 extra_trees: 83 beers
+Fit outer_2_inner_0 gbr_depth1: 83 beers
+Fit outer_2_inner_0 gbr_depth2: 83 beers
+Fit outer_2_inner_1 training_median: 84 beers
+Fit outer_2_inner_1 extra_trees: 84 beers
+Fit outer_2_inner_1 gbr_depth1: 84 beers
+Fit outer_2_inner_1 gbr_depth2: 84 beers
+Selected outer_2: extra_trees
+Fit outer_2_final training_median: 167 beers
+Fit outer_2_final extra_trees: 167 beers
+Fit outer_2_final gbr_depth1: 167 beers
+Fit outer_2_final gbr_depth2: 167 beers
+Fit full_training_inner_0 training_median: 125 beers
+Fit full_training_inner_0 extra_trees: 125 beers
+Fit full_training_inner_0 gbr_depth1: 125 beers
+Fit full_training_inner_0 gbr_depth2: 125 beers
+Fit full_training_inner_1 training_median: 125 beers
+Fit full_training_inner_1 extra_trees: 125 beers
+Fit full_training_inner_1 gbr_depth1: 125 beers
+Fit full_training_inner_1 gbr_depth2: 125 beers
+Selected full_training: extra_trees
+Fit full_training_final extra_trees: 250 beers
+         method     scope  n_beers  n_targets  raw_rating_mae  raw_rating_exact  raw_rating_within_one  panel_median_mae  panel_median_exact  panel_median_within_one
+training_median     all50      250         50        0.829079          0.593806               0.772551          0.447920            0.714320                 0.898560
+training_median primary45      250         45        0.807390          0.626559               0.776326          0.428889            0.740889                 0.897067
+    extra_trees     all50      250         50        0.795214          0.604919               0.783035          0.392800            0.741280                 0.916880
+    extra_trees primary45      250         45        0.775965          0.637291               0.784479          0.377156            0.765956                 0.912978
+     gbr_depth1     all50      250         50        0.808638          0.602609               0.779140          0.409680            0.734800                 0.911680
+     gbr_depth1 primary45      250         45        0.788205          0.636016               0.781428          0.393333            0.761067                 0.907556
+     gbr_depth2     all50      250         50        0.805131          0.602985               0.781128          0.408320            0.734080                 0.913120
+     gbr_depth2 primary45      250         45        0.786323          0.635350               0.782791          0.392533            0.759467                 0.909333
+ inner_selected     all50      250         50        0.795214          0.604919               0.783035          0.392800            0.741280                 0.916880
+ inner_selected primary45      250         45        0.775965          0.637291               0.784479          0.377156            0.765956                 0.912978
+{
+  "status": "completed",
+  "baseline_commit": "7402621",
+  "protocol_content_sha256": "a361a1bb3092e08eea821f714af49dd10e1f27cc9e92ad8a0b57dd440551b915",
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "n_beers": 250,
+  "n_raw_rating_records": 2197,
+  "n_features": 224,
+  "n_targets": 50,
+  "raw_scale": "observed_original_0_6_no_relative_ECDF",
+  "primary_metric": "Mean absolute error to individual raw ratings, averaged equally over beers and all 50 targets with the declared within-beer taster weights.",
+  "n_model_fits": 45,
+  "full_training_selected_method": "extra_trees",
+  "qualified_raw_scale_workflow_on_historical_folds": true,
+  "mean_improvement_over_training_median": 0.03386533226033227,
+  "improvement_lower95": 0.029624346290746287,
+  "improvement_upper95": 0.038060378040478036,
+  "unlabelled_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "model_sha256": "26c063b14a754ac1ad4228c508231ece203afc53eaa1e8e5c5e85f85ef1c0e2c",
+  "uncertainty_scope": "Fixed OOF beer-loss resampling, conditional on fitted models and historical splits.",
+  "task_R3_started": false
+}

@@ -1,0 +1,71 @@
+{
+  "status": "completed_with_explicit_identification_gaps",
+  "config": {
+    "primary_scope": "strict_219_individual_analyte_candidates",
+    "supplementary_scope": "220_candidates_including_Iso_alpha_acids_IBU_family_indicator",
+    "selection": "Retain the three largest absolute full-data asinh-and-standardized Ridge coefficients, alpha=1000, ties in attachment feature order. Ridge fits all 231 predictors; the 219/220 restrictions apply to the ranking candidate pool, not separate predictor fits.",
+    "network": "Attachment2 signed matrix, known from source audit to match pairwise Spearman. Main absolute threshold 0.6, sensitivity 0.5 and 0.7. Full-data descriptive graph, not causal or an independently tested network.",
+    "evidence": "Keep refit bootstrap frequency, all-refit sign agreement, cross-method Jaccard, candidate maximum-statistic permutation p, target-level 50-target BY q, and chemical descriptor evidence as separate quantities. Do not create a composite confidence score.",
+    "missing_targets": "A_acetaldehyde and F_acetaldehyde have no attachment4 panel response. Preserve three explicitly unfilled rank slots each, provide the named chemical marker and traceable reference/auxiliary evidence separately. Neither a constant threshold proxy nor a forum descriptor becomes an expert panel label.",
+    "interpretation": "Descriptive associations with the attachment4 standardized sensory targets, not explanations of the task2 ordinal classifier, concentration effects or causal mechanisms.",
+    "scope": "Task4 Q2 delivery only. Reuse the verified 200-refit and 1999-permutation experiments, with a single deterministic Ridge refit during independent verification. No new search, tuning, paper or task5 work."
+  },
+  "input_sha256": {
+    "configs\\q2_task4_protocol.json": "2082f5745914b9b0605005b731002c1af13bff83bcf5fcc4c891e25c0f7ce536",
+    "configs\\q2_evidence.json": "166ace39bdd6350954b03e3bf5145c5f14fddd759918be84162f6cb910d893ac",
+    "outputs\\q2_delivery_20261024\\summary.json": "3e4df985e10bb68c8cdceb9ac060d6f15f43e6e268d0490f86048347e25cf56e",
+    "outputs\\q2_reliability_20261024\\summary.json": "734fcd314a5b82a5932de0dbc39f17f181c6be8fa4776481f660dd8b7707e583",
+    "outputs\\q2_reliability_20261024\\verification.json": "7c1afd58d3ddffe71ab9f3f3e8e7f17c644ac275035bf972e18fe471005e04d6",
+    "outputs\\task1_acceptance_20261025\\verification.json": "b99285978fa36c3a235cff45026561f80147a553435070ef9aaa2696fd7ca0a5",
+    "D:\\Mathor cup\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx": "e0a10635c4fbc3c62dc7e06e553cce9fad98c768ea6af5c8adc8a836098d1474",
+    "outputs\\task1_acceptance_20261025\\scorecard_scope.csv": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d",
+    "outputs\\q2_delivery_20261024\\top3_all50.csv": "13851e387eadc0d3bd1468e4e2679ad5733346ae352519d389e08fda5d5fd05e",
+    "outputs\\q2_reliability_20261024\\original_top3_reliability.csv": "970b3b4748b8177b44e21cc9a8ad4d239429f9c5c1dc9530f42fc735f0482f17",
+    "outputs\\q2_reliability_20261024\\family_scope_top3.csv": "6c6eec23ff464beed561d46bd218febed895cc962a9c2bc78778130e3293be1d",
+    "outputs\\q2_reliability_20261024\\target_diagnostics.csv": "e5c33551a0e7022dfe529c2b881d1bf495311cf30d215d0201f2d61ec8fe946a",
+    "outputs\\q2_delivery_20261024\\target_summary.csv": "2ef83c22445d04908b81e803e83ff72d312946663820adb0e2c636a091006be7",
+    "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\audit\\feature_dictionary.csv": "2a17bf7619e78181f2207f1029ca80ddede852a3aff8c63f6553c8d39693332c",
+    "outputs\\q2_exploratory_20261023_v1\\factor_eligibility.csv": "24a1211106ec6b53eadd5d42cbf14db0eecb07f001472e3609f6f74fc0319c3c",
+    "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\audit\\correlation_method_comparison.csv": "00282b51fcd99cb398f4dc8c6cfe6a732279d36314314e18c8c030391b9cbf2d",
+    "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件\\2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "outputs\\q1_task2_20261025\\auxiliary_evidence.csv": "c226926542e89d05965b415d2dbe0e72318efe7bbbda7b63ab4eac870bcb7291",
+    "outputs\\q1_task2_20261025\\summary.json": "678b1f784de775c21addf836e2785d7214a488ba89bce10a56a6b5cd263f94e2",
+    "outputs\\q1_task2_20261025\\estimated_grades_all52.csv": "62d1d8ad89709ff917e381e5f452a3574e8c5beb670c106fdb921cb866056e37",
+    "outputs\\q2_reliability_20261024\\named_marker_diagnostics.csv": "1a98585587386a10023b08b7fbd7ef6c040b79420548ffe9d724a5f9f55a2355"
+  },
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "7.csv": "2083138df46640e20b46f7e76ec32cf9b380fd34e019269afd819edeb546ff5e",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "scope_items": 52,
+  "main_content_items": 47,
+  "panel_ranked_targets": 50,
+  "identified_main_rows": 135,
+  "identified_panel_rows": 150,
+  "all_scope_slots": 156,
+  "unfilled_slots": 6,
+  "unidentified_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "network_nodes": 231,
+  "network_edges": 266,
+  "reference_resolved_individual_names": 67,
+  "below_half_refit_frequency": 93,
+  "chemical_evidence_counts": {
+    "target_specific_evidence_insufficient": 114,
+    "reference_descriptor_overlap": 28,
+    "named_marker_matches_target": 8
+  },
+  "strict_target_BY_passes": 0,
+  "family_target_BY_passes": 5,
+  "new_permutations": 0,
+  "new_bootstrap_refits": 0,
+  "new_models_selected": 0,
+  "causal_effects_established": false,
+  "interpretation": "150 identified descriptive factors plus six explicitly unfilled rank slots. Two named-marker evidence rows are not six discovered factors; BY families and chemical support remain separate."
+}

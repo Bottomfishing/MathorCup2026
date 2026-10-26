@@ -1,0 +1,7 @@
+﻿repeat,method,nonzero_rank_targets,identified_rank_rows,zero_effect_slots,unlabelled_slots
+0,gbr_selected,17,51,99,6
+0,ridge_raw_mean,50,150,0,6
+1,gbr_selected,17,51,99,6
+1,ridge_raw_mean,50,150,0,6
+2,gbr_selected,17,51,99,6
+2,ridge_raw_mean,50,150,0,6

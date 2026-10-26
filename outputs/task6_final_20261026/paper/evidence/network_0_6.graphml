@@ -1,0 +1,2232 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d7" for="edge" attr.name="sign" attr.type="string"/>
+<key id="d6" for="edge" attr.name="rho" attr.type="double"/>
+<key id="d5" for="node" attr.name="component_size" attr.type="long"/>
+<key id="d4" for="node" attr.name="degree" attr.type="long"/>
+<key id="d3" for="node" attr.name="chemical_name" attr.type="string"/>
+<key id="d2" for="graph" attr.name="scope" attr.type="string"/>
+<key id="d1" for="graph" attr.name="absolute_threshold" attr.type="double"/>
+<key id="d0" for="graph" attr.name="correlation_type" attr.type="string"/>
+<graph edgedefault="undirected"><data key="d0">supplied_matrix_matches_pairwise_Spearman</data>
+<data key="d1">0.6</data>
+<data key="d2">full_dataset_descriptive_not_causal</data>
+<node id="acetaldehyde">
+  <data key="d3">Acetaldehyde</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="CS2">
+  <data key="d3">Carbon disulfide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="DES">
+  <data key="d3">Diethyl sulfide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="DMS">
+  <data key="d3">Dimethyl sulfide</data>
+  <data key="d4">1</data>
+  <data key="d5">3</data>
+</node>
+<node id="ethyl_2.methyl_butyrate">
+  <data key="d3">Ethyl 2-methylbutyrate</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl_acetate">
+  <data key="d3">Ethyl acetate</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl_decanoate">
+  <data key="d3">Ethyl decanoate</data>
+  <data key="d4">6</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl_hexanoate">
+  <data key="d3">Ethyl hexanoate</data>
+  <data key="d4">6</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl_isovalerate">
+  <data key="d3">Ethyl 3-methylbutyrate</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl_octanoate">
+  <data key="d3">Ethyl octanoate</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl_propionate">
+  <data key="d3">Ethyl propionate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="H2S">
+  <data key="d3">Hydrogen sulfide</data>
+  <data key="d4">1</data>
+  <data key="d5">3</data>
+</node>
+<node id="isoamyl_alcohol">
+  <data key="d3">Isoamyl alcohol</data>
+  <data key="d4">5</data>
+  <data key="d5">99</data>
+</node>
+<node id="isobutanol">
+  <data key="d3">Isobutanol</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="isobutyl_acetate">
+  <data key="d3">Isobutyl acetate</data>
+  <data key="d4">5</data>
+  <data key="d5">99</data>
+</node>
+<node id="isopentyl_acetate">
+  <data key="d3">Isoamyl acetate</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="MeSH">
+  <data key="d3">Methanethiol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="octyl_acetate">
+  <data key="d3">Octyl acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="phenethyl_acetate">
+  <data key="d3">Phenethyl acetate</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="phenethyl_alcohol">
+  <data key="d3">Phenethyl alcohol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X4VG">
+  <data key="d3">4-vinylguaiacol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="SO2.mg.L.">
+  <data key="d3">Sulfur dioxide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="acetic_acid.g.L.">
+  <data key="d3">Acetic acid</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="ammonia.mg.L.">
+  <data key="d3">Ammonia</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="color.EBC.">
+  <data key="d3">Color</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="betaglucan.mg.L.">
+  <data key="d3">Betaglucan</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="lactic_acid.mg.L.">
+  <data key="d3">Lactic acid</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="glycerol">
+  <data key="d3">Glycerol</data>
+  <data key="d4">5</data>
+  <data key="d5">99</data>
+</node>
+<node id="iron">
+  <data key="d3">Iron</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="pH">
+  <data key="d3">pH</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="protein.g.L.">
+  <data key="d3">Protein</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="bitterness">
+  <data key="d3">Iso-alpha acids</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="GFS">
+  <data key="d3">Sugars</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethanol..v.v.">
+  <data key="d3">Ethanol</data>
+  <data key="d4">10</data>
+  <data key="d5">99</data>
+</node>
+<node id="CO2.PSI.">
+  <data key="d3">Carbon dioxide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="unfermentables">
+  <data key="d3">Unfermentables</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="kcalperc">
+  <data key="d3">Caloric value</data>
+  <data key="d4">6</data>
+  <data key="d5">99</data>
+</node>
+<node id="X1.propanol">
+  <data key="d3">1-propanol</data>
+  <data key="d4">2</data>
+  <data key="d5">5</data>
+</node>
+<node id="X2.3.butanedione">
+  <data key="d3">Diacetyl</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="X3.methylbutanal">
+  <data key="d3">3-methylbutanal</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="propylene.glycol">
+  <data key="d3">Propylene glycol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="propyl.acetate">
+  <data key="d3">N-propyl acetate</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="n.pentanol">
+  <data key="d3">N-pentanol</data>
+  <data key="d4">3</data>
+  <data key="d5">5</data>
+</node>
+<node id="X2.methyl.1.butanol">
+  <data key="d3">2-methyl-1-butanol</data>
+  <data key="d4">4</data>
+  <data key="d5">5</data>
+</node>
+<node id="isopentyl.formate">
+  <data key="d3">Isopentyl formate</data>
+  <data key="d4">2</data>
+  <data key="d5">5</data>
+</node>
+<node id="ethyl.isobutyrate">
+  <data key="d3">Ethyl isobutyrate</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="X3.methyl.2.butenal">
+  <data key="d3">3-methyl-2-butenal</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="X2.methyltetrahydrofuran.3.one">
+  <data key="d3">2-methyltetrahydrofuran-3-one</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl.butyrate">
+  <data key="d3">Ethyl butyrate</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="butyl.acetate">
+  <data key="d3">Butyl acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="methylpyrazine">
+  <data key="d3">Methylpyrazine</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="furfural">
+  <data key="d3">Furfural</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl.lactate">
+  <data key="d3">Ethyl lactate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X3Z.hexenol">
+  <data key="d3">Cis-3-hexenol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="n.hexanol">
+  <data key="d3">N-hexanol</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="styrene">
+  <data key="d3">Styrene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.furanmethanol">
+  <data key="d3">Furfuryl alcohol</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="X3.methyl.2.hexanol">
+  <data key="d3">3-methyl-2-hexanol</data>
+  <data key="d4">8</data>
+  <data key="d5">99</data>
+</node>
+<node id="X3.furanmethanol">
+  <data key="d3">3-furanmethanol</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="X2.acetylfuran">
+  <data key="d3">2-acetylfuran</data>
+  <data key="d4">5</data>
+  <data key="d5">99</data>
+</node>
+<node id="X2.6.dimethyl.pyrazine">
+  <data key="d3">2,6-dimethylpyrazine</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="amyl.acetate">
+  <data key="d3">Amyl acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl.tiglate">
+  <data key="d3">Ethyl tiglate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="benzaldehyde">
+  <data key="d3">Benzaldehyde</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X5.methylfurfural">
+  <data key="d3">5-methylfurfural</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="n.heptanol">
+  <data key="d3">N-heptanol</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="X1.octen.3.ol">
+  <data key="d3">1-octen-3-ol</data>
+  <data key="d4">6</data>
+  <data key="d5">99</data>
+</node>
+<node id="X3.methylthio.propanol">
+  <data key="d3">Methionol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="isomaltol">
+  <data key="d3">Isomaltol</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="X6.methyl.5.hepten.2.one">
+  <data key="d3">Methyl heptenone</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.pentyl.furan">
+  <data key="d3">2-pentyl furan</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl.hex..3E..enoate">
+  <data key="d3">Ethyl 3-hexanoate</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="alpha.phellandrene">
+  <data key="d3">α-phellandrene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="dehydroxy.cis.linalool.oxide">
+  <data key="d3">Dehydroxy-cis-linalool oxide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="hexyl.acetate">
+  <data key="d3">Hexyl acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="isopentyl.butanoate">
+  <data key="d3">Isopentyl butanoate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.ethyl.1.hexanol">
+  <data key="d3">2-ethyl-1-hexanol</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="beta.phellandrene">
+  <data key="d3">Beta-phellandrene</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="limonene">
+  <data key="d3">Limonene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="eucalyptol">
+  <data key="d3">Eucalyptol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="benzyl.alcohol">
+  <data key="d3">Benzyl alcohol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl.hex..2E..enoate">
+  <data key="d3">Ethyl 2-hexenoate</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="phenylacetaldehyde">
+  <data key="d3">Phenylacetaldehyde</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X.E..beta.ocimene">
+  <data key="d3">E-β-ocimene</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="prenyl.isobutyrate">
+  <data key="d3">Prenyl isobutyrate</data>
+  <data key="d4">5</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.furoate">
+  <data key="d3">Ethyl furoate</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="ortho.cresol">
+  <data key="d3">O-cresol</data>
+  <data key="d4">7</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.5.methylhexanoate">
+  <data key="d3">Ethyl 5-methylhexanoate</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="X2.acetylpyrrole">
+  <data key="d3">2-acetylpyrrole</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="isoamyl.lactate">
+  <data key="d3">Isoamyl lactate</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="n.octanol">
+  <data key="d3">N-octanol</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="cis.linalool.oxide">
+  <data key="d3">Cis-linalool oxide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="meta.cymenene">
+  <data key="d3">Meta-cymenene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="terpinolene">
+  <data key="d3">Terpinolene</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="linalool">
+  <data key="d3">Linalool</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="nonan.2.ol">
+  <data key="d3">2-nonanol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="n.nonanal">
+  <data key="d3">N-nonanal</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.methyl.benzofuran">
+  <data key="d3">2-methyl-benzofuran</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="heptyl.acetate">
+  <data key="d3">Heptyl acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X4.methyl.1.pentanol">
+  <data key="d3">4-methyl-1-pentanol</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="neo.allo.ocimene">
+  <data key="d3">Neo-allo-ocimene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="x.methyl.1.octanol">
+  <data key="d3">X-methyl-1-octanol</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="trans.dihydro.beta.terpineol">
+  <data key="d3">Trans-dihydro-β-terpineol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="cis.beta.terpineol">
+  <data key="d3">Cis-β-terpineol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="y.methyl.1.octanol">
+  <data key="d3">Y-methyl-1-octanol</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="camphor">
+  <data key="d3">Camphor</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="isobutyl.hexanoate">
+  <data key="d3">Isobutyl hexanoate</data>
+  <data key="d4">7</data>
+  <data key="d5">99</data>
+</node>
+<node id="nerol.oxide">
+  <data key="d3">Nerol oxide</data>
+  <data key="d4">12</data>
+  <data key="d5">99</data>
+</node>
+<node id="X.E..2.nonenal">
+  <data key="d3">E-2-nonenal</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="cis.dihydro.beta.terpineol">
+  <data key="d3">Cis-dihydro-β-terpineol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="X4.ethyl.phenol">
+  <data key="d3">4-ethyl-phenol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="isoborneol">
+  <data key="d3">Isoborneol</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.benzoate">
+  <data key="d3">Ethyl benzoate</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="n.nonanol">
+  <data key="d3">N-nonanol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="terpinen.4.ol">
+  <data key="d3">Terpinen-4-ol</data>
+  <data key="d4">5</data>
+  <data key="d5">99</data>
+</node>
+<node id="diethyl.succinate">
+  <data key="d3">Diethyl succinate</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="vinyl.caprylate">
+  <data key="d3">Vinyl caprylate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X1.alpha.terpineol">
+  <data key="d3">Alpha-terpineol</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl..E..linalool">
+  <data key="d3">Ethyl linalool</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.nicotinate">
+  <data key="d3">Ethyl nicotinate</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="citronellol">
+  <data key="d3">Citronellol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="nerol">
+  <data key="d3">Nerol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="hydroxy.methyl.furfural">
+  <data key="d3">5-hydroxymethylfurfural</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="E.ocimenone">
+  <data key="d3">Ocimenone</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="cumin.aldehyde">
+  <data key="d3">Cumin aldehyde</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.phenylacetate">
+  <data key="d3">Ethyl phenylacetate</data>
+  <data key="d4">8</data>
+  <data key="d5">99</data>
+</node>
+<node id="isopentyl.hexanoate">
+  <data key="d3">Isopentyl hexanoate</data>
+  <data key="d4">14</data>
+  <data key="d5">99</data>
+</node>
+<node id="geraniol">
+  <data key="d3">Geraniol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="beta.cyclohomocitral">
+  <data key="d3">β-cyclohomocitral</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="E.cinnamaldehyde">
+  <data key="d3">Cinnamaldehyde</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="n.decanol">
+  <data key="d3">N-decanol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="neryl.formate">
+  <data key="d3">Neryl formate</data>
+  <data key="d4">5</data>
+  <data key="d5">99</data>
+</node>
+<node id="X4.ethyl.guaiacol">
+  <data key="d3">4-ethyl-guaiacol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="X2.undecanone">
+  <data key="d3">2-undecanone</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="trans.dihydro.alpha.terpinyl.acetate">
+  <data key="d3">Trans-dihydro-α-terpinyl acetate</data>
+  <data key="d4">13</data>
+  <data key="d5">99</data>
+</node>
+<node id="terpinen.4.ol.acetate">
+  <data key="d3">Terpinen-4-ol acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.undecanol">
+  <data key="d3">2-undecanol</data>
+  <data key="d4">6</data>
+  <data key="d5">99</data>
+</node>
+<node id="delta.terpinyl.acetate">
+  <data key="d3">Terpiryl acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X.E.E..2.4.decadienal">
+  <data key="d3">E,E-2,4-decadienal</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="methyl.geranate">
+  <data key="d3">Methyl geranate</data>
+  <data key="d4">7</data>
+  <data key="d5">99</data>
+</node>
+<node id="car.3.en.2.one">
+  <data key="d3">Car-3-en-2-one</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="dimethoxy..E..citral">
+  <data key="d3">Dimethoxy-E-citral</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="X2.butyloctanoate">
+  <data key="d3">2-butyl octanoate</data>
+  <data key="d4">13</data>
+  <data key="d5">99</data>
+</node>
+<node id="X4.methoxysalicylaldehyde">
+  <data key="d3">4-methoxysalicylaldehyde</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl.hydrocinnamate">
+  <data key="d3">Ethyl hydrocinnamate</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="eugenol">
+  <data key="d3">Eugenol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="gamma.nonalactone">
+  <data key="d3">Gamma-nonalactone</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="methyl.para.anisate">
+  <data key="d3">Methyl para-anisate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X.E..beta.damascenone">
+  <data key="d3">E-β-damascenone</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="ethyl..9..decenoate">
+  <data key="d3">Ethyl 9-decenoate</data>
+  <data key="d4">7</data>
+  <data key="d5">99</data>
+</node>
+<node id="vanillin">
+  <data key="d3">Vanillin</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="geosmin">
+  <data key="d3">Geosmin</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="dodecanal">
+  <data key="d3">Dodecanal</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X4.8.alpha.epoxy.caryophyllane">
+  <data key="d3">4,8-α-epoxy-caryophyllane</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="E.caryophyllene">
+  <data key="d3">Caryophyllene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X.E..alpha.ionone">
+  <data key="d3">E-α-ionone</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="perillyl.acetate">
+  <data key="d3">Perillyl acetate</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="beta.humulene">
+  <data key="d3">β-humulene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.phenyl.ethyl.butyrate">
+  <data key="d3">2-phenyl ethyl butyrate</data>
+  <data key="d4">11</data>
+  <data key="d5">99</data>
+</node>
+<node id="X.Z..beta.farnesene">
+  <data key="d3">Z-β-farnesene</data>
+  <data key="d4">12</data>
+  <data key="d5">99</data>
+</node>
+<node id="pentyl.octanoate">
+  <data key="d3">Pentyl octanoate</data>
+  <data key="d4">14</data>
+  <data key="d5">99</data>
+</node>
+<node id="X.E..beta.farnesene">
+  <data key="d3">E-β-farnesene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.methylbutyl.octanoate">
+  <data key="d3">2-methylbutyl octanoate</data>
+  <data key="d4">16</data>
+  <data key="d5">99</data>
+</node>
+<node id="alpha.humulene">
+  <data key="d3">Alpha-humulene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="neryl.propanoate">
+  <data key="d3">Neryl propanoate</data>
+  <data key="d4">6</data>
+  <data key="d5">99</data>
+</node>
+<node id="X9.epi..E..caryophyllene">
+  <data key="d3">9-epi-E-caryophyllene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl..E..cinnamate">
+  <data key="d3">Ethyl cinnamate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="linalool.isovalerate">
+  <data key="d3">Linalool isovalerate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="alpha.terpinyl.isobutanoate">
+  <data key="d3">α-terpinyl isobutanoate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="n.dodecanol">
+  <data key="d3">N-dodecanol</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="germacrene.D">
+  <data key="d3">Germacrene D</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="X.E..beta.ionone">
+  <data key="d3">E-β-ionone</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="valencene">
+  <data key="d3">Valencene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="neryl.isobutanoate">
+  <data key="d3">Neryl isobutanoate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="E.methyl.isoeugenol">
+  <data key="d3">Methyl isoeugenol</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="X.Z..dihydro.apofarnesal">
+  <data key="d3">Z-dihydro-apofarnesal</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="butylated.hydroxytoluene">
+  <data key="d3">Butylated hydroxytoluene</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="X.E..dihydro.apofarnesal">
+  <data key="d3">E-dihydro-apofarnesal</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="Z.nerolidol">
+  <data key="d3">Z-nerolidol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X.E..ortho.methoxy.cinnamaldehyde">
+  <data key="d3">E-ortho-methoxy cinnamaldehyde</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="alpha.calacorene">
+  <data key="d3">α-calacorene</data>
+  <data key="d4">8</data>
+  <data key="d5">99</data>
+</node>
+<node id="E.nerolidol">
+  <data key="d3">E-nerolidol</data>
+  <data key="d4">3</data>
+  <data key="d5">5</data>
+</node>
+<node id="dihydroisocaryophyllene.epoxide">
+  <data key="d3">Tobacarol</data>
+  <data key="d4">3</data>
+  <data key="d5">5</data>
+</node>
+<node id="caryophyllene.alcohol">
+  <data key="d3">Caryophyllene alcohol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="neryl.isovalerate">
+  <data key="d3">Neryl isovalerate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="spathulenol">
+  <data key="d3">Spathulenol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="caryophyllene.oxide">
+  <data key="d3">Caryophyllene oxide</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="humulene.epoxide.II">
+  <data key="d3">Humulene epoxide II</data>
+  <data key="d4">8</data>
+  <data key="d5">99</data>
+</node>
+<node id="alloaromadendrene.epoxide">
+  <data key="d3">Allo-aromadendrene epoxide</data>
+  <data key="d4">9</data>
+  <data key="d5">99</data>
+</node>
+<node id="X1.10.di.epi.cubenol">
+  <data key="d3">Epicubenol</data>
+  <data key="d4">11</data>
+  <data key="d5">99</data>
+</node>
+<node id="isopropyl.laurate">
+  <data key="d3">Isopropyl laurate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d3">Caryophylla-4,8-dien-5-ol</data>
+  <data key="d4">13</data>
+  <data key="d5">99</data>
+</node>
+<node id="gamma.eudesmol">
+  <data key="d3">Gamma-eudesmol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="alpha.muurolol">
+  <data key="d3">α-muurolol</data>
+  <data key="d4">8</data>
+  <data key="d5">99</data>
+</node>
+<node id="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d3">1,2-dihydro-8-hydroxy-2E-linalool</data>
+  <data key="d4">14</data>
+  <data key="d5">99</data>
+</node>
+<node id="tau.cadinol">
+  <data key="d3">Tau-cadinol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="selin.11.en.4.alpha.ol">
+  <data key="d3">Kongol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="alpha.eudesmol">
+  <data key="d3">α-eudesmol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X14.hydroxy.9.epi..E..caryophyllene">
+  <data key="d3">14-hydroxy-9-epi-(E)-caryophyllene</data>
+  <data key="d4">1</data>
+  <data key="d5">5</data>
+</node>
+<node id="tau.muurolol">
+  <data key="d3">Tau-muurolol</data>
+  <data key="d4">7</data>
+  <data key="d5">99</data>
+</node>
+<node id="n.tetradecanol">
+  <data key="d3">N-tetradecanol</data>
+  <data key="d4">2</data>
+  <data key="d5">99</data>
+</node>
+<node id="foeniculin">
+  <data key="d3">Eoeniculin</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="cadalene">
+  <data key="d3">Cadalene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2.3.dihydro.farnesol">
+  <data key="d3">2,3-dihydro-farnesol</data>
+  <data key="d4">4</data>
+  <data key="d5">5</data>
+</node>
+<node id="X2E.6Z.farnesal">
+  <data key="d3">E,Z-farnesal</data>
+  <data key="d4">1</data>
+  <data key="d5">5</data>
+</node>
+<node id="caryophyllene.acetate">
+  <data key="d3">Caryophyllene acetate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X14.hydroxy.alpha.humulene">
+  <data key="d3">14-hydroxy-α-humulene</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2Z.6E.farnesal">
+  <data key="d3">Z,E-farnesal</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2Z.6Z.farnesol">
+  <data key="d3">Z,Z-farnesol</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2Z.6E.farnesol">
+  <data key="d3">Z,E-farnesol</data>
+  <data key="d4">3</data>
+  <data key="d5">5</data>
+</node>
+<node id="ambroxide">
+  <data key="d3">Ambroxide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="benzyl.benzoate">
+  <data key="d3">Benzyl benzoate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="X2E.6E.methyl.farnesoate">
+  <data key="d3">2E,6E-methyl farnesoate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="ethyl.tetradecanoate">
+  <data key="d3">Ethyl tetradecanoate</data>
+  <data key="d4">12</data>
+  <data key="d5">99</data>
+</node>
+<node id="X2.ethylhexylsalicylate">
+  <data key="d3">2-ethylhexyl acrylate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="isopropyl.tetradecanoate">
+  <data key="d3">Isopropyl tetradecanoate</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.pentadecanoate">
+  <data key="d3">Ethyl pentadecanoate</data>
+  <data key="d4">12</data>
+  <data key="d5">99</data>
+</node>
+<node id="methyl.hexadecanoate">
+  <data key="d3">Methyl hexadecanoate</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="Z.Z.geranyl.linalool">
+  <data key="d3">Z,Z-geranyl linalool</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.hexadecanoate">
+  <data key="d3">Ethyl hexadecanoate</data>
+  <data key="d4">12</data>
+  <data key="d5">99</data>
+</node>
+<node id="manool.oxide">
+  <data key="d3">Manool oxide</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="X13.epi.manool.oxide">
+  <data key="d3">13-epi manool oxide</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="isopropyl.hexadecanoate">
+  <data key="d3">Isopropyl hexadecanoate</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="manool">
+  <data key="d3">Manool</data>
+  <data key="d4">1</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.octadecanoate">
+  <data key="d3">Ethyl octadecanoate</data>
+  <data key="d4">4</data>
+  <data key="d5">99</data>
+</node>
+<node id="ethyl.pentanoate">
+  <data key="d3">Ethyl pentanoate</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="X2.ethyl.3.methylpyrazine">
+  <data key="d3">2-ethyl-3-methylpyrazine</data>
+  <data key="d4">0</data>
+  <data key="d5">1</data>
+</node>
+<node id="esters_sum">
+  <data key="d3">Total ester compounds</data>
+  <data key="d4">9</data>
+  <data key="d5">99</data>
+</node>
+<node id="aroma_hops_sum">
+  <data key="d3">Total hop aroma compounds</data>
+  <data key="d4">3</data>
+  <data key="d5">99</data>
+</node>
+<node id="acids_sum">
+  <data key="d3">Total acids</data>
+  <data key="d4">1</data>
+  <data key="d5">2</data>
+</node>
+<node id="sulfur_sum">
+  <data key="d3">Total sulfur compounds</data>
+  <data key="d4">2</data>
+  <data key="d5">3</data>
+</node>
+<edge source="acetaldehyde" target="ethanol..v.v.">
+  <data key="d6">0.690747954062581</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="acetaldehyde" target="kcalperc">
+  <data key="d6">0.63964863437815</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="DMS" target="sulfur_sum">
+  <data key="d6">0.693797340757452</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_2.methyl_butyrate" target="ethyl_isovalerate">
+  <data key="d6">0.737056676778286</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_2.methyl_butyrate" target="ethyl.phenylacetate">
+  <data key="d6">0.6109192103842</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_acetate" target="ethyl_hexanoate">
+  <data key="d6">0.679884030144482</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_acetate" target="ethanol..v.v.">
+  <data key="d6">0.719391515847365</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_acetate" target="kcalperc">
+  <data key="d6">0.664618249891998</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_acetate" target="esters_sum">
+  <data key="d6">0.767193203091249</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_decanoate" target="ethyl_octanoate">
+  <data key="d6">0.85313084169571</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_decanoate" target="isopentyl.hexanoate">
+  <data key="d6">0.651313724667866</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_decanoate" target="X2.butyloctanoate">
+  <data key="d6">0.624168241444848</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_decanoate" target="pentyl.octanoate">
+  <data key="d6">0.68086773459828</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_decanoate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.620797983231496</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_decanoate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.66699248797948</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_hexanoate" target="ethyl_octanoate">
+  <data key="d6">0.723697350107506</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_hexanoate" target="glycerol">
+  <data key="d6">0.617262109412569</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_hexanoate" target="ethanol..v.v.">
+  <data key="d6">0.740166747927893</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_hexanoate" target="kcalperc">
+  <data key="d6">0.61307003312053</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_hexanoate" target="esters_sum">
+  <data key="d6">0.726433254932079</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl_octanoate" target="ethanol..v.v.">
+  <data key="d6">0.654534946689899</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="H2S" target="sulfur_sum">
+  <data key="d6">0.775228131266335</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoamyl_alcohol" target="isobutanol">
+  <data key="d6">0.708955769806698</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoamyl_alcohol" target="isobutyl_acetate">
+  <data key="d6">0.604938207679689</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoamyl_alcohol" target="glycerol">
+  <data key="d6">0.629093257222821</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoamyl_alcohol" target="ethanol..v.v.">
+  <data key="d6">0.645702754501269</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoamyl_alcohol" target="esters_sum">
+  <data key="d6">0.635643188334517</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutanol" target="isobutyl_acetate">
+  <data key="d6">0.688677698411452</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutanol" target="glycerol">
+  <data key="d6">0.64392884233798</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl_acetate" target="isopentyl_acetate">
+  <data key="d6">0.826423735449258</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl_acetate" target="n.hexanol">
+  <data key="d6">0.639764154924293</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl_acetate" target="esters_sum">
+  <data key="d6">0.822047530849987</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl_acetate" target="phenethyl_acetate">
+  <data key="d6">0.727000816013056</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl_acetate" target="n.hexanol">
+  <data key="d6">0.676886100064107</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl_acetate" target="esters_sum">
+  <data key="d6">0.922277924446791</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="phenethyl_acetate" target="esters_sum">
+  <data key="d6">0.626555560888974</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="acetic_acid.g.L." target="acids_sum">
+  <data key="d6">0.96625558611341</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="color.EBC." target="protein.g.L.">
+  <data key="d6">0.788272799657229</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="glycerol" target="ethanol..v.v.">
+  <data key="d6">0.733055998327051</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="glycerol" target="kcalperc">
+  <data key="d6">0.61882542243825</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethanol..v.v." target="kcalperc">
+  <data key="d6">0.853566697739768</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethanol..v.v." target="ethyl.butyrate">
+  <data key="d6">0.628963951025104</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethanol..v.v." target="X3.methyl.2.hexanol">
+  <data key="d6">-0.607008035958729</data>
+  <data key="d7">negative</data>
+</edge>
+<edge source="ethanol..v.v." target="esters_sum">
+  <data key="d6">0.720357680685624</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="kcalperc" target="esters_sum">
+  <data key="d6">0.663756540104642</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.propanol" target="n.pentanol">
+  <data key="d6">0.712321008052783</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.propanol" target="X2.methyl.1.butanol">
+  <data key="d6">0.632660380967082</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.3.butanedione" target="ethyl.pentanoate">
+  <data key="d6">-0.663595210809322</data>
+  <data key="d7">negative</data>
+</edge>
+<edge source="propyl.acetate" target="X3.methyl.2.butenal">
+  <data key="d6">0.606532418561472</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.pentanol" target="X2.methyl.1.butanol">
+  <data key="d6">0.745241107857726</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.pentanol" target="isopentyl.formate">
+  <data key="d6">0.640438151010416</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methyl.1.butanol" target="isopentyl.formate">
+  <data key="d6">0.922268708299333</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methyl.1.butanol" target="X14.hydroxy.9.epi..E..caryophyllene">
+  <data key="d6">0.628988683110502</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.isobutyrate" target="ortho.cresol">
+  <data key="d6">-0.635464189502668</data>
+  <data key="d7">negative</data>
+</edge>
+<edge source="n.hexanol" target="esters_sum">
+  <data key="d6">0.65302663256957</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.furanmethanol" target="X3.methyl.2.hexanol">
+  <data key="d6">0.616702436866643</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.methyl.2.hexanol" target="X3.furanmethanol">
+  <data key="d6">0.780257092113474</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.methyl.2.hexanol" target="n.heptanol">
+  <data key="d6">0.65382153314453</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.methyl.2.hexanol" target="ortho.cresol">
+  <data key="d6">0.730453939510202</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.methyl.2.hexanol" target="n.octanol">
+  <data key="d6">0.708217539480632</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.methyl.2.hexanol" target="X4.methyl.1.pentanol">
+  <data key="d6">0.754098889453489</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.methyl.2.hexanol" target="cumin.aldehyde">
+  <data key="d6">0.603833164054427</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.furanmethanol" target="X2.acetylfuran">
+  <data key="d6">0.651672367242446</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.furanmethanol" target="ortho.cresol">
+  <data key="d6">0.746053040090839</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X3.furanmethanol" target="n.octanol">
+  <data key="d6">0.627328949263188</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.acetylfuran" target="X2.6.dimethyl.pyrazine">
+  <data key="d6">0.627642237270929</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.acetylfuran" target="ethyl.furoate">
+  <data key="d6">0.651474200730363</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.acetylfuran" target="ortho.cresol">
+  <data key="d6">0.641122681440783</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.acetylfuran" target="X2.acetylpyrrole">
+  <data key="d6">0.689502907122979</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X5.methylfurfural" target="ethyl.furoate">
+  <data key="d6">0.617105518200145</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.heptanol" target="X1.octen.3.ol">
+  <data key="d6">0.616538792376296</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.heptanol" target="n.octanol">
+  <data key="d6">0.619997503960063</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.heptanol" target="n.nonanol">
+  <data key="d6">0.621044838227411</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.octen.3.ol" target="nerol.oxide">
+  <data key="d6">0.615667759072862</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.octen.3.ol" target="isoborneol">
+  <data key="d6">0.617504569683027</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.octen.3.ol" target="X2.undecanol">
+  <data key="d6">0.606855039932997</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.octen.3.ol" target="X.E..beta.ionone">
+  <data key="d6">0.639824201650873</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.octen.3.ol" target="alpha.calacorene">
+  <data key="d6">0.667676348955029</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isomaltol" target="ortho.cresol">
+  <data key="d6">0.619072631669172</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.hex..3E..enoate" target="ethyl.5.methylhexanoate">
+  <data key="d6">0.600485499061212</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.ethyl.1.hexanol" target="ortho.cresol">
+  <data key="d6">0.666023009680138</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="beta.phellandrene" target="X.E..beta.ocimene">
+  <data key="d6">0.606370873630931</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="beta.phellandrene" target="terpinolene">
+  <data key="d6">0.646808415389653</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="beta.phellandrene" target="terpinen.4.ol">
+  <data key="d6">0.691852247511699</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.hex..2E..enoate" target="nerol.oxide">
+  <data key="d6">0.695167868354815</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.hex..2E..enoate" target="alpha.calacorene">
+  <data key="d6">0.649823134157003</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="prenyl.isobutyrate" target="ethyl.5.methylhexanoate">
+  <data key="d6">0.637350585466035</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="prenyl.isobutyrate" target="isoamyl.lactate">
+  <data key="d6">0.611727526922503</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="prenyl.isobutyrate" target="ethyl.phenylacetate">
+  <data key="d6">0.768752858448157</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="prenyl.isobutyrate" target="neryl.formate">
+  <data key="d6">0.621293684430852</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="prenyl.isobutyrate" target="perillyl.acetate">
+  <data key="d6">0.686803580322637</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.furoate" target="ethyl.phenylacetate">
+  <data key="d6">0.634159146160731</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ortho.cresol" target="n.octanol">
+  <data key="d6">0.63564971644022</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.acetylpyrrole" target="ethyl.hydrocinnamate">
+  <data key="d6">0.61442267851609</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoamyl.lactate" target="ethyl.phenylacetate">
+  <data key="d6">0.669471181431527</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="terpinolene" target="terpinen.4.ol">
+  <data key="d6">0.612247899483487</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="linalool" target="X1.alpha.terpineol">
+  <data key="d6">0.694422993402073</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="linalool" target="citronellol">
+  <data key="d6">0.60772963314725</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="linalool" target="aroma_hops_sum">
+  <data key="d6">0.958414990111041</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X4.methyl.1.pentanol" target="x.methyl.1.octanol">
+  <data key="d6">0.814038485603805</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X4.methyl.1.pentanol" target="n.nonanol">
+  <data key="d6">0.693614895353333</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X4.methyl.1.pentanol" target="n.dodecanol">
+  <data key="d6">0.617616044311312</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="y.methyl.1.octanol" target="cis.dihydro.beta.terpineol">
+  <data key="d6">0.618395100891824</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="camphor" target="ethyl..E..linalool">
+  <data key="d6">0.631451742884115</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl.hexanoate" target="nerol.oxide">
+  <data key="d6">0.71779178020688</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl.hexanoate" target="isopentyl.hexanoate">
+  <data key="d6">0.661262909713303</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl.hexanoate" target="X2.butyloctanoate">
+  <data key="d6">0.601659256945634</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl.hexanoate" target="X2.phenyl.ethyl.butyrate">
+  <data key="d6">0.603385572526788</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl.hexanoate" target="pentyl.octanoate">
+  <data key="d6">0.638971265410254</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl.hexanoate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.647303065226296</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isobutyl.hexanoate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.602785243282952</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="isopentyl.hexanoate">
+  <data key="d6">0.611384301964548</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="trans.dihydro.alpha.terpinyl.acetate">
+  <data key="d6">0.733845619823607</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="X2.undecanol">
+  <data key="d6">0.678740977812974</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="methyl.geranate">
+  <data key="d6">0.609900324810827</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.62536785419623</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="neryl.propanoate">
+  <data key="d6">0.623005206811274</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="alpha.calacorene">
+  <data key="d6">0.662230952064449</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="humulene.epoxide.II">
+  <data key="d6">0.60309453499551</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="nerol.oxide" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.620915172200729</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.E..2.nonenal" target="cis.dihydro.beta.terpineol">
+  <data key="d6">0.626570878125078</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.E..2.nonenal" target="X2.butyloctanoate">
+  <data key="d6">0.62780271088019</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X4.ethyl.phenol" target="neryl.formate">
+  <data key="d6">0.654718637846183</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X4.ethyl.phenol" target="X4.ethyl.guaiacol">
+  <data key="d6">0.808499330561867</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoborneol" target="terpinen.4.ol">
+  <data key="d6">0.744630047771829</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isoborneol" target="ethyl..E..linalool">
+  <data key="d6">0.743513848221572</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.benzoate" target="ethyl.phenylacetate">
+  <data key="d6">0.764248643978304</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.benzoate" target="germacrene.D">
+  <data key="d6">0.600530467532899</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="terpinen.4.ol" target="X1.alpha.terpineol">
+  <data key="d6">0.644885536167794</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="terpinen.4.ol" target="ethyl..E..linalool">
+  <data key="d6">0.758690459734437</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="diethyl.succinate" target="ethyl.nicotinate">
+  <data key="d6">0.610338331519888</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.alpha.terpineol" target="aroma_hops_sum">
+  <data key="d6">0.714082886962981</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl..E..linalool" target="E.ocimenone">
+  <data key="d6">0.620415037760303</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="citronellol" target="aroma_hops_sum">
+  <data key="d6">0.731372789407546</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.phenylacetate" target="neryl.formate">
+  <data key="d6">0.625038331462142</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.phenylacetate" target="perillyl.acetate">
+  <data key="d6">0.655751548024768</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.phenylacetate" target="germacrene.D">
+  <data key="d6">0.66658333779397</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="trans.dihydro.alpha.terpinyl.acetate">
+  <data key="d6">0.756229959844706</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="X2.butyloctanoate">
+  <data key="d6">0.799281461372655</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="ethyl..9..decenoate">
+  <data key="d6">0.600085601403782</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="X2.phenyl.ethyl.butyrate">
+  <data key="d6">0.812502354820692</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="X.Z..beta.farnesene">
+  <data key="d6">0.820122100988928</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="pentyl.octanoate">
+  <data key="d6">0.881558114797395</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.815673299436617</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.819916001864002</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="ethyl.tetradecanoate">
+  <data key="d6">0.773045581511866</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="ethyl.pentadecanoate">
+  <data key="d6">0.768867384210219</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="isopentyl.hexanoate" target="ethyl.hexadecanoate">
+  <data key="d6">0.691227003929727</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="neryl.formate" target="X4.ethyl.guaiacol">
+  <data key="d6">0.795887684625014</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="neryl.formate" target="X.E..beta.ionone">
+  <data key="d6">0.603568239085544</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="X2.butyloctanoate">
+  <data key="d6">0.601672517732025</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="ethyl..9..decenoate">
+  <data key="d6">0.693089590902594</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="X2.phenyl.ethyl.butyrate">
+  <data key="d6">0.755396976423578</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="X.Z..beta.farnesene">
+  <data key="d6">0.776270704851594</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="pentyl.octanoate">
+  <data key="d6">0.798140197329457</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.768078623537731</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.621174913098605</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.752939826650142</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="ethyl.tetradecanoate">
+  <data key="d6">0.707262149109333</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="ethyl.pentadecanoate">
+  <data key="d6">0.674286318575154</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="trans.dihydro.alpha.terpinyl.acetate" target="ethyl.hexadecanoate">
+  <data key="d6">0.650419034797164</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.undecanol" target="methyl.geranate">
+  <data key="d6">0.758953969289545</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.undecanol" target="alloaromadendrene.epoxide">
+  <data key="d6">0.629067412247281</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.undecanol" target="X1.10.di.epi.cubenol">
+  <data key="d6">0.644904745406535</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.undecanol" target="alpha.muurolol">
+  <data key="d6">0.676854132945697</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="methyl.geranate" target="caryophyllene.oxide">
+  <data key="d6">0.67480020990938</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="methyl.geranate" target="humulene.epoxide.II">
+  <data key="d6">0.630510184655164</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="methyl.geranate" target="X1.10.di.epi.cubenol">
+  <data key="d6">0.605775061508665</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="methyl.geranate" target="alpha.muurolol">
+  <data key="d6">0.715045114345337</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="methyl.geranate" target="tau.muurolol">
+  <data key="d6">0.651158089846092</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="car.3.en.2.one" target="dimethoxy..E..citral">
+  <data key="d6">0.78069326829314</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="X2.phenyl.ethyl.butyrate">
+  <data key="d6">0.795036897427137</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="X.Z..beta.farnesene">
+  <data key="d6">0.791732832994259</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="pentyl.octanoate">
+  <data key="d6">0.868351070107631</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.827173029926061</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.824173565530829</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="ethyl.tetradecanoate">
+  <data key="d6">0.716152134122324</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="ethyl.pentadecanoate">
+  <data key="d6">0.726462509047331</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.butyloctanoate" target="ethyl.hexadecanoate">
+  <data key="d6">0.612263208280093</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="gamma.nonalactone" target="X.E..beta.damascenone">
+  <data key="d6">0.665397077865724</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl..9..decenoate" target="X.Z..beta.farnesene">
+  <data key="d6">0.644383640474049</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl..9..decenoate" target="pentyl.octanoate">
+  <data key="d6">0.632496432590147</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl..9..decenoate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.656208459835861</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl..9..decenoate" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.605900131387685</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl..9..decenoate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.611632520641259</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.phenyl.ethyl.butyrate" target="X.Z..beta.farnesene">
+  <data key="d6">0.893216232043497</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.phenyl.ethyl.butyrate" target="pentyl.octanoate">
+  <data key="d6">0.904578913053143</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.phenyl.ethyl.butyrate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.873312970052574</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.phenyl.ethyl.butyrate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.855004373224859</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.phenyl.ethyl.butyrate" target="ethyl.tetradecanoate">
+  <data key="d6">0.735093521919562</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.phenyl.ethyl.butyrate" target="ethyl.pentadecanoate">
+  <data key="d6">0.752803725468319</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.phenyl.ethyl.butyrate" target="ethyl.hexadecanoate">
+  <data key="d6">0.665998716144714</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.Z..beta.farnesene" target="pentyl.octanoate">
+  <data key="d6">0.916109088892997</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.Z..beta.farnesene" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.898895838553528</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.Z..beta.farnesene" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.643275061489963</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.Z..beta.farnesene" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.864335197687539</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.Z..beta.farnesene" target="ethyl.tetradecanoate">
+  <data key="d6">0.761894062245609</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.Z..beta.farnesene" target="ethyl.pentadecanoate">
+  <data key="d6">0.754885502063584</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.Z..beta.farnesene" target="ethyl.hexadecanoate">
+  <data key="d6">0.685195066797475</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="pentyl.octanoate" target="X2.methylbutyl.octanoate">
+  <data key="d6">0.936618592377881</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="pentyl.octanoate" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.605644536781279</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="pentyl.octanoate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.911888558050563</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="pentyl.octanoate" target="ethyl.tetradecanoate">
+  <data key="d6">0.807922691630162</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="pentyl.octanoate" target="ethyl.pentadecanoate">
+  <data key="d6">0.809570369561552</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="pentyl.octanoate" target="ethyl.hexadecanoate">
+  <data key="d6">0.715869766064009</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methylbutyl.octanoate" target="neryl.propanoate">
+  <data key="d6">0.603773985403643</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methylbutyl.octanoate" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.672120307794667</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methylbutyl.octanoate" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.877071043933526</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methylbutyl.octanoate" target="ethyl.tetradecanoate">
+  <data key="d6">0.765441928549473</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methylbutyl.octanoate" target="ethyl.pentadecanoate">
+  <data key="d6">0.770661415108523</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.methylbutyl.octanoate" target="ethyl.hexadecanoate">
+  <data key="d6">0.670386137286996</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="neryl.propanoate" target="alpha.calacorene">
+  <data key="d6">0.77535542896011</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="neryl.propanoate" target="alloaromadendrene.epoxide">
+  <data key="d6">0.675113881032318</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="neryl.propanoate" target="X1.10.di.epi.cubenol">
+  <data key="d6">0.611292061917992</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="neryl.propanoate" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.646545782209456</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.dodecanol" target="n.tetradecanol">
+  <data key="d6">0.72380654784761</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.dodecanol" target="manool">
+  <data key="d6">0.713628371002376</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X.E..beta.ionone" target="alpha.calacorene">
+  <data key="d6">0.681463962264489</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="E.methyl.isoeugenol" target="butylated.hydroxytoluene">
+  <data key="d6">0.869216243551411</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alpha.calacorene" target="alloaromadendrene.epoxide">
+  <data key="d6">0.709781894551638</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alpha.calacorene" target="X1.10.di.epi.cubenol">
+  <data key="d6">0.717847385893079</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alpha.calacorene" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.688346106054492</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="E.nerolidol" target="dihydroisocaryophyllene.epoxide">
+  <data key="d6">0.885996531232457</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="E.nerolidol" target="X2.3.dihydro.farnesol">
+  <data key="d6">0.685577524867585</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="E.nerolidol" target="X2Z.6E.farnesol">
+  <data key="d6">0.696699243120412</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="dihydroisocaryophyllene.epoxide" target="X2.3.dihydro.farnesol">
+  <data key="d6">0.644560684761975</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="dihydroisocaryophyllene.epoxide" target="X2Z.6E.farnesol">
+  <data key="d6">0.671435975648204</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="caryophyllene.alcohol" target="X1.10.di.epi.cubenol">
+  <data key="d6">0.654533201249457</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="caryophyllene.alcohol" target="tau.muurolol">
+  <data key="d6">0.647935885238078</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="caryophyllene.oxide" target="humulene.epoxide.II">
+  <data key="d6">0.818214977202108</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="caryophyllene.oxide" target="alpha.muurolol">
+  <data key="d6">0.796535678451168</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="caryophyllene.oxide" target="tau.muurolol">
+  <data key="d6">0.7253312009789</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="humulene.epoxide.II" target="alloaromadendrene.epoxide">
+  <data key="d6">0.625129266167683</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="humulene.epoxide.II" target="X1.10.di.epi.cubenol">
+  <data key="d6">0.636295605962129</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="humulene.epoxide.II" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.6237197720197</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="humulene.epoxide.II" target="alpha.muurolol">
+  <data key="d6">0.780177984146625</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="humulene.epoxide.II" target="tau.muurolol">
+  <data key="d6">0.670521417611139</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alloaromadendrene.epoxide" target="X1.10.di.epi.cubenol">
+  <data key="d6">0.867056876558141</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alloaromadendrene.epoxide" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.76393313401928</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alloaromadendrene.epoxide" target="alpha.muurolol">
+  <data key="d6">0.648765384255719</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alloaromadendrene.epoxide" target="selin.11.en.4.alpha.ol">
+  <data key="d6">0.613563619739134</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alloaromadendrene.epoxide" target="tau.muurolol">
+  <data key="d6">0.696261506728779</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.10.di.epi.cubenol" target="caryophylla.4.12..8.13..dien.5.alpha.ol">
+  <data key="d6">0.702950042181148</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.10.di.epi.cubenol" target="alpha.muurolol">
+  <data key="d6">0.759218646417071</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.10.di.epi.cubenol" target="selin.11.en.4.alpha.ol">
+  <data key="d6">0.604298373182982</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.10.di.epi.cubenol" target="tau.muurolol">
+  <data key="d6">0.815442766786857</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="caryophylla.4.12..8.13..dien.5.alpha.ol" target="alpha.muurolol">
+  <data key="d6">0.612968539218979</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="caryophylla.4.12..8.13..dien.5.alpha.ol" target="X1.2.dihydro.8.hydroxy..2E..linalool">
+  <data key="d6">0.651817997373881</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="alpha.muurolol" target="tau.muurolol">
+  <data key="d6">0.864114139930504</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.2.dihydro.8.hydroxy..2E..linalool" target="ethyl.tetradecanoate">
+  <data key="d6">0.750183936866183</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.2.dihydro.8.hydroxy..2E..linalool" target="ethyl.pentadecanoate">
+  <data key="d6">0.716210263932698</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X1.2.dihydro.8.hydroxy..2E..linalool" target="ethyl.hexadecanoate">
+  <data key="d6">0.66657320981432</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="n.tetradecanol" target="isopropyl.tetradecanoate">
+  <data key="d6">0.610287767025775</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.3.dihydro.farnesol" target="X2E.6Z.farnesal">
+  <data key="d6">0.642824935317188</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="X2.3.dihydro.farnesol" target="X2Z.6E.farnesol">
+  <data key="d6">0.699020500023922</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.tetradecanoate" target="ethyl.pentadecanoate">
+  <data key="d6">0.821944387657734</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.tetradecanoate" target="Z.Z.geranyl.linalool">
+  <data key="d6">0.678969173800855</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.tetradecanoate" target="ethyl.hexadecanoate">
+  <data key="d6">0.902564900076863</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.tetradecanoate" target="ethyl.octadecanoate">
+  <data key="d6">0.678532665524034</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.pentadecanoate" target="Z.Z.geranyl.linalool">
+  <data key="d6">0.654674062340912</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.pentadecanoate" target="ethyl.hexadecanoate">
+  <data key="d6">0.803504607400514</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.pentadecanoate" target="ethyl.octadecanoate">
+  <data key="d6">0.605642148298567</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="Z.Z.geranyl.linalool" target="ethyl.hexadecanoate">
+  <data key="d6">0.749589419860947</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="Z.Z.geranyl.linalool" target="ethyl.octadecanoate">
+  <data key="d6">0.707174705720264</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="ethyl.hexadecanoate" target="ethyl.octadecanoate">
+  <data key="d6">0.780626953904135</data>
+  <data key="d7">positive</data>
+</edge>
+<edge source="manool.oxide" target="isopropyl.hexadecanoate">
+  <data key="d6">0.735496780152608</data>
+  <data key="d7">positive</data>
+</edge>
+</graph></graphml>

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "protocol_content_sha256": "a361a1bb3092e08eea821f714af49dd10e1f27cc9e92ad8a0b57dd440551b915",
+  "independently_recounted_rating_cells": 109850,
+  "oof_rows": 62500,
+  "inner_rows": 150000,
+  "outer_models_independently_refitted": 12,
+  "inner_choice_contexts": 4,
+  "source_beers": 250,
+  "grouped_rating_records": 2197,
+  "primary_metric_recomputed_from_original_records": true,
+  "missingness_replays": 27,
+  "complete_card_rows": 13000,
+  "unlabelled_blank_rows": 500,
+  "actual_cli_samples": 250,
+  "actual_cli_rows": 13000,
+  "uncertainty_recomputed": true,
+  "hierarchy_checked": true,
+  "scope": "Original-scale historical grouped nested comparison; full-data and inner fitted models not all independently refitted."
+}

@@ -1,0 +1,58 @@
+Generation held-out comparison fold 0
+Generation held-out comparison fold 1
+Generation held-out comparison fold 2
+Complete migration constraints: beer 124
+Complete migration constraints: beer 81
+Complete migration constraints: beer 218
+Complete migration constraints: beer 96
+Complete migration constraints: beer 230
+Complete migration constraints: beer 185
+Complete migration constraints: beer 139
+Complete migration constraints: beer 209
+Complete migration constraints: beer 119
+Complete migration constraints: beer 90
+Complete migration constraints: beer 28
+Fixed original paths raw refits 1/20
+Fixed original paths raw refits 2/20
+Fixed original paths raw refits 3/20
+Fixed original paths raw refits 4/20
+Fixed original paths raw refits 5/20
+Fixed original paths raw refits 6/20
+Fixed original paths raw refits 7/20
+Fixed original paths raw refits 8/20
+Fixed original paths raw refits 9/20
+Fixed original paths raw refits 10/20
+Fixed original paths raw refits 11/20
+Fixed original paths raw refits 12/20
+Fixed original paths raw refits 13/20
+Fixed original paths raw refits 14/20
+Fixed original paths raw refits 15/20
+Fixed original paths raw refits 16/20
+Fixed original paths raw refits 17/20
+Fixed original paths raw refits 18/20
+Fixed original paths raw refits 19/20
+Fixed original paths raw refits 20/20
+{
+  "status": "passed",
+  "compared_tables": 39,
+  "source_beers": 250,
+  "features": 224,
+  "generation_validation_cases": 18,
+  "generator_refits": 8,
+  "style_classifier_refits": 8,
+  "raw_ET_bootstrap_refits": 20,
+  "fixed_historical_paths": 11,
+  "historical_pool_rows": 8293,
+  "checked_weight_choices": 77,
+  "checked_weight_five_defect_rows": 385,
+  "generated_scorecard_rows": 15600,
+  "unlabelled_generated_rows": 600,
+  "selected_generation_method": "interpolate",
+  "main_scenario_selected": 0,
+  "complete_constraints_and_selected_weight_optima_independently_recomputed": true,
+  "parent_raw_Q1_models_reused_not_refitted": true,
+  "legacy_200_refits_reused_not_repeated": true,
+  "actual_after_measured": false,
+  "safety_certified": false,
+  "scope": "Numerical replay on same data, frozen pool and parameters; not external validation or intervention confirmation."
+}

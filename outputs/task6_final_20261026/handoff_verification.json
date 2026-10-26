@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "scientific_reproduction_status": "passed",
+  "workflow_steps": 21,
+  "numerical_file_comparisons": 187,
+  "final_tests": 139,
+  "claim_sources_all_included": true,
+  "csv_tables": 38,
+  "figure_pairs": 4,
+  "evidence_files": 21,
+  "workbook_sheets": 7,
+  "workbook_data_cells": 1468,
+  "paper_manifest_files": 73,
+  "all_paper_hashes_match": true,
+  "initial_model_files": 0,
+  "recoveries": 2,
+  "scientific_implementation_unchanged_on_recovery": true,
+  "archive_excludes_raw_records_reference_workbook_and_models": true
+}

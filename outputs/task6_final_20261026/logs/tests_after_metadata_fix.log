@@ -1,0 +1,6 @@
+mkdir -p failed for path C:\Users\Lenovo\.matplotlib: [WinError 5] 拒绝访问。: 'C:\\Users\\Lenovo\\.matplotlib'
+Matplotlib created a temporary cache directory at C:\Users\Lenovo\AppData\Local\Temp\matplotlib-vt2_sn9o because there was an issue with the default path (C:\Users\Lenovo\.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+----------------------------------------------------------------------
+Ran 139 tests in 1.817s
+
+OK

@@ -1,0 +1,13 @@
+﻿question,claim,value,unit,source,interpretation
+数据,唯一啤酒数,250.0,款,validation/summary.json,重复验证的750次预测仍来自250款
+数据,原始品评记录数,2197.0,条,raw_sensory/summary.json,同一啤酒全部记录分在同一折
+Q1,ET重复验证MAE均值,0.7945612402659069,原始0～6分,validation/q1_repeat_summary.csv,按啤酒和品评员等权；50个有标签目标
+Q1,ET重复间样本标准差,0.0006824665667854405,原始0～6分,validation/q1_repeat_summary.csv,3次重复的样本SD，不是置信区间
+Q1,两项乙醛标签数,0.0,项,scope/scorecard_scope.csv,A_acetaldehyde、F_acetaldehyde分数和概率留空
+Q2,R3 GBR非零因素排名数,51.0,条,q2_raw/top3_raw_all50.csv,17目标；99个零归因空位及6个无标签空位不补排名
+Q2,R3 GBR有历史预测支持目标数,10.0,项,q2_raw/summary.json,预测支持及SHAP不等于因果或迁移控制证据
+Q3,主生成谱数,300.0,条,q3/generated_profiles.csv,三种风格插值；覆盖、方差收缩和近重复限制保留
+Q3,当前完整筛选通过源啤酒数,0.0,款,q3/transfer_results.csv,8293个历史合格路径点；77组权重；当前0个完整候选
+敏感性,历史固定路径仅感官共同通过数,1.0,个/33上下文,validation/fixed_historical_path_joint.csv,仅固定路径感官敏感性；不得改写Q3当前0完整候选
+Q1,个人5分精确召回,0.0,比例,validation/q1_metrics_by_repeat.csv,所有3次重复均为0；不能称高分预测已解决
+Q1,个人6分精确召回,0.0,比例,validation/q1_metrics_by_repeat.csv,所有3次重复均为0；不能称高分预测已解决

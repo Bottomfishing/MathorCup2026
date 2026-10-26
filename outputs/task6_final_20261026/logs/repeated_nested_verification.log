@@ -1,0 +1,31 @@
+Replay r0_f0, independent model refits=True
+Replay r0_f1, independent model refits=True
+Replay r0_f2, independent model refits=True
+Replay r1_f0, independent model refits=True
+Replay r1_f1, independent model refits=True
+Replay r1_f2, independent model refits=True
+Replay r2_f0, independent model refits=True
+Replay r2_f1, independent model refits=True
+Replay r2_f2, independent model refits=True
+{
+  "status": "passed",
+  "independently_refitted_prediction_models": 108,
+  "independently_refitted_style_models": 18,
+  "generator_refits": 54,
+  "nested_outer_contexts": 9,
+  "nested_inner_contexts": 18,
+  "compared_tables": 34,
+  "unique_beers": 250,
+  "repeated_beer_predictions": 750,
+  "raw_scorecard_rows": 39000,
+  "blank_unlabelled_rows": 1500,
+  "inner_probability_and_GBR_grade_arrays_recomputed": 9,
+  "SHAP_cells_recomputed": 8400000,
+  "generated_outer_spectra": 5400,
+  "bootstrap_unit": "250 beers after averaging repeated losses",
+  "all_selection_training_only": true,
+  "historical_path_sensitivity_not_nested_migration_validation": true,
+  "deployment_changed": false,
+  "safety_certified": false,
+  "scope": "Same 250 development beers; numerical replay of frozen nested workflows, not an external test or intervention verification."
+}

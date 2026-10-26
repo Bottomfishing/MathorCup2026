@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "baseline_commit": "1a1064f",
+  "protocol_content_sha256": "18ab504ce849848a212e08369fbf20e4dd4a9b857319993ea3d3d8a12cb11811",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "input_lf_normalized_sha256": {
+    "configs/r2_raw_panel_protocol_20261026.json": "ca266403e1e676433e79714c813f7f23ec6403ea7d2ae1fce49806545500ffe6",
+    "configs/q3_style_protocol.json": "d6e7f2e890b04562e4a48f72f6da96cd97edfa8013698210ec9d1043b3bfe457",
+    "outputs/r3_raw_explanation_20261026/predictive_metrics.csv": "ea9efd97909e947f4cfbf4f7ec331cd44f82c8d1ec38d39e7df9e392c12515b9",
+    "outputs/q3_resolution_20261024/anchors.csv": "6bd23c848e707bf6c65636286cd2bc52d09bb1ddcba3e8d0467a1b96407192d3",
+    "outputs/review_q3_fixed_paths_20261025/joint_pass_fraction.csv": "c31ecab06c8a11eb0cf9a9ecbed0a13bcf09b9e9cfe39a6e0eb58e0dff653ce3",
+    "outputs/review_path_tradeoff_20261025/feasible_candidates.csv": "b73ac1b6c39a933c2820453ca66db558b1cc3e51ca03afe1b6eb7fdd9194ca2c",
+    "outputs/review_path_tradeoff_20261025/weight_choices.csv": "89bcd20316c3c5c9fcea2caa84acc24257ac18ccb23bde1de3871b0bedec4fb6",
+    "outputs/q3_task3_20261025/generated_profiles.csv": "bcbe18191899e3e14e9697216abc4e0f422717cba9ec97115dc2a2d58eb248ce",
+    "outputs/q3_task3_20261025/transfer_source_profiles.csv": "22a283fafef71b069399f869603cdd1337b91a2ae732f7e5c06cc742957e0779",
+    "outputs/q3_task3_20261025/transfer_profiles.csv": "0824a64ea23f489fcdacdecd4d1d41a07fdb5d7bf7b90582853737be6fe3b82f",
+    "outputs/q3_task3_20261025/transfer_results.csv": "b1def6d3378a0754c415c08a064b2838b513cd7445f04017b31819bbaa686838",
+    "outputs/q3_task3_20261025/source_defect_evidence.csv": "551243e8abcdac6b33445e21702e1cf77d46827b7da293581f1da9be74b31ebf"
+  },
+  "q1_model_sha256": "5ec7ae6b526b21c6a62f36e6842ab1c3354edfbab1f31a387dcafcba030d9dcb",
+  "q1_outer_model_sha256": {
+    "outer0.joblib": "88b9becf4b2db574ddb508941056efc4a61a631e7c9540b98da8f3316e676726",
+    "outer1.joblib": "1a8f4654cdd2748c5f8b3b12f7ff266510a68f833c40032f9a4d9e4112d5632b",
+    "outer2.joblib": "caeeb9a574ca703d7a4216634370c5491bc8a79b9bb55d5403fc3c31c2d9300d"
+  },
+  "selected_generation_method": "interpolate",
+  "generation_validation_cases": 18,
+  "generated_profiles": 300,
+  "generation_candidate_profiles": 600,
+  "main_scenario_selected": 0,
+  "n_sources": 11,
+  "frozen_historical_pool": 8293,
+  "fully_checked_weight_choices": 77,
+  "original_paths_passing_current_raw": 0,
+  "raw_fixed_path_refits": 20,
+  "legacy_fixed_path_refits_reused": 200,
+  "stale_probability_support": "insufficient_heldout_probability_support",
+  "safety_certified": false,
+  "physical_feasibility_certified": false,
+  "actual_after_measured": false,
+  "task5_started": false
+}

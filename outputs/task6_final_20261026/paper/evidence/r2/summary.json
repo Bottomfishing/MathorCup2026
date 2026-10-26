@@ -1,0 +1,30 @@
+{
+  "status": "completed",
+  "baseline_commit": "7402621",
+  "protocol_content_sha256": "a361a1bb3092e08eea821f714af49dd10e1f27cc9e92ad8a0b57dd440551b915",
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "n_beers": 250,
+  "n_raw_rating_records": 2197,
+  "n_features": 224,
+  "n_targets": 50,
+  "raw_scale": "observed_original_0_6_no_relative_ECDF",
+  "primary_metric": "Mean absolute error to individual raw ratings, averaged equally over beers and all 50 targets with the declared within-beer taster weights.",
+  "n_model_fits": 45,
+  "full_training_selected_method": "extra_trees",
+  "qualified_raw_scale_workflow_on_historical_folds": true,
+  "mean_improvement_over_training_median": 0.03386533226033227,
+  "improvement_lower95": 0.029624346290746287,
+  "improvement_upper95": 0.038060378040478036,
+  "unlabelled_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "model_sha256": "26c063b14a754ac1ad4228c508231ece203afc53eaa1e8e5c5e85f85ef1c0e2c",
+  "uncertainty_scope": "Fixed OOF beer-loss resampling, conditional on fitted models and historical splits.",
+  "task_R3_started": false
+}

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "sheets": 7,
+  "data_cells": 1468,
+  "data_only_static_view": true,
+  "excel_error_cells": 0,
+  "confidence_label": "99% for nonzero Brier gain",
+  "fresh_reproduction_inputs_identical": true,
+  "visual_review_sheets": [
+    "结论与边界",
+    "Q1重复评分",
+    "缺陷概率区间",
+    "Q2标准化主表",
+    "Q2原始GBR",
+    "Q3生成诊断",
+    "Q3迁移检查"
+  ],
+  "workbook_sha256": "b9d99dd61cd2cec0176f0878eef83aafb481f99eb8fd79524af952cd8374283c",
+  "exporter_sha256": "b84adeb6a032881c5361743bb09eb47de2014e1515bb88214fb57383b373cd97"
+}

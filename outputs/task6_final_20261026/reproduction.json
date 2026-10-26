@@ -1,0 +1,2118 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-26T08:14:53.031991+00:00",
+  "git_commit": "1a06492b963a7f30b7d8c3f8e3925defcce51617",
+  "working_tree_dirty": false,
+  "python": "3.12.14",
+  "executable": "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+  "system": "Windows-11-10.0.26100-SP0",
+  "initial_model_files": [],
+  "steps": [
+    {
+      "name": "dependency_check",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 2.371,
+      "log": "logs\\dependency_check.log"
+    },
+    {
+      "name": "tests",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 7.796,
+      "log": "logs\\tests.log"
+    },
+    {
+      "name": "source_audit",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "-m",
+        "beer_audit",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\audit"
+      ],
+      "exit_code": 0,
+      "seconds": 3.116,
+      "log": "logs\\source_audit.log"
+    },
+    {
+      "name": "scope_audit",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/audit_task1_scope.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--statement",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\2026年MathorCup大数据挑战赛-赛道A初赛.pdf",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\scope"
+      ],
+      "exit_code": 0,
+      "seconds": 23.557,
+      "log": "logs\\scope_audit.log"
+    },
+    {
+      "name": "raw_label_audit",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/audit_raw_sensory.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\raw_sensory"
+      ],
+      "exit_code": 0,
+      "seconds": 6.397,
+      "log": "logs\\raw_label_audit.log"
+    },
+    {
+      "name": "r2_training",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/r2_raw_q1.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\r2"
+      ],
+      "exit_code": 0,
+      "seconds": 100.187,
+      "log": "logs\\r2_training.log"
+    },
+    {
+      "name": "r2_prediction_cli",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/predict_q1.py",
+        "--model",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\r2\\model.joblib",
+        "--input",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件\\1.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\r2_cli"
+      ],
+      "exit_code": 0,
+      "seconds": 2.76,
+      "log": "logs\\r2_prediction_cli.log"
+    },
+    {
+      "name": "r2_verification",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/verify_r2_raw_q1.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\r2",
+        "--smoke",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\r2_cli"
+      ],
+      "exit_code": 0,
+      "seconds": 45.862,
+      "log": "logs\\r2_verification.log"
+    },
+    {
+      "name": "q1_training",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/r2b_tail_risk.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q1"
+      ],
+      "exit_code": 0,
+      "seconds": 64.999,
+      "log": "logs\\q1_training.log"
+    },
+    {
+      "name": "q1_prediction_cli",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/predict_q1.py",
+        "--model",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q1\\model.joblib",
+        "--input",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件\\1.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q1_cli"
+      ],
+      "exit_code": 0,
+      "seconds": 5.321,
+      "log": "logs\\q1_prediction_cli.log"
+    },
+    {
+      "name": "q1_verification",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/verify_r2b_tail_risk.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q1",
+        "--smoke",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q1_cli",
+        "--r2-output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\r2"
+      ],
+      "exit_code": 0,
+      "seconds": 36.986,
+      "log": "logs\\q1_verification.log"
+    },
+    {
+      "name": "q2_standardized_assembly",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/complete_q2_task4.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--audit",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\audit",
+        "--reference",
+        "D:\\Mathor cup\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q2_standardized"
+      ],
+      "exit_code": 0,
+      "seconds": 1.911,
+      "log": "logs\\q2_standardized_assembly.log"
+    },
+    {
+      "name": "q2_standardized_verification",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/verify_q2_task4.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--audit",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\audit",
+        "--reference",
+        "D:\\Mathor cup\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q2_standardized"
+      ],
+      "exit_code": 0,
+      "seconds": 3.483,
+      "log": "logs\\q2_standardized_verification.log"
+    },
+    {
+      "name": "q2_literature_assembly",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/task3_q2_literature.py",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q2_literature"
+      ],
+      "exit_code": 0,
+      "seconds": 0.86,
+      "log": "logs\\q2_literature_assembly.log"
+    },
+    {
+      "name": "q2_raw_training",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/r3_raw_explanation.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q2_raw"
+      ],
+      "exit_code": 0,
+      "seconds": 49.939,
+      "log": "logs\\q2_raw_training.log"
+    },
+    {
+      "name": "q2_raw_verification",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/verify_r3_raw_explanation.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q2_raw"
+      ],
+      "exit_code": 0,
+      "seconds": 50.018,
+      "log": "logs\\q2_raw_verification.log"
+    },
+    {
+      "name": "q3_training_and_checks",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/task4_raw_q3.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q1",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q3"
+      ],
+      "exit_code": 0,
+      "seconds": 190.576,
+      "log": "logs\\q3_training_and_checks.log"
+    },
+    {
+      "name": "q3_verification",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/verify_task4_raw_q3.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--q1",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q1",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q3",
+        "--cache",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\q3_verification_cache"
+      ],
+      "exit_code": 0,
+      "seconds": 189.352,
+      "log": "logs\\q3_verification.log"
+    },
+    {
+      "name": "repeated_nested_training",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/task5_repeated_nested.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\validation"
+      ],
+      "exit_code": 0,
+      "seconds": 306.475,
+      "log": "logs\\repeated_nested_training.log"
+    },
+    {
+      "name": "repeated_nested_verification",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/verify_task5_repeated_nested.py",
+        "--source",
+        "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+        "--raw",
+        "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\validation"
+      ],
+      "exit_code": 0,
+      "seconds": 305.147,
+      "log": "logs\\repeated_nested_verification.log"
+    },
+    {
+      "name": "paper_data_bundle",
+      "command": [
+        "D:\\Mathor cup\\.venv\\Scripts\\python.exe",
+        "scripts/build_paper_takeout.py",
+        "--run",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026",
+        "--output",
+        "D:\\Mathor cup\\checkpoints\\task6_fresh_run_20261026\\paper"
+      ],
+      "exit_code": 0,
+      "seconds": 1.662,
+      "log": "logs\\paper_data_bundle.log"
+    }
+  ],
+  "comparisons": [
+    {
+      "rebuilt": "audit\\feature_dictionary.csv",
+      "reference": "outputs\\p0_audit_20261023_final\\feature_dictionary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2a17bf7619e78181f2207f1029ca80ddede852a3aff8c63f6553c8d39693332c",
+      "reference_sha256": "2a17bf7619e78181f2207f1029ca80ddede852a3aff8c63f6553c8d39693332c"
+    },
+    {
+      "rebuilt": "audit\\sensory_mapping.csv",
+      "reference": "outputs\\p0_audit_20261023_final\\sensory_mapping.csv",
+      "status": "passed",
+      "rebuilt_sha256": "b571aebc111ff48d6267eb48623eda87c2204d6450546792a8ff9fcbe08a2787",
+      "reference_sha256": "c3cec869f59a8c1feddd06bdd62fa2ec1780b3a9b370d035d46e26586731fefb"
+    },
+    {
+      "rebuilt": "audit\\correlation_method_comparison.csv",
+      "reference": "outputs\\p0_audit_20261023_final\\correlation_method_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "00282b51fcd99cb398f4dc8c6cfe6a732279d36314314e18c8c030391b9cbf2d",
+      "reference_sha256": "00282b51fcd99cb398f4dc8c6cfe6a732279d36314314e18c8c030391b9cbf2d"
+    },
+    {
+      "rebuilt": "scope\\scorecard_scope.csv",
+      "reference": "outputs\\task1_acceptance_20261025\\scorecard_scope.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d",
+      "reference_sha256": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d"
+    },
+    {
+      "rebuilt": "scope\\defect_scope.csv",
+      "reference": "outputs\\task1_acceptance_20261025\\defect_scope.csv",
+      "status": "passed",
+      "rebuilt_sha256": "ff7aa59829482f16533bf3823d713515cc43ffc08e8c3f38260b0805f73611cc",
+      "reference_sha256": "ff7aa59829482f16533bf3823d713515cc43ffc08e8c3f38260b0805f73611cc"
+    },
+    {
+      "rebuilt": "raw_sensory\\beer_group_folds.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\beer_group_folds.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066",
+      "reference_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066"
+    },
+    {
+      "rebuilt": "raw_sensory\\beer_identity_mapping.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\beer_identity_mapping.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7774dc6b64e2a36b49b1b3ab6ff07a8dda25c721aabcd5f6b3c2cd7930ed82df",
+      "reference_sha256": "7774dc6b64e2a36b49b1b3ab6ff07a8dda25c721aabcd5f6b3c2cd7930ed82df"
+    },
+    {
+      "rebuilt": "raw_sensory\\beer_record_counts.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\beer_record_counts.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2a271b0586a4444975bbd2dc94931970f97d7d4a2c5ba6edb65c1f2e42128371",
+      "reference_sha256": "2a271b0586a4444975bbd2dc94931970f97d7d4a2c5ba6edb65c1f2e42128371"
+    },
+    {
+      "rebuilt": "raw_sensory\\candidate_label_alternatives.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\candidate_label_alternatives.csv",
+      "status": "passed",
+      "rebuilt_sha256": "8778ea934aa07b2085b0020f78ccd308b1404ad367fc6543524ddebebfcf6821",
+      "reference_sha256": "8778ea934aa07b2085b0020f78ccd308b1404ad367fc6543524ddebebfcf6821"
+    },
+    {
+      "rebuilt": "raw_sensory\\individual_hierarchy_checks.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\individual_hierarchy_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "16f49382019a9781cfdb6979f635e4db0b9958a6a4a3019e736f8203c57abb06",
+      "reference_sha256": "16f49382019a9781cfdb6979f635e4db0b9958a6a4a3019e736f8203c57abb06"
+    },
+    {
+      "rebuilt": "raw_sensory\\normalization_by_target.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\normalization_by_target.csv",
+      "status": "passed",
+      "rebuilt_sha256": "c211e743086e3949a11c773edd5d737fe0ca1808352157ecd13e14d6cb3cc5c0",
+      "reference_sha256": "c211e743086e3949a11c773edd5d737fe0ca1808352157ecd13e14d6cb3cc5c0"
+    },
+    {
+      "rebuilt": "raw_sensory\\normalization_methods.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\normalization_methods.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0ea264b4977ec1e451cb90885222f8479b340a92bf0a6505674a2ded7d4e6c82",
+      "reference_sha256": "0ea264b4977ec1e451cb90885222f8479b340a92bf0a6505674a2ded7d4e6c82"
+    },
+    {
+      "rebuilt": "raw_sensory\\rating_group_folds.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\rating_group_folds.csv",
+      "status": "passed",
+      "rebuilt_sha256": "de215871aba84830ac54f38133ab5fd02245d10201814070cd6a391bc739e207",
+      "reference_sha256": "de215871aba84830ac54f38133ab5fd02245d10201814070cd6a391bc739e207"
+    },
+    {
+      "rebuilt": "raw_sensory\\repeat_presentations.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\repeat_presentations.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e48f8f74169174e626d6ef9a03e39913d6613ab49178aff4be3a6345a957b578",
+      "reference_sha256": "e48f8f74169174e626d6ef9a03e39913d6613ab49178aff4be3a6345a957b578"
+    },
+    {
+      "rebuilt": "raw_sensory\\target_coverage52.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\target_coverage52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "8fb0a3f0bea5e3c0755b3681c7e87129a495cf2b07ffd41a7177cf2239d0a446",
+      "reference_sha256": "8fb0a3f0bea5e3c0755b3681c7e87129a495cf2b07ffd41a7177cf2239d0a446"
+    },
+    {
+      "rebuilt": "raw_sensory\\target_score_distributions.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\target_score_distributions.csv",
+      "status": "passed",
+      "rebuilt_sha256": "760f2146d4e09a3d6787b1209e99cbda6c7e2d1867c6690adc84645a5e221ea2",
+      "reference_sha256": "760f2146d4e09a3d6787b1209e99cbda6c7e2d1867c6690adc84645a5e221ea2"
+    },
+    {
+      "rebuilt": "raw_sensory\\zero_variance_groups.csv",
+      "reference": "outputs\\raw_sensory_audit_20261025\\zero_variance_groups.csv",
+      "status": "passed",
+      "rebuilt_sha256": "5468773b62a8633dcdc40d42fd74896005b5572cd65214a46725151dc42e6222",
+      "reference_sha256": "5468773b62a8633dcdc40d42fd74896005b5572cd65214a46725151dc42e6222"
+    },
+    {
+      "rebuilt": "r2\\confusion.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\confusion.csv",
+      "status": "passed",
+      "rebuilt_sha256": "728ad50cccfdcae946e6a50ba3919062fe398d416208f48926c8866cf759baf1",
+      "reference_sha256": "728ad50cccfdcae946e6a50ba3919062fe398d416208f48926c8866cf759baf1"
+    },
+    {
+      "rebuilt": "r2\\estimated_grades_all52.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\estimated_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "035ecee870c9425561ec4d7cc926dba1b0836ab7f476868d51150287692500b9",
+      "reference_sha256": "035ecee870c9425561ec4d7cc926dba1b0836ab7f476868d51150287692500b9"
+    },
+    {
+      "rebuilt": "r2\\estimated_grades_primary47.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\estimated_grades_primary47.csv",
+      "status": "passed",
+      "rebuilt_sha256": "6024c7bacc7b2c6d25385f23e491789d86c0f58ef2ba9872e5e38846dd376fcc",
+      "reference_sha256": "6024c7bacc7b2c6d25385f23e491789d86c0f58ef2ba9872e5e38846dd376fcc"
+    },
+    {
+      "rebuilt": "r2\\fit_log.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\fit_log.csv",
+      "status": "passed",
+      "rebuilt_sha256": "cedd8f84df6a3ae5ed75cfc9c36a82f346deed7dadf2751d788440062853ec46",
+      "reference_sha256": "3a025edee20664b3058dc114c87f3f53f70868652d5f4048638059ef1abf3c33"
+    },
+    {
+      "rebuilt": "r2\\fold_metrics.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\fold_metrics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "be77cafa1bda6402f71f4a21181947ac71e13a9348a9fdcde847a597b7fb829c",
+      "reference_sha256": "c8716a59124a87e34387ad6b46dd05dc56b413c43717ef97a7b53fd171ab9045"
+    },
+    {
+      "rebuilt": "r2\\full_fit_grades_all52.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\full_fit_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "81abc9495d01659df2a84c9251b1318cfac0ec70f951ad2c115789ab406fa132",
+      "reference_sha256": "81abc9495d01659df2a84c9251b1318cfac0ec70f951ad2c115789ab406fa132"
+    },
+    {
+      "rebuilt": "r2\\full_fit_grades_primary47.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\full_fit_grades_primary47.csv",
+      "status": "passed",
+      "rebuilt_sha256": "9e0db72eb365419e62c953136ac710ba30de2541c295582ad0cd22869118bc52",
+      "reference_sha256": "9e0db72eb365419e62c953136ac710ba30de2541c295582ad0cd22869118bc52"
+    },
+    {
+      "rebuilt": "r2\\full_fit_scores_all52.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\full_fit_scores_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "cd751c825e7739239c4bba1d298a92447658be80a57cc62fcf0d7c7499392f88",
+      "reference_sha256": "cd751c825e7739239c4bba1d298a92447658be80a57cc62fcf0d7c7499392f88"
+    },
+    {
+      "rebuilt": "r2\\hierarchy.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\hierarchy.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1f64641491da9272b9bcdd1186b29276d1335a8c6ef88f1fb303732bc6f90aec",
+      "reference_sha256": "1f64641491da9272b9bcdd1186b29276d1335a8c6ef88f1fb303732bc6f90aec"
+    },
+    {
+      "rebuilt": "r2\\inner_predictions.csv.gz",
+      "reference": "outputs\\r2_raw_q1_20261026\\inner_predictions.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "5074f75a2111f89433645709a73f7088af914271596a1317379d08da36a9de33",
+      "reference_sha256": "5074f75a2111f89433645709a73f7088af914271596a1317379d08da36a9de33"
+    },
+    {
+      "rebuilt": "r2\\inner_selection.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\inner_selection.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0c721b7e81d9a6023f0d95b994d6faccd7da585696d2da13dc88d2f40a5c5bc2",
+      "reference_sha256": "0c721b7e81d9a6023f0d95b994d6faccd7da585696d2da13dc88d2f40a5c5bc2"
+    },
+    {
+      "rebuilt": "r2\\inner_splits.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\inner_splits.csv",
+      "status": "passed",
+      "rebuilt_sha256": "671bb43c96d7a50342f7ae5cbcdd5fbb40b4990b888876cb110e956dbf62d206",
+      "reference_sha256": "671bb43c96d7a50342f7ae5cbcdd5fbb40b4990b888876cb110e956dbf62d206"
+    },
+    {
+      "rebuilt": "r2\\loss_by_beer.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\loss_by_beer.csv",
+      "status": "passed",
+      "rebuilt_sha256": "15d4d6b60e5053c6cf8fecc5ae5ad2d2dfedc792cfb20bfa8aa3c82722ecd3a4",
+      "reference_sha256": "15d4d6b60e5053c6cf8fecc5ae5ad2d2dfedc792cfb20bfa8aa3c82722ecd3a4"
+    },
+    {
+      "rebuilt": "r2\\metrics_by_observed_grade.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\metrics_by_observed_grade.csv",
+      "status": "passed",
+      "rebuilt_sha256": "af2a1177d1159d4d035c879b938e344661ba4521a7899890446e53445cc01cf5",
+      "reference_sha256": "af2a1177d1159d4d035c879b938e344661ba4521a7899890446e53445cc01cf5"
+    },
+    {
+      "rebuilt": "r2\\metrics_by_target.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\metrics_by_target.csv",
+      "status": "passed",
+      "rebuilt_sha256": "d8f9bca5a669b0a4a7eca1dccd04514504b4c378707b655642472b4ad36e277c",
+      "reference_sha256": "d8f9bca5a669b0a4a7eca1dccd04514504b4c378707b655642472b4ad36e277c"
+    },
+    {
+      "rebuilt": "r2\\missingness_by_fold.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\missingness_by_fold.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f0875e83eabd6087264aedcdf0f86275e14325697d8a9b0b25e99419f56d5eac",
+      "reference_sha256": "f0875e83eabd6087264aedcdf0f86275e14325697d8a9b0b25e99419f56d5eac"
+    },
+    {
+      "rebuilt": "r2\\missingness_summary.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\missingness_summary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "5710d922d3033cc7b10f3eb583d8b17a9d60aaa54b44ffc9b888bb11bded0601",
+      "reference_sha256": "e1082d067eeb8e7bd4f43136f0f0f5b97aec243397fdcfa4a6a9aae291835a25"
+    },
+    {
+      "rebuilt": "r2\\model_comparison.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\model_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "8801b77fd0535b304063bdeebfed20e607a1534afea9f4e28612c2def40e610d",
+      "reference_sha256": "8801b77fd0535b304063bdeebfed20e607a1534afea9f4e28612c2def40e610d"
+    },
+    {
+      "rebuilt": "r2\\observed_panel_distribution.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\observed_panel_distribution.csv",
+      "status": "passed",
+      "rebuilt_sha256": "c2513c76c52fbb5d534c782758459ab2c4d861bde18a7c6f7f567880d42352c6",
+      "reference_sha256": "c2513c76c52fbb5d534c782758459ab2c4d861bde18a7c6f7f567880d42352c6"
+    },
+    {
+      "rebuilt": "r2\\oof_predictions.csv.gz",
+      "reference": "outputs\\r2_raw_q1_20261026\\oof_predictions.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "14c5979794e10190dacc465b3b0ee4f540614bedd0030f8370c24eac4325a3c0",
+      "reference_sha256": "14c5979794e10190dacc465b3b0ee4f540614bedd0030f8370c24eac4325a3c0"
+    },
+    {
+      "rebuilt": "r2\\oof_scores_all52.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\oof_scores_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "57d1b92c3970dd38cf10b80c88f7555ff82a5d56f2e91b1fb407ac9d9ab6bb5d",
+      "reference_sha256": "b2fcc3ab23104a13e65edd70043da3164bed3ead218dec38e67d83ad281c198d"
+    },
+    {
+      "rebuilt": "r2\\outer_folds.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\outer_folds.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066",
+      "reference_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066"
+    },
+    {
+      "rebuilt": "r2\\paired_uncertainty.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\paired_uncertainty.csv",
+      "status": "passed",
+      "rebuilt_sha256": "5e16741aeb983416d5bd36228ae13a37fc2504e790ad59ebdbfb104872af9e48",
+      "reference_sha256": "5e16741aeb983416d5bd36228ae13a37fc2504e790ad59ebdbfb104872af9e48"
+    },
+    {
+      "rebuilt": "r2\\panel_disagreement.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\panel_disagreement.csv",
+      "status": "passed",
+      "rebuilt_sha256": "d9ab07c5d58f61538cdb482462c09ae4e20237d0c5b63c83ed46626a73cf029e",
+      "reference_sha256": "d9ab07c5d58f61538cdb482462c09ae4e20237d0c5b63c83ed46626a73cf029e"
+    },
+    {
+      "rebuilt": "r2\\preprocessing_checks.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\preprocessing_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a5d4e886f263a354713457ff700b13c7a8e2084e07066b141a17a44b0365df58",
+      "reference_sha256": "a5d4e886f263a354713457ff700b13c7a8e2084e07066b141a17a44b0365df58"
+    },
+    {
+      "rebuilt": "r2\\rating_weights_and_folds.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\rating_weights_and_folds.csv",
+      "status": "passed",
+      "rebuilt_sha256": "5f6dd1f5a0ebccecbf1971db48be09e5b3fa8d9641192a66f016ef0aeda4b8f1",
+      "reference_sha256": "5f6dd1f5a0ebccecbf1971db48be09e5b3fa8d9641192a66f016ef0aeda4b8f1"
+    },
+    {
+      "rebuilt": "r2\\sample_quality.csv",
+      "reference": "outputs\\r2_raw_q1_20261026\\sample_quality.csv",
+      "status": "passed",
+      "rebuilt_sha256": "d7738cdcbb27f654a1814bc3bff8b716d1829e21bd4ffa41986eac3c289094d7",
+      "reference_sha256": "d7738cdcbb27f654a1814bc3bff8b716d1829e21bd4ffa41986eac3c289094d7"
+    },
+    {
+      "rebuilt": "q1\\calibration_parameters.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\calibration_parameters.csv",
+      "status": "passed",
+      "rebuilt_sha256": "3f2937f1f9f9e411d936b8996836a3a93d277632d07de3e5ccbf11797d07fadc",
+      "reference_sha256": "65937e5827e227741beb61d83a421284ab1ca129619d4ad3e8e1c974c805fb9e"
+    },
+    {
+      "rebuilt": "q1\\defect_risk_validation.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\defect_risk_validation.csv",
+      "status": "passed",
+      "rebuilt_sha256": "239d09efbdb647fe03c79d3bbad7b4a6ba8b77ace292ce4f5206895a009f12be",
+      "reference_sha256": "b190c14eb52d510a7e7f49f5b1934e9af09541f5f11d080874eb8dd2fd848516"
+    },
+    {
+      "rebuilt": "q1\\estimated_grades_all52.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\estimated_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "035ecee870c9425561ec4d7cc926dba1b0836ab7f476868d51150287692500b9",
+      "reference_sha256": "035ecee870c9425561ec4d7cc926dba1b0836ab7f476868d51150287692500b9"
+    },
+    {
+      "rebuilt": "q1\\estimated_grades_primary47.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\estimated_grades_primary47.csv",
+      "status": "passed",
+      "rebuilt_sha256": "6024c7bacc7b2c6d25385f23e491789d86c0f58ef2ba9872e5e38846dd376fcc",
+      "reference_sha256": "6024c7bacc7b2c6d25385f23e491789d86c0f58ef2ba9872e5e38846dd376fcc"
+    },
+    {
+      "rebuilt": "q1\\full_fit_grades_all52.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\full_fit_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "81abc9495d01659df2a84c9251b1318cfac0ec70f951ad2c115789ab406fa132",
+      "reference_sha256": "81abc9495d01659df2a84c9251b1318cfac0ec70f951ad2c115789ab406fa132"
+    },
+    {
+      "rebuilt": "q1\\full_fit_scores_all52.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\full_fit_scores_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1262fa85c63acfc054422d06b71c2478bb017e1411fdda7dee2d822399a88432",
+      "reference_sha256": "06974f2e4ff9afaedbfccc3eb09d0faaa79506acac12e146be8d519cc832d85d"
+    },
+    {
+      "rebuilt": "q1\\inner_probabilities.csv.gz",
+      "reference": "outputs\\r2b_tail_risk_20261026\\inner_probabilities.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "9838e4d285f2856af0aa32f69bfeb94b67e043e9c6f176f2f5d5c82633800815",
+      "reference_sha256": "807022e215c49d117a1bf065633f3ef6a67b1b09110e047e5fcff64340d27b43"
+    },
+    {
+      "rebuilt": "q1\\inner_splits.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\inner_splits.csv",
+      "status": "passed",
+      "rebuilt_sha256": "671bb43c96d7a50342f7ae5cbcdd5fbb40b4990b888876cb110e956dbf62d206",
+      "reference_sha256": "671bb43c96d7a50342f7ae5cbcdd5fbb40b4990b888876cb110e956dbf62d206"
+    },
+    {
+      "rebuilt": "q1\\oof_base_probabilities.csv.gz",
+      "reference": "outputs\\r2b_tail_risk_20261026\\oof_base_probabilities.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "ce0f93e30beb113ca9715250f355e425aa85473b6b1719071d7042e02503921b",
+      "reference_sha256": "8712058f2c83196ca82621cb4e885d408f7f5acddb9d761eaee7d199434060f2"
+    },
+    {
+      "rebuilt": "q1\\oof_point_predictions.csv.gz",
+      "reference": "outputs\\r2b_tail_risk_20261026\\oof_point_predictions.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "830f0eef7bdbcf831b952b524b142207a8d913f5e7b8df26a16894cd9511e234",
+      "reference_sha256": "830f0eef7bdbcf831b952b524b142207a8d913f5e7b8df26a16894cd9511e234"
+    },
+    {
+      "rebuilt": "q1\\oof_rating_risks.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\oof_rating_risks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2a1faa750c233d2fc8ae378cd580e5b0c568b0a2b6fdda4e752de0702a5cfc1e",
+      "reference_sha256": "3a0e009f58eabf6922cf4a0bdca9f2ef9254b89efe8bdb22e3f55b6b38714eea"
+    },
+    {
+      "rebuilt": "q1\\oof_risk_probabilities.csv.gz",
+      "reference": "outputs\\r2b_tail_risk_20261026\\oof_risk_probabilities.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "27a750c46b2af5ccb7e638dcda81bc5b1f7954e44d1d8fcb4e1229623f16a218",
+      "reference_sha256": "97db41b5c0ba8fbaf068d20f2b0eb7c9c80015677db62a89c02d70442c18caea"
+    },
+    {
+      "rebuilt": "q1\\oof_scores_all52.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\oof_scores_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a5ab47767cea3ac0708192c1fd1388369e4e36420fc480317767c5f3f81b0213",
+      "reference_sha256": "6a5115627349fae16bc4f210659c9e74f6a40d195bdbd89992121c6353e2d9b0"
+    },
+    {
+      "rebuilt": "q1\\outer_folds.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\outer_folds.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066",
+      "reference_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066"
+    },
+    {
+      "rebuilt": "q1\\point_comparison.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\point_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "ad7743f4de9448dbb3b67e9d1fda7463f026713f1e324699ef05a650d34d0cc8",
+      "reference_sha256": "ad7743f4de9448dbb3b67e9d1fda7463f026713f1e324699ef05a650d34d0cc8"
+    },
+    {
+      "rebuilt": "q1\\point_inner_selection.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\point_inner_selection.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a457a023869c396fda77450e56e071621dc09892783f62d05f202c71330fb23b",
+      "reference_sha256": "a457a023869c396fda77450e56e071621dc09892783f62d05f202c71330fb23b"
+    },
+    {
+      "rebuilt": "q1\\point_uncertainty.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\point_uncertainty.csv",
+      "status": "passed",
+      "rebuilt_sha256": "ed0f5c287f198590cce945ffe7e87e98aa51ffdb3001b1efaef35217afc00357",
+      "reference_sha256": "ed0f5c287f198590cce945ffe7e87e98aa51ffdb3001b1efaef35217afc00357"
+    },
+    {
+      "rebuilt": "q1\\risk_inner_selection.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\risk_inner_selection.csv",
+      "status": "passed",
+      "rebuilt_sha256": "54fed1bfecb5000daf0d7b7fe0f822e943677ea21dbfe09947a9572930486629",
+      "reference_sha256": "e62b9e081f88adac45ee6a02a1e3e9c03ca0e737cc52c643cbc5f3fc485a2a73"
+    },
+    {
+      "rebuilt": "q1\\risk_metrics.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\risk_metrics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "80dc86363e7ed8ed8afc536a246fdd0eb003ad6fcc66860d29023e72f6352444",
+      "reference_sha256": "d3a389e1afe724fec3ac2e83352ffd2a8c20d41d0688b00057a09433c2d61b45"
+    },
+    {
+      "rebuilt": "q1\\risk_reliability.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\risk_reliability.csv",
+      "status": "passed",
+      "rebuilt_sha256": "043fd8eb7e373974930b146a24bbd2a5bd2984dd6b743e1f180cf8875604b4c3",
+      "reference_sha256": "ec2e79cd311529a23a7f5d03830686cacb7bbf50ca5a815e78f5e5b3c7681f54"
+    },
+    {
+      "rebuilt": "q1\\sample_quality.csv",
+      "reference": "outputs\\r2b_tail_risk_20261026\\sample_quality.csv",
+      "status": "passed",
+      "rebuilt_sha256": "d7738cdcbb27f654a1814bc3bff8b716d1829e21bd4ffa41986eac3c289094d7",
+      "reference_sha256": "d7738cdcbb27f654a1814bc3bff8b716d1829e21bd4ffa41986eac3c289094d7"
+    },
+    {
+      "rebuilt": "q2_standardized\\compound_name_evidence.csv",
+      "reference": "outputs\\q2_task4_20261025\\compound_name_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1dcb93d0b972061cb3303fabfa40880b90f553bf1b98bd9896c079f811770ab2",
+      "reference_sha256": "11131668f7741adece347fa12cee758173b30783e25d61917cb4bbd4b8d04eb9"
+    },
+    {
+      "rebuilt": "q2_standardized\\correlation_method_evidence.csv",
+      "reference": "outputs\\q2_task4_20261025\\correlation_method_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2b3cbca9f8dc483c6c5ca94e547672a931e0867a75ae0be1c2318aca711fe1dd",
+      "reference_sha256": "2b3cbca9f8dc483c6c5ca94e547672a931e0867a75ae0be1c2318aca711fe1dd"
+    },
+    {
+      "rebuilt": "q2_standardized\\extra_target_evidence.csv",
+      "reference": "outputs\\q2_task4_20261025\\extra_target_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "826c59b1060a3b69b7058f2e9ab2b4e79d99f4c61bf938dc2bffa34b51cbda7b",
+      "reference_sha256": "826c59b1060a3b69b7058f2e9ab2b4e79d99f4c61bf938dc2bffa34b51cbda7b"
+    },
+    {
+      "rebuilt": "q2_standardized\\family_scope_top3_supplement.csv",
+      "reference": "outputs\\q2_task4_20261025\\family_scope_top3_supplement.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a77241ffe882f9433edeeb6d8581a32702e5186b0854932310724cfd0fe9b2d7",
+      "reference_sha256": "a77241ffe882f9433edeeb6d8581a32702e5186b0854932310724cfd0fe9b2d7"
+    },
+    {
+      "rebuilt": "q2_standardized\\named_marker_diagnostics.csv",
+      "reference": "outputs\\q2_task4_20261025\\named_marker_diagnostics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f46a51f1a13abd5a6e04ac67ac7296e3b06a791565e3ba1a4bd179f1e3d3a754",
+      "reference_sha256": "f46a51f1a13abd5a6e04ac67ac7296e3b06a791565e3ba1a4bd179f1e3d3a754"
+    },
+    {
+      "rebuilt": "q2_standardized\\network_edges_0_6.csv",
+      "reference": "outputs\\q2_task4_20261025\\network_edges_0_6.csv",
+      "status": "passed",
+      "rebuilt_sha256": "97903f20f6e5f9458061d61e1d184c665bd139b23ecf9bb57313c56b90da52f2",
+      "reference_sha256": "97903f20f6e5f9458061d61e1d184c665bd139b23ecf9bb57313c56b90da52f2"
+    },
+    {
+      "rebuilt": "q2_standardized\\network_nodes.csv",
+      "reference": "outputs\\q2_task4_20261025\\network_nodes.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2a99116a1417cea5660398dab6bc224d7500b666ad442194ad292cdfda696d79",
+      "reference_sha256": "2a99116a1417cea5660398dab6bc224d7500b666ad442194ad292cdfda696d79"
+    },
+    {
+      "rebuilt": "q2_standardized\\network_sensitivity.csv",
+      "reference": "outputs\\q2_task4_20261025\\network_sensitivity.csv",
+      "status": "passed",
+      "rebuilt_sha256": "9ca3e893b253414003405380c8492f9e0ac7028547d592c78c76da68b0a14da0",
+      "reference_sha256": "9ca3e893b253414003405380c8492f9e0ac7028547d592c78c76da68b0a14da0"
+    },
+    {
+      "rebuilt": "q2_standardized\\target_scope_comparison.csv",
+      "reference": "outputs\\q2_task4_20261025\\target_scope_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e5c33551a0e7022dfe529c2b881d1bf495311cf30d215d0201f2d61ec8fe946a",
+      "reference_sha256": "e5c33551a0e7022dfe529c2b881d1bf495311cf30d215d0201f2d61ec8fe946a"
+    },
+    {
+      "rebuilt": "q2_standardized\\target_summary52.csv",
+      "reference": "outputs\\q2_task4_20261025\\target_summary52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f3babafe3619f3a5a58a02bd4416a14d9c5d836c9b9fcf58931d6b9c75f9703e",
+      "reference_sha256": "f3babafe3619f3a5a58a02bd4416a14d9c5d836c9b9fcf58931d6b9c75f9703e"
+    },
+    {
+      "rebuilt": "q2_standardized\\top3_all52_slots.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_all52_slots.csv",
+      "status": "passed",
+      "rebuilt_sha256": "fd49d4225a9e992ea7e21a2db39bfc54ff4166c4bce09e3052134c2af44427bb",
+      "reference_sha256": "fd49d4225a9e992ea7e21a2db39bfc54ff4166c4bce09e3052134c2af44427bb"
+    },
+    {
+      "rebuilt": "q2_standardized\\top3_panel_all50.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_panel_all50.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f8f02c1cdd5e2d0080978aba9476fecb12d01033709dd8acfa4a094571394c82",
+      "reference_sha256": "f8f02c1cdd5e2d0080978aba9476fecb12d01033709dd8acfa4a094571394c82"
+    },
+    {
+      "rebuilt": "q2_standardized\\top3_panel_primary45.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_panel_primary45.csv",
+      "status": "passed",
+      "rebuilt_sha256": "dc464210f2a903229abb032b94539a2f28890206ee1b84e35155b4947b0a40e7",
+      "reference_sha256": "dc464210f2a903229abb032b94539a2f28890206ee1b84e35155b4947b0a40e7"
+    },
+    {
+      "rebuilt": "q2_standardized\\top3_primary47_slots.csv",
+      "reference": "outputs\\q2_task4_20261025\\top3_primary47_slots.csv",
+      "status": "passed",
+      "rebuilt_sha256": "454f22fdd720bb5f72d9442969e45c0aacb6b64c423136fc159da5f95b1d80fe",
+      "reference_sha256": "454f22fdd720bb5f72d9442969e45c0aacb6b64c423136fc159da5f95b1d80fe"
+    },
+    {
+      "rebuilt": "q2_standardized\\unfilled_rank_requirements.csv",
+      "reference": "outputs\\q2_task4_20261025\\unfilled_rank_requirements.csv",
+      "status": "passed",
+      "rebuilt_sha256": "385c0f7276c3b930605ce9d7cbbeae672f7e0b9bea5e06f94422052ff2cb09c7",
+      "reference_sha256": "385c0f7276c3b930605ce9d7cbbeae672f7e0b9bea5e06f94422052ff2cb09c7"
+    },
+    {
+      "rebuilt": "q2_literature\\focus48_literature.csv",
+      "reference": "outputs\\task3_q2_literature_20261025\\focus48_literature.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7a9b3952a64804d15575af10964e35e2e7efec5bf021413b33b6ca33ab3b57d9",
+      "reference_sha256": "7a9b3952a64804d15575af10964e35e2e7efec5bf021413b33b6ca33ab3b57d9"
+    },
+    {
+      "rebuilt": "q2_literature\\focus_target_summary.csv",
+      "reference": "outputs\\task3_q2_literature_20261025\\focus_target_summary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "069aa3e7048799cc7c61bc5df85ac178838570dce59ffd49ce1b20316f8627b5",
+      "reference_sha256": "069aa3e7048799cc7c61bc5df85ac178838570dce59ffd49ce1b20316f8627b5"
+    },
+    {
+      "rebuilt": "q2_literature\\named_marker_controls.csv",
+      "reference": "outputs\\task3_q2_literature_20261025\\named_marker_controls.csv",
+      "status": "passed",
+      "rebuilt_sha256": "6d687064424fe0fefa56871d8b75fa79c4ea5580605795f0ccf8e507a6c97df9",
+      "reference_sha256": "6d687064424fe0fefa56871d8b75fa79c4ea5580605795f0ccf8e507a6c97df9"
+    },
+    {
+      "rebuilt": "q2_literature\\source_catalog.csv",
+      "reference": "outputs\\task3_q2_literature_20261025\\source_catalog.csv",
+      "status": "passed",
+      "rebuilt_sha256": "504c44dccfa0242be667ed94dd8e1679414d5f2cf768c38a552a86ec069c9a91",
+      "reference_sha256": "504c44dccfa0242be667ed94dd8e1679414d5f2cf768c38a552a86ec069c9a91"
+    },
+    {
+      "rebuilt": "q2_literature\\target_contexts.csv",
+      "reference": "outputs\\task3_q2_literature_20261025\\target_contexts.csv",
+      "status": "passed",
+      "rebuilt_sha256": "8dd9084b6629c791c8832b1ba5e3319daa09eb7a704e56f71f0a8579eba49944",
+      "reference_sha256": "8dd9084b6629c791c8832b1ba5e3319daa09eb7a704e56f71f0a8579eba49944"
+    },
+    {
+      "rebuilt": "q2_literature\\top3_all50_literature.csv",
+      "reference": "outputs\\task3_q2_literature_20261025\\top3_all50_literature.csv",
+      "status": "passed",
+      "rebuilt_sha256": "c534086c364f375d5c984d925944319c80d0d8b2e7e4be5dac793d0d2f21a395",
+      "reference_sha256": "c534086c364f375d5c984d925944319c80d0d8b2e7e4be5dac793d0d2f21a395"
+    },
+    {
+      "rebuilt": "q2_literature\\top3_all52_slots_literature.csv",
+      "reference": "outputs\\task3_q2_literature_20261025\\top3_all52_slots_literature.csv",
+      "status": "passed",
+      "rebuilt_sha256": "6d662dae6662fa6741d37af9dabb496c8167e1d0eb13537d3b686845736d09e4",
+      "reference_sha256": "6d662dae6662fa6741d37af9dabb496c8167e1d0eb13537d3b686845736d09e4"
+    },
+    {
+      "rebuilt": "q2_raw\\additivity_and_postprocessing.csv.gz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\additivity_and_postprocessing.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "3d1ad5db3031b22b7475ba958fdd7e090deeb4af2334514b5592a1de71971bbc",
+      "reference_sha256": "3d1ad5db3031b22b7475ba958fdd7e090deeb4af2334514b5592a1de71971bbc"
+    },
+    {
+      "rebuilt": "q2_raw\\additivity_checks.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\additivity_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "c03f4e9babf513d9bc02a606542d67e3c40c7cdb0483fc31545a5f9355e354df",
+      "reference_sha256": "c03f4e9babf513d9bc02a606542d67e3c40c7cdb0483fc31545a5f9355e354df"
+    },
+    {
+      "rebuilt": "q2_raw\\all_factor_scores.csv.gz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\all_factor_scores.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "19f6eed102c30e2f946fae85388c3fff2c9e0784a5d33712b16702cfda434dda",
+      "reference_sha256": "19f6eed102c30e2f946fae85388c3fff2c9e0784a5d33712b16702cfda434dda"
+    },
+    {
+      "rebuilt": "q2_raw\\background_beers.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\background_beers.csv",
+      "status": "passed",
+      "rebuilt_sha256": "8e147a218bf2bbb64c93fe3d8756727185aa38b1d5d198e563561cf6c7441cc4",
+      "reference_sha256": "8e147a218bf2bbb64c93fe3d8756727185aa38b1d5d198e563561cf6c7441cc4"
+    },
+    {
+      "rebuilt": "q2_raw\\family_top3_supplement.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\family_top3_supplement.csv",
+      "status": "passed",
+      "rebuilt_sha256": "b427469de1ecf4030c0d46d3d3df5e29c28f23cd1726332fb78db8344a463137",
+      "reference_sha256": "b427469de1ecf4030c0d46d3d3df5e29c28f23cd1726332fb78db8344a463137"
+    },
+    {
+      "rebuilt": "q2_raw\\fit_log.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\fit_log.csv",
+      "status": "passed",
+      "rebuilt_sha256": "37414a68a0c13cba75a861b8916f05a361fafceee36c9c76e1ea802297baa9ea",
+      "reference_sha256": "19e7a47561d9cfd2ca4e7c5f5db862acff0a69098ee7217ce8f9d1b8592a06c1"
+    },
+    {
+      "rebuilt": "q2_raw\\fold_factor_scores.csv.gz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\fold_factor_scores.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "a1e87a2d4a9f8f5c4afb1906afa6774c26eb8f82beef8ecc977671ecea5e7c6b",
+      "reference_sha256": "a1e87a2d4a9f8f5c4afb1906afa6774c26eb8f82beef8ecc977671ecea5e7c6b"
+    },
+    {
+      "rebuilt": "q2_raw\\fold_module_scores.csv.gz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\fold_module_scores.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "7f66fa226f353390bdae5d414fe59ebab8b1eb5bf4bf7cbab6c4cafc5999cd9a",
+      "reference_sha256": "7f66fa226f353390bdae5d414fe59ebab8b1eb5bf4bf7cbab6c4cafc5999cd9a"
+    },
+    {
+      "rebuilt": "q2_raw\\fold_module_top3.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\fold_module_top3.csv",
+      "status": "passed",
+      "rebuilt_sha256": "bde7adbbb641ea473e3e3ffd427a94cfca4db252e1fbcf4c52da52bf95b443c4",
+      "reference_sha256": "bde7adbbb641ea473e3e3ffd427a94cfca4db252e1fbcf4c52da52bf95b443c4"
+    },
+    {
+      "rebuilt": "q2_raw\\fold_top3.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\fold_top3.csv",
+      "status": "passed",
+      "rebuilt_sha256": "21cb6b301db05751ffd2dcfbe918409bdc03583a4a719f124100e653719a4ac8",
+      "reference_sha256": "21cb6b301db05751ffd2dcfbe918409bdc03583a4a719f124100e653719a4ac8"
+    },
+    {
+      "rebuilt": "q2_raw\\gbr_selected_OOF_attributions.npz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\gbr_selected_OOF_attributions.npz",
+      "status": "passed",
+      "rebuilt_sha256": "0a44e7d0c5e502dd3524a0f14b67b466c464781659f7f1ff27e882152947124c",
+      "reference_sha256": "0a44e7d0c5e502dd3524a0f14b67b466c464781659f7f1ff27e882152947124c"
+    },
+    {
+      "rebuilt": "q2_raw\\historical_rank_comparison.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\historical_rank_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "724567fc53145cf8b97dbc9347ac765681a96eb68a20fac12a3b4b9c476c182e",
+      "reference_sha256": "724567fc53145cf8b97dbc9347ac765681a96eb68a20fac12a3b4b9c476c182e"
+    },
+    {
+      "rebuilt": "q2_raw\\inner_predictions.csv.gz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\inner_predictions.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "ad11c0389dd45242268f9ef4a8b38ef323902f06b3b7732564fcc633c60d46cf",
+      "reference_sha256": "ad11c0389dd45242268f9ef4a8b38ef323902f06b3b7732564fcc633c60d46cf"
+    },
+    {
+      "rebuilt": "q2_raw\\inner_selection.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\inner_selection.csv",
+      "status": "passed",
+      "rebuilt_sha256": "3e218c02b0375373f38f72ad79565cb4c6d4bb72c79fa4a373695fd38d473f54",
+      "reference_sha256": "3e218c02b0375373f38f72ad79565cb4c6d4bb72c79fa4a373695fd38d473f54"
+    },
+    {
+      "rebuilt": "q2_raw\\inner_splits.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\inner_splits.csv",
+      "status": "passed",
+      "rebuilt_sha256": "07f26d2ef338af55a9ee945cf70a3f1ed6e7dd6f901e1e928a469b2135091b46",
+      "reference_sha256": "07f26d2ef338af55a9ee945cf70a3f1ed6e7dd6f901e1e928a469b2135091b46"
+    },
+    {
+      "rebuilt": "q2_raw\\oof_predictions.csv.gz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\oof_predictions.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "6646cd6d03a7a6c506108156dbc392aebf3ef4de419e4e96f6ab107a53dcf78d",
+      "reference_sha256": "6646cd6d03a7a6c506108156dbc392aebf3ef4de419e4e96f6ab107a53dcf78d"
+    },
+    {
+      "rebuilt": "q2_raw\\outer_folds.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\outer_folds.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066",
+      "reference_sha256": "7b931ce90ab2e58e432f5d69cfb74b6de66be199bb17de686deda85bb1b40066"
+    },
+    {
+      "rebuilt": "q2_raw\\predictive_metrics.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\predictive_metrics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2ca5febd3d5ec441240d5cbd1c0eaf6af28ce659e03f598cd55f67c62460e3a2",
+      "reference_sha256": "2ca5febd3d5ec441240d5cbd1c0eaf6af28ce659e03f598cd55f67c62460e3a2"
+    },
+    {
+      "rebuilt": "q2_raw\\rank_stability.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\rank_stability.csv",
+      "status": "passed",
+      "rebuilt_sha256": "6ff838ab584f4d9b1a5aa0ab0c5c5a8fa3373d3031e9fc6f8a544ab31febd05f",
+      "reference_sha256": "6ff838ab584f4d9b1a5aa0ab0c5c5a8fa3373d3031e9fc6f8a544ab31febd05f"
+    },
+    {
+      "rebuilt": "q2_raw\\ridge_raw_mean_OOF_attributions.npz",
+      "reference": "outputs\\r3_raw_explanation_20261026\\ridge_raw_mean_OOF_attributions.npz",
+      "status": "passed",
+      "rebuilt_sha256": "320c66cbf96005d07d2fa40abfc8282f691bb45164cb48b8a3220bd2fd93fe0d",
+      "reference_sha256": "320c66cbf96005d07d2fa40abfc8282f691bb45164cb48b8a3220bd2fd93fe0d"
+    },
+    {
+      "rebuilt": "q2_raw\\top3_raw_all50.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\top3_raw_all50.csv",
+      "status": "passed",
+      "rebuilt_sha256": "356893deed595fd0ea9db748ecaf7c348e34cd552d8584b25182d4b1aed9654f",
+      "reference_sha256": "356893deed595fd0ea9db748ecaf7c348e34cd552d8584b25182d4b1aed9654f"
+    },
+    {
+      "rebuilt": "q2_raw\\top3_raw_all52_slots.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\top3_raw_all52_slots.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0059d6ef36e39c649ba366aaf6576010485e81a4f5b876001c2b6d89a91f3bc3",
+      "reference_sha256": "0059d6ef36e39c649ba366aaf6576010485e81a4f5b876001c2b6d89a91f3bc3"
+    },
+    {
+      "rebuilt": "q2_raw\\training_correlation_edges.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\training_correlation_edges.csv",
+      "status": "passed",
+      "rebuilt_sha256": "8d63df5c8889c16aacd5687edf15ec685d8e858ab87cd94e5983dc91c06fb851",
+      "reference_sha256": "8d63df5c8889c16aacd5687edf15ec685d8e858ab87cd94e5983dc91c06fb851"
+    },
+    {
+      "rebuilt": "q2_raw\\training_module_members.csv",
+      "reference": "outputs\\r3_raw_explanation_20261026\\training_module_members.csv",
+      "status": "passed",
+      "rebuilt_sha256": "4d05abf26bcde14c4baf582e67a2bd5450f49004cedcf2bbc8fca25572bc2380",
+      "reference_sha256": "4d05abf26bcde14c4baf582e67a2bd5450f49004cedcf2bbc8fca25572bc2380"
+    },
+    {
+      "rebuilt": "q3\\all_weight_selected_profiles.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\all_weight_selected_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "24f7bd0a4dbd4ef946b0c1e66e562f4768d6490b3c3bafa266797a0b0809f72e",
+      "reference_sha256": "24f7bd0a4dbd4ef946b0c1e66e562f4768d6490b3c3bafa266797a0b0809f72e"
+    },
+    {
+      "rebuilt": "q3\\copula_fit_parameters.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\copula_fit_parameters.csv",
+      "status": "passed",
+      "rebuilt_sha256": "524129e1541ff49ca301407333717a96a132d8cf13116f7874aa8600e3e87a7d",
+      "reference_sha256": "524129e1541ff49ca301407333717a96a132d8cf13116f7874aa8600e3e87a7d"
+    },
+    {
+      "rebuilt": "q3\\defect_guard_pass_fractions.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\defect_guard_pass_fractions.csv",
+      "status": "passed",
+      "rebuilt_sha256": "c1f1d06994779c55ee70801a7a912ed1f33d17bc9e17f098b9413f2c77dbdd5b",
+      "reference_sha256": "c1f1d06994779c55ee70801a7a912ed1f33d17bc9e17f098b9413f2c77dbdd5b"
+    },
+    {
+      "rebuilt": "q3\\fixed_path_joint_refit_comparison.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\fixed_path_joint_refit_comparison.csv",
+      "status": "passed",
+      "rebuilt_sha256": "b1057da8be69158c9d5eaacc0c8663c8f43e5f6f2c5343a06af36715fefe4491",
+      "reference_sha256": "b1057da8be69158c9d5eaacc0c8663c8f43e5f6f2c5343a06af36715fefe4491"
+    },
+    {
+      "rebuilt": "q3\\generated_grades_all52.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generated_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "02bcd756378572c434a149a75cedb7e168d2261265a14945e689ae99896dce2f",
+      "reference_sha256": "02bcd756378572c434a149a75cedb7e168d2261265a14945e689ae99896dce2f"
+    },
+    {
+      "rebuilt": "q3\\generated_metadata.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generated_metadata.csv",
+      "status": "passed",
+      "rebuilt_sha256": "17270d23130297743b762eda1d65d5e5275183c6f50029c51850c056a416c65f",
+      "reference_sha256": "17270d23130297743b762eda1d65d5e5275183c6f50029c51850c056a416c65f"
+    },
+    {
+      "rebuilt": "q3\\generated_profiles.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generated_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "56773ed32559d4f1d724a01f93db831ea109cfe9742f54d9ba3bfc82f542b58e",
+      "reference_sha256": "56773ed32559d4f1d724a01f93db831ea109cfe9742f54d9ba3bfc82f542b58e"
+    },
+    {
+      "rebuilt": "q3\\generated_sensory52.csv.gz",
+      "reference": "outputs\\task4_raw_q3_20261026\\generated_sensory52.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "2e714fb0782411f4ff5c039bbd378d1a31e3c251d0a86dd5d0f58f878d1e1e70",
+      "reference_sha256": "b67e925c24897c1f00efde8a901bb08cde6bd7240b56202ca08f0d61215a70b2"
+    },
+    {
+      "rebuilt": "q3\\generation_candidate_metadata.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_candidate_metadata.csv",
+      "status": "passed",
+      "rebuilt_sha256": "54e1aa849422b994042b606728052d190fb148ad9311f10abcc6e1a3a391c205",
+      "reference_sha256": "54e1aa849422b994042b606728052d190fb148ad9311f10abcc6e1a3a391c205"
+    },
+    {
+      "rebuilt": "q3\\generation_candidate_profiles.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_candidate_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "d676503342966f041cfa4e026fefe29579673a4496a306db3bb4ad5a7e0896d5",
+      "reference_sha256": "d676503342966f041cfa4e026fefe29579673a4496a306db3bb4ad5a7e0896d5"
+    },
+    {
+      "rebuilt": "q3\\generation_candidate_sensory52.csv.gz",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_candidate_sensory52.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "2d18cf4dee01d1ff55c3773b1dc85eae8b8f9671b5ce915f61cf0baaf2832ca1",
+      "reference_sha256": "4228af93f5573ed5bc70f98d1a52dbc828263aab1ef5507675e44398aeee159f"
+    },
+    {
+      "rebuilt": "q3\\generation_full_training_diagnostics.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_full_training_diagnostics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a5cf75929f1da38f2f91ab92d7b3997f5f6b7227d815242a24585cfd8f449dd8",
+      "reference_sha256": "a5cf75929f1da38f2f91ab92d7b3997f5f6b7227d815242a24585cfd8f449dd8"
+    },
+    {
+      "rebuilt": "q3\\generation_profile_diagnostics.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_profile_diagnostics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "9019a453972ef575772d1e9a684b402d1b0b0e16ffe8655d777a174f977d07ca",
+      "reference_sha256": "9019a453972ef575772d1e9a684b402d1b0b0e16ffe8655d777a174f977d07ca"
+    },
+    {
+      "rebuilt": "q3\\generation_replacement_checks.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_replacement_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "4eb4fb8b6a25b4825e0e248496e0b9eb24d49dab2d9365c5bb6215c5813128b1",
+      "reference_sha256": "4eb4fb8b6a25b4825e0e248496e0b9eb24d49dab2d9365c5bb6215c5813128b1"
+    },
+    {
+      "rebuilt": "q3\\generation_style_predictions.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_style_predictions.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0c1ae68868c0ffd7faf5c2096f474925ad04348a12c48bb26852b80eaf4498b6",
+      "reference_sha256": "0c1ae68868c0ffd7faf5c2096f474925ad04348a12c48bb26852b80eaf4498b6"
+    },
+    {
+      "rebuilt": "q3\\generation_validation.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_validation.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f091aa62f0183738c70296623aa5e96b5e64e4a173f65374fe0f11bd12de728e",
+      "reference_sha256": "2ec589ad311744aeed396090c4144325073eebb030832b5c90116179d320bdf7"
+    },
+    {
+      "rebuilt": "q3\\generation_validation_by_target.csv.gz",
+      "reference": "outputs\\task4_raw_q3_20261026\\generation_validation_by_target.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "3b44d15bc8a04d597bbdc0f20cb43073ab4b4c2c84912372adf1849cc53c7184",
+      "reference_sha256": "23c8e3a6e37d886294d1a1813dd9ccbdcd26b91b19ae63a72e3e9ebe830fbd58"
+    },
+    {
+      "rebuilt": "q3\\migration_constraint_attrition.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\migration_constraint_attrition.csv",
+      "status": "passed",
+      "rebuilt_sha256": "25a78dc61607c7a1005e598d5af00aeec71239a62598bf46dec0b90b7695b4f3",
+      "reference_sha256": "25a78dc61607c7a1005e598d5af00aeec71239a62598bf46dec0b90b7695b4f3"
+    },
+    {
+      "rebuilt": "q3\\migration_grid_checks.csv.gz",
+      "reference": "outputs\\task4_raw_q3_20261026\\migration_grid_checks.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "15dee737e03f4d983f9a4d4b4c22d2f22c94abbb936518264d181a9ea8622c3a",
+      "reference_sha256": "e155d52e81402938a33b276afb6b22b272b931ef1f6a04e4705bc516836dee04"
+    },
+    {
+      "rebuilt": "q3\\original_fixed_path_five_defect_checks.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\original_fixed_path_five_defect_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2b8ba90e54c2bb2843691a98fabc35b17668a11be4763595ceb796d36f3365ed",
+      "reference_sha256": "48be6998d66d0f05ebfae99818cf383c84dcfd33b72828d5113f5b8a0b65716c"
+    },
+    {
+      "rebuilt": "q3\\original_fixed_path_results.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\original_fixed_path_results.csv",
+      "status": "passed",
+      "rebuilt_sha256": "cb4ddfef34eb0e17a5a354e6bf930f84ee81dc40e3a9edc0754145e257ceecc2",
+      "reference_sha256": "cb4ddfef34eb0e17a5a354e6bf930f84ee81dc40e3a9edc0754145e257ceecc2"
+    },
+    {
+      "rebuilt": "q3\\original_fixed_path_sensory52.csv.gz",
+      "reference": "outputs\\task4_raw_q3_20261026\\original_fixed_path_sensory52.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "b7bcaa0e71a1ae33d86f8f77ab8b6f2a357939aef10712e35e753ff0dd125ddf",
+      "reference_sha256": "0f306a939805f128e29b265d4444b13762f3d627e47e70bb7eede1725c72465a"
+    },
+    {
+      "rebuilt": "q3\\original_weight_five_defect_checks.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\original_weight_five_defect_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "f02dee5320e9c2e381a949c466177821c958a49ab8a8a744cb1353463f67feff",
+      "reference_sha256": "8409a216d2090c0687d6865197437ba4f70d0294e343664cb5f376b0d6f39b41"
+    },
+    {
+      "rebuilt": "q3\\raw_fixed_path_refit_changes.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\raw_fixed_path_refit_changes.csv",
+      "status": "passed",
+      "rebuilt_sha256": "45a31dd1902896a86b85a293d4b4fe4208a41c147d3c37697f1d9a86571f794d",
+      "reference_sha256": "755ec65bb3b3e3f2eb5610ebad14f900793a2a25f303c22255e6e3b88ab65145"
+    },
+    {
+      "rebuilt": "q3\\raw_fixed_path_refit_summary.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\raw_fixed_path_refit_summary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "6886c0df2f59b7201ebedf4fedcef2aded2d991df45229d45ec40172174e756a",
+      "reference_sha256": "115fefdeced1ca136509a92821f6faf5c3180ad452979762f815173209495a35"
+    },
+    {
+      "rebuilt": "q3\\raw_refit_draws.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\raw_refit_draws.csv",
+      "status": "passed",
+      "rebuilt_sha256": "091d6f85d809c335e4cac3bc84484d05de797ced041da417fe796c34c6c07ea6",
+      "reference_sha256": "091d6f85d809c335e4cac3bc84484d05de797ced041da417fe796c34c6c07ea6"
+    },
+    {
+      "rebuilt": "q3\\raw_refit_fit_log.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\raw_refit_fit_log.csv",
+      "status": "passed",
+      "rebuilt_sha256": "90e87bff07f8f18c87e6a8805794785627a00c6b8b79c825701a93a2d2bd2e46",
+      "reference_sha256": "0c245b7b6769f09d3f5d7d015ba784c841d3db607e3ebf59b7fe4676dacb5c25"
+    },
+    {
+      "rebuilt": "q3\\raw_refit_oob_metrics.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\raw_refit_oob_metrics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0219812f5d2d4e31f08624d882671525bf6579e2d9e970b1a112c252561de2c1",
+      "reference_sha256": "0219812f5d2d4e31f08624d882671525bf6579e2d9e970b1a112c252561de2c1"
+    },
+    {
+      "rebuilt": "q3\\selected_five_defect_checks.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\selected_five_defect_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "8d4064c77dc41fe96a07203ce9d536b8bbbcf9c11aa7b8e23f67c34160722ea1",
+      "reference_sha256": "8d4064c77dc41fe96a07203ce9d536b8bbbcf9c11aa7b8e23f67c34160722ea1"
+    },
+    {
+      "rebuilt": "q3\\sensory_fingerprints52.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\sensory_fingerprints52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0138e969b272deea809533da8bd4624acd6c98121842672ba9400f84e323aabf",
+      "reference_sha256": "f088f60c11a904b858afb20a65180329eb70fc24c1406c89d9f7a2bba05de81d"
+    },
+    {
+      "rebuilt": "q3\\source_defect_evidence.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\source_defect_evidence.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e529d111ed97571c17fb6ac2ff1ad8453651ee92cfc2c92d261b8875433c7646",
+      "reference_sha256": "e529d111ed97571c17fb6ac2ff1ad8453651ee92cfc2c92d261b8875433c7646"
+    },
+    {
+      "rebuilt": "q3\\style_classifier_metrics.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\style_classifier_metrics.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e63abe2df5daf02048c3fc73461615615e2af21b4f592bab9e6ac3c9d85ed15f",
+      "reference_sha256": "e63abe2df5daf02048c3fc73461615615e2af21b4f592bab9e6ac3c9d85ed15f"
+    },
+    {
+      "rebuilt": "q3\\style_oof.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\style_oof.csv",
+      "status": "passed",
+      "rebuilt_sha256": "021a6b4261a8d0047a66754ae1bd0bab0f345009aa75ef857b735911c9d44181",
+      "reference_sha256": "021a6b4261a8d0047a66754ae1bd0bab0f345009aa75ef857b735911c9d44181"
+    },
+    {
+      "rebuilt": "q3\\transfer_grades_all52.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\transfer_grades_all52.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7a3c1f373a57f78a7baa97ae1469003de370bf2f13d1776a0567ed79fe6f9b49",
+      "reference_sha256": "7a3c1f373a57f78a7baa97ae1469003de370bf2f13d1776a0567ed79fe6f9b49"
+    },
+    {
+      "rebuilt": "q3\\transfer_profiles.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\transfer_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0292a1a0965f7e10001eec541063937bd7ac6e44b8b07ac1d288cfb2a041e663",
+      "reference_sha256": "0292a1a0965f7e10001eec541063937bd7ac6e44b8b07ac1d288cfb2a041e663"
+    },
+    {
+      "rebuilt": "q3\\transfer_results.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\transfer_results.csv",
+      "status": "passed",
+      "rebuilt_sha256": "3feb58fc25b7d6c8c3a8cb380eaba97ec1c1c4959cb53ad995870c6ac6edcfaa",
+      "reference_sha256": "3feb58fc25b7d6c8c3a8cb380eaba97ec1c1c4959cb53ad995870c6ac6edcfaa"
+    },
+    {
+      "rebuilt": "q3\\transfer_sensory52.csv.gz",
+      "reference": "outputs\\task4_raw_q3_20261026\\transfer_sensory52.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "49279ff5e3d45541eec52a5239bcbe47e25fb55b3477e1aa995959af99652654",
+      "reference_sha256": "49279ff5e3d45541eec52a5239bcbe47e25fb55b3477e1aa995959af99652654"
+    },
+    {
+      "rebuilt": "q3\\transfer_source_profiles.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\transfer_source_profiles.csv",
+      "status": "passed",
+      "rebuilt_sha256": "373e0b99ea796d81c2a3527d2d16338e9d3d003727bd6f15fd8cc00a4797c5d7",
+      "reference_sha256": "373e0b99ea796d81c2a3527d2d16338e9d3d003727bd6f15fd8cc00a4797c5d7"
+    },
+    {
+      "rebuilt": "q3\\weight_choices_complete.csv",
+      "reference": "outputs\\task4_raw_q3_20261026\\weight_choices_complete.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e34e710c0580f54a7d2a5367afadb7bf8311fa581960f20b61d53a342189a4aa",
+      "reference_sha256": "e34e710c0580f54a7d2a5367afadb7bf8311fa581960f20b61d53a342189a4aa"
+    },
+    {
+      "rebuilt": "validation\\background_beers.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\background_beers.csv",
+      "status": "passed",
+      "rebuilt_sha256": "b98ceca9ee4f79bd0a21951440cd115b63bc04ad4bef94b090c714851b17a223",
+      "reference_sha256": "b98ceca9ee4f79bd0a21951440cd115b63bc04ad4bef94b090c714851b17a223"
+    },
+    {
+      "rebuilt": "validation\\calibration_parameters.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\calibration_parameters.csv",
+      "status": "passed",
+      "rebuilt_sha256": "97560ccfb9342296e3c38a95e8c440dae4a8dde7e8399e7ae207026a23e1ff70",
+      "reference_sha256": "d5d617f2e7443c14efe620991ee357ca59dbf1731c7769449bfd10d7af793581"
+    },
+    {
+      "rebuilt": "validation\\fixed_historical_path_joint.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\fixed_historical_path_joint.csv",
+      "status": "passed",
+      "rebuilt_sha256": "368ff7801379847a5d5a0938d15ddcddbd91b8626556b75920a534a5d63eb988",
+      "reference_sha256": "368ff7801379847a5d5a0938d15ddcddbd91b8626556b75920a534a5d63eb988"
+    },
+    {
+      "rebuilt": "validation\\fixed_historical_path_sensitivity.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\fixed_historical_path_sensitivity.csv",
+      "status": "passed",
+      "rebuilt_sha256": "a911ff188a46020628e018a12c5ac92ea4c279cd8bad2e70524b4499f3781294",
+      "reference_sha256": "4c8f0030fa0abafa7a0da297f9197c60372ca40b0d1303e68afc8d09982acb12"
+    },
+    {
+      "rebuilt": "validation\\gbr_OOF_SHAP.npz",
+      "reference": "outputs\\task5_repeated_nested_20261026\\gbr_OOF_SHAP.npz",
+      "status": "passed",
+      "rebuilt_sha256": "17f196fe3c5d6d927a350f821acded20aa2fdb3add5109feca9ac7d203d03e27",
+      "reference_sha256": "17f196fe3c5d6d927a350f821acded20aa2fdb3add5109feca9ac7d203d03e27"
+    },
+    {
+      "rebuilt": "validation\\gbr_inner_selection.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\gbr_inner_selection.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0d8f833feb7e51208812b86963b66c35c4ef429a7baad5bc4c35c829efc2b764",
+      "reference_sha256": "0d8f833feb7e51208812b86963b66c35c4ef429a7baad5bc4c35c829efc2b764"
+    },
+    {
+      "rebuilt": "validation\\generation_inner_gate_checks.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\generation_inner_gate_checks.csv",
+      "status": "passed",
+      "rebuilt_sha256": "e7ebec26cb015e3baec2bb5a1fa0b0bc53c7cce646efdaf10dd248d598c6235f",
+      "reference_sha256": "e7ebec26cb015e3baec2bb5a1fa0b0bc53c7cce646efdaf10dd248d598c6235f"
+    },
+    {
+      "rebuilt": "validation\\generation_inner_validation.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\generation_inner_validation.csv",
+      "status": "passed",
+      "rebuilt_sha256": "20dde1b039af0ba5d6f86804dfc3a0aee27adeb4dae93ef3ca99592773b15cb6",
+      "reference_sha256": "ae516f462e13906d785997ba86401936320309aacb9562935f16c434189056bb"
+    },
+    {
+      "rebuilt": "validation\\generation_metrics_by_repeat.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\generation_metrics_by_repeat.csv",
+      "status": "passed",
+      "rebuilt_sha256": "90d68de18c1281fb72cb853c522f60ff4429dc47ce8d411995fc4eb2eb2e1141",
+      "reference_sha256": "90d68de18c1281fb72cb853c522f60ff4429dc47ce8d411995fc4eb2eb2e1141"
+    },
+    {
+      "rebuilt": "validation\\generation_outer_sensory_by_target.csv.gz",
+      "reference": "outputs\\task5_repeated_nested_20261026\\generation_outer_sensory_by_target.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "eb1e557e9269e82583a28ef6df5de6118da32577d5a6f4db3790a3a5909d3a96",
+      "reference_sha256": "223cd2a715a731d8591be8416a2b5a5d3d7d752f696f429e789dd964dda4ba0b"
+    },
+    {
+      "rebuilt": "validation\\generation_outer_validation.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\generation_outer_validation.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1b8aa3bec7c6d29d63a5ce2e18c206438fc65e36f04d52278aabd4f42c72aba4",
+      "reference_sha256": "0da03b61186faafb0f270e88bff2df46e82a496d198408e9738069243b2c0ecf"
+    },
+    {
+      "rebuilt": "validation\\generation_repeat_summary.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\generation_repeat_summary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "2129c40d92892fe16d6de37a8526d251042b05932514304da8a6e4eca6767850",
+      "reference_sha256": "2129c40d92892fe16d6de37a8526d251042b05932514304da8a6e4eca6767850"
+    },
+    {
+      "rebuilt": "validation\\generation_selected_outer_validation.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\generation_selected_outer_validation.csv",
+      "status": "passed",
+      "rebuilt_sha256": "de78c3aa395c8512cc1645c67ae4abe0f093bad020a3d6847a3c112c5a6782ed",
+      "reference_sha256": "0243ae1586e8e802cfe6d01d77ff5ba3ff21e6f0b034160bde64e05a72846c5f"
+    },
+    {
+      "rebuilt": "validation\\grouped_splits.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\grouped_splits.csv",
+      "status": "passed",
+      "rebuilt_sha256": "1027333487281063a1ceec961cd665ec4c2fc4f600a772ee1b4e3d86bf5ec012",
+      "reference_sha256": "1027333487281063a1ceec961cd665ec4c2fc4f600a772ee1b4e3d86bf5ec012"
+    },
+    {
+      "rebuilt": "validation\\loss_by_repeat_beer.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\loss_by_repeat_beer.csv",
+      "status": "passed",
+      "rebuilt_sha256": "7f39288fbf442e1319cd003049f5770d4b996c51fa8ae7b74521d4cd512824a1",
+      "reference_sha256": "7f39288fbf442e1319cd003049f5770d4b996c51fa8ae7b74521d4cd512824a1"
+    },
+    {
+      "rebuilt": "validation\\model_fit_log.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\model_fit_log.csv",
+      "status": "passed",
+      "rebuilt_sha256": "3be343ccc305fa7798cfd59e797a55ef3c1c422672466955cab99910c6be80b5",
+      "reference_sha256": "3be343ccc305fa7798cfd59e797a55ef3c1c422672466955cab99910c6be80b5"
+    },
+    {
+      "rebuilt": "validation\\oof_arrays.npz",
+      "reference": "outputs\\task5_repeated_nested_20261026\\oof_arrays.npz",
+      "status": "passed",
+      "rebuilt_sha256": "b46de376d1646458f86d0044355888c57db2cb1d9adaa4e205ed4743a06d0d53",
+      "reference_sha256": "7fe929ffff7f26beaf387348219fd5dbf4df6e61c19941ac475b3777d2662991"
+    },
+    {
+      "rebuilt": "validation\\outer_generated_spectra.npz",
+      "reference": "outputs\\task5_repeated_nested_20261026\\outer_generated_spectra.npz",
+      "status": "passed",
+      "rebuilt_sha256": "4bac31c666192fe693809328f13d290da20faad20102f8175b3db979779b7bb9",
+      "reference_sha256": "4bac31c666192fe693809328f13d290da20faad20102f8175b3db979779b7bb9"
+    },
+    {
+      "rebuilt": "validation\\paired_beer_averaged_intervals.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\paired_beer_averaged_intervals.csv",
+      "status": "passed",
+      "rebuilt_sha256": "b5ac2a069cd6050a964fbf353e275d8c739d3408e67ead62e79fea01384fba1a",
+      "reference_sha256": "47f762f1b994defbdc613829a72eef855ec74ea39efe74d91e3634c47aff8eb5"
+    },
+    {
+      "rebuilt": "validation\\predictive_metrics_by_target.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\predictive_metrics_by_target.csv",
+      "status": "passed",
+      "rebuilt_sha256": "5bc71b83e40041a6d60a7c7d990933e4f510897a6413bac3f551eabc89639de8",
+      "reference_sha256": "5bc71b83e40041a6d60a7c7d990933e4f510897a6413bac3f551eabc89639de8"
+    },
+    {
+      "rebuilt": "validation\\q1_metrics_by_repeat.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q1_metrics_by_repeat.csv",
+      "status": "passed",
+      "rebuilt_sha256": "104c704ef38cb1de319920e95c3cbd13581025f917a5d7a19cc13f64869ef2a0",
+      "reference_sha256": "104c704ef38cb1de319920e95c3cbd13581025f917a5d7a19cc13f64869ef2a0"
+    },
+    {
+      "rebuilt": "validation\\q1_oof_scores52.csv.gz",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q1_oof_scores52.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "a0404b1b21bb8718ec030f051169dc371303fdad1a2c4e8043756710b0d25ff0",
+      "reference_sha256": "874eb7bf75623b584d0b63df57b1d07083bbff5e4c4ab633f57a606b4eb8d831"
+    },
+    {
+      "rebuilt": "validation\\q1_repeat_summary.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q1_repeat_summary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "934c229fcb32ea08a0e02eeaf06d862398050f52c13ed75167911486ddde7955",
+      "reference_sha256": "934c229fcb32ea08a0e02eeaf06d862398050f52c13ed75167911486ddde7955"
+    },
+    {
+      "rebuilt": "validation\\q2_all52_rank_slots.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_all52_rank_slots.csv",
+      "status": "passed",
+      "rebuilt_sha256": "41bcb67140e07fa453768ea22f9411cf6255b3cae6d669ddc1e90cf09cf8dd98",
+      "reference_sha256": "41bcb67140e07fa453768ea22f9411cf6255b3cae6d669ddc1e90cf09cf8dd98"
+    },
+    {
+      "rebuilt": "validation\\q2_family_top3_supplement.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_family_top3_supplement.csv",
+      "status": "passed",
+      "rebuilt_sha256": "69b0e5343601e59ab4830e447aa54ad346de145a52e7231348eb82442165f4c1",
+      "reference_sha256": "69b0e5343601e59ab4830e447aa54ad346de145a52e7231348eb82442165f4c1"
+    },
+    {
+      "rebuilt": "validation\\q2_fold_importance.csv.gz",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_fold_importance.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "567437bd63cf55ccb4b55818714fceea3c286d6d0b938c1fea7fe82a525b89b5",
+      "reference_sha256": "567437bd63cf55ccb4b55818714fceea3c286d6d0b938c1fea7fe82a525b89b5"
+    },
+    {
+      "rebuilt": "validation\\q2_fold_top3.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_fold_top3.csv",
+      "status": "passed",
+      "rebuilt_sha256": "b3ba0587b6729972f8aab4a8d530f685a5479ffebe4243bcaf3aee7261772897",
+      "reference_sha256": "b3ba0587b6729972f8aab4a8d530f685a5479ffebe4243bcaf3aee7261772897"
+    },
+    {
+      "rebuilt": "validation\\q2_rank_coverage.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_rank_coverage.csv",
+      "status": "passed",
+      "rebuilt_sha256": "dece12055f9db14d55e7b1ae98de6e63a5403f30c247b3101c4ef234de68f156",
+      "reference_sha256": "dece12055f9db14d55e7b1ae98de6e63a5403f30c247b3101c4ef234de68f156"
+    },
+    {
+      "rebuilt": "validation\\q2_rank_stability.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_rank_stability.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0c8fdb6c06ccbae4e9b19d221e08f78f1d1c51fa5430fd8d90676a486cdf5e33",
+      "reference_sha256": "0c8fdb6c06ccbae4e9b19d221e08f78f1d1c51fa5430fd8d90676a486cdf5e33"
+    },
+    {
+      "rebuilt": "validation\\q2_repeat_importance.csv.gz",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_repeat_importance.csv.gz",
+      "status": "passed",
+      "rebuilt_sha256": "7061a2d210ce414bdc8df0f85e0b9d694f224607bed75085d787fbdcfe3d96a8",
+      "reference_sha256": "7061a2d210ce414bdc8df0f85e0b9d694f224607bed75085d787fbdcfe3d96a8"
+    },
+    {
+      "rebuilt": "validation\\q2_repeat_top3.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\q2_repeat_top3.csv",
+      "status": "passed",
+      "rebuilt_sha256": "20df1e8c542ecf92c85ecccd5eeac4e8d2a657202b8e24571ec2d1cab6ce9592",
+      "reference_sha256": "20df1e8c542ecf92c85ecccd5eeac4e8d2a657202b8e24571ec2d1cab6ce9592"
+    },
+    {
+      "rebuilt": "validation\\risk_inner_selection.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\risk_inner_selection.csv",
+      "status": "passed",
+      "rebuilt_sha256": "d3bdd8c114807a04408f2616f1f547504d570e809aecb81693a5273aad67d519",
+      "reference_sha256": "6e8bae2991bdef3d73a691a913381acfcb4831dade78a595276f5ca90e960cb5"
+    },
+    {
+      "rebuilt": "validation\\risk_metrics_by_repeat.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\risk_metrics_by_repeat.csv",
+      "status": "passed",
+      "rebuilt_sha256": "97ff8c4f89a5a440f9ac496220974093a0a3118586687fab27e1523c9ff77521",
+      "reference_sha256": "699b00a50cc2023225d9303d535bca8e62450722f0a49f0b7e5329fb1d78e648"
+    },
+    {
+      "rebuilt": "validation\\risk_reliability.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\risk_reliability.csv",
+      "status": "passed",
+      "rebuilt_sha256": "ae3b4734b52f0742552665638ab4073f5697020bc8c2c6f66a19c99b3c061050",
+      "reference_sha256": "12a565669ff2721a00d1580f37543b2d89d77caa3ac8d5dbc39631d59e9dfadc"
+    },
+    {
+      "rebuilt": "validation\\risk_repeat_summary.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\risk_repeat_summary.csv",
+      "status": "passed",
+      "rebuilt_sha256": "0ce909c3645e996dd2dc960b6bde7d4dc9ee17c89b6b3615a964d43d8ec6dd08",
+      "reference_sha256": "3106a6b805b12d2da7ccd333bd43647adb1ebbd080fc6b5e4255b908e407933c"
+    },
+    {
+      "rebuilt": "validation\\shap_additivity.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\shap_additivity.csv",
+      "status": "passed",
+      "rebuilt_sha256": "3ef3937869cd65747c5b1b494d63d92e3fef19edb701c75da0c48df39a0220e0",
+      "reference_sha256": "3ef3937869cd65747c5b1b494d63d92e3fef19edb701c75da0c48df39a0220e0"
+    },
+    {
+      "rebuilt": "validation\\style_oof.csv",
+      "reference": "outputs\\task5_repeated_nested_20261026\\style_oof.csv",
+      "status": "passed",
+      "rebuilt_sha256": "003d75ffba3279b6457dac99c68542fc466b60b8cf4d56d7b1f81c98279344a4",
+      "reference_sha256": "003d75ffba3279b6457dac99c68542fc466b60b8cf4d56d7b1f81c98279344a4"
+    }
+  ],
+  "source": "D:\\mathor cup2026赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+  "rebuilt": [
+    "source/scope/raw-label audits",
+    "R2 and R2b Q1 training and real prediction CLI",
+    "R3 raw-scale explanations",
+    "task4 generation and complete historical candidate checks",
+    "task5 repeated nested validation including independent model refits",
+    "standardized Q2 assembly and literature ledger assembly"
+  ],
+  "versioned_reuse": [
+    "Q2 200-refit selections and 1999-permutation nulls; independently checked, not rerun",
+    "historical Q2 forest comparisons and curated literature ledger",
+    "historical Q1 threshold-proxy evidence used only by historical Q2 assembly",
+    "historical 8293 eligible path points and original 11 paths, not a new nested search",
+    "versioned feature/label definitions rechecked before training"
+  ],
+  "comparison_exclusions": {
+    "seconds": "elapsed runtime is not a scientific result",
+    "R2b fit_log.csv": "historical 25-row log includes superseded full-forest seed; new run has 24 valid fits",
+    "binary/plot metadata": "compare numerical arrays/tables, not joblib, ZIP timestamps or rendering bytes"
+  },
+  "interpretation": "Numerical reproduction on the same 250 development beers; not external validation or a brewing intervention.",
+  "packages": {
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "et_xmlfile": "2.0.0",
+    "fonttools": "4.67.0",
+    "joblib": "1.5.2",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.10.7",
+    "networkx": "3.5",
+    "numpy": "2.3.5",
+    "openpyxl": "3.1.5",
+    "packaging": "26.3",
+    "pandas": "3.0.1",
+    "pillow": "13.0.0",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "3.0.0",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.16.3",
+    "six": "1.17.0",
+    "threadpoolctl": "3.6.0",
+    "tzdata": "2026.5",
+    "shap": "0.49.1",
+    "cloudpickle": "3.1.2",
+    "colorama": "0.4.6",
+    "llvmlite": "0.50.0",
+    "numba": "0.68.0",
+    "slicer": "0.0.8",
+    "tqdm": "4.70.1",
+    "typing_extensions": "4.16.0"
+  },
+  "code_sha256": {
+    "src\\beer_audit\\audit.py": "ca78d7577d039feac4aed63c4f69c20a2a792aa5f4ce5d4954587a0c7268618d",
+    "src\\beer_audit\\checks.py": "ad65c90020b6b9d7aa51f73cf4f94ad2bf84ce2c0575a3d2b278d94aec84c07e",
+    "src\\beer_audit\\raw_sensory.py": "ad58b76b373a2f9b9c5deea9fb86d463b4ebcea077fffe85b78d3a9edea1fef8",
+    "src\\beer_audit\\__init__.py": "cf7c75e83e94cef8290cc158f7e44fcf60c9ca92341acd3531781f7252c4cb78",
+    "src\\beer_audit\\__main__.py": "4f4b7032a825205965670207011fe571f1c4927ee51e17ef48cedd67f5ad9f00",
+    "src\\beer_models\\baseline.py": "37c90d56d1014b352723471a6ffc51023e26165214f1c1bee7bf7ba209f5326b",
+    "src\\beer_models\\defect_constraints.py": "e78ef6a6331d99d889dbc85317b8f8fe1c0a25a37c2a77584fec01aa146cac83",
+    "src\\beer_models\\evidence.py": "f04038cc20911eadc2e5af4bb618863321c66138bdb465a7b984a6122492b170",
+    "src\\beer_models\\explain.py": "4aeb2d706678da50cc018f639188da4c4447c9bd43f4d7d639a968e09ee84740",
+    "src\\beer_models\\final_model.py": "f7d009a4f10a1c0f9facdab0510e30c17d2229c82991418cd7ac0c7d4cad06b5",
+    "src\\beer_models\\generation.py": "069f8dd33c7d9fc7a5d13b81b52b4784359959f7317ecf271db6c559254dd06a",
+    "src\\beer_models\\interval_bounds.py": "fcdb4af24d1dde5d2a0aed8d965b859f9a3ffe64d289c74d85ff55697b66e70b",
+    "src\\beer_models\\ordered_models.py": "a698a98457d997d2ba0711e59d82154564761d66f557872364fb399b628bf799",
+    "src\\beer_models\\ordinal.py": "96c40abe16c9d54530f418eb7444a27a29792ef154c63bc4b9930e36840ea54e",
+    "src\\beer_models\\permutation.py": "f3a7f60cf4f063d348f8f0a1eaed49822cf596a2f446dc87d5dec88c928371b9",
+    "src\\beer_models\\predict.py": "57f185110e48b7154ccf57abc9aed00ff96f56667e680584d8e00d55181bcf86",
+    "src\\beer_models\\q3_raw.py": "8804d73d9e9d6891aa034a58baca11fefa432731d1f725c029ccda234ca0b122",
+    "src\\beer_models\\raw_explain.py": "9cc525022b21126d76a4343de58b2ab918dce350b60d0da702a8304c04a3a334",
+    "src\\beer_models\\raw_panel.py": "04b0f10c7ff775afd5225c07b2b7bbac407f0799cfb5ebb1116e227eb0bee959",
+    "src\\beer_models\\reference_validation.py": "455da7fbfa58c8d84ae98442e1a977dec7fc5d2934c8a93eed9656fb3541e2db",
+    "src\\beer_models\\reliability.py": "533fe1fad525407504be661ab047f2d17fec17ed85f82d69eae153a0f0498b75",
+    "src\\beer_models\\repeated_validation.py": "36b8c7c8cc2fa254f3678a7a37c59020112311191ee0848c86cdb5fa83596d03",
+    "src\\beer_models\\review_diagnostics.py": "749c9080c29ccf69d960e084a7d361ad15a16711e704a51b137519aaca94f86c",
+    "src\\beer_models\\scorecard.py": "3d145fb5f1f8e21f24a868e062e3f3585a0b6d210de29c02a7c460c2e2d03faa",
+    "src\\beer_models\\style_diagnostics.py": "efcc84f0f10192cf736d03b54d6cb035eb61ecd7fdc166d86035842e9ef6799c",
+    "src\\beer_models\\style_models.py": "b9d54c9e52eb7afbec4133aba1c78b7e351a99e845c297e0c7460b348a1b1d6f",
+    "src\\beer_models\\tail_risk.py": "3192bde4edd2798b902c10d9c518f800e450291aa3935ff85fccca44c7314f19",
+    "src\\beer_models\\transfer_checks.py": "2f313461be2275c5d23ecfd5a5aed4228912e2deffa3b092ea22b667882dcd69",
+    "src\\beer_models\\transforms.py": "3a88c1874f8c800d3c3064c5db0649c060ab06650f7b42d6011228171caa1747",
+    "src\\beer_models\\__init__.py": "d8eefe2f7229748c36e79bf5fbffc1ea91b0e23d2a8dfee3f53edc7dcb56b189",
+    "scripts\\audit_raw_sensory.py": "6dae81e941e3aa7235f0d1f2549baf21bd8343a853b0d12a0cec8527dc1e55fb",
+    "scripts\\audit_task1_scope.py": "a840e027fea19df138e75a8eeffb7c35d28186379080391d5b9c4c55157b4d7e",
+    "scripts\\build_paper_takeout.py": "462ea7a1e87a2a7e8c2d23b48fcbe9de399d5dda6d5345ad272f207b78580f17",
+    "scripts\\checkpoint.py": "5c250ae2658fd54e1aa17e17c7f8e3d026356019713b2726076a9ce229bf58cc",
+    "scripts\\complete_modeling.py": "6cf18c4580c5a9187c656037bbb8cbe17508ca3d595034dad6efb6b866c3041c",
+    "scripts\\complete_q1_task2.py": "eabd4bf1df01d086ae2673db841c0c8de3c0e2bb0ba35b070c445bb39f4b077c",
+    "scripts\\complete_q2.py": "a5d374dd3d1d63fdf4b87f365b111756932feee6a25a9fb8b097edaa50c9c268",
+    "scripts\\complete_q2_task4.py": "523f6e6c29e397fc91a499cc945906e64d6000f5144f82df2f88c42ecb4a7056",
+    "scripts\\complete_q3.py": "1ff4578559edbc42813ef6e80293c999279b0896e1bcc1a0c079028186929482",
+    "scripts\\complete_q3_task3.py": "4f98eefe73785dbcae037d4f472acf83e0c07c6c787c2fc5aca316e8ead82f50",
+    "scripts\\fetch_raw_sensory.py": "1a0de382647fec9d8766e00fc046fb91f4333c55ba4e97d02c7f590adf81a5d8",
+    "scripts\\fetch_reference.py": "3ffcc9f151cce79dde945f9996c65cb783d18ee164df6aa22aaffb6ba1170e6c",
+    "scripts\\predict_q1.py": "e8f44ac1db427b4e0c7b59035e0557f6a6ab6cd4290469c4f319f32d34986df9",
+    "scripts\\q1_ordinal_experiment.py": "c76b152b340a53b4d674f1fee19c2d4b0fba276697b4177ee00b8d33d3313dd0",
+    "scripts\\q1_probability_diagnostics.py": "6ec0ca0039b57382c868b108e908f79ea871512a3ad3b1f19694605234bc6726",
+    "scripts\\q2_reliability_study.py": "1a4ef36f642827d9311844ef9537d56e142a4a7f24644f71d08f055034c4567a",
+    "scripts\\q3_guard_witness_search.py": "a820d132fecf66eb5dab9ff6ee8f4fd4430ca957c9a61d21505c047139fcb0a0",
+    "scripts\\q3_measured_reference.py": "d9e5f345ba8db24ab5fd3d656cd5d0ec72b6d33df281f48ff08e893d05b25a69",
+    "scripts\\q3_reference_box_study.py": "b9014b22cf761eb1213d328bbc49778d1504138430b2a4aed1e7fb942634cb6d",
+    "scripts\\q3_reference_holdout.py": "067e25a1ced0f31ee293685184c56533a3338da9805ac4a1968a0db2b4037a5a",
+    "scripts\\q3_reference_robust.py": "6a351f85ca96f8ee343dc2d5db554e5b7471082fc8c0a9351d4de51a0708a112",
+    "scripts\\q3_style_study.py": "26bc780568229d59a036b681d6777ae21f18a68de4e9cdc4e7288880f7cb1306",
+    "scripts\\r2b_tail_risk.py": "9fbd9374137e236df6f0c53897a5807a01abc75798936959e3fe5628f45d9586",
+    "scripts\\r2_raw_q1.py": "5096ee2c01d6024995b818561fbc8974b9a1bf7edaa294e3f869229d8bda5617",
+    "scripts\\r3_raw_explanation.py": "86df588094f986088649e8e87281ce5e8c81450b898dcb7f3ff3ece4d499acaa",
+    "scripts\\relative_grades.py": "6afce6a84f4a7cfcbcf496f7359250398f44ba4a59890541c45f97c8bf7908dd",
+    "scripts\\report_baseline.py": "9265516a4e709e781551b94e3229b377d12710df84b66ea1bf943c2ba5216165",
+    "scripts\\report_generation.py": "57a9b0386fca89fcf9aca8668bd91d26b10589ec7ea2d05253809c1370f8660a",
+    "scripts\\report_q2.py": "8434a44ed4683cb9c1e98175f1b25227c72f0062a6a86514afc6f7378d8a0285",
+    "scripts\\report_q3_delivery.py": "f6d109415830947a867b8a2bc37485c12d1cf9dfdf3a2426bdfd204b09a8bf61",
+    "scripts\\report_q3_reference_diagnostics.py": "b04aa7cdf394b0394e611476c4dd1ec3b93f6a08e1c048e2eca0fc2678a9bf78",
+    "scripts\\reproduce_current.py": "c654602d3e16523fcc05992cbd64545ff1f54e93d6e9236c9775354b0cdd0e24",
+    "scripts\\reproduce_delivery.py": "a414dd380a4877fe0bb539c57822c605f1236b2ccfc9f9c15bf2b956d2096c3b",
+    "scripts\\reproduce_final.py": "0412d649d108bf005c00cab0081c8b966687a29c57e4d09fe9ea1556952f0583",
+    "scripts\\resolve_q3.py": "385e612c3ebcbd580b07f677e878b7eb0c48f6f212ca9b055c0a55e3b46e7370",
+    "scripts\\revalidate_latest.py": "2dba54096b05ebc0a8c9cdbff5722c8527d35b9b515a18ee45a46a7a5d608290",
+    "scripts\\review_path_tradeoff.py": "59e1ec5e5f972f8464fd13ac9a31de8871bda2781f7d5c0a5e788b714fada4ab",
+    "scripts\\review_q1_missingness.py": "12ab85c0e6ea805e01f425fc45f8e0bc3978a9e6bb60d3c2e5111660b603d790",
+    "scripts\\review_q2_input_scope.py": "d12611c954acae626dbf22e4fee3e3416c61cb52b11c2e382a725cd8dc55749f",
+    "scripts\\review_q3_fixed_paths.py": "5d75fbc512338477c18aeca8842dead955f9576fdaa96a31630e36eeff0d9e26",
+    "scripts\\run_generation.py": "953b3fc94d602a66a9787fcb5fd57a1138327acd60d0490b4a952b85f55e5515",
+    "scripts\\summarize_q1.py": "dd03a4b9b1eedf88558499f7c56168b978bdcab01f9809af77aed965a3207048",
+    "scripts\\task2_q1_ordinal.py": "5f9a11b6175b053385cdc60cd0804200354ab7eebc221f94b56988512ce783a7",
+    "scripts\\task3_q2_literature.py": "9baf64ae9a87cd37793bb3c7587965efb447f2056fc7258dc6fd7707be0dddf8",
+    "scripts\\task4_raw_q3.py": "1e51520823502a07190fe16c1d96c834a87a2fea9a65f59c5895ea97a82099df",
+    "scripts\\task5_repeated_nested.py": "7876c8772a0d3e76285174afbea6ab6ca5e89f83bdff3e68c4745c2850a01969",
+    "scripts\\threshold_scenarios.py": "3afbd46bb3b8d509a540eb20b737e2f2aeaaac8a770b357ace9b2a746a609a66",
+    "scripts\\verify_baseline.py": "dc726066b911c476e815941d02f23bcf88f27862ca2ce30341398d32f7707f16",
+    "scripts\\verify_continuation.py": "b74307ac6d03bae3b31cfe948bfabb30bd3fb823f7b0382f967c22c0fe4872d6",
+    "scripts\\verify_generation.py": "1c797ec1c5af9cd872440c72b978ef048ecccff988f3cfd7056b4ab309d99ea1",
+    "scripts\\verify_latest_additions.py": "ad5ae255bc2c1f83fc68924a4e5b1b37cf5b86d67e175c8ee91fb3904461b4e7",
+    "scripts\\verify_permutation.py": "b2620aa8a3393e1afb1fa5ab328c3b44cf74cf408167b6c6f5a74f5915635f5f",
+    "scripts\\verify_q1_probability_diagnostics.py": "79f43b256e2476731f8e27682f59ff52d6de344740ce88206a4f3c48e34ed4d9",
+    "scripts\\verify_q1_task2.py": "47de07bb640d8db9be429aadae28cb1507f06b0752f46829061a8527a67fe605",
+    "scripts\\verify_q2_task4.py": "fd4f043bf9e39d3088890171fc56d67636bb37f65f14f0714224d3b8bee3414d",
+    "scripts\\verify_q3_guard_witnesses.py": "a85323f371f70499728d028de3deb5a534a51d6bdad676a4c778bf90d1f8d865",
+    "scripts\\verify_q3_reference.py": "7c5cfc8344cbf42f2b1f8143967a61f44db3abc13f957a92018a680c36f82eb6",
+    "scripts\\verify_q3_reference_box.py": "e425e1a26f039c23e2d9c24db96cc354485cac62008136fe93da1f3aad9625b7",
+    "scripts\\verify_q3_reference_holdout.py": "95725b9bdf4a9209a990d6b76abcae853abf55bf3297930e14a5ffbdcdb0b0b8",
+    "scripts\\verify_q3_reference_robust.py": "59ff341610e5847f1bc5fa53c6667a2a040e25cad1163a77aedbb92ab041fa23",
+    "scripts\\verify_q3_resolution.py": "2018ffde10a595bd1b5fd02cc3aee49f053bf4c3684f7229808e6eedcf1e70e0",
+    "scripts\\verify_q3_style_study.py": "0636e16a2b1237b46c4a5640e32d6ec56fd516692f1e9e894cf2f274cbdbbaa3",
+    "scripts\\verify_q3_task3.py": "d81ac0befa4f3dd54024961d21cf3e85043ea5501b3519c98995ff36fc3f1c9d",
+    "scripts\\verify_r2b_tail_risk.py": "21d556a9b503f4cb8ae16d0cd59a77e9c7232035a32977d65919c9cd864f38e3",
+    "scripts\\verify_r2_raw_q1.py": "151d5cabb883d9bf63d7f7f66da288d278ef0b92ab80f116916ea8e94b7a9804",
+    "scripts\\verify_r3_raw_explanation.py": "d1bbc2ab2aa9152bdb1028a94bfdc885708661c43255820067ab1e255cd6d5f9",
+    "scripts\\verify_review_followup.py": "dee36e5d5ff638949049592ba9204bb350c232a35b5eacdea0f299ee9f0ae759",
+    "scripts\\verify_review_missingness.py": "2b6c454e345c1fb5ae1625422b5440209322fa01bc69151d780ce0f5a0b68848",
+    "scripts\\verify_task2_q1_ordinal.py": "65a3724050357d30c5fada3a011eb6b141c36ca2d0f7c05cfcbcf8aa7fbb6b0e",
+    "scripts\\verify_task4_raw_q3.py": "d654dd8b0ed903240dd5d0a7fa3afc766c8f2804f936c1d1d04306ee153df980",
+    "scripts\\verify_task5_repeated_nested.py": "b6fb9dce1781190e548b62343500b7b6de7058b8d2798b35f379e6fd3beb3f21",
+    "scripts\\verify_threshold_scenarios.py": "a72c83391f800480d745a706b6c052cd6ebc57d0bbde9632ec3bc60a54adbe45",
+    "scripts\\verify_within_style.py": "c096e4708e0501c51379ef8aee5b26fd92cc1de43289392857bcb20cd4900ce1",
+    "scripts\\within_style_permutation.py": "711673e341f69d9e26191829d2ba16f2ac01f28e0d7a1c5106697ea1b47c510d",
+    "configs\\baseline_robust_v2.json": "4f2ebd91d17ef0bacdce2b9b9383d9a0b915eeeead1e09e7e476daa641bbb4a1",
+    "configs\\baseline_v1.json": "9b5c2032dc395adba02afd9699ca74d631243761bcb0805b2b05de74b1940ead",
+    "configs\\final_protocol.json": "c119de85068681230b2373a98ea91befe472e27f3c3a2a0d839547e72eeafa08",
+    "configs\\q1_ordinal_protocol.json": "8623f0c71279db4b0756f293876041e096a4c76d88d0ed085c73b64d0f173527",
+    "configs\\q1_task2_protocol.json": "708d1221346edd61dce8a3133710e7887cee5b4efab7351d07a8b2bfa153e7ea",
+    "configs\\q2_evidence.json": "166ace39bdd6350954b03e3bf5145c5f14fddd759918be84162f6cb910d893ac",
+    "configs\\q2_exploratory_v1.json": "5369048d7b6be1b83c943786cdbd77fefbe071841c654bcd2806bd2c855e5e11",
+    "configs\\q2_permutation_v2.json": "e280f12e8cf2db89b71672f5bbf6850e89acd7bbbe492f7b591810d7a90e30aa",
+    "configs\\q2_reliability_protocol.json": "d292cdf65cd2d40f9880eefe948a8644e9a6539efbe5dc6da3513e11763d855b",
+    "configs\\q2_task4_protocol.json": "2082f5745914b9b0605005b731002c1af13bff83bcf5fcc4c891e25c0f7ce536",
+    "configs\\q3_exploratory_v1.json": "affab8a37f07951dbc4bf40d2afecd1dbba223ace05b6122aa1e86ba03cc8297",
+    "configs\\q3_reference_box_protocol.json": "aebc5f2b164598d016774f714590261d8538b0b0a1397259b73202f0abc2cb24",
+    "configs\\q3_reference_holdout.json": "2031c5cb13643a6109a025ee7638ecc0fc59dbb9f38842cf0e6c8a3fbb0a3bd8",
+    "configs\\q3_reference_robust_protocol.json": "187c992bd0034b5a15cef152fce07a7edad85bef973e6ff485766a824ab3c748",
+    "configs\\q3_resolution_protocol.json": "d50bcb33a6daa1eafcd1a6104f775cc9d0382f27243f539ae13a00233a490908",
+    "configs\\q3_style_protocol.json": "4f52a2f28b4603824ef20912248d0a647f188348a09ee57f8bb328a6abef096d",
+    "configs\\q3_task3_protocol.json": "bfcb2c86befce00f90544c8ab15ac8c004653bff05e990de5388b825b75169a4",
+    "configs\\r2b_tail_risk_protocol_20261026.json": "185c13a83bfce79766fe5700849679ba7c8da5d3ef6a9eb66e92bac11c368814",
+    "configs\\r2_raw_panel_protocol_20261026.json": "28f7010b62e88d10fba77ad24f709d92eb79ca1519c1acfc17292a9182409875",
+    "configs\\r3_raw_explanation_protocol_20261026.json": "283ded1ccd8e6df7b778a95d35fd06252bec558e7397be0663e6b7fc32e54ddf",
+    "configs\\raw_sensory_audit_20261025.json": "e1b9bdd9215112206ab0b76dc2a6080bb1c736899eb8883d712eff8698267b35",
+    "configs\\review_followup_20261025.json": "b35b9dab143ae4a00552ea740c040f9b05ab42847db6058944948c61a2b6438e",
+    "configs\\review_missingness_20261025.json": "40715b3e6b555a8d19d09158075e5f526e8fa11cfaa9bba2fd27ff931210c9df",
+    "configs\\review_path_weights_20261025.json": "575c82d1d45663d341cb0d86edfab877596fd1b84a62357b945819757345affb",
+    "configs\\task2_ordinal_protocol_20261025.json": "9453e308574900c13739dd0d3bbc78cc9f9c86a48ca8a4ce9dee906852b28205",
+    "configs\\task3_q2_literature_20261025.json": "fc8f75b344ab0e6d6ef028b19f295c1b3d16b02659b1af15d0d93621c71fafcd",
+    "configs\\task4_raw_q3_protocol_20261026.json": "b25a3ff6f27ceb9e53f154e9644588a2f4d10406e81caa3c10b39482cd00cc7a",
+    "configs\\task5_repeated_nested_protocol_20261026.json": "89a486d7f6f862cdf0890bf1f0916907d4ed69a6dc9e9ea0b9a1d5122b07c4d5"
+  },
+  "reference": {
+    "path": "D:\\Mathor cup\\data\\reference\\zenodo10653704\\Supplemental Files and Figure source files.xlsx",
+    "sha256": "e0a10635c4fbc3c62dc7e06e553cce9fad98c768ea6af5c8adc8a836098d1474",
+    "supplied_offline": true
+  },
+  "raw": {
+    "path": "D:\\Mathor cup\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+    "sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+    "supplied_offline": true
+  },
+  "finished_utc": "2026-10-26T08:42:34.906588+00:00",
+  "recovery": [
+    {
+      "prior_error": "AssertionError: DataFrame.iloc[:, 13] (column name=\"calibration_quality_status\") NA mask are different\n\nDataFrame.iloc[:, 13] (column name=\"calibration_quality_status\") NA mask values are different (3.84615 %)\n[index]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, ...]\n[left]:  [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, ...]\n[right]: [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, ...]",
+      "resumed_utc": "2026-10-26T08:22:38.680143+00:00",
+      "git_commit": "a62bcf30d450d5d369ca01e705ff138457e3d89a",
+      "working_tree_dirty": false,
+      "presentation_code_sha256": {
+        "scripts/reproduce_final.py": "6f186322b3f3166599e161a9ba07241a292fd8de67a06d65a37d4b650a192541",
+        "scripts/build_paper_takeout.py": "c2497305d0a7e4ae035f3a7d50d9e5bfd9cdb59817de7f3aee09079724bc040e"
+      }
+    },
+    {
+      "prior_error": "AssertionError: DataFrame.iloc[:, 4] (column name=\"seconds\") are different\n\nDataFrame.iloc[:, 4] (column name=\"seconds\") values are different (100.0 %)\n[index]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]\n[left]:  [3.9114155999996, 4.2176920999991125, 4.201620699997875, 4.288173900000402, 4.287834800001292, 4.231606399996963, 4.163901600004465, 4.289893599998322, 4.2742388999977265, 4.3290053000018816, 4.294772100001865, 4.2393201000013505, 4.089178899994295, 4.529166300002544, 4.430846499999461, 4.122773499999312, 4.268261299999722, 4.1400106999935815, 4.332972800002608, 4.672410800005309]\n[right]: [4.806087400000251, 4.569354599996586, 4.587504200004332, 4.794368299997586, 4.5695489999998244, 4.383540700000594, 4.456699200003641, 4.616635500002303, 4.655236300000979, 4.702000500001304, 4.6208952000015415, 5.262140599996201, 4.54694279999967, 4.844135899998946, 4.811199800002214, 4.260110300005181, 4.47707100000116, 4.175857399997767, 4.286820100001933, 4.856534400001692]\nAt positional index 0, first diff: 3.9114155999996 != 4.806087400000251",
+      "resumed_utc": "2026-10-26T08:32:12.440806+00:00",
+      "git_commit": "e67133b3f996a7429c32c734e03d0ad6fbf73a88",
+      "working_tree_dirty": false,
+      "presentation_code_sha256": {
+        "scripts/build_paper_takeout.py": "462ea7a1e87a2a7e8c2d23b48fcbe9de399d5dda6d5345ad272f207b78580f17",
+        "scripts/reproduce_final.py": "0412d649d108bf005c00cab0081c8b966687a29c57e4d09fe9ea1556952f0583"
+      }
+    }
+  ],
+  "checks": {
+    "raw_sensory": {
+      "status": "passed",
+      "tables_checked": 12,
+      "identity_beers": 250,
+      "identity_dimensions": 38,
+      "original_score_cells_checked": 109850,
+      "candidate_label_rows": 12500,
+      "grouped_rating_records": 2197,
+      "checks": [
+        "pinned_raw_MD5_SHA256_size",
+        "frozen_contest_source_hashes",
+        "integer_0_6_without_missing_scores",
+        "unique_bidirectional_numeric_identity",
+        "all_52_card_targets_accounted_for",
+        "all_raw_events_retained",
+        "one_fold_per_beer_and_all_its_ratings",
+        "saved_tables_recomputed_from_sources"
+      ],
+      "normalization_all_50_recipe_reproduced": false,
+      "models_trained": 0
+    },
+    "r2": {
+      "status": "passed",
+      "protocol_content_sha256": "a361a1bb3092e08eea821f714af49dd10e1f27cc9e92ad8a0b57dd440551b915",
+      "independently_recounted_rating_cells": 109850,
+      "oof_rows": 62500,
+      "inner_rows": 150000,
+      "outer_models_independently_refitted": 12,
+      "inner_choice_contexts": 4,
+      "source_beers": 250,
+      "grouped_rating_records": 2197,
+      "primary_metric_recomputed_from_original_records": true,
+      "missingness_replays": 27,
+      "complete_card_rows": 13000,
+      "unlabelled_blank_rows": 500,
+      "actual_cli_samples": 250,
+      "actual_cli_rows": 13000,
+      "uncertainty_recomputed": true,
+      "hierarchy_checked": true,
+      "scope": "Original-scale historical grouped nested comparison; full-data and inner fitted models not all independently refitted."
+    },
+    "q1": {
+      "status": "passed",
+      "protocol_content_sha256": "99bb42baee226ef5ad39bb1aa77a7f0458be133d8bd0812e8f2919abb6bfa1d8",
+      "source_beers": 250,
+      "raw_rating_cells": 109850,
+      "inner_probability_rows": 112500,
+      "outer_base_probability_rows": 25000,
+      "outer_risk_probability_rows": 37500,
+      "point_prediction_rows": 87500,
+      "outer_base_models_independently_refitted": 6,
+      "training_only_calibration_contexts_rebuilt": 4,
+      "point_limits_recomputed": true,
+      "risk_losses_reliability_and_intervals_recomputed": true,
+      "actual_cli_rows": 13000,
+      "blank_unlabelled_card_rows": 500,
+      "tail_point_qualified": false,
+      "full_fallback_matches_R2": true,
+      "full_R2_fallback_independently_refitted": true,
+      "safety_certified": false,
+      "scope": "Outer models refitted; inner base models and full-data ordinal model not all independently refitted."
+    },
+    "q2_standardized": {
+      "status": "passed",
+      "identified_panel_associations": 150,
+      "ranked_panel_targets": 50,
+      "scope_items": 52,
+      "all_rank_slots": 156,
+      "unfilled_rank_slots": 6,
+      "all_template_top3_identified": false,
+      "deterministic_Ridge_verification_refits": 1,
+      "recounted_bootstrap_selections": 30000,
+      "candidate_p_values_checked": 300,
+      "target_p_and_BY_q_pairs_checked": 100,
+      "network_nodes": 231,
+      "network_edges": 266,
+      "new_permutations": 0,
+      "new_bootstrap_refits": 0,
+      "causal_effects_established": false,
+      "checks": [
+        "parent and source hashes",
+        "strict/family ranking and coefficients from one fixed Ridge refit",
+        "saved 1999 null draws per scope: candidate maximum-statistic p and independent 50-target BY",
+        "30000 strict bootstrap selections recounted; family frequencies retained from verified parent",
+        "individual compound identity and descriptor annotations; separate IBU family-assay type",
+        "signed attachment2 graph, GraphML, degrees/components and three thresholds",
+        "52-target coverage with six genuinely empty slots; no manufactured coefficients or p-values",
+        "two named-marker records and sparse forum evidence kept separate from panel responses"
+      ],
+      "interpretation": "Verification establishes assembly and declared computations, not six missing factors, stability of all rankings, mechanism or causality."
+    },
+    "q2_literature": {
+      "status": "passed",
+      "baseline_commit": "04968f6",
+      "config_content_sha256": "a7e9645823520573aa088ae7fa084e54c98a8f320d5eb51b4062b90fb968936f",
+      "input_semantic_sha256": {
+        "top3_panel_all50.csv": "27459101604e6954b7bfd79eb1614775ffa4dbc230d082d7e26fbdb5277b4692",
+        "top3_all52_slots.csv": "d3d322d3963fd21a0f5952b8f024c8556d06f01e1131275c5c9bb249e3ff4a64",
+        "named_marker_diagnostics.csv": "ce6655daadcd71d025956de11914411de1cac8d9239aad8f6176a11796aeee82",
+        "family_scope_top3_supplement.csv": "20a5262ec6e1a866a05d11040bcb81cfeaacf5adabc432e398e1860499baad1c"
+      },
+      "unchanged_original_columns": 46,
+      "unchanged_panel_rows": 150,
+      "unchanged_all52_slots": 156,
+      "preserved_unidentified_slots": 6,
+      "focus_targets": 16,
+      "reviewed_pairs": 48,
+      "not_reviewed_panel_pairs": 102,
+      "sources": 16,
+      "independent_sources": 15,
+      "marker_controls": 9,
+      "target_contexts": 1,
+      "evidence_type_counts": {
+        "target_specific_evidence_not_found": 18,
+        "beer_other_attribute_aroma_activity": 15,
+        "related_matrix_gc_o": 7,
+        "roasting_process_measurement": 2,
+        "beer_target_sensory_threshold": 2,
+        "same_dataset_association_context": 2,
+        "process_covariation": 1,
+        "independent_brewing_sensory_association": 1
+      },
+      "dataset_causal_effect_established": false,
+      "checks": [
+        "all_original_cells_preserved",
+        "exact_focus_pair_coverage",
+        "all_source_references_resolve",
+        "same_dataset_not_counted_independent",
+        "markers_separate_from_ranking",
+        "saved_tables_match_curated_ledger"
+      ]
+    },
+    "q2_raw": {
+      "status": "passed",
+      "source_beers": 250,
+      "targets": 50,
+      "features": 224,
+      "independently_refitted_models": 18,
+      "refitted_inner_GBR_models": 12,
+      "refitted_outer_models": 6,
+      "recomputed_outer_explanations": 6,
+      "attribution_cells_per_method": 2800000,
+      "training_only_background_beers_per_fold": 100,
+      "inner_prediction_rows": 50000,
+      "rank_rows": 201,
+      "scorecard_rank_slots": 312,
+      "empty_acetaldehyde_slots": 12,
+      "all_derived_tables_recomputed": 13,
+      "max_additivity_error": 2.518048036748155e-08,
+      "historical_Q2_source_hashes_unchanged": true,
+      "Q1_Q3_not_retrained": true,
+      "scope": "Same source and folds replayed, not an independent data validation or causal audit."
+    },
+    "q3": {
+      "status": "passed",
+      "compared_tables": 39,
+      "source_beers": 250,
+      "features": 224,
+      "generation_validation_cases": 18,
+      "generator_refits": 8,
+      "style_classifier_refits": 8,
+      "raw_ET_bootstrap_refits": 20,
+      "fixed_historical_paths": 11,
+      "historical_pool_rows": 8293,
+      "checked_weight_choices": 77,
+      "checked_weight_five_defect_rows": 385,
+      "generated_scorecard_rows": 15600,
+      "unlabelled_generated_rows": 600,
+      "selected_generation_method": "interpolate",
+      "main_scenario_selected": 0,
+      "complete_constraints_and_selected_weight_optima_independently_recomputed": true,
+      "parent_raw_Q1_models_reused_not_refitted": true,
+      "legacy_200_refits_reused_not_repeated": true,
+      "actual_after_measured": false,
+      "safety_certified": false,
+      "scope": "Numerical replay on same data, frozen pool and parameters; not external validation or intervention confirmation."
+    },
+    "validation": {
+      "status": "passed",
+      "independently_refitted_prediction_models": 108,
+      "independently_refitted_style_models": 18,
+      "generator_refits": 54,
+      "nested_outer_contexts": 9,
+      "nested_inner_contexts": 18,
+      "compared_tables": 34,
+      "unique_beers": 250,
+      "repeated_beer_predictions": 750,
+      "raw_scorecard_rows": 39000,
+      "blank_unlabelled_rows": 1500,
+      "inner_probability_and_GBR_grade_arrays_recomputed": 9,
+      "SHAP_cells_recomputed": 8400000,
+      "generated_outer_spectra": 5400,
+      "bootstrap_unit": "250 beers after averaging repeated losses",
+      "all_selection_training_only": true,
+      "historical_path_sensitivity_not_nested_migration_validation": true,
+      "deployment_changed": false,
+      "safety_certified": false,
+      "scope": "Same 250 development beers; numerical replay of frozen nested workflows, not an external test or intervention verification."
+    }
+  },
+  "rebuilt_model_files": [
+    "q1\\model.joblib",
+    "r2\\model.joblib",
+    "q1\\models\\outer0.joblib",
+    "q1\\models\\outer1.joblib",
+    "q1\\models\\outer2.joblib",
+    "q2_raw\\models\\outer0.joblib",
+    "q2_raw\\models\\outer1.joblib",
+    "q2_raw\\models\\outer2.joblib",
+    "q3\\models\\extra_trees.joblib",
+    "q3\\models\\logistic.joblib",
+    "q3_verification_cache\\models\\extra_trees.joblib",
+    "q3_verification_cache\\models\\logistic.joblib",
+    "r2\\models\\extra_trees_fold0.joblib",
+    "r2\\models\\extra_trees_fold1.joblib",
+    "r2\\models\\extra_trees_fold2.joblib",
+    "r2\\models\\gbr_depth1_fold0.joblib",
+    "r2\\models\\gbr_depth1_fold1.joblib",
+    "r2\\models\\gbr_depth1_fold2.joblib",
+    "r2\\models\\gbr_depth2_fold0.joblib",
+    "r2\\models\\gbr_depth2_fold1.joblib",
+    "r2\\models\\gbr_depth2_fold2.joblib",
+    "r2\\models\\training_median_fold0.joblib",
+    "r2\\models\\training_median_fold1.joblib",
+    "r2\\models\\training_median_fold2.joblib",
+    "validation\\models\\r0_f0.joblib",
+    "validation\\models\\r0_f1.joblib",
+    "validation\\models\\r0_f2.joblib",
+    "validation\\models\\r1_f0.joblib",
+    "validation\\models\\r1_f1.joblib",
+    "validation\\models\\r1_f2.joblib",
+    "validation\\models\\r2_f0.joblib",
+    "validation\\models\\r2_f1.joblib",
+    "validation\\models\\r2_f2.joblib"
+  ]
+}
