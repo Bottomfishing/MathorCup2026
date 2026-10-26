@@ -1,0 +1,47 @@
+﻿model,scope,n,accuracy
+logistic,all22styles_OOF,250,0.52
+logistic,Low/No alcohol,8,0.875
+logistic,Fruitbeer,8,1.0
+logistic,Kriek,10,0.7
+logistic,Pils/Lager,11,0.9090909090909091
+logistic,Stout/Porter,13,0.38461538461538464
+logistic,Blond,31,0.6129032258064516
+logistic,Wheat,12,0.75
+logistic,Saison,10,0.2
+logistic,Scotch,5,0.6
+logistic,Hoppy,17,0.47058823529411764
+logistic,Faro,3,0.0
+logistic,West Flanders ale,7,0.2857142857142857
+logistic,Strong ale,18,0.5555555555555556
+logistic,Flanders old brown,5,0.4
+logistic,Tripel,28,0.5714285714285714
+logistic,Lambic,11,0.8181818181818182
+logistic,Christmas,9,0.0
+logistic,Dubbel,10,0.1
+logistic,Brown,12,0.16666666666666666
+logistic,Brett/cofermented,6,0.3333333333333333
+logistic,Amber,12,0.5
+logistic,Brut,4,0.5
+extra_trees,all22styles_OOF,250,0.532
+extra_trees,Low/No alcohol,8,0.75
+extra_trees,Fruitbeer,8,0.875
+extra_trees,Kriek,10,0.9
+extra_trees,Pils/Lager,11,0.9090909090909091
+extra_trees,Stout/Porter,13,0.5384615384615384
+extra_trees,Blond,31,0.6451612903225806
+extra_trees,Wheat,12,0.8333333333333334
+extra_trees,Saison,10,0.3
+extra_trees,Scotch,5,0.4
+extra_trees,Hoppy,17,0.47058823529411764
+extra_trees,Faro,3,0.0
+extra_trees,West Flanders ale,7,0.5714285714285714
+extra_trees,Strong ale,18,0.4444444444444444
+extra_trees,Flanders old brown,5,0.4
+extra_trees,Tripel,28,0.4642857142857143
+extra_trees,Lambic,11,0.9090909090909091
+extra_trees,Christmas,9,0.0
+extra_trees,Dubbel,10,0.4
+extra_trees,Brown,12,0.16666666666666666
+extra_trees,Brett/cofermented,6,0.8333333333333334
+extra_trees,Amber,12,0.16666666666666666
+extra_trees,Brut,4,0.25

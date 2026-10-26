@@ -1,0 +1,12 @@
+﻿beer,weight,source_target_distance,n_historically_eligible,n_pass_current,original_weight_candidate,original_weight_pass_current,selected,candidate,anchor,fraction,policy,target_distance,change_distance,objective,distance_reduction_fraction,pareto,uses_reference_zero_cap,status,safety_certified,actual_after_measured
+124,0.7,0.7964216677415286,12,0,277,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+81,0.7,0.7734383115847215,1356,0,4513,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+218,0.7,0.7332285877848069,1324,0,4513,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+96,0.7,0.8730155718117175,110,0,3874,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+230,0.7,0.8162496862512534,1276,0,4512,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+185,0.7,0.7841396143724371,60,0,4553,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+139,0.7,0.7941180435143393,160,0,4516,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+209,0.7,0.859327331249983,16,0,1039,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+119,0.7,0.686462034883961,1134,0,9671,False,False,,,,,,,,,False,True,no_candidate_passed_complete_current_checks,False,False
+90,0.7,0.7852822560695416,110,0,4513,False,False,,,,,,,,,False,False,no_candidate_passed_complete_current_checks,False,False
+28,0.7,0.7840849401349291,2735,0,4507,False,False,,,,,,,,,False,True,no_candidate_passed_complete_current_checks,False,False
