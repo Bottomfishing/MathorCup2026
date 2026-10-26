@@ -6,6 +6,14 @@ from beer_models.q3_raw import (ShrinkageCopula,defect_guard,resampled_records,
 
 
 class RawQ3Tests(unittest.TestCase):
+    def test_inner_training_singleton_other_style_does_not_block_requested_style(self):
+        x=np.array([[0.,1.],[1.,2.],[2.,3.],[99.,4.]])
+        styles=np.array(['requested']*3+['other'])
+        model=ShrinkageCopula().fit(x,styles,requested_styles=['requested'])
+        self.assertEqual(set(model.marginals),{'requested'})
+        self.assertEqual(model.sample('requested',5,3).shape,(5,2))
+        with self.assertRaises(ValueError):ShrinkageCopula().fit(x,styles)
+
     def test_copula_fixed_seed_stays_in_training_empirical_marginals(self):
         x=np.column_stack([np.arange(12,dtype=float),np.arange(12,dtype=float)**2,np.ones(12)*5])
         x[0,0]=np.nan

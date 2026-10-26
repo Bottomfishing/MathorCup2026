@@ -10,11 +10,11 @@ from .tail_risk import base_probabilities, survival
 
 
 class ShrinkageCopula:
-    def fit(self, x, styles):
+    def fit(self, x, styles, requested_styles=None):
         self.imputer = SimpleImputer(strategy='median', keep_empty_features=True).fit(x)
         self.x = self.imputer.transform(x)
         self.marginals, self.correlations, self.shrinkage = {}, {}, {}
-        for style in sorted(set(styles)):
+        for style in sorted(set(styles) if requested_styles is None else set(requested_styles)):
             local = self.x[np.asarray(styles)==style]
             if len(local)<2:raise ValueError('Copula needs two training beers per style')
             self.marginals[style] = np.sort(local, axis=0)
