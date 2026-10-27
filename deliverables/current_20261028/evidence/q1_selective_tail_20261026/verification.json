@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "independently_refit_shared_outer_models": 9,
+  "inner_decision_contexts_rebuilt": 10,
+  "candidate_policies_per_context": 24,
+  "inner_probability_models_independently_refit": false,
+  "original_missingness_preserved": true,
+  "heldout_artificial_MCAR_masks": 81,
+  "missingness_metric_rows": 162,
+  "cli_rows_checked": 26000,
+  "unlabelled_blank_rows": 1000,
+  "official_baseline_preserved": true,
+  "deployed_risk_probabilities_unchanged": true,
+  "adopted": false,
+  "model_sha256": "79f373e2f79d167dda580832ea4d68babdb53f043f2797c55d773a4eef8c7a0b",
+  "scope": "Post-development same-250-beer numerical and grouped validation, not external testing",
+  "risk_comparison_reference": "same-stage parent rebuild; original R2b numerical drift is reported by parent verification",
+  "scope_table_cross_checked": true
+}

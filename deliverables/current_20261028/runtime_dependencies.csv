@@ -1,0 +1,16 @@
+﻿path,use
+configs/r2_raw_panel_protocol_20261026.json,training
+configs/r2b_tail_risk_protocol_20261026.json,training
+configs/q3_style_protocol.json,training
+data/reference/zenodo23624915/download_manifest.json,training
+data/current/risk_full_training.csv.gz,training
+data/current/risk_provenance.json,training
+outputs/p0_audit_20261023_final/data_inventory.csv,training
+outputs/p0_audit_20261023_final/sensory_mapping.csv,training
+outputs/raw_sensory_audit_20261025/beer_identity_mapping.csv,training
+outputs/task1_acceptance_20261025/scorecard_scope.csv,training
+outputs/r2b_tail_risk_20261026/defect_risk_validation.csv,training
+outputs/q3_copula_20261028/generated_profiles.csv,fixed_profile_render
+outputs/task4_raw_q3_20261026/generated_profiles.csv,fixed_profile_render
+outputs/q3_missing_aware_20261027/source119_profile.csv,fixed_profile_render
+outputs/q3_missing_aware_20261027/transfer119_profile.csv,fixed_profile_render

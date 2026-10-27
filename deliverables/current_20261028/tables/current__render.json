@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "training_required": false,
+  "search_required": false,
+  "generated_profiles": 300,
+  "transfer_profiles": 2,
+  "actual_after_measured": false,
+  "generated_source": "outputs/task4_raw_q3_20261026",
+  "generated_sha256": "56773ed32559d4f1d724a01f93db831ea109cfe9742f54d9ba3bfc82f542b58e",
+  "q1_model_sha256": "e082bf9332e197b5f4799dc1b425494d4e6041cdc1ed51f4e6a9dfff3bbe9943",
+  "q3_model_sha256": "d8244e50d5566c50341b6d7d5b3af7ef9bc6b7f53143957f97da244358759634"
+}

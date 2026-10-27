@@ -101,7 +101,40 @@ def auxiliary_defects(frame, q3, targets):
     return pd.DataFrame(rows), pd.DataFrame(styles)
 
 
-def render(models, output):
+GENERATED_CANDIDATES = [ROOT/'outputs/q3_copula_v2_20261028', ROOT/'outputs/q3_copula_20261028',
+                        ROOT/'outputs/task4_raw_q3_20261026']
+
+
+def _adoption_ok(folder):
+    """A generated spectrum set is current only if its own gate says adopted."""
+    check = folder/'verification.json'
+    if not check.exists():
+        return False
+    data = read_json(check)
+    if 'replacement_gate_passed' in data:
+        return bool(data.get('integrity_passed')) and bool(data.get('replacement_gate_passed'))
+    return data.get('status') == 'passed' or bool(data.get('all_pass'))
+
+
+def generated_source(preferred=None):
+    """Directory holding the officially adopted generated spectra.
+
+    A 20261028 copula output replaces the retained 20261027 interpolation only
+    after its pre-registered replacement gate passes; otherwise the retained
+    output stays current. ``preferred`` bypasses the rule for explicit diagnostics.
+    """
+    if preferred is not None:
+        folder = Path(preferred)
+        if not (folder/'generated_profiles.csv').exists():
+            raise FileNotFoundError(str(folder/'generated_profiles.csv'))
+        return folder
+    for folder in GENERATED_CANDIDATES:
+        if (folder/'generated_profiles.csv').exists() and _adoption_ok(folder):
+            return folder
+    raise FileNotFoundError('No verified generated profiles; pass --generated explicitly')
+
+
+def render(models, output, generated=None):
     """Refresh adopted fixed profiles; no search, calibration or fitting."""
     official, auxiliary = [joblib.load(models/name) for name in ['q1.joblib', 'q3.joblib']]
     output.mkdir(parents=True, exist_ok=False)
@@ -111,9 +144,12 @@ def render(models, output):
     defects, styles = auxiliary_defects(frame, auxiliary, official['targets'])
     save_csv(output, 'transfer_auxiliary_Q3_risks.csv', defects)
     save_csv(output, 'transfer_styles.csv', styles)
-    generated = pd.read_csv(ROOT/'outputs/task4_raw_q3_20261026/generated_profiles.csv').rename(columns={'generated_id':'beer'})
+    source = generated_source(generated)
+    generated = pd.read_csv(source/'generated_profiles.csv').rename(columns={'generated_id':'beer'})
     scores, _, _, _ = portrait(generated, official)
     scores.to_csv(output/'generated_official_Q1_scores52.csv.gz', index=False, compression={'method':'gzip','mtime':0})
     write_json(output/'render.json', dict(status='completed', training_required=False, search_required=False,
         generated_profiles=len(generated), transfer_profiles=len(frame), actual_after_measured=False,
+        generated_source=source.relative_to(ROOT).as_posix(),
+        generated_sha256=sha256(source/'generated_profiles.csv'),
         q1_model_sha256=sha256(models/'q1.joblib'), q3_model_sha256=sha256(models/'q3.joblib')))

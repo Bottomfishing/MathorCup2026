@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "predictive_qualified": true,
+  "adopted_four_proxy_missing_aware_plan": true,
+  "zero_assumption_removed_for_qualified_Q3": true,
+  "role_metrics": {
+    "development": {
+      "qualified": true,
+      "joint_fraction": 0.9,
+      "risk_delta_q80": [
+        -0.1504750188674492,
+        -0.019396400595289666,
+        -0.007716561617395,
+        -0.06602705753241463
+      ],
+      "parameter_fraction": 1.0
+    },
+    "validation": {
+      "qualified": true,
+      "joint_fraction": 0.75,
+      "risk_delta_q80": [
+        -0.09541925119413186,
+        -0.01168526843673634,
+        -0.011330515824563014,
+        -0.07719469688380452
+      ],
+      "parameter_fraction": 0.6875
+    }
+  },
+  "nominal_qualified": true,
+  "distance_improvement_223_available_coordinates": 0.14482427149792354,
+  "nearest_support_distance": 0.23037037711373085,
+  "support_radius": 0.9515338774800058,
+  "q1_model_sha256": "79f373e2f79d167dda580832ea4d68babdb53f043f2797c55d773a4eef8c7a0b",
+  "q1_model_changed": false,
+  "stale_evidence_sufficient": false,
+  "true_all_five_safety_certified": false,
+  "phase3_started": false,
+  "development_only_matched_sensitivity": true,
+  "parent_fixed_target_sha256": "fab25e7a10a0645692bb20e42eb0ff7cb8df8113b5beaee59cac8f16572507f0",
+  "current_source_profile_sha256": "13d6a2268b067314c7ecb35a4522e3a6882f2f9fd0c6bde8ad474d587547de60",
+  "current_transfer_profile_sha256": "3667ea4514f3f2333eff8577077b511690d9bfb106c6e56151a3903a5b9abee0"
+}

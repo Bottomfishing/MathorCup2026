@@ -1,0 +1,646 @@
+source,target,weight
+Acetic acid,Total acids,0.96625558611341
+Linalool,Total hop aroma compounds,0.958414990111041
+Pentyl octanoate,2-methylbutyl octanoate,0.936618592377881
+Isoamyl acetate,Total ester compounds,0.922277924446791
+2-methyl-1-butanol,Isopentyl formate,0.922268708299333
+Z-β-farnesene,Pentyl octanoate,0.916109088892997
+Pentyl octanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.911888558050563
+2-phenyl ethyl butyrate,Pentyl octanoate,0.904578913053143
+Ethyl tetradecanoate,Ethyl hexadecanoate,0.902564900076863
+Z-β-farnesene,2-methylbutyl octanoate,0.898895838553528
+2-phenyl ethyl butyrate,Z-β-farnesene,0.893216232043497
+E-nerolidol,Tobacarol,0.885996531232457
+Isopentyl hexanoate,Pentyl octanoate,0.881558114797395
+2-methylbutyl octanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.877071043933526
+2-phenyl ethyl butyrate,2-methylbutyl octanoate,0.873312970052574
+Methyl isoeugenol,Butylated hydroxytoluene,0.869216243551411
+2-butyl octanoate,Pentyl octanoate,0.868351070107631
+Allo-aromadendrene epoxide,Epicubenol,0.867056876558141
+Z-β-farnesene,"1,2-dihydro-8-hydroxy-2E-linalool",0.864335197687539
+α-muurolol,Tau-muurolol,0.864114139930504
+2-phenyl ethyl butyrate,"1,2-dihydro-8-hydroxy-2E-linalool",0.855004373224859
+Ethanol,Caloric value,0.853566697739768
+Ethyl decanoate,Ethyl octanoate,0.85313084169571
+2-butyl octanoate,2-methylbutyl octanoate,0.827173029926061
+Isobutyl acetate,Isoamyl acetate,0.826423735449258
+2-butyl octanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.824173565530829
+Isobutyl acetate,Total ester compounds,0.822047530849987
+Ethyl tetradecanoate,Ethyl pentadecanoate,0.821944387657734
+Isopentyl hexanoate,Z-β-farnesene,0.820122100988928
+Isopentyl hexanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.819916001864002
+Caryophyllene oxide,Humulene epoxide II,0.818214977202108
+Isopentyl hexanoate,2-methylbutyl octanoate,0.815673299436617
+Epicubenol,Tau-muurolol,0.815442766786857
+4-methyl-1-pentanol,X-methyl-1-octanol,0.814038485603805
+Isopentyl hexanoate,2-phenyl ethyl butyrate,0.812502354820692
+Pentyl octanoate,Ethyl pentadecanoate,0.809570369561552
+4-ethyl-phenol,4-ethyl-guaiacol,0.808499330561867
+Pentyl octanoate,Ethyl tetradecanoate,0.807922691630162
+Ethyl pentadecanoate,Ethyl hexadecanoate,0.803504607400514
+Isopentyl hexanoate,2-butyl octanoate,0.799281461372655
+Trans-dihydro-α-terpinyl acetate,Pentyl octanoate,0.798140197329457
+Caryophyllene oxide,α-muurolol,0.796535678451168
+Neryl formate,4-ethyl-guaiacol,0.795887684625014
+2-butyl octanoate,2-phenyl ethyl butyrate,0.795036897427137
+2-butyl octanoate,Z-β-farnesene,0.791732832994259
+Color,Protein,0.788272799657229
+Car-3-en-2-one,Dimethoxy-E-citral,0.78069326829314
+Ethyl hexadecanoate,Ethyl octadecanoate,0.780626953904135
+3-methyl-2-hexanol,3-furanmethanol,0.780257092113474
+Humulene epoxide II,α-muurolol,0.780177984146625
+Trans-dihydro-α-terpinyl acetate,Z-β-farnesene,0.776270704851594
+Neryl propanoate,α-calacorene,0.77535542896011
+Hydrogen sulfide,Total sulfur compounds,0.775228131266335
+Isopentyl hexanoate,Ethyl tetradecanoate,0.773045581511866
+2-methylbutyl octanoate,Ethyl pentadecanoate,0.770661415108523
+Isopentyl hexanoate,Ethyl pentadecanoate,0.768867384210219
+Prenyl isobutyrate,Ethyl phenylacetate,0.768752858448157
+Trans-dihydro-α-terpinyl acetate,2-methylbutyl octanoate,0.768078623537731
+Ethyl acetate,Total ester compounds,0.767193203091249
+2-methylbutyl octanoate,Ethyl tetradecanoate,0.765441928549473
+Ethyl benzoate,Ethyl phenylacetate,0.764248643978304
+Allo-aromadendrene epoxide,"Caryophylla-4,8-dien-5-ol",0.76393313401928
+Z-β-farnesene,Ethyl tetradecanoate,0.761894062245609
+Epicubenol,α-muurolol,0.759218646417071
+2-undecanol,Methyl geranate,0.758953969289545
+Terpinen-4-ol,Ethyl linalool,0.758690459734437
+Isopentyl hexanoate,Trans-dihydro-α-terpinyl acetate,0.756229959844706
+Trans-dihydro-α-terpinyl acetate,2-phenyl ethyl butyrate,0.755396976423578
+Z-β-farnesene,Ethyl pentadecanoate,0.754885502063584
+3-methyl-2-hexanol,4-methyl-1-pentanol,0.754098889453489
+Trans-dihydro-α-terpinyl acetate,"1,2-dihydro-8-hydroxy-2E-linalool",0.752939826650142
+2-phenyl ethyl butyrate,Ethyl pentadecanoate,0.752803725468319
+"1,2-dihydro-8-hydroxy-2E-linalool",Ethyl tetradecanoate,0.750183936866183
+"Z,Z-geranyl linalool",Ethyl hexadecanoate,0.749589419860947
+3-furanmethanol,O-cresol,0.746053040090839
+N-pentanol,2-methyl-1-butanol,0.745241107857726
+Isoborneol,Terpinen-4-ol,0.744630047771829
+Isoborneol,Ethyl linalool,0.743513848221572
+Ethyl hexanoate,Ethanol,0.740166747927893
+Ethyl 2-methylbutyrate,Ethyl 3-methylbutyrate,0.737056676778286
+Manool oxide,Isopropyl hexadecanoate,0.735496780152608
+2-phenyl ethyl butyrate,Ethyl tetradecanoate,0.735093521919562
+Nerol oxide,Trans-dihydro-α-terpinyl acetate,0.733845619823607
+Glycerol,Ethanol,0.733055998327051
+Citronellol,Total hop aroma compounds,0.731372789407546
+3-methyl-2-hexanol,O-cresol,0.730453939510202
+Isoamyl acetate,Phenethyl acetate,0.727000816013056
+2-butyl octanoate,Ethyl pentadecanoate,0.726462509047331
+Ethyl hexanoate,Total ester compounds,0.726433254932079
+Caryophyllene oxide,Tau-muurolol,0.7253312009789
+N-dodecanol,N-tetradecanol,0.72380654784761
+Ethyl hexanoate,Ethyl octanoate,0.723697350107506
+Ethanol,Total ester compounds,0.720357680685624
+Ethyl acetate,Ethanol,0.719391515847365
+α-calacorene,Epicubenol,0.717847385893079
+Isobutyl hexanoate,Nerol oxide,0.71779178020688
+"1,2-dihydro-8-hydroxy-2E-linalool",Ethyl pentadecanoate,0.716210263932698
+2-butyl octanoate,Ethyl tetradecanoate,0.716152134122324
+Pentyl octanoate,Ethyl hexadecanoate,0.715869766064009
+Methyl geranate,α-muurolol,0.715045114345337
+Alpha-terpineol,Total hop aroma compounds,0.714082886962981
+N-dodecanol,Manool,0.713628371002376
+1-propanol,N-pentanol,0.712321008052783
+α-calacorene,Allo-aromadendrene epoxide,0.709781894551638
+Isoamyl alcohol,Isobutanol,0.708955769806698
+3-methyl-2-hexanol,N-octanol,0.708217539480632
+Trans-dihydro-α-terpinyl acetate,Ethyl tetradecanoate,0.707262149109333
+"Z,Z-geranyl linalool",Ethyl octadecanoate,0.707174705720264
+Epicubenol,"Caryophylla-4,8-dien-5-ol",0.702950042181148
+"2,3-dihydro-farnesol","Z,E-farnesol",0.699020500023922
+E-nerolidol,"Z,E-farnesol",0.696699243120412
+Allo-aromadendrene epoxide,Tau-muurolol,0.696261506728779
+Ethyl 2-hexenoate,Nerol oxide,0.695167868354815
+Linalool,Alpha-terpineol,0.694422993402073
+Dimethyl sulfide,Total sulfur compounds,0.693797340757452
+4-methyl-1-pentanol,N-nonanol,0.693614895353333
+Trans-dihydro-α-terpinyl acetate,Ethyl 9-decenoate,0.693089590902594
+Beta-phellandrene,Terpinen-4-ol,0.691852247511699
+Isopentyl hexanoate,Ethyl hexadecanoate,0.691227003929727
+Acetaldehyde,Ethanol,0.690747954062581
+2-acetylfuran,2-acetylpyrrole,0.689502907122979
+Isobutanol,Isobutyl acetate,0.688677698411452
+α-calacorene,"Caryophylla-4,8-dien-5-ol",0.688346106054492
+Prenyl isobutyrate,Perillyl acetate,0.686803580322637
+E-nerolidol,"2,3-dihydro-farnesol",0.685577524867585
+Z-β-farnesene,Ethyl hexadecanoate,0.685195066797475
+E-β-ionone,α-calacorene,0.681463962264489
+Ethyl decanoate,Pentyl octanoate,0.68086773459828
+Ethyl acetate,Ethyl hexanoate,0.679884030144482
+Ethyl tetradecanoate,"Z,Z-geranyl linalool",0.678969173800855
+Nerol oxide,2-undecanol,0.678740977812974
+Ethyl tetradecanoate,Ethyl octadecanoate,0.678532665524034
+Isoamyl acetate,N-hexanol,0.676886100064107
+2-undecanol,α-muurolol,0.676854132945697
+Neryl propanoate,Allo-aromadendrene epoxide,0.675113881032318
+Methyl geranate,Caryophyllene oxide,0.67480020990938
+Trans-dihydro-α-terpinyl acetate,Ethyl pentadecanoate,0.674286318575154
+2-methylbutyl octanoate,"Caryophylla-4,8-dien-5-ol",0.672120307794667
+Tobacarol,"Z,E-farnesol",0.671435975648204
+Humulene epoxide II,Tau-muurolol,0.670521417611139
+2-methylbutyl octanoate,Ethyl hexadecanoate,0.670386137286996
+Isoamyl lactate,Ethyl phenylacetate,0.669471181431527
+1-octen-3-ol,α-calacorene,0.667676348955029
+Ethyl decanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.66699248797948
+Ethyl phenylacetate,Germacrene D,0.66658333779397
+"1,2-dihydro-8-hydroxy-2E-linalool",Ethyl hexadecanoate,0.66657320981432
+2-ethyl-1-hexanol,O-cresol,0.666023009680138
+2-phenyl ethyl butyrate,Ethyl hexadecanoate,0.665998716144714
+Gamma-nonalactone,E-β-damascenone,0.665397077865724
+Ethyl acetate,Caloric value,0.664618249891998
+Caloric value,Total ester compounds,0.663756540104642
+Diacetyl,Ethyl pentanoate,0.663595210809322
+Nerol oxide,α-calacorene,0.662230952064449
+Isobutyl hexanoate,Isopentyl hexanoate,0.661262909713303
+Ethyl 9-decenoate,2-methylbutyl octanoate,0.656208459835861
+Ethyl phenylacetate,Perillyl acetate,0.655751548024768
+4-ethyl-phenol,Neryl formate,0.654718637846183
+Ethyl pentadecanoate,"Z,Z-geranyl linalool",0.654674062340912
+Ethyl octanoate,Ethanol,0.654534946689899
+Caryophyllene alcohol,Epicubenol,0.654533201249457
+3-methyl-2-hexanol,N-heptanol,0.65382153314453
+N-hexanol,Total ester compounds,0.65302663256957
+"Caryophylla-4,8-dien-5-ol","1,2-dihydro-8-hydroxy-2E-linalool",0.651817997373881
+3-furanmethanol,2-acetylfuran,0.651672367242446
+2-acetylfuran,Ethyl furoate,0.651474200730363
+Ethyl decanoate,Isopentyl hexanoate,0.651313724667866
+Methyl geranate,Tau-muurolol,0.651158089846092
+Trans-dihydro-α-terpinyl acetate,Ethyl hexadecanoate,0.650419034797164
+Ethyl 2-hexenoate,α-calacorene,0.649823134157003
+Allo-aromadendrene epoxide,α-muurolol,0.648765384255719
+Caryophyllene alcohol,Tau-muurolol,0.647935885238078
+Isobutyl hexanoate,2-methylbutyl octanoate,0.647303065226296
+Beta-phellandrene,Terpinolene,0.646808415389653
+Neryl propanoate,"Caryophylla-4,8-dien-5-ol",0.646545782209456
+Isoamyl alcohol,Ethanol,0.645702754501269
+2-undecanol,Epicubenol,0.644904745406535
+Terpinen-4-ol,Alpha-terpineol,0.644885536167794
+Tobacarol,"2,3-dihydro-farnesol",0.644560684761975
+Ethyl 9-decenoate,Z-β-farnesene,0.644383640474049
+Isobutanol,Glycerol,0.64392884233798
+Z-β-farnesene,"Caryophylla-4,8-dien-5-ol",0.643275061489963
+"2,3-dihydro-farnesol","E,Z-farnesal",0.642824935317188
+2-acetylfuran,O-cresol,0.641122681440783
+N-pentanol,Isopentyl formate,0.640438151010416
+1-octen-3-ol,E-β-ionone,0.639824201650873
+Isobutyl acetate,N-hexanol,0.639764154924293
+Acetaldehyde,Caloric value,0.63964863437815
+Isobutyl hexanoate,Pentyl octanoate,0.638971265410254
+Prenyl isobutyrate,Ethyl 5-methylhexanoate,0.637350585466035
+Humulene epoxide II,Epicubenol,0.636295605962129
+O-cresol,N-octanol,0.63564971644022
+Isoamyl alcohol,Total ester compounds,0.635643188334517
+Ethyl isobutyrate,O-cresol,0.635464189502668
+Ethyl furoate,Ethyl phenylacetate,0.634159146160731
+1-propanol,2-methyl-1-butanol,0.632660380967082
+Ethyl 9-decenoate,Pentyl octanoate,0.632496432590147
+Camphor,Ethyl linalool,0.631451742884115
+Methyl geranate,Humulene epoxide II,0.630510184655164
+Isoamyl alcohol,Glycerol,0.629093257222821
+2-undecanol,Allo-aromadendrene epoxide,0.629067412247281
+2-methyl-1-butanol,14-hydroxy-9-epi-(E)-caryophyllene,0.628988683110502
+Ethanol,Ethyl butyrate,0.628963951025104
+E-2-nonenal,2-butyl octanoate,0.62780271088019
+2-acetylfuran,"2,6-dimethylpyrazine",0.627642237270929
+3-furanmethanol,N-octanol,0.627328949263188
+E-2-nonenal,Cis-dihydro-β-terpineol,0.626570878125078
+Phenethyl acetate,Total ester compounds,0.626555560888974
+Nerol oxide,2-methylbutyl octanoate,0.62536785419623
+Humulene epoxide II,Allo-aromadendrene epoxide,0.625129266167683
+Ethyl phenylacetate,Neryl formate,0.625038331462142
+Ethyl decanoate,2-butyl octanoate,0.624168241444848
+Humulene epoxide II,"Caryophylla-4,8-dien-5-ol",0.6237197720197
+Nerol oxide,Neryl propanoate,0.623005206811274
+Prenyl isobutyrate,Neryl formate,0.621293684430852
+Trans-dihydro-α-terpinyl acetate,"Caryophylla-4,8-dien-5-ol",0.621174913098605
+N-heptanol,N-nonanol,0.621044838227411
+Nerol oxide,"Caryophylla-4,8-dien-5-ol",0.620915172200729
+Ethyl decanoate,2-methylbutyl octanoate,0.620797983231496
+Ethyl linalool,Ocimenone,0.620415037760303
+N-heptanol,N-octanol,0.619997503960063
+Isomaltol,O-cresol,0.619072631669172
+Glycerol,Caloric value,0.61882542243825
+Y-methyl-1-octanol,Cis-dihydro-β-terpineol,0.618395100891824
+4-methyl-1-pentanol,N-dodecanol,0.617616044311312
+1-octen-3-ol,Isoborneol,0.617504569683027
+Ethyl hexanoate,Glycerol,0.617262109412569
+5-methylfurfural,Ethyl furoate,0.617105518200145
+Furfuryl alcohol,3-methyl-2-hexanol,0.616702436866643
+N-heptanol,1-octen-3-ol,0.616538792376296
+1-octen-3-ol,Nerol oxide,0.615667759072862
+2-acetylpyrrole,Ethyl hydrocinnamate,0.61442267851609
+Allo-aromadendrene epoxide,Kongol,0.613563619739134
+Ethyl hexanoate,Caloric value,0.61307003312053
+"Caryophylla-4,8-dien-5-ol",α-muurolol,0.612968539218979
+2-butyl octanoate,Ethyl hexadecanoate,0.612263208280093
+Terpinolene,Terpinen-4-ol,0.612247899483487
+Prenyl isobutyrate,Isoamyl lactate,0.611727526922503
+Ethyl 9-decenoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.611632520641259
+Nerol oxide,Isopentyl hexanoate,0.611384301964548
+Neryl propanoate,Epicubenol,0.611292061917992
+Ethyl 2-methylbutyrate,Ethyl phenylacetate,0.6109192103842
+Diethyl succinate,Ethyl nicotinate,0.610338331519888
+N-tetradecanol,Isopropyl tetradecanoate,0.610287767025775
+Nerol oxide,Methyl geranate,0.609900324810827
+Linalool,Citronellol,0.60772963314725
+Ethanol,3-methyl-2-hexanol,0.607008035958729
+1-octen-3-ol,2-undecanol,0.606855039932997
+N-propyl acetate,3-methyl-2-butenal,0.606532418561472
+Beta-phellandrene,E-β-ocimene,0.606370873630931
+Ethyl 9-decenoate,"Caryophylla-4,8-dien-5-ol",0.605900131387685
+Methyl geranate,Epicubenol,0.605775061508665
+Pentyl octanoate,"Caryophylla-4,8-dien-5-ol",0.605644536781279
+Ethyl pentadecanoate,Ethyl octadecanoate,0.605642148298567
+Isoamyl alcohol,Isobutyl acetate,0.604938207679689
+Epicubenol,Kongol,0.604298373182982
+3-methyl-2-hexanol,Cumin aldehyde,0.603833164054427
+2-methylbutyl octanoate,Neryl propanoate,0.603773985403643
+Neryl formate,E-β-ionone,0.603568239085544
+Isobutyl hexanoate,2-phenyl ethyl butyrate,0.603385572526788
+Nerol oxide,Humulene epoxide II,0.60309453499551
+Isobutyl hexanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.602785243282952
+Trans-dihydro-α-terpinyl acetate,2-butyl octanoate,0.601672517732025
+Isobutyl hexanoate,2-butyl octanoate,0.601659256945634
+Ethyl benzoate,Germacrene D,0.600530467532899
+Ethyl 3-hexanoate,Ethyl 5-methylhexanoate,0.600485499061212
+Isopentyl hexanoate,Ethyl 9-decenoate,0.600085601403782
+Camphor,Terpinen-4-ol,0.599837046329344
+Isoamyl alcohol,Isoamyl acetate,0.599667565817237
+Linalool,Terpinen-4-ol,0.59893057779875
+Ethyl octanoate,Total ester compounds,0.598740958813616
+Ethyl acetate,Ethyl octanoate,0.598556251822841
+Isobutyl hexanoate,Trans-dihydro-α-terpinyl acetate,0.598383131278254
+2-undecanol,Tau-muurolol,0.59835193086557
+3-furanmethanol,Isomaltol,0.597877277126641
+Ethyl 5-methylhexanoate,Ethyl phenylacetate,0.597632332862745
+Nerol oxide,Allo-aromadendrene epoxide,0.596718193265791
+2-methylbutyl octanoate,α-calacorene,0.596249777122386
+Caryophyllene alcohol,Allo-aromadendrene epoxide,0.594995546139716
+Isomaltol,N-octanol,0.594198701627724
+E-2-nonenal,"E,E-2,4-decadienal",0.594182721505133
+Diacetyl,"E,E-2,4-decadienal",0.594167630783846
+α-calacorene,Kongol,0.59401172138938
+Glycerol,Total ester compounds,0.593745979943974
+Nerol oxide,α-muurolol,0.592761218207494
+Nerol oxide,Pentyl octanoate,0.592258914679406
+2-phenyl ethyl butyrate,"Caryophylla-4,8-dien-5-ol",0.592207441012245
+Ethyl decanoate,Ethyl tetradecanoate,0.591974677781326
+Caryophyllene oxide,Epicubenol,0.591854023514317
+Methylpyrazine,2-acetylfuran,0.591839500488591
+"E,E-2,4-decadienal",Ethyl pentanoate,0.591624625953754
+Ethyl 9-decenoate,2-phenyl ethyl butyrate,0.590215687892424
+2-nonanol,Nerol oxide,0.590106816347454
+E-ortho-methoxy cinnamaldehyde,Allo-aromadendrene epoxide,0.589939512404839
+Ethyl phenylacetate,E-α-ionone,0.589826264866056
+Y-methyl-1-octanol,Nerol oxide,0.589826087053808
+Isoamyl lactate,2-nonanol,0.58961575107472
+2-acetylfuran,5-methylfurfural,0.58931198102701
+Ethyl decanoate,Z-β-farnesene,0.588238394160349
+Ethyl 5-methylhexanoate,Ethyl benzoate,0.58759671436601
+Caryophyllene alcohol,α-muurolol,0.586187146452381
+Ethyl octanoate,Isopentyl hexanoate,0.585642155168677
+Phenylacetaldehyde,E-β-ocimene,0.585381641451276
+2-undecanol,Humulene epoxide II,0.585200842363435
+Nerol oxide,Epicubenol,0.584620790697049
+Ethyl 2-hexenoate,Isobutyl hexanoate,0.583737684045192
+Isomaltol,Perillyl acetate,0.583488097871475
+N-nonanol,Epicubenol,0.583303603571409
+1-propanol,Isopentyl formate,0.58268144392767
+1-octen-3-ol,Epicubenol,0.582305751987396
+Ethyl 5-methylhexanoate,Nerol oxide,0.581827789875794
+Ethyl 5-methylhexanoate,2-nonanol,0.580927294374761
+Ethyl 2-hexenoate,Ethyl 5-methylhexanoate,0.58022007341912
+Nerol oxide,Z-β-farnesene,0.580205289021918
+Ethyl furoate,O-cresol,0.580074709584847
+Ethyl 3-methylbutyrate,Ethyl phenylacetate,0.579897868602545
+Ethyl 2-hexenoate,Neryl propanoate,0.57970312315597
+1-octen-3-ol,Neryl propanoate,0.579691083594978
+Ethyl acetate,Isobutyl acetate,0.579632062494291
+3-methyl-2-hexanol,2-ethyl-1-hexanol,0.579255002140033
+Iron,Iso-alpha acids,0.578584324233243
+Ethyl hexanoate,Ethyl butyrate,0.578536198737123
+Ethyl phenylacetate,E-ortho-methoxy cinnamaldehyde,0.578451225026601
+Ethyl 9-decenoate,Ethyl tetradecanoate,0.577480142975228
+Isobutyl hexanoate,Ethyl tetradecanoate,0.577198377249387
+9-epi-E-caryophyllene,α-terpinyl isobutanoate,0.577066325517889
+Diacetyl,2-methyl-1-butanol,0.576614132151785
+Acetaldehyde,Ethyl acetate,0.576088705419287
+Nerol oxide,"1,2-dihydro-8-hydroxy-2E-linalool",0.5760339321874
+Methyl hexadecanoate,Manool,0.575801326474808
+Color,2-acetylfuran,0.574755683640684
+Terpinen-4-ol,Total hop aroma compounds,0.574723331641556
+α-terpinyl isobutanoate,N-dodecanol,0.574379573404408
+3-methyl-2-hexanol,X-methyl-1-octanol,0.574081162719621
+Nerol oxide,E-2-nonenal,0.573977439555295
+Nerol oxide,Cis-dihydro-β-terpineol,0.57390877823387
+Prenyl isobutyrate,Ethyl furoate,0.572443842684642
+Isobutanol,Ethanol,0.572153801284637
+Ethyl butyrate,Total ester compounds,0.572112925498214
+Alpha-terpineol,Citronellol,0.57178863218495
+Ethyl 3-hexanoate,Ethyl 2-hexenoate,0.571680379129
+N-dodecanol,Isopropyl tetradecanoate,0.570736392539281
+2-nonanol,Ethyl phenylacetate,0.570513704219268
+Prenyl isobutyrate,4-ethyl-guaiacol,0.569874825324937
+pH,Iso-alpha acids,0.569796420098484
+Trans-dihydro-α-terpinyl acetate,Humulene epoxide II,0.569475711286382
+α-phellandrene,Beta-phellandrene,0.568716244318231
+Kongol,Tau-muurolol,0.568664929537692
+1-octen-3-ol,Allo-aromadendrene epoxide,0.568129457861907
+Ethyl decanoate,Trans-dihydro-α-terpinyl acetate,0.56805425393449
+α-muurolol,"1,2-dihydro-8-hydroxy-2E-linalool",0.568004775565931
+Ethyl acetate,3-methyl-2-hexanol,0.567534584553353
+Acetaldehyde,Total ester compounds,0.56728882062113
+Ethyl isobutyrate,3-methyl-2-hexanol,0.567049851613358
+1-octen-3-ol,Ethyl 2-hexenoate,0.566796297524942
+α-calacorene,α-muurolol,0.5661375794775
+4-methyl-1-pentanol,Manool,0.565568873083156
+4-ethyl-phenol,Ethyl phenylacetate,0.565397838452674
+Ethyl acetate,Glycerol,0.564965429382514
+N-decanol,E-nerolidol,0.56492511423584
+Alpha-terpineol,Ethyl linalool,0.564683831360608
+Isoamyl acetate,Ethanol,0.56403904520287
+4-methoxysalicylaldehyde,Ethyl hydrocinnamate,0.563571303700168
+O-cresol,4-methyl-1-pentanol,0.563343387276271
+Ethyl benzoate,Perillyl acetate,0.563073201171219
+N-octanol,4-methyl-1-pentanol,0.56288919097534
+Isoborneol,α-calacorene,0.562508436136608
+Neryl propanoate,Ambroxide,0.562305202453947
+Ethyl decanoate,Ethyl hexadecanoate,0.562288588758075
+Color,5-methylfurfural,0.562123970893223
+1-octen-3-ol,Neryl formate,0.561847955937046
+"Caryophylla-4,8-dien-5-ol",Tau-muurolol,0.561759654700188
+Prenyl isobutyrate,Ethyl benzoate,0.561188162003266
+Isoamyl alcohol,Caloric value,0.560581108929326
+N-octanol,N-nonanol,0.559769854995518
+2-pentyl furan,O-cresol,0.559560088820366
+E-2-nonenal,Pentyl octanoate,0.558715633606072
+Isopentyl formate,3-methyl-2-butenal,0.55853732059713
+Protein,Ethyl furoate,0.557925903605052
+Isobutyl acetate,Glycerol,0.557425127004596
+Methyl geranate,Allo-aromadendrene epoxide,0.557352468759031
+3-methyl-2-hexanol,N-nonanol,0.557174713570144
+Gamma-eudesmol,Ethyl pentanoate,0.557116547213093
+Germacrene D,E-β-ionone,0.556957682200823
+Methanethiol,Total sulfur compounds,0.556917582681323
+Ethanol,4-methyl-1-pentanol,0.556787541829487
+Neryl formate,α-calacorene,0.556561563804784
+α-calacorene,Neryl isovalerate,0.556244513462852
+Isoborneol,Terpinen-4-ol acetate,0.556214567085204
+Hydrogen sulfide,Methanethiol,0.555717504889512
+Isobutyl hexanoate,Z-β-farnesene,0.554992145452483
+Ethyl phenylacetate,4-ethyl-guaiacol,0.554744533956509
+3-furanmethanol,4-methyl-1-pentanol,0.554520913015783
+Z-β-farnesene,α-calacorene,0.554395155309722
+Isopentyl formate,14-hydroxy-9-epi-(E)-caryophyllene,0.553536706143157
+E-α-ionone,E-β-ionone,0.553044373180646
+2-undecanol,α-calacorene,0.55300615528555
+Trans-dihydro-α-terpinyl acetate,Neryl propanoate,0.552972179540405
+Isobutyl acetate,Phenethyl acetate,0.552462421584534
+"E,Z-farnesal","Z,E-farnesal",0.552413739040889
+2-undecanol,Caryophyllene oxide,0.552222011383059
+Isopentyl hexanoate,"Z,Z-geranyl linalool",0.551728239231123
+Diacetyl,E-2-nonenal,0.551580183700185
+Ethyl acetate,Isoamyl acetate,0.55155685690971
+1-octen-3-ol,N-nonanol,0.551430978650527
+Prenyl isobutyrate,4-ethyl-phenol,0.551216849617301
+E-2-nonenal,Isopentyl hexanoate,0.55070560211617
+N-octanol,N-decanol,0.550564444836618
+Caloric value,3-methyl-2-hexanol,0.550404070465127
+Acetaldehyde,Ethyl hexanoate,0.550359525752412
+N-tetradecanol,Manool,0.549995551595778
+Octyl acetate,Furfural,0.54912395948838
+3-furanmethanol,Ethyl furoate,0.54898007203428
+α-calacorene,Tau-muurolol,0.548394198920037
+Ethyl 9-decenoate,Ethyl pentadecanoate,0.548136661495709
+Isopropyl hexadecanoate,Manool,0.547896376286115
+Ethyl octanoate,Pentyl octanoate,0.547828782814352
+Beta-phellandrene,Limonene,0.547329128094476
+Isoamyl acetate,Cinnamaldehyde,0.54730903741216
+Ambroxide,Benzyl benzoate,0.547079909443028
+Ethyl nicotinate,Gamma-nonalactone,0.546968133911732
+Glycerol,Ethyl butyrate,0.546915153335961
+Lactic acid,Total acids,0.546904121986745
+Y-methyl-1-octanol,Isobutyl hexanoate,0.546848539203545
+Benzyl alcohol,Diethyl succinate,0.546531795081564
+Color,Ethyl furoate,0.546333620555502
+2-methyl-1-butanol,3-methyl-2-butenal,0.545888158210531
+Furfural,5-methylfurfural,0.545710984950443
+1-octen-3-ol,2-nonanol,0.545514031612452
+Beta-phellandrene,Ethyl linalool,0.54550813725245
+Methylpyrazine,"2,6-dimethylpyrazine",0.54549699443948
+N-nonanol,E-β-ionone,0.545377917981587
+3-furanmethanol,Ethyl phenylacetate,0.545270676330821
+Ethyl decanoate,2-phenyl ethyl butyrate,0.545067742335641
+Isobutyl hexanoate,Ethyl pentadecanoate,0.544950745817332
+2-nonanol,2-undecanol,0.544943375780081
+N-heptanol,O-cresol,0.544912119217044
+Methyl geranate,α-calacorene,0.544157028510582
+Isopropyl tetradecanoate,Manool,0.544082853740622
+Geraniol,Total hop aroma compounds,0.543699822773993
+Isobutyl hexanoate,Cis-dihydro-β-terpineol,0.543544172385235
+Caryophyllene oxide,"Caryophylla-4,8-dien-5-ol",0.543486801331133
+Beta-phellandrene,2-methyl-benzofuran,0.543360506362651
+Germacrene D,α-calacorene,0.542240256083639
+Ethyl 5-methylhexanoate,Isobutyl hexanoate,0.54214861372059
+2-pentyl furan,E-β-farnesene,0.542135012868977
+3-methyl-2-hexanol,Total ester compounds,0.541958239331829
+3-furanmethanol,E-α-ionone,0.541759124779548
+Ethyl 2-hexenoate,Epicubenol,0.541252633578344
+Terpinolene,Ethyl linalool,0.539984447751164
+N-heptanol,Isoborneol,0.539462967407479
+E-2-nonenal,"1,2-dihydro-8-hydroxy-2E-linalool",0.539086496896214
+Isobutyl acetate,Ethanol,0.538988701748154
+Diacetyl,3-methylbutanal,0.538518416854352
+Nerol oxide,Ethyl 9-decenoate,0.538028537208292
+Isopentyl butanoate,Methyl geranate,0.537897960679874
+Isoamyl acetate,Caloric value,0.537500696011136
+N-nonanol,Allo-aromadendrene epoxide,0.537436742797988
+Neryl propanoate,E-β-ionone,0.537391409544959
+2-ethyl-1-hexanol,4-methyl-1-pentanol,0.53707405194075
+4-ethyl-guaiacol,Perillyl acetate,0.536167838462473
+N-decanol,N-dodecanol,0.535793550086064
+2-butyl octanoate,Ethyl octadecanoate,0.53577762196864
+5-hydroxymethylfurfural,Ocimenone,0.535737826666899
+Color,Methylpyrazine,0.535448664226227
+Ethyl 3-methylbutyrate,Prenyl isobutyrate,0.535391899564491
+"2,6-dimethylpyrazine",2-acetylpyrrole,0.535315989858122
+α-muurolol,Kongol,0.534855017566048
+"E,Z-farnesal","Z,E-farnesol",0.534811861636215
+2-methyl-benzofuran,Ethyl linalool,0.534808592058303
+E-β-ionone,Epicubenol,0.53463785778582
+Neo-allo-ocimene,13-epi manool oxide,0.5346246941803
+Nerol oxide,2-phenyl ethyl butyrate,0.534591378793446
+Z-β-farnesene,Neryl propanoate,0.534523343837589
+N-decanol,"2,3-dihydro-farnesol",0.534454231803886
+2-nonanol,Germacrene D,0.533981334589802
+Ethyl 2-hexenoate,2-undecanol,0.533790620282394
+Hydrogen sulfide,Ethanol,0.533567611590094
+Isobutyl hexanoate,Ethyl 9-decenoate,0.533447384364741
+Trans-dihydro-α-terpinyl acetate,2-undecanol,0.53328380521529
+1-octen-3-ol,Methyl geranate,0.53311444448655
+Caryophyllene oxide,Allo-aromadendrene epoxide,0.533085885125147
+Cis-dihydro-β-terpineol,Methyl geranate,0.532602084237247
+1-propanol,N-propyl acetate,0.531914080285934
+E-β-ionone,Allo-aromadendrene epoxide,0.531660198082967
+Y-methyl-1-octanol,Methyl geranate,0.531541055460824
+E-ortho-methoxy cinnamaldehyde,Spathulenol,0.531263247451897
+α-calacorene,Humulene epoxide II,0.530999686549479
+Z-β-farnesene,α-muurolol,0.530919327600116
+Methylpyrazine,Ethyl furoate,0.530900593364256
+Ethyl hexanoate,3-methyl-2-hexanol,0.530729899678395
+Nerol oxide,Terpinen-4-ol acetate,0.530590227644319
+Color,2-acetylpyrrole,0.530309669023456
+Trans-dihydro-α-terpinyl acetate,α-calacorene,0.530275722224504
+Y-methyl-1-octanol,α-muurolol,0.530120033063642
+E-ortho-methoxy cinnamaldehyde,Ambroxide,0.530078873965768
+Ethyl benzoate,E-α-ionone,0.52978573274381
+Neryl formate,Perillyl acetate,0.529451321628506
+Isobutyl hexanoate,α-calacorene,0.529421410114629
+Isomaltol,Prenyl isobutyrate,0.529066185610011
+3-furanmethanol,Prenyl isobutyrate,0.528973093820993
+2-acetylfuran,Isomaltol,0.528601943798945
+2-nonanol,Neryl propanoate,0.52759649900437
+Isoborneol,Ocimenone,0.527536221866514
+Caloric value,Ethyl butyrate,0.527161149008304
+Neryl propanoate,E-ortho-methoxy cinnamaldehyde,0.526999940712644
+Ethyl phenylacetate,Total acids,0.526520828701411
+Ethyl octanoate,Glycerol,0.525974099595297
+O-cresol,E-β-ionone,0.525638079131787
+Caloric value,4-methyl-1-pentanol,0.525588298543279
+Ethyl hydrocinnamate,Ethyl cinnamate,0.525551288157966
+Ethyl linalool,Nerol,0.525528612021931
+N-nonanol,Neryl propanoate,0.525151785884846
+Lactic acid,Ethyl phenylacetate,0.524954729849409
+Isobutyl hexanoate,"Caryophylla-4,8-dien-5-ol",0.524787621167838
+1-octen-3-ol,N-octanol,0.524785340154263
+Ethanol,2-ethyl-1-hexanol,0.524494614170231
+Isobutanol,Total ester compounds,0.523799832192533
+Ethyl 2-hexenoate,Allo-aromadendrene epoxide,0.523765183553054
+4-methyl-1-pentanol,E-β-ionone,0.523735465340504
+Ethyl furoate,Perillyl acetate,0.522451996266788
+Pentyl octanoate,Humulene epoxide II,0.522257969982303
+α-phellandrene,Terpinolene,0.522057260938081
+2-undecanol,Caryophyllene alcohol,0.522001674255163
+Protein,2-acetylfuran,0.521985253166692
+Isomaltol,Ethyl 5-methylhexanoate,0.521673756614238
+Caloric value,N-hexanol,0.521626950488418
+4-methyl-1-pentanol,9-epi-E-caryophyllene,0.52155738947749
+1-propanol,3-methyl-2-butenal,0.521227511908528
+Methyl geranate,Caryophyllene alcohol,0.521096672235918
+N-tetradecanol,Ethyl octadecanoate,0.520983036529109
+Humulene epoxide II,"1,2-dihydro-8-hydroxy-2E-linalool",0.520909523537702
+N-nonanol,Caryophyllene alcohol,0.520866006290448
+"Z,E-farnesal","Z,E-farnesol",0.520747171229984
+Ethyl decanoate,Ethyl pentadecanoate,0.520713003109364
+Methanethiol,Ethanol,0.520446809004844
+Protein,5-methylfurfural,0.519631887835336
+Isopentyl hexanoate,"Caryophylla-4,8-dien-5-ol",0.519557221146152
+Ethyl 9-decenoate,Neryl propanoate,0.519480933415746
+Diethyl sulfide,Total sulfur compounds,0.519203722818634
+Ethyl 2-methylbutyrate,Lactic acid,0.519046395082858
+3-furanmethanol,N-heptanol,0.518786540584649
+2-ethyl-1-hexanol,Ethyl cinnamate,0.518713813883683
+Phenethyl acetate,Cinnamaldehyde,0.518616830955894
+Nerol oxide,Ethyl tetradecanoate,0.518314268877785
+Ethyl linalool,Cumin aldehyde,0.518262442330677
+Isopentyl butanoate,2-undecanol,0.517703154605692
+2-nonanol,Trans-dihydro-α-terpinyl acetate,0.517565401046417
+E-2-nonenal,2-methylbutyl octanoate,0.51741698019991
+Prenyl isobutyrate,Total acids,0.517221357993734
+Ethyl 3-methylbutyrate,Neryl formate,0.517060783067194
+Isobutyl hexanoate,E-2-nonenal,0.517035788875497
+Nerol oxide,Neryl isovalerate,0.516992391254443
+Acetaldehyde,Glycerol,0.516953555724492
+Benzaldehyde,Ethyl pentanoate,0.516431084755527
+Diethyl succinate,Ethyl pentanoate,0.516294446096748
+Ethyl benzoate,Ethyl octadecanoate,0.516032073774184
+N-nonanol,Ethyl linalool,0.515968107208629
+N-nonanol,Tau-muurolol,0.515854353996068
+1-octen-3-ol,α-muurolol,0.515307554864093
+Ethyl 2-hexenoate,Trans-dihydro-α-terpinyl acetate,0.515274166576166
+Ethyl acetate,Isoamyl alcohol,0.515205782212035
+N-octanol,E-β-ionone,0.514330533288533
+Y-methyl-1-octanol,Humulene epoxide II,0.513951747644667
+Isopentyl butanoate,Epicubenol,0.513683053545283
+Ethyl furoate,4-ethyl-guaiacol,0.513381594696355
+E-2-nonenal,Methyl geranate,0.513379570174591
+β-cyclohomocitral,E-nerolidol,0.512910736412092
+Diethyl succinate,Gamma-nonalactone,0.512683058234383
+5-methylfurfural,2-acetylpyrrole,0.512666171682091
+Methionol,β-cyclohomocitral,0.512423463251351
+4-methyl-1-pentanol,α-terpinyl isobutanoate,0.512304931010002
+Ethyl octanoate,"1,2-dihydro-8-hydroxy-2E-linalool",0.512065939376917
+1-octen-3-ol,Kongol,0.51199713924871
+"E,E-2,4-decadienal",Alpha-humulene,0.511804165932405
+E-β-ionone,Ambroxide,0.511665522060456
+Unfermentables,Caloric value,0.511583558681538
+Pentyl octanoate,α-muurolol,0.511551596862471
+N-tetradecanol,"Z,E-farnesol",0.511186350083957
+Neryl isobutanoate,α-calacorene,0.511123389222913
+9-epi-E-caryophyllene,N-dodecanol,0.510947615802986
+Limonene,Terpinen-4-ol,0.510766325810372
+2-methyl-benzofuran,Isoborneol,0.510710925936593
+Diacetyl,Benzaldehyde,0.510564546256887
+Ethyl 9-decenoate,α-calacorene,0.510316654666622
+3-furanmethanol,2-ethyl-1-hexanol,0.51004721460413
+Ethanol,Total sulfur compounds,0.509678448752683
+Pentyl octanoate,"Z,Z-geranyl linalool",0.509673366001683
+Neryl isobutanoate,α-muurolol,0.509535628103263
+Ethyl tiglate,Ethyl benzoate,0.509515378501257
+X-methyl-1-octanol,9-epi-E-caryophyllene,0.509386568729439
+Ethyl 2-hexenoate,Isopentyl hexanoate,0.509382434026819
+Ethyl 3-methylbutyrate,Lactic acid,0.509063725405723
+Neryl formate,Germacrene D,0.508839318069708
+2-butyl octanoate,"Z,Z-geranyl linalool",0.508827061944796
+E-α-ionone,Perillyl acetate,0.508645284432347
+Trans-dihydro-α-terpinyl acetate,α-muurolol,0.508481142112434
+Isopentyl hexanoate,α-muurolol,0.508025816852534
+X-methyl-1-octanol,N-nonanol,0.507905097479916
+Ethyl 2-hexenoate,Germacrene D,0.507707933286984
+Z-dihydro-apofarnesal,Butylated hydroxytoluene,0.507653690044522
+Isopentyl hexanoate,Humulene epoxide II,0.507612424739875
+Diethyl sulfide,Methanethiol,0.50740015325389
+Ethyl 2-hexenoate,2-nonanol,0.507049805785226
+Ethyl octanoate,Caloric value,0.506982673063452
+Z-β-farnesene,Humulene epoxide II,0.506956266490583
+Isomaltol,E-β-ionone,0.506925919847532
+Ethyl 5-methylhexanoate,Perillyl acetate,0.506728460947249
+Ethanol,N-hexanol,0.506681363958437
+α-calacorene,Ambroxide,0.506652340550397
+Nerol oxide,Ethyl pentadecanoate,0.506241787531553
+Isoamyl lactate,Ethyl benzoate,0.506240517902294
+Ethyl tiglate,Ethyl 5-methylhexanoate,0.506179765183685
+Dimethoxy-E-citral,α-terpinyl isobutanoate,0.506046261552741
+Isomaltol,Neryl formate,0.506009112515458
+α-terpinyl isobutanoate,N-tetradecanol,0.505973462832385
+Ethyl 2-hexenoate,E-β-ionone,0.505715520103127
+Butyl acetate,3-furanmethanol,0.505546377385682
+N-propyl acetate,N-pentanol,0.505384665484577
+α-calacorene,"1,2-dihydro-8-hydroxy-2E-linalool",0.505242736322439
+Heptyl acetate,Cinnamaldehyde,0.505009884860316
+Terpinolene,2-methyl-benzofuran,0.504910304733417
+Ethyl hexanoate,Isoamyl acetate,0.504842509480152
+Ethyl 2-hexenoate,"Caryophylla-4,8-dien-5-ol",0.504134226856108
+Ethyl octanoate,3-methyl-2-hexanol,0.504064993820389
+Diacetyl,Amyl acetate,0.503770770923371
+Ethyl 9-decenoate,Ethyl hexadecanoate,0.503378598158632
+Ethyl 2-methylbutyrate,Prenyl isobutyrate,0.502854790187291
+"Caryophylla-4,8-dien-5-ol",Kongol,0.502678300996225
+Caryophyllene oxide,"1,2-dihydro-8-hydroxy-2E-linalool",0.502624383933298
+Ocimenone,Cumin aldehyde,0.502500946102296
+O-cresol,α-terpinyl isobutanoate,0.501548050096667
+E-β-farnesene,"Z,E-farnesol",0.501310653965254
+Isomaltol,Ethyl benzoate,0.501249722593144
+N-nonanol,2-undecanol,0.501176015535331
+Nerol oxide,Geosmin,0.501063442228206
+Terpinen-4-ol acetate,Allo-aromadendrene epoxide,0.501043988679446
+N-decanol,"Z,E-farnesol",0.50102498576655
+N-pentanol,3-methyl-2-butenal,0.50090798252772
+Ethyl 3-hexanoate,Ethyl benzoate,0.500841933470936
+3-furanmethanol,Ambroxide,0.500777910279265
+Linalool,Geraniol,0.500570640165336
+α-phellandrene,Limonene,0.500445917209189
+Methyl hexadecanoate,Isopropyl hexadecanoate,0.500444558321508
+Ethyl decanoate,Ethyl hexanoate,0.500165026672121
+Ethyl 3-methylbutyrate,Total acids,0.500050066358799

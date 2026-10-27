@@ -1,0 +1,193 @@
+{
+  "generated_on": "2026-10-28",
+  "script": "scripts/q3_official_generation_20261028.py",
+  "generator_variant": "v2",
+  "source_directory": "附件",
+  "output_directory": "q3_copula_v2_20261028",
+  "styles": [
+    "Tripel",
+    "Kriek",
+    "Lambic"
+  ],
+  "generation_count": 100,
+  "primary_method": "donor_residual_projected",
+  "baseline_method": "interpolate",
+  "comparison_method": "copula_quantile_projected",
+  "replacement_gate_passed": false,
+  "replacement_recommendation": "retain interpolate; report generator diagnostic gap",
+  "gate_failures": [
+    "Kriek_coverage",
+    "Lambic_coverage"
+  ],
+  "comparison_gate_passed": false,
+  "comparison_gate_failures": [
+    "rank_correlation_rmse",
+    "Kriek_coverage",
+    "Lambic_coverage"
+  ],
+  "method_comparison": {
+    "interpolate": {
+      "marginal_w1": 0.4010694450839805,
+      "energy": 0.3666485154249383,
+      "variance_ratio": 0.7259862209576821,
+      "rank_correlation_rmse": 0.14728925834643722,
+      "heldout_coverage": 0.9487654320987653,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0022222222222222222,
+      "internal_near_duplicate_rate": 0.2688888888888889,
+      "model_median_w1": 0.12813086419753084
+    },
+    "copula_quantile_projected": {
+      "marginal_w1": 0.38540879428089625,
+      "energy": 0.3094971128952799,
+      "variance_ratio": 0.9824002496782782,
+      "rank_correlation_rmse": 0.3899643441942832,
+      "heldout_coverage": 0.865432098765432,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0,
+      "internal_near_duplicate_rate": 0.0,
+      "model_median_w1": 0.12129135802469136
+    },
+    "donor_residual_projected": {
+      "marginal_w1": 0.38554187464711975,
+      "energy": 0.3329993848540565,
+      "variance_ratio": 0.9834675797160176,
+      "rank_correlation_rmse": 0.09749171637738878,
+      "heldout_coverage": 0.8932098765432097,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0,
+      "internal_near_duplicate_rate": 0.0,
+      "model_median_w1": 0.1441111111111111
+    }
+  },
+  "delivery_decision": {
+    "retain_official_interpolate": true,
+    "official_spectra": "outputs/task4_raw_q3_20261026/generated_profiles.csv (unchanged)",
+    "candidate_spectra": "q3_copula_v2_20261028/generated_profiles.csv",
+    "reason": "pre-registered generation_replacement gate not satisfied (Kriek_coverage, Lambic_coverage); the protocol requires retaining interpolation and reporting its diagnosed weaknesses, with no post-result retuning, so the official interpolated spectra are kept and this candidate is reported as a diagnostic comparison only",
+    "retained_interpolate_diagnosed_weaknesses": {
+      "variance_ratio": 0.7259862209576821,
+      "internal_near_duplicate_rate": 0.2688888888888889,
+      "marginal_w1": 0.4010694450839805
+    },
+    "candidate_improves_on": {
+      "variance_ratio": 0.9834675797160176,
+      "marginal_w1": 0.38554187464711975,
+      "energy": 0.3329993848540565,
+      "internal_near_duplicate_rate": 0.0
+    },
+    "candidate_shortfalls": {
+      "rank_correlation_rmse": 0.09749171637738878,
+      "rank_correlation_rmse_limit": 0.19728925834643724,
+      "Kriek_coverage": 0.8333333333333334,
+      "Lambic_coverage": 0.9166666666666666,
+      "coverage_note": "per fold each small style contributes 12 (Kriek) / 4 (Lambic) held-out spectra, so a 0.05 drop allowance is below the resolution floor"
+    },
+    "compared_with_previous_generator": "copula_quantile_projected",
+    "previous_generator_gate_passed": false,
+    "previous_generator_gate_failures": [
+      "rank_correlation_rmse",
+      "Kriek_coverage",
+      "Lambic_coverage"
+    ]
+  },
+  "validation_means": {
+    "copula_quantile_projected": {
+      "marginal_w1": 0.38540879428089625,
+      "energy": 0.3094971128952799,
+      "variance_ratio": 0.9824002496782782,
+      "rank_correlation_rmse": 0.3899643441942832,
+      "heldout_coverage": 0.865432098765432,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0,
+      "internal_near_duplicate_rate": 0.0,
+      "model_median_w1": 0.12129135802469136
+    },
+    "donor_residual_projected": {
+      "marginal_w1": 0.38554187464711975,
+      "energy": 0.3329993848540565,
+      "variance_ratio": 0.9834675797160176,
+      "rank_correlation_rmse": 0.09749171637738878,
+      "heldout_coverage": 0.8932098765432097,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0,
+      "internal_near_duplicate_rate": 0.0,
+      "model_median_w1": 0.1441111111111111
+    },
+    "interpolate": {
+      "marginal_w1": 0.4010694450839805,
+      "energy": 0.3666485154249383,
+      "variance_ratio": 0.7259862209576821,
+      "rank_correlation_rmse": 0.14728925834643722,
+      "heldout_coverage": 0.9487654320987653,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0022222222222222222,
+      "internal_near_duplicate_rate": 0.2688888888888889,
+      "model_median_w1": 0.12813086419753084
+    }
+  },
+  "quality_by_style": [
+    {
+      "style": "Tripel",
+      "n_generated": 100,
+      "variance_ratio": 0.9302645448965253,
+      "near_duplicate_rate": 0.0,
+      "pair_distance_ratio": 0.9582864146752652,
+      "maha_generated": 2.58532602524584,
+      "maha_real": 2.642268403321377,
+      "coverage_95": 1.0,
+      "marginal_w1": 0.038518213399937724
+    },
+    {
+      "style": "Kriek",
+      "n_generated": 100,
+      "variance_ratio": 0.9117565255408415,
+      "near_duplicate_rate": 0.0,
+      "pair_distance_ratio": 0.8893621407902447,
+      "maha_generated": 2.6596410232637635,
+      "maha_real": 2.6813797823190946,
+      "coverage_95": 1.0,
+      "marginal_w1": 0.05466841362338147
+    },
+    {
+      "style": "Lambic",
+      "n_generated": 100,
+      "variance_ratio": 0.913094427377872,
+      "near_duplicate_rate": 0.0,
+      "pair_distance_ratio": 0.8983613912199124,
+      "maha_generated": 2.5869371648880066,
+      "maha_real": 2.6694692961916155,
+      "coverage_95": 1.0,
+      "marginal_w1": 0.04362149182761364
+    }
+  ],
+  "defect_thresholds": {
+    "DMS": 19.0,
+    "X2.3.butanedione": 0.09,
+    "X4VG": 0.2
+  },
+  "threshold_scenario": "median",
+  "cap_fraction": 0.9,
+  "defect_max_physical": {
+    "Tripel": {
+      "DMS": 17.1,
+      "X2.3.butanedione": 0.081,
+      "X4VG": 0.18000000000000002
+    },
+    "Kriek": {
+      "DMS": 17.1,
+      "X2.3.butanedione": 0.081,
+      "X4VG": 0.009701583345085071
+    },
+    "Lambic": {
+      "DMS": 17.1,
+      "X2.3.butanedione": 0.081,
+      "X4VG": 0.03542000001190285
+    }
+  },
+  "not_capped": {
+    "X.E..2.nonenal": "no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)"
+  },
+  "honesty": "generated spectra are a style-conditional statistical reference; they are not measured brews and are not certified as physically brewable",
+  "elapsed_seconds": 13.3
+}

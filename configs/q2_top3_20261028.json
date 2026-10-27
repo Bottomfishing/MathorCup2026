@@ -1,0 +1,54 @@
+{
+  "task": "Q2 compound-flavour Top-3 for all 50 panel sensory targets",
+  "generated": "2026-10-28",
+  "purpose": "Descriptive compound association ranking with bootstrap stability and A/B/C chemical evidence grading; no causal claim.",
+  "inputs": {
+    "features": "1.csv non-meta columns (231 individual analytes and whole-beer chemistry parameters)",
+    "correlation": "2.csv 231x231 matrix; recomputed from 1.csv it is Spearman (max abs diff ~1e-16), not Pearson",
+    "targets": "4.csv non-meta columns (50 standardised panel sensory targets, no missing values)",
+    "cross_correlation": "6.csv 44 chemical rows x 50 sensory columns (independent empirical support; 44/44 rows map to 1.csv fields)"
+  },
+  "parameters": {
+    "alpha": 1000.0,
+    "graph_threshold": 0.5,
+    "neighbour_weight": 0.5,
+    "bootstrap": 200,
+    "seed": 20261027,
+    "louvain_seed": 42,
+    "excluded_features": [
+      "pH", "color.EBC.", "bitterness", "GFS", "unfermentables", "kcalperc",
+      "esters_sum", "aroma_hops_sum", "acids_sum", "sulfur_sum",
+      "protein.g.L.", "betaglucan.mg.L."
+    ]
+  },
+  "model": {
+    "ranking": "Ridge (alpha=1000) coefficients on the 219 individual-analyte candidates, then score = |coef| + 0.5 * mean(|coef|) over 2.csv graph neighbours",
+    "preprocessing": "per-column median impute -> asinh -> standardise X; centre Y",
+    "alternative_methods": ["ridge (|coef|)", "ExtraTrees impurity importance", "marginal Spearman |rho|"]
+  },
+  "graph": {
+    "edge_rule": "|Spearman rho| >= 0.5 (diagonal excluded)",
+    "community_algorithm": "networkx.algorithms.community.louvain_communities",
+    "louvain_seed": 42
+  },
+  "stability": {
+    "bootstrap_unit": "beer",
+    "bootstrap_repeats": 200,
+    "seed": 20261027,
+    "refit_scope": "imputation, asinh, scaling, ridge and neighbourhood scores are recomputed in every replicate",
+    "metrics": ["Top-3 selection frequency", "bootstrap Top-3 Jaccard vs full data", "six pairwise method Jaccards"]
+  },
+  "evidence_grading": {
+    "A": "identity marker, or same mechanism family with same-sign 6.csv |r| >= 0.2, or direct mechanism class with bootstrap frequency >= 0.5",
+    "B": "same mechanism family (mechanism argument only), or same-sign 6.csv |r| >= 0.2 outside direct families",
+    "C": "exploratory association only",
+    "confidence": "high = A and frequency >= 0.5; medium = A/B and frequency >= 0.4; low = otherwise"
+  },
+  "previous_team_table": {
+    "ridge_rows": 150,
+    "ridge_coverage": "50/50",
+    "gbr_raw_nonzero_targets": 17,
+    "gbr_identified_rows": 51,
+    "interpretation": "17/50 is the GBR raw-score sub-table, not Q2 coverage; the ridge sub-table already covers 50/50 targets"
+  }
+}

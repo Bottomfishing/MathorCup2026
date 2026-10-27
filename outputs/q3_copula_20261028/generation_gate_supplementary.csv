@@ -1,0 +1,14 @@
+﻿rule,candidate,limit,operator,passed,comparison
+marginal_w1,0.38540879428089625,0.4010694450839805,<=,True,interp_quantile_projected
+energy,0.3261382101036578,0.3666485154249383,<=,True,interp_quantile_projected
+exact_training_copy_rate,0.0,0.0,<=,True,interp_quantile_projected
+variance_lower,0.9824002496782782,0.8,>=,True,interp_quantile_projected
+variance_upper,0.9824002496782782,1.2,<=,True,interp_quantile_projected
+rank_correlation_rmse,0.14693981934082972,0.19728925834643724,<=,True,interp_quantile_projected
+model_median_w1,0.1281382716049383,0.14813086419753083,<=,True,interp_quantile_projected
+Kriek_energy,0.4943632581464044,0.6138368310398322,<=,True,interp_quantile_projected
+Kriek_coverage,0.9166666666666666,0.8666666666666666,>=,True,interp_quantile_projected
+Lambic_energy,0.31123619344937703,0.38189244383663346,<=,True,interp_quantile_projected
+Lambic_coverage,0.9166666666666666,0.95,>=,False,interp_quantile_projected
+Tripel_energy,0.17281517871519192,0.21421082602583094,<=,True,interp_quantile_projected
+Tripel_coverage,0.9296296296296296,0.8796296296296295,>=,True,interp_quantile_projected

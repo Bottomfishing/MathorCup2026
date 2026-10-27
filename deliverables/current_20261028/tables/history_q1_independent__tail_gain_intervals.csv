@@ -1,0 +1,7 @@
+﻿scope,metric,reference,gain,lower95,upper95,valid_bootstrap_draws,independent_beer_units,repeated_predictions,uncertainty
+all50,individual5_recall_gain,old_same_selector,-0.0028305106395434022,-0.015162869015316386,0.010712190014890708,2000,250,750,Fixed-OOF paired beer resampling; not full refit or external test
+all50,individual6_recall_gain,old_same_selector,0.06099367641308664,0.0013147346741704015,0.12293251670982584,2000,250,750,Fixed-OOF paired beer resampling; not full refit or external test
+all50,panel6_recall_gain,old_same_selector,0.4385964912280702,0.04753968253968254,0.7058823529411765,2000,250,750,Fixed-OOF paired beer resampling; not full refit or external test
+primary45,individual5_recall_gain,old_same_selector,-0.0017361893896021166,-0.012392903108186014,0.010069214218299585,2000,250,750,Fixed-OOF paired beer resampling; not full refit or external test
+primary45,individual6_recall_gain,old_same_selector,0.06748035560959502,-0.0016726047350217406,0.14114628119293257,2000,250,750,Fixed-OOF paired beer resampling; not full refit or external test
+primary45,panel6_recall_gain,old_same_selector,0.462962962962963,0.04753968253968254,0.750067204301075,2000,250,750,Fixed-OOF paired beer resampling; not full refit or external test

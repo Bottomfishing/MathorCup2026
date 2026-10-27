@@ -1,0 +1,58 @@
+{
+  "checks": {
+    "rows_150": true,
+    "targets_50": true,
+    "three_slots_per_target": true,
+    "top3_unique_per_target": true,
+    "no_empty_compound_slots": true,
+    "bootstrap_freq_no_nan": true,
+    "candidates_219": true,
+    "graph_nodes_231": true,
+    "graph_edges_645": true,
+    "graph_communities_60": true,
+    "bootstrap_freq_mean_0.474": true,
+    "bootstrap_freq_median_0.4025": true,
+    "bootstrap_freq_slots_ge_half_57": true,
+    "bootstrap_jaccard_mean_0.361": true,
+    "graphridge_vs_ridge_0.600": true,
+    "graphridge_vs_ridge_n45": true,
+    "method_six_pair_mean_0.331": true,
+    "same_method_identity_jaccard_1": true,
+    "evidence_A8_B70_C72": true,
+    "confidence_high8_medium35_low107": true,
+    "2csv_is_spearman": true,
+    "2csv_not_pearson": true,
+    "r6_rows_mapped_44": true
+  },
+  "all_true": true,
+  "observed": {
+    "rows": 150,
+    "targets": 50,
+    "bootstrap_freq_mean": 0.474,
+    "bootstrap_freq_median": 0.4025,
+    "bootstrap_jaccard_mean": 0.36111,
+    "graphridge_vs_ridge": 0.6,
+    "graphridge_vs_ridge_n_ge_0_5": 45,
+    "six_pair_mean": 0.331333,
+    "tier_counts": {
+      "A": 8,
+      "B": 70,
+      "C": 72
+    },
+    "confidence_counts": {
+      "high": 8,
+      "medium": 35,
+      "low": 107
+    },
+    "graph": {
+      "threshold": 0.5,
+      "nodes": 231,
+      "edges": 645,
+      "communities": 60,
+      "largest_community": 29,
+      "mean_degree": 5.584415584415584
+    },
+    "spearman_max_abs_diff": 6.661338147750939e-16,
+    "pearson_mean_abs_diff": 0.08730394533051206
+  }
+}

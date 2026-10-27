@@ -1,0 +1,10 @@
+file,column,n_missing,rate_pct
+1.csv,X2.3.butanedione,9,3.6
+1.csv,X3.methylbutanal,7,2.8
+1.csv,ethyl.isobutyrate,1,0.4
+1.csv,methylpyrazine,12,4.8
+1.csv,furfural,1,0.4
+1.csv,amyl.acetate,27,10.8
+1.csv,phenylacetaldehyde,1,0.4
+1.csv,ethyl.nicotinate,2,0.8
+1.csv,aroma_hops_sum,13,5.2

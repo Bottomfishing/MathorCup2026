@@ -1,0 +1,67 @@
+{
+  "script": "scripts/q3_official_generation_20261028.py",
+  "generated_on": "2026-10-28",
+  "source_directory": "附件",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "base_protocol": "task4_raw_q3_protocol_20261026.json",
+  "styles": [
+    "Tripel",
+    "Kriek",
+    "Lambic"
+  ],
+  "generation_count": 100,
+  "generation_seed": 20341024,
+  "validation_seed": 20261024,
+  "validation_folds": 3,
+  "validation_generation_seed": 20261026,
+  "methods": {
+    "interpolate": "existing StyleGenerator donor interpolation (unchanged baseline)",
+    "copula_quantile_projected": "CopulaQuantileGenerator, gaussian copula + empirical quantile marginals + defect projection",
+    "interp_quantile_projected": "CopulaQuantileGenerator donor-interpolation proposal + empirical quantile marginals + defect projection"
+  },
+  "primary_method": "copula_quantile_projected",
+  "baseline_method": "interpolate",
+  "supplementary_method": "interp_quantile_projected",
+  "generator": "pc_residual: 8 principal scores, per-style empirical score mean/covariance, independent residual noise, per-coordinate empirical quantile map, defect cap",
+  "threshold_scenario": "8.xlsx Sensory thresholds, threshold_statistic=median",
+  "defect_transforms": {
+    "DMS": "log10",
+    "X2.3.butanedione": "identity",
+    "X4VG": "log10"
+  },
+  "defect_units": {
+    "DMS": "ug/L",
+    "X2.3.butanedione": "mg/L",
+    "X4VG": "mg/L"
+  },
+  "defect_thresholds": {
+    "DMS": 19.0,
+    "X2.3.butanedione": 0.09,
+    "X4VG": 0.2
+  },
+  "cap_fraction": 0.9,
+  "cap_convention": "log10 fields cap at log10(cap_fraction*threshold); identity fields at cap_fraction*threshold",
+  "not_capped": {
+    "X.E..2.nonenal": "no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)"
+  },
+  "replacement_rule": "Replace interpolation only if copula mean held-out marginal W1 and energy are both no higher, each style mean energy no more than 10% worse, each style held-out coverage drop <=0.05, mean variance ratio in [0.8,1.2], mean rank-correlation RMSE <= interpolation+0.05, exact training-copy rate no higher, and mean model-consistent raw-median sensory W1 <= interpolation+0.02. Otherwise retain interpolation and its diagnosed weaknesses. No post-result retuning.",
+  "replacement_rules_machine_checkable": [
+    "mean held-out marginal_w1 <= baseline",
+    "mean held-out energy <= baseline",
+    "each style mean energy <= 1.10 * baseline",
+    "each style held-out coverage >= baseline - 0.05",
+    "mean variance_ratio in [0.8, 1.2]",
+    "mean rank_correlation_rmse <= baseline + 0.05",
+    "mean exact_training_copy_rate <= baseline",
+    "mean model-consistent raw-median sensory W1 <= baseline + 0.02"
+  ],
+  "diagnostic_definitions": {
+    "spectrum_diagnostics": "beer_models.q3_raw.spectrum_diagnostics, applied in StyleGenerator robust_ z-space",
+    "sensory_validation": "equivalent of scripts/task4_raw_q3.py::sensory_validation, mean model-consistent raw-median W1",
+    "quality_by_style": "computed on the delivered 100/style spectra in global median/IQR standardized space"
+  },
+  "no_post_result_retuning": true
+}

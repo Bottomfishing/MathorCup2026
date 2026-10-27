@@ -1,0 +1,51 @@
+target,1,2,3
+A_esters_all,Acetaldehyde,N-hexanol,E-Î²-ionone
+A_esters_ethac,Acetaldehyde,Ethyl acetate,Isobutyl acetate
+A_esters_flower,2-methyltetrahydrofuran-3-one,Beta-phellandrene,E-Î±-ionone
+A_esters_fruity,Beta-phellandrene,Epicubenol,2-methyltetrahydrofuran-3-one
+A_esters_isoaa,N-hexanol,Ambroxide,Humulene epoxide II
+A_hops_all,Geraniol,Citronellol,Iron
+A_hops_citrus,Citronellol,Geraniol,Linalool
+A_hops_noble,Ethyl octanoate,Ethyl decanoate,Butyl acetate
+A_hops_tropical,Citronellol,Dimethyl sulfide,Beta-phellandrene
+A_hops_woody,Ethyl 2-methylbutyrate,E-ortho-methoxy cinnamaldehyde,"Z,E-farnesol"
+A_malt_all,Octyl acetate,Ethyl furoate,Methanethiol
+A_malt_bread,Furfural,Octyl acetate,Ethyl furoate
+A_malt_burn,Methylpyrazine,Ethyl linalool,Nerol
+A_malt_cara,Octyl acetate,Acetaldehyde,Î±-calacorene
+A_malt_grain,Furfural,Car-3-en-2-one,5-methylfurfural
+F_esters_all,Acetaldehyde,N-hexanol,Epicubenol
+F_esters_ethac,Acetaldehyde,Glycerol,N-hexanol
+F_esters_flower,Beta-phellandrene,2-methyltetrahydrofuran-3-one,Diethyl sulfide
+F_esters_fruity,Epicubenol,Beta-phellandrene,Diethyl sulfide
+F_esters_isoaa,N-hexanol,Acetaldehyde,Isoamyl acetate
+F_hops_all,Cis-dihydro-Î²-terpineol,Iron,Ethyl octanoate
+F_hops_citrus,Geraniol,Citronellol,Cis-dihydro-Î²-terpineol
+F_hops_noble,Ethyl octanoate,Iron,Cis-dihydro-Î²-terpineol
+F_hops_tropical,Geraniol,Citronellol,Beta-phellandrene
+F_hops_woody,Manool,Cis-dihydro-Î²-terpineol,Isobutanol
+F_malt_all,Acetaldehyde,Methanethiol,"2,6-dimethylpyrazine"
+F_malt_bread,Acetaldehyde,Car-3-en-2-one,Terpinen-4-ol
+F_malt_burn,Methanethiol,Diethyl sulfide,Y-methyl-1-octanol
+F_malt_cara,Acetaldehyde,Î±-calacorene,Octyl acetate
+F_malt_grain,Terpinen-4-ol,Furfural,Octyl acetate
+X4vg,4-vinylguaiacol,Ethyl 3-methylbutyrate,Diethyl sulfide
+acetic,Lactic acid,Acetic acid,Ethyl 3-methylbutyrate
+acidity,Lactic acid,Acetic acid,Cinnamaldehyde
+aftertaste,Acetaldehyde,Glycerol,Ethyl octanoate
+alcohol,Acetaldehyde,Ethyl hexanoate,Ethyl octanoate
+barnyard,Gamma-eudesmol,2-butyl octanoate,E-ortho-methoxy cinnamaldehyde
+bitternes,Ethyl octanoate,Ethyl decanoate,Cis-dihydro-Î²-terpineol
+body,Acetaldehyde,Glycerol,Ethyl hexanoate
+clove,Limonene,Linalool,Car-3-en-2-one
+co2,Ethyl octanoate,Ethyl hexanoate,3-methyl-2-hexanol
+coriander,Geraniol,Linalool,X-methyl-1-octanol
+diacetyl,Beta-phellandrene,Ethyl decanoate,Pentyl octanoate
+dms,Z-dihydro-apofarnesal,Sulfur dioxide,"Caryophylla-4,8-dien-5-ol"
+lactic,Lactic acid,Acetic acid,Ethyl 3-methylbutyrate
+metallic,Iron,Ethyl 3-methylbutyrate,Neryl formate
+orange,Alpha-terpineol,Geraniol,Linalool
+overall,Ethyl acetate,Acetaldehyde,2-butyl octanoate
+stale_hops,2-butyl octanoate,Gamma-eudesmol,E-ortho-methoxy cinnamaldehyde
+sweetness,Ethyl decanoate,Ethyl octanoate,Octyl acetate
+t2n,Germacrene D,Isopentyl hexanoate,Glycerol

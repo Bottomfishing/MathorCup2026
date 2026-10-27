@@ -1,0 +1,71 @@
+{
+  "4csv_extreme_cols": {
+    "beer": {
+      "min": 1.0,
+      "max": 250.0,
+      "n_abs_gt_10": 240
+    },
+    "beer_id": {
+      "min": 1882.0,
+      "max": 9120040000000.0,
+      "n_abs_gt_10": 250
+    }
+  },
+  "4csv_non_numeric_cols": [
+    "tasting_category_fine"
+  ],
+  "panel_pertarget_auc_ge5": {
+    "n_targets": 34,
+    "mean": 0.8067714646794406,
+    "median": 0.8969733577118976,
+    "min": 0.09236947791164662,
+    "max": 0.9879518072289156,
+    "n_gt_0.8": 23
+  },
+  "panel_pertarget_auc_ge6": {
+    "n_targets": 12,
+    "mean": 0.8287386450486111,
+    "median": 0.8795180722891567,
+    "min": 0.572289156626506,
+    "max": 0.9878542510121457,
+    "n_gt_0.8": 7
+  },
+  "D6_ridge_retarget": [
+    {
+      "model": "Ridge(chem) alpha=1.0 -> panel mean",
+      "panel_mean_mae": 2.1746046384997313,
+      "panel_median_exact_rounded": 0.3572,
+      "panel_median_within_one_rounded": 0.75656
+    },
+    {
+      "model": "Ridge(chem) alpha=10.0 -> panel mean",
+      "panel_mean_mae": 1.2603812822571756,
+      "panel_median_exact_rounded": 0.42544,
+      "panel_median_within_one_rounded": 0.84024
+    },
+    {
+      "model": "Ridge(chem) alpha=30.0 -> panel mean",
+      "panel_mean_mae": 0.9954917992689306,
+      "panel_median_exact_rounded": 0.4536,
+      "panel_median_within_one_rounded": 0.868
+    },
+    {
+      "model": "Ridge(chem) alpha=100.0 -> panel mean",
+      "panel_mean_mae": 0.79256771886732,
+      "panel_median_exact_rounded": 0.46448,
+      "panel_median_within_one_rounded": 0.88728
+    },
+    {
+      "model": "Ridge(chem+style) alpha=10 -> panel mean",
+      "panel_mean_mae": 1.2004307034746613,
+      "panel_median_exact_rounded": 0.4348,
+      "panel_median_within_one_rounded": 0.84544
+    },
+    {
+      "model": "Ridge(chem) alpha=10 -> panel median (round)",
+      "panel_mean_mae": 1.5872068112603144,
+      "panel_median_exact_rounded": 0.49352,
+      "panel_median_within_one_rounded": 0.83896
+    }
+  ]
+}

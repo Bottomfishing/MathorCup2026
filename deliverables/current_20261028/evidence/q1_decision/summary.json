@@ -1,0 +1,140 @@
+{
+  "protocol_id": "q1_decision_20261028",
+  "generated_at": "2026-10-27T21:26:58+08:00",
+  "rows": 12500,
+  "grade_distribution": {
+    "0": 8279,
+    "1": 856,
+    "2": 1361,
+    "3": 1648,
+    "4": 152,
+    "5": 188,
+    "6": 16
+  },
+  "legacy_grade_distribution": {
+    "0": 8324,
+    "1": 863,
+    "2": 1378,
+    "3": 1701,
+    "4": 234
+  },
+  "legacy_integer_median": {
+    "table": "q1_et_integer_median",
+    "panel_median_mae": 0.3928,
+    "panel_mean_mae": 0.6123350468420469,
+    "exact": 0.74128,
+    "within_one": 0.91688,
+    "macro_spearman": 0.3283480117633879,
+    "n_pred_5": 0,
+    "precision_5": 0.0,
+    "recall_5": 0.0,
+    "n_pred_6": 0,
+    "precision_6": 0.0,
+    "recall_6": 0.0,
+    "dist": {
+      "0": 8324,
+      "1": 863,
+      "2": 1378,
+      "3": 1701,
+      "4": 234
+    }
+  },
+  "topk_nonforced": {
+    "table": "q1_topk_nonforced",
+    "panel_median_mae": 0.408,
+    "panel_mean_mae": 0.6230642185592186,
+    "exact": 0.7388,
+    "within_one": 0.91312,
+    "macro_spearman": 0.2903117240975349,
+    "n_pred_5": 204,
+    "precision_5": 0.2549019607843137,
+    "recall_5": 0.26262626262626265,
+    "n_pred_6": 16,
+    "precision_6": 0.0625,
+    "recall_6": 0.05263157894736842,
+    "dist": {
+      "0": 8279,
+      "1": 856,
+      "2": 1361,
+      "3": 1648,
+      "4": 152,
+      "5": 188,
+      "6": 16
+    }
+  },
+  "individual_weighted": {
+    "individual_weighted_mae": 0.7952135744255745,
+    "individual_weighted_exact": 0.6049185212010212,
+    "individual_weighted_within_one": 0.7830350998816,
+    "weight_mass": 12499.999999999998
+  },
+  "panel_median_oracle": {
+    "individual_weighted_mae": 0.6635668023458023,
+    "individual_weighted_exact": 0.6586885938690938,
+    "individual_weighted_within_one": 0.8186814391164393,
+    "weight_mass": 12499.999999999998
+  },
+  "calibration": {
+    "ET integer median (current)": {
+      "method": "ET integer median (current)",
+      "panel_median_mae": 0.3928,
+      "panel_mean_mae": 0.6123350468420469,
+      "panel_median_exact_rounded": 0.74128,
+      "panel_median_within_one_rounded": 0.91688,
+      "n_pred_ge5": 0,
+      "precision_ge5": 0.0,
+      "recall_ge5": 0.0
+    },
+    "ET integer + fold-wise linear calibration -> panel mean": {
+      "method": "ET integer + fold-wise linear calibration -> panel mean",
+      "panel_median_mae": 0.7172351032737873,
+      "panel_mean_mae": 0.5027213833304683,
+      "panel_median_exact_rounded": 0.41792,
+      "panel_median_within_one_rounded": 0.93056,
+      "n_pred_ge5": 1,
+      "precision_ge5": 1.0,
+      "recall_ge5": 0.005050505050505051
+    },
+    "ET integer + fold-wise isotonic calibration -> panel mean": {
+      "method": "ET integer + fold-wise isotonic calibration -> panel mean",
+      "panel_median_mae": 0.7175732432527534,
+      "panel_mean_mae": 0.5025975663309868,
+      "panel_median_exact_rounded": 0.41808,
+      "panel_median_within_one_rounded": 0.92952,
+      "n_pred_ge5": 0,
+      "precision_ge5": 0.0,
+      "recall_ge5": 0.0
+    },
+    "ET integer + style mean, fold-wise linear": {
+      "method": "ET integer + style mean, fold-wise linear",
+      "panel_median_mae": 0.6894686353463448,
+      "panel_mean_mae": 0.46223378991660685,
+      "panel_median_exact_rounded": 0.47536,
+      "panel_median_within_one_rounded": 0.91112,
+      "n_pred_ge5": 0,
+      "precision_ge5": 0.0,
+      "recall_ge5": 0.0
+    },
+    "ET integer + fold-wise marginal (quantile) calibration": {
+      "method": "ET integer + fold-wise marginal (quantile) calibration",
+      "panel_median_mae": 0.41952,
+      "panel_mean_mae": 0.6502882443112443,
+      "panel_median_exact_rounded": 0.73688,
+      "panel_median_within_one_rounded": 0.9048,
+      "n_pred_ge5": 80,
+      "precision_ge5": 0.125,
+      "recall_ge5": 0.050505050505050504
+    }
+  },
+  "non_forced_evidence": {
+    "observed_cells_ge5": 198,
+    "observed_cells_6": 19,
+    "predicted_cells_grade5": 188,
+    "predicted_cells_ge5": 204,
+    "predicted_cells_6": 16,
+    "groups_with_k5_zero": 72,
+    "groups_with_k6_zero": 135,
+    "n_decision_groups": 150
+  },
+  "verification_all_pass": true
+}

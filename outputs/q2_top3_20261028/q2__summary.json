@@ -1,0 +1,130 @@
+{
+  "generated": "2026-10-28",
+  "method": "Ridge (alpha=1000.0) on 219 individual-analyte candidates + 2.csv |rho|>=0.5 co-expression graph neighbourhood weighting (score = |coef| + 0.5*neighbour_mean|coef|) + 200x beer-level bootstrap + 4-method Top-3 Jaccard",
+  "n_targets": 50,
+  "n_top3_rows": 150,
+  "n_candidate_compounds": 219,
+  "graph": {
+    "threshold": 0.5,
+    "nodes": 231,
+    "edges": 645,
+    "communities": 60,
+    "largest_community": 29,
+    "mean_degree": 5.584415584415584
+  },
+  "coverage": {
+    "targets_with_3_rows": 50,
+    "total_targets": 50
+  },
+  "bootstrap_freq": {
+    "mean_all_slots": 0.47400000000000003,
+    "median_all_slots": 0.4025,
+    "share_slots_ge_0.5": 0.38,
+    "n_slots_ge_0.5": 57,
+    "target_mean_freq_min": 0.25333333333333335,
+    "target_mean_freq_median": 0.44166666666666665,
+    "target_mean_freq_max": 0.8866666666666667
+  },
+  "bootstrap_jaccard": {
+    "mean_over_targets": 0.36111000000000004,
+    "median_over_targets": 0.3235,
+    "min_over_targets": 0.16649999999999998,
+    "n_targets_mean_ge_0.5": 9
+  },
+  "method_jaccard": {
+    "graphridge_vs_ridge": {
+      "mean": 0.6,
+      "median": 0.5,
+      "min": 0.2,
+      "mean_overlap_n": 2.16,
+      "n_targets_ge_0.5": 45
+    },
+    "graphridge_vs_extratrees": {
+      "mean": 0.38,
+      "median": 0.5,
+      "min": 0.0,
+      "mean_overlap_n": 1.56,
+      "n_targets_ge_0.5": 28
+    },
+    "graphridge_vs_marginal_spearman": {
+      "mean": 0.206,
+      "median": 0.2,
+      "min": 0.0,
+      "mean_overlap_n": 0.9,
+      "n_targets_ge_0.5": 10
+    },
+    "ridge_vs_extratrees": {
+      "mean": 0.382,
+      "median": 0.5,
+      "min": 0.0,
+      "mean_overlap_n": 1.56,
+      "n_targets_ge_0.5": 29
+    },
+    "ridge_vs_marginal_spearman": {
+      "mean": 0.19799999999999998,
+      "median": 0.2,
+      "min": 0.0,
+      "mean_overlap_n": 0.86,
+      "n_targets_ge_0.5": 10
+    },
+    "extratrees_vs_marginal_spearman": {
+      "mean": 0.22199999999999995,
+      "median": 0.2,
+      "min": 0.0,
+      "mean_overlap_n": 0.96,
+      "n_targets_ge_0.5": 12
+    }
+  },
+  "method_jaccard_overall": {
+    "target_mean_min": 0.11666666666666665,
+    "target_mean_median": 0.31666666666666665,
+    "target_mean_mean": 0.3313333333333333,
+    "mean_overlap_across_six_pairs": 1.3333333333333333,
+    "n_targets_mean_ge_0.5": 5,
+    "n_targets_all_six_pairs_ge_0.5": 3
+  },
+  "evidence": {
+    "tier_counts": {
+      "A": 8,
+      "B": 70,
+      "C": 72
+    },
+    "tier_A_share": 0.05333333333333334,
+    "tier_AB_share": 0.52,
+    "confidence_counts": {
+      "high": 8,
+      "medium": 35,
+      "low": 107
+    },
+    "targets_with_identity_marker_in_top3": 5,
+    "n_rows_6csv_crosscorr_available": 84
+  },
+  "data_lineage": {
+    "2csv_recomputed_from_1csv": "spearman",
+    "positional_order": "2.csv row/column order equals 1.csv non-meta column order",
+    "spearman_max_abs_diff": 6.661338147750939e-16,
+    "spearman_mean_abs_diff": 1.6021924986637158e-16,
+    "pearson_max_abs_diff": 1.1234263749065518,
+    "pearson_mean_abs_diff": 0.08730394533051206,
+    "note": "The brief names 2.csv Pearson; recomputation shows it is the Spearman matrix of 1.csv under the positional mapping (max abs difference ~1e-16)."
+  },
+  "cross_pipeline": {
+    "table": "outputs\\task6_final_20261026\\paper\\tables\\q2_standardized__top3_panel_all50.csv",
+    "mean_jaccard": 0.354,
+    "median_jaccard": 0.5,
+    "n_targets_ge_0.5": 28,
+    "n_targets": 50
+  },
+  "previous_team_table": {
+    "q2_standardized__top3_panel_all50_rows": 150,
+    "ridge_coverage": "50/50",
+    "gbr_raw_nonzero_targets": 17,
+    "gbr_identified_rows": 51,
+    "interpretation": "17/50 is a GBR-raw-score sub-table, not Q2 coverage; the Ridge sub-table already covers 50/50"
+  },
+  "field_notes": {
+    "bootstrap_freq": "no nan: all 150 Top-3 slots carry a bootstrap frequency",
+    "off_flavors": "nan = the feature dictionary has no off-flavour annotation for this compound; it is not a missing Top-3 slot",
+    "threshold_mean": "nan = no sensory threshold recorded in the feature dictionary for this compound"
+  }
+}

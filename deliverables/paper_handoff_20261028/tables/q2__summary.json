@@ -1,0 +1,115 @@
+{
+  "generated": "2026-10-27",
+  "method": "Ridge (alpha=1000.0) on 219 individual analytes + 2.csv |rho|>=0.5 co-expression graph neighbourhood weighting (score = |coef| + 0.5*neighbour_mean|coef|) + 200x beer bootstrap + 4-method Top-3 Jaccard",
+  "n_targets": 50,
+  "n_top3_rows": 150,
+  "n_candidate_compounds": 219,
+  "graph": {
+    "threshold": 0.5,
+    "nodes": 231,
+    "edges": 645,
+    "communities": 60,
+    "largest_community": 29,
+    "mean_degree": 5.584415584415584
+  },
+  "coverage": {
+    "targets_with_3_rows": 50,
+    "total_targets": 50
+  },
+  "bootstrap_freq": {
+    "mean_all_slots": 0.47400000000000003,
+    "median_all_slots": 0.4025,
+    "share_slots_ge_0.5": 0.38,
+    "n_slots_ge_0.5": 57,
+    "target_mean_freq_min": 0.25333333333333335,
+    "target_mean_freq_median": 0.44166666666666665,
+    "target_mean_freq_max": 0.8866666666666667
+  },
+  "bootstrap_jaccard": {
+    "mean_over_targets": 0.36111000000000004,
+    "median_over_targets": 0.3235,
+    "min_over_targets": 0.16649999999999998,
+    "n_targets_mean_ge_0.5": 9
+  },
+  "method_jaccard": {
+    "graphridge_vs_ridge": {
+      "mean": 0.6,
+      "median": 0.5,
+      "min": 0.2,
+      "mean_overlap_n": 2.16,
+      "n_targets_ge_0.5": 45
+    },
+    "graphridge_vs_extratrees": {
+      "mean": 0.38,
+      "median": 0.5,
+      "min": 0.0,
+      "mean_overlap_n": 1.56,
+      "n_targets_ge_0.5": 28
+    },
+    "graphridge_vs_marginal_spearman": {
+      "mean": 0.206,
+      "median": 0.2,
+      "min": 0.0,
+      "mean_overlap_n": 0.9,
+      "n_targets_ge_0.5": 10
+    },
+    "ridge_vs_extratrees": {
+      "mean": 0.382,
+      "median": 0.5,
+      "min": 0.0,
+      "mean_overlap_n": 1.56,
+      "n_targets_ge_0.5": 29
+    },
+    "ridge_vs_marginal_spearman": {
+      "mean": 0.19799999999999998,
+      "median": 0.2,
+      "min": 0.0,
+      "mean_overlap_n": 0.86,
+      "n_targets_ge_0.5": 10
+    },
+    "extratrees_vs_marginal_spearman": {
+      "mean": 0.22199999999999995,
+      "median": 0.2,
+      "min": 0.0,
+      "mean_overlap_n": 0.96,
+      "n_targets_ge_0.5": 12
+    }
+  },
+  "method_jaccard_overall": {
+    "target_mean_min": 0.11666666666666665,
+    "target_mean_median": 0.31666666666666665,
+    "target_mean_mean": 0.3313333333333333,
+    "mean_overlap_across_six_pairs": 1.3333333333333333,
+    "n_targets_mean_ge_0.5": 5,
+    "n_targets_all_six_pairs_ge_0.5": 3
+  },
+  "team_ridge_overlap": {
+    "mean_jaccard": 0.354,
+    "median_jaccard": 0.5,
+    "n_targets_ge_0.5": 28,
+    "n_targets": 50
+  },
+  "evidence": {
+    "tier_counts": {
+      "C": 72,
+      "B": 70,
+      "A": 8
+    },
+    "tier_A_share": 0.05333333333333334,
+    "tier_AB_share": 0.52,
+    "confidence_counts": {
+      "low": 107,
+      "medium": 35,
+      "high": 8
+    },
+    "targets_with_identity_marker_in_top3": 5,
+    "n_rows_6csv_crosscorr_available": 84
+  },
+  "previous_team_table": {
+    "q2_standardized__top3_panel_all50_rows": 150,
+    "ridge_coverage": "50/50",
+    "gbr_raw_nonzero_targets": 17,
+    "gbr_identified_rows": 51,
+    "interpretation": "17/50 is a GBR-raw-score sub-table, not Q2 coverage; Ridge sub-table already 50/50"
+  }
+}

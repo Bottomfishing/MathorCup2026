@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "baseline_commit": "d42b20a",
+  "protocol_sha256": "316e8caa3321cf6a3b58db66595521462e0fe67d0424252bddb0e19ec371148e",
+  "adopted": false,
+  "tail_solved": false,
+  "deployed_name": "shared_et",
+  "mae_gain": 0.0005968674288674275,
+  "lower95_gain": -0.0006409731490731465,
+  "upper95_gain": 0.001785609301809302,
+  "n_independent_beers": 250,
+  "n_repeated_predictions": 750,
+  "fit_contexts": 30,
+  "n_shared_forest_fits": 30,
+  "n_target_forest_fits": 3000,
+  "model_sha256": "a07eee7f688e191f41eeb158f732f74bdeab9d9525fd906035c3d3c9e5ece8db",
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "risk_evidence_sha256": {
+    "inner_probabilities.csv.gz": "807022e215c49d117a1bf065633f3ef6a67b1b09110e047e5fcff64340d27b43",
+    "defect_risk_validation.csv": "b190c14eb52d510a7e7f49f5b1934e9af09541f5f11d080874eb8dd2fd848516"
+  },
+  "validation_status": "Post-development repeated nested comparison on the same 250 historically inspected beers and existing repeat splits, not an unseen or external test. Freeze this rule before viewing new candidate results. No outer-driven candidate additions.",
+  "q3_started": false
+}

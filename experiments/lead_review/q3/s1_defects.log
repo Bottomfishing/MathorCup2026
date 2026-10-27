@@ -1,0 +1,118 @@
+﻿.\.venv\Scripts\python.exe : C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\.venv\Lib\site-packages\numpy\lib\_function_base
+_impl.py:2908: RuntimeWarning: invalid value encountered in subtract
+所在位置 行:1 字符: 208
++ ... NG='utf-8'; .\.venv\Scripts\python.exe experiments\lead_review\q3\s1_ ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\wb198\...red in subtract:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  X -= avg[:, None]
+C:\Users\wb198\Desktop\MathorCup数学应用挑战赛文件\.venv\Lib\site-packages\numpy\lib\_function_base_impl.py:2913: RuntimeWarning
+: invalid value encountered in dot
+  c = dot(X, X_T.conj())
+== transform check: corr(10**x1c, cal) vs corr(x1c, cal) ==
+merged rows: 250
+verdict
+log10    37
+raw      33
+Name: count, dtype: int64
+                               col    n   r_log10     r_raw       med verdict
+37                X2.3.butanedione  241  0.552926  0.999998  0.284672     raw
+38                X3.methylbutanal  242  0.846285  0.999998  0.108457     raw
+39               ethyl.isobutyrate  246  0.828679  0.869523  0.040919     raw
+40                  ethyl.butyrate  249  0.859571  0.995550  0.071107     raw
+41  X2.methyltetrahydrofuran.3.one  250       NaN  1.000000  0.052860     raw
+42                  methylpyrazine  238  0.975122  0.999506  0.000293     raw
+43                        furfural  248  0.843735  0.999994  0.008252     raw
+44                     X3Z.hexenol  250  0.796245  0.931019  0.024727     raw
+45                       n.hexanol  250  0.519591  0.818656  0.316944     raw
+46                         styrene  250  0.800955  0.999983  0.043135     raw
+47                ethyl.pentanoate  250  0.957545  0.999755  0.024263     raw
+48                    amyl.acetate  223  0.999599  0.999998  0.002303     raw
+49                    benzaldehyde  247  0.933939  0.944562  0.005408     raw
+50               X5.methylfurfural  249  0.999643  0.999767  0.000590     raw
+51       X2.ethyl.3.methylpyrazine  249  0.893099  0.940627  0.007181     raw
+52                   hexyl.acetate  250  0.857457  0.995446  0.055236     raw
+53                  benzyl.alcohol  246  0.898039  0.918492  0.002925     raw
+54              phenylacetaldehyde  248  0.989457  0.998657  0.011029     raw
+55               X.E..beta.ocimene  249  0.873516  0.999936  0.012151     raw
+56                        linalool  247  0.365991  0.873654  0.369730     raw
+57                  X.E..2.nonenal  249  0.755579  1.000000  0.011984     raw
+58               diethyl.succinate  247  0.911456  1.000000  0.091937     raw
+59              X1.alpha.terpineol  250  0.617222  0.999998  0.402686     raw
+60                ethyl.nicotinate  248  0.976685  0.983250  0.011121     raw
+61                     citronellol  250  0.621811  0.995530  0.215332     raw
+62                        geraniol  246  0.639914  0.919547  0.131485     raw
+63           X.E.E..2.4.decadienal  249  0.998780  0.999976  0.000773     raw
+64                         eugenol  250  0.769105  1.000000  0.001476     raw
+65               gamma.nonalactone  250       NaN  1.000000  0.426297     raw
+66           X.E..beta.damascenone  250       NaN  1.000000  0.569356     raw
+67                 E.caryophyllene  250  0.938116  1.000000  0.000985     raw
+68                  alpha.humulene  250  0.774861  0.999997  0.011874     raw
+69                     Z.nerolidol  250  0.351208  0.437252  0.009927     raw
+---- defect cols transform verdict ----
+                 col    n   r_log10     r_raw       med verdict
+3                DMS  250  0.999998  0.737697  1.384427   log10
+20              X4VG  250  0.999372  0.888681 -2.013157   log10
+37  X2.3.butanedione  241  0.552926  0.999998  0.284672     raw
+57    X.E..2.nonenal  249  0.755579  1.000000  0.011984     raw
+
+== Pils/Lager: 11 beers, ids: [5412186002658, 8715608222557, 54057142, 5411681080000, 5410228141235, 54055001, 5410228142027, 54085107, 5411831000742, 54017016, 5425036580008]
+     beer        beer_id
+8     124  5412186002658
+19     81  8715608222557
+22    218       54057142
+23     96  5411681080000
+24    230  5410228141235
+36    185       54055001
+41    139  5410228142027
+51    209       54085107
+104   119  5411831000742
+108    90       54017016
+171    28  5425036580008
+
+[DMS] col=DMS n_missing=0
+  coord stats: {'count': 11.0, 'mean': 1.1577, 'std': 0.2, 'min': 0.8237, '25%': 1.0479, '50%': 1.1793, '75%': 1.2631, 'max': 1.4371}
+  threshold mean=17.25 median=19.0 ug/L; log10 mean/thr=1.2368 median/thr=1.2788
+  conc: [14.29599, 8.85868, 26.67505, 15.55845, 15.11278, 6.6631, 20.15957, 14.07209, 16.66149, 7.93312, 27.35761]
+  exceed(mean-thr): 3/11  exceed(median-thr): 3/11
+
+[Diacetyl] col=X2.3.butanedione n_missing=2
+  coord stats: {'count': 9.0, 'mean': 0.1433, 'std': 0.1722, 'min': 0.0262, '25%': 0.0358, '50%': 0.0516, '75%': 0.2361, 'max': 0.5239}
+  threshold mean=0.29925 median=0.09 mg/L; log10 mean/thr=-0.5240 median/thr=-1.0458
+  conc: [1.12621, 1.9267, 1.14014, 3.34107, 1.10089, 1.08586, 1.07783, 1.06215, 1.72241]
+  exceed(mean-thr): 9/11  exceed(median-thr): 9/11
+
+[4VG] col=X4VG n_missing=0
+  coord stats: {'count': 11.0, 'mean': -1.8794, 'std': 0.3556, 'min': -2.0132, '25%': -2.0132, '50%': -2.0132, '75%': -2.0132, 'max': -0.8424}
+  threshold mean=0.206333333 median=0.2 mg/L; log10 mean/thr=-0.6854 median/thr=-0.6990
+  conc: [0.0097, 0.0097, 0.0097, 0.0097, 0.0194, 0.0097, 0.0097, 0.0097, 0.14376, 0.0097, 0.0097]
+  exceed(mean-thr): 0/11  exceed(median-thr): 0/11
+
+[t2n] col=X.E..2.nonenal n_missing=0
+  coord stats: {'count': 11.0, 'mean': 0.0039, 'std': 0.004, 'min': 0.0008, '25%': 0.0016, '50%': 0.002, '75%': 0.0041, 'max': 0.0119}
+
+== exceedance by style (median-threshold) ==
+                 style   n  DMS_exc     DMS_p50  Diacetyl_exc  Diacetyl_p50  4VG_exc   4VG_p50   t2n_p50
+1                Blond  31       30   31.539115            31      1.934582        7  0.128305  1.030573
+19              Tripel  28       25   38.691235            27      1.948148        0  0.009702  1.026497
+18          Strong ale  18       10   21.393420            18      1.963030        0  0.009702  1.038317
+10               Hoppy  17       14   41.694945            17      4.350128        1  0.072612  1.249706
+17        Stout/Porter  13        9   30.818700            13      2.268773        0  0.009702  1.073972
+0                Amber  12        7   20.837595            12      1.218977        0  0.042308  1.022394
+21               Wheat  12        6   23.497500            11      1.226695        5  0.167655  1.010400
+3                Brown  12        8   24.594750            11      1.586511        1  0.009702  1.032390
+14          Pils/Lager  11        3   15.112783             9      1.126214        0  0.009702  1.004643
+12              Lambic  11        9   21.369660            11      1.767500        0  0.009702  1.031095
+11               Kriek  10        1   11.633760            10      2.717252        0  0.009702  1.031423
+15              Saison  10        7   40.328133            10      4.607809        2  0.123986  1.108178
+6               Dubbel  10        5   20.095040            10      2.548429        0  0.009702  1.023086
+5            Christmas   9        6   19.798840             9      4.259849        0  0.009702  1.026514
+13      Low/No alcohol   8        0    6.490800             7      1.028015        1  0.009702  1.000987
+9            Fruitbeer   8        5  137.318855             7      1.308610        0  0.009702  1.014232
+20   West Flanders ale   7        1    8.340165             5      2.146356        0  0.009702  1.013322
+2    Brett/cofermented   6        5   28.052177             6      1.938785        1  0.022604  1.098363
+16              Scotch   5        1   16.762545             5      9.005990        0  0.009702  1.011972
+8   Flanders old brown   5        0   10.282825             5      1.571941        0  0.009702  1.007567
+4                 Brut   4        4   58.367610             4      1.288098        0  0.009702  1.012541
+7                 Faro   3        0   14.973880             3      1.379597        0  0.009702  1.007098

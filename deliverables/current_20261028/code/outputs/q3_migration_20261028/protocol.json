@@ -1,0 +1,96 @@
+{
+  "name": "q3_migration_20261028",
+  "written_before_results": true,
+  "problem_statement_note": "缺陷化合物以所列 DMS/Diacetyl/4VG/trans-2-nonenal/Stale hops 等超阈值项为准",
+  "source_style": "Pils/Lager",
+  "target_styles": [
+    "Tripel",
+    "Kriek",
+    "Lambic"
+  ],
+  "lambda_grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "lambda_selection": "largest lambda whose projected spectrum is still nearest to the target-style centroid; fallback = smallest target-centroid distance",
+  "criteria": {
+    "A": "set form of the problem note: the set of over-threshold defects does not expand and the severity of each over-threshold defect does not increase",
+    "B": "per-defect severity e_after <= e_before with e(c, T) = max(c / T - 1, 0)",
+    "C": "aggregated severity sum_d e_after <= sum_d e_before"
+  },
+  "threshold_scenarios": [
+    "median",
+    "mean"
+  ],
+  "primary_threshold_scenario": "median",
+  "defect_specs": [
+    {
+      "name": "DMS",
+      "column": "DMS",
+      "transform": "log10",
+      "unit": "ug/L",
+      "threshold_field": "DMS"
+    },
+    {
+      "name": "Diacetyl",
+      "column": "X2.3.butanedione",
+      "transform": "identity",
+      "unit": "mg/L",
+      "threshold_field": "2,3-butanedione"
+    },
+    {
+      "name": "4VG",
+      "column": "X4VG",
+      "transform": "log10",
+      "unit": "mg/L",
+      "threshold_field": "X4VG"
+    },
+    {
+      "name": "t2n",
+      "column": "X.E..2.nonenal",
+      "transform": "identity",
+      "unit": "mg/L",
+      "threshold_field": null
+    }
+  ],
+  "defect_projection": {
+    "threshold_defects": "coordinate <= min(source, 0.9 * threshold)",
+    "no_threshold_defects": "coordinate <= source",
+    "stale_hop_proxies": "coordinate <= source",
+    "missing_source": "cap = min(target-style median, 0.9 * threshold), flagged conditional",
+    "headroom": 0.9,
+    "note": "0.9 x threshold headroom is a modelling choice, not a measured safety limit"
+  },
+  "stale_hop_proxies": [
+    "humulene.epoxide.II",
+    "caryophyllene.oxide",
+    "dihydroisocaryophyllene.epoxide",
+    "X4.8.alpha.epoxy.caryophyllane",
+    "X14.hydroxy.alpha.humulene",
+    "X14.hydroxy.9.epi..E..caryophyllene"
+  ],
+  "style_identifiability_expected": "tasting_category_fine is weakly separable in the supplied coordinates; accuracy is reported, not used as a hard gate",
+  "honesty": "A migrated spectrum is a statistical destination inside the supplied coordinate space, not a brewing recipe and not a measured beer; the projection certifies only the listed defect coordinates at the 0.9 x threshold headroom and does not certify physical brewability or sensory acceptance.",
+  "sources": {
+    "source_directory": "附件"
+  },
+  "no_post_result_retuning": true
+}

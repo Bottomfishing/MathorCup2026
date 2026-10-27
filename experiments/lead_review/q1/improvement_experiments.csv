@@ -1,0 +1,6 @@
+method,panel_mean_mae,panel_median_mae,panel_median_exact_rounded,panel_median_within_one_rounded,panel_mean_rmse,n_pred_ge5,recall_ge5,precision_ge5
+ET integer median (current),0.6123350468420469,0.3928,0.74128,0.91688,0.917286745540806,0,0.0,0.0
+ET integer + fold-wise linear calibration -> panel mean,0.5027213833304683,0.7172351032737873,0.41792,0.93056,0.7024774948850606,1,0.005050505050505051,1.0
+ET integer + fold-wise isotonic calibration -> panel mean,0.5025975663309868,0.7175732432527534,0.41808,0.92952,0.7026522527944417,0,0.0,0.0
+"ET integer + style mean, fold-wise linear",0.46223378991660685,0.6894686353463448,0.47536,0.91112,0.6569773670122575,0,0.0,0.0
+ET integer + fold-wise marginal (quantile) calibration,0.6502882443112443,0.41952,0.73688,0.9048,0.97006212589782,80,0.050505050505050504,0.125

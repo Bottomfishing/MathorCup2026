@@ -1,0 +1,5 @@
+chemical_evidence,confidence,n_compound_slots
+A,high,8
+B,low,35
+B,medium,35
+C,low,72

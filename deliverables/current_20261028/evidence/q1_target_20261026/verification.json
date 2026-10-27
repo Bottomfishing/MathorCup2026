@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "nested_contexts_reconstructed": 10,
+  "outer_saved_model_replays": 9,
+  "fresh_refit_outer_contexts": 1,
+  "fresh_refit_shared_forests": 1,
+  "fresh_refit_target_forests": 100,
+  "independently_refit_inner_models": false,
+  "probability_metric_tables_recomputed": true,
+  "r2b_full_fit_risk_values_compared": 75000,
+  "cli_rows": 13000,
+  "risk_workflow_preserved": true,
+  "risk_snapshot_bitwise_identical": false,
+  "maximum_risk_rebuild_difference": 1.8738142815166725e-08,
+  "numerical_exception": "uncalibrated coriander6 only, no observed6 labels, probabilities below1e-6, drift below1e-7; all other targets/events at1e-10",
+  "unlabelled_blank_rows": 500,
+  "original_baseline_repeat_control": true,
+  "model_sha256": "a07eee7f688e191f41eeb158f732f74bdeab9d9525fd906035c3d3c9e5ece8db",
+  "adopted": false,
+  "tail_solved": false,
+  "scope": "Numerical, grouping, decision and inference verification; scientific gains are in repeated nested results, not test counts"
+}

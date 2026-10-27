@@ -1,0 +1,29 @@
+{
+  "q1_topk_matches_report": true,
+  "q2_150rows_50targets": [
+    true,
+    true,
+    0,
+    0
+  ],
+  "q3_33_of_33_pass": {
+    "n_pass_A_mean": 33,
+    "n_pass_B_mean": 33,
+    "n_pass_C_mean": 33
+  },
+  "q3_migration_rows": 33,
+  "q3_dist_reduction_range": [
+    11.63689969389795,
+    99.50714376790016
+  ],
+  "q1_submission_dist": {
+    "0": 8279,
+    "1": 856,
+    "2": 1361,
+    "3": 1648,
+    "4": 152,
+    "5": 188,
+    "6": 16
+  },
+  "q1_rows": 12500
+}

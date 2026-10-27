@@ -1,0 +1,119 @@
+{
+  "baseline_commit": "02ad338",
+  "purpose": "Q2 compound-flavour Top-3 for all 50 panel sensory targets, with stability and chemical-rationale grading. Descriptive association, not causal inference.",
+  "data_mapping": {
+    "features": "1.csv non-meta columns (231); 2.csv rows/columns align positionally with that order",
+    "targets": "4.csv non-meta columns (50 standardised panel targets, 0 missing)",
+    "cross_correlation": "6.csv 44 chemical rows x 50 sensory columns; first 45 columns follow 4.csv target order, last five use explicit synonyms (Alcohol/Carbonation/Aftertaste/Body/Overall appreciation)",
+    "2csv_recomputation": {
+      "2csv_recomputed_from_1csv": "spearman",
+      "positional_order": "2.csv row/column order equals 1.csv non-meta column order",
+      "spearman_max_abs_diff": 6.661338147750939e-16,
+      "spearman_mean_abs_diff": 1.6021924986637158e-16,
+      "pearson_max_abs_diff": 1.1234263749065518,
+      "pearson_mean_abs_diff": 0.08730394533051206,
+      "note": "The brief names 2.csv Pearson; recomputation shows it is the Spearman matrix of 1.csv under the positional mapping (max abs difference ~1e-16)."
+    },
+    "feature_dictionary": "outputs\\p0_audit_20261023_final\\feature_dictionary.csv",
+    "spearman_note": "The brief labels 2.csv Pearson; recomputation from 1.csv under the positional mapping identifies it as the Spearman matrix. This is disclosed, not silently changed."
+  },
+  "candidate_pool": {
+    "n": 219,
+    "excluded": [
+      "pH",
+      "color.EBC.",
+      "bitterness",
+      "GFS",
+      "unfermentables",
+      "kcalperc",
+      "esters_sum",
+      "aroma_hops_sum",
+      "acids_sum",
+      "sulfur_sum",
+      "protein.g.L.",
+      "betaglucan.mg.L."
+    ],
+    "rationale": "whole-beer chemistry parameters and derived aggregates are not individual flavour compounds; the same exclusion as the Q2 prototype"
+  },
+  "model": {
+    "alpha": 1000.0,
+    "preprocessing": "median impute -> asinh -> standardise X; centre Y",
+    "score": "|ridge_coef| + 0.5 * mean(|ridge_coef|) over 2.csv graph neighbours",
+    "alternative_methods": [
+      "ridge (|coef|)",
+      "ExtraTrees impurity importance",
+      "marginal Spearman |rho|"
+    ]
+  },
+  "graph": {
+    "threshold": 0.5,
+    "edge_rule": "|Spearman rho| >= threshold",
+    "nodes": 231,
+    "edges": 645,
+    "mean_degree": 5.584415584415584,
+    "community_algorithm": "networkx.algorithms.community.louvain_communities",
+    "networkx_version": "3.5",
+    "louvain_seed": 42,
+    "python_louvain_used": false,
+    "communities": 60,
+    "largest_community": 29,
+    "note": "networkx Louvain is used instead of the python-louvain package so the community assignment is deterministic under the explicit seed and needs no global state. Louvain tie-breaking depends on node order, so the community count (60) and the largest module (29) are the fixed-seed reproducible values and are asserted in verification.json."
+  },
+  "stability": {
+    "bootstrap_unit": "beer (250 rows resampled with replacement)",
+    "bootstrap_repeats": 200,
+    "seed": 20261027,
+    "refit_scope": "imputation, asinh, scaling, ridge and neighbourhood scores are all recomputed inside each replicate",
+    "metrics": [
+      "Top-3 selection frequency per slot",
+      "bootstrap Top-3 Jaccard vs the full-data Top-3",
+      "six pairwise Jaccard values across four ranking methods"
+    ]
+  },
+  "evidence_grading": "A: identity marker of the dimension, or a direct mechanism class (acid/iron/gas/bitter/...) with bootstrap frequency >=0.5. B: compound mechanism family matches the target sensory family (mechanism argument only). C: exploratory association only, no direct mechanistic support. Confidence: high = A and frequency>=0.5; medium = A/B and frequency>=0.4; low = otherwise.",
+  "scope_limits": {
+    "inference": "associational ranking from a 250-beer cross-section; no causal claim, no significance test",
+    "validation_status": "post-development descriptive analysis on the same 250 historical beers; bootstrap quantifies resampling stability, not sampling or model uncertainty coverage",
+    "previous_team_table": {
+      "q2_standardized__top3_panel_all50_rows": 150,
+      "ridge_coverage": "50/50",
+      "gbr_raw_nonzero_targets": 17,
+      "gbr_identified_rows": 51,
+      "interpretation": "17/50 is a GBR-raw-score sub-table, not Q2 coverage; the Ridge sub-table already covers 50/50"
+    },
+    "sensory_measurement": "4.csv targets are standardised panel means; for diacetyl/DMS/t2n/clove the target-compound Spearman correlation is |rho| <= 0.15, so those dimensions are reported with exploratory (C) entries and are not claimed as identified causes",
+    "field_notes": {
+      "bootstrap_freq": "no nan: all 150 Top-3 slots carry a bootstrap frequency",
+      "off_flavors": "nan = the feature dictionary has no off-flavour annotation for this compound; it is not a missing Top-3 slot",
+      "threshold_mean": "nan = no sensory threshold recorded in the feature dictionary for this compound"
+    }
+  },
+  "inputs_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "6.csv": "a55004fb0390299a5c8089f0c37d3bfc006e7049963c84d7d9652affabe614ae"
+  },
+  "parameters": {
+    "alpha": 1000.0,
+    "graph_threshold": 0.5,
+    "neighbour_weight": 0.5,
+    "bootstrap": 200,
+    "seed": 20261027,
+    "louvain_seed": 42,
+    "excluded_features": [
+      "pH",
+      "color.EBC.",
+      "bitterness",
+      "GFS",
+      "unfermentables",
+      "kcalperc",
+      "esters_sum",
+      "aroma_hops_sum",
+      "acids_sum",
+      "sulfur_sum",
+      "protein.g.L.",
+      "betaglucan.mg.L."
+    ]
+  }
+}

@@ -1,0 +1,1780 @@
+{
+  "status": "passed",
+  "status_passed": true,
+  "generated_on": "2026-10-28",
+  "script": "scripts/q3_official_migration_20261028.py",
+  "output_directory": "q3_migration_20261028",
+  "source_directory": "附件",
+  "checks": [
+    {
+      "name": "results_row_count",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "results_per_target",
+      "value": {
+        "Tripel": 11,
+        "Kriek": 11,
+        "Lambic": 11
+      },
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "source_count",
+      "value": 11,
+      "expected": 11,
+      "passed": true
+    },
+    {
+      "name": "criteria_A_median_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_B_median_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_C_median_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_A_mean_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_B_mean_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_C_mean_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_A_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_B_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "criteria_C_all_pass",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "candidate_count",
+      "value": 660,
+      "expected": 660,
+      "passed": true
+    },
+    {
+      "name": "candidates_pass_A_median",
+      "value": 660,
+      "expected": 660,
+      "passed": true
+    },
+    {
+      "name": "candidates_pass_B_median",
+      "value": 660,
+      "expected": 660,
+      "passed": true
+    },
+    {
+      "name": "candidates_pass_C_median",
+      "value": 660,
+      "expected": 660,
+      "passed": true
+    },
+    {
+      "name": "candidates_pass_A_mean",
+      "value": 660,
+      "expected": 660,
+      "passed": true
+    },
+    {
+      "name": "candidates_pass_B_mean",
+      "value": 660,
+      "expected": 660,
+      "passed": true
+    },
+    {
+      "name": "candidates_pass_C_mean",
+      "value": 660,
+      "expected": 660,
+      "passed": true
+    },
+    {
+      "name": "defect_DMS_not_above_source",
+      "value": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "33 cases with a measured source value; 0 conditional (source value missing)"
+    },
+    {
+      "name": "defect_Diacetyl_not_above_source",
+      "value": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "27 cases with a measured source value; 6 conditional (source value missing)"
+    },
+    {
+      "name": "defect_4VG_not_above_source",
+      "value": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "33 cases with a measured source value; 0 conditional (source value missing)"
+    },
+    {
+      "name": "defect_t2n_not_above_source",
+      "value": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "33 cases with a measured source value; 0 conditional (source value missing)"
+    },
+    {
+      "name": "tripel_lambda_values",
+      "value": [
+        0.5,
+        0.55
+      ],
+      "expected": null,
+      "passed": true,
+      "note": "largest lambda keeping the target centroid nearest, on the 0.05 grid"
+    },
+    {
+      "name": "kriek_lambda_values",
+      "value": [
+        1.0
+      ],
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "lambic_lambda_values",
+      "value": [
+        1.0
+      ],
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "lambic_target_nearest_cases",
+      "value": 2,
+      "expected": null,
+      "passed": true,
+      "note": "reported honestly: only this many of 11 Lambic cases end nearest to the Lambic centroid after projection, because the defect projection overrides the style pull"
+    },
+    {
+      "name": "case119_4VG_before",
+      "value": 0.143755,
+      "expected": 0.143755,
+      "passed": true
+    },
+    {
+      "name": "case119_4VG_after",
+      "value": 0.040508,
+      "expected": 0.040508,
+      "passed": true
+    },
+    {
+      "name": "case119_DMS_after_equals_before",
+      "value": 16.661495,
+      "expected": 16.661495,
+      "passed": true,
+      "note": "source DMS is already below 0.9*threshold, so the cap keeps the source value"
+    },
+    {
+      "name": "case119_diacetyl_conditional",
+      "value": 0.081,
+      "expected": 0.081,
+      "passed": true,
+      "note": "source diacetyl is missing in 1.csv; cap = min(Tripel median, 0.9*threshold)"
+    },
+    {
+      "name": "style_table_rows",
+      "value": 22,
+      "expected": 22,
+      "passed": true
+    },
+    {
+      "name": "source_table_rows",
+      "value": 11,
+      "expected": 11,
+      "passed": true
+    },
+    {
+      "name": "required_columns",
+      "value": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "key_columns_without_nan",
+      "value": [],
+      "expected": [],
+      "passed": true
+    }
+  ],
+  "counts": {
+    "results": 33,
+    "per_target": {
+      "Tripel": 11,
+      "Kriek": 11,
+      "Lambic": 11
+    },
+    "candidates": 660,
+    "candidates_per_target": {
+      "Tripel": 220,
+      "Kriek": 220,
+      "Lambic": 220
+    }
+  },
+  "criteria_pass": {
+    "A_median": 33,
+    "B_median": 33,
+    "C_median": 33,
+    "A_mean": 33,
+    "B_mean": 33,
+    "C_mean": 33
+  },
+  "candidate_pass": {
+    "A_median": 660,
+    "B_median": 660,
+    "C_median": 660,
+    "A_mean": 660,
+    "B_mean": 660,
+    "C_mean": 660
+  },
+  "lambda_by_target": {
+    "Tripel": [
+      0.5,
+      0.55
+    ],
+    "Kriek": [
+      1.0
+    ],
+    "Lambic": [
+      1.0
+    ]
+  },
+  "mean_distance_reduction_pct": {
+    "Tripel": 12.496,
+    "Kriek": 99.346,
+    "Lambic": 81.1654
+  },
+  "style_identifiability": {
+    "nearest_centroid_loo_accuracy": 0.132,
+    "majority_class_baseline": 0.124,
+    "n_classes": 22
+  },
+  "cases": [
+    {
+      "source_beer": 124,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 12.6787,
+      "style_before": "Low/No alcohol",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 14.29599,
+          "after": 14.29599,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.051621,
+          "after": 0.051621,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.000804,
+          "after": 0.000804,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 81,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 12.2458,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 8.858685,
+          "after": 8.858685,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.284814,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.003422,
+          "after": 0.003422,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 218,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 12.2103,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 26.675045,
+          "after": 17.1,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.05696,
+          "after": 0.05696,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001111,
+          "after": 0.001111,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 96,
+      "target_style": "Tripel",
+      "lambda": 0.5,
+      "distance_reduction_pct": 11.6369,
+      "style_before": "Brown",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 15.55845,
+          "after": 15.55845,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.523886,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.011935,
+          "after": 0.011935,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 230,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 12.6007,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 15.112783,
+          "after": 15.112783,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.041743,
+          "after": 0.041743,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.019403,
+          "after": 0.016449,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001499,
+          "after": 0.001499,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 185,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 12.6299,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 6.663105,
+          "after": 6.663105,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.035773,
+          "after": 0.035773,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001743,
+          "after": 0.001743,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 139,
+      "target_style": "Tripel",
+      "lambda": 0.5,
+      "distance_reduction_pct": 11.9311,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 20.15957,
+          "after": 17.1,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.032551,
+          "after": 0.032551,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.002012,
+          "after": 0.002012,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 209,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 13.1753,
+      "style_before": "Low/No alcohol",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 14.07209,
+          "after": 14.07209,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.026185,
+          "after": 0.026185,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.002712,
+          "after": 0.002712,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 119,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 13.1531,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 16.661495,
+          "after": 16.661495,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": null,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.143755,
+          "after": 0.040508,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.004838,
+          "after": 0.004838,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": true
+    },
+    {
+      "source_beer": 90,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 12.1769,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 7.933115,
+          "after": 7.933115,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.236137,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001816,
+          "after": 0.001816,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 28,
+      "target_style": "Tripel",
+      "lambda": 0.55,
+      "distance_reduction_pct": 13.0172,
+      "style_before": "Pils/Lager",
+      "style_after": "Brett/cofermented",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 27.357605,
+          "after": 17.1,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": null,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.01153,
+          "after": 0.01153,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": true
+    },
+    {
+      "source_beer": 124,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.3066,
+      "style_before": "Low/No alcohol",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 14.29599,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.051621,
+          "after": 0.051621,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.000804,
+          "after": 0.000804,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 81,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.3617,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 8.858685,
+          "after": 8.858685,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.284814,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.003422,
+          "after": 0.003422,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 218,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.2908,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 26.675045,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.05696,
+          "after": 0.05696,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001111,
+          "after": 0.001111,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 96,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.4589,
+      "style_before": "Brown",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 15.55845,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.523886,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.011935,
+          "after": 0.011935,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 230,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.2856,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 15.112783,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.041743,
+          "after": 0.041743,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.019403,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001499,
+          "after": 0.001499,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 185,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.287,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 6.663105,
+          "after": 6.663105,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.035773,
+          "after": 0.035773,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001743,
+          "after": 0.001743,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 139,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.2905,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 20.15957,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.032551,
+          "after": 0.032551,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.002012,
+          "after": 0.002012,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 209,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.2936,
+      "style_before": "Low/No alcohol",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 14.07209,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.026185,
+          "after": 0.026185,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.002712,
+          "after": 0.002712,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 119,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.3959,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 16.661495,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": null,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.143755,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.004838,
+          "after": 0.004838,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": true
+    },
+    {
+      "source_beer": 90,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.328,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 7.933115,
+          "after": 7.933115,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.236137,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001816,
+          "after": 0.001816,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 28,
+      "target_style": "Kriek",
+      "lambda": 1.0,
+      "distance_reduction_pct": 99.5071,
+      "style_before": "Pils/Lager",
+      "style_after": "Kriek",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 27.357605,
+          "after": 11.248672,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": null,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.01153,
+          "after": 0.01153,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": true
+    },
+    {
+      "source_beer": 124,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 75.5798,
+      "style_before": "Low/No alcohol",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 14.29599,
+          "after": 14.29599,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.051621,
+          "after": 0.051621,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.000804,
+          "after": 0.000804,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 81,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 81.8549,
+      "style_before": "Pils/Lager",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 8.858685,
+          "after": 8.858685,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.284814,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.003422,
+          "after": 0.003422,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 218,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 82.3711,
+      "style_before": "Pils/Lager",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 26.675045,
+          "after": 17.1,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.05696,
+          "after": 0.05696,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001111,
+          "after": 0.001111,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 96,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 81.8083,
+      "style_before": "Brown",
+      "style_after": "Lambic",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 15.55845,
+          "after": 15.55845,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.523886,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.011935,
+          "after": 0.011935,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 230,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 83.4937,
+      "style_before": "Pils/Lager",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 15.112783,
+          "after": 15.112783,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.041743,
+          "after": 0.041743,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.019403,
+          "after": 0.010914,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001499,
+          "after": 0.001499,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 185,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 78.3671,
+      "style_before": "Pils/Lager",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 6.663105,
+          "after": 6.663105,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.035773,
+          "after": 0.035773,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001743,
+          "after": 0.001743,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 139,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 83.5782,
+      "style_before": "Pils/Lager",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 20.15957,
+          "after": 17.1,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.032551,
+          "after": 0.032551,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.002012,
+          "after": 0.002012,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 209,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 65.0822,
+      "style_before": "Low/No alcohol",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 14.07209,
+          "after": 14.07209,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.026185,
+          "after": 0.026185,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.002712,
+          "after": 0.002712,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 119,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 86.615,
+      "style_before": "Pils/Lager",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 16.661495,
+          "after": 16.661495,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": null,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.143755,
+          "after": 0.010914,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.004838,
+          "after": 0.004838,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": true
+    },
+    {
+      "source_beer": 90,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 82.0428,
+      "style_before": "Pils/Lager",
+      "style_after": "Brown",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 7.933115,
+          "after": 7.933115,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": 0.236137,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.001816,
+          "after": 0.001816,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": false
+    },
+    {
+      "source_beer": 28,
+      "target_style": "Lambic",
+      "lambda": 1.0,
+      "distance_reduction_pct": 92.0267,
+      "style_before": "Pils/Lager",
+      "style_after": "Lambic",
+      "criteria": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "criteria_mean_scenario": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "defects": {
+        "DMS": {
+          "before": 27.357605,
+          "after": 17.1,
+          "unit": "ug/L",
+          "threshold_median": 19.0
+        },
+        "Diacetyl": {
+          "before": null,
+          "after": 0.081,
+          "unit": "mg/L",
+          "threshold_median": 0.09
+        },
+        "4VG": {
+          "before": 0.009702,
+          "after": 0.009702,
+          "unit": "mg/L",
+          "threshold_median": 0.2
+        },
+        "t2n": {
+          "before": 0.01153,
+          "after": 0.01153,
+          "unit": "mg/L",
+          "threshold_median": null
+        }
+      },
+      "conditional": true
+    }
+  ],
+  "honesty": "A migrated spectrum is a statistical destination inside the supplied coordinate space, not a brewing recipe and not a measured beer; the projection certifies only the listed defect coordinates at the 0.9 x threshold headroom and does not certify physical brewability or sensory acceptance.",
+  "elapsed_seconds": 1.4
+}

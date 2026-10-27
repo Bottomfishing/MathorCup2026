@@ -1,0 +1,175 @@
+{
+  "protocol_id": "q1_decision_20261028",
+  "generated_at": "2026-10-27T21:26:58+08:00",
+  "stage": "protocol_written_before_computation",
+  "config": {
+    "protocol_id": "q1_decision_20261028",
+    "frozen_at": "2026-10-28",
+    "scope": "Q1 decision layer formalization. Reads the existing official Q1 inference artifacts only; no retraining, no change to model features, folds, probabilities or the legacy integer-median grade column.",
+    "task": "Replace the legacy integer conditional median (which never emits 5/6) with a non-forced cumulative-probability top-k rule, and calibrate the integer median onto the observed panel-mean scale.",
+    "inputs": {
+      "oof_probabilities": "outputs/task6_final_20261026/paper/tables/q1__oof_scores_all52.csv",
+      "full_fit_probabilities": "outputs/task6_final_20261026/paper/tables/q1__full_fit_scores_all52.csv",
+      "observed_panel_distribution": "outputs/r2_raw_q1_20261026/observed_panel_distribution.csv",
+      "oof_predictions": "outputs/r2_raw_q1_20261026/oof_predictions.csv.gz",
+      "rating_weights_and_folds": "outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv",
+      "chemistry": "1.csv (from --source)",
+      "raw_sensory": "data/reference/zenodo23624915/Raw sensory data anonymized.csv"
+    },
+    "target_universe": {
+      "n_beers": 250,
+      "n_targets": 50,
+      "n_cells": 12500,
+      "families": {
+        "A_": "Aroma",
+        "F_": "Flavour",
+        "other": "Supplementary"
+      },
+      "note": "Aroma and Flavour acetaldehyde slots exist in the 52-column paper table but carry no label or official probability; they stay NA and are excluded here."
+    },
+    "decision_rule": {
+      "name": "non_forced_cumulative_probability_topk",
+      "middle_grade": "min(legacy_integer_median, 4)",
+      "grouping": "one group = one (target, outer_fold) pair",
+      "group_size": "n = number of cells of that target in that outer fold",
+      "training_rate_ge5": "mean(panel_weighted_median >= 5) over the other folds of the same target",
+      "training_rate_6": "mean(panel_weighted_median >= 6) over the other folds of the same target",
+      "k5": "round_half_even(training_rate_ge5 * n), clipped to [0, n]; 0 means the target/fold emits no grade 5",
+      "k6": "round_half_even(training_rate_6 * n), clipped to [0, n]; 0 means the target/fold emits no grade 6",
+      "assignment_order": "1) promote the top-k6 cells by probability_rating_6 to grade 6; 2) among the remaining cells promote the top-k5 by probability_rating_ge5 to grade 5; 3) every other cell keeps min(legacy_integer_median, 4)",
+      "tie_break": "descending probability, then ascending row position inside the group (independent of the sort implementation)",
+      "forced": false,
+      "why_non_forced": "Only 34/50 targets have any observed panel median >= 5 and 12/50 any = 6; forcing a 5/6 on every target (force>=1 variant) destroyed precision and panel-median MAE, so promotion is rate-calibrated per target and fold."
+    },
+    "calibration": {
+      "target_column": "panel_weighted_mean",
+      "fold_definition": "outer_fold from outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv; one fold per beer, 3 folds",
+      "methods": {
+        "linear": "per (target, fold) ordinary least squares of panel_weighted_mean on the legacy integer median, fit on the other folds; rank-deficient fits fall back to the training mean",
+        "isotonic": "per (target, fold) isotonic non-decreasing fit of panel_weighted_mean on the legacy integer median, fit on the other folds, clipped outside knots; constant-score training folds fall back to the training mean",
+        "style_linear": "per (target, fold) OLS of panel_weighted_mean on [legacy integer median, fold-wise style mean]; the style mean is the training-fold mean panel_weighted_mean per tasting_category_fine from 1.csv, unseen styles fall back to the training global mean",
+        "quantile": "per (target, fold) marginal calibration: map each test integer median to its mid-rank among training medians, then to the training empirical panel_weighted_median quantile at that level (method='lower')"
+      },
+      "reported_calibrated_table": "linear",
+      "rounding_for_grade_like_metrics": "numpy.rint (ties to even) then clip to [0, 6]"
+    },
+    "metrics": {
+      "panel_median_mae": "mean |prediction - panel_weighted_median| on the 12500 cells",
+      "panel_mean_mae": "mean |prediction - panel_weighted_mean| on the 12500 cells",
+      "exact_match": "mean round(prediction) == panel_weighted_median",
+      "within_one": "mean |round(prediction) - panel_weighted_median| <= 1",
+      "macro_spearman": "per-target Spearman between prediction and panel_weighted_mean for targets with at least 3 distinct reference values, then nanmean (not computed for the calibration rows)",
+      "high_grade": "truth = panel_weighted_median >= threshold; prediction = grade >= threshold; precision/recall are cell-level panel metrics, not per-taster accuracy",
+      "individual_weighted": "raw 0-6 records from the external anonymized sensory table, weighted by weight_within_beer (total weight 12500); this is the legacy evaluand and is reported only as a contrast",
+      "lower_bound": "panel_median_oracle_individual_level: predict the observed panel-weighted median for every cell and score it against the weighted raw records; this is the L1 information floor of the cell-identity-only predictor, not a model"
+    },
+    "outputs": {
+      "q1__submission_long_12500.csv": [
+        "beer",
+        "target",
+        "target_family",
+        "grade_0_6",
+        "probability_rating_ge5",
+        "probability_rating_6"
+      ],
+      "q1__submission_wide_250x50.csv": "beer rows sorted ascending, 50 target columns sorted ascending",
+      "q1__evaluation_long_12500.csv": [
+        "beer",
+        "target",
+        "target_family",
+        "grade_integer_median_old",
+        "grade_0_6",
+        "panel_mean_reference",
+        "panel_median_reference",
+        "probability_rating_ge1",
+        "probability_rating_ge5",
+        "probability_rating_6",
+        "outer_fold"
+      ],
+      "q1__metrics_summary.csv": [
+        "scope",
+        "method",
+        "panel_median_mae",
+        "panel_mean_mae",
+        "exact_match",
+        "within_one",
+        "macro_spearman",
+        "n_pred_ge5",
+        "precision_ge5",
+        "recall_ge5",
+        "n_pred_6",
+        "precision_6",
+        "recall_6"
+      ],
+      "q1__calibrated_panel_mean_12500.csv": [
+        "beer",
+        "target",
+        "panel_mean_reference",
+        "panel_median_reference",
+        "grade_integer_median_old",
+        "panel_mean_calibrated",
+        "grade_from_calibrated_mean_round"
+      ],
+      "q1__high_grade_coverage_by_target.csv": [
+        "target",
+        "n_observed_ge5",
+        "n_observed_6",
+        "n_predicted_ge5",
+        "n_predicted_6"
+      ],
+      "verification.json": "assertions against experiments/lead_review/q1/decision_topk_report.json and the paper handoff package",
+      "protocol.json": "this protocol as executed",
+      "summary.json": "key numbers"
+    },
+    "verification": {
+      "expected_rows": 12500,
+      "expected_grade_distribution": {
+        "0": 8279,
+        "1": 856,
+        "2": 1361,
+        "3": 1648,
+        "4": 152,
+        "5": 188,
+        "6": 16
+      },
+      "reference_report": "experiments/lead_review/q1/decision_topk_report.json",
+      "reference_report_table": "NEW: top-k cumulative-prob (fold-wise rate)",
+      "report_tolerance": 1e-09,
+      "handoff_metrics_summary": "deliverables/paper_handoff_20261028/tables/q1__metrics_summary.csv",
+      "handoff_tolerance": 1e-09,
+      "handoff_rounded_tolerance": 1e-06,
+      "handoff_rounded_rows": [
+        "individual_taster,extra_trees_integer_median",
+        "lower_bound,panel_median_oracle_individual_level"
+      ],
+      "non_forced_evidence": "grade 5 count 188 < 198 observed and grade 6 count 16 < 19 observed; at least one (target, fold) has k5 = 0 and at least one has k6 = 0"
+    },
+    "reproduction": {
+      "command": "$env:PYTHONPATH='src'; .venv/Scripts/python.exe scripts/q1_official_20261028.py --source '<赛题附件目录>' --q1 outputs/task6_final_20261026/paper/tables --raw outputs/r2_raw_q1_20261026 --reference data/reference/zenodo23624915 --output outputs/q1_decision_20261028",
+      "tests": "$env:PYTHONPATH='src'; .venv/Scripts/python.exe -m unittest tests.test_q1_decision -v",
+      "no_retraining": true
+    }
+  },
+  "resolved_inputs": {
+    "oof_probabilities": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\task6_final_20261026\\paper\\tables\\q1__oof_scores_all52.csv",
+    "full_fit_probabilities": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\task6_final_20261026\\paper\\tables\\q1__full_fit_scores_all52.csv",
+    "observed_panel_distribution": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\observed_panel_distribution.csv",
+    "oof_predictions": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\oof_predictions.csv.gz",
+    "rating_weights_and_folds": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\rating_weights_and_folds.csv",
+    "chemistry": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件\\1.csv",
+    "raw_sensory": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv"
+  },
+  "input_sha256": {
+    "oof_probabilities": "a5ab47767cea3ac0708192c1fd1388369e4e36420fc480317767c5f3f81b0213",
+    "full_fit_probabilities": "1262fa85c63acfc054422d06b71c2478bb017e1411fdda7dee2d822399a88432",
+    "observed_panel_distribution": "c2513c76c52fbb5d534c782758459ab2c4d861bde18a7c6f7f567880d42352c6",
+    "oof_predictions": "14c5979794e10190dacc465b3b0ee4f540614bedd0030f8370c24eac4325a3c0",
+    "rating_weights_and_folds": "5f6dd1f5a0ebccecbf1971db48be09e5b3fa8d9641192a66f016ef0aeda4b8f1",
+    "chemistry": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "raw_sensory": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628"
+  },
+  "reference_report": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\experiments\\lead_review\\q1\\decision_topk_report.json",
+  "handoff_tables": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\deliverables\\paper_handoff_20261028\\tables",
+  "output_directory": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q1_decision_20261028",
+  "retraining": false
+}

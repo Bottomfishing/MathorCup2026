@@ -1,0 +1,44 @@
+{
+  "baseline_commit": "d42b20a",
+  "target": "Unchanged beer/taster-balanced original 0-6 individual rating distribution; point action is lower conditional median followed by parent cap. No identity/style predictors.",
+  "hypothesis": "Shared 50-output splits can dilute target-specific chemistry. Separate seven-output distribution regressors learn each target's probabilities from unique beers. Squared-error split gain on the seven fractions equals fractional-label Gini gain up to scale and a split-independent term.",
+  "methods": [
+    "training_prior",
+    "shared_et",
+    "target_leaf3",
+    "target_leaf1"
+  ],
+  "target_forest": {
+    "n_estimators": 300,
+    "max_features": 0.7
+  },
+  "parallel_jobs": 4,
+  "repeat_outer_seeds": [
+    20261027,
+    20261028,
+    20261029
+  ],
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "seed": 20261026,
+  "selection": "Parent-first per-target inner-OOF individual-rating MAE. Evaluate child candidate decisions against the already selected parent's inner prediction. Prefer shared_et on ties, then training_prior, target_leaf3, target_leaf1. No tail weights/thresholds or outer-test tuning.",
+  "adoption": {
+    "minimum_mean_mae_gain": 0.005,
+    "minimum_lower95_gain": 0.0,
+    "maximum_raw_high_fpr": 0.02,
+    "maximum_panel_high_fpr": 0.02,
+    "require_each_repeat_gain_positive": true
+  },
+  "tail_solution": {
+    "minimum_each_raw_recall5_recall6": 0.05,
+    "minimum_each_panel_recall5_recall6": 0.05,
+    "maximum_high_fpr": 0.02
+  },
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261026,
+  "uncertainty": "Average fixed OOF paired losses over repeats for each beer, then style-stratified resample 250 beers. No 750-independent-sample claim or training-selection uncertainty coverage.",
+  "validation_status": "Post-development repeated nested comparison on the same 250 historically inspected beers and existing repeat splits, not an unseen or external test. Freeze this rule before viewing new candidate results. No outer-driven candidate additions.",
+  "probabilities": "Evaluate individual-rating distributions separately using expected Brier/RPS and weighted fractional-outcome AUC/AP. New point-model probabilities are exploratory, uncalibrated. Retain R2b deployed calibrated/uncalibrated risk model and evidence unchanged, with explicit provenance.",
+  "risk_rebuild": "Reuse checksummed R2b full_training inner probabilities, refit only its two full-training base models at original seed 20261026+999 and six training-only calibrators. Do not rerun historical outer experiments.",
+  "scope": "Stage 1 Q1 only. Preserve original attachments, untracked delivery folder and all historical Q2/Q3 results; two acetaldehyde targets stay blank. Stage 2 must re-evaluate Q3 point guards if point model changes."
+}

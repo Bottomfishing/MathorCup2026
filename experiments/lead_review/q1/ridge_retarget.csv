@@ -1,0 +1,7 @@
+model,panel_mean_mae,panel_median_exact_rounded,panel_median_within_one_rounded
+Ridge(chem) alpha=1.0 -> panel mean,2.1746046384997313,0.3572,0.75656
+Ridge(chem) alpha=10.0 -> panel mean,1.2603812822571756,0.42544,0.84024
+Ridge(chem) alpha=30.0 -> panel mean,0.9954917992689306,0.4536,0.868
+Ridge(chem) alpha=100.0 -> panel mean,0.79256771886732,0.46448,0.88728
+Ridge(chem+style) alpha=10 -> panel mean,1.2004307034746613,0.4348,0.84544
+Ridge(chem) alpha=10 -> panel median (round),1.5872068112603144,0.49352,0.83896

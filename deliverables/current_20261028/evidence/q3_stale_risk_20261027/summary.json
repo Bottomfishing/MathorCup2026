@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "adopted": false,
+  "gates": {
+    "mean_gain": false,
+    "prior_interval": false,
+    "shared_interval": false,
+    "every_repeat": false,
+    "AUC": false,
+    "variation": true
+  },
+  "primary": "individual_nonzero_Brier",
+  "selected_mean_brier": 0.10696695929850349,
+  "selected_mean_AUC": 0.5601525122921877,
+  "mean_prior_gain": 0.0003569641629858483,
+  "protocol_sha256": "7998eb709265cc08c01fcbf6c7526af9095486fb1396c1c990d6f6f35f0f6575",
+  "raw_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "independent_beers": 250,
+  "repeated_predictions": 750,
+  "new_external_data": false,
+  "q1_integer_model_changed": false,
+  "true_intervention_safety_certified": false
+}
