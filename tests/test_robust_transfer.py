@@ -6,7 +6,7 @@ import pandas as pd
 from beer_models.robust_transfer import sparse_decode, refit_metrics
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
 from q3_robust_transfer import chemical_limits
-from q3_risk_aware_pruning import parameter_draws
+from beer_models.robust_transfer import parameter_draws
 
 
 class RobustTransferTests(unittest.TestCase):

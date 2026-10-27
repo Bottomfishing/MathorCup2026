@@ -12,7 +12,7 @@ from threadpoolctl import threadpool_limits
 from beer_audit.audit import save_csv,write_json,sha256
 from beer_models.tail_risk import base_probabilities,survival
 from beer_models.robust_transfer import panel_five,style_margins,refit_metrics
-from task4_raw_q3 import portrait
+from beer_models.raw_panel import portrait
 
 
 def run(args):

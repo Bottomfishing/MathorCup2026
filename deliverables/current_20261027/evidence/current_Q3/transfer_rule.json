@@ -1,0 +1,9 @@
+{
+  "operation": "preserve_unknown_source_Diacetyl",
+  "source_coordinate": null,
+  "target_coordinate": null,
+  "exact_zero_assumption_required": false,
+  "missing_input_not_converted_to_measurement": true,
+  "chemical_nonincrease_is_conditional_on_preserving_actual_unknown": true,
+  "omitted_coordinate_cannot_affect_auxiliary_model_by_construction": true
+}

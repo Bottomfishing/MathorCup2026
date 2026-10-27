@@ -1,0 +1,52 @@
+﻿R_name,dataset,Category_Paper,Category,CleanName_Paper,CleanName_PaperLong,CleanName_PanelFeedback,DataType,scope,original_scale_identified
+A_malt_all,Trained panel,Aroma,Malt,Malt - overall,Malt aroma,Malt aroma - overall,numeric,aroma_flavour_primary_candidate,False
+A_malt_grain,Trained panel,Aroma,Malt,Malt - grain,Malt aroma - grain,Malt aroma - grain,categorical,aroma_flavour_primary_candidate,False
+A_malt_bread,Trained panel,Aroma,Malt,Malt - bread,Malt aroma - bread,Malt aroma - bread,categorical,aroma_flavour_primary_candidate,False
+A_malt_cara,Trained panel,Aroma,Malt,Malt - caramel,Malt aroma - caramel,Malt aroma - caramel,categorical,aroma_flavour_primary_candidate,False
+A_malt_burn,Trained panel,Aroma,Malt,Malt - smoked,Malt aroma - smoked,Malt aroma - smoked,categorical,aroma_flavour_primary_candidate,False
+A_hops_all,Trained panel,Aroma,Hops,Hops - overall,Hops aroma,Hops aroma - overall,numeric,aroma_flavour_primary_candidate,False
+A_hops_citrus,Trained panel,Aroma,Hops,Hops - citrus,Hops aroma - citrus,Hops aroma - citrus,categorical,aroma_flavour_primary_candidate,False
+A_hops_tropical,Trained panel,Aroma,Hops,Hops - tropical fruit,Hops aroma - tropical fruit,Hops aroma - tropical fruit,categorical,aroma_flavour_primary_candidate,False
+A_hops_noble,Trained panel,Aroma,Hops,Hops - grassy,Hops aroma - grassy,Hops aroma - grassy,categorical,aroma_flavour_primary_candidate,False
+A_hops_woody,Trained panel,Aroma,Hops,Hops - woody,Hops aroma - woody,Hops aroma - woody,categorical,aroma_flavour_primary_candidate,False
+A_esters_all,Trained panel,Aroma,Yeast,Esters - overall,Esters aroma,Esters aroma - overall,numeric,aroma_flavour_primary_candidate,False
+A_esters_ethac,Trained panel,Aroma,Yeast,Esters - nail polish,Esters aroma - nail polish,Esters aroma - nail polish,categorical,aroma_flavour_primary_candidate,False
+A_esters_isoaa,Trained panel,Aroma,Yeast,Esters - banana,Esters aroma - banana,Esters aroma - banana,categorical,aroma_flavour_primary_candidate,False
+A_esters_flower,Trained panel,Aroma,Yeast,Esters - floral,Esters aroma - floral,Esters aroma - floral,categorical,aroma_flavour_primary_candidate,False
+A_esters_fruity,Trained panel,Aroma,Yeast,Esters - fruity,Esters aroma - fruity,Esters aroma - fruity,categorical,aroma_flavour_primary_candidate,False
+F_malt_all,Trained panel,Taste,Malt,Malt - overall,Malt taste,Malt taste - overall,numeric,aroma_flavour_primary_candidate,False
+F_malt_grain,Trained panel,Taste,Malt,Malt - grain,Malt taste - grain,Malt taste - grain,categorical,aroma_flavour_primary_candidate,False
+F_malt_bread,Trained panel,Taste,Malt,Malt - bread,Malt taste - bread,Malt taste - bread,categorical,aroma_flavour_primary_candidate,False
+F_malt_cara,Trained panel,Taste,Malt,Malt - caramel,Malt taste - caramel,Malt taste - caramel,categorical,aroma_flavour_primary_candidate,False
+F_malt_burn,Trained panel,Taste,Malt,Malt - smoked,Malt taste - smoked,Malt taste - smoked,categorical,aroma_flavour_primary_candidate,False
+F_hops_all,Trained panel,Taste,Hops,Hops - overall,Hops taste,Hops taste - overall,numeric,aroma_flavour_primary_candidate,False
+F_hops_citrus,Trained panel,Taste,Hops,Hops - citrus,Hops taste - citrus,Hops taste - citrus,categorical,aroma_flavour_primary_candidate,False
+F_hops_tropical,Trained panel,Taste,Hops,Hops - tropical fruit,Hops taste - tropical fruit,Hops taste - tropical fruit,categorical,aroma_flavour_primary_candidate,False
+F_hops_noble,Trained panel,Taste,Hops,Hops - grassy,Hops taste - grassy,Hops taste - grassy,categorical,aroma_flavour_primary_candidate,False
+F_hops_woody,Trained panel,Taste,Hops,Hops - woody,Hops taste - woody,Hops taste - woody,categorical,aroma_flavour_primary_candidate,False
+F_esters_all,Trained panel,Taste,Yeast,Esters - overall,Esters taste,Esters taste - overall,numeric,aroma_flavour_primary_candidate,False
+F_esters_ethac,Trained panel,Taste,Yeast,Esters - nail polish,Esters taste - nail polish,Esters taste - nail polish,categorical,aroma_flavour_primary_candidate,False
+F_esters_isoaa,Trained panel,Taste,Yeast,Esters - banana,Esters taste - banana,Esters taste - banana,categorical,aroma_flavour_primary_candidate,False
+F_esters_flower,Trained panel,Taste,Yeast,Esters - floral,Esters taste - floral,Esters taste - floral,categorical,aroma_flavour_primary_candidate,False
+F_esters_fruity,Trained panel,Taste,Yeast,Esters - fruity,Esters taste - fruity,Esters taste - fruity,categorical,aroma_flavour_primary_candidate,False
+acidity,Trained panel,Taste,Others,Acidity,Acidity,Acidity,numeric,aroma_flavour_primary_candidate,False
+bitternes,Trained panel,Taste,Others,Bitterness,Bitterness,Bitterness,numeric,aroma_flavour_primary_candidate,False
+sweetness,Trained panel,Taste,Others,Sweetness,Sweetness,Sweetness,numeric,aroma_flavour_primary_candidate,False
+X4vg,Trained panel,Taste,Others,4-vinyl guaiacol,4-vinyl guaiacol,4-vinyl guaiacol,numeric,aroma_flavour_primary_candidate,False
+diacetyl,Trained panel,Taste,Others,Diacetyl,Diacetyl,Diacetyl,numeric,aroma_flavour_primary_candidate,False
+dms,Trained panel,Taste,Others,Dimethyl sulfide,Dimethyl sulfide,Dimethyl sulfide,numeric,aroma_flavour_primary_candidate,False
+metallic,Trained panel,Taste,Others,Metallic,Metallic,Metallic,numeric,aroma_flavour_primary_candidate,False
+stale_hops,Trained panel,Taste,Others,Stale hops,Stale hops,Stale hops,numeric,aroma_flavour_primary_candidate,False
+t2n,Trained panel,Taste,Others,Trans-2-nonenal,Aging aroma - cardboard,Trans-2-nonenal,numeric,aroma_flavour_primary_candidate,False
+orange,Trained panel,Taste,Others,Orange,Hops taste - citrus,Orange,numeric,aroma_flavour_primary_candidate,False
+coriander,Trained panel,Taste,Others,Coriander,Coriander,Coriander,numeric,aroma_flavour_primary_candidate,False
+clove,Trained panel,Taste,Others,Clove,Clove,Clove,numeric,aroma_flavour_primary_candidate,False
+lactic,Trained panel,Taste,Wild flora,Lactic acid,Lactic acid,Lactic acid,numeric,aroma_flavour_primary_candidate,False
+acetic,Trained panel,Taste,Wild flora,Acetic acid,Acetic acid,Acetic acid,numeric,aroma_flavour_primary_candidate,False
+barnyard,Trained panel,Taste,Wild flora,Barnyard,Barnyard,Barnyard,numeric,aroma_flavour_primary_candidate,False
+alcohol,Trained panel,Palate,Yeast,Alcohol,Alcohol,Alcohol,numeric,supplementary_palate_or_overall,False
+aftertaste,Trained panel,Palate,,Aftertaste,Aftertaste,Aftertaste,numeric,supplementary_palate_or_overall,False
+body,Trained panel,Palate,,Body,Body fullness,Body,numeric,supplementary_palate_or_overall,False
+co2,Trained panel,Palate,Yeast,Carbonation,Carbonation,Carbonation,numeric,supplementary_palate_or_overall,False
+overall,Trained panel,Overall,,Overall appreciation,Overall appreciation,"Overall appreciation_x000D_
+(Trained panel)",numeric,supplementary_palate_or_overall,False

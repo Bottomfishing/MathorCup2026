@@ -1,0 +1,22 @@
+{
+  "beer": 119,
+  "status": "four_proxy_missing_input_qualified_Stale_UNRESOLVED",
+  "adopted_four_proxy_conditional_plan": true,
+  "source_diacetyl_observed": false,
+  "source_diacetyl_numeric_value": null,
+  "exact_zero_assumption_required": false,
+  "omitted_input": "X2.3.butanedione",
+  "available_model_inputs": 223,
+  "changed_coordinates": 130,
+  "source_coordinate_rule": "preserve_actual_unknown_source_value",
+  "development_joint_fraction": 0.9,
+  "validation_joint_fraction": 0.75,
+  "development_parameter_fraction": 1.0,
+  "validation_parameter_fraction_additional_diagnostic": 0.6875,
+  "extra_validation_parameter_diagnostic_passes_80_percent": false,
+  "stale_evidence_sufficient": false,
+  "all_five_true_nonworsening_certified": false,
+  "physical_feasibility_certified": false,
+  "actual_after_measured": false,
+  "official_Q1_score_model_changed": false
+}

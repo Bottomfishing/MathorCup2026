@@ -1,0 +1,33 @@
+﻿method,status,metric,mean,sample_sd,minimum,maximum
+Training prior,baseline,raw_rating_mae,0.8290537444407443,9.54916447431217e-05,0.8289859090169089,0.8291629444259444
+Training prior,baseline,panel_median_mae,0.44813333333333333,0.00040265783654778634,0.44776,0.44856
+Training prior,baseline,raw_recall_5,0.0,0.0,0.0,0.0
+Training prior,baseline,raw_recall_6,0.0,0.0,0.0,0.0
+Training prior,baseline,panel_recall_5,0.0,0.0,0.0,0.0
+Training prior,baseline,panel_recall_6,0.0,0.0,0.0,0.0
+Training prior,baseline,raw_high_fpr,0.0,0.0,0.0,0.0
+Training prior,baseline,panel_high_fpr,0.0,0.0,0.0,0.0
+Shared ET median,retained_official,raw_rating_mae,0.7945612402659069,0.0006824665667854405,0.7940994573944573,0.795345148925149
+Shared ET median,retained_official,panel_median_mae,0.39181333333333335,0.0013489749194604448,0.39088,0.39336
+Shared ET median,retained_official,raw_recall_5,0.0,0.0,0.0,0.0
+Shared ET median,retained_official,raw_recall_6,0.0,0.0,0.0,0.0
+Shared ET median,retained_official,panel_recall_5,0.0,0.0,0.0,0.0
+Shared ET median,retained_official,panel_recall_6,0.0,0.0,0.0,0.0
+Shared ET median,retained_official,raw_high_fpr,0.0,0.0,0.0,0.0
+Shared ET median,retained_official,panel_high_fpr,0.0,0.0,0.0,0.0
+Target forest selection,rejected,raw_rating_mae,0.7939643728370395,0.0012260872472557207,0.7927923996373997,0.7952382177452177
+Target forest selection,rejected,panel_median_mae,0.39197333333333334,0.0028980913259131946,0.38928,0.39504
+Target forest selection,rejected,raw_recall_5,0.004592727308485,0.0005804898878154873,0.0039229784356103,0.004950965077697
+Target forest selection,rejected,raw_recall_6,0.0,0.0,0.0,0.0
+Target forest selection,rejected,panel_recall_5,0.0167597765363128,0.0,0.0167597765363128,0.0167597765363128
+Target forest selection,rejected,panel_recall_6,0.0,0.0,0.0,0.0
+Target forest selection,rejected,raw_high_fpr,0.00019135235557753334,7.341185336657313e-05,0.0001235667197257,0.0002693261319077
+Target forest selection,rejected,panel_high_fpr,0.00016257519102580824,8.128759551288763e-05,8.128759551292472e-05,0.0002438627865387
+Selective tail,experimental_not_adopted,raw_rating_mae,0.8056285468852135,0.0010918867861915884,0.8044564091834091,0.8066168428608429
+Selective tail,experimental_not_adopted,panel_median_mae,0.4112,0.0014062716664997458,0.4096,0.41224
+Selective tail,experimental_not_adopted,raw_recall_5,0.07071132613184615,0.008111980100019693,0.0613838356074292,0.0761184834808542
+Selective tail,experimental_not_adopted,raw_recall_6,0.0644410408057339,0.020019676607884253,0.0458145818412685,0.0856108600724739
+Selective tail,experimental_not_adopted,panel_recall_5,0.14711359404096833,0.01612710249133036,0.1284916201117318,0.1564245810055866
+Selective tail,experimental_not_adopted,panel_recall_6,0.0701754385964912,0.030386856273138182,0.0526315789473684,0.1052631578947368
+Selective tail,experimental_not_adopted,raw_high_fpr,0.013080672754818065,0.0007828507126160578,0.0123094043711518,0.0138746132636622
+Selective tail,experimental_not_adopted,panel_high_fpr,0.014794342383352234,0.0009051803548739837,0.013981466428223,0.0157697935295073

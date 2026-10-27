@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "source_beers": 250,
+  "targets": 50,
+  "features": 224,
+  "independently_refitted_models": 18,
+  "refitted_inner_GBR_models": 12,
+  "refitted_outer_models": 6,
+  "recomputed_outer_explanations": 6,
+  "attribution_cells_per_method": 2800000,
+  "training_only_background_beers_per_fold": 100,
+  "inner_prediction_rows": 50000,
+  "rank_rows": 201,
+  "scorecard_rank_slots": 312,
+  "empty_acetaldehyde_slots": 12,
+  "all_derived_tables_recomputed": 13,
+  "max_additivity_error": 2.518048036748155e-08,
+  "historical_Q2_source_hashes_unchanged": true,
+  "Q1_Q3_not_retrained": true,
+  "scope": "Same source and folds replayed, not an independent data validation or causal audit."
+}

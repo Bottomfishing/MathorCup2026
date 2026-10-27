@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "adopted": false,
+  "protocol_sha256": "d490656b63e115e7ceba9cda84cf7c3e58e3d4c93667e754478b5149997b39fc",
+  "eligible_repeats": [
+    false,
+    true,
+    true
+  ],
+  "pooled_feasible": true,
+  "selected_metrics": {
+    "raw_rating_mae": 0.8056285468852136,
+    "raw_recall_5": 0.07071132613184619,
+    "panel_recall_5": 0.14711359404096835,
+    "raw_recall_6": 0.06444104080573394,
+    "panel_recall_6": 0.07017543859649122,
+    "raw_high_fpr": 0.013080672754818123,
+    "panel_high_fpr": 0.0147943423833523
+  },
+  "mean_mae_increase": 0.011067306619306624,
+  "upper95_mae_increase": 0.01449153868353869,
+  "full_training_choice": 10,
+  "model_sha256": "79f373e2f79d167dda580832ea4d68babdb53f043f2797c55d773a4eef8c7a0b",
+  "parent_evidence_sha256": {
+    "model.joblib": "a07eee7f688e191f41eeb158f732f74bdeab9d9525fd906035c3d3c9e5ece8db",
+    "oof_probabilities.csv.gz": "d5656a0d0bb1e830ac68c91e6fd0deebe291f28b5fe188f5ea424c0215560eee",
+    "protocol.json": "34dd45b865816c116c115861fa03d07c09c614cb5dcefbdc4b356b1e1931a437"
+  },
+  "n_independent_beers": 250,
+  "n_repeated_predictions": 750,
+  "q3_started": false
+}

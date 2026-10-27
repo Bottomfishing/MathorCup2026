@@ -1,0 +1,2 @@
+﻿raw_rating_mae,raw_rating_exact,raw_rating_within_one,panel_median_mae,panel_median_exact,panel_median_within_one,raw_recall_5,panel_recall_5,raw_recall_6,panel_recall_6,raw_high_fpr,panel_high_fpr,role
+0.6635668023458025,0.6586885938690938,0.8186814391164391,0.0,1.0,1.0,0.17442851230967402,1.0,0.11339220252443834,1.0,0.005084288000699126,0.0,descriptive_observed_panel_not_a_forecast

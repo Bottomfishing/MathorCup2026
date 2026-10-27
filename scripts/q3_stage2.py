@@ -17,7 +17,7 @@ from beer_models.style_models import make_style_model
 from beer_models.defect_constraints import defect_aware_box, project_defects
 from beer_models.local_transfer import decode, structural_metrics, defect_predictions, guard_metrics, rank_candidates
 from r2_raw_q1 import load_inputs, RAW_MANIFEST, content_hash, PROTOCOL as BASE
-from task4_raw_q3 import portrait
+from beer_models.raw_panel import portrait
 
 PROTOCOL = ROOT/'configs/q3_stage2_protocol_20261026.json'
 DICTIONARY = ROOT/'outputs/p0_audit_20261023_final/feature_dictionary.csv'

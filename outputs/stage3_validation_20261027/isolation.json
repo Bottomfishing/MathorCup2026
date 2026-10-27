@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "independent_package_training_completed": true,
+  "independent_package_model_replay": {
+    "status": "passed",
+    "data_beers": 250,
+    "original_ratings": 2197,
+    "generated_profiles": 300,
+    "current_Q1_unchanged": true,
+    "missing_acetaldehyde_blank": true,
+    "raw_GBR_nonzero_ranks": 51,
+    "source119_diacetyl_NA_preserved": true,
+    "changed_coordinates": 130,
+    "Stale_unresolved": true,
+    "all_five_effect_unresolved": true,
+    "current_tables_checked": true,
+    "independent_new_external_validation": false,
+    "historical_scientific_evidence_reused": [
+      "outputs/q1_selective_tail_20261026/verification.json",
+      "outputs/q1_target_20261026/verification.json",
+      "outputs/q3_missing_aware_20261027/verification.json",
+      "outputs/r3_raw_explanation_20261026/verification.json",
+      "outputs/task4_raw_q3_20261026/verification.json",
+      "outputs/task5_repeated_nested_20261026/verification.json"
+    ],
+    "Q1_full_fit_13000_rows_max_delta": 1.9068080447937064e-14,
+    "generated_15600_rows_max_delta": 1.3766765505351941e-14,
+    "transfer_104_rows_max_delta": 1.177877240188252e-15,
+    "independent_full_data_model_rebuild_verified": true,
+    "current_models_replayed": true,
+    "nominal_Q3_auxiliary_and_styles_replayed": true
+  },
+  "final_training_implementation_identical_to_isolated_snapshot": true,
+  "scientific_code_sha256": {
+    "src/beer_models/current_runtime.py": "007ff87e8234d817fc9814bf1a86acc8df3523dde44d70bb539fc337e9a07db5",
+    "src/beer_models/panel_data.py": "927d6bbb78042fe2dac76ca5b3765de9a43ef32a8e19dbbf4fb4a03688d25ea0",
+    "src/beer_models/raw_panel.py": "78af9855cc1d03250090d4d25831c906ef4f1362019e73454ed081c400f64efc",
+    "src/beer_models/tail_risk.py": "8abde904d82254f95802b71ad8704671265725f7e277eceec9630ab2ee1ade43",
+    "src/beer_models/style_models.py": "877ecf4bac080bed88bb970eb569bee4866454860da8a3aa340718304fafd006",
+    "src/beer_models/transforms.py": "3a88c1874f8c800d3c3064c5db0649c060ab06650f7b42d6011228171caa1747"
+  },
+  "default_no_model_export_vs_fresh_render_max_delta": {
+    "transfer_official_Q1_scores52.csv": 1.0998146837692957e-15,
+    "transfer_auxiliary_Q3_risks.csv": 2.992397996059992e-16,
+    "transfer_styles.csv": 0.0
+  },
+  "forwarded_zip_bytes": 6450602,
+  "forwarded_zip_sha256": "759b9839d33433d54428681e4e3dedd0c0107e19022106e63a87b0bc900dcd92",
+  "source_attachment_files_or_individual_raw_records_packaged": false,
+  "model_binaries_packaged": false,
+  "unit_tests_passed": 172,
+  "scientific_methods_changed": false,
+  "new_external_validation": false,
+  "changed_legacy_modules_imported": [
+    "predict_q1",
+    "q1_target_experiment",
+    "q3_missing_aware",
+    "q3_risk_aware_pruning",
+    "q3_stage2",
+    "q3_stale_risk",
+    "r2_raw_q1",
+    "report_q3_missing_aware",
+    "report_q3_robust",
+    "search_q3_full_grid",
+    "task4_raw_q3",
+    "validate_q3_robust",
+    "verify_q3_pruning",
+    "verify_q3_stale_missing"
+  ],
+  "all_src_and_scripts_compile": true
+}

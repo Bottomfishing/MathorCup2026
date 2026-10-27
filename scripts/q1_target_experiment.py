@@ -26,12 +26,7 @@ BASE = ROOT/'configs/r2_raw_panel_protocol_20261026.json'
 LEGACY = ROOT/'outputs/r2b_tail_risk_20261026'
 
 
-def fit_shared(data, train, protocol, seed):
-    lookup = np.full(len(data['x']), -1, int)
-    lookup[train] = np.arange(len(train))
-    rows = lookup[data['positions']] >= 0
-    return RawPanelModel('extra_trees', protocol, seed, data['parents']).fit(data['x'][train],
-        lookup[data['positions'][rows]], data['scores'][rows], data['weights'][rows], data['distribution'][train])
+from beer_models.raw_panel import fit_shared
 
 
 def fit_models(data, train, p, bp, seed):

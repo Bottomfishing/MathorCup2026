@@ -1,0 +1,3 @@
+﻿model,source_prediction,after_prediction,Tripel_before,Tripel_after,calibration_established
+logistic,Pils/Lager,Tripel,7.880056361799436e-05,0.9001710147036465,False
+extra_trees,Pils/Lager,Tripel,0.007610793239410308,0.6089274634889682,False

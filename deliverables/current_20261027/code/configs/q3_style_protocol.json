@@ -1,0 +1,11 @@
+{
+  "seed": 20261024,
+  "logistic_C": 1.0,
+  "logistic_max_iter": 2000,
+  "n_estimators": 300,
+  "min_samples_leaf": 3,
+  "max_features": 0.7,
+  "transfer_steps": 40,
+  "target_distance_weight": 0.7,
+  "scope": "Prespecified style classifiers and one focused stale_hops regressor, fixed historical folds and inherited tree parameters. Strict transfer requires agreement of both style models and the empirical Tripel feature box. Model checks do not authenticate style or physical feasibility."
+}

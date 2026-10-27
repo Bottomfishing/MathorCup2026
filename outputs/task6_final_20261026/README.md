@@ -1,3 +1,5 @@
+> 历史快照：本包未包含后续Q1比较与Q3缺失条件方案。当前正式交付为 `deliverables/current_20261027/`，入口见仓库根README；本包原表格、图、Excel和ZIP保留用于历史追溯。
+
 # MathorCup 2026 A｜论文取数与复现交接包
 
 先读`paper/README.md`和`paper/conclusions.csv`，按`paper/file_index.csv`查表与图；`paper/核心结果.xlsx`是7个静态查看页。完整CSV保留所有必要字段和证据状态。

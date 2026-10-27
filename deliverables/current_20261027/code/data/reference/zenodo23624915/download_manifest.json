@@ -1,0 +1,17 @@
+{
+  "record_id": 23624915,
+  "doi": "10.5281/zenodo.23624915",
+  "record_url": "https://zenodo.org/records/23624915",
+  "version_label": "v4 (as displayed by Zenodo record page)",
+  "publication_date": "2026-10-24",
+  "checked_on": "2026-10-25",
+  "file": "Raw sensory data anonymized.csv",
+  "url": "https://zenodo.org/api/records/23624915/files/Raw%20sensory%20data%20anonymized.csv/content",
+  "bytes": 321065,
+  "published_checksum": "md5:a8f911d8c0061e096abf3b087678e164",
+  "sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "encoding": "cp1252",
+  "description": "Publisher describes this as raw unprocessed panel scores per panelist and beer. Field aliases and sample identity are independently checked in the audit.",
+  "source_api": "https://zenodo.org/api/records/23624915",
+  "raw_distribution_in_git": false
+}

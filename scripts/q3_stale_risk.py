@@ -16,7 +16,7 @@ from beer_models.stale_risk import StaleNonzeroModel
 from beer_models.tail_risk import base_probabilities, binary_loss
 from beer_models.explain import stratified_draw
 from r2_raw_q1 import load_inputs, RAW_MANIFEST, PROTOCOL as BASE, content_hash
-from q1_target_experiment import fit_shared
+from beer_models.raw_panel import fit_shared
 
 PROTOCOL = ROOT/'configs/q3_stale_missing_protocol_20261027.json'
 

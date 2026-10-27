@@ -12,7 +12,7 @@ from beer_audit.audit import save_csv, write_json, sha256
 from beer_models.local_transfer import defect_predictions
 from beer_models.tail_risk import survival
 from q3_stage2 import setup, source_records
-from task4_raw_q3 import portrait
+from beer_models.raw_panel import portrait
 from r2_raw_q1 import RAW_MANIFEST
 
 

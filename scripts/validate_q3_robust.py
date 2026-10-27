@@ -15,7 +15,7 @@ from beer_models.tail_risk import survival
 from q3_stage2 import setup, source_records
 from q3_robust_transfer import fit_refits, ensemble_arrays, evaluate, PROTOCOL, OLD
 from r2_raw_q1 import RAW_MANIFEST, content_hash
-from task4_raw_q3 import portrait
+from beer_models.raw_panel import portrait
 
 
 def run(args):

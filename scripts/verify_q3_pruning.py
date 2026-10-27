@@ -14,7 +14,8 @@ from beer_models.robust_transfer import panel_five, refit_metrics
 from beer_models.q3_raw import raw_predictions
 from beer_models.local_transfer import defect_predictions
 from q3_robust_transfer import evaluate, chemical_limits, ensemble_arrays, OLD
-from q3_risk_aware_pruning import FIRST, parameter_draws, surplus
+from beer_models.robust_transfer import parameter_draws
+from q3_risk_aware_pruning import FIRST, surplus
 from q3_stage2 import setup, source_records
 from r2_raw_q1 import RAW_MANIFEST, content_hash
 

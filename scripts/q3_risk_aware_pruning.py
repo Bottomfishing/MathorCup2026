@@ -26,13 +26,7 @@ def surplus(table):
     return np.stack(parts).min(0)
 
 
-def parameter_draws(source, selected, n, seed):
-    mutable = np.flatnonzero(abs(selected-source) > 1e-10)
-    rng = np.random.default_rng(seed)
-    progress = np.clip(1+rng.normal(0, .01, (n, len(mutable))), 0, 1)
-    result = np.broadcast_to(selected, (n, len(source))).copy()
-    result[:, mutable] = source[mutable]+progress*(selected[mutable]-source[mutable])
-    return result
+from beer_models.robust_transfer import parameter_draws
 
 
 def run(args):

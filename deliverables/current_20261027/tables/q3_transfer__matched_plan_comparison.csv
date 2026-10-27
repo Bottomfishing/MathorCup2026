@@ -1,0 +1,5 @@
+﻿role,method,joint_fraction,refit_qualified,changed_fields,control_only
+development,fixed_pruned130,0.9,True,130,False
+development,previous_broad213,0.35,False,213,True
+validation,fixed_pruned130,0.75,True,130,False
+validation,previous_broad213,0.25,False,213,True

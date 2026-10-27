@@ -135,3 +135,19 @@ def predict_raw_frame(frame, bundle):
     quality = pd.DataFrame({'beer': beer.to_numpy(), 'observed_feature_count': observed,
         'missing_feature_fraction': 1 - observed / len(features)})
     return rows, primary, wide, quality
+
+
+def fit_shared(data, train, protocol, seed):
+    lookup = np.full(len(data['x']), -1, int)
+    lookup[train] = np.arange(len(train))
+    rows = lookup[data['positions']] >= 0
+    return RawPanelModel('extra_trees', protocol, seed, data['parents']).fit(data['x'][train],
+        lookup[data['positions'][rows]], data['scores'][rows], data['weights'][rows], data['distribution'][train])
+
+
+def portrait(frame,bundle):
+    from .tail_risk import risk_frame
+    long,primary,wide,quality=predict_raw_frame(frame,bundle)
+    long=long.merge(risk_frame(frame,bundle,long.beer.drop_duplicates().to_numpy()),on=['beer','target'],how='left',validate='one_to_one')
+    long['safety_certified']=False;long['actual_after_measured']=False
+    return long,primary,wide,quality

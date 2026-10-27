@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "data_beers": 250,
+  "original_ratings": 2197,
+  "generated_profiles": 300,
+  "official_Q1_adoption_record_unchanged": true,
+  "current_models_replayed": true,
+  "missing_acetaldehyde_blank": true,
+  "raw_GBR_nonzero_ranks": 51,
+  "source119_diacetyl_NA_preserved": true,
+  "changed_coordinates": 130,
+  "Stale_unresolved": true,
+  "all_five_effect_unresolved": true,
+  "current_tables_checked": true,
+  "independent_new_external_validation": false,
+  "historical_scientific_evidence_reused": [
+    "outputs/q1_selective_tail_20261026/verification.json",
+    "outputs/q1_target_20261026/verification.json",
+    "outputs/q3_missing_aware_20261027/verification.json",
+    "outputs/r3_raw_explanation_20261026/verification.json",
+    "outputs/task4_raw_q3_20261026/verification.json",
+    "outputs/task5_repeated_nested_20261026/verification.json"
+  ],
+  "Q1_full_fit_13000_rows_max_delta": 1.9068080447937064e-14,
+  "generated_15600_rows_max_delta": 1.3766765505351941e-14,
+  "transfer_104_rows_max_delta": 9.575673587391975e-16,
+  "independent_full_data_model_rebuild_verified": true,
+  "nominal_Q3_auxiliary_and_styles_replayed": true,
+  "package_files_hashed": 187,
+  "package_excludes_raw_records_and_model_binaries": true
+}

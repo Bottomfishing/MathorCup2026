@@ -1,0 +1,33 @@
+{
+  "baseline_commit": "efbe7a0",
+  "scope": "R3 only: separate raw-scale Q2 explanation supplement. Do not replace standardized-target historical Q2, Q1 Extra Trees, or Q3; no causal or safety certification.",
+  "response": "R2 balanced individual 0..6 rating distribution and median decision. GBR fits weighted raw-record quantile 0.5; Ridge fits balanced panel means (equivalent weighted squared raw-record loss), a different functional used as a linear comparator.",
+  "features": "Same 224 inputs as R2; strict eligible pool is the same 219 analytes as historical Q2, with bitterness/IBU only in the 220-candidate family supplement.",
+  "outer_folds": 3,
+  "outer_seed": 20261024,
+  "inner_folds": 2,
+  "inner_seed": 20261026,
+  "model_seed": 20261026,
+  "gbr_candidates": [
+    "gbr_depth1",
+    "gbr_depth2"
+  ],
+  "gbr_selection": "One global GBR depth in each outer training set by inner-OOF R2 raw-rating MAE over 50 targets after rounding/parent cap. Ties follow candidate order. Reuse R2 fixed tree parameters, not its output models.",
+  "ridge_alpha": 1000.0,
+  "ridge_preprocessing": "Unique training beers only: median imputation, RobustAsinh, StandardScaler. Fixed alpha reproduces the historical method, now with raw balanced means and R2 predictors.",
+  "background_size": 100,
+  "background_seed": 20261026,
+  "attribution": "Exact interventional Tree SHAP on held-out beers, background sampled without replacement from unique outer-training beers only, model_output=raw, approximate=False. Explains the unrounded/unclipped GBR 0.5-quantile output, not Q1 ET or the final rounded/hierarchy-capped grade. Additivity tolerance 1e-6.",
+  "linear_attribution": "Exact independent-background contribution beta_j*(transformed_x_j-background_mean_j); sum plus base equals the unrounded Ridge mean response. Same background beer IDs as GBR.",
+  "ranking": "GBR by equal-beer mean absolute OOF SHAP; raw Ridge by equal-fold mean absolute standardized training coefficient. Stable ties in feature order, exclude scores <=1e-12, leave unfilled slots rather than rank zero effects.",
+  "direction": "Marginal Spearman between original input coordinates and OOF attribution, with missing pairs omitted; descriptive association, not a monotonic concentration intervention effect.",
+  "correlation_threshold": 0.7,
+  "modules": "Per-outer-training unique-beer imputed Spearman absolute-rho graph, connected components. Module attribution sums signed contributions before taking mean absolute magnitude. Modules can differ between folds; keep membership and per-fold top ranks, do not multiply feature scores by centrality.",
+  "stability": "Three outer refits only: per-fold top3 membership frequencies, fold-pair top3 Jaccard and importance-rank Spearman. Not bootstrap selection probabilities or task5 repeated nested validation.",
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261026,
+  "prediction_support": "Per-target descriptive support only when raw MAE improvement over outer-training pooled median is >=0.01 and its fixed-OOF paired style-stratified beer-bootstrap 95% lower bound >0. Else weak_predictor_exploratory_only. Fifty target intervals are not multiplicity-adjusted. Even supported targets cannot certify causality or migration control.",
+  "literature": "Carry existing task3 literature only on exact target+field matches, show unreviewed for other pairs. Do not transfer old standardized-target permutation p/BY q/bootstrap frequencies to new raw-target ranks.",
+  "unlabelled": "Keep A_acetaldehyde and F_acetaldehyde rank slots empty; no expert labels, no imputed chemical-proxy label.",
+  "evaluation_scope": "Post-R2/R2b development on the same 250 beers. No external independent test; no full-data deployment model or Q3 optimization."
+}

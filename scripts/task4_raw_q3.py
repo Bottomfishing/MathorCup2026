@@ -45,11 +45,7 @@ def save_tables(output,tables):
         else:save_csv(output,name,table)
 
 
-def portrait(frame,bundle):
-    long,primary,wide,quality=predict_raw_frame(frame,bundle)
-    long=long.merge(risk_frame(frame,bundle,long.beer.drop_duplicates().to_numpy()),on=['beer','target'],how='left',validate='one_to_one')
-    long['safety_certified']=False;long['actual_after_measured']=False
-    return long,primary,wide,quality
+from beer_models.raw_panel import portrait
 
 
 def sensory_validation(q_observed,p_real,g_real,p_gen,g_gen,targets):

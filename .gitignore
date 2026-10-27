@@ -62,3 +62,17 @@ outputs/r2b_tail_risk_20261026/prediction_smoke_final/
 outputs/q1_target_20261026/prediction_smoke/*.csv
 outputs/q1_selective_tail_20261026/prediction_smoke/*.csv
 outputs/q1_selective_tail_20261026/experimental_smoke/*.csv
+
+# User-owned historical delivery is preserved locally, never staged by this workflow.
+/交付/
+# A single expanded current delivery is versioned; ZIP is regenerated for forwarding.
+/deliverables/*.zip
+outputs/stage3_validation_20261027/rendered/
+outputs/stage3_validation_20261027/prediction_q1/
+outputs/stage3_validation_20261027/prediction_q3/
+outputs/stage3_validation_20261027/unpacked/
+outputs/stage3_validation_20261027/*
+!outputs/stage3_validation_20261027/verification.json
+!outputs/stage3_validation_20261027/training.json
+!outputs/stage3_validation_20261027/isolation.json
+!outputs/stage3_validation_20261027/unit_tests.log

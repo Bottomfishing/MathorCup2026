@@ -19,10 +19,11 @@ from beer_models.q3_raw import resampled_records
 from beer_models.explain import stratified_draw
 from beer_models.generation import StyleGenerator
 from beer_models.uncertain_coordinate import preserve_unknown
-from q3_risk_aware_pruning import FIRST, parameter_draws
+from beer_models.robust_transfer import parameter_draws
+FIRST = ROOT/'outputs/q3_robust_20261027'
 from q3_stage2 import setup, source_records
 from r2_raw_q1 import RAW_MANIFEST, PROTOCOL as BASE, content_hash
-from q1_target_experiment import fit_shared
+from beer_models.raw_panel import fit_shared
 
 PROTOCOL = ROOT/'configs/q3_missing_aware_protocol_20261027.json'
 STALE = ROOT/'outputs/q3_stale_risk_20261027'

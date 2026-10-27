@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "four_target_gates": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "style_gate": true,
+  "raw_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "protocol_sha256": "b970723af29625ce3df70232480b9a0d4535016902386bedf1e8b31148ae7fa5"
+}

@@ -14,7 +14,7 @@ from beer_models.style_models import make_style_model
 from beer_models.defect_constraints import project_defects,defect_aware_box
 from beer_models.q3_raw import raw_predictions,defect_guard
 from r2_raw_q1 import load_inputs,RAW_MANIFEST,PROTOCOL as BASE_PROTOCOL
-from task4_raw_q3 import portrait
+from beer_models.raw_panel import portrait
 
 
 def run(args):

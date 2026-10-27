@@ -18,7 +18,7 @@ from beer_models.explain import stratified_draw
 from scipy.spatial.distance import cdist
 from q3_risk_aware_pruning import parameter_draws,FIRST
 from r2_raw_q1 import load_inputs,PROTOCOL as BASE,RAW_MANIFEST,content_hash
-from q1_target_experiment import fit_shared
+from beer_models.raw_panel import fit_shared
 
 
 def run(args):

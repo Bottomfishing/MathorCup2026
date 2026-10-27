@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "baseline_commit": "ea9c47a",
+  "protocol_content_sha256": "8e3a403356f1dca922df5d469bbda01b8ed3dc1730cc1bbd51e6832f970b5952",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "input_lf_normalized_sha256": {
+    "configs/r2_raw_panel_protocol_20261026.json": "ca266403e1e676433e79714c813f7f23ec6403ea7d2ae1fce49806545500ffe6",
+    "configs/r2b_tail_risk_protocol_20261026.json": "62b61fc53452dd6abf550ea3218074b6e282a0e0b666344c7d1cf65cd3d479f9",
+    "configs/r3_raw_explanation_protocol_20261026.json": "6513c2f5d5e8b8464cd0daf27abf96ae644a6733305d686e0504166fddf2d35b",
+    "configs/task4_raw_q3_protocol_20261026.json": "2a5b64eb609b15425988e7565fc5e5682342dcea3ab1a1f2a8f7e3da73fabd4f",
+    "configs/q3_style_protocol.json": "d6e7f2e890b04562e4a48f72f6da96cd97edfa8013698210ec9d1043b3bfe457",
+    "configs/q2_exploratory_v1.json": "3f3ac0f70e51110002ede11899c6301bf90536ed162ea11522a762b5305db1b5",
+    "outputs/q3_task3_20261025/transfer_source_profiles.csv": "22a283fafef71b069399f869603cdd1337b91a2ae732f7e5c06cc742957e0779",
+    "outputs/q3_task3_20261025/transfer_profiles.csv": "0824a64ea23f489fcdacdecd4d1d41a07fdb5d7bf7b90582853737be6fe3b82f"
+  },
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.7.2",
+    "shap": "0.49.1"
+  },
+  "repeats": 3,
+  "outer_folds_per_repeat": 3,
+  "unique_beers": 250,
+  "repeated_beer_predictions": 750,
+  "model_fits": 126,
+  "generator_fits": 54,
+  "q1_raw_mae_by_repeat": [
+    0.795345148925149,
+    0.7942391144781145,
+    0.7940994573944573
+  ],
+  "GBR_choices": [
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth2",
+    "gbr_depth2"
+  ],
+  "nested_generator_choices": [
+    "interpolate",
+    "interpolate",
+    "interpolate",
+    "interpolate",
+    "interpolate",
+    "interpolate",
+    "interpolate",
+    "interpolate",
+    "interpolate"
+  ],
+  "max_SHAP_additivity_error": 3.4696442607895506e-08,
+  "generated_outer_spectra": 5400,
+  "fixed_historical_path_repeated_cases": 33,
+  "deployed_Q1_changed": false,
+  "deployed_Q2_changed": false,
+  "deployed_Q3_changed": false,
+  "task4_zero_candidate_result_preserved": true,
+  "safety_certified": false,
+  "actual_intervention_validated": false,
+  "task6_started": false,
+  "array_sha256": {
+    "oof_arrays.npz": "7fe929ffff7f26beaf387348219fd5dbf4df6e61c19941ac475b3777d2662991",
+    "gbr_OOF_SHAP.npz": "17f196fe3c5d6d927a350f821acded20aa2fdb3add5109feca9ac7d203d03e27",
+    "outer_generated_spectra.npz": "4bac31c666192fe693809328f13d290da20faad20102f8175b3db979779b7bb9"
+  },
+  "recovery_note": "All nine outer and eighteen inner fit caches completed before a duplicate summary-key error. Reused outer caches, refitted 18 inner ET models to reconstruct generation summaries, no protocol changes. Fit log records the 126 protocol-model specifications; no original elapsed-time reconstruction claimed."
+}

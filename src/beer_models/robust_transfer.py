@@ -54,3 +54,12 @@ def refit_metrics(grade_delta, nonzero_delta, margins, style_pass, requirements,
 def design_order(table):
     return np.lexsort((table['objective'], table['design_slack'], table['design_violation_count'],
                        table['nominal_sensory_violations'], table['structural_violations']))
+
+
+def parameter_draws(source, selected, n, seed):
+    mutable = np.flatnonzero(abs(selected-source) > 1e-10)
+    rng = np.random.default_rng(seed)
+    progress = np.clip(1+rng.normal(0, .01, (n, len(mutable))), 0, 1)
+    result = np.broadcast_to(selected, (n, len(source))).copy()
+    result[:, mutable] = source[mutable]+progress*(selected[mutable]-source[mutable])
+    return result

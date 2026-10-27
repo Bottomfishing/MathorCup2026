@@ -1,0 +1,35 @@
+{
+  "baseline_commit": "3e4dcb8",
+  "base_models": ["extra_trees", "raw_ordinal"],
+  "ordinal_C": 1.0,
+  "ordinal_max_iter": 1000,
+  "ordinal_tol": 1e-6,
+  "parallel_jobs": 4,
+  "cost_weights": {
+    "median": [1, 1, 1, 1, 1, 1, 1],
+    "tail_mild": [1, 1, 1, 1, 1, 2, 4],
+    "tail_strong": [1, 1, 1, 1, 1, 4, 8]
+  },
+  "point_rule": "Weighted conditional median under the declared observed-grade cost, then child<=parent cap. Tail-cost decisions are not population median estimates.",
+  "point_limits": {
+    "maximum_raw_mae_increase": 0.02,
+    "minimum_each_raw_grade5_grade6_recall": 0.05,
+    "minimum_each_panel_median5_median6_recall": 0.05,
+    "maximum_raw_high_false_positive_rate": 0.02,
+    "maximum_panel_high_false_positive_rate": 0.02
+  },
+  "point_selection": "On inner OOF only, select feasible candidate maximizing the mean of raw grade5 and grade6 exact recalls; tie-break by raw MAE and fixed candidate order. If none feasible, fall back to R2 extra_trees median and record infeasibility.",
+  "point_outer_qualification": "All point limits must hold on the selected outer workflow, and the upper 95% paired beer-bootstrap raw-MAE increase bound must be <=0.02. Otherwise do not replace the R2 median point predictor.",
+  "calibration": "For each target select prior/extra_trees/raw_ordinal by inner uncalibrated nonzero-rating Brier score, prior wins ties. Fit six monotone sigmoid recalibrators to the chosen inner OOF cumulative probabilities, then project them to decreasing order. Prior-selected targets retain the outer-training prior. Never fit calibration on outer-test labels or select sources using in-sample calibrated scores.",
+  "calibration_C": 1.0,
+  "calibration_epsilon": 1e-6,
+  "risk_events": [1, 5, 6],
+  "risk_meaning": "Chance that a taster rating is >=k under equal-taster/equal-presentation weighting; not the chance of exceeding a chemical threshold or proof of safety.",
+  "risk_curve_edges": [0, 0.2, 0.4, 0.6, 0.8, 1.0],
+  "defect_targets": ["diacetyl", "dms", "X4vg", "t2n", "stale_hops"],
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 20261026,
+  "defect_interval_quantiles": [0.005, 0.995],
+  "risk_status_rule": "Compare calibrated nonzero Brier to training-only prior. Mark descriptive support only if the 99% fixed-loss paired beer-bootstrap improvement lower bound is positive; otherwise insufficient_heldout_support. Never certify safety.",
+  "evaluation_scope": "Post-R2 development on the same 250 beers, 3 outer / 2 inner beer-grouped folds. No new external test set, no new chemical units or acetaldehyde labels, no R3 or Q3 optimization."
+}
