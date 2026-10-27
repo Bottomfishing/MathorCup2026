@@ -8,7 +8,8 @@ from beer_audit.audit import sha256, write_json, save_csv
 from beer_audit.checks import numeric_frame
 from .panel_data import load_inputs
 from .q1_decision import observed_high_grade_rates
-from .raw_panel import fit_shared, median_grades, portrait
+from .raw_panel import fit_shared, median_grades
+from .inference import official_scores
 from .selective_tail import SelectiveTailPoint
 from .tail_risk import RawOrdinalModel, fit_risk, base_probabilities, survival
 from .style_models import make_style_model
@@ -169,21 +170,21 @@ def render(models, output, generated=None, source=None):
     official, auxiliary = [joblib.load(models/name) for name in ['q1.joblib', 'q3.joblib']]
     output.mkdir(parents=True, exist_ok=False)
     frame = pd.concat([pd.read_csv(Q3/'source119_profile.csv'), pd.read_csv(Q3/'transfer119_profile.csv')], ignore_index=True)
-    scores, _, _, _ = portrait(frame, official)
+    scores, _, _ = official_scores(frame, official)
     save_csv(output, 'transfer_official_Q1_scores52.csv', scores)
     defects, styles = auxiliary_defects(frame, auxiliary, official['targets'])
     save_csv(output, 'transfer_auxiliary_Q3_risks.csv', defects)
     save_csv(output, 'transfer_styles.csv', styles)
     generated_dir = generated_source(generated)
     generated = pd.read_csv(generated_dir/'generated_profiles.csv').rename(columns={'generated_id':'beer'})
-    scores, _, _, _ = portrait(generated, official)
+    scores, _, _ = official_scores(generated, official)
     scores.to_csv(output/'generated_official_Q1_scores52.csv.gz', index=False, compression={'method':'gzip','mtime':0})
     replay = dict(q1_fullfit_rows=0, q1_fullfit_source=None, q1_fullfit_source_sha256=None)
     if source is not None and (Path(source)/'1.csv').exists():
         attachment = Path(source)
         panel_path = attachment/'1.csv'
         panel = pd.read_csv(panel_path, dtype=str)
-        panel_scores, _, _, _ = portrait(panel, official)
+        panel_scores, _, _ = official_scores(panel, official)
         save_csv(output, 'official_Q1_fullfit_scores52.csv', panel_scores)
         replay = dict(q1_fullfit_rows=len(panel_scores), q1_fullfit_source=str(attachment),
                       q1_fullfit_source_sha256=sha256(panel_path))

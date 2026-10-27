@@ -27,7 +27,7 @@ from beer_audit.audit import save_csv, sha256, write_json
 
 from . import delivery as legacy
 from .current_runtime import DEFECTS, ROOT, auxiliary_defects, generated_source, read_json
-from .raw_panel import portrait
+from .inference import official_scores
 
 VERSION = '20261028'
 Q1D = ROOT/'outputs/q1_decision_20261028'
@@ -586,27 +586,34 @@ def _replay_checks(models, source, package):
     if not panel_ref.exists():
         raise FileNotFoundError(str(panel_ref))
     official = joblib.load(models/'q1.joblib')
-    panel = pd.read_csv(source/'1.csv', dtype=str)
-    panel_scores, _, _, _ = portrait(panel, official)
     scored = ['estimated_grade_0_6', 'raw_median_estimate', 'probability_rating_ge5',
               'probability_rating_6']
-    merged = pd.read_csv(panel_ref, dtype={'beer': str}).merge(
-        panel_scores, on=['beer', 'target'], suffixes=('_ref', '_replay'), validate='one_to_one')
-    assert len(merged) == len(panel_scores), (len(merged), len(panel_scores))
-    panel_diff = max(float((merged[c+'_ref']-merged[c+'_replay']).abs().max())
-                     for c in scored)
+
+    def _compare(ref_path, frame):
+        replay, _, _ = official_scores(frame, official)
+        merged = pd.read_csv(ref_path, dtype={'beer': str}).merge(
+            replay, on=['beer', 'target'], suffixes=('_ref', '_replay'), validate='one_to_one')
+        assert len(merged) == len(replay), (len(merged), len(replay))
+        mask = merged['panel_target_available_ref'].astype(bool) & merged['panel_target_available_replay'].astype(bool)
+        merged = merged.loc[mask]
+        return merged
+
+    panel = pd.read_csv(source/'1.csv', dtype=str)
+    merged = _compare(panel_ref, panel)
+    assert len(merged) == 12500, len(merged)
+    panel_diff = max(float((merged[c+'_ref']-merged[c+'_replay']).abs().max()) for c in scored)
     assert panel_diff <= 1e-12, panel_diff
 
     generated = pd.read_csv(_adopted_generated()/'generated_profiles.csv').rename(
         columns={'generated_id': 'beer'})
-    generated_scores, _, _, _ = portrait(generated, official)
-    merged_g = pd.read_csv(generated_ref, dtype={'beer': str}).merge(
-        generated_scores, on=['beer', 'target'], suffixes=('_ref', '_replay'), validate='one_to_one')
-    assert len(merged_g) == len(generated_scores), (len(merged_g), len(generated_scores))
+    merged_g = _compare(generated_ref, generated)
+    assert len(merged_g) == 15000, len(merged_g)
     generated_diff = max(float((merged_g[c+'_ref']-merged_g[c+'_replay']).abs().max())
                          for c in scored)
     assert generated_diff <= 1e-12, generated_diff
     return dict(q1_replay_panel_rows=int(len(merged)),
+                q1_replay_panel_grade5=int((merged['estimated_grade_0_6_ref']==5).sum()),
+                q1_replay_panel_grade6=int((merged['estimated_grade_0_6_ref']==6).sum()),
                 q1_replay_panel_max_abs_diff=panel_diff,
                 q1_replay_generated_rows=int(len(merged_g)),
                 q1_replay_generated_max_abs_diff=generated_diff,
@@ -615,6 +622,8 @@ def _replay_checks(models, source, package):
 
 
 def verify(output, models=None, source=None, package=None):
+    if (models is None) != (source is None):
+        raise ValueError('models and source must be provided together for the replay')
     output.mkdir(parents=True, exist_ok=True)
     checks = dict(status='passed', version=VERSION)
     for folder in [Q1D, Q2, Q3G]:
@@ -749,8 +758,16 @@ def verify(output, models=None, source=None, package=None):
             'model_supported', 'conditional', 'undecidable'}
         assert evidence.claim_level.value_counts().to_dict() == {
             k: v for k, v in mig['claim_level_counts'].items()}
+        mig_verification = read_json(Q3M/'verification.json')
+        replay = mig_verification['sensory_replay']
+        assert int(replay['mismatch_cells']) == 0, replay
+        assert float(replay['max_abs_delta']) <= 1e-12, replay
+        if models is not None:
+            assert replay['model_sha256'] == sha256(Path(models)/'q1.joblib'), replay
         checks.update(q3_migration_spectra=66,
                       q3_migration_sensory_rows=int(len(sensory)),
+                      q3_migration_sensory_replay_mismatch_cells=int(replay['mismatch_cells']),
+                      q3_migration_sensory_replay_model_sha256=replay['model_sha256'],
                       q3_migration_claim_level_counts=mig['claim_level_counts'],
                       q3_migration_style_diagnostic_counts=mig['style_diagnostic_counts'],
                       q3_migration_defect_status_counts=mig['defect_status_counts'])

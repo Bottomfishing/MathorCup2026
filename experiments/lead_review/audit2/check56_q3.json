@@ -1,0 +1,107 @@
+{
+  "item": "q3_migration_closure_and_gate_figure",
+  "structure": {
+    "spectra_rows": 66,
+    "spectra_cases": 33,
+    "spectra_roles": {
+      "before": 33,
+      "after": 33
+    },
+    "spectra_feature_columns": 224,
+    "after_input_rows": 33,
+    "after_input_feature_columns": 224,
+    "sensory_rows": 3432,
+    "sensory_cases": 33,
+    "sensory_targets": 52,
+    "sensory_roles": {
+      "before": 1716,
+      "after": 1716
+    },
+    "expected_sensory_rows": 3432,
+    "sensory_rows_complete": true,
+    "evidence_rows": 33,
+    "evidence_cases": 33,
+    "evidence_columns": 36,
+    "verification_status": "passed",
+    "verification_status_passed": true,
+    "verification_checks_all_pass": null
+  },
+  "after_consistency": {
+    "cases_compared": 33,
+    "max_abs_diff": 0.0
+  },
+  "before_consistency": {
+    "cases_compared": 11,
+    "max_abs_diff": 0.0
+  },
+  "claim_level_counts": {
+    "conditional": 24,
+    "model_supported": 9
+  },
+  "style_diagnostics": {
+    "Kriek": {
+      "cases": 11,
+      "total": 11
+    },
+    "Lambic": {
+      "cases": 2,
+      "total": 11
+    },
+    "Tripel": {
+      "cases": 0,
+      "total": 11
+    }
+  },
+  "style_diagnostics_match_claim": true,
+  "defect_status_counts": {
+    "defect_status_DMS": {
+      "unchanged": 24,
+      "improved": 9
+    },
+    "defect_status_Diacetyl": {
+      "unchanged": 18,
+      "improved": 9,
+      "unknown": 6
+    },
+    "defect_status_4VG": {
+      "unchanged": 33
+    },
+    "defect_status_t2n": {
+      "unknown": 33
+    },
+    "defect_status_Stale_hops": {
+      "unknown": 33
+    }
+  },
+  "defects_worse_total": 0,
+  "t2n_stale_unknown": true,
+  "verification_claims_match_table": true,
+  "sensory_replay": {
+    "rows": 3432,
+    "matched_rows": 3300,
+    "mismatched_cells": 57,
+    "max_abs_diff": 5.0,
+    "replay_dir": "experiments\\lead_review\\audit2\\q3_sensory_replay"
+  },
+  "gate_figure": {
+    "v3_generation_validation_methods": [
+      "donor_residual_projected",
+      "hybrid_support_projected",
+      "interpolate"
+    ],
+    "v1_generation_validation_methods": [
+      "copula_quantile_projected",
+      "interp_quantile_projected",
+      "interpolate"
+    ],
+    "figure_exists": true,
+    "figure_mentions_v3_hybrid": true,
+    "figure_mentions_v1_copula_quantile": false,
+    "figure_method_tokens": [
+      "donor_residual_projected",
+      "hybrid_support_projected",
+      "interpolate"
+    ]
+  },
+  "verdict": "partial"
+}

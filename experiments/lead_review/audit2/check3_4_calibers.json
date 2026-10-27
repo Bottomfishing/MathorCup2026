@@ -1,0 +1,401 @@
+{
+  "item": "parent_child_cap_and_high_grade_calibers",
+  "parent_child": {
+    "n_pairs": 24,
+    "violations_precap": 12,
+    "violations_capped": 0,
+    "violations_legacy_integer_median": 0,
+    "changed_cells": 12,
+    "changed_cells_only_down": true,
+    "summary_claims": {
+      "n_pairs": 24,
+      "precap_violations": 12,
+      "postcap_violations": 0,
+      "changed_cells": 12,
+      "pairs": [
+        [
+          "A_malt_all",
+          "A_malt_grain"
+        ],
+        [
+          "A_malt_all",
+          "A_malt_bread"
+        ],
+        [
+          "A_malt_all",
+          "A_malt_cara"
+        ],
+        [
+          "A_malt_all",
+          "A_malt_burn"
+        ],
+        [
+          "A_hops_all",
+          "A_hops_citrus"
+        ],
+        [
+          "A_hops_all",
+          "A_hops_tropical"
+        ],
+        [
+          "A_hops_all",
+          "A_hops_noble"
+        ],
+        [
+          "A_hops_all",
+          "A_hops_woody"
+        ],
+        [
+          "A_esters_all",
+          "A_esters_ethac"
+        ],
+        [
+          "A_esters_all",
+          "A_esters_isoaa"
+        ],
+        [
+          "A_esters_all",
+          "A_esters_flower"
+        ],
+        [
+          "A_esters_all",
+          "A_esters_fruity"
+        ],
+        [
+          "F_malt_all",
+          "F_malt_grain"
+        ],
+        [
+          "F_malt_all",
+          "F_malt_bread"
+        ],
+        [
+          "F_malt_all",
+          "F_malt_cara"
+        ],
+        [
+          "F_malt_all",
+          "F_malt_burn"
+        ],
+        [
+          "F_hops_all",
+          "F_hops_citrus"
+        ],
+        [
+          "F_hops_all",
+          "F_hops_tropical"
+        ],
+        [
+          "F_hops_all",
+          "F_hops_noble"
+        ],
+        [
+          "F_hops_all",
+          "F_hops_woody"
+        ],
+        [
+          "F_esters_all",
+          "F_esters_ethac"
+        ],
+        [
+          "F_esters_all",
+          "F_esters_isoaa"
+        ],
+        [
+          "F_esters_all",
+          "F_esters_flower"
+        ],
+        [
+          "F_esters_all",
+          "F_esters_fruity"
+        ]
+      ]
+    }
+  },
+  "grade_distribution": {
+    "long": {
+      "0": 8279,
+      "1": 856,
+      "2": 1363,
+      "3": 1655,
+      "4": 153,
+      "5": 180,
+      "6": 14
+    },
+    "summary": {
+      "0": 8279,
+      "1": 856,
+      "2": 1363,
+      "3": 1655,
+      "4": 153,
+      "5": 180,
+      "6": 14
+    },
+    "precap_long": {
+      "0": 8279,
+      "1": 856,
+      "2": 1361,
+      "3": 1648,
+      "4": 152,
+      "5": 188,
+      "6": 16
+    },
+    "summary_precap": {
+      "0": 8279,
+      "1": 856,
+      "2": 1361,
+      "3": 1648,
+      "4": 152,
+      "5": 188,
+      "6": 16
+    }
+  },
+  "beer_level": {
+    "exact5": {
+      "n_predicted": 180,
+      "true_positive": 38,
+      "precision": 0.211111,
+      "n_observed": 179,
+      "recall": 0.212291
+    },
+    "exact6": {
+      "n_predicted": 14,
+      "true_positive": 1,
+      "precision": 0.071429,
+      "n_observed": 19,
+      "recall": 0.052632
+    },
+    "ge5": {
+      "n_predicted": 194,
+      "true_positive": 51,
+      "precision": 0.262887,
+      "n_observed": 198,
+      "recall": 0.257576
+    }
+  },
+  "individual_weighted": {
+    "raw_records_with_prediction": 109850,
+    "raw_records_missing_weight": 0,
+    "beers": 250,
+    "targets": 50,
+    "weight_sum": 12500.0,
+    "exact5": {
+      "n_predicted": 180.0,
+      "true_positive": 41.6829,
+      "precision": 0.231572,
+      "n_observed": 524.989837,
+      "recall": 0.079398
+    },
+    "exact6": {
+      "n_predicted": 14.0,
+      "true_positive": 2.195887,
+      "precision": 0.156849,
+      "n_observed": 124.847615,
+      "recall": 0.017589
+    },
+    "ge5": {
+      "n_predicted": 194.0,
+      "true_positive": 70.210714,
+      "precision": 0.361911,
+      "n_observed": 649.837452,
+      "recall": 0.108044
+    },
+    "unmapped_raw_records": 0
+  },
+  "delivered_table": [
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_et_integer_median",
+      "caliber": "exact5",
+      "n_predicted": 0.0,
+      "true_positive": 0.0,
+      "precision": 0.0,
+      "n_observed": 179.0,
+      "recall": 0.0
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_et_integer_median",
+      "caliber": "exact6",
+      "n_predicted": 0.0,
+      "true_positive": 0.0,
+      "precision": 0.0,
+      "n_observed": 19.0,
+      "recall": 0.0
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_et_integer_median",
+      "caliber": "ge5",
+      "n_predicted": 0.0,
+      "true_positive": 0.0,
+      "precision": 0.0,
+      "n_observed": 198.0,
+      "recall": 0.0
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_topk_nonforced",
+      "caliber": "exact5",
+      "n_predicted": 188.0,
+      "true_positive": 39.0,
+      "precision": 0.2074468085106383,
+      "n_observed": 179.0,
+      "recall": 0.217877094972067
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_topk_nonforced",
+      "caliber": "exact6",
+      "n_predicted": 16.0,
+      "true_positive": 1.0,
+      "precision": 0.0625,
+      "n_observed": 19.0,
+      "recall": 0.0526315789473684
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_topk_nonforced",
+      "caliber": "ge5",
+      "n_predicted": 204.0,
+      "true_positive": 52.0,
+      "precision": 0.2549019607843137,
+      "n_observed": 198.0,
+      "recall": 0.2626262626262626
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_topk_nonforced_parent_capped",
+      "caliber": "exact5",
+      "n_predicted": 180.0,
+      "true_positive": 38.0,
+      "precision": 0.2111111111111111,
+      "n_observed": 179.0,
+      "recall": 0.2122905027932961
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_topk_nonforced_parent_capped",
+      "caliber": "exact6",
+      "n_predicted": 14.0,
+      "true_positive": 1.0,
+      "precision": 0.0714285714285714,
+      "n_observed": 19.0,
+      "recall": 0.0526315789473684
+    },
+    {
+      "scope": "beer_level",
+      "prediction_set": "q1_topk_nonforced_parent_capped",
+      "caliber": "ge5",
+      "n_predicted": 194.0,
+      "true_positive": 51.0,
+      "precision": 0.2628865979381443,
+      "n_observed": 198.0,
+      "recall": 0.2575757575757575
+    },
+    {
+      "scope": "individual_taster_weighted",
+      "prediction_set": "extra_trees_integer_median",
+      "caliber": "exact5",
+      "n_predicted": 0.0,
+      "true_positive": 0.0,
+      "precision": 0.0,
+      "n_observed": 524.9898370148369,
+      "recall": 0.0
+    },
+    {
+      "scope": "individual_taster_weighted",
+      "prediction_set": "extra_trees_integer_median",
+      "caliber": "exact6",
+      "n_predicted": 0.0,
+      "true_positive": 0.0,
+      "precision": 0.0,
+      "n_observed": 124.84761488511488,
+      "recall": 0.0
+    },
+    {
+      "scope": "individual_taster_weighted",
+      "prediction_set": "extra_trees_integer_median",
+      "caliber": "ge5",
+      "n_predicted": 0.0,
+      "true_positive": 0.0,
+      "precision": 0.0,
+      "n_observed": 649.8374518999518,
+      "recall": 0.0
+    },
+    {
+      "scope": "individual_taster_weighted",
+      "prediction_set": "q1_topk_nonforced_individual_weighted",
+      "caliber": "exact5",
+      "n_predicted": 179.99999999999997,
+      "true_positive": 41.68290043290043,
+      "precision": 0.2315716690716691,
+      "n_observed": 524.9898370148369,
+      "recall": 0.0793975378074269
+    },
+    {
+      "scope": "individual_taster_weighted",
+      "prediction_set": "q1_topk_nonforced_individual_weighted",
+      "caliber": "exact6",
+      "n_predicted": 13.999999999999996,
+      "true_positive": 2.195887445887445,
+      "precision": 0.1568491032776746,
+      "n_observed": 124.84761488511488,
+      "recall": 0.017588541422342
+    },
+    {
+      "scope": "individual_taster_weighted",
+      "prediction_set": "q1_topk_nonforced_individual_weighted",
+      "caliber": "ge5",
+      "n_predicted": 194.0,
+      "true_positive": 70.21071428571427,
+      "precision": 0.3619108983799705,
+      "n_observed": 649.8374518999518,
+      "recall": 0.1080435023873075
+    }
+  ],
+  "docs_scan": {
+    "readme_old_numbers": {
+      "204": 0,
+      "25.49": 0,
+      "26.26": 0,
+      "188": 0,
+      "20.74": 0,
+      "21.79": 0,
+      "16/1": 0,
+      "6.25": 0
+    },
+    "readme_new_numbers": {
+      "180": 2,
+      "21.11": 1,
+      "21.23": 1,
+      "194": 2,
+      "26.29": 1,
+      "25.76": 1,
+      "14/1": 3,
+      "7.14": 1,
+      "5.26": 1
+    },
+    "doc_old_numbers": {
+      "204": 0,
+      "25.49": 0,
+      "26.26": 0,
+      "188": 0,
+      "20.74": 0,
+      "21.79": 0,
+      "16/1": 0,
+      "6.25": 0
+    },
+    "doc_new_numbers": {
+      "180": 1,
+      "21.11": 1,
+      "21.23": 1,
+      "194": 1,
+      "26.29": 1,
+      "25.76": 1,
+      "14/1": 1,
+      "7.14": 1,
+      "5.26": 1
+    }
+  }
+}

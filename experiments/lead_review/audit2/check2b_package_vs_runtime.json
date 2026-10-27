@@ -1,0 +1,52 @@
+{
+  "package_table": "deliverables\\current_20261028\\tables\\current__official_Q1_fullfit_scores52.csv",
+  "runtime_predict": "experiments\\lead_review\\audit2\\runtime_predict\\scores_all52_long.csv",
+  "package_shape": [
+    13000,
+    19
+  ],
+  "labelled_cells": 12500,
+  "package_vs_runtime_decision_changed_cells": 192,
+  "package_vs_runtime_decision_pct": 1.536,
+  "package_vs_runtime_decision_max_abs_diff": 6.0,
+  "package_vs_runtime_legacy_changed_cells": 0,
+  "package_vs_runtime_legacy_max_abs_diff": 0.0,
+  "package_distribution": {
+    "2": 1423,
+    "0": 8146,
+    "3": 1575,
+    "1": 886,
+    "4": 438,
+    "5": 32
+  },
+  "runtime_decision_distribution": {
+    "2": 1415,
+    "0": 8132,
+    "3": 1549,
+    "1": 885,
+    "5": 195,
+    "4": 305,
+    "6": 19
+  },
+  "runtime_legacy_distribution": {
+    "2": 1423,
+    "0": 8146,
+    "3": 1575,
+    "1": 886,
+    "4": 438,
+    "5": 32
+  },
+  "targets_with_any_change": {
+    "A_esters_all": 15,
+    "A_malt_all": 15,
+    "bitternes": 13,
+    "alcohol": 12,
+    "aftertaste": 11,
+    "F_malt_burn": 10,
+    "sweetness": 10,
+    "A_esters_isoaa": 10,
+    "F_malt_all": 9,
+    "A_malt_burn": 9
+  },
+  "reading": "the delivered 'official' full-fit table equals the runtime *legacy* integer-median column, not the decision-applied estimated_grade_0_6; the decision layer is live in predict but the delivered table was rendered from portrait() and keeps the legacy rule. verify's replay compares portrait output with exactly this table, so the mismatch is invisible to verify."
+}

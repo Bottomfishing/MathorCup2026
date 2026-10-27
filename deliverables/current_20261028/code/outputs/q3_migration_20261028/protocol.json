@@ -114,10 +114,22 @@
   },
   "sensory_pipeline": {
     "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
-    "model": "outputs/current_models/q1.joblib",
+    "q1_model_path": "outputs/current_models/q1.joblib",
+    "q1_model_sha256": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+    "q1_model_grade_semantics": {
+      "official_column": "estimated_grade_0_6",
+      "grade_method": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+      "point_semantics": "integer_conditional_median_then_non_forced_high_grade_topk_with_parent_cap",
+      "decision_rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+      "legacy_column": "grade_legacy_integer_median",
+      "parent_child_pairs": 24,
+      "implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+      "note": "estimated_grade_0_6 is the official decision layer: non-forced high-grade top-k from cumulative probability with parent-child caps. It is not the legacy integer conditional median (kept in grade_legacy_integer_median)."
+    },
+    "run_at": "2026-10-28T00:46:42+08:00",
     "score_scale": "original 0-6 individual rating scale",
     "targets": 52,
-    "note": "full-training-model predictions are not out-of-sample accuracy estimates; grade_raw is the integer conditional median and prob_ge5/prob_6 are the risk head probabilities"
+    "note": "full-training-model predictions are not out-of-sample accuracy estimates; grade_raw is the official decision-layer grade (top-k high grades with 24 parent-child caps), prob_ge5/prob_6 are the decision-layer probabilities, and prob_ge5_risk_head/prob_6_risk_head are the legacy calibrated risk-head probabilities kept for traceability"
   },
   "sources": {
     "source_directory": "附件"

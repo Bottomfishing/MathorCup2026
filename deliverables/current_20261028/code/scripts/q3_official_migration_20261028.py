@@ -34,12 +34,15 @@ Every number comes from the supplied attachments; nothing is fabricated.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 
+import joblib
 import numpy as np
 import pandas as pd
 
@@ -73,6 +76,19 @@ OFFICIAL_PROFILES = ROOT / "outputs" / "task4_raw_q3_20261026" / "generated_prof
 SENSORY_TARGETS = 52
 
 
+def sha256_file(path: Path) -> str:
+    """SHA-256 of a file, streamed so the 51 MB Q1 bundle is not read twice."""
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1 << 20), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _now_iso() -> str:
+    return datetime.now().astimezone().isoformat(timespec="seconds")
+
+
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -88,20 +104,67 @@ def parse_args(argv=None):
     return parser.parse_args(argv)
 
 
+def _spectra_input(spectra_long: pd.DataFrame, data) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Build the 66-row Q1 input from a long before/after spectra table."""
+    official = list(data.official_features)
+    before = spectra_long.loc[spectra_long["role"] == "before", ["case_id", *official]].copy()
+    after = spectra_long.loc[spectra_long["role"] == "after", ["case_id", *official]].copy()
+    before["beer"] = before["case_id"] + "|before"
+    after["beer"] = after["case_id"] + "|after"
+    frame = pd.concat([before[["beer", *official]], after[["beer", *official]]],
+                      ignore_index=True)
+    key = spectra_long[["case_id", "role"]].copy()
+    return frame, key
+
+
+def _official_scores(scores: pd.DataFrame, key: pd.DataFrame) -> pd.DataFrame:
+    """Normalise the official inference output into the delivered 52-target table.
+
+    ``inference.run`` keeps the legacy risk-head probabilities under
+    ``probability_rating_ge5_x`` / ``probability_rating_6_x`` and adds the decision-layer
+    probabilities (``_y``) that actually drive ``estimated_grade_0_6``.  The delivered
+    ``prob_ge5`` / ``prob_6`` columns are the decision-layer ones so that the grade and its
+    probability columns are consistent; the risk-head values are kept as extra columns.
+    """
+    scores = scores.copy()
+    scores[["case_id", "role"]] = scores["beer"].str.split("|", n=1, expand=True)
+
+    def pick(primary, fallback):
+        return scores[primary] if primary in scores.columns else scores[fallback]
+
+    table = pd.DataFrame({
+        "case_id": scores["case_id"],
+        "role": scores["role"],
+        "target_52": scores["target"],
+        "grade_raw": scores["estimated_grade_0_6"],
+        "prob_ge1": scores["probability_rating_ge1"],
+        "prob_ge5": pick("probability_rating_ge5_y", "probability_rating_ge5"),
+        "prob_6": pick("probability_rating_6_y", "probability_rating_6"),
+        "raw_median_estimate": scores.get("raw_median_estimate"),
+        "panel_target_available": scores.get("panel_target_available"),
+        "score_status": scores.get("score_status"),
+        "risk_source": scores.get("risk_source"),
+        "risk_validation_status": scores.get("risk_validation_status"),
+        "calibration_method": scores.get("calibration_method"),
+        "calibration_quality_status": scores.get("calibration_quality_status"),
+        "safety_certified": scores.get("safety_certified"),
+        "grade_legacy_integer_median": scores.get("grade_legacy_integer_median"),
+        "prob_ge5_risk_head": scores.get("probability_rating_ge5_x"),
+        "prob_6_risk_head": scores.get("probability_rating_6_x"),
+        "prediction_role": scores.get("prediction_role"),
+    })
+    key = key.assign(_order=np.arange(len(key)))
+    table = table.merge(key, on=["case_id", "role"], how="left", validate="many_to_one")
+    return table.sort_values("_order", kind="mergesort").drop(columns="_order").reset_index(drop=True)
+
+
 def build_sensory_profiles(data, spectra, model_path: Path, workdir: Path) -> pd.DataFrame:
     """Run the official Q1 entry on the 66 before/after spectra and return the 52-target table.
 
     ``workdir`` is a scratch directory under ``experiments/lead_review/q3`` (it is removed
     first, so re-runs are deterministic); the delivered table is written to ``--output``.
     """
-    official = list(data.official_features)
-    long = spectra["long"]
-    before = long.loc[long["role"] == "before", ["case_id", *official]].copy()
-    after = long.loc[long["role"] == "after", ["case_id", *official]].copy()
-    before["beer"] = before["case_id"] + "|before"
-    after["beer"] = after["case_id"] + "|after"
-    frame = pd.concat([before[["beer", *official]], after[["beer", *official]]],
-                      ignore_index=True)
+    frame, key = _spectra_input(spectra["long"], data)
     if workdir.exists():
         shutil.rmtree(workdir)
     workdir.mkdir(parents=True)
@@ -109,26 +172,73 @@ def build_sensory_profiles(data, spectra, model_path: Path, workdir: Path) -> pd
     frame.to_csv(input_csv, index=False, encoding="utf-8")
     run_inference(model_path, input_csv, workdir / "q1_output")
     scores = pd.read_csv(workdir / "q1_output" / "scores_all52_long.csv")
-    scores[["case_id", "role"]] = scores["beer"].str.split("|", n=1, expand=True)
-    table = scores.rename(columns={
-        "target": "target_52",
-        "estimated_grade_0_6": "grade_raw",
-        "probability_rating_ge1": "prob_ge1",
-        "probability_rating_ge5": "prob_ge5",
-        "probability_rating_6": "prob_6",
-    })
-    order = ["case_id", "role", "target_52", "grade_raw", "prob_ge1", "prob_ge5", "prob_6",
-             "raw_median_estimate", "panel_target_available", "score_status", "risk_source",
-             "risk_validation_status", "calibration_method", "calibration_quality_status",
-             "safety_certified"]
-    table = table[[column for column in order if column in table.columns]]
-    key = long[["case_id", "role"]].assign(_order=np.arange(len(long)))
-    table = table.merge(key, on=["case_id", "role"], how="left", validate="many_to_one")
-    table = table.sort_values("_order", kind="mergesort").drop(columns="_order")
-    # ``panel_median_ref`` is intentionally absent: 4.csv holds standardised panel values on a
-    # different scale and no observed after-migration beer exists, so no observed median is
-    # fabricated.  The observed source medians stay available in attachment 4 for the paper.
-    return table.reset_index(drop=True)
+    return _official_scores(scores, key)
+
+
+def _compare_columns(stored: pd.DataFrame, replayed: pd.DataFrame, tolerance: float):
+    """Cell-level comparison used by the reproducibility self-check."""
+    mismatches = 0
+    max_delta = 0.0
+    per_column = {}
+    for column in stored.columns:
+        left = pd.to_numeric(stored[column], errors="coerce").to_numpy(dtype=float)
+        right = pd.to_numeric(replayed[column], errors="coerce").to_numpy(dtype=float)
+        left_nan, right_nan = np.isnan(left), np.isnan(right)
+        both_nan = left_nan & right_nan
+        delta = np.abs(left - right)
+        delta[both_nan] = 0.0
+        ok = both_nan | (~left_nan & ~right_nan & (delta <= tolerance))
+        column_mismatches = int((~ok).sum())
+        if column_mismatches:
+            per_column[column] = column_mismatches
+        mismatches += column_mismatches
+        finite = delta[np.isfinite(delta)]
+        if finite.size:
+            max_delta = max(max_delta, float(finite.max()))
+    return mismatches, max_delta, per_column
+
+
+def replay_sensory_table(data, output: Path, model_path: Path, workdir: Path,
+                         table_name: str = "s2c_sensory_before_after_52.csv",
+                         tolerance: float = 1e-12) -> dict:
+    """Replay the delivered sensory table from the packaged spectra + current Q1 bundle.
+
+    Reads ``s2c_migration_spectra_224_long.csv`` and the delivered table back from disk,
+    re-runs the official entry, and compares every shared cell.  A non-zero mismatch means
+    the table is not reproducible from what was delivered.
+    """
+    stored_long = pd.read_csv(output / "s2c_migration_spectra_224_long.csv")
+    stored = pd.read_csv(output / table_name)
+    frame, key = _spectra_input(stored_long, data)
+    if workdir.exists():
+        shutil.rmtree(workdir)
+    workdir.mkdir(parents=True)
+    input_csv = workdir / "replay_before_after_66.csv"
+    frame.to_csv(input_csv, index=False, encoding="utf-8")
+    run_inference(model_path, input_csv, workdir / "q1_output")
+    scores = pd.read_csv(workdir / "q1_output" / "scores_all52_long.csv")
+    replayed = _official_scores(scores, key)
+    if len(stored) != len(replayed):
+        raise ValueError(f"replay row count {len(replayed)} != delivered {len(stored)}")
+    columns = [column for column in stored.columns if column in replayed.columns]
+    mismatches, max_delta, per_column = _compare_columns(
+        stored[columns].reset_index(drop=True),
+        replayed[columns].reset_index(drop=True), tolerance)
+    return {
+        "table": table_name,
+        "rows": int(len(stored)),
+        "columns_compared": len(columns),
+        "tolerance": tolerance,
+        "mismatch_cells": mismatches,
+        "mismatches_per_column": per_column,
+        "max_abs_delta": max_delta,
+        "model_path": str(model_path.relative_to(ROOT)) if model_path.is_relative_to(ROOT)
+        else str(model_path),
+        "model_sha256": sha256_file(model_path),
+        "delivered_table_sha256": sha256_file(output / table_name),
+        "replay_input_sha256": sha256_file(input_csv),
+        "replayed_at": _now_iso(),
+    }
 
 
 def write_json(path: Path, payload) -> None:
@@ -154,6 +264,22 @@ def main(argv=None):
     source = Path(args.source).resolve()
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=True)
+
+    q1_model = Path(args.q1_model).resolve()
+    model_bundle = joblib.load(q1_model)
+    decision = model_bundle.get("q1_decision", {})
+    q1_grade_semantics = {
+        "official_column": decision.get("official_grade_column", "estimated_grade_0_6"),
+        "grade_method": model_bundle.get("grade_method"),
+        "point_semantics": model_bundle.get("point_semantics"),
+        "decision_rule": decision.get("rule"),
+        "legacy_column": decision.get("legacy_grade_column", "grade_legacy_integer_median"),
+        "parent_child_pairs": len(decision.get("parent_child_pairs", [])),
+        "implementation_sha256": decision.get("implementation_sha256"),
+        "note": ("estimated_grade_0_6 is the official decision layer: non-forced high-grade "
+                 "top-k from cumulative probability with parent-child caps. It is not the "
+                 "legacy integer conditional median (kept in grade_legacy_integer_median)."),
+    }
 
     protocol = {
         "name": "q3_migration_20261028",
@@ -212,12 +338,18 @@ def main(argv=None):
         },
         "sensory_pipeline": {
             "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
-            "model": "outputs/current_models/q1.joblib",
+            "q1_model_path": (q1_model.relative_to(ROOT).as_posix()
+                              if q1_model.is_relative_to(ROOT) else str(q1_model)),
+            "q1_model_sha256": sha256_file(q1_model),
+            "q1_model_grade_semantics": q1_grade_semantics,
+            "run_at": _now_iso(),
             "score_scale": "original 0-6 individual rating scale",
             "targets": SENSORY_TARGETS,
             "note": ("full-training-model predictions are not out-of-sample accuracy estimates; "
-                     "grade_raw is the integer conditional median and prob_ge5/prob_6 are the "
-                     "risk head probabilities"),
+                     "grade_raw is the official decision-layer grade (top-k high grades with 24 "
+                     "parent-child caps), prob_ge5/prob_6 are the decision-layer probabilities, "
+                     "and prob_ge5_risk_head/prob_6_risk_head are the legacy calibrated risk-head "
+                     "probabilities kept for traceability"),
         },
         "sources": {"source_directory": source.name},
         "no_post_result_retuning": True,
@@ -249,10 +381,17 @@ def main(argv=None):
     evidence.to_csv(output / "s2c_evidence_by_case.csv", index=False, encoding="utf-8-sig")
     # 52-target sensory profiles from the official Q1 entry (before and after the migration)
     sensory = build_sensory_profiles(
-        data, spectra, Path(args.q1_model).resolve(),
+        data, spectra, q1_model,
         ROOT / "experiments" / "lead_review" / "q3" / "tmp_q1_migration")
     sensory.to_csv(output / "s2c_sensory_before_after_52.csv", index=False,
                    encoding="utf-8-sig")
+    # reproducibility self-check: replay the delivered table from the packaged spectra + model
+    sensory_replay = replay_sensory_table(
+        data, output, q1_model,
+        ROOT / "experiments" / "lead_review" / "q3" / "tmp_q1_replay")
+    print("sensory replay: rows=%d mismatches=%d max|delta|=%.3g model_sha=%s"
+          % (sensory_replay["rows"], sensory_replay["mismatch_cells"],
+             sensory_replay["max_abs_delta"], sensory_replay["model_sha256"][:12]))
     print("exported spectra/sensory/evidence: %s"
           % {key: list(frame.shape) for key, frame in
              {"spectra_long": spectra["long"], "spectra_wide": spectra["wide"],
@@ -442,6 +581,22 @@ def main(argv=None):
     check("sensory_prob_ge5_missing", int(sensory["prob_ge5"].isna().sum()), 66 * 2)
     check("sensory_each_case_52", int(sensory.groupby(["case_id", "role"]).size().min()),
           SENSORY_TARGETS)
+    # reproducibility self-check (N2): the delivered table must replay cell-for-cell
+    replay_tolerance = float(sensory_replay["tolerance"])
+    check("sensory_replay_rows", int(sensory_replay["rows"]), 66 * SENSORY_TARGETS)
+    check("sensory_replay_mismatch_cells", int(sensory_replay["mismatch_cells"]), 0,
+          note="stored spectra + current q1.joblib replayed through inference.run; "
+               "tolerance 1e-12 per cell")
+    check("sensory_replay_max_abs_delta", float(sensory_replay["max_abs_delta"]), None,
+          passed=float(sensory_replay["max_abs_delta"]) <= replay_tolerance,
+          note=f"tolerance {replay_tolerance:g}")
+    check("sensory_replay_model_sha256", sensory_replay["model_sha256"],
+          protocol["sensory_pipeline"]["q1_model_sha256"])
+    check("sensory_replay_delivered_table_sha256", sensory_replay["delivered_table_sha256"],
+          sha256_file(output / "s2c_sensory_before_after_52.csv"))
+    check("sensory_decision_layer_grade_column", "grade_legacy_integer_median" in sensory.columns,
+          None, passed="grade_legacy_integer_median" in sensory.columns,
+          note="official grade is the decision-layer column; legacy median kept for traceability")
 
     cases = []
     evidence_index = evidence.set_index("case_id")
@@ -506,6 +661,8 @@ def main(argv=None):
         "style_diagnostic_counts": style_diagnostic_counts,
         "defect_status_counts": defect_status_counts,
         "sensory_missing_grade_raw": int(sensory["grade_raw"].isna().sum()),
+        "sensory_pipeline": protocol["sensory_pipeline"],
+        "sensory_replay": sensory_replay,
         "criteria_pass": {f"{criterion}_{scenario}": int(results[f"{criterion}_{scenario}"].sum())
                           for scenario in THRESHOLD_SCENARIOS for criterion in ("A", "B", "C")},
         "candidate_pass": {f"{criterion}_{scenario}": int(counts[f"n_pass_{criterion}_{scenario}"].sum())
@@ -548,6 +705,12 @@ def main(argv=None):
         f"s2c_migration_spectra_224_wide.csv（33 行）、s2c_migration_after_input_33.csv（33×227）、"
         f"s2c_sensory_before_after_52.csv（{len(sensory)} 行 = 66 谱 × {SENSORY_TARGETS} 目标，"
         f"官方 Q1 入口 beer_models.inference.run）。",
+        f"- 画像可复现性（N2 修复）：用存储谱 + 当前 q1.joblib（sha256 "
+        f"{sensory_replay['model_sha256'][:16]}…）重放，{sensory_replay['rows']} 行逐格比对 "
+        f"mismatch={sensory_replay['mismatch_cells']}、max|Δ|={sensory_replay['max_abs_delta']:.3g}"
+        f"（容差 {replay_tolerance:g}）；表 sha256 {sensory_replay['delivered_table_sha256'][:16]}…。",
+        f"- 正式口径：estimated_grade_0_6 为决策层 top-k + 24 对父子 cap；"
+        f"prob_ge5/prob_6 为决策层概率，risk-head 概率另存 prob_ge5_risk_head/prob_6_risk_head。",
         "- t2n 无阈值、Stale hops 无化学坐标：状态记 unknown，不属预注册 A/B/C 范围。",
         "",
         "诚实说明：迁移谱是附件 1 坐标体系内的统计目标，不是酿造配方或实测酒；"
@@ -572,10 +735,20 @@ def main(argv=None):
         "sensory_pipeline": {
             "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
             "model": Path(args.q1_model).name,
+            "q1_model_path": protocol["sensory_pipeline"]["q1_model_path"],
+            "q1_model_sha256": protocol["sensory_pipeline"]["q1_model_sha256"],
+            "q1_model_grade_semantics": q1_grade_semantics,
+            "run_at": protocol["sensory_pipeline"]["run_at"],
             "rows": int(len(sensory)),
             "targets": int(sensory["target_52"].nunique()),
             "missing_grade_raw": int(sensory["grade_raw"].isna().sum()),
             "note": "full-training-model predictions are not out-of-sample accuracy estimates",
+        },
+        "sensory_replay": {
+            key: sensory_replay[key]
+            for key in ("rows", "columns_compared", "tolerance", "mismatch_cells",
+                        "mismatches_per_column", "max_abs_delta", "model_sha256",
+                        "delivered_table_sha256", "replayed_at")
         },
         "honesty": HONESTY,
         "files": sorted(path.name for path in output.iterdir()),

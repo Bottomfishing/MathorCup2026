@@ -60,7 +60,7 @@ $env:PYTHONPATH='src'
 .venv/Scripts/python.exe scripts/current.py package --rendered outputs/my_render --output outputs/my_teammate_delivery
 ```
 
-`verify --package 交付目录` 检查包内逐文件 sha256 与排除项；同时 `verify --models --source --package` 会真正重放：用 `q1.joblib` 对 1.csv 与 adopted 生成谱重算官方画像，与包内参照逐格比对（要求 max|Δ|≤1e-12；实测 1.8e-15/1.7e-15），缺参数即报错而不是静默通过；`--version 20261027` 可回到旧交付口径。已从零模型缓存重建固定模型并完成 Q1 12500 格、生成谱 15600 格、迁移 104 格与 Q3 辅助风险/风格的逐值对照；全量单元测试（含新增 Q1 决策层、Q2 Top-3、Q3 copula、Q3 迁移、delivery_current 测试）通过。实现检查不替代模型质量。
+`verify --package 交付目录` 检查包内逐文件 sha256 与排除项；同时 `verify --models --source --package` 会真正重放：用 `q1.joblib` 对 1.csv 与 adopted 生成谱重算官方画像，与包内参照逐格比对（要求 max|Δ|≤1e-12；实测 panel 12500 行 1.4e-16、generated 15000 行 1.1e-16），并校验 Q3 迁移感官表 `sensory_replay.mismatch_cells=0` 与模型 sha，缺参数即报错而不是静默通过；`--version 20261027` 可回到旧交付口径。已从零模型缓存重建固定模型并完成 Q1 12500 格、生成谱 15600 格、迁移 104 格与 Q3 辅助风险/风格的逐值对照；全量单元测试（含新增 Q1 决策层、Q2 Top-3、Q3 copula、Q3 迁移、delivery_current 测试）通过。实现检查不替代模型质量。
 
 ## 采用理由与限制
 

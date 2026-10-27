@@ -1,0 +1,42 @@
+{
+  "samples": 66,
+  "targets": 52,
+  "labelled_panel_targets": 50,
+  "model": "extra_trees__median",
+  "model_sha256": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+  "input_sha256": "94c45723da28862c431e4cab45de13bb14b83a05ad796316cbeadc2b4589f4a5",
+  "score_scale": "original_0_6_individual_rating_scale",
+  "grade_semantics": "integer_conditional_median_then_non_forced_high_grade_topk_with_parent_cap",
+  "grade_method": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+  "grade_probability_calibrated": false,
+  "missing_columns_imputed": [],
+  "unlabelled_card_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "qualified_on_historical_grouped_folds": true,
+  "input_scale": "same_supplied_coordinates_as_attachment_1_no_automatic_log_transform",
+  "evaluation_use": "full_training_model_predictions_are_not_OOF_accuracy_estimates",
+  "tail_point_qualified": false,
+  "point_deployment_status": "provisional_baseline_tail_not_qualified",
+  "risk_meaning": "Chance that a taster rating is >=k under equal-taster/equal-presentation weighting; not the chance of exceeding a chemical threshold or proof of safety.",
+  "risk_calibration_method": "inner_OOF_sigmoid_then_order_projection_or_training_prior",
+  "risk_probabilities_universally_validated": false,
+  "safety_certified": false,
+  "official_grade_column": "estimated_grade_0_6",
+  "legacy_grade_column": "grade_legacy_integer_median",
+  "probability_columns": [
+    "probability_rating_ge5",
+    "probability_rating_6"
+  ],
+  "decision_rule": {
+    "rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+    "forced": false,
+    "middle_cap": 4,
+    "rate_source": "observed_panel_weighted_median_high_grade_fractions_on_fixed_full_training_panel",
+    "implementation": "beer_models.q1_decision.runtime_decision",
+    "implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+    "n_parent_child_pairs": 24
+  }
+}

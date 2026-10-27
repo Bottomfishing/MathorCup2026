@@ -12,6 +12,9 @@ Run with::
 
 from __future__ import annotations
 
+import hashlib
+import importlib.util
+import json
 import os
 import sys
 import unittest
@@ -20,7 +23,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
 
 from beer_models import q3_migration as qm  # noqa: E402
 
@@ -39,6 +43,15 @@ def data():
 
 def source_index(beer: int) -> int:
     return int(np.flatnonzero(data().ids == beer)[0])
+
+
+def official_script():
+    """Import ``scripts/q3_official_migration_20261028.py`` by path for replay checks."""
+    path = ROOT / "scripts" / "q3_official_migration_20261028.py"
+    spec = importlib.util.spec_from_file_location("q3_official_migration_script", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 class ThresholdTests(unittest.TestCase):
@@ -434,6 +447,74 @@ class DeliveredTablesTests(unittest.TestCase):
         self.assertEqual(verification["counts"]["after_input"], [33, 227])
         self.assertEqual(verification["counts"]["sensory"], 66 * 52)
         self.assertEqual(verification["claim_level_counts"].get("undecidable", 0), 0)
+
+
+class SensoryProvenanceTests(unittest.TestCase):
+    """N2 fix: the 52-target table records the model it came from and keeps the new columns."""
+
+    OUTPUT = ROOT / "outputs" / "q3_migration_20261028"
+    MODEL = ROOT / "outputs" / "current_models" / "q1.joblib"
+
+    def test_protocol_records_q1_model_sha_and_semantics(self):
+        path = self.OUTPUT / "protocol.json"
+        if not path.exists():
+            self.skipTest("protocol.json not generated")
+        pipeline = json.loads(path.read_text(encoding="utf-8"))["sensory_pipeline"]
+        self.assertEqual(pipeline["q1_model_path"], "outputs/current_models/q1.joblib")
+        self.assertEqual(len(pipeline["q1_model_sha256"]), 64)
+        if self.MODEL.exists():
+            digest = hashlib.sha256(self.MODEL.read_bytes()).hexdigest()
+            self.assertEqual(pipeline["q1_model_sha256"], digest)
+        semantics = pipeline["q1_model_grade_semantics"]
+        self.assertIn("decision", semantics["note"].lower())
+        self.assertGreaterEqual(int(semantics["parent_child_pairs"]), 1)
+        self.assertIn("run_at", pipeline)
+
+    def test_sensory_table_keeps_decision_layer_and_legacy_columns(self):
+        path = self.OUTPUT / "s2c_sensory_before_after_52.csv"
+        if not path.exists():
+            self.skipTest("sensory table not generated")
+        sensory = pd.read_csv(path)
+        for column in ("grade_legacy_integer_median", "prob_ge5_risk_head", "prob_6_risk_head",
+                       "prediction_role"):
+            self.assertIn(column, sensory.columns)
+        # the official decision layer is a superset of the legacy integer median scale
+        self.assertTrue(set(sensory["grade_raw"].dropna().unique()) >= {0.0, 1.0, 2.0, 3.0, 4.0})
+
+    def test_verification_records_sensory_replay(self):
+        path = self.OUTPUT / "verification.json"
+        if not path.exists():
+            self.skipTest("verification.json not generated")
+        verification = json.loads(path.read_text(encoding="utf-8"))
+        replay = verification["sensory_replay"]
+        self.assertEqual(replay["rows"], 66 * 52)
+        self.assertEqual(replay["mismatch_cells"], 0, replay["mismatches_per_column"])
+        self.assertLessEqual(replay["max_abs_delta"], replay["tolerance"])
+        self.assertEqual(replay["model_sha256"],
+                         verification["sensory_pipeline"]["q1_model_sha256"])
+
+
+class SensoryReplayTests(unittest.TestCase):
+    """The delivered table must be regenerable from the stored spectra + current Q1 bundle."""
+
+    OUTPUT = ROOT / "outputs" / "q3_migration_20261028"
+    MODEL = ROOT / "outputs" / "current_models" / "q1.joblib"
+    TOLERANCE = 1e-12
+
+    @unittest.skipUnless(HAS_SOURCE, "Q3_SOURCE not set")
+    def test_sensory_table_replays_cell_for_cell(self):
+        table = self.OUTPUT / "s2c_sensory_before_after_52.csv"
+        if not table.exists() or not self.MODEL.exists():
+            self.skipTest("delivered sensory table or current Q1 bundle absent")
+        script = official_script()
+        replay = script.replay_sensory_table(
+            data(), self.OUTPUT, self.MODEL,
+            ROOT / "experiments" / "lead_review" / "q3" / "tmp_q1_test_replay",
+            tolerance=self.TOLERANCE)
+        self.assertEqual(replay["rows"], 66 * 52)
+        self.assertEqual(replay["mismatch_cells"], 0, replay["mismatches_per_column"])
+        self.assertLessEqual(replay["max_abs_delta"], self.TOLERANCE)
+        self.assertEqual(replay["delivered_table_sha256"], script.sha256_file(table))
 
 
 if __name__ == "__main__":

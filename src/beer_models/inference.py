@@ -65,6 +65,22 @@ def _attach_official_decision(long, frame, bundle):
     return merged, primary, wide
 
 
+def official_scores(frame, bundle):
+    """Return the long/wide portrait with the bundle's frozen official decision applied.
+
+    This is the same decision layer ``run()`` writes (top-k grades + 24 pair
+    parent/child cap).  Delivery tables built from it are replayable against the
+    deployed model, unlike the legacy ``portrait()`` output.
+    """
+    from beer_models.raw_panel import portrait
+    long, primary, wide, _ = portrait(frame, bundle)
+    if 'q1_decision' in bundle:
+        long = long.drop(columns=[c for c in ('probability_rating_ge5', 'probability_rating_6')
+                                  if c in long.columns])
+        long, primary, wide = _attach_official_decision(long, frame, bundle)
+    return long, primary, wide
+
+
 def run(model, input_path, output, experimental_tail=False):
     bundle = joblib.load(model)
     if experimental_tail:

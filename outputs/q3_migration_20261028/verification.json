@@ -1511,6 +1511,45 @@
       "value": 52,
       "expected": 52,
       "passed": true
+    },
+    {
+      "name": "sensory_replay_rows",
+      "value": 3432,
+      "expected": 3432,
+      "passed": true
+    },
+    {
+      "name": "sensory_replay_mismatch_cells",
+      "value": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "stored spectra + current q1.joblib replayed through inference.run; tolerance 1e-12 per cell"
+    },
+    {
+      "name": "sensory_replay_max_abs_delta",
+      "value": 1.1000315242037928e-15,
+      "expected": null,
+      "passed": true,
+      "note": "tolerance 1e-12"
+    },
+    {
+      "name": "sensory_replay_model_sha256",
+      "value": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+      "expected": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+      "passed": true
+    },
+    {
+      "name": "sensory_replay_delivered_table_sha256",
+      "value": "a36621b787e18f72db67a80d0d752c65ccbfcc4f88340269ee32d2efedeb5e6d",
+      "expected": "a36621b787e18f72db67a80d0d752c65ccbfcc4f88340269ee32d2efedeb5e6d",
+      "passed": true
+    },
+    {
+      "name": "sensory_decision_layer_grade_column",
+      "value": true,
+      "expected": null,
+      "passed": true,
+      "note": "official grade is the decision-layer column; legacy median kept for traceability"
     }
   ],
   "counts": {
@@ -1567,6 +1606,39 @@
     }
   },
   "sensory_missing_grade_raw": 132,
+  "sensory_pipeline": {
+    "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
+    "q1_model_path": "outputs/current_models/q1.joblib",
+    "q1_model_sha256": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+    "q1_model_grade_semantics": {
+      "official_column": "estimated_grade_0_6",
+      "grade_method": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+      "point_semantics": "integer_conditional_median_then_non_forced_high_grade_topk_with_parent_cap",
+      "decision_rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+      "legacy_column": "grade_legacy_integer_median",
+      "parent_child_pairs": 24,
+      "implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+      "note": "estimated_grade_0_6 is the official decision layer: non-forced high-grade top-k from cumulative probability with parent-child caps. It is not the legacy integer conditional median (kept in grade_legacy_integer_median)."
+    },
+    "run_at": "2026-10-28T00:46:42+08:00",
+    "score_scale": "original 0-6 individual rating scale",
+    "targets": 52,
+    "note": "full-training-model predictions are not out-of-sample accuracy estimates; grade_raw is the official decision-layer grade (top-k high grades with 24 parent-child caps), prob_ge5/prob_6 are the decision-layer probabilities, and prob_ge5_risk_head/prob_6_risk_head are the legacy calibrated risk-head probabilities kept for traceability"
+  },
+  "sensory_replay": {
+    "table": "s2c_sensory_before_after_52.csv",
+    "rows": 3432,
+    "columns_compared": 19,
+    "tolerance": 1e-12,
+    "mismatch_cells": 0,
+    "mismatches_per_column": {},
+    "max_abs_delta": 1.1000315242037928e-15,
+    "model_path": "outputs\\current_models\\q1.joblib",
+    "model_sha256": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+    "delivered_table_sha256": "a36621b787e18f72db67a80d0d752c65ccbfcc4f88340269ee32d2efedeb5e6d",
+    "replay_input_sha256": "d00cc717bf29b775414a0ceb25eb1c1aa36319898b08856faac7cc4f651bacfd",
+    "replayed_at": "2026-10-28T00:46:46+08:00"
+  },
   "criteria_pass": {
     "A_median": 33,
     "B_median": 33,
@@ -3588,5 +3660,5 @@
     }
   ],
   "honesty": "A migrated spectrum is a statistical destination inside the supplied coordinate space, not a brewing recipe and not a measured beer; the projection certifies only the listed defect coordinates at the 0.9 x threshold headroom and does not certify physical brewability or sensory acceptance.",
-  "elapsed_seconds": 2.7
+  "elapsed_seconds": 5.2
 }
