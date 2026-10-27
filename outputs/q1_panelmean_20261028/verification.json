@@ -10,6 +10,10 @@
     "grade_range_0_6": true,
     "truth_matches_official_distribution": true,
     "baseline_reproduced": true,
+    "baseline_within_one_reproduced": true,
+    "baseline_nested_linear_reproduced": true,
+    "baseline_calibration_is_nested": true,
+    "no_validation_beer_in_calibration_fit": true,
     "fold_count_3": true,
     "seed_per_fold_deterministic": true,
     "metrics_complete": true,
@@ -17,8 +21,50 @@
     "adoption_recommendation_consistent": true
   },
   "diagnostics": {
-    "baseline_panel_mean_mae": 0.46223378991660674,
-    "baseline_within_one": 0.91112,
+    "baseline_panel_mean_mae": 0.46607189992522735,
+    "baseline_within_one": 0.91416,
+    "baseline_nested_linear_panel_mean_mae": 0.5054899408175908,
+    "baseline_calibration_rows": {
+      "0": {
+        "calibration_fit_cells": 8300,
+        "outer_validation_cells": 4200,
+        "calibration_fit_beers": 166,
+        "inner_folds_used": 2
+      },
+      "1": {
+        "calibration_fit_cells": 8350,
+        "outer_validation_cells": 4150,
+        "calibration_fit_beers": 167,
+        "inner_folds_used": 2
+      },
+      "2": {
+        "calibration_fit_cells": 8350,
+        "outer_validation_cells": 4150,
+        "calibration_fit_beers": 167,
+        "inner_folds_used": 2
+      }
+    },
+    "baseline_inner_prediction_rows": {
+      "0": {
+        "outer_training_beers": 166,
+        "inner_fits": 2,
+        "inner_cells": 8300,
+        "outer_validation_cells": 4200
+      },
+      "1": {
+        "outer_training_beers": 167,
+        "inner_fits": 2,
+        "inner_cells": 8350,
+        "outer_validation_cells": 4150
+      },
+      "2": {
+        "outer_training_beers": 167,
+        "inner_fits": 2,
+        "inner_cells": 8350,
+        "outer_validation_cells": 4150
+      }
+    },
+    "voided_pre_fix_baseline": 0.4622337899166068,
     "truth_check": {
       "max_abs_mean_diff": 1.3322676295501878e-15,
       "median_cells_mismatch": 0

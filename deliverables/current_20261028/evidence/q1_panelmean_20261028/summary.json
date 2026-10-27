@@ -1,10 +1,15 @@
 {
   "protocol_id": "q1_panel_mean_20261028",
-  "task": "task-9",
+  "task": "task-9 (task-15 leak-fixed baseline)",
   "adoption_recommendation": "do_not_adopt_keep_baseline",
-  "baseline_panel_mean_mae": 0.46223378991660674,
-  "reported_baseline": 0.4622337899166068,
+  "baseline_panel_mean_mae": 0.46607189992522735,
+  "reported_baseline": 0.46607189992522735,
   "baseline_reproduced": true,
+  "baseline_nested_ci_linear_panel_mean_mae": 0.5054899408175908,
+  "baseline_panel_median_within_one": 0.91416,
+  "reported_baseline_within_one": 0.91416,
+  "baseline_within_one_reproduced": true,
+  "voided_pre_fix_baseline": 0.4622337899166068,
   "per_gate_verdicts": {
     "extra_trees_direct": {
       "gate_1_point_improvement": true,
@@ -29,11 +34,11 @@
         0.4512178825142204,
         0.4523854229357453
       ],
-      "improvement_vs_baseline": 0.010375271137076258,
+      "improvement_vs_baseline": 0.014213381145696813,
       "bootstrap": {
-        "point": 0.010375271137076312,
-        "lower": 0.004469049444379201,
-        "upper": 0.016154927108303175,
+        "point": 0.014213381145696787,
+        "lower": 0.008208117710517127,
+        "upper": 0.019745357621385257,
         "alpha": 0.05,
         "n_boot": 1000,
         "seed": 20261026,
@@ -47,11 +52,11 @@
         0.46910895324074053,
         0.46910895324074053
       ],
-      "improvement_vs_baseline": -0.006875163324133737,
+      "improvement_vs_baseline": -0.003037053315513183,
       "bootstrap": {
-        "point": -0.006875163324133747,
-        "lower": -0.014882125553250096,
-        "upper": 0.0007639390431033397,
+        "point": -0.0030370533155132736,
+        "lower": -0.011128146379753937,
+        "upper": 0.004224861238858662,
         "alpha": 0.05,
         "n_boot": 1000,
         "seed": 20261026,
@@ -59,5 +64,5 @@
       }
     }
   },
-  "runtime_seconds": 621.075
+  "runtime_seconds": 349.98
 }

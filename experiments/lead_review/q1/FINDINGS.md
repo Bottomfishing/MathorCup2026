@@ -276,3 +276,151 @@ $env:PYTHONPATH='src'
 ```
 
 产物：`outputs/q1_decision_20261028/q1__submission_long_12500.csv`、`q1__submission_wide_250x50.csv`、`q1__evaluation_long_12500.csv`、`q1__metrics_summary.csv`、`q1__calibrated_panel_mean_12500.csv`、`q1__high_grade_coverage_by_target.csv`、`protocol.json`、`verification.json`（15/15 True）、`summary.json`。
+
+## 5. 审查修复（46ca932 四项，2026-10-28 晚）
+
+**本节使 §4 与 §1 中以下数字作废，不得再引用**：面板均值折外线性 `0.502721`、风格+线性 `0.462234`、isotonic `0.502598`、quantile `0.650288`；“5 分 204 格 / 精确 25.49% / 召回 26.26%”的“5 分”叫法；以及据此写的“标定后 0.4622”。替代数字见下表。
+
+### 5.1 修复 1：标定泄漏（审查 #1）
+
+旧实现 `fold_style_mean` + `calibrate_panel_mean` 在同一个外层折外矩阵上互相嵌套：风格均值用全部数据折外计算，标定器又在外层验证折标签参与的特征上拟合，导致外层验证折标签经“其他折特征”间接进入参数。新实现为**严格嵌套**：对每个外层折 f，只用外层训练集（其余两折）内部再做 2 折内层切分，重训官方 ET（同 configs/final_protocol.json 的 ET 参数）得内层预测，风格统计与四类标定器都只在外层训练集上拟合，再预测外层验证折。代码：`beer_models.q1_decision.fit_nested_linear/fit_nested_isotonic/fit_nested_quantile/fold_style_mean` + `scripts/q1_official_20261028.py` 的 `build_inner_predictions/nested_calibrations`。
+
+**扰动泄漏测试**（`verification.json` 的 `checks.q1_leakage_perturbation_invariant`）：把外层验证折 beer '2' 的面板加权均值 +0.25，重新走完整标定流程，四种方法的最终预测 `max|Δ| = 0.0`（要求 ≤1e-12）。每外层折校准器只用 8350 个外层训练单元格拟合、对 4150 个验证单元格预测（`checks.q1_calibrator_fit_on_outer_training_only=True`）。
+
+| 面板均值标定 | 修复前（泄漏，作废） | 修复后（严格嵌套） | 差值 |
+|---|---|---|---|
+| 折外逐目标线性 | 0.5027214 | **0.5054899** | +0.00277 |
+| 折外 isotonic | 0.5025976 | **0.5056423** | +0.00304 |
+| 风格均值 + 线性 | 0.4622338 | **0.4660719** | +0.00384 |
+| 分位（quantile） | 0.6502882 | **0.6542616** | +0.00397 |
+| ET 原始连续分直接当均值 | 0.6123350 | 0.6123350 | 0（无标定拟合，不变） |
+
+结论：泄漏把“风格+线性标定”抬高了约 0.0038，不改变量级，但**旧 0.4622 不能再当正式数**，正式口径改为 0.466072。个体级指标不受标定影响：加权 MAE 0.795214（legacy）/0.801403（top-k+cap），exact 0.604919/0.604061，±1 0.783035/0.782723（加权口径，分母权重和 12500）。
+
+### 5.2 修复 2：父子项约束（审查 #3）
+
+24 对 `template_rule=checkbox_zero_or_parent`（`outputs/task1_acceptance_20261025/scorecard_scope.csv`）：A/F × {malt,hops,esters}_all → 4 个子项。top-k 决策后加确定性后处理 `child_grade = min(child_grade, parent_grade)`（`beer_models.q1_decision.enforce_parent_child`，多级时先父后子）。
+
+- 修复前 top-k 表违规 **12 处**，修复后 **0 处**（`checks.q1_precap_parent_violations_match_audit` / `q1_parent_violations_zero_after_cap`），且只下调、不改其他格（`q1_cap_only_lowers_violating_cells`，changed_cells=12）。
+- 分布：pre-cap `{0:8279,1:856,2:1361,3:1648,4:152,5:188,6:16}` → 官方（cap 后）`{0:8279,1:856,2:1363,3:1655,4:153,5:180,6:14}`；旧整数中位 `{0:8324,1:863,2:1378,3:1701,4:234}`。
+
+| 指标（啤酒级） | 旧整数中位 | top-k（cap 前） | **官方 top-k（cap 后）** |
+|---|---|---|---|
+| 面板中位 MAE | 0.3928 | 0.4080 | **0.40648** |
+| 面板均值 MAE | 0.612335 | 0.623064 | **0.621288** |
+| 完全命中 | 0.74128 | 0.73880 | **0.73880** |
+| ±1 准确率 | 0.91688 | 0.91312 | **0.91336** |
+| 逐目标宏平均 Spearman | 0.328348 | 0.290312 | **0.290356** |
+| ≥5 预测格/精确/召回 | 0 / 0 / 0 | 204 / 0.254902 / 0.262626 | **194 / 0.262887 / 0.257576** |
+| =6 预测格/精确/召回 | 0 / 0 / 0 | 16 / 0.062500 / 0.052632 | **14 / 0.071429 / 0.052632** |
+
+说明：`metrics_summary` 里 `q1_topk_nonforced` 行是 **cap 前**阶段（0.408 / 204 / 16，冻结交付契约仍断言这一行），`q1_topk_nonforced_parent_capped` 行才是**官方提交**（0.40648 / 194 / 14）；两者不得互相置换或混引。`q1__high_grade_coverage_by_target.csv` 因此同时给出 `n_predicted_ge5/6`（cap 前）与 `n_predicted_ge5/6_parent_capped`（官方）。
+
+### 5.3 修复 3：指标口径（审查 #4）
+
+“5 分 204 格、精确 25.49%、召回 26.26%”实为 **≥5 口径**（188 个 5 分 + 16 个 6 分 = 204）；真正的 exact5 是 188 个预测格。权威四口径表：`outputs/q1_decision_20261028/q1__metric_calibers.csv`（列：scope, prediction_set, caliber, n_predicted, true_positive, precision, n_observed, recall）。
+
+啤酒级（cap 后官方表）：
+
+| caliber | n_predicted | true_positive | precision | n_observed | recall |
+|---|---|---|---|---|---|
+| exact5 | 180 | 38 | 0.211111 | 179 | 0.212291 |
+| exact6 | 14 | 1 | 0.071429 | 19 | 0.052632 |
+| ge5 | 194 | 51 | 0.262887 | 198 | 0.257576 |
+
+cap 前同口径：exact5 188/39/0.207447/179/0.217877；exact6 16/1/0.0625/19/0.052632；ge5 204/52/0.254902/198/0.262626。个体级（加权品评员口径，分母 12500）：cap 后 exact5 180/41.6829/0.231572/524.9898/0.079398；exact6 14/2.1959/0.156849/124.8476/0.017589；ge5 194/70.2107/0.361911/649.8375/0.108044；legacy 三口径预测/命中均为 0（信息下界：面板中位 oracle 个体加权 MAE 0.663567）。
+
+### 5.4 修复 4：决策规则接入运行时（审查 #2）
+
+- `current_runtime.train` 现在把正式决策参数写进 bundle：`q1_decision = beer_models.current_runtime.q1_decision_bundle(...)`，含 rule、forced=False、middle_cap=4、`rate_ge5/rate_6`（逐目标观测高分比例，来自固定全量训练面板加权中位）、24 对 parent/child 索引、实现名与 `implementation_sha256`；`training.json` 同步记录。
+- `inference.run` 检测到 `q1_decision` 后调用 **同一个** `beer_models.q1_decision.runtime_decision` 生成官方等级，写入 `estimated_grade_0_6`，同时保留 `grade_legacy_integer_median` 与 `probability_rating_ge5/6`；`prediction_info.json` 记录 `grade_method` 与 `decision_rule`。`scripts/current.py predict q1` 无需改动即走此路径（`scripts/current.py:66` 调 `inference.run`）。
+- 一致性证据（`experiments/lead_review/q1/runtime_check.py` + `.log`，真实执行 train→predict）：bundle / 当前模块 / prediction_info 三处实现哈希全部 `e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99`；`official_vs_runtime_decision_max_abs_diff=0.0`；`official_vs_topk_pieces_max_abs_diff=0.0`；`legacy_column_equals_model_median=0.0`；`parent_violations_official=0`；行数 long=13000/primary=250/wide=250。全量拟合（in-sample，非 OOF）等级分布 `{0:8132,1:885,2:1415,3:1549,4:305,5:195,6:19}`，不得与 OOF 的 194/14 混用。
+- 回归测试：`tests/test_q1_decision.py` 33 项、`tests/test_current_runtime_q1_decision.py` 3 项全过；全量 `discover -s tests` **329 项 OK（24 skipped）**。
+
+### 5.5 复现命令
+
+```
+$env:PYTHONPATH='src'
+.venv\Scripts\python.exe scripts\q1_official_20261028.py --source "<附件目录>"
+.venv\Scripts\python.exe experiments\lead_review\q1\runtime_check.py   # 约 30s，重训一次并验证 train->predict 一致
+.venv\Scripts\python.exe -m unittest discover -s tests
+```
+
+产物：`outputs/q1_decision_20261028/`（10 文件，含新增 `q1__metric_calibers.csv`；pre-fix 目录备份在 `outputs/q1_decision_20261028_pre_leakfix/`，只作追溯）。协议：`configs/q1_decision_20261028.json`（revision 2，含 `verification.metric_row_semantics` 与 `delivery_contract` 说明）。
+
+### 5.6 剩余风险与需 Lead 处理
+
+- 交付层 `src/beer_models/delivery_current.py` 与其测试断言的是 cap 前那一行（0.408/204/16）；当前全量测试通过，但 README/docs 若改写成官方 cap 后数字（0.40648/194/14），需要交付层负责人同步更新其断言；本任务未改 `delivery*.py`。
+- 逐目标宏平均 Spearman 从旧整数中位的 0.328348 降到 0.290356（top-k 把大量格改成 5/6 后的排序代价），论文里应说明这是决策层的排序-等级权衡，不是模型退化。
+
+## 6. 面板均值直接回归：泄漏修复后的重算（2026-10-28 晚，task-15）
+
+### 6.1 泄漏定位与修复
+
+`src/beer_models/q1_panel_mean.py` 本身只有指标函数（MAE/RMSE/±1/宏 Spearman/配对 bootstrap/四门判定），没有 OOF 或标定逻辑；同类泄漏在 `scripts/q1_panelmean_20261028.py` 的旧 `baseline_predictions()`：`fold_style_mean(panel_mean_reference, style, target, fold)` + `calibrate_panel_mean(...)` 直接在整张 OOF 表上逐折拟合、互相嵌套，与审查 #1 是同一路径。
+
+已改为严格嵌套（task-12 口径）：
+
+- 每个外层折只用**外层训练啤酒**重训官方 raw-panel 模型（2 个 inner 折），得到 inner OOF 整数等级；风格均值只用 inner 训练啤酒的 `panel_weighted_mean` 计算；
+- 逐目标标定器（style+linear 与 linear-only）只用上述 inner OOF 单元拟合，再预测该外层验证折；
+- 实现：`outer_style_base` / `build_inner_predictions` / `nested_baseline`（脚本内）+ `beer_models.q1_decision.fit_nested_linear/apply_nested_linear`。
+
+复现校验（`verification.json` 全 True，18 项）：
+
+| 校验 | 值 |
+|---|---|
+| nested style+linear 基线 panel-mean MAE | 0.46607189992522735（命中 task-12 官方数 1e-9） |
+| nested linear-only 基线 | 0.5054899408175908（命中 1e-9） |
+| round 后 ±1 | 0.91416（命中 1e-12） |
+| truth 对齐官方分布 | max abs diff 1.33e-15，中位错格 0 |
+| 每折标定拟合单元 / 验证单元 | 8300/4200、8350/4150、8350/4150，合计 12500 |
+| 每折拟合啤酒 | 166/167/167，均不含该折验证啤酒（脚本内 SystemExit 断言） |
+
+候选表未受影响：两次运行的 `q1__panel_mean_pred_12500.csv`、`q1__panel_mean_pred_hgb_12500.csv` 与修复前逐字节相等，候选逐重复 MAE 也完全一致——修复只改 baseline 与 gate，不改候选。
+
+### 6.2 基线：泄漏版 vs 严格嵌套版
+
+| 基线 | panel-mean MAE | exact（round vs 中位） | ±1（round） | 宏 Spearman | 与 nested-linear 列 Pearson |
+|---|---|---|---|---|---|
+| 旧泄漏版（已作废） | 0.4622338 | 0.47536 | 0.91112 | 0.357544 | 0.961920 |
+| **严格嵌套 style+linear（新基线）** | **0.4660719** | 0.46344 | 0.91416 | 0.353977 | 0.969966 |
+| 严格嵌套 linear-only | 0.5054899 | — | — | — | — |
+
+即旧基线偏乐观 0.00384（MAE）与 0.00304（±1），作废；新基线本身在 exact/±1 上反而略好（0.46344/0.91416）。
+
+### 6.3 候选比较与四门判定（ET 直接回归 / HGB 直接回归）
+
+| 方法 | panel-mean MAE（3 重复均值，gate 用） | 相对新基线改善 | 配对 bootstrap 95% | 三重复 MAE |
+|---|---|---|---|---|
+| extra_trees_direct | 0.4518585 | **+0.0142134** | **[0.0082081, 0.0197454]** | 0.4519723 / 0.4512179 / 0.4523854 |
+| hist_gradient_boosting_direct | 0.4691090 | −0.0030371 | [−0.0111281, 0.0042249] | 0.4691090 ×3（HistGBR 无采样随机性） |
+
+四门（预注册，门槛写死在 `configs/q1_panel_mean_20261028.json`；gate4 为绝对下限 0.9119 = 官方整数等级 ±1 0.9169 − 0.5pt，不随基线改正而重锚）：
+
+| 方法 | g1 MAE | g2 bootstrap | g3 每重复 | g4 ±1 | all |
+|---|---|---|---|---|---|
+| extra_trees_direct | ✓（0.4518585 ≤ 0.4560719） | ✓（下限 0.0082081 > 0） | ✓（三重复均 < 0.4660719） | ✗（0.91136 < 0.9119，差 0.00054 ≈ 0.05pt） | ✗ |
+| hist_gradient_boosting_direct | ✗ | ✗ | ✗ | ✗（0.89976） | ✗ |
+
+panel-mean MAE 上 ET-direct 确实更好（pred 平均后 0.4515784，相对改善 3.05%），泄漏修复让这个优势数字变大（改善 0.0103752→0.0142134，bootstrap 下限 0.0044690→0.0082081），但 round 后等级 ±1（0.91136）仍低于预注册绝对下限 0.9119，因此 **verdict 不变：`do_not_adopt_keep_baseline`**。
+
+关于 gate4 的两种读法（需 Lead 明确，不自行采用）：相对口径“不低于修复后基线 −0.5pt”= 0.90916 时 ET-direct 会四门全过（`tests/test_q1_panel_mean.py::test_gate4_keeps_absolute_floor` 两种读法都已编码）。把下限从 0.9119 改为 0.90916 属于改动预注册门槛，本任务按原门槛执行。
+
+### 6.4 结论与论文表述
+
+- 正式交付不变：整数等级（top-k+cap）+ 严格嵌套标定面板均值（0.4660719）；ET 直接面板均值模型按预注册门槛不采纳，`adoption_recommendation=do_not_adopt_keep_baseline`。
+- 可写进论文：“在严格嵌套的折外标定下，直接回归面板加权均值的 Extra Trees 把 panel-mean MAE 从 0.4661 降到 0.4519（改善 0.0142，配对 beer-bootstrap 95% [0.0082, 0.0197]，三个重复全部改善）；但其 round 后等级 ±1 为 0.9114，低于预注册下限 0.9119（0.05pt），故按协议不采纳，保留现有交付。该差异不是因果结论，只是固定折上的预测比较。”
+- 同时必须说明：旧数字 0.4622338 / ±1 0.9119 是泄漏标定产物，已作废；任何文档不得再引用旧基线或旧改善 0.010375。
+
+### 6.5 产物、复现与备份
+
+产物 `outputs/q1_panelmean_20261028/`（7 文件）：`q1__panel_mean_pred_12500.csv`、`q1__panel_mean_pred_hgb_12500.csv`、`q1__panel_mean_metrics.csv`（baseline 行 0.466072/0.46344/0.91416）、`q1__panel_mean_comparison.json`（baseline 块含 nested_ci_style_linear / nested_ci_linear / calibration_rows）、`protocol.json`、`verification.json`（18 checks 全 True）、`summary.json`（`do_not_adopt_keep_baseline`、逐门、bootstrap）。旧文件备份在 `outputs/q1_panelmean_20261028_pre_leakfix/`。
+
+```
+$env:PYTHONPATH='src'
+.venv\Scripts\python.exe scripts\q1_panelmean_20261028.py --source "<附件目录>"   # 约 6 分钟（含 6 次 inner 重训）
+.venv\Scripts\python.exe -m unittest tests.test_q1_panel_mean -v   # 22 项全过
+.venv\Scripts\python.exe -m unittest discover -s tests              # 全量 OK（24 skipped）
+```
+
+协议 `configs/q1_panel_mean_20261028.json` revision 2：`leak_fix` 段写死旧/新基线路径与 1e-9 复现要求；`reported_baseline` = 0.46607189992522735 / linear 0.5054899408175908 / ±1 0.91416；gate1/3 以新基线为参照，gate4 保持绝对下限 0.9119 并记录“不重锚”的理由。

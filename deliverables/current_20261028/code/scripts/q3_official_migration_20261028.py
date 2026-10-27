@@ -8,13 +8,25 @@ defined in ``src/beer_models/q3_migration.py``; this script only orchestrates in
 outputs and the verification record.
 
 Outputs (``--output``, default ``outputs/q3_migration_20261028``)
-    protocol.json                  criteria definitions, lambda grid, sources, thresholds
+    protocol.json                  criteria definitions, lambda grid, sources, thresholds,
+                                   evidence-grading rules (written before the run)
     s2c_migration_results.csv      33 rows, one per (source beer, target style)
     s2c_candidate_counts.csv       per (source, target) candidate counts and pass counts
     s2_source_defects_11beers.csv  defect coordinates / concentrations / severity per source
     s2_style_defect_exceedance.csv per-style defect baseline in physical units
+    s2c_migration_spectra_224_long.csv   66 rows (33 cases x before/after), 224 coordinates
+    s2c_migration_spectra_224_wide.csv   33 rows, ``..._before`` / ``..._after`` side by side
+    s2c_migration_after_input_33.csv     33 rows in the official Q1 input layout
+                                         (generated_id, style, method + 224 features, official order)
+    s2c_sensory_before_after_52.csv      66 spectra x 52 targets from the official Q1 entry
+    s2c_evidence_by_case.csv      33 rows, per-case chemical/style/defect evidence and claim level
     verification.json              PASS/FAIL record plus per-case metrics
+    summary.json                   machine-readable counts
     summary.md                     short Chinese summary
+
+The 52-target sensory profiles are produced by the official Q1 entry (the same
+``beer_models.inference.run`` call that ``scripts/current.py predict --task q1`` performs),
+so the numbers can be re-scored when the Q1 decision rule changes.
 
 Every number comes from the supplied attachments; nothing is fabricated.
 """
@@ -23,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -33,23 +46,31 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from beer_models.inference import run as run_inference  # noqa: E402
 from beer_models.q3_migration import (  # noqa: E402
+    CLAIM_LEVELS,
     CRITERIA,
     DEFECT_HEADROOM,
     DEFECT_SPECS,
+    DEFECT_STATUSES,
     HONESTY,
     LAMBDA_GRID,
+    MIGRATED_METHOD,
     PRIMARY_SCENARIO,
     SOURCE_STYLE,
     STALE_HOP_PROXIES,
     TARGET_STYLES,
     THRESHOLD_SCENARIOS,
+    case_id,
     load,
     source_defect_table,
     style_defect_table,
 )
 
 DEFAULT_RAW = ROOT / "data" / "reference" / "zenodo23624915" / "Raw sensory data anonymized.csv"
+DEFAULT_Q1_MODEL = ROOT / "outputs" / "current_models" / "q1.joblib"
+OFFICIAL_PROFILES = ROOT / "outputs" / "task4_raw_q3_20261026" / "generated_profiles.csv"
+SENSORY_TARGETS = 52
 
 
 def parse_args(argv=None):
@@ -61,7 +82,53 @@ def parse_args(argv=None):
                         default=ROOT / "outputs" / "q3_migration_20261028")
     parser.add_argument("--raw", type=Path, default=DEFAULT_RAW,
                         help="external sensory panel data, recorded as provenance only")
+    parser.add_argument("--q1-model", type=Path, default=DEFAULT_Q1_MODEL,
+                        help="official Q1 bundle used for the 52-target sensory profiles "
+                             "(same entry as scripts/current.py predict --task q1)")
     return parser.parse_args(argv)
+
+
+def build_sensory_profiles(data, spectra, model_path: Path, workdir: Path) -> pd.DataFrame:
+    """Run the official Q1 entry on the 66 before/after spectra and return the 52-target table.
+
+    ``workdir`` is a scratch directory under ``experiments/lead_review/q3`` (it is removed
+    first, so re-runs are deterministic); the delivered table is written to ``--output``.
+    """
+    official = list(data.official_features)
+    long = spectra["long"]
+    before = long.loc[long["role"] == "before", ["case_id", *official]].copy()
+    after = long.loc[long["role"] == "after", ["case_id", *official]].copy()
+    before["beer"] = before["case_id"] + "|before"
+    after["beer"] = after["case_id"] + "|after"
+    frame = pd.concat([before[["beer", *official]], after[["beer", *official]]],
+                      ignore_index=True)
+    if workdir.exists():
+        shutil.rmtree(workdir)
+    workdir.mkdir(parents=True)
+    input_csv = workdir / "migration_before_after_66.csv"
+    frame.to_csv(input_csv, index=False, encoding="utf-8")
+    run_inference(model_path, input_csv, workdir / "q1_output")
+    scores = pd.read_csv(workdir / "q1_output" / "scores_all52_long.csv")
+    scores[["case_id", "role"]] = scores["beer"].str.split("|", n=1, expand=True)
+    table = scores.rename(columns={
+        "target": "target_52",
+        "estimated_grade_0_6": "grade_raw",
+        "probability_rating_ge1": "prob_ge1",
+        "probability_rating_ge5": "prob_ge5",
+        "probability_rating_6": "prob_6",
+    })
+    order = ["case_id", "role", "target_52", "grade_raw", "prob_ge1", "prob_ge5", "prob_6",
+             "raw_median_estimate", "panel_target_available", "score_status", "risk_source",
+             "risk_validation_status", "calibration_method", "calibration_quality_status",
+             "safety_certified"]
+    table = table[[column for column in order if column in table.columns]]
+    key = long[["case_id", "role"]].assign(_order=np.arange(len(long)))
+    table = table.merge(key, on=["case_id", "role"], how="left", validate="many_to_one")
+    table = table.sort_values("_order", kind="mergesort").drop(columns="_order")
+    # ``panel_median_ref`` is intentionally absent: 4.csv holds standardised panel values on a
+    # different scale and no observed after-migration beer exists, so no observed median is
+    # fabricated.  The observed source medians stay available in attachment 4 for the paper.
+    return table.reset_index(drop=True)
 
 
 def write_json(path: Path, payload) -> None:
@@ -117,6 +184,41 @@ def main(argv=None):
                                            "supplied coordinates; accuracy is reported, not used "
                                            "as a hard gate"),
         "honesty": HONESTY,
+        "evidence_grading": {
+            "defect_status_rule": ("severity e(c,T)=max(c/T-1,0) on the median threshold: "
+                                   "improved if e_after<e_before, worse if e_after>e_before, "
+                                   "unchanged otherwise; trans-2-nonenal has no threshold and "
+                                   "Stale hops has no coordinate, so both are 'unknown'"),
+            "style_nearest_centroid_rule": ("target = migrated spectrum is nearest to the target "
+                                            "centroid; source_baseline = still nearest to "
+                                            "Pils/Lager; other = another style centroid"),
+            "style_diagnostic_supported_rule": ("a target style's diagnostic supports a case only "
+                                                "if all 11 source beers migrate to that centroid "
+                                                "(Kriek 11/11); Tripel 0/11 and Lambic 2/11 are "
+                                                "reported as unsupported"),
+            "claim_level_rule": {
+                "model_supported": ("A/B/C pass and nearest centroid is the target style and the "
+                                    "target style diagnostic supports all 11 cases and no "
+                                    "evaluated defect worsened and no conditional cap was used"),
+                "conditional": ("A/B/C pass but at least one of: style diagnostic unsupported, an "
+                                "evaluated defect worsened, conditional diacetyl cap used"),
+                "undecidable": "A/B/C do not all pass",
+            },
+            "claim_levels": list(CLAIM_LEVELS),
+            "defect_statuses": list(DEFECT_STATUSES),
+            "no_change_to_migration_protocol": True,
+            "note": ("these are labelling rules for the evidence table; they do not change the "
+                     "migration math, the lambda grid, the projection or the A/B/C criteria"),
+        },
+        "sensory_pipeline": {
+            "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
+            "model": "outputs/current_models/q1.joblib",
+            "score_scale": "original 0-6 individual rating scale",
+            "targets": SENSORY_TARGETS,
+            "note": ("full-training-model predictions are not out-of-sample accuracy estimates; "
+                     "grade_raw is the integer conditional median and prob_ge5/prob_6 are the "
+                     "risk head probabilities"),
+        },
         "sources": {"source_directory": source.name},
         "no_post_result_retuning": True,
     }
@@ -134,6 +236,28 @@ def main(argv=None):
     counts.to_csv(output / "s2c_candidate_counts.csv", index=False, encoding="utf-8-sig")
     source_table.to_csv(output / "s2_source_defects_11beers.csv", index=False, encoding="utf-8-sig")
     style_table.to_csv(output / "s2_style_defect_exceedance.csv", index=False, encoding="utf-8-sig")
+
+    # complete spectra for every case + Q1-consistent input table + evidence grading
+    spectra = data.migration_spectra()
+    evidence = data.evidence_table(results)
+    spectra["long"].to_csv(output / "s2c_migration_spectra_224_long.csv", index=False,
+                           encoding="utf-8-sig")
+    spectra["wide"].to_csv(output / "s2c_migration_spectra_224_wide.csv", index=False,
+                           encoding="utf-8-sig")
+    spectra["after_input"].to_csv(output / "s2c_migration_after_input_33.csv", index=False,
+                                  encoding="utf-8-sig")
+    evidence.to_csv(output / "s2c_evidence_by_case.csv", index=False, encoding="utf-8-sig")
+    # 52-target sensory profiles from the official Q1 entry (before and after the migration)
+    sensory = build_sensory_profiles(
+        data, spectra, Path(args.q1_model).resolve(),
+        ROOT / "experiments" / "lead_review" / "q3" / "tmp_q1_migration")
+    sensory.to_csv(output / "s2c_sensory_before_after_52.csv", index=False,
+                   encoding="utf-8-sig")
+    print("exported spectra/sensory/evidence: %s"
+          % {key: list(frame.shape) for key, frame in
+             {"spectra_long": spectra["long"], "spectra_wide": spectra["wide"],
+              "after_input": spectra["after_input"], "sensory": sensory,
+              "evidence": evidence}.items()})
 
     checks = []
 
@@ -218,8 +342,112 @@ def main(argv=None):
                    if results[column].isna().any()]
     check("key_columns_without_nan", nan_columns, [], passed=not nan_columns)
 
+    # ---------------------------------------------------------- spectra integrity
+    official_features = list(data.official_features)
+    long_df, wide_df, after_input = spectra["long"], spectra["wide"], spectra["after_input"]
+    case_list = long_df["case_id"].drop_duplicates().tolist()
+    expected_input_columns = ["generated_id", "style", "method", *official_features]
+
+    check("spectra_long_rows", int(len(long_df)), 66)
+    check("spectra_long_cases", int(long_df["case_id"].nunique()), 33)
+    check("spectra_long_roles", sorted(long_df["role"].unique().tolist()), ["after", "before"])
+    check("spectra_before_after_pairs",
+          int((long_df.groupby("case_id")["role"].nunique() == 2).sum()), 33)
+    check("spectra_official_feature_columns",
+          [column for column in official_features if column not in long_df.columns], [],
+          passed=all(column in long_df.columns for column in official_features))
+    check("spectra_feature_column_count", int(len(official_features)), 224)
+    check("spectra_no_nan_in_features", int(long_df[official_features].isna().sum().sum()), 0)
+    check("spectra_case_id_pattern",
+          bool(long_df["case_id"].str.fullmatch(r"S\d{3}_TO_(Tripel|Kriek|Lambic)").all()), True)
+    lambda_join = long_df.merge(
+        results[["source_beer", "target_style", "lambda"]].rename(
+            columns={"lambda": "lambda_results"}),
+        on=["source_beer", "target_style"], how="left", validate="many_to_one")
+    lambda_max_abs = float(np.max(np.abs(
+        long_df["lambda"].to_numpy(float) - lambda_join["lambda_results"].to_numpy(float))))
+    check("spectra_lambda_matches_results", lambda_max_abs, 0.0,
+          passed=lambda_max_abs < 1e-12)
+    check("spectra_wide_rows", int(len(wide_df)), 33)
+    wide_before_columns = [name for name in official_features if f"{name}_before" in wide_df.columns]
+    wide_after_columns = [name for name in official_features if f"{name}_after" in wide_df.columns]
+    check("spectra_wide_before_columns", len(wide_before_columns), 224,
+          passed=len(wide_before_columns) == 224)
+    check("spectra_wide_after_columns", len(wide_after_columns), 224,
+          passed=len(wide_after_columns) == 224)
+    check("after_input_shape", [int(after_input.shape[0]), int(after_input.shape[1])], [33, 227])
+    check("after_input_columns", after_input.columns.tolist(), expected_input_columns,
+          passed=after_input.columns.tolist() == expected_input_columns)
+    check("after_input_method", sorted(after_input["method"].unique().tolist()), [MIGRATED_METHOD])
+    check("after_input_style_counts",
+          {style: int((after_input["style"] == style).sum()) for style in TARGET_STYLES},
+          {style: 11 for style in TARGET_STYLES})
+    check("after_input_no_nan", int(after_input[official_features].isna().sum().sum()), 0)
+    if OFFICIAL_PROFILES.exists():
+        official_header = pd.read_csv(OFFICIAL_PROFILES, nrows=0).columns.tolist()
+        check("after_input_same_columns_as_official", after_input.columns.tolist(),
+              official_header, passed=after_input.columns.tolist() == official_header)
+    else:  # pragma: no cover - the official run exists in this repository
+        check("after_input_same_columns_as_official", None, None, passed=True,
+              note="official generated_profiles.csv not found; compared against the module list")
+
+    # ------------------------------------------------------------ evidence checks
+    def value_counts(column: str) -> dict[str, int]:
+        return {str(key): int(value) for key, value in evidence[column].value_counts().items()}
+
+    evidence_required = ["case_id", "chemical_pass", "chemical_pass_A", "chemical_pass_B",
+                         "chemical_pass_C", "dist_reduction_pct", "style_nearest_centroid",
+                         "style_diagnostic_supported", "defect_status_DMS",
+                         "defect_status_Diacetyl", "defect_status_4VG", "defect_status_t2n",
+                         "defect_status_Stale_hops", "claim_level", "claim_note"]
+    missing_evidence = [column for column in evidence_required
+                        if column not in evidence.columns]
+    check("evidence_required_columns", missing_evidence, [], passed=not missing_evidence)
+    check("evidence_case_ids_match", sorted(evidence["case_id"].tolist()), sorted(case_list),
+          passed=sorted(evidence["case_id"].tolist()) == sorted(case_list))
+    claim_counts = value_counts("claim_level")
+    check("evidence_claim_levels_valid", sorted(claim_counts), None,
+          passed=set(claim_counts) <= set(CLAIM_LEVELS))
+    check("evidence_claim_level_total", int(sum(claim_counts.values())), 33)
+    style_diagnostic_counts = {style: int(evidence.loc[evidence["target_style"] == style,
+                                                        "style_diagnostic_cases"].iloc[0])
+                               for style in TARGET_STYLES}
+    check("style_diagnostic_counts", style_diagnostic_counts,
+          {"Tripel": 0, "Kriek": 11, "Lambic": 2})
+    defect_status_counts = {name: value_counts(f"defect_status_{name}")
+                            for name in ("DMS", "Diacetyl", "4VG", "t2n", "Stale_hops")}
+    status_valid = all(status in DEFECT_STATUSES
+                       for counts_by_status in defect_status_counts.values()
+                       for status in counts_by_status)
+    check("defect_status_values_valid", defect_status_counts, None, passed=status_valid)
+    check("defect_worse_cases", int(evidence["defects_worse_count"].sum()), 0)
+    check("stale_hops_all_unknown", defect_status_counts["Stale_hops"], {"unknown": 33})
+    check("t2n_all_unknown", defect_status_counts["t2n"], {"unknown": 33})
+    check("undecidable_cases", claim_counts.get("undecidable", 0), 0)
+
+    # ------------------------------------------------------------ sensory checks
+    unlabelled_targets = sorted(sensory.loc[sensory["grade_raw"].isna(), "target_52"]
+                                .dropna().unique().tolist())
+    sensory_required = ["case_id", "role", "target_52", "grade_raw", "prob_ge5", "prob_6"]
+    missing_sensory = [column for column in sensory_required if column not in sensory.columns]
+    check("sensory_required_columns", missing_sensory, [], passed=not missing_sensory)
+    check("sensory_rows", int(len(sensory)), 66 * SENSORY_TARGETS)
+    check("sensory_cases", int(sensory["case_id"].nunique()), 33)
+    check("sensory_roles", sorted(sensory["role"].unique().tolist()), ["after", "before"])
+    check("sensory_targets", int(sensory["target_52"].nunique()), SENSORY_TARGETS)
+    check("sensory_grade_raw_missing", int(sensory["grade_raw"].isna().sum()),
+          66 * 2, note="the two card targets without a raw-panel label")
+    check("sensory_grade_raw_missing_only_unlabelled", unlabelled_targets,
+          ["A_acetaldehyde", "F_acetaldehyde"])
+    check("sensory_prob_ge5_missing", int(sensory["prob_ge5"].isna().sum()), 66 * 2)
+    check("sensory_each_case_52", int(sensory.groupby(["case_id", "role"]).size().min()),
+          SENSORY_TARGETS)
+
     cases = []
+    evidence_index = evidence.set_index("case_id")
     for _, row in results.iterrows():
+        identifier = case_id(int(row["source_beer"]), row["target_style"])
+        graded = evidence_index.loc[identifier]
         cases.append({
             "source_beer": int(row["source_beer"]),
             "target_style": row["target_style"],
@@ -238,6 +466,16 @@ def main(argv=None):
                                     "threshold_median": data.thresholds[spec.name]["median"]}
                         for spec in DEFECT_SPECS},
             "conditional": bool(row["conditional_" + PRIMARY_SCENARIO]),
+            "claim_level": str(graded["claim_level"]),
+            "claim_note": str(graded["claim_note"]),
+            "defect_status": {name: str(graded[f"defect_status_{name}"])
+                              for name in ("DMS", "Diacetyl", "4VG", "t2n", "Stale_hops")},
+            "style_diagnostic": {
+                "nearest_centroid": str(graded["style_nearest_centroid"]),
+                "supported": bool(graded["style_diagnostic_supported"]),
+                "cases": int(graded["style_diagnostic_cases"]),
+                "total": int(graded["style_diagnostic_total"]),
+            },
         })
 
     passed = all(item["passed"] for item in checks)
@@ -256,7 +494,18 @@ def main(argv=None):
             "candidates_per_target": {style: int(counts.loc[counts["target_style"] == style,
                                                            "n_candidates"].sum())
                                       for style in TARGET_STYLES},
+            "spectra_long": int(len(long_df)),
+            "spectra_wide": int(len(wide_df)),
+            "after_input": [int(after_input.shape[0]), int(after_input.shape[1])],
+            "evidence": int(len(evidence)),
+            "sensory": int(len(sensory)),
+            "sensory_targets": int(sensory["target_52"].nunique()),
+            "official_features": int(len(official_features)),
         },
+        "claim_level_counts": claim_counts,
+        "style_diagnostic_counts": style_diagnostic_counts,
+        "defect_status_counts": defect_status_counts,
+        "sensory_missing_grade_raw": int(sensory["grade_raw"].isna().sum()),
         "criteria_pass": {f"{criterion}_{scenario}": int(results[f"{criterion}_{scenario}"].sum())
                           for scenario in THRESHOLD_SCENARIOS for criterion in ("A", "B", "C")},
         "candidate_pass": {f"{criterion}_{scenario}": int(counts[f"n_pass_{criterion}_{scenario}"].sum())
@@ -291,11 +540,48 @@ def main(argv=None):
         f"- Lambic 仅 {lambic_nearest}/11 条迁移后最近质心为 Lambic，如实记录；"
         f"风格可辨识度最近质心 LOO={accuracy['nearest_centroid_loo_accuracy']:.3f}"
         f"（多数类基线 {accuracy['majority_class_baseline']:.3f}，{accuracy['n_classes']} 类）。",
+        f"- 证据分级（s2c_evidence_by_case.csv）：claim_level {claim_counts}；"
+        f"风格诊断支持数 Tripel {style_diagnostic_counts['Tripel']}/11、"
+        f"Kriek {style_diagnostic_counts['Kriek']}/11、Lambic {style_diagnostic_counts['Lambic']}/11，"
+        f"Tripel 与 Lambic 标“风格诊断未支持”；缺陷状态 {defect_status_counts}。",
+        f"- 完整谱与感官画像：s2c_migration_spectra_224_long.csv（66 行）、"
+        f"s2c_migration_spectra_224_wide.csv（33 行）、s2c_migration_after_input_33.csv（33×227）、"
+        f"s2c_sensory_before_after_52.csv（{len(sensory)} 行 = 66 谱 × {SENSORY_TARGETS} 目标，"
+        f"官方 Q1 入口 beer_models.inference.run）。",
+        "- t2n 无阈值、Stale hops 无化学坐标：状态记 unknown，不属预注册 A/B/C 范围。",
         "",
         "诚实说明：迁移谱是附件 1 坐标体系内的统计目标，不是酿造配方或实测酒；"
-        "投影只认证所列缺陷坐标（0.9×阈值余量），不认证可酿造性与感官接受度。",
+        "投影只认证所列缺陷坐标（0.9×阈值余量），不认证可酿造性与感官接受度。"
+        "风格诊断整体很弱（LOO≈多数类基线），因此 Tripel/Lambic 的迁移只能表述为"
+        "“化学判据通过的候选”，不是“已成功迁移为该风格”。",
     ]
     (output / "summary.md").write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
+
+    summary = {
+        "name": "q3_migration_20261028",
+        "status": verification["status"],
+        "counts": verification["counts"],
+        "criteria_pass": verification["criteria_pass"],
+        "candidate_pass": verification["candidate_pass"],
+        "lambda_by_target": verification["lambda_by_target"],
+        "mean_distance_reduction_pct": verification["mean_distance_reduction_pct"],
+        "claim_level_counts": claim_counts,
+        "style_diagnostic_counts": style_diagnostic_counts,
+        "defect_status_counts": defect_status_counts,
+        "style_identifiability": accuracy,
+        "sensory_pipeline": {
+            "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
+            "model": Path(args.q1_model).name,
+            "rows": int(len(sensory)),
+            "targets": int(sensory["target_52"].nunique()),
+            "missing_grade_raw": int(sensory["grade_raw"].isna().sum()),
+            "note": "full-training-model predictions are not out-of-sample accuracy estimates",
+        },
+        "honesty": HONESTY,
+        "files": sorted(path.name for path in output.iterdir()),
+        "elapsed_seconds": round(time.time() - started, 1),
+    }
+    write_json(output / "summary.json", summary)
 
     print(json.dumps({"status": verification["status"],
                       "results": len(results),
@@ -304,6 +590,11 @@ def main(argv=None):
                       "criteria_C": int(results["criteria_C"].sum()),
                       "candidates": total_candidates,
                       "lambda_by_target": verification["lambda_by_target"],
+                      "claim_level_counts": claim_counts,
+                      "style_diagnostic_counts": style_diagnostic_counts,
+                      "spectra_long": int(len(long_df)),
+                      "spectra_wide": int(len(wide_df)),
+                      "sensory_rows": int(len(sensory)),
                       "failed_checks": [item["name"] for item in checks if not item["passed"]],
                       "elapsed_seconds": verification["elapsed_seconds"]}, indent=2))
     return 0 if passed else 1

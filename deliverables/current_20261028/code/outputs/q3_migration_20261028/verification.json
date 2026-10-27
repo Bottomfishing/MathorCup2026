@@ -234,6 +234,1283 @@
       "value": [],
       "expected": [],
       "passed": true
+    },
+    {
+      "name": "spectra_long_rows",
+      "value": 66,
+      "expected": 66,
+      "passed": true
+    },
+    {
+      "name": "spectra_long_cases",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "spectra_long_roles",
+      "value": [
+        "after",
+        "before"
+      ],
+      "expected": [
+        "after",
+        "before"
+      ],
+      "passed": true
+    },
+    {
+      "name": "spectra_before_after_pairs",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "spectra_official_feature_columns",
+      "value": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "spectra_feature_column_count",
+      "value": 224,
+      "expected": 224,
+      "passed": true
+    },
+    {
+      "name": "spectra_no_nan_in_features",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "spectra_case_id_pattern",
+      "value": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "spectra_lambda_matches_results",
+      "value": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "name": "spectra_wide_rows",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "spectra_wide_before_columns",
+      "value": 224,
+      "expected": 224,
+      "passed": true
+    },
+    {
+      "name": "spectra_wide_after_columns",
+      "value": 224,
+      "expected": 224,
+      "passed": true
+    },
+    {
+      "name": "after_input_shape",
+      "value": [
+        33,
+        227
+      ],
+      "expected": [
+        33,
+        227
+      ],
+      "passed": true
+    },
+    {
+      "name": "after_input_columns",
+      "value": [
+        "generated_id",
+        "style",
+        "method",
+        "acetaldehyde",
+        "CS2",
+        "DES",
+        "DMS",
+        "ethyl_2.methyl_butyrate",
+        "ethyl_acetate",
+        "ethyl_decanoate",
+        "ethyl_hexanoate",
+        "ethyl_isovalerate",
+        "ethyl_octanoate",
+        "ethyl_propionate",
+        "H2S",
+        "isoamyl_alcohol",
+        "isobutanol",
+        "isobutyl_acetate",
+        "isopentyl_acetate",
+        "MeSH",
+        "octyl_acetate",
+        "phenethyl_acetate",
+        "phenethyl_alcohol",
+        "X4VG",
+        "SO2.mg.L.",
+        "acetic_acid.g.L.",
+        "ammonia.mg.L.",
+        "color.EBC.",
+        "betaglucan.mg.L.",
+        "lactic_acid.mg.L.",
+        "glycerol",
+        "iron",
+        "pH",
+        "protein.g.L.",
+        "bitterness",
+        "ethanol..v.v.",
+        "CO2.PSI.",
+        "X1.propanol",
+        "X2.3.butanedione",
+        "X3.methylbutanal",
+        "propylene.glycol",
+        "propyl.acetate",
+        "n.pentanol",
+        "X2.methyl.1.butanol",
+        "isopentyl.formate",
+        "ethyl.isobutyrate",
+        "X3.methyl.2.butenal",
+        "X2.methyltetrahydrofuran.3.one",
+        "ethyl.butyrate",
+        "butyl.acetate",
+        "methylpyrazine",
+        "furfural",
+        "ethyl.lactate",
+        "X3Z.hexenol",
+        "n.hexanol",
+        "styrene",
+        "X2.furanmethanol",
+        "X3.methyl.2.hexanol",
+        "X3.furanmethanol",
+        "X2.acetylfuran",
+        "X2.6.dimethyl.pyrazine",
+        "amyl.acetate",
+        "ethyl.tiglate",
+        "benzaldehyde",
+        "X5.methylfurfural",
+        "n.heptanol",
+        "X1.octen.3.ol",
+        "X3.methylthio.propanol",
+        "isomaltol",
+        "X6.methyl.5.hepten.2.one",
+        "X2.pentyl.furan",
+        "ethyl.hex..3E..enoate",
+        "alpha.phellandrene",
+        "dehydroxy.cis.linalool.oxide",
+        "hexyl.acetate",
+        "isopentyl.butanoate",
+        "X2.ethyl.1.hexanol",
+        "beta.phellandrene",
+        "limonene",
+        "eucalyptol",
+        "benzyl.alcohol",
+        "ethyl.hex..2E..enoate",
+        "phenylacetaldehyde",
+        "X.E..beta.ocimene",
+        "prenyl.isobutyrate",
+        "ethyl.furoate",
+        "ortho.cresol",
+        "ethyl.5.methylhexanoate",
+        "X2.acetylpyrrole",
+        "isoamyl.lactate",
+        "n.octanol",
+        "cis.linalool.oxide",
+        "meta.cymenene",
+        "terpinolene",
+        "linalool",
+        "nonan.2.ol",
+        "n.nonanal",
+        "X2.methyl.benzofuran",
+        "heptyl.acetate",
+        "X4.methyl.1.pentanol",
+        "neo.allo.ocimene",
+        "x.methyl.1.octanol",
+        "trans.dihydro.beta.terpineol",
+        "cis.beta.terpineol",
+        "y.methyl.1.octanol",
+        "camphor",
+        "isobutyl.hexanoate",
+        "nerol.oxide",
+        "X.E..2.nonenal",
+        "cis.dihydro.beta.terpineol",
+        "X4.ethyl.phenol",
+        "isoborneol",
+        "ethyl.benzoate",
+        "n.nonanol",
+        "terpinen.4.ol",
+        "diethyl.succinate",
+        "vinyl.caprylate",
+        "X1.alpha.terpineol",
+        "ethyl..E..linalool",
+        "ethyl.nicotinate",
+        "citronellol",
+        "nerol",
+        "hydroxy.methyl.furfural",
+        "E.ocimenone",
+        "cumin.aldehyde",
+        "ethyl.phenylacetate",
+        "isopentyl.hexanoate",
+        "geraniol",
+        "beta.cyclohomocitral",
+        "E.cinnamaldehyde",
+        "n.decanol",
+        "neryl.formate",
+        "X4.ethyl.guaiacol",
+        "X2.undecanone",
+        "trans.dihydro.alpha.terpinyl.acetate",
+        "terpinen.4.ol.acetate",
+        "X2.undecanol",
+        "delta.terpinyl.acetate",
+        "X.E.E..2.4.decadienal",
+        "methyl.geranate",
+        "car.3.en.2.one",
+        "dimethoxy..E..citral",
+        "X2.butyloctanoate",
+        "X4.methoxysalicylaldehyde",
+        "ethyl.hydrocinnamate",
+        "eugenol",
+        "gamma.nonalactone",
+        "methyl.para.anisate",
+        "X.E..beta.damascenone",
+        "ethyl..9..decenoate",
+        "vanillin",
+        "geosmin",
+        "dodecanal",
+        "X4.8.alpha.epoxy.caryophyllane",
+        "E.caryophyllene",
+        "X.E..alpha.ionone",
+        "perillyl.acetate",
+        "beta.humulene",
+        "X2.phenyl.ethyl.butyrate",
+        "X.Z..beta.farnesene",
+        "pentyl.octanoate",
+        "X.E..beta.farnesene",
+        "X2.methylbutyl.octanoate",
+        "alpha.humulene",
+        "neryl.propanoate",
+        "X9.epi..E..caryophyllene",
+        "ethyl..E..cinnamate",
+        "linalool.isovalerate",
+        "alpha.terpinyl.isobutanoate",
+        "n.dodecanol",
+        "germacrene.D",
+        "X.E..beta.ionone",
+        "valencene",
+        "neryl.isobutanoate",
+        "E.methyl.isoeugenol",
+        "X.Z..dihydro.apofarnesal",
+        "butylated.hydroxytoluene",
+        "X.E..dihydro.apofarnesal",
+        "Z.nerolidol",
+        "X.E..ortho.methoxy.cinnamaldehyde",
+        "alpha.calacorene",
+        "E.nerolidol",
+        "dihydroisocaryophyllene.epoxide",
+        "caryophyllene.alcohol",
+        "neryl.isovalerate",
+        "spathulenol",
+        "caryophyllene.oxide",
+        "humulene.epoxide.II",
+        "alloaromadendrene.epoxide",
+        "X1.10.di.epi.cubenol",
+        "isopropyl.laurate",
+        "caryophylla.4.12..8.13..dien.5.alpha.ol",
+        "gamma.eudesmol",
+        "alpha.muurolol",
+        "X1.2.dihydro.8.hydroxy..2E..linalool",
+        "tau.cadinol",
+        "selin.11.en.4.alpha.ol",
+        "alpha.eudesmol",
+        "X14.hydroxy.9.epi..E..caryophyllene",
+        "tau.muurolol",
+        "n.tetradecanol",
+        "foeniculin",
+        "cadalene",
+        "X2.3.dihydro.farnesol",
+        "X2E.6Z.farnesal",
+        "caryophyllene.acetate",
+        "X14.hydroxy.alpha.humulene",
+        "X2Z.6E.farnesal",
+        "X2Z.6Z.farnesol",
+        "X2Z.6E.farnesol",
+        "ambroxide",
+        "benzyl.benzoate",
+        "X2E.6E.methyl.farnesoate",
+        "ethyl.tetradecanoate",
+        "X2.ethylhexylsalicylate",
+        "isopropyl.tetradecanoate",
+        "ethyl.pentadecanoate",
+        "methyl.hexadecanoate",
+        "Z.Z.geranyl.linalool",
+        "ethyl.hexadecanoate",
+        "manool.oxide",
+        "X13.epi.manool.oxide",
+        "isopropyl.hexadecanoate",
+        "manool",
+        "ethyl.octadecanoate",
+        "ethyl.pentanoate",
+        "X2.ethyl.3.methylpyrazine"
+      ],
+      "expected": [
+        "generated_id",
+        "style",
+        "method",
+        "acetaldehyde",
+        "CS2",
+        "DES",
+        "DMS",
+        "ethyl_2.methyl_butyrate",
+        "ethyl_acetate",
+        "ethyl_decanoate",
+        "ethyl_hexanoate",
+        "ethyl_isovalerate",
+        "ethyl_octanoate",
+        "ethyl_propionate",
+        "H2S",
+        "isoamyl_alcohol",
+        "isobutanol",
+        "isobutyl_acetate",
+        "isopentyl_acetate",
+        "MeSH",
+        "octyl_acetate",
+        "phenethyl_acetate",
+        "phenethyl_alcohol",
+        "X4VG",
+        "SO2.mg.L.",
+        "acetic_acid.g.L.",
+        "ammonia.mg.L.",
+        "color.EBC.",
+        "betaglucan.mg.L.",
+        "lactic_acid.mg.L.",
+        "glycerol",
+        "iron",
+        "pH",
+        "protein.g.L.",
+        "bitterness",
+        "ethanol..v.v.",
+        "CO2.PSI.",
+        "X1.propanol",
+        "X2.3.butanedione",
+        "X3.methylbutanal",
+        "propylene.glycol",
+        "propyl.acetate",
+        "n.pentanol",
+        "X2.methyl.1.butanol",
+        "isopentyl.formate",
+        "ethyl.isobutyrate",
+        "X3.methyl.2.butenal",
+        "X2.methyltetrahydrofuran.3.one",
+        "ethyl.butyrate",
+        "butyl.acetate",
+        "methylpyrazine",
+        "furfural",
+        "ethyl.lactate",
+        "X3Z.hexenol",
+        "n.hexanol",
+        "styrene",
+        "X2.furanmethanol",
+        "X3.methyl.2.hexanol",
+        "X3.furanmethanol",
+        "X2.acetylfuran",
+        "X2.6.dimethyl.pyrazine",
+        "amyl.acetate",
+        "ethyl.tiglate",
+        "benzaldehyde",
+        "X5.methylfurfural",
+        "n.heptanol",
+        "X1.octen.3.ol",
+        "X3.methylthio.propanol",
+        "isomaltol",
+        "X6.methyl.5.hepten.2.one",
+        "X2.pentyl.furan",
+        "ethyl.hex..3E..enoate",
+        "alpha.phellandrene",
+        "dehydroxy.cis.linalool.oxide",
+        "hexyl.acetate",
+        "isopentyl.butanoate",
+        "X2.ethyl.1.hexanol",
+        "beta.phellandrene",
+        "limonene",
+        "eucalyptol",
+        "benzyl.alcohol",
+        "ethyl.hex..2E..enoate",
+        "phenylacetaldehyde",
+        "X.E..beta.ocimene",
+        "prenyl.isobutyrate",
+        "ethyl.furoate",
+        "ortho.cresol",
+        "ethyl.5.methylhexanoate",
+        "X2.acetylpyrrole",
+        "isoamyl.lactate",
+        "n.octanol",
+        "cis.linalool.oxide",
+        "meta.cymenene",
+        "terpinolene",
+        "linalool",
+        "nonan.2.ol",
+        "n.nonanal",
+        "X2.methyl.benzofuran",
+        "heptyl.acetate",
+        "X4.methyl.1.pentanol",
+        "neo.allo.ocimene",
+        "x.methyl.1.octanol",
+        "trans.dihydro.beta.terpineol",
+        "cis.beta.terpineol",
+        "y.methyl.1.octanol",
+        "camphor",
+        "isobutyl.hexanoate",
+        "nerol.oxide",
+        "X.E..2.nonenal",
+        "cis.dihydro.beta.terpineol",
+        "X4.ethyl.phenol",
+        "isoborneol",
+        "ethyl.benzoate",
+        "n.nonanol",
+        "terpinen.4.ol",
+        "diethyl.succinate",
+        "vinyl.caprylate",
+        "X1.alpha.terpineol",
+        "ethyl..E..linalool",
+        "ethyl.nicotinate",
+        "citronellol",
+        "nerol",
+        "hydroxy.methyl.furfural",
+        "E.ocimenone",
+        "cumin.aldehyde",
+        "ethyl.phenylacetate",
+        "isopentyl.hexanoate",
+        "geraniol",
+        "beta.cyclohomocitral",
+        "E.cinnamaldehyde",
+        "n.decanol",
+        "neryl.formate",
+        "X4.ethyl.guaiacol",
+        "X2.undecanone",
+        "trans.dihydro.alpha.terpinyl.acetate",
+        "terpinen.4.ol.acetate",
+        "X2.undecanol",
+        "delta.terpinyl.acetate",
+        "X.E.E..2.4.decadienal",
+        "methyl.geranate",
+        "car.3.en.2.one",
+        "dimethoxy..E..citral",
+        "X2.butyloctanoate",
+        "X4.methoxysalicylaldehyde",
+        "ethyl.hydrocinnamate",
+        "eugenol",
+        "gamma.nonalactone",
+        "methyl.para.anisate",
+        "X.E..beta.damascenone",
+        "ethyl..9..decenoate",
+        "vanillin",
+        "geosmin",
+        "dodecanal",
+        "X4.8.alpha.epoxy.caryophyllane",
+        "E.caryophyllene",
+        "X.E..alpha.ionone",
+        "perillyl.acetate",
+        "beta.humulene",
+        "X2.phenyl.ethyl.butyrate",
+        "X.Z..beta.farnesene",
+        "pentyl.octanoate",
+        "X.E..beta.farnesene",
+        "X2.methylbutyl.octanoate",
+        "alpha.humulene",
+        "neryl.propanoate",
+        "X9.epi..E..caryophyllene",
+        "ethyl..E..cinnamate",
+        "linalool.isovalerate",
+        "alpha.terpinyl.isobutanoate",
+        "n.dodecanol",
+        "germacrene.D",
+        "X.E..beta.ionone",
+        "valencene",
+        "neryl.isobutanoate",
+        "E.methyl.isoeugenol",
+        "X.Z..dihydro.apofarnesal",
+        "butylated.hydroxytoluene",
+        "X.E..dihydro.apofarnesal",
+        "Z.nerolidol",
+        "X.E..ortho.methoxy.cinnamaldehyde",
+        "alpha.calacorene",
+        "E.nerolidol",
+        "dihydroisocaryophyllene.epoxide",
+        "caryophyllene.alcohol",
+        "neryl.isovalerate",
+        "spathulenol",
+        "caryophyllene.oxide",
+        "humulene.epoxide.II",
+        "alloaromadendrene.epoxide",
+        "X1.10.di.epi.cubenol",
+        "isopropyl.laurate",
+        "caryophylla.4.12..8.13..dien.5.alpha.ol",
+        "gamma.eudesmol",
+        "alpha.muurolol",
+        "X1.2.dihydro.8.hydroxy..2E..linalool",
+        "tau.cadinol",
+        "selin.11.en.4.alpha.ol",
+        "alpha.eudesmol",
+        "X14.hydroxy.9.epi..E..caryophyllene",
+        "tau.muurolol",
+        "n.tetradecanol",
+        "foeniculin",
+        "cadalene",
+        "X2.3.dihydro.farnesol",
+        "X2E.6Z.farnesal",
+        "caryophyllene.acetate",
+        "X14.hydroxy.alpha.humulene",
+        "X2Z.6E.farnesal",
+        "X2Z.6Z.farnesol",
+        "X2Z.6E.farnesol",
+        "ambroxide",
+        "benzyl.benzoate",
+        "X2E.6E.methyl.farnesoate",
+        "ethyl.tetradecanoate",
+        "X2.ethylhexylsalicylate",
+        "isopropyl.tetradecanoate",
+        "ethyl.pentadecanoate",
+        "methyl.hexadecanoate",
+        "Z.Z.geranyl.linalool",
+        "ethyl.hexadecanoate",
+        "manool.oxide",
+        "X13.epi.manool.oxide",
+        "isopropyl.hexadecanoate",
+        "manool",
+        "ethyl.octadecanoate",
+        "ethyl.pentanoate",
+        "X2.ethyl.3.methylpyrazine"
+      ],
+      "passed": true
+    },
+    {
+      "name": "after_input_method",
+      "value": [
+        "q3_migration_projected"
+      ],
+      "expected": [
+        "q3_migration_projected"
+      ],
+      "passed": true
+    },
+    {
+      "name": "after_input_style_counts",
+      "value": {
+        "Tripel": 11,
+        "Kriek": 11,
+        "Lambic": 11
+      },
+      "expected": {
+        "Tripel": 11,
+        "Kriek": 11,
+        "Lambic": 11
+      },
+      "passed": true
+    },
+    {
+      "name": "after_input_no_nan",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "after_input_same_columns_as_official",
+      "value": [
+        "generated_id",
+        "style",
+        "method",
+        "acetaldehyde",
+        "CS2",
+        "DES",
+        "DMS",
+        "ethyl_2.methyl_butyrate",
+        "ethyl_acetate",
+        "ethyl_decanoate",
+        "ethyl_hexanoate",
+        "ethyl_isovalerate",
+        "ethyl_octanoate",
+        "ethyl_propionate",
+        "H2S",
+        "isoamyl_alcohol",
+        "isobutanol",
+        "isobutyl_acetate",
+        "isopentyl_acetate",
+        "MeSH",
+        "octyl_acetate",
+        "phenethyl_acetate",
+        "phenethyl_alcohol",
+        "X4VG",
+        "SO2.mg.L.",
+        "acetic_acid.g.L.",
+        "ammonia.mg.L.",
+        "color.EBC.",
+        "betaglucan.mg.L.",
+        "lactic_acid.mg.L.",
+        "glycerol",
+        "iron",
+        "pH",
+        "protein.g.L.",
+        "bitterness",
+        "ethanol..v.v.",
+        "CO2.PSI.",
+        "X1.propanol",
+        "X2.3.butanedione",
+        "X3.methylbutanal",
+        "propylene.glycol",
+        "propyl.acetate",
+        "n.pentanol",
+        "X2.methyl.1.butanol",
+        "isopentyl.formate",
+        "ethyl.isobutyrate",
+        "X3.methyl.2.butenal",
+        "X2.methyltetrahydrofuran.3.one",
+        "ethyl.butyrate",
+        "butyl.acetate",
+        "methylpyrazine",
+        "furfural",
+        "ethyl.lactate",
+        "X3Z.hexenol",
+        "n.hexanol",
+        "styrene",
+        "X2.furanmethanol",
+        "X3.methyl.2.hexanol",
+        "X3.furanmethanol",
+        "X2.acetylfuran",
+        "X2.6.dimethyl.pyrazine",
+        "amyl.acetate",
+        "ethyl.tiglate",
+        "benzaldehyde",
+        "X5.methylfurfural",
+        "n.heptanol",
+        "X1.octen.3.ol",
+        "X3.methylthio.propanol",
+        "isomaltol",
+        "X6.methyl.5.hepten.2.one",
+        "X2.pentyl.furan",
+        "ethyl.hex..3E..enoate",
+        "alpha.phellandrene",
+        "dehydroxy.cis.linalool.oxide",
+        "hexyl.acetate",
+        "isopentyl.butanoate",
+        "X2.ethyl.1.hexanol",
+        "beta.phellandrene",
+        "limonene",
+        "eucalyptol",
+        "benzyl.alcohol",
+        "ethyl.hex..2E..enoate",
+        "phenylacetaldehyde",
+        "X.E..beta.ocimene",
+        "prenyl.isobutyrate",
+        "ethyl.furoate",
+        "ortho.cresol",
+        "ethyl.5.methylhexanoate",
+        "X2.acetylpyrrole",
+        "isoamyl.lactate",
+        "n.octanol",
+        "cis.linalool.oxide",
+        "meta.cymenene",
+        "terpinolene",
+        "linalool",
+        "nonan.2.ol",
+        "n.nonanal",
+        "X2.methyl.benzofuran",
+        "heptyl.acetate",
+        "X4.methyl.1.pentanol",
+        "neo.allo.ocimene",
+        "x.methyl.1.octanol",
+        "trans.dihydro.beta.terpineol",
+        "cis.beta.terpineol",
+        "y.methyl.1.octanol",
+        "camphor",
+        "isobutyl.hexanoate",
+        "nerol.oxide",
+        "X.E..2.nonenal",
+        "cis.dihydro.beta.terpineol",
+        "X4.ethyl.phenol",
+        "isoborneol",
+        "ethyl.benzoate",
+        "n.nonanol",
+        "terpinen.4.ol",
+        "diethyl.succinate",
+        "vinyl.caprylate",
+        "X1.alpha.terpineol",
+        "ethyl..E..linalool",
+        "ethyl.nicotinate",
+        "citronellol",
+        "nerol",
+        "hydroxy.methyl.furfural",
+        "E.ocimenone",
+        "cumin.aldehyde",
+        "ethyl.phenylacetate",
+        "isopentyl.hexanoate",
+        "geraniol",
+        "beta.cyclohomocitral",
+        "E.cinnamaldehyde",
+        "n.decanol",
+        "neryl.formate",
+        "X4.ethyl.guaiacol",
+        "X2.undecanone",
+        "trans.dihydro.alpha.terpinyl.acetate",
+        "terpinen.4.ol.acetate",
+        "X2.undecanol",
+        "delta.terpinyl.acetate",
+        "X.E.E..2.4.decadienal",
+        "methyl.geranate",
+        "car.3.en.2.one",
+        "dimethoxy..E..citral",
+        "X2.butyloctanoate",
+        "X4.methoxysalicylaldehyde",
+        "ethyl.hydrocinnamate",
+        "eugenol",
+        "gamma.nonalactone",
+        "methyl.para.anisate",
+        "X.E..beta.damascenone",
+        "ethyl..9..decenoate",
+        "vanillin",
+        "geosmin",
+        "dodecanal",
+        "X4.8.alpha.epoxy.caryophyllane",
+        "E.caryophyllene",
+        "X.E..alpha.ionone",
+        "perillyl.acetate",
+        "beta.humulene",
+        "X2.phenyl.ethyl.butyrate",
+        "X.Z..beta.farnesene",
+        "pentyl.octanoate",
+        "X.E..beta.farnesene",
+        "X2.methylbutyl.octanoate",
+        "alpha.humulene",
+        "neryl.propanoate",
+        "X9.epi..E..caryophyllene",
+        "ethyl..E..cinnamate",
+        "linalool.isovalerate",
+        "alpha.terpinyl.isobutanoate",
+        "n.dodecanol",
+        "germacrene.D",
+        "X.E..beta.ionone",
+        "valencene",
+        "neryl.isobutanoate",
+        "E.methyl.isoeugenol",
+        "X.Z..dihydro.apofarnesal",
+        "butylated.hydroxytoluene",
+        "X.E..dihydro.apofarnesal",
+        "Z.nerolidol",
+        "X.E..ortho.methoxy.cinnamaldehyde",
+        "alpha.calacorene",
+        "E.nerolidol",
+        "dihydroisocaryophyllene.epoxide",
+        "caryophyllene.alcohol",
+        "neryl.isovalerate",
+        "spathulenol",
+        "caryophyllene.oxide",
+        "humulene.epoxide.II",
+        "alloaromadendrene.epoxide",
+        "X1.10.di.epi.cubenol",
+        "isopropyl.laurate",
+        "caryophylla.4.12..8.13..dien.5.alpha.ol",
+        "gamma.eudesmol",
+        "alpha.muurolol",
+        "X1.2.dihydro.8.hydroxy..2E..linalool",
+        "tau.cadinol",
+        "selin.11.en.4.alpha.ol",
+        "alpha.eudesmol",
+        "X14.hydroxy.9.epi..E..caryophyllene",
+        "tau.muurolol",
+        "n.tetradecanol",
+        "foeniculin",
+        "cadalene",
+        "X2.3.dihydro.farnesol",
+        "X2E.6Z.farnesal",
+        "caryophyllene.acetate",
+        "X14.hydroxy.alpha.humulene",
+        "X2Z.6E.farnesal",
+        "X2Z.6Z.farnesol",
+        "X2Z.6E.farnesol",
+        "ambroxide",
+        "benzyl.benzoate",
+        "X2E.6E.methyl.farnesoate",
+        "ethyl.tetradecanoate",
+        "X2.ethylhexylsalicylate",
+        "isopropyl.tetradecanoate",
+        "ethyl.pentadecanoate",
+        "methyl.hexadecanoate",
+        "Z.Z.geranyl.linalool",
+        "ethyl.hexadecanoate",
+        "manool.oxide",
+        "X13.epi.manool.oxide",
+        "isopropyl.hexadecanoate",
+        "manool",
+        "ethyl.octadecanoate",
+        "ethyl.pentanoate",
+        "X2.ethyl.3.methylpyrazine"
+      ],
+      "expected": [
+        "generated_id",
+        "style",
+        "method",
+        "acetaldehyde",
+        "CS2",
+        "DES",
+        "DMS",
+        "ethyl_2.methyl_butyrate",
+        "ethyl_acetate",
+        "ethyl_decanoate",
+        "ethyl_hexanoate",
+        "ethyl_isovalerate",
+        "ethyl_octanoate",
+        "ethyl_propionate",
+        "H2S",
+        "isoamyl_alcohol",
+        "isobutanol",
+        "isobutyl_acetate",
+        "isopentyl_acetate",
+        "MeSH",
+        "octyl_acetate",
+        "phenethyl_acetate",
+        "phenethyl_alcohol",
+        "X4VG",
+        "SO2.mg.L.",
+        "acetic_acid.g.L.",
+        "ammonia.mg.L.",
+        "color.EBC.",
+        "betaglucan.mg.L.",
+        "lactic_acid.mg.L.",
+        "glycerol",
+        "iron",
+        "pH",
+        "protein.g.L.",
+        "bitterness",
+        "ethanol..v.v.",
+        "CO2.PSI.",
+        "X1.propanol",
+        "X2.3.butanedione",
+        "X3.methylbutanal",
+        "propylene.glycol",
+        "propyl.acetate",
+        "n.pentanol",
+        "X2.methyl.1.butanol",
+        "isopentyl.formate",
+        "ethyl.isobutyrate",
+        "X3.methyl.2.butenal",
+        "X2.methyltetrahydrofuran.3.one",
+        "ethyl.butyrate",
+        "butyl.acetate",
+        "methylpyrazine",
+        "furfural",
+        "ethyl.lactate",
+        "X3Z.hexenol",
+        "n.hexanol",
+        "styrene",
+        "X2.furanmethanol",
+        "X3.methyl.2.hexanol",
+        "X3.furanmethanol",
+        "X2.acetylfuran",
+        "X2.6.dimethyl.pyrazine",
+        "amyl.acetate",
+        "ethyl.tiglate",
+        "benzaldehyde",
+        "X5.methylfurfural",
+        "n.heptanol",
+        "X1.octen.3.ol",
+        "X3.methylthio.propanol",
+        "isomaltol",
+        "X6.methyl.5.hepten.2.one",
+        "X2.pentyl.furan",
+        "ethyl.hex..3E..enoate",
+        "alpha.phellandrene",
+        "dehydroxy.cis.linalool.oxide",
+        "hexyl.acetate",
+        "isopentyl.butanoate",
+        "X2.ethyl.1.hexanol",
+        "beta.phellandrene",
+        "limonene",
+        "eucalyptol",
+        "benzyl.alcohol",
+        "ethyl.hex..2E..enoate",
+        "phenylacetaldehyde",
+        "X.E..beta.ocimene",
+        "prenyl.isobutyrate",
+        "ethyl.furoate",
+        "ortho.cresol",
+        "ethyl.5.methylhexanoate",
+        "X2.acetylpyrrole",
+        "isoamyl.lactate",
+        "n.octanol",
+        "cis.linalool.oxide",
+        "meta.cymenene",
+        "terpinolene",
+        "linalool",
+        "nonan.2.ol",
+        "n.nonanal",
+        "X2.methyl.benzofuran",
+        "heptyl.acetate",
+        "X4.methyl.1.pentanol",
+        "neo.allo.ocimene",
+        "x.methyl.1.octanol",
+        "trans.dihydro.beta.terpineol",
+        "cis.beta.terpineol",
+        "y.methyl.1.octanol",
+        "camphor",
+        "isobutyl.hexanoate",
+        "nerol.oxide",
+        "X.E..2.nonenal",
+        "cis.dihydro.beta.terpineol",
+        "X4.ethyl.phenol",
+        "isoborneol",
+        "ethyl.benzoate",
+        "n.nonanol",
+        "terpinen.4.ol",
+        "diethyl.succinate",
+        "vinyl.caprylate",
+        "X1.alpha.terpineol",
+        "ethyl..E..linalool",
+        "ethyl.nicotinate",
+        "citronellol",
+        "nerol",
+        "hydroxy.methyl.furfural",
+        "E.ocimenone",
+        "cumin.aldehyde",
+        "ethyl.phenylacetate",
+        "isopentyl.hexanoate",
+        "geraniol",
+        "beta.cyclohomocitral",
+        "E.cinnamaldehyde",
+        "n.decanol",
+        "neryl.formate",
+        "X4.ethyl.guaiacol",
+        "X2.undecanone",
+        "trans.dihydro.alpha.terpinyl.acetate",
+        "terpinen.4.ol.acetate",
+        "X2.undecanol",
+        "delta.terpinyl.acetate",
+        "X.E.E..2.4.decadienal",
+        "methyl.geranate",
+        "car.3.en.2.one",
+        "dimethoxy..E..citral",
+        "X2.butyloctanoate",
+        "X4.methoxysalicylaldehyde",
+        "ethyl.hydrocinnamate",
+        "eugenol",
+        "gamma.nonalactone",
+        "methyl.para.anisate",
+        "X.E..beta.damascenone",
+        "ethyl..9..decenoate",
+        "vanillin",
+        "geosmin",
+        "dodecanal",
+        "X4.8.alpha.epoxy.caryophyllane",
+        "E.caryophyllene",
+        "X.E..alpha.ionone",
+        "perillyl.acetate",
+        "beta.humulene",
+        "X2.phenyl.ethyl.butyrate",
+        "X.Z..beta.farnesene",
+        "pentyl.octanoate",
+        "X.E..beta.farnesene",
+        "X2.methylbutyl.octanoate",
+        "alpha.humulene",
+        "neryl.propanoate",
+        "X9.epi..E..caryophyllene",
+        "ethyl..E..cinnamate",
+        "linalool.isovalerate",
+        "alpha.terpinyl.isobutanoate",
+        "n.dodecanol",
+        "germacrene.D",
+        "X.E..beta.ionone",
+        "valencene",
+        "neryl.isobutanoate",
+        "E.methyl.isoeugenol",
+        "X.Z..dihydro.apofarnesal",
+        "butylated.hydroxytoluene",
+        "X.E..dihydro.apofarnesal",
+        "Z.nerolidol",
+        "X.E..ortho.methoxy.cinnamaldehyde",
+        "alpha.calacorene",
+        "E.nerolidol",
+        "dihydroisocaryophyllene.epoxide",
+        "caryophyllene.alcohol",
+        "neryl.isovalerate",
+        "spathulenol",
+        "caryophyllene.oxide",
+        "humulene.epoxide.II",
+        "alloaromadendrene.epoxide",
+        "X1.10.di.epi.cubenol",
+        "isopropyl.laurate",
+        "caryophylla.4.12..8.13..dien.5.alpha.ol",
+        "gamma.eudesmol",
+        "alpha.muurolol",
+        "X1.2.dihydro.8.hydroxy..2E..linalool",
+        "tau.cadinol",
+        "selin.11.en.4.alpha.ol",
+        "alpha.eudesmol",
+        "X14.hydroxy.9.epi..E..caryophyllene",
+        "tau.muurolol",
+        "n.tetradecanol",
+        "foeniculin",
+        "cadalene",
+        "X2.3.dihydro.farnesol",
+        "X2E.6Z.farnesal",
+        "caryophyllene.acetate",
+        "X14.hydroxy.alpha.humulene",
+        "X2Z.6E.farnesal",
+        "X2Z.6Z.farnesol",
+        "X2Z.6E.farnesol",
+        "ambroxide",
+        "benzyl.benzoate",
+        "X2E.6E.methyl.farnesoate",
+        "ethyl.tetradecanoate",
+        "X2.ethylhexylsalicylate",
+        "isopropyl.tetradecanoate",
+        "ethyl.pentadecanoate",
+        "methyl.hexadecanoate",
+        "Z.Z.geranyl.linalool",
+        "ethyl.hexadecanoate",
+        "manool.oxide",
+        "X13.epi.manool.oxide",
+        "isopropyl.hexadecanoate",
+        "manool",
+        "ethyl.octadecanoate",
+        "ethyl.pentanoate",
+        "X2.ethyl.3.methylpyrazine"
+      ],
+      "passed": true
+    },
+    {
+      "name": "evidence_required_columns",
+      "value": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "evidence_case_ids_match",
+      "value": [
+        "S028_TO_Kriek",
+        "S028_TO_Lambic",
+        "S028_TO_Tripel",
+        "S081_TO_Kriek",
+        "S081_TO_Lambic",
+        "S081_TO_Tripel",
+        "S090_TO_Kriek",
+        "S090_TO_Lambic",
+        "S090_TO_Tripel",
+        "S096_TO_Kriek",
+        "S096_TO_Lambic",
+        "S096_TO_Tripel",
+        "S119_TO_Kriek",
+        "S119_TO_Lambic",
+        "S119_TO_Tripel",
+        "S124_TO_Kriek",
+        "S124_TO_Lambic",
+        "S124_TO_Tripel",
+        "S139_TO_Kriek",
+        "S139_TO_Lambic",
+        "S139_TO_Tripel",
+        "S185_TO_Kriek",
+        "S185_TO_Lambic",
+        "S185_TO_Tripel",
+        "S209_TO_Kriek",
+        "S209_TO_Lambic",
+        "S209_TO_Tripel",
+        "S218_TO_Kriek",
+        "S218_TO_Lambic",
+        "S218_TO_Tripel",
+        "S230_TO_Kriek",
+        "S230_TO_Lambic",
+        "S230_TO_Tripel"
+      ],
+      "expected": [
+        "S028_TO_Kriek",
+        "S028_TO_Lambic",
+        "S028_TO_Tripel",
+        "S081_TO_Kriek",
+        "S081_TO_Lambic",
+        "S081_TO_Tripel",
+        "S090_TO_Kriek",
+        "S090_TO_Lambic",
+        "S090_TO_Tripel",
+        "S096_TO_Kriek",
+        "S096_TO_Lambic",
+        "S096_TO_Tripel",
+        "S119_TO_Kriek",
+        "S119_TO_Lambic",
+        "S119_TO_Tripel",
+        "S124_TO_Kriek",
+        "S124_TO_Lambic",
+        "S124_TO_Tripel",
+        "S139_TO_Kriek",
+        "S139_TO_Lambic",
+        "S139_TO_Tripel",
+        "S185_TO_Kriek",
+        "S185_TO_Lambic",
+        "S185_TO_Tripel",
+        "S209_TO_Kriek",
+        "S209_TO_Lambic",
+        "S209_TO_Tripel",
+        "S218_TO_Kriek",
+        "S218_TO_Lambic",
+        "S218_TO_Tripel",
+        "S230_TO_Kriek",
+        "S230_TO_Lambic",
+        "S230_TO_Tripel"
+      ],
+      "passed": true
+    },
+    {
+      "name": "evidence_claim_levels_valid",
+      "value": [
+        "conditional",
+        "model_supported"
+      ],
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "evidence_claim_level_total",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "style_diagnostic_counts",
+      "value": {
+        "Tripel": 0,
+        "Kriek": 11,
+        "Lambic": 2
+      },
+      "expected": {
+        "Tripel": 0,
+        "Kriek": 11,
+        "Lambic": 2
+      },
+      "passed": true
+    },
+    {
+      "name": "defect_status_values_valid",
+      "value": {
+        "DMS": {
+          "unchanged": 24,
+          "improved": 9
+        },
+        "Diacetyl": {
+          "unchanged": 18,
+          "improved": 9,
+          "unknown": 6
+        },
+        "4VG": {
+          "unchanged": 33
+        },
+        "t2n": {
+          "unknown": 33
+        },
+        "Stale_hops": {
+          "unknown": 33
+        }
+      },
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "defect_worse_cases",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "stale_hops_all_unknown",
+      "value": {
+        "unknown": 33
+      },
+      "expected": {
+        "unknown": 33
+      },
+      "passed": true
+    },
+    {
+      "name": "t2n_all_unknown",
+      "value": {
+        "unknown": 33
+      },
+      "expected": {
+        "unknown": 33
+      },
+      "passed": true
+    },
+    {
+      "name": "undecidable_cases",
+      "value": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "sensory_required_columns",
+      "value": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "sensory_rows",
+      "value": 3432,
+      "expected": 3432,
+      "passed": true
+    },
+    {
+      "name": "sensory_cases",
+      "value": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "sensory_roles",
+      "value": [
+        "after",
+        "before"
+      ],
+      "expected": [
+        "after",
+        "before"
+      ],
+      "passed": true
+    },
+    {
+      "name": "sensory_targets",
+      "value": 52,
+      "expected": 52,
+      "passed": true
+    },
+    {
+      "name": "sensory_grade_raw_missing",
+      "value": 132,
+      "expected": 132,
+      "passed": true,
+      "note": "the two card targets without a raw-panel label"
+    },
+    {
+      "name": "sensory_grade_raw_missing_only_unlabelled",
+      "value": [
+        "A_acetaldehyde",
+        "F_acetaldehyde"
+      ],
+      "expected": [
+        "A_acetaldehyde",
+        "F_acetaldehyde"
+      ],
+      "passed": true
+    },
+    {
+      "name": "sensory_prob_ge5_missing",
+      "value": 132,
+      "expected": 132,
+      "passed": true
+    },
+    {
+      "name": "sensory_each_case_52",
+      "value": 52,
+      "expected": 52,
+      "passed": true
     }
   ],
   "counts": {
@@ -248,8 +1525,48 @@
       "Tripel": 220,
       "Kriek": 220,
       "Lambic": 220
+    },
+    "spectra_long": 66,
+    "spectra_wide": 33,
+    "after_input": [
+      33,
+      227
+    ],
+    "evidence": 33,
+    "sensory": 3432,
+    "sensory_targets": 52,
+    "official_features": 224
+  },
+  "claim_level_counts": {
+    "conditional": 24,
+    "model_supported": 9
+  },
+  "style_diagnostic_counts": {
+    "Tripel": 0,
+    "Kriek": 11,
+    "Lambic": 2
+  },
+  "defect_status_counts": {
+    "DMS": {
+      "unchanged": 24,
+      "improved": 9
+    },
+    "Diacetyl": {
+      "unchanged": 18,
+      "improved": 9,
+      "unknown": 6
+    },
+    "4VG": {
+      "unchanged": 33
+    },
+    "t2n": {
+      "unknown": 33
+    },
+    "Stale_hops": {
+      "unknown": 33
     }
   },
+  "sensory_missing_grade_raw": 132,
   "criteria_pass": {
     "A_median": 33,
     "B_median": 33,
@@ -332,7 +1649,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 81,
@@ -377,7 +1709,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 218,
@@ -422,7 +1769,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 96,
@@ -467,7 +1829,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 230,
@@ -512,7 +1889,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 185,
@@ -557,7 +1949,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 139,
@@ -602,7 +2009,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 209,
@@ -647,7 +2069,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 119,
@@ -692,7 +2129,22 @@
           "threshold_median": null
         }
       },
-      "conditional": true
+      "conditional": true,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持；源双乙酰缺失，采用 min(目标中位, 0.9T) 条件上限",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unknown",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 90,
@@ -737,7 +2189,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 28,
@@ -782,7 +2249,22 @@
           "threshold_median": null
         }
       },
-      "conditional": true
+      "conditional": true,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brett/cofermented 而非目标风格；目标风格最近质心仅 0/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持；源双乙酰缺失，采用 min(目标中位, 0.9T) 条件上限",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unknown",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 0,
+        "total": 11
+      }
     },
     {
       "source_beer": 124,
@@ -827,7 +2309,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 81,
@@ -872,7 +2369,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 218,
@@ -917,7 +2429,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 96,
@@ -962,7 +2489,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 230,
@@ -1007,7 +2549,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 185,
@@ -1052,7 +2609,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 139,
@@ -1097,7 +2669,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 209,
@@ -1142,7 +2729,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 119,
@@ -1187,7 +2789,22 @@
           "threshold_median": null
         }
       },
-      "conditional": true
+      "conditional": true,
+      "claim_level": "conditional",
+      "claim_note": "源双乙酰缺失，采用 min(目标中位, 0.9T) 条件上限",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unknown",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 90,
@@ -1232,7 +2849,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "model_supported",
+      "claim_note": "A/B/C 通过；最近质心为目标风格且该风格诊断 11/11；已评估缺陷无恶化；注意全库风格可辨识度弱（LOO 0.132 ≈ 多数类 0.124），该支持仅指目标风格质心诊断",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 28,
@@ -1277,7 +2909,22 @@
           "threshold_median": null
         }
       },
-      "conditional": true
+      "conditional": true,
+      "claim_level": "conditional",
+      "claim_note": "源双乙酰缺失，采用 min(目标中位, 0.9T) 条件上限",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unknown",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": true,
+        "cases": 11,
+        "total": 11
+      }
     },
     {
       "source_beer": 124,
@@ -1322,7 +2969,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 81,
@@ -1367,7 +3029,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 218,
@@ -1412,7 +3089,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 96,
@@ -1457,7 +3149,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 230,
@@ -1502,7 +3209,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 185,
@@ -1547,7 +3269,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 139,
@@ -1592,7 +3329,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 209,
@@ -1637,7 +3389,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unchanged",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 119,
@@ -1682,7 +3449,22 @@
           "threshold_median": null
         }
       },
-      "conditional": true
+      "conditional": true,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持；源双乙酰缺失，采用 min(目标中位, 0.9T) 条件上限",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "unknown",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 90,
@@ -1727,7 +3509,22 @@
           "threshold_median": null
         }
       },
-      "conditional": false
+      "conditional": false,
+      "claim_level": "conditional",
+      "claim_note": "迁移后最近质心为 Brown 而非目标风格；目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持",
+      "defect_status": {
+        "DMS": "unchanged",
+        "Diacetyl": "improved",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "other",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     },
     {
       "source_beer": 28,
@@ -1772,9 +3569,24 @@
           "threshold_median": null
         }
       },
-      "conditional": true
+      "conditional": true,
+      "claim_level": "conditional",
+      "claim_note": "目标风格最近质心仅 2/11，全库最近质心 LOO 0.132 ≈ 多数类 0.124，风格诊断未支持；源双乙酰缺失，采用 min(目标中位, 0.9T) 条件上限",
+      "defect_status": {
+        "DMS": "improved",
+        "Diacetyl": "unknown",
+        "4VG": "unchanged",
+        "t2n": "unknown",
+        "Stale_hops": "unknown"
+      },
+      "style_diagnostic": {
+        "nearest_centroid": "target",
+        "supported": false,
+        "cases": 2,
+        "total": 11
+      }
     }
   ],
   "honesty": "A migrated spectrum is a statistical destination inside the supplied coordinate space, not a brewing recipe and not a measured beer; the projection certifies only the listed defect coordinates at the 0.9 x threshold headroom and does not certify physical brewability or sensory acceptance.",
-  "elapsed_seconds": 1.4
+  "elapsed_seconds": 2.7
 }

@@ -55,7 +55,7 @@ TABLES = {
     'q1_decision': (Q1D, ['q1__submission_long_12500.csv',
         'q1__submission_wide_250x50.csv', 'q1__evaluation_long_12500.csv',
         'q1__metrics_summary.csv', 'q1__high_grade_coverage_by_target.csv',
-        'q1__calibrated_panel_mean_12500.csv']),
+        'q1__calibrated_panel_mean_12500.csv', 'q1__metric_calibers.csv']),
     'q2_top3': (Q2, ['q2__top3_all50_150.csv', 'q2__top3_wide_50.csv',
         'q2__stability_bootstrap.csv', 'q2__method_jaccard.csv',
         'q2__network_edges_0_5.csv', 'q2__network_communities.csv',
@@ -155,12 +155,21 @@ def conclusions():
     adopted = _adopted_generated()
     gate = _gate_state(adopted)
     old = metrics.loc['q1_et_integer_median']
-    top = metrics.loc['q1_topk_nonforced']
+    top = metrics.loc['q1_topk_nonforced_parent_capped']
+    precap = metrics.loc['q1_topk_nonforced']
+    calibers = pd.read_csv(Q1D/'q1__metric_calibers.csv')
+    beer_cal = calibers[(calibers.scope == 'beer_level')
+                        & (calibers.prediction_set == 'q1_topk_nonforced_parent_capped')]
+    exact5 = beer_cal[beer_cal.caliber == 'exact5'].iloc[0]
+    exact6 = beer_cal[beer_cal.caliber == 'exact6'].iloc[0]
+    ge5 = beer_cal[beer_cal.caliber == 'ge5'].iloc[0]
     indiv = q1_summary.get('individual_weighted', {})
     oracle = q1_summary.get('panel_median_oracle', {})
     calib = list(q1_summary.get('calibration', {}).values())
     linear = next((c for c in calib if 'fold-wise linear' in c.get('method', '')), {})
     style = next((c for c in calib if 'style' in c.get('method', '')), {})
+    leak = q1_summary.get('leakage_fix', {})
+    parents = q1_summary.get('parent_child', {})
     boot = q2_summary.get('bootstrap_freq', {})
     jac = q2_summary.get('bootstrap_jaccard', {})
     method = q2_summary.get('method_jaccard', {}).get('graphridge_vs_ridge', {})
@@ -190,20 +199,30 @@ def conclusions():
         ['Q1', 'ET 整数中位：面板中位 MAE', old['panel_median_mae'], '0-6 分',
          '题面口径（啤酒 x 维度）；高分为结构性截断'],
         ['Q1', '决策层 top-k：面板中位 MAE', top['panel_median_mae'], '0-6 分',
-         '同一模型换决策规则；代价 +%.4f' % (top['panel_median_mae']-old['panel_median_mae'])],
+         '同一模型换决策规则；代价 +%.4f；cap 前 %.4f' % (
+             top['panel_median_mae']-old['panel_median_mae'], precap['panel_median_mae'])],
         ['Q1', '决策层 top-k：完全命中', top['exact_match'], '比例', '整数中位 %.5f' % old['exact_match']],
         ['Q1', '决策层 top-k：±1', top['within_one'], '比例', '整数中位 %.5f' % old['within_one']],
-        ['Q1', '预测 5 分格数/精确/召回', int(top['n_pred_ge5']),
-         '格 / %.4f / %.4f' % (top['precision_ge5'], top['recall_ge5']),
-         '基准率 %.4f；lift %.1fx' % (198/12500, (top['precision_ge5']/(198/12500)))],
-        ['Q1', '预测 6 分格数/精确/召回', int(top['n_pred_6']),
-         '格 / %.4f / %.4f' % (top['precision_6'], top['recall_6']),
-         '样本仅 19 格，结论不稳定，需如实写'],
+        ['Q1', '预测≥5 分：格数/精确/召回', int(ge5.n_predicted),
+         '格 / %.4f / %.4f' % (ge5.precision, ge5.recall),
+         '基准率 %.4f（198/12500）；lift %.1fx；cap 前 204 格版本保留为历史谈判行' % (
+             198/12500, ge5.precision/(198/12500))],
+        ['Q1', '预测恰好 5 分：格数/精确/召回', int(exact5.n_predicted),
+         '格 / %.4f / %.4f' % (exact5.precision, exact5.recall),
+         '不得与 ≥5 口径混写；证据见 q1__metric_calibers.csv'],
+        ['Q1', '预测恰好 6 分：格数/精确/召回', int(exact6.n_predicted),
+         '格 / %.4f / %.4f' % (exact6.precision, exact6.recall),
+         '观测仅 19 格，结论不稳定，需如实写'],
+        ['Q1', '父子约束（24 对）', '违规 %d→%d' % (
+            parents.get('precap_violations', -1), parents.get('postcap_violations', -1)), '处',
+         '仅下调 %d 格；子项不超过父项' % parents.get('changed_cells', -1)],
         ['Q1', '个体级加权 MAE', indiv.get('individual_weighted_mae'), '0-6 分',
-         '个人评分噪声；信息下界 %.6f' % oracle.get('individual_weighted_mae', float('nan'))],
-        ['Q1', '面板均值折外线性标定 MAE', linear.get('panel_mean_mae'), '0-6 分',
-         '未标定 ET 面板均值 %.4f；风格先验 %.4f' % (
-             old['panel_mean_mae'], style.get('panel_mean_mae', float('nan')))],
+         '决策层版本 %.6f（更差）；信息下界 %.6f' % (
+             indiv.get('q1_topk_nonforced_individual_weighted', {}).get('individual_weighted_mae', float('nan')),
+             oracle.get('individual_weighted_mae', float('nan')))],
+        ['Q1', '面板均值标定（嵌套，防泄漏）', linear.get('panel_mean_mae'), '0-6 分',
+         '泄漏修复后；风格先验 %.4f；扰动测试 max|Δ| %.1e' % (
+             style.get('panel_mean_mae', float('nan')), leak.get('perturbation_worst', float('nan')))],
         ['Q2', 'Top-3 覆盖', '%d 维 / %d 条' % (q2_summary['n_targets'], q2_summary['n_top3_rows']),
          '维 / 条', '无空位；候选化合物 %d' % q2_summary['n_candidate_compounds']],
         ['Q2', '共表达图', '%d 节点 / %d 边 / %d 社区' % (
@@ -225,6 +244,30 @@ def conclusions():
         ['Q3', '迁移 case 数', '33', '11 款 x 3 风格', '题面口径 A/B/C 各 33/33（详见 q3__migration 表）'],
         ['Q3', '风格可辨识度', 'LOO 0.132', '准确率', '基线 0.124；迁移是条件投影，不是真实酿造证明'],
     ]
+    if (Q3M/'summary.json').exists():
+        mig = read_json(Q3M/'summary.json')
+        claims = mig.get('claim_level_counts', {})
+        diag = mig.get('style_diagnostic_counts', {})
+        defects = mig.get('defect_status_counts', {})
+        sensory = mig.get('sensory_pipeline', {})
+        rows.extend([
+            ['Q3', '迁移完整谱', '%d 条前后成对（%s 维）' % (
+                mig.get('counts', {}).get('spectra_wide', 33), 224), '—',
+             's2c_migration_spectra_224_long/wide + 迁移后 %s 输入表（可复算）' % (
+                 mig.get('counts', {}).get('after_input', [33, 227]))],
+            ['Q3', '迁移证据分级', 'model_supported %d / conditional %d' % (
+                claims.get('model_supported', 0), claims.get('conditional', 0)), '—',
+             '风格诊断：Kriek %d/11、Tripel %d/11、Lambic %d/11；未支持者如实标注' % (
+                 diag.get('Kriek', 0), diag.get('Tripel', 0), diag.get('Lambic', 0))],
+            ['Q3', '迁移感官画像', '%d 行 = %d 谱 x %s 项' % (
+                sensory.get('rows', 0), mig.get('counts', {}).get('spectra_long', 66),
+                sensory.get('targets', 52)), '—',
+             '正式 Q1 入口，模型推断非实测；t2n/Stale 无阈值/无坐标，不作安全声明'],
+            ['Q3', '迁移缺陷状态', 'DMS improved %d/unchanged %d' % (
+                defects.get('DMS', {}).get('improved', 0), defects.get('DMS', {}).get('unchanged', 0)),
+             '—', 'worse 合计 %d；4VG 全 unchanged（119 号 0.1438→0.0405 mg/L，均低于阈值）' % sum(
+                 v.get('worse', 0) for v in defects.values() if isinstance(v, dict))],
+        ])
     if (Q3G2/'summary.json').exists():
         rows.extend([
             ['Q3', '生成器 v2（donor 残差）rank_rmse', float(v2_rank), 'RMSE',
@@ -294,8 +337,9 @@ def unresolved():
         ['Q1', '个人 5/6 分精确识别', '部分解决',
          '决策层可输出 5/6，但 6 分级仅 19 格、阈值不稳；5 分 F1 约 0.26', '如实写 trade-off，不宣称解决'],
         ['Q1', '面板均值直接回归', '未采纳（未过预注册门槛）',
-         'ET 直接回归 MAE 0.4519 优于标定基线 0.4622（−0.0104），但 round 后 ±1 91.136% 比门槛 91.19% 低 0.054pt',
-         '保留折外标定列，不替换正式口径'],
+         'ET 直接回归 MAE 0.4519 优于嵌套标定基线 0.4661（−0.0142，95%% [0.0082,0.0197]），'
+         '但 round 后 ±1 0.91136 比预注册绝对下限 0.9119 低 0.054pt（gate4 未过）',
+         '保留折外标定列，不替换正式口径；门槛不改（post-hoc 放宽会变成自证）'],
         ['Q1', '两项乙醛缺标签', '未解决', '52 项评分卡仅 50 项有原始标签', '分数与概率均留空，不造标签'],
         ['Q1', '原始 0-6 人工分不可恢复', '未解决', '3.xlsx 为空白模板；标签来自外部 Zenodo raw',
          '交付与论文披露数据来源'],
@@ -309,6 +353,10 @@ def unresolved():
         ['Q3', 'Tripel 自身 DMS', '结构性冲突', 'Tripel 自身 DMS 中位 38.69 = 2.24x 阈值',
          '迁移目标选缺陷安全点而非质心'],
         ['Q3', 'Lambic 风格判定', '弱', '迁移后仅 2/11 判 Lambic', '如实报告，不隐藏'],
+        ['Q3', 'Tripel 风格判定', '未支持', '迁移后 0/11 判 Tripel；最近质心判器 LOO 0.132 vs 基线 0.124',
+         'claim_level=conditional，不宣称达到 Tripel 风格'],
+        ['Q3', '迁移后感官画像', '已补齐', '33 条前后 66 谱 x 52 项（正式 Q1 入口）',
+         '模型推断非实测；t2n/Stale 保持 unknown'],
         ['Q3', '酿造工艺可行性', '未验证', '全部为数学谱，无真实酿造', '不写"可酿造"'],
     ], columns=['question', 'issue', 'status', 'evidence', 'current_handling'])
 
@@ -318,7 +366,8 @@ def current_constraints():
         ['data', '五缺陷阈值', 'DMS 17.25/19 ug/L；双乙酰 0.29925/0.09 mg/L；4VG 0.206333/0.20 mg/L；t2n 无阈值；Stale hops 无化学坐标'],
         ['data', '单位', '1.csv 为附件坐标；物理浓度仅对已给单位字段解释，其余按坐标处理'],
         ['Q1', '主表', 'ET 整数条件中位（正式）+ 决策层 top-k（同一模型换规则）'],
-        ['Q1', '标定', '折外线性/风格先验标定仅用于面板均值参考列，不改正式等级；面板均值直接回归（ET 0.4519）因 ±1 门槛差 0.054pt 按预注册不采纳'],
+        ['Q1', '标定', '嵌套折外线性/风格先验标定（泄漏修复后 0.5055/0.4661）仅用于面板均值参考列，不改正式等级；'
+         '面板均值直接回归（ET 0.4519）因 ±1 0.91136 < 预注册下限 0.9119 按协议不采纳'],
         ['Q2', '口径', '50 维全覆盖；2.csv 实为 Spearman 共表达图；bootstrap 200 次按啤酒重采样'],
         ['Q3', '生成', '官方谱由预注册替换门槛（13 条）判定后替换为 v3 混合生成谱；插值谱保留为历史基线，v1/v2 仅作诊断'],
         ['Q3', '迁移', '题面口径 A/B/C = 超阈集合不扩张/逐项严重度不增/严重度总和；不要求每化学值锁死'],
@@ -334,8 +383,8 @@ def draw_figures(output):
 
     metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index('method')
     fig, axes = plt.subplots(1, 3, figsize=(13, 3.6), layout='constrained')
-    names = ['q1_et_integer_median', 'q1_topk_nonforced']
-    labels = ['integer median', 'decision top-k']
+    names = ['q1_et_integer_median', 'q1_topk_nonforced_parent_capped']
+    labels = ['integer median', 'decision top-k (capped)']
     for ax, col, title in zip(axes, ['panel_median_mae', 'exact_match', 'macro_spearman'],
                               ['Panel-median MAE (lower better)', 'Exact match', 'Macro Spearman']):
         ax.bar(np.arange(2), [metrics.loc[n, col] for n in names], color=['#287a9b', '#bf8548'])
@@ -357,7 +406,8 @@ def draw_figures(output):
     plt.close(fig)
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), layout='constrained')
-    val = pd.read_csv(Q3G/'generation_validation.csv')
+    gate_folder = _adopted_generated()
+    val = pd.read_csv(gate_folder/'generation_validation.csv')
     means = val.groupby('method').mean(numeric_only=True)
     for ax, col, title in zip(axes, ['rank_correlation_rmse', 'heldout_coverage'],
                               ['Rank-correlation RMSE (lower better)', 'Held-out coverage (higher better)']):
@@ -423,8 +473,11 @@ def build(output, rendered=None):
         for name in names:
             include(folder/name, 'tables/'+group+'__'+name, group)
     if rendered:
-        for name in ['generated_official_Q1_scores52.csv.gz', 'transfer_official_Q1_scores52.csv',
-                     'transfer_auxiliary_Q3_risks.csv', 'transfer_styles.csv', 'render.json']:
+        rendered_names = ['generated_official_Q1_scores52.csv.gz', 'transfer_official_Q1_scores52.csv',
+                          'transfer_auxiliary_Q3_risks.csv', 'transfer_styles.csv', 'render.json']
+        if (rendered/'official_Q1_fullfit_scores52.csv').exists():
+            rendered_names.append('official_Q1_fullfit_scores52.csv')
+        for name in rendered_names:
             include(rendered/name, 'tables/current__'+name, 'refreshed_deployment_inference')
     include(Q1D/'verification.json', 'evidence/q1_decision/verification.json', 'frozen_scientific_evidence')
     include(Q1D/'summary.json', 'evidence/q1_decision/summary.json', 'frozen_scientific_evidence')
@@ -511,6 +564,56 @@ Q3 增加 copula 生成器的预注册门槛判定：v3 混合谱 14/14 通过�
     print(f'Current package: {output}\nForwardable ZIP: {archive}', flush=True)
 
 
+def _replay_checks(models, source, package):
+    """Actually re-run the deployed model on the attachment and compare to the package.
+
+    The 20261027 checks accepted ``--models/--source`` but only wrote them into the
+    report (review item 7).  Here the paths are loaded, the Q1 portraits are
+    recomputed from ``q1.joblib`` and ``1.csv`` / the adopted generated spectra,
+    and compared bit-for-bit with the stored tables inside the package.
+    """
+    models, source = Path(models), Path(source)
+    if not (models/'q1.joblib').exists():
+        raise FileNotFoundError(str(models/'q1.joblib'))
+    if not (source/'1.csv').exists():
+        raise FileNotFoundError(str(source/'1.csv'))
+    if package is None:
+        raise ValueError('replay requires the packaged reference tables (--package)')
+    package = Path(package)
+    reference = package/'tables'
+    panel_ref = reference/'current__official_Q1_fullfit_scores52.csv'
+    generated_ref = reference/'current__generated_official_Q1_scores52.csv.gz'
+    if not panel_ref.exists():
+        raise FileNotFoundError(str(panel_ref))
+    official = joblib.load(models/'q1.joblib')
+    panel = pd.read_csv(source/'1.csv', dtype=str)
+    panel_scores, _, _, _ = portrait(panel, official)
+    scored = ['estimated_grade_0_6', 'raw_median_estimate', 'probability_rating_ge5',
+              'probability_rating_6']
+    merged = pd.read_csv(panel_ref, dtype={'beer': str}).merge(
+        panel_scores, on=['beer', 'target'], suffixes=('_ref', '_replay'), validate='one_to_one')
+    assert len(merged) == len(panel_scores), (len(merged), len(panel_scores))
+    panel_diff = max(float((merged[c+'_ref']-merged[c+'_replay']).abs().max())
+                     for c in scored)
+    assert panel_diff <= 1e-12, panel_diff
+
+    generated = pd.read_csv(_adopted_generated()/'generated_profiles.csv').rename(
+        columns={'generated_id': 'beer'})
+    generated_scores, _, _, _ = portrait(generated, official)
+    merged_g = pd.read_csv(generated_ref, dtype={'beer': str}).merge(
+        generated_scores, on=['beer', 'target'], suffixes=('_ref', '_replay'), validate='one_to_one')
+    assert len(merged_g) == len(generated_scores), (len(merged_g), len(generated_scores))
+    generated_diff = max(float((merged_g[c+'_ref']-merged_g[c+'_replay']).abs().max())
+                         for c in scored)
+    assert generated_diff <= 1e-12, generated_diff
+    return dict(q1_replay_panel_rows=int(len(merged)),
+                q1_replay_panel_max_abs_diff=panel_diff,
+                q1_replay_generated_rows=int(len(merged_g)),
+                q1_replay_generated_max_abs_diff=generated_diff,
+                q1_replay_models_sha256=sha256(models/'q1.joblib'),
+                q1_replay_source_sha256=sha256(source/'1.csv'))
+
+
 def verify(output, models=None, source=None, package=None):
     output.mkdir(parents=True, exist_ok=True)
     checks = dict(status='passed', version=VERSION)
@@ -533,12 +636,34 @@ def verify(output, models=None, source=None, package=None):
     checks.update(q1_rows=12500, q1_targets=50, q1_wide_shape='250x50',
                   q1_grade_distribution=dist)
     metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index('method')
-    np.testing.assert_allclose(metrics.loc['q1_topk_nonforced', 'panel_median_mae'], 0.408, atol=1e-9)
+    official = metrics.loc['q1_topk_nonforced_parent_capped']
+    precap = metrics.loc['q1_topk_nonforced']
+    np.testing.assert_allclose(official['panel_median_mae'], 0.40648, atol=1e-9)
+    np.testing.assert_allclose(precap['panel_median_mae'], 0.408, atol=1e-9)
     np.testing.assert_allclose(metrics.loc['q1_et_integer_median', 'panel_median_mae'], 0.3928, atol=1e-9)
     coverage = pd.read_csv(Q1D/'q1__high_grade_coverage_by_target.csv')
-    assert coverage.n_predicted_ge5.sum() == int(metrics.loc['q1_topk_nonforced', 'n_pred_ge5'])
-    assert coverage.n_predicted_6.sum() == int(metrics.loc['q1_topk_nonforced', 'n_pred_6'])
-    checks['q1_high_grade_coverage_consistent'] = True
+    assert coverage.n_predicted_ge5_parent_capped.sum() == int(official['n_pred_ge5']) == 194
+    assert coverage.n_predicted_6_parent_capped.sum() == int(official['n_pred_6']) == 14
+    assert coverage.n_predicted_ge5.sum() == 204 and coverage.n_predicted_6.sum() == 16
+    assert precap['n_pred_ge5'] == 204 and precap['n_pred_6'] == 16
+    calibers = pd.read_csv(Q1D/'q1__metric_calibers.csv')
+    beer = calibers[(calibers.scope == 'beer_level')
+                    & (calibers.prediction_set == 'q1_topk_nonforced_parent_capped')]
+    exact5 = beer[beer.caliber == 'exact5'].iloc[0]
+    exact6 = beer[beer.caliber == 'exact6'].iloc[0]
+    ge5 = beer[beer.caliber == 'ge5'].iloc[0]
+    assert int(exact5.n_predicted) == 180 and int(exact5.true_positive) == 38
+    assert int(exact6.n_predicted) == 14 and int(exact6.true_positive) == 1
+    assert int(ge5.n_predicted) == 194 and int(ge5.true_positive) == 51
+    np.testing.assert_allclose(ge5.precision, official['precision_ge5'], atol=1e-9)
+    np.testing.assert_allclose(ge5.recall, official['recall_ge5'], atol=1e-9)
+    leakage = summary['leakage_fix']
+    assert leakage['perturbation_worst'] == 0.0
+    assert summary['parent_child']['postcap_violations'] == 0
+    checks.update(q1_high_grade_coverage_consistent=True,
+                  q1_metric_calibers='exact5/exact6/ge5 (180/14/194)',
+                  q1_calibration_leakage_perturbation_worst=leakage['perturbation_worst'],
+                  q1_parent_child_postcap_violations=0)
 
     top3 = pd.read_csv(Q2/'q2__top3_all50_150.csv')
     assert len(top3) == 150 and top3.target.nunique() == 50
@@ -606,6 +731,29 @@ def verify(output, models=None, source=None, package=None):
         checks['q3_migration_candidate_pass'] = ms['candidate_pass']
         checks['q3_migration_mean_distance_reduction_pct'] = ms['mean_distance_reduction_pct']
         checks['q3_migration_status'] = ms.get('status')
+        mig = read_json(Q3M/'summary.json')
+        spectra = pd.read_csv(Q3M/'s2c_migration_spectra_224_long.csv')
+        assert len(spectra) == 66 and spectra.role.value_counts().to_dict() == {
+            'before': 33, 'after': 33}
+        wide_spectra = pd.read_csv(Q3M/'s2c_migration_spectra_224_wide.csv')
+        assert len(wide_spectra) == 33
+        after_input = pd.read_csv(Q3M/'s2c_migration_after_input_33.csv')
+        assert after_input.shape == (33, 227)
+        sensory = pd.read_csv(Q3M/'s2c_sensory_before_after_52.csv')
+        assert len(sensory) == 66*52 and sensory.target_52.nunique() == 52
+        assert sensory.case_id.nunique() == 33
+        assert sensory.groupby(['case_id', 'role']).ngroups == 66
+        evidence = pd.read_csv(Q3M/'s2c_evidence_by_case.csv')
+        assert len(evidence) == 33
+        assert set(evidence.claim_level) <= {
+            'model_supported', 'conditional', 'undecidable'}
+        assert evidence.claim_level.value_counts().to_dict() == {
+            k: v for k, v in mig['claim_level_counts'].items()}
+        checks.update(q3_migration_spectra=66,
+                      q3_migration_sensory_rows=int(len(sensory)),
+                      q3_migration_claim_level_counts=mig['claim_level_counts'],
+                      q3_migration_style_diagnostic_counts=mig['style_diagnostic_counts'],
+                      q3_migration_defect_status_counts=mig['defect_status_counts'])
     if (Q3G3/'generated_profiles.csv').exists():
         v3_profiles = pd.read_csv(Q3G3/'generated_profiles.csv')
         assert len(v3_profiles) == 300
@@ -634,6 +782,11 @@ def verify(output, models=None, source=None, package=None):
     if (Q2S/'verification.json').exists():
         assert _checks_pass(read_json(Q2S/'verification.json'))
         checks['q2_sensitivity_verdict'] = read_json(Q2S/'summary.json').get('verdict')
+
+    if (models is None) != (source is None):
+        raise ValueError('--models and --source must be given together for the replay check')
+    if models is not None:
+        checks.update(_replay_checks(models, source, package))
 
     if package:
         index = pd.read_csv(package/'file_index.csv')

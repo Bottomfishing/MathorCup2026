@@ -21,11 +21,17 @@ class DeliveryCurrentTests(unittest.TestCase):
         table = d.conclusions().set_index('claim')
         metrics = pd.read_csv(d.Q1D/'q1__metrics_summary.csv').set_index('method')
         self.assertAlmostEqual(float(table.loc['决策层 top-k：面板中位 MAE', 'value']),
-                               float(metrics.loc['q1_topk_nonforced', 'panel_median_mae']), places=9)
+                               float(metrics.loc['q1_topk_nonforced_parent_capped',
+                                                'panel_median_mae']), places=9)
         self.assertAlmostEqual(float(table.loc['ET 整数中位：面板中位 MAE', 'value']),
                                float(metrics.loc['q1_et_integer_median', 'panel_median_mae']), places=9)
-        self.assertEqual(int(table.loc['预测 5 分格数/精确/召回', 'value']), 204)
-        self.assertEqual(int(table.loc['预测 6 分格数/精确/召回', 'value']), 16)
+        self.assertEqual(int(table.loc['预测≥5 分：格数/精确/召回', 'value']), 194)
+        self.assertEqual(int(table.loc['预测恰好 5 分：格数/精确/召回', 'value']), 180)
+        self.assertEqual(int(table.loc['预测恰好 6 分：格数/精确/召回', 'value']), 14)
+        calibers = pd.read_csv(d.Q1D/'q1__metric_calibers.csv')
+        beer = calibers[(calibers.scope == 'beer_level')
+                        & (calibers.prediction_set == 'q1_topk_nonforced_parent_capped')]
+        self.assertEqual(int(beer[beer.caliber == 'ge5'].iloc[0].true_positive), 51)
 
     def test_q2_rows_match_summary(self):
         self.assertEqual(len(pd.read_csv(d.Q2/'q2__top3_all50_150.csv')), 150)
@@ -108,6 +114,17 @@ class DeliveryCurrentTests(unittest.TestCase):
         expected = '通过 %d/%d' % (gates['gate_checks']-len(gates['failures']),
                                    gates['gate_checks'])
         self.assertEqual(str(table.loc['替换门槛状态', 'value']), expected)
+
+
+    def test_verify_replay_arguments_are_used(self):
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            with self.assertRaises(ValueError):
+                d.verify(tmp/'check', models=tmp/'models')
+            with self.assertRaises(FileNotFoundError):
+                d.verify(tmp/'check2', models=tmp/'models', source=tmp/'source')
 
 
 if __name__ == '__main__':

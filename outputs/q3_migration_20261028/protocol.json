@@ -89,6 +89,36 @@
   ],
   "style_identifiability_expected": "tasting_category_fine is weakly separable in the supplied coordinates; accuracy is reported, not used as a hard gate",
   "honesty": "A migrated spectrum is a statistical destination inside the supplied coordinate space, not a brewing recipe and not a measured beer; the projection certifies only the listed defect coordinates at the 0.9 x threshold headroom and does not certify physical brewability or sensory acceptance.",
+  "evidence_grading": {
+    "defect_status_rule": "severity e(c,T)=max(c/T-1,0) on the median threshold: improved if e_after<e_before, worse if e_after>e_before, unchanged otherwise; trans-2-nonenal has no threshold and Stale hops has no coordinate, so both are 'unknown'",
+    "style_nearest_centroid_rule": "target = migrated spectrum is nearest to the target centroid; source_baseline = still nearest to Pils/Lager; other = another style centroid",
+    "style_diagnostic_supported_rule": "a target style's diagnostic supports a case only if all 11 source beers migrate to that centroid (Kriek 11/11); Tripel 0/11 and Lambic 2/11 are reported as unsupported",
+    "claim_level_rule": {
+      "model_supported": "A/B/C pass and nearest centroid is the target style and the target style diagnostic supports all 11 cases and no evaluated defect worsened and no conditional cap was used",
+      "conditional": "A/B/C pass but at least one of: style diagnostic unsupported, an evaluated defect worsened, conditional diacetyl cap used",
+      "undecidable": "A/B/C do not all pass"
+    },
+    "claim_levels": [
+      "model_supported",
+      "conditional",
+      "undecidable"
+    ],
+    "defect_statuses": [
+      "improved",
+      "unchanged",
+      "worse",
+      "unknown"
+    ],
+    "no_change_to_migration_protocol": true,
+    "note": "these are labelling rules for the evidence table; they do not change the migration math, the lambda grid, the projection or the A/B/C criteria"
+  },
+  "sensory_pipeline": {
+    "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
+    "model": "outputs/current_models/q1.joblib",
+    "score_scale": "original 0-6 individual rating scale",
+    "targets": 52,
+    "note": "full-training-model predictions are not out-of-sample accuracy estimates; grade_raw is the integer conditional median and prob_ge5/prob_6 are the risk head probabilities"
+  },
   "sources": {
     "source_directory": "附件"
   },

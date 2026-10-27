@@ -1,6 +1,9 @@
-"""Unit tests for beer_models.q1_panel_mean (task-9)."""
+"""Unit tests for beer_models.q1_panel_mean (task-9, task-15 leak-free baseline)."""
 
+import json
+import re
 import unittest
+from pathlib import Path
 
 import numpy as np
 
@@ -169,6 +172,62 @@ class FamilyTest(unittest.TestCase):
         self.assertEqual(target_family("A_malt_all"), "Aroma")
         self.assertEqual(target_family("F_hops_all"), "Flavour")
         self.assertEqual(target_family("body"), "Supplementary")
+
+
+class LeakFreeBaselineProtocolTest(unittest.TestCase):
+    """Task-15: the comparison baseline and gates must use the task-12 nested numbers."""
+
+    @classmethod
+    def setUpClass(cls):
+        path = Path(__file__).resolve().parents[1] / "configs/q1_panel_mean_20261028.json"
+        cls.config = json.loads(path.read_text(encoding="utf-8"))
+
+    def test_baseline_values_are_the_nested_ones(self):
+        baseline = self.config["reported_baseline"]
+        self.assertAlmostEqual(baseline["panel_mean_mae"], 0.46607189992522735, places=12)
+        self.assertAlmostEqual(baseline["panel_mean_mae_linear"], 0.5054899408175908, places=12)
+        self.assertAlmostEqual(
+            baseline["panel_median_within_one_rounded"], 0.91416, places=12
+        )
+        self.assertAlmostEqual(
+            baseline["voided_pre_fix"]["panel_mean_mae"], 0.4622337899166068, places=12
+        )
+
+    def test_gates_reference_the_nested_baseline(self):
+        gates = self.config["adoption_gates"]
+        baseline = self.config["reported_baseline"]["panel_mean_mae"]
+        self.assertIn(repr(baseline), gates["gate_1_point_improvement"])
+        self.assertIn(repr(baseline), gates["gate_3_every_repeat"])
+        self.assertNotIn("0.4622337899166068", gates["gate_1_point_improvement"])
+        # gate 4 keeps its absolute pre-registered floor (0.9169 - 0.5 pt); it is
+        # not re-anchored to the corrected baseline.
+        floor = float(re.search(r">=\s*([0-9.]+)", gates["gate_4_within_one"]).group(1))
+        self.assertAlmostEqual(floor, 0.9119, places=12)
+
+    def test_leak_fix_is_declared(self):
+        fix = self.config["leak_fix"]
+        self.assertEqual(fix["old_baseline_path"].split(" ")[0], "fold_style_mean")
+        self.assertIn("inner OOF cells", fix["new_baseline_path"])
+        self.assertIn("fit_nested_linear", fix["reproduction"])
+
+    def test_gate4_keeps_absolute_floor(self):
+        # ET-direct's pooled within-one (0.91136) misses the pre-registered
+        # absolute floor 0.9119 by 0.00054, but would pass a relative floor
+        # anchored to the corrected baseline (0.91416 - 0.005).  Only the
+        # absolute floor is used, so the verdict must stay do_not_adopt.
+        common = dict(
+            pooled_mae=0.4518585187795302,
+            repeat_maes=[0.45197225088862586, 0.4512178825142204, 0.4523854229357453],
+            bootstrap_lower=0.008208117710517127,
+            pooled_within_one=0.91136,
+            baseline_mae=0.46607189992522735,
+            minimum_improvement=0.010,
+        )
+        absolute = gate_verdicts(**common, within_one_floor=0.9119)
+        relative_only = gate_verdicts(**common, within_one_floor=0.90916)
+        self.assertFalse(absolute["gates"]["gate_4_within_one"])
+        self.assertFalse(absolute["all_pass"])
+        self.assertTrue(relative_only["gates"]["gate_4_within_one"])
 
 
 if __name__ == "__main__":

@@ -1,9 +1,68 @@
 """Q1 inference shared by the current CLI and the historical compatibility CLI."""
 import joblib
+import numpy as np
 import pandas as pd
 from beer_audit.audit import save_csv, write_json, sha256
 from .predict import predict_frame
 from .scorecard import predict_scorecard_frame
+
+
+def _official_grade_frame(frame, bundle):
+    """Apply the bundle's frozen Q1 decision rule to fresh inputs.
+
+    Returns ``(grades, p_ge5, p6, legacy)`` where ``grades`` is the official
+    integer matrix produced by :func:`beer_models.q1_decision.runtime_decision`
+    -- the same function the official evaluation script uses.
+    """
+    from beer_audit.checks import numeric_frame
+    from beer_models.q1_decision import runtime_decision
+    from beer_models.tail_risk import base_probabilities
+    decision = bundle['q1_decision']
+    values = numeric_frame(frame.reindex(columns=bundle['features'])).to_numpy(float)
+    model = bundle['raw_panel_model']
+    legacy = np.asarray(model.predict(values)['grade'], dtype=float)
+    probabilities = base_probabilities(model.model, values)
+    p_ge5 = probabilities[:, :, 5:].sum(axis=2)
+    p6 = probabilities[:, :, 6]
+    pairs = decision['parent_child_pairs']
+    grades = runtime_decision(
+        p_ge5, p6, legacy,
+        np.asarray(decision['rate_ge5'], dtype=float),
+        np.asarray(decision['rate_6'], dtype=float),
+        decision['targets'], [int(pair[0]) for pair in pairs],
+        [int(pair[1]) for pair in pairs])
+    return grades, p_ge5, p6, legacy
+
+
+def _attach_official_decision(long, frame, bundle):
+    """Add official top-k grades and probabilities while keeping legacy columns."""
+    decision = bundle['q1_decision']
+    grades, p_ge5, p6, legacy = _official_grade_frame(frame, bundle)
+    targets = decision['targets']
+    beer = (frame.beer.astype('string') if 'beer' in frame else
+            pd.Series([f'row_{i+1:06d}' for i in range(len(frame))], index=frame.index))
+    grid = pd.DataFrame({
+        'beer_key': np.repeat(beer.astype(str).to_numpy(), len(targets)),
+        'target': np.tile(targets, len(frame)),
+        'grade_official': grades.ravel(),
+        'grade_legacy': legacy.ravel(),
+        'probability_rating_ge5': p_ge5.ravel(),
+        'probability_rating_6': p6.ravel()})
+    merged = long.assign(beer_key=long.beer.astype(str)).merge(
+        grid, on=['beer_key', 'target'], how='left', validate='one_to_one', sort=False)
+    scored = merged['panel_target_available'].astype(bool)
+    if merged.loc[scored, ['grade_official', 'grade_legacy']].isna().all(axis=1).any():
+        raise ValueError('official decision grid does not cover every scored cell')
+    legacy_column = decision.get('legacy_grade_column', 'grade_legacy_integer_median')
+    merged[legacy_column] = merged['grade_legacy']
+    merged['estimated_grade_0_6'] = merged['grade_official']
+    merged['estimated_grade_0_6'] = merged['estimated_grade_0_6'].astype('Int64')
+    merged = merged.drop(columns=['beer_key', 'grade_official', 'grade_legacy'])
+    scope = pd.DataFrame(bundle['scorecard_scope'])
+    wide = merged.pivot(index='beer', columns='target', values='estimated_grade_0_6')
+    wide = wide.loc[beer.astype(str).tolist(), scope['target_id'].astype(str).tolist()].reset_index()
+    primary = wide[['beer', *scope.loc[scope.acceptance_scope.eq('main_content'), 'target_id']]]
+    return merged, primary, wide
 
 
 def run(model, input_path, output, experimental_tail=False):
@@ -27,6 +86,8 @@ def run(model, input_path, output, experimental_tail=False):
             risks = risk_frame(frame, bundle, long.beer.drop_duplicates().to_numpy())
             long = long.merge(risks, on=['beer', 'target'], how='left', validate='one_to_one', sort=False)
             long['safety_certified'] = False
+        if 'q1_decision' in bundle:
+            long, primary, wide = _attach_official_decision(long, frame, bundle)
         output.mkdir(parents=True, exist_ok=False)
         save_csv(output, 'scores_all52_long.csv', long)
         save_csv(output, 'estimated_grades_primary47.csv', primary)
@@ -50,6 +111,18 @@ def run(model, input_path, output, experimental_tail=False):
                 risk_meaning=bundle['r2b_protocol']['risk_meaning'],
                 risk_calibration_method='inner_OOF_sigmoid_then_order_projection_or_training_prior',
                 risk_probabilities_universally_validated=False, safety_certified=False)
+        if 'q1_decision' in bundle:
+            decision = bundle['q1_decision']
+            info.update(grade_method=bundle['grade_method'],
+                grade_semantics=bundle['point_semantics'],
+                official_grade_column=decision.get('official_grade_column', 'estimated_grade_0_6'),
+                legacy_grade_column=decision.get('legacy_grade_column', 'grade_legacy_integer_median'),
+                probability_columns=['probability_rating_ge5', 'probability_rating_6'],
+                decision_rule=dict(rule=decision['rule'], forced=bool(decision['forced']),
+                    middle_cap=int(decision['middle_cap']), rate_source=decision['rate_source'],
+                    implementation=decision['implementation'],
+                    implementation_sha256=decision['implementation_sha256'],
+                    n_parent_child_pairs=len(decision['parent_child_pairs'])))
         if 'q1_target_protocol' in bundle:
             info.update(grade_method='q1_target_distribution_median',
                 point_validation_status=bundle['q1_target_protocol']['validation_status'],

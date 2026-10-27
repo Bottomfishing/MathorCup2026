@@ -78,7 +78,7 @@ coordinates, and it does not certify that the result is physically brewable.
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
@@ -95,6 +95,51 @@ DEFECT_HEADROOM = 0.9
 THRESHOLD_SCENARIOS = ("median", "mean")
 PRIMARY_SCENARIO = "median"
 MIN_NON_MISSING_FRACTION = 0.75
+
+# The official Q1/Q3 52-target input uses 224 of the 231 attachment-1 coordinates; the seven
+# excluded columns are exactly ``excluded_features`` of
+# ``configs/r2_raw_panel_protocol_20261026.json`` (summary/"derived bookkeeping" columns).
+OFFICIAL_EXCLUDED_FEATURES = ("GFS", "unfermentables", "kcalperc", "esters_sum",
+                              "aroma_hops_sum", "acids_sum", "sulfur_sum")
+CASE_ID_TEMPLATE = "S{beer:03d}_TO_{style}"
+MIGRATED_METHOD = "q3_migration_projected"
+DEFECT_STATUSES = ("improved", "unchanged", "worse", "unknown")
+CLAIM_LEVELS = ("model_supported", "conditional", "undecidable")
+
+
+def case_id(beer: int, target_style: str) -> str:
+    """Stable identifier shared by the spectra, the sensory profile and the evidence tables."""
+    return CASE_ID_TEMPLATE.format(beer=int(beer), style=target_style)
+
+
+def defect_status(before: float | None, after: float | None,
+                  threshold: float | None) -> str:
+    """Severity-based before/after status of one listed defect.
+
+    ``e(c, T) = max(c / T - 1, 0)`` is the same severity the A/B/C criteria use.  A defect
+    without a threshold (trans-2-nonenal) or without a coordinate (Stale hops) is
+    ``unknown`` rather than "unchanged": the note ties the claim to over-threshold items and
+    those two items cannot be evaluated against a threshold at all.
+    """
+    if threshold is None or before is None or after is None:
+        return "unknown"
+    if not np.isfinite(before) or not np.isfinite(after):
+        return "unknown"
+    e_before = max(float(before) / float(threshold) - 1.0, 0.0)
+    e_after = max(float(after) / float(threshold) - 1.0, 0.0)
+    if e_after < e_before - 1e-12:
+        return "improved"
+    if e_after > e_before + 1e-12:
+        return "worse"
+    return "unchanged"
+
+
+def _number(value) -> float:
+    """``float`` or NaN, so graded tables can carry missing source values honestly."""
+    if value is None or pd.isna(value):
+        return float("nan")
+    return float(value)
+
 
 
 @dataclass(frozen=True)
@@ -247,7 +292,14 @@ class MigrationData:
     style_centroids: dict[str, np.ndarray]
     source_directory: Path
     raw_provenance: dict | None = None
+    # full 231-column attachment-1 panel (imputed) and the official 224-feature subset, needed
+    # to export complete spectra for the Q1 sensory pipeline.  ``features`` may be a subset of
+    # ``full_features`` (the NaN-ratio filter), so the two are kept side by side.
+    full_features: list[str] = field(default_factory=list)
+    full_coordinates: np.ndarray | None = None
+    official_features: list[str] = field(default_factory=list)
     _feature_index: dict[str, int] = None
+    _full_index: dict[str, int] = None
 
     # ---------------------------------------------------------------- geometry
     def whitened(self, standardised: np.ndarray) -> np.ndarray:
@@ -363,6 +415,211 @@ class MigrationData:
         index = self._index(column)
         return float((value - self.center[index]) / self.scale[index])
 
+    # -------------------------------------------------------------- full spectra
+    def official_spectrum(self, row: int,
+                          standardised: np.ndarray | None = None) -> np.ndarray:
+        """The complete official 224-feature spectrum of one beer.
+
+        With ``standardised`` given, the migrated (destandardised) coordinates replace the
+        source coordinates for every migration feature and the other official features keep
+        their source value; without it the source spectrum is returned (``role="before"``).
+        """
+        if not self.official_features or self.full_coordinates is None:
+            raise ValueError("MigrationData was not built by load(); no full spectra available")
+        full = np.array(self.full_coordinates[row], dtype=float, copy=True)
+        if standardised is not None:
+            migrated = self.destandardise(np.asarray(standardised, dtype=float))
+            if migrated.shape[0] != len(self.features):
+                raise ValueError("standardised spectrum length does not match migration features")
+            for position, name in enumerate(self.features):
+                full[self._full_index[name]] = migrated[position]
+        return np.array([full[self._full_index[name]] for name in self.official_features],
+                        dtype=float)
+
+    def migration_spectra(self, targets=TARGET_STYLES) -> dict[str, pd.DataFrame]:
+        """Complete before/after spectra and the 33-row Q1 input table for every case.
+
+        Returns ``{"long": ..., "wide": ..., "after_input": ...}``:
+
+        ``long``       66 rows (33 cases x before/after) with ``case_id``, ``source_beer``,
+                       ``target_style``, ``lambda``, ``role`` and the 224 official features
+        ``wide``       33 rows, ``..._before`` / ``..._after`` side by side (448 feature columns)
+        ``after_input``33 rows in the official Q1 input layout
+                       (``generated_id``, ``style``, ``method`` + 224 features, official order)
+        """
+        long_rows, wide_rows, after_rows = [], [], []
+        for target in targets:
+            for source_index in np.flatnonzero(self.styles == SOURCE_STYLE):
+                migration = self.migrate(int(source_index), target)
+                beer = int(self.ids[source_index])
+                identifier = case_id(beer, target)
+                before = self.official_spectrum(int(source_index))
+                after = self.official_spectrum(int(source_index), migration["standardised"])
+                meta = {"case_id": identifier, "source_beer": beer, "target_style": target,
+                        "lambda": float(migration["lambda"])}
+                long_rows.append({**meta, "role": "before",
+                                  **dict(zip(self.official_features, before.tolist()))})
+                long_rows.append({**meta, "role": "after",
+                                  **dict(zip(self.official_features, after.tolist()))})
+                wide_rows.append({**meta,
+                                  "dist_reduction_pct": float(migration["distance_reduction_pct"]),
+                                  "style_before": migration["style_before"],
+                                  "style_after": migration["style_after"],
+                                  **{f"{name}_before": float(before[position])
+                                     for position, name in enumerate(self.official_features)},
+                                  **{f"{name}_after": float(after[position])
+                                     for position, name in enumerate(self.official_features)}})
+                after_rows.append({"generated_id": identifier, "style": target,
+                                   "method": MIGRATED_METHOD,
+                                   **dict(zip(self.official_features, after.tolist()))})
+        long_columns = ["case_id", "source_beer", "target_style", "lambda", "role",
+                        *self.official_features]
+        after_columns = ["generated_id", "style", "method", *self.official_features]
+        return {"long": pd.DataFrame(long_rows, columns=long_columns),
+                "wide": pd.DataFrame(wide_rows),
+                "after_input": pd.DataFrame(after_rows, columns=after_columns)}
+
+    # ------------------------------------------------------------ evidence grading
+    def defect_statuses(self, row) -> dict[str, str]:
+        """Five-defect before/after status for one result row (severity based)."""
+        statuses = {}
+        for spec in DEFECT_SPECS:
+            before = row[f"{spec.name}_before"]
+            after = row[f"{spec.name}_after"]
+            statuses[spec.name] = defect_status(
+                None if pd.isna(before) else float(before),
+                None if pd.isna(after) else float(after),
+                self.thresholds[spec.name][PRIMARY_SCENARIO])
+        # the dataset has no stale-hops coordinate (only hop-oxidation proxies), so the
+        # listed "Stale hops" item cannot be evaluated against a threshold at all
+        statuses["Stale hops"] = "unknown"
+        return statuses
+
+    def evidence_table(self, results: pd.DataFrame | None = None) -> pd.DataFrame:
+        """Per-case evidence grading: chemical criteria, style diagnostic, defect status, claim.
+
+        ``claim_level`` is assigned by the rules written into ``protocol.json`` before the run:
+
+        ``model_supported``  A/B/C pass, the migrated spectrum is nearest to the target
+                             centroid, the target style's own diagnostic supports the claim
+                             (all 11 cases nearest to that centroid), no evaluated defect got
+                             worse, and no conditional cap was used.
+        ``conditional``      A/B/C pass but at least one of (style diagnostic unsupported,
+                             an evaluated defect worsened, a conditional diacetyl cap was
+                             used); the migration claim then rests on the chemical criteria.
+        ``undecidable``      A/B/C do not all pass.
+
+        trans-2-nonenal (no threshold in 8.xlsx) and Stale hops (no coordinate) are
+        ``unknown`` and are outside the pre-registered A/B/C scope; this is stated in the
+        table and in the paper-facing caveats.
+        """
+        if results is None:
+            results, _ = self.run()
+        accuracy = self.style_accuracy()
+        support = {style: int(results.loc[results["target_style"] == style,
+                                         "style_is_target"].sum()) for style in TARGET_STYLES}
+        total = int((self.styles == SOURCE_STYLE).sum())
+        rows = []
+        for _, row in results.iterrows():
+            target = row["target_style"]
+            beer = int(row["source_beer"])
+            statuses = self.defect_statuses(row)
+            style_after = row["style_after"]
+            is_target = bool(row["style_is_target"])
+            if is_target:
+                nearest = "target"
+            elif style_after == SOURCE_STYLE:
+                nearest = "source_baseline"
+            else:
+                nearest = "other"
+            n_support = support.get(target, 0)
+            supported = bool(is_target and n_support == total)
+            chemical = bool(row["criteria_A"] and row["criteria_B"] and row["criteria_C"])
+            worsened = [name for name in DEFECT_SPECS
+                        if statuses[name.name] == "worse"]
+            conditional = bool(row["conditional_" + PRIMARY_SCENARIO])
+            if not chemical:
+                level = "undecidable"
+                note = "A/B/C 化学判据未全部通过，迁移不可判定"
+            elif supported and not worsened and not conditional:
+                level = "model_supported"
+                note = ("A/B/C 通过；最近质心为目标风格且该风格诊断 %d/%d；已评估缺陷无恶化；"
+                        "注意全库风格可辨识度弱（LOO %.3f ≈ 多数类 %.3f），该支持仅指目标风格"
+                        "质心诊断" % (n_support, total,
+                                       accuracy["nearest_centroid_loo_accuracy"],
+                                       accuracy["majority_class_baseline"]))
+            else:
+                reasons = []
+                if not supported:
+                    if not is_target:
+                        reasons.append("迁移后最近质心为 %s 而非目标风格" % style_after)
+                    reasons.append("目标风格最近质心仅 %d/%d，全库最近质心 LOO %.3f ≈ 多数类 "
+                                   "%.3f，风格诊断未支持" % (
+                                       n_support, total,
+                                       accuracy["nearest_centroid_loo_accuracy"],
+                                       accuracy["majority_class_baseline"]))
+                if worsened:
+                    reasons.append("已评估缺陷恶化: " + ",".join(name.name for name in worsened))
+                if conditional:
+                    reasons.append("源双乙酰缺失，采用 min(目标中位, 0.9T) 条件上限")
+                level = "conditional"
+                note = "；".join(reasons)
+            rows.append({
+                "case_id": case_id(beer, target),
+                "source_beer": beer,
+                "target_style": target,
+                "lambda": float(row["lambda"]),
+                "chemical_pass": chemical,
+                "chemical_pass_A": bool(row["criteria_A"]),
+                "chemical_pass_B": bool(row["criteria_B"]),
+                "chemical_pass_C": bool(row["criteria_C"]),
+                "chemical_pass_A_mean": bool(row["A_mean"]),
+                "chemical_pass_B_mean": bool(row["B_mean"]),
+                "chemical_pass_C_mean": bool(row["C_mean"]),
+                "dist_reduction_pct": float(row["dist_reduction_pct"]),
+                "style_nearest_centroid": nearest,
+                "style_nearest_style": style_after,
+                "style_is_target": is_target,
+                "style_diagnostic_supported": supported,
+                "style_diagnostic_cases": n_support,
+                "style_diagnostic_total": total,
+                "style_diagnostic_note": ("目标风格最近质心 %d/%d；全库最近质心 LOO %.3f vs "
+                                          "多数类 %.3f（%d 类）" % (
+                                              n_support, total,
+                                              accuracy["nearest_centroid_loo_accuracy"],
+                                              accuracy["majority_class_baseline"],
+                                              accuracy["n_classes"])),
+                "defect_status_DMS": statuses["DMS"],
+                "defect_status_Diacetyl": statuses["Diacetyl"],
+                "defect_status_4VG": statuses["4VG"],
+                "defect_status_t2n": statuses["t2n"],
+                "defect_status_Stale_hops": statuses["Stale hops"],
+                "DMS_ugL_before": _number(row["DMS_before"]),
+                "DMS_ugL_after": _number(row["DMS_after"]),
+                "Diacetyl_mgL_before": _number(row["Diacetyl_before"]),
+                "Diacetyl_mgL_after": _number(row["Diacetyl_after"]),
+                "4VG_mgL_before": _number(row["4VG_before"]),
+                "4VG_mgL_after": _number(row["4VG_after"]),
+                "t2n_mgL_before": _number(row["t2n_before"]),
+                "t2n_mgL_after": _number(row["t2n_after"]),
+                "defects_worse_count": int(len(worsened)),
+                "conditional": conditional,
+                "claim_level": level,
+                "claim_note": note,
+            })
+        columns = ["case_id", "source_beer", "target_style", "lambda",
+                   "chemical_pass", "chemical_pass_A", "chemical_pass_B", "chemical_pass_C",
+                   "chemical_pass_A_mean", "chemical_pass_B_mean", "chemical_pass_C_mean",
+                   "dist_reduction_pct", "style_nearest_centroid", "style_nearest_style",
+                   "style_is_target", "style_diagnostic_supported", "style_diagnostic_cases",
+                   "style_diagnostic_total", "style_diagnostic_note",
+                   "defect_status_DMS", "defect_status_Diacetyl", "defect_status_4VG",
+                   "defect_status_t2n", "defect_status_Stale_hops",
+                   "DMS_ugL_before", "DMS_ugL_after", "Diacetyl_mgL_before", "Diacetyl_mgL_after",
+                   "4VG_mgL_before", "4VG_mgL_after", "t2n_mgL_before", "t2n_mgL_after",
+                   "defects_worse_count", "conditional", "claim_level", "claim_note"]
+        return pd.DataFrame(rows, columns=columns)
+
     # ------------------------------------------------------------------ criteria
     def defect_table(self, source_index: int, standardised: np.ndarray) -> dict[str, dict]:
         """Before/after physical concentrations for every listed defect."""
@@ -432,6 +689,8 @@ class MigrationData:
     # ---------------------------------------------------------------- migration
     def candidates(self, source_index: int, target_style: str) -> list[dict]:
         """All ``lam`` candidates for one (source, target) pair, with criteria results."""
+        if target_style not in self.style_list:
+            raise ValueError(f"unknown target style {target_style!r}; expected one of {self.style_list}")
         target_mean = self.standardised[self.styles == target_style].mean(0)
         target_index = self.style_list.index(target_style)
         candidates = []
@@ -624,6 +883,15 @@ def load(source: Path, reference_path: Path | None = None,
             frame[column] = (frame[column].fillna(profiles[STYLE_COLUMN].map(style_medians))
                              .fillna(frame[column].median()))
     coordinates = frame.to_numpy(float)
+    full_frame = profiles[features].copy()
+    for column in features:
+        if full_frame[column].isna().any():
+            style_medians = profiles.groupby(STYLE_COLUMN)[column].median()
+            full_frame[column] = (full_frame[column].fillna(
+                profiles[STYLE_COLUMN].map(style_medians)).fillna(full_frame[column].median()))
+    full_coordinates = full_frame.to_numpy(float)
+    official_features = [column for column in features
+                         if column not in OFFICIAL_EXCLUDED_FEATURES]
     center = np.median(coordinates, axis=0)
     iqr = np.percentile(coordinates, 75, axis=0) - np.percentile(coordinates, 25, axis=0)
     sd = coordinates.std(axis=0)
@@ -666,6 +934,10 @@ def load(source: Path, reference_path: Path | None = None,
         style_centroids=style_centroids,
         source_directory=source,
         raw_provenance=provenance,
+        full_features=list(features),
+        full_coordinates=full_coordinates,
+        official_features=official_features,
     )
     data._feature_index = {name: i for i, name in enumerate(keep)}
+    data._full_index = {name: i for i, name in enumerate(features)}
     return data

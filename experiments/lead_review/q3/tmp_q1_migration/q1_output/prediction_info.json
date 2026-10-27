@@ -1,0 +1,27 @@
+{
+  "samples": 66,
+  "targets": 52,
+  "labelled_panel_targets": 50,
+  "model": "extra_trees__median",
+  "model_sha256": "e082bf9332e197b5f4799dc1b425494d4e6041cdc1ed51f4e6a9dfff3bbe9943",
+  "input_sha256": "3f99150b0b07ed330a4df7d6cfa3356b71a74b2bf1cb070ea5e7841c452b861e",
+  "score_scale": "original_0_6_individual_rating_scale",
+  "grade_semantics": "integer_balanced_panel_conditional_median_with_parent_cap",
+  "grade_method": "r2_raw_panel_median",
+  "grade_probability_calibrated": false,
+  "missing_columns_imputed": [],
+  "unlabelled_card_targets": [
+    "A_acetaldehyde",
+    "F_acetaldehyde"
+  ],
+  "raw_source_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "qualified_on_historical_grouped_folds": true,
+  "input_scale": "same_supplied_coordinates_as_attachment_1_no_automatic_log_transform",
+  "evaluation_use": "full_training_model_predictions_are_not_OOF_accuracy_estimates",
+  "tail_point_qualified": false,
+  "point_deployment_status": "provisional_baseline_tail_not_qualified",
+  "risk_meaning": "Chance that a taster rating is >=k under equal-taster/equal-presentation weighting; not the chance of exceeding a chemical threshold or proof of safety.",
+  "risk_calibration_method": "inner_OOF_sigmoid_then_order_projection_or_training_prior",
+  "risk_probabilities_universally_validated": false,
+  "safety_certified": false
+}

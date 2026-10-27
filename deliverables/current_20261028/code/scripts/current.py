@@ -43,6 +43,7 @@ def main():
     p = sub.add_parser('render', help='Refresh 300 adopted generated spectra and the beer119 sensory tables')
     p.add_argument('--models', type=Path, default=MODEL_DIR)
     p.add_argument('--generated', type=Path, help='Generated-profile directory; defaults to the verified current set')
+    p.add_argument('--source', type=Path, help='Supplied attachment directory (1.csv); enables the verifiable Q1 full-fit portrait')
     p.add_argument('--output', type=Path, required=True)
     p = sub.add_parser('package', help='Export the current verified tables, figures and runnable source')
     p.add_argument('--output', type=Path, required=True)
@@ -76,7 +77,7 @@ def main():
                 save_csv(args.output, 'style_predictions.csv', styles)
         elif args.command == 'render':
             from beer_models.current_runtime import render
-            render(args.models, args.output, args.generated)
+            render(args.models, args.output, args.generated, args.source)
         else:
             module = delivery_module(args.version)
             if args.command == 'status':

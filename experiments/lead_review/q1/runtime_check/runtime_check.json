@@ -1,0 +1,33 @@
+{
+  "bundle_decision_rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+  "bundle_implementation": "beer_models.q1_decision.runtime_decision",
+  "bundle_implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+  "current_implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+  "training_json_rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+  "prediction_grade_method": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+  "prediction_rule_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+  "official_vs_runtime_decision_max_abs_diff": 0.0,
+  "official_vs_topk_pieces_max_abs_diff": 0.0,
+  "legacy_column_equals_model_median": 0.0,
+  "row_counts": {
+    "long": 13000,
+    "primary": 250,
+    "wide": 250
+  },
+  "columns_present": [
+    "grade_legacy_integer_median",
+    "probability_rating_ge5",
+    "probability_rating_6"
+  ],
+  "parent_violations_official": 0,
+  "official_distribution": {
+    "0": 8132,
+    "1": 885,
+    "2": 1415,
+    "3": 1549,
+    "4": 305,
+    "5": 195,
+    "6": 19
+  },
+  "decision_rates_match_observed": 0.0
+}

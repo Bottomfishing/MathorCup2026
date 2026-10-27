@@ -5,7 +5,15 @@
   "frozen_before_any_candidate_result": true,
   "post_result_retuning": false,
   "declaration": "This protocol was written before any candidate model was fitted. No hyperparameter, feature, fold or threshold may be changed after seeing candidate results; if a gate fails the honest outcome is 'do not adopt'.",
-  "question": "Can a model trained directly on the panel-weighted mean (beer x target, 0-6 scale) beat the current post-hoc calibration baseline (0.462234 panel-mean OOF MAE) significantly enough to adopt?",
+  "revision": "2 (task-15): the comparison baseline was switched to the leak-free strictly nested calibration of task-12; the pre-fix 0.4622337899166068 baseline used cross-fold calibration features and is voided. Folds, seeds, candidates, metrics and bootstrap are unchanged from revision 1.",
+  "leak_fix": {
+    "audit": "docs/审查问题清单_46ca932_20261027.md item 1; fixed in task-12",
+    "old_baseline_path": "fold_style_mean + calibrate_panel_mean on the whole OOF table (outer-validation labels reach the calibration through other folds' features and whole-table statistics)",
+    "new_baseline_path": "per outer fold: refit the official raw-panel model on the outer-training beers only, build two inner folds of those beers, and fit the per-target style mean and linear calibrator on those inner OOF cells; then predict the outer-validation fold",
+    "reproduction": "src/beer_models/q1_decision.fit_nested_linear/apply_nested_linear; the script must reproduce 0.46607189992522735 (style+linear) and 0.5054899408175908 (linear only) at 1e-9 before scoring any candidate",
+    "perturbation": "changing a validation-fold truth by +0.25 leaves every nested calibration prediction unchanged (task-12 verification: max|delta| = 0.0)"
+  },
+  "question": "Can a model trained directly on the panel-weighted mean (beer x target, 0-6 scale) beat the leak-free nested post-hoc calibration baseline (0.466072 panel-mean OOF MAE) significantly enough to adopt?",
   "inputs": {
     "source_attachments": "C:/Users/wb198/Desktop/2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道A初赛/附件",
     "raw_sensory": "data/reference/zenodo23624915/Raw sensory data anonymized.csv",
@@ -54,15 +62,22 @@
     },
     "baseline_et_posthoc": {
       "role": "reference, not a candidate for adoption",
-      "definition": "official Extra Trees OOF integer conditional median (r2_raw_q1, method=extra_trees, predicted_grade) mapped to the panel-mean scale by the frozen fold-wise per-target linear calibration with a fold-wise style-mean covariate (beer_models.q1_decision.fold_style_mean + calibrate_panel_mean), exactly the 0.462234 baseline",
-      "no_retraining": true
+      "definition": "official Extra Trees OOF integer conditional median (r2_raw_q1, method=extra_trees, predicted_grade) mapped to the panel-mean scale by the strictly nested fold-wise per-target linear calibration with a fold-wise style-mean covariate: per outer fold the calibrator and the style means are fitted only on inner OOF cells of that fold's outer-training beers (task-12 audit fix). Equal to 0.46607189992522735.",
+      "no_retraining": false,
+      "retraining": "the inner-fold raw-panel models are refitted inside each outer-training set for the calibration only; the official OOF integer-grade model is untouched"
     }
   },
   "reported_baseline": {
-    "name": "ET integer median + fold-wise style+linear calibration",
-    "panel_mean_mae": 0.4622337899166068,
-    "source": "outputs/q1_decision_20261028/q1__metrics_summary.csv (method 'calibration:ET integer + style mean, fold-wise linear')",
-    "reproduction_check": "the script must reproduce this number from the frozen inputs at 1e-9 before any candidate is scored"
+    "name": "ET integer median + leak-free nested fold-wise style+linear calibration",
+    "panel_mean_mae": 0.46607189992522735,
+    "panel_mean_mae_linear": 0.5054899408175908,
+    "panel_median_within_one_rounded": 0.91416,
+    "source": "outputs/q1_decision_20261028/summary.json calibration rows 'nested fold-wise style mean, linear calibration -> panel mean' and 'nested fold-wise linear calibration -> panel mean'",
+    "reproduction_check": "the script must reproduce all three values from the frozen inputs at 1e-9 (/1e-12 for the rate) before any candidate is scored",
+    "voided_pre_fix": {
+      "panel_mean_mae": 0.4622337899166068,
+      "reason": "computed with cross-fold calibration features (docs/审查问题清单_46ca932_20261027.md item 1)"
+    }
   },
   "metrics": {
     "primary": "OOF beer-level panel-mean MAE = mean(|panel_mean_pred - panel_mean_reference|) over 250 beers x 50 targets",
@@ -82,10 +97,11 @@
     "not_claimed": "fixed-fold resampling only; it is not a full-refit confidence interval and not an independent external validation"
   },
   "adoption_gates": {
-    "gate_1_point_improvement": "pooled 3-repeat panel-mean MAE <= 0.4622337899166068 - 0.010",
+    "gate_1_point_improvement": "pooled 3-repeat panel-mean MAE <= 0.46607189992522735 - 0.010",
     "gate_2_bootstrap": "paired beer-bootstrap 95% interval lower bound > 0",
-    "gate_3_every_repeat": "for each of the 3 repeats, panel-mean MAE < 0.4622337899166068",
-    "gate_4_within_one": "pooled round(panel_mean_pred) vs panel-weighted median within-one rate >= 0.9119 (the current 0.9169 rate minus 0.5 percentage point)",
+    "gate_3_every_repeat": "for each of the 3 repeats, panel-mean MAE < 0.46607189992522735",
+    "gate_4_within_one": "pooled round(panel_mean_pred) vs panel-weighted median within-one rate >= 0.9119 (absolute pre-registered floor: the current official integer-grade within-one 0.9169 minus 0.5 percentage point; unchanged by the task-15 baseline correction)",
+    "gate_4_note": "the delta against the leak-free nested calibration baseline (0.91416) is reported as a diagnostic only; re-anchoring the floor to that baseline would be a post-hoc loosening and is not used",
     "all_required": true,
     "if_any_fails": "summary.adoption_recommendation = 'do_not_adopt_keep_baseline'"
   },

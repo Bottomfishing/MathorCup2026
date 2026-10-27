@@ -12,14 +12,19 @@ import unittest
 import numpy as np
 
 from beer_models.q1_decision import (
+    apply_nested_linear,
     calibrate_panel_mean,
+    enforce_parent_child,
+    fit_nested_linear,
     fold_style_mean,
     fold_training_mean,
     fold_training_rate,
     high_grade_stats,
     isotonic_calibrate,
     linear_to_grade,
+    observed_high_grade_rates,
     quantile_calibrate,
+    runtime_decision,
     topk_decision,
 )
 
@@ -237,6 +242,116 @@ class CalibrationTest(unittest.TestCase):
         np.testing.assert_array_equal(first, second)
         np.testing.assert_array_equal(first_coefficients['slope'],
                                       second_coefficients['slope'])
+
+
+class ParentChildCapTest(unittest.TestCase):
+    def test_child_is_capped_by_parent(self):
+        grades = np.array([[0, 5, 6], [3, 5, 2]])
+        capped = enforce_parent_child(grades, [0, 0], [1, 2])
+        np.testing.assert_array_equal(capped, np.array([[0, 0, 0], [3, 3, 2]]))
+
+    def test_child_is_capped_to_a_lower_parent(self):
+        grades = np.array([[2, 4, 6], [1, 5, 6]])
+        capped = enforce_parent_child(grades, [0], [2])
+        np.testing.assert_array_equal(capped, np.array([[2, 4, 2], [1, 5, 1]]))
+
+    def test_original_matrix_is_not_mutated(self):
+        grades = np.array([[0, 5]])
+        enforce_parent_child(grades, [0], [1])
+        np.testing.assert_array_equal(grades, np.array([[0, 5]]))
+
+    def test_shape_mismatch_rejected(self):
+        with self.assertRaises(ValueError):
+            enforce_parent_child(np.zeros((2, 3)), [0], [1, 2])
+
+
+class ObservedHighGradeRatesTest(unittest.TestCase):
+    def test_rates_are_fractions_of_the_panel(self):
+        panel_median = np.array([[0, 5, 6], [4, 5, 3], [0, 0, 2], [6, 5, 0]])
+        rate_ge5, rate_6 = observed_high_grade_rates(panel_median)
+        np.testing.assert_allclose(rate_ge5, np.array([0.25, 0.75, 0.25]))
+        np.testing.assert_allclose(rate_6, np.array([0.25, 0.0, 0.25]))
+
+    def test_empty_or_off_scale_input_rejected(self):
+        with self.assertRaises(ValueError):
+            observed_high_grade_rates(np.zeros((0, 3)))
+        with self.assertRaises(ValueError):
+            observed_high_grade_rates(np.array([[0, 7]]))
+
+
+class RuntimeDecisionTest(unittest.TestCase):
+    def _inputs(self):
+        p_ge5 = np.array([[0.1, 0.9], [0.8, 0.2], [0.95, 0.7], [0.3, 0.4]])
+        p6 = np.array([[0.0, 0.8], [0.7, 0.1], [0.9, 0.6], [0.1, 0.05]])
+        base = np.array([[0, 5], [4, 0], [3, 6], [2, 2]])
+        rates5 = np.array([0.5, 0.5])
+        rates6 = np.array([0.25, 0.25])
+        return p_ge5, p6, base, rates5, rates6
+
+    def test_matches_topk_then_cap_implementation(self):
+        p_ge5, p6, base, rates5, rates6 = self._inputs()
+        targets = ['A_a', 'A_b']
+        grades = runtime_decision(p_ge5, p6, base, rates5, rates6, targets)
+        expected = topk_decision(p_ge5.ravel(), p6.ravel(), np.minimum(base, 4).ravel(),
+                                 np.tile(rates5, len(p_ge5)),
+                                 np.tile(rates6, len(p_ge5)),
+                                 np.tile(np.array(targets, object), len(p_ge5))).reshape(4, 2)
+        np.testing.assert_array_equal(grades, expected)
+
+    def test_parent_cap_applies_after_topk(self):
+        p_ge5 = np.full((3, 2), 0.9)
+        p6 = np.array([[0.0, 0.9], [0.0, 0.9], [0.0, 0.9]])
+        base = np.zeros((3, 2), dtype=int)
+        grades = runtime_decision(p_ge5, p6, base, np.array([1.0, 1.0]),
+                                  np.array([0.0, 0.0]), ['A_a', 'A_b'], [0], [1])
+        self.assertTrue((grades[:, 1] <= grades[:, 0]).all())
+
+    def test_zero_rate_targets_never_emit_high_grades(self):
+        p_ge5, p6, base, _, _ = self._inputs()
+        grades = runtime_decision(p_ge5, p6, base, np.zeros(2), np.zeros(2), ['A_a', 'A_b'])
+        self.assertTrue((grades <= 4).all())
+
+    def test_shape_and_rate_validation(self):
+        p_ge5, p6, base, rates5, rates6 = self._inputs()
+        with self.assertRaises(ValueError):
+            runtime_decision(p_ge5, p6[:, :1], base, rates5, rates6, ['A_a', 'A_b'])
+        with self.assertRaises(ValueError):
+            runtime_decision(p_ge5, p6, base, np.array([1.5, 0.5]), rates6, ['A_a', 'A_b'])
+
+
+class NestedCalibrationTest(unittest.TestCase):
+    def test_fit_uses_only_rows_of_its_own_fold(self):
+        scores = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0])[:, None]
+        reference = 0.5 + 0.8 * scores[:, 0]
+        groups = np.array(['A'] * 4 + ['B'] * 4, dtype=object)
+        folds = np.array([0, 0, 1, 1, 0, 0, 1, 1])
+        models = fit_nested_linear(scores, reference, groups, folds)
+        self.assertEqual(sorted(models), [('A', '0'), ('A', '1'), ('B', '0'), ('B', '1')])
+        for key in [('A', '0'), ('A', '1'), ('B', '0'), ('B', '1')]:
+            np.testing.assert_allclose(models[key][1], 0.8)
+            np.testing.assert_allclose(models[key][0], 0.5)
+
+    def test_perturbing_held_out_reference_does_not_change_predictions(self):
+        rng = np.random.default_rng(7)
+        n_fit, n_held = 32, 12
+        scores_fit = rng.integers(0, 5, size=n_fit).astype(float)[:, None]
+        reference_fit = 0.4 + 0.9 * scores_fit[:, 0] + rng.normal(0, 0.02, n_fit)
+        groups_fit = np.array(['A', 'B'] * (n_fit // 2), dtype=object)
+        folds_fit = np.arange(n_fit) % 2
+        models = fit_nested_linear(scores_fit, reference_fit, groups_fit, folds_fit)
+        scores_held = rng.integers(0, 5, size=n_held).astype(float)[:, None]
+        groups_held = np.array(['A', 'B'] * (n_held // 2), dtype=object)
+        folds_held = np.arange(n_held) % 2
+        base = apply_nested_linear(scores_held, groups_held, folds_held, models)
+        perturbed = scores_held.copy()
+        perturbed += 0.25
+        moved = apply_nested_linear(perturbed, groups_held, folds_held, models)
+        with self.assertRaises(AssertionError):
+            np.testing.assert_array_equal(base, moved)
+        refit = apply_nested_linear(scores_held, groups_held, folds_held,
+                                    fit_nested_linear(scores_fit, reference_fit,
+                                                      groups_fit, folds_fit))
+        np.testing.assert_array_equal(base, refit)
 
 
 if __name__ == '__main__':

@@ -1,12 +1,13 @@
 {
   "protocol_id": "q1_decision_20261028",
-  "generated_at": "2026-10-27T21:26:58+08:00",
+  "generated_at": "2026-10-28T00:06:27+08:00",
   "stage": "protocol_written_before_computation",
   "config": {
     "protocol_id": "q1_decision_20261028",
     "frozen_at": "2026-10-28",
-    "scope": "Q1 decision layer formalization. Reads the existing official Q1 inference artifacts only; no retraining, no change to model features, folds, probabilities or the legacy integer-median grade column.",
-    "task": "Replace the legacy integer conditional median (which never emits 5/6) with a non-forced cumulative-probability top-k rule, and calibrate the integer median onto the observed panel-mean scale.",
+    "revision": "2 (audit 46ca932 leak fix + parent/child cap)",
+    "scope": "Q1 decision layer formalization and repair. Reads the existing official Q1 inference artifacts only; no retraining of the delivered model, no change to features, folds, probabilities or the legacy integer-median grade column. Fixes the calibration leakage and card hierarchy violations reported in docs/审查问题清单_46ca932_20261027.md items 1 and 3.",
+    "task": "Replace the legacy integer conditional median (which never emits 5/6) with a non-forced cumulative-probability top-k rule, cap children by their card parent, and estimate the panel-mean calibration strictly nested inside every outer-training set.",
     "inputs": {
       "oof_probabilities": "outputs/task6_final_20261026/paper/tables/q1__oof_scores_all52.csv",
       "full_fit_probabilities": "outputs/task6_final_20261026/paper/tables/q1__full_fit_scores_all52.csv",
@@ -14,7 +15,9 @@
       "oof_predictions": "outputs/r2_raw_q1_20261026/oof_predictions.csv.gz",
       "rating_weights_and_folds": "outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv",
       "chemistry": "1.csv (from --source)",
-      "raw_sensory": "data/reference/zenodo23624915/Raw sensory data anonymized.csv"
+      "raw_sensory": "data/reference/zenodo23624915/Raw sensory data anonymized.csv",
+      "panel_protocol": "configs/r2_raw_panel_protocol_20261026.json",
+      "scorecard_scope": "outputs/task1_acceptance_20261025/scorecard_scope.csv"
     },
     "target_universe": {
       "n_beers": 250,
@@ -39,19 +42,30 @@
       "assignment_order": "1) promote the top-k6 cells by probability_rating_6 to grade 6; 2) among the remaining cells promote the top-k5 by probability_rating_ge5 to grade 5; 3) every other cell keeps min(legacy_integer_median, 4)",
       "tie_break": "descending probability, then ascending row position inside the group (independent of the sort implementation)",
       "forced": false,
-      "why_non_forced": "Only 34/50 targets have any observed panel median >= 5 and 12/50 any = 6; forcing a 5/6 on every target (force>=1 variant) destroyed precision and panel-median MAE, so promotion is rate-calibrated per target and fold."
+      "why_non_forced": "Only 34/50 targets have any observed panel median >= 5 and 12/50 any = 6; forcing a 5/6 on every target (force>=1 variant) destroyed precision and panel-median MAE, so promotion is rate-calibrated per target and fold.",
+      "parent_child_cap": {
+        "applies_after": "non_forced_cumulative_probability_topk",
+        "pairs_source": "outputs/task1_acceptance_20261025/scorecard_scope.csv, template_rule == 'checkbox_zero_or_parent'",
+        "parent_rule": "parent target id = first two underscore-separated segments of the child target id + '_all' (e.g. A_malt_grain -> A_malt_all)",
+        "n_pairs": 24,
+        "operation": "deterministic post-processing: grade[beer, child] = min(grade[beer, child], grade[beer, parent]) for every beer and every pair",
+        "ordering": "parents are '_all' aggregate targets that are never themselves children, so one pass over the pairs is final; pairs are sorted by child column index for determinism",
+        "rationale": "the paper card defines a child check box as 0 or equal to its parent, so the frozen table must satisfy child <= parent on every cell"
+      }
     },
     "calibration": {
       "target_column": "panel_weighted_mean",
-      "fold_definition": "outer_fold from outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv; one fold per beer, 3 folds",
+      "leak_fix": "strict nesting: for every outer fold, the calibrator is fitted on inner-fold OOF predictions produced by refitting the official raw-panel model on the outer-training beers only (two inner folds, make_splits seed = 20261024 + 100 + outer_fold). The outer-validation labels are never read by any feature or parameter.",
+      "inner_fold_definition": "outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv outer_fold is the outer split; inner splits use beer_models.baseline.make_splits on tasting_category_fine within each outer-training set, protocol seed 20261024 + 100 + outer_fold, 2 folds",
       "methods": {
-        "linear": "per (target, fold) ordinary least squares of panel_weighted_mean on the legacy integer median, fit on the other folds; rank-deficient fits fall back to the training mean",
-        "isotonic": "per (target, fold) isotonic non-decreasing fit of panel_weighted_mean on the legacy integer median, fit on the other folds, clipped outside knots; constant-score training folds fall back to the training mean",
-        "style_linear": "per (target, fold) OLS of panel_weighted_mean on [legacy integer median, fold-wise style mean]; the style mean is the training-fold mean panel_weighted_mean per tasting_category_fine from 1.csv, unseen styles fall back to the training global mean",
-        "quantile": "per (target, fold) marginal calibration: map each test integer median to its mid-rank among training medians, then to the training empirical panel_weighted_median quantile at that level (method='lower')"
+        "nested_linear": "per (target, outer fold) OLS of panel_weighted_mean on the inner OOF integer median, fit on the inner cells of the outer-training beers",
+        "nested_isotonic": "per (target, outer fold) isotonic non-decreasing fit of panel_weighted_mean on the inner OOF integer median (numpy PAVA in q1_decision), clipped outside knots; constant-score folds fall back to the training mean",
+        "nested_style_linear": "per (target, outer fold) OLS of panel_weighted_mean on [inner OOF integer median, style mean]; the style mean is the outer-training mean panel_weighted_mean per tasting_category_fine from 1.csv, unseen styles fall back to the outer-training global mean",
+        "nested_quantile": "per (target, outer fold) marginal calibration mapping each outer integer median to its mid-rank among inner OOF medians, then to the inner empirical panel_weighted_median quantile at that level (method='lower')"
       },
-      "reported_calibrated_table": "linear",
-      "rounding_for_grade_like_metrics": "numpy.rint (ties to even) then clip to [0, 6]"
+      "reported_calibrated_table": "nested_linear",
+      "rounding_for_grade_like_metrics": "numpy.rint (ties to even) then clip to [0, 6]",
+      "voided_pre_fix_numbers": "The 2026-10-28 hand-off calibration rows (fold-wise linear 0.5027213833, style 0.4622337899, isotonic 0.5025975663, quantile 0.6502882443) were produced with the leaky one-level scheme and are NOT reported as results; they are kept only as a reference in summary.json under voided_pre_leakfix_calibration_reference."
     },
     "metrics": {
       "panel_median_mae": "mean |prediction - panel_weighted_median| on the 12500 cells",
@@ -61,7 +75,8 @@
       "macro_spearman": "per-target Spearman between prediction and panel_weighted_mean for targets with at least 3 distinct reference values, then nanmean (not computed for the calibration rows)",
       "high_grade": "truth = panel_weighted_median >= threshold; prediction = grade >= threshold; precision/recall are cell-level panel metrics, not per-taster accuracy",
       "individual_weighted": "raw 0-6 records from the external anonymized sensory table, weighted by weight_within_beer (total weight 12500); this is the legacy evaluand and is reported only as a contrast",
-      "lower_bound": "panel_median_oracle_individual_level: predict the observed panel-weighted median for every cell and score it against the weighted raw records; this is the L1 information floor of the cell-identity-only predictor, not a model"
+      "lower_bound": "panel_median_oracle_individual_level: predict the observed panel-weighted median for every cell and score it against the weighted raw records; this is the L1 information floor of the cell-identity-only predictor, not a model",
+      "calibers": "q1__metric_calibers.csv reports four disjoint definitions per prediction set: exact5 (prediction == 5 vs panel median == 5), exact6 (prediction == 6 vs panel median == 6), ge5 (prediction >= 5 vs panel median >= 5) at beer level, plus the same definitions weighted over the per-taster raw records. n_predicted/true_positive/precision/n_observed/recall are cell counts (beer level) or weight mass (individual level). The previously published '204 cells, 25.49% precision, 26.26% recall' is the ge5 caliber with 188 grade-5 cells plus 16 grade-6 cells, not an exact-5 metric."
     },
     "outputs": {
       "q1__submission_long_12500.csv": [
@@ -79,6 +94,7 @@
         "target_family",
         "grade_integer_median_old",
         "grade_0_6",
+        "grade_topk_precap",
         "panel_mean_reference",
         "panel_median_reference",
         "probability_rating_ge1",
@@ -115,15 +131,31 @@
         "n_observed_ge5",
         "n_observed_6",
         "n_predicted_ge5",
-        "n_predicted_6"
+        "n_predicted_6",
+        "n_predicted_ge5_parent_capped",
+        "n_predicted_6_parent_capped"
       ],
-      "verification.json": "assertions against experiments/lead_review/q1/decision_topk_report.json and the paper handoff package",
+      "q1__metric_calibers.csv": [
+        "scope",
+        "prediction_set",
+        "caliber",
+        "n_predicted",
+        "true_positive",
+        "precision",
+        "n_observed",
+        "recall"
+      ],
+      "verification.json": "assertions against experiments/lead_review/q1/decision_topk_report.json (pre-cap table), the parent/child cap, the leakage perturbation test and the legacy hand-off columns",
       "protocol.json": "this protocol as executed",
-      "summary.json": "key numbers"
+      "summary.json": "key numbers including leakage and hierarchy before/after",
+      "column_semantics": {
+        "q1__high_grade_coverage_by_target.csv": "n_predicted_ge5 / n_predicted_6 are the pre-cap top-k decision stage expected by the frozen delivery contract; n_predicted_*_parent_capped describe the official parent-capped submission table (q1__submission_long_12500.csv)",
+        "q1__metrics_summary.csv": "method=q1_topk_nonforced is the pre-cap stage (0.408 / 204 >=5 / 16 six); method=q1_topk_nonforced_parent_capped is the official capped stage (0.40648 / 194 >=5 / 14 six); never mix the two"
+      }
     },
     "verification": {
       "expected_rows": 12500,
-      "expected_grade_distribution": {
+      "expected_precap_grade_distribution": {
         "0": 8279,
         "1": 856,
         "2": 1361,
@@ -132,22 +164,62 @@
         "5": 188,
         "6": 16
       },
+      "expected_final_grade_distribution": {
+        "0": 8279,
+        "1": 856,
+        "2": 1363,
+        "3": 1655,
+        "4": 153,
+        "5": 180,
+        "6": 14
+      },
+      "expected_precap_parent_violations": 12,
+      "perturbation_tolerance": 1e-12,
       "reference_report": "experiments/lead_review/q1/decision_topk_report.json",
       "reference_report_table": "NEW: top-k cumulative-prob (fold-wise rate)",
       "report_tolerance": 1e-09,
-      "handoff_metrics_summary": "deliverables/paper_handoff_20261028/tables/q1__metrics_summary.csv",
       "handoff_tolerance": 1e-09,
-      "handoff_rounded_tolerance": 1e-06,
-      "handoff_rounded_rows": [
-        "individual_taster,extra_trees_integer_median",
-        "lower_bound,panel_median_oracle_individual_level"
+      "handoff_semantics": "only the legacy columns (integer median, panel references, probabilities, fold) are expected to match the pre-fix hand-off; the new grade column, the calibrated panel mean and the metrics summary are leak-free recomputations and are recorded as diverging, not silently mixed",
+      "non_forced_evidence": "grade 5 count 188 < 198 observed and grade 6 count 16 < 19 observed; at least one (target, fold) has k5 = 0 and at least one has k6 = 0",
+      "metric_row_semantics": {
+        "q1_topk_nonforced": "non-forced cumulative-probability top-k decision BEFORE the parent/child cap; this is the row consumed by the frozen delivery contract (src/beer_models/delivery_current.py) and it reproduces the audited prototype (0.408, 204 cells >=5, 16 cells 6)",
+        "q1_topk_nonforced_parent_capped": "OFFICIAL submission grades: the same top-k decision followed by the deterministic child<=parent cap for the 24 checkbox rule pairs (0.40648, 194 cells >=5, 14 cells 6)",
+        "rule": "the two rows are different stages of one pipeline; reported metrics must always name the stage, never relabel pre-cap numbers as capped or vice versa"
+      },
+      "delivery_contract": "src/beer_models/delivery_current.py and its tests are out of this task write scope and still assert the pre-cap row (q1_topk_nonforced = 0.408 / 204 / 16); the capped row is the official submission and its numbers are the ones quoted in the audit-fix report"
+    },
+    "runtime_integration": {
+      "bundle_field": "q1_decision",
+      "bundle_writer": "beer_models.current_runtime.train -> q1_decision_bundle",
+      "bundle_payload": [
+        "rule",
+        "forced",
+        "middle_cap",
+        "rate_source",
+        "rate_ge5",
+        "rate_6",
+        "targets",
+        "parent_child_pairs",
+        "implementation",
+        "implementation_sha256",
+        "official_grade_column(=estimated_grade_0_6)",
+        "legacy_grade_column(=grade_legacy_integer_median)"
       ],
-      "non_forced_evidence": "grade 5 count 188 < 198 observed and grade 6 count 16 < 19 observed; at least one (target, fold) has k5 = 0 and at least one has k6 = 0"
+      "rate_source": "observed panel-weighted median high-grade fractions on the fixed full training panel; per-target k = round(rate * n_rows) at prediction time",
+      "predict_path": "scripts/current.py predict q1 -> beer_models.inference.run -> _official_grade_frame -> beer_models.q1_decision.runtime_decision (the same function used by this official table) then the deterministic parent/child cap",
+      "outputs_keep": [
+        "estimated_grade_0_6 becomes the official top-k grade",
+        "grade_legacy_integer_median keeps the legacy ET integer median",
+        "probability_rating_ge5 and probability_rating_6 are attached",
+        "estimated_grades_primary47.csv / estimated_grades_all52.csv are rebuilt from the official grades"
+      ],
+      "consistency_proof": "experiments/lead_review/q1/runtime_check.py trains a real bundle, runs inference.run on 1.csv and asserts official == runtime_decision == topk+cap (max |diff| 0.0), the stored implementation_sha256 equals the current module hash, and 0 parent violations"
     },
     "reproduction": {
       "command": "$env:PYTHONPATH='src'; .venv/Scripts/python.exe scripts/q1_official_20261028.py --source '<赛题附件目录>' --q1 outputs/task6_final_20261026/paper/tables --raw outputs/r2_raw_q1_20261026 --reference data/reference/zenodo23624915 --output outputs/q1_decision_20261028",
-      "tests": "$env:PYTHONPATH='src'; .venv/Scripts/python.exe -m unittest tests.test_q1_decision -v",
-      "no_retraining": true
+      "runtime_command": "$env:PYTHONPATH='src'; .venv/Scripts/python.exe experiments/lead_review/q1/runtime_check.py",
+      "tests": "$env:PYTHONPATH='src'; .venv/Scripts/python.exe -m unittest tests.test_q1_decision tests.test_current_runtime_q1_decision -v",
+      "no_retraining": "the delivered ET model, folds and probabilities are read-only; only the nested calibration refits the official raw-panel model on inner folds of each outer-training set"
     }
   },
   "resolved_inputs": {
@@ -157,7 +229,9 @@
     "oof_predictions": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\oof_predictions.csv.gz",
     "rating_weights_and_folds": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\rating_weights_and_folds.csv",
     "chemistry": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件\\1.csv",
-    "raw_sensory": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv"
+    "raw_sensory": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+    "panel_protocol": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\configs\\r2_raw_panel_protocol_20261026.json",
+    "scorecard_scope": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\task1_acceptance_20261025\\scorecard_scope.csv"
   },
   "input_sha256": {
     "oof_probabilities": "a5ab47767cea3ac0708192c1fd1388369e4e36420fc480317767c5f3f81b0213",
@@ -166,7 +240,9 @@
     "oof_predictions": "14c5979794e10190dacc465b3b0ee4f540614bedd0030f8370c24eac4325a3c0",
     "rating_weights_and_folds": "5f6dd1f5a0ebccecbf1971db48be09e5b3fa8d9641192a66f016ef0aeda4b8f1",
     "chemistry": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
-    "raw_sensory": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628"
+    "raw_sensory": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+    "panel_protocol": "28f7010b62e88d10fba77ad24f709d92eb79ca1519c1acfc17292a9182409875",
+    "scorecard_scope": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d"
   },
   "reference_report": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\experiments\\lead_review\\q1\\decision_topk_report.json",
   "handoff_tables": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\deliverables\\paper_handoff_20261028\\tables",

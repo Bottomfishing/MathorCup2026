@@ -7,7 +7,8 @@ import pandas as pd
 from beer_audit.audit import sha256, write_json, save_csv
 from beer_audit.checks import numeric_frame
 from .panel_data import load_inputs
-from .raw_panel import fit_shared, portrait
+from .q1_decision import observed_high_grade_rates
+from .raw_panel import fit_shared, median_grades, portrait
 from .selective_tail import SelectiveTailPoint
 from .tail_risk import RawOrdinalModel, fit_risk, base_probabilities, survival
 from .style_models import make_style_model
@@ -22,6 +23,21 @@ def read_json(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+def q1_decision_bundle(panel_median, targets, parents):
+    """Frozen official Q1 decision parameters stored inside the runtime bundle."""
+    rate_ge5, rate_6 = observed_high_grade_rates(panel_median)
+    return dict(rule='non_forced_cumulative_probability_topk_with_parent_child_cap',
+        forced=False, middle_cap=4,
+        rate_source='observed_panel_weighted_median_high_grade_fractions_on_fixed_full_training_panel',
+        rate_ge5=[float(value) for value in rate_ge5],
+        rate_6=[float(value) for value in rate_6], targets=list(targets),
+        parent_child_pairs=[[int(parent), int(child)] for parent, child in parents],
+        implementation='beer_models.q1_decision.runtime_decision',
+        implementation_sha256=sha256(ROOT/'src/beer_models/q1_decision.py'),
+        official_grade_column='estimated_grade_0_6',
+        legacy_grade_column='grade_legacy_integer_median')
+
+
 def train(source, raw, output):
     """Fixed full-data fits only; historical OOF probabilities fit risk calibration."""
     bp = read_json(ROOT/'configs/r2_raw_panel_protocol_20261026.json')
@@ -34,6 +50,8 @@ def train(source, raw, output):
     positions = np.arange(len(d['x']))
     print('Training fixed official Q1 ET + retained ordinal risk source', flush=True)
     shared = fit_shared(d, positions, bp, bp['model_seed']+999)
+    panel_median = median_grades(d['distribution'])
+    decision = q1_decision_bundle(panel_median, d['targets'], d['parents'])
     ordinal = RawOrdinalModel(rp).fit(d['x'], d['distribution'])
     inner = pd.read_csv(calibration, float_precision='round_trip')
     probabilities = {name: np.stack([part.pivot(index='beer', columns='target', values=f'p{k}')
@@ -47,8 +65,9 @@ def train(source, raw, output):
         raw_panel_model=SelectiveTailPoint(shared, d['distribution'].mean((0, 1)), None, d['parents']),
         risk_panel_model=risk, risk_status=status, features=d['features'], targets=d['targets'],
         primary=d['primary'], scorecard_scope=d['scope'].to_dict('records'), protocol=bp, r2b_protocol=rp,
-        point_semantics='integer_balanced_panel_conditional_median_with_parent_cap',
-        score_status='raw_panel_balanced_median_prediction', grade_method='r2_raw_panel_median',
+        point_semantics='integer_conditional_median_then_non_forced_high_grade_topk_with_parent_cap',
+        score_status='raw_panel_balanced_median_prediction', grade_method=decision['rule'],
+        q1_decision=decision,
         raw_source_sha256=d['manifest']['sha256'], qualified_on_historical_grouped_folds=True,
         tail_point_qualified_on_historical_folds=False,
         point_deployment_status='provisional_baseline_tail_not_qualified',
@@ -66,6 +85,9 @@ def train(source, raw, output):
         features=small['features'], omitted_input=omitted), output/'q3.joblib', compress=3)
     write_json(output/'training.json', dict(status='completed', deployment_fits_only=True,
         new_external_validation=False, q1_high_tail_resolved=False, Stale_resolved=False,
+        q1_decision_rule=decision['rule'],
+        q1_decision_implementation=decision['implementation'],
+        q1_decision_implementation_sha256=decision['implementation_sha256'],
         raw_sha256=sha256(raw), calibration_sha256=sha256(calibration),
         source_sha256={name: sha256(source/name) for name in ['1.csv', '4.csv', '8.xlsx']},
         model_sha256={name: sha256(output/name) for name in ['q1.joblib', 'q3.joblib']}))
@@ -136,8 +158,14 @@ def generated_source(preferred=None):
     raise FileNotFoundError('No verified generated profiles; pass --generated explicitly')
 
 
-def render(models, output, generated=None):
-    """Refresh adopted fixed profiles; no search, calibration or fitting."""
+def render(models, output, generated=None, source=None):
+    """Refresh adopted fixed profiles; no search, calibration or fitting.
+
+    ``source`` is the supplied attachment directory (1.csv).  When given, the
+    official Q1 portrait of the 250 panel beers is written next to the generated
+    portraits so ``verify --models --source`` can replay that table from the
+    model and the attachment (review item: verify must not ignore replay args).
+    """
     official, auxiliary = [joblib.load(models/name) for name in ['q1.joblib', 'q3.joblib']]
     output.mkdir(parents=True, exist_ok=False)
     frame = pd.concat([pd.read_csv(Q3/'source119_profile.csv'), pd.read_csv(Q3/'transfer119_profile.csv')], ignore_index=True)
@@ -146,12 +174,22 @@ def render(models, output, generated=None):
     defects, styles = auxiliary_defects(frame, auxiliary, official['targets'])
     save_csv(output, 'transfer_auxiliary_Q3_risks.csv', defects)
     save_csv(output, 'transfer_styles.csv', styles)
-    source = generated_source(generated)
-    generated = pd.read_csv(source/'generated_profiles.csv').rename(columns={'generated_id':'beer'})
+    generated_dir = generated_source(generated)
+    generated = pd.read_csv(generated_dir/'generated_profiles.csv').rename(columns={'generated_id':'beer'})
     scores, _, _, _ = portrait(generated, official)
     scores.to_csv(output/'generated_official_Q1_scores52.csv.gz', index=False, compression={'method':'gzip','mtime':0})
+    replay = dict(q1_fullfit_rows=0, q1_fullfit_source=None, q1_fullfit_source_sha256=None)
+    if source is not None and (Path(source)/'1.csv').exists():
+        attachment = Path(source)
+        panel_path = attachment/'1.csv'
+        panel = pd.read_csv(panel_path, dtype=str)
+        panel_scores, _, _, _ = portrait(panel, official)
+        save_csv(output, 'official_Q1_fullfit_scores52.csv', panel_scores)
+        replay = dict(q1_fullfit_rows=len(panel_scores), q1_fullfit_source=str(attachment),
+                      q1_fullfit_source_sha256=sha256(panel_path))
     write_json(output/'render.json', dict(status='completed', training_required=False, search_required=False,
         generated_profiles=len(generated), transfer_profiles=len(frame), actual_after_measured=False,
-        generated_source=source.relative_to(ROOT).as_posix(),
-        generated_sha256=sha256(source/'generated_profiles.csv'),
-        q1_model_sha256=sha256(models/'q1.joblib'), q3_model_sha256=sha256(models/'q3.joblib')))
+        generated_source=generated_dir.relative_to(ROOT).as_posix(),
+        generated_sha256=sha256(generated_dir/'generated_profiles.csv'),
+        q1_model_sha256=sha256(models/'q1.joblib'), q3_model_sha256=sha256(models/'q3.joblib'),
+        **replay))

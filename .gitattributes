@@ -19,3 +19,4 @@ outputs/q3_missing_aware_20261027/** -text whitespace=blank-at-eol,blank-at-eof,
 # Current package file_index hashes must survive Windows/Linux checkout unchanged.
 deliverables/current_20261027/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 data/current/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+deliverables/current_20261028/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
