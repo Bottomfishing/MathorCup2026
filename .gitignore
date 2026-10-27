@@ -67,6 +67,7 @@ outputs/q1_selective_tail_20261026/experimental_smoke/*.csv
 /交付/
 # A single expanded current delivery is versioned; ZIP is regenerated for forwarding.
 /deliverables/*.zip
+outputs/current_models/
 outputs/stage3_validation_20261027/rendered/
 outputs/stage3_validation_20261027/prediction_q1/
 outputs/stage3_validation_20261027/prediction_q3/
