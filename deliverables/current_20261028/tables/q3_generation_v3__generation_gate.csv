@@ -1,0 +1,14 @@
+﻿rule,candidate,limit,operator,passed,comparison
+marginal_w1,0.385093005137515,0.4010694450839805,<=,True,hybrid_support_projected
+energy,0.33324176088051644,0.3666485154249383,<=,True,hybrid_support_projected
+exact_training_copy_rate,0.0,0.0,<=,True,hybrid_support_projected
+variance_lower,0.8401206871488544,0.8,>=,True,hybrid_support_projected
+variance_upper,0.8401206871488544,1.2,<=,True,hybrid_support_projected
+rank_correlation_rmse,0.13607538558966698,0.19728925834643724,<=,True,hybrid_support_projected
+model_median_w1,0.12215802469135803,0.14813086419753083,<=,True,hybrid_support_projected
+Kriek_energy,0.4989046495652829,0.6138368310398322,<=,True,hybrid_support_projected
+Kriek_coverage,0.9166666666666666,0.8666666666666666,>=,True,hybrid_support_projected
+Lambic_energy,0.32244745235019495,0.38189244383663346,<=,True,hybrid_support_projected
+Lambic_coverage,1.0,0.95,>=,True,hybrid_support_projected
+Tripel_energy,0.17837318072607156,0.21421082602583094,<=,True,hybrid_support_projected
+Tripel_coverage,0.9296296296296296,0.8796296296296295,>=,True,hybrid_support_projected

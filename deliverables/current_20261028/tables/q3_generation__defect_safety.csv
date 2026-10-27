@@ -2,12 +2,12 @@
 Tripel,DMS,ug/L,log10,19.0,median,0.9,17.1,100,12.034840004996626,17.1,17.1,0.0,0.0,True,max <= cap_fraction * threshold
 Tripel,X2.3.butanedione,mg/L,identity,0.09,median,0.9,0.081,100,1.31e-07,0.081,0.081,0.0,0.0,True,max <= cap_fraction * threshold
 Tripel,X4VG,mg/L,log10,0.2,median,0.9,0.18000000000000002,100,0.009701583345085071,0.009701583345085071,0.18000000000000002,0.0,0.0,True,max <= cap_fraction * threshold
-Tripel,X.E..2.nonenal,mg/L,identity,,none,,,100,0.001605035,0.011354685499999998,10.95951305,,,True,report only: no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)
-Kriek,DMS,ug/L,log10,19.0,median,0.9,17.1,100,4.30416999856923,11.603614798432105,17.1,0.0,0.0,True,max <= cap_fraction * threshold
+Tripel,X.E..2.nonenal,mg/L,identity,,none,,,100,0.001605035,0.013203343484354608,10.95951305,,,True,report only: no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)
+Kriek,DMS,ug/L,log10,19.0,median,0.9,17.1,100,4.30416999856923,11.69468058408458,17.1,0.0,0.0,True,max <= cap_fraction * threshold
 Kriek,X2.3.butanedione,mg/L,identity,0.09,median,0.9,0.081,100,0.081,0.081,0.081,0.0,0.0,True,max <= cap_fraction * threshold
 Kriek,X4VG,mg/L,log10,0.2,median,0.9,0.18000000000000002,100,0.009701583345085071,0.009701583345085071,0.009701583345085071,0.0,0.0,True,max <= cap_fraction * threshold
-Kriek,X.E..2.nonenal,mg/L,identity,,none,,,100,0.002996138,0.013426056499999998,0.024638501,,,True,report only: no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)
+Kriek,X.E..2.nonenal,mg/L,identity,,none,,,100,0.002996138,0.012977412290716792,0.024638501,,,True,report only: no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)
 Lambic,DMS,ug/L,log10,19.0,median,0.9,17.1,100,8.999089995408912,17.1,17.1,0.0,0.0,True,max <= cap_fraction * threshold
 Lambic,X2.3.butanedione,mg/L,identity,0.09,median,0.9,0.081,100,0.055770044,0.081,0.081,0.0,0.0,True,max <= cap_fraction * threshold
 Lambic,X4VG,mg/L,log10,0.2,median,0.9,0.18000000000000002,100,0.009701583345085071,0.009701583345085071,0.03542000001190285,0.0,0.0,True,max <= cap_fraction * threshold
-Lambic,X.E..2.nonenal,mg/L,identity,,none,,,100,0.002149115,0.013267635312499998,0.026481,,,True,report only: no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)
+Lambic,X.E..2.nonenal,mg/L,identity,,none,,,100,0.002149115,0.01326746297300702,0.026481,,,True,report only: no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)

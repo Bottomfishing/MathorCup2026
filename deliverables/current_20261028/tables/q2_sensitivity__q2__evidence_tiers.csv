@@ -1,0 +1,6 @@
+﻿threshold,tier_A,tier_B,tier_C,confidence_high,confidence_medium,confidence_low
+0.4,8,58,84,8,26,116
+0.45,8,68,74,8,33,109
+0.5,7,71,72,7,38,105
+0.55,8,70,72,8,36,106
+0.6,7,75,68,7,40,103

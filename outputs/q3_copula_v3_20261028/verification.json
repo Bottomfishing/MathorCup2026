@@ -1,0 +1,386 @@
+{
+  "integrity_passed": true,
+  "integrity_checks": [
+    {
+      "name": "profiles_row_count",
+      "value": 300,
+      "limit": 300,
+      "passed": true
+    },
+    {
+      "name": "profiles_per_style",
+      "value": {
+        "Tripel": 100,
+        "Kriek": 100,
+        "Lambic": 100
+      },
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "name": "method_label",
+      "value": [
+        "hybrid_support_projected"
+      ],
+      "limit": "hybrid_support_projected",
+      "passed": true
+    },
+    {
+      "name": "deterministic_same_seed",
+      "value": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "different_seed_differs",
+      "value": 127.00944310269527,
+      "limit": ">0",
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Tripel_DMS",
+      "value": 17.1,
+      "limit": 17.1,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Tripel_X23butanedione",
+      "value": 0.081,
+      "limit": 0.081,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Tripel_X4VG",
+      "value": 0.18000000000000002,
+      "limit": 0.18000000000000002,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Kriek_DMS",
+      "value": 17.1,
+      "limit": 17.1,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Kriek_X23butanedione",
+      "value": 0.081,
+      "limit": 0.081,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Kriek_X4VG",
+      "value": 0.009701583345085071,
+      "limit": 0.18000000000000002,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Lambic_DMS",
+      "value": 17.1,
+      "limit": 17.1,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Lambic_X23butanedione",
+      "value": 0.081,
+      "limit": 0.081,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Lambic_X4VG",
+      "value": 0.03542000001190285,
+      "limit": 0.18000000000000002,
+      "passed": true
+    },
+    {
+      "name": "columns_match_official",
+      "value": 227,
+      "limit": 227,
+      "passed": true
+    },
+    {
+      "name": "no_nan_in_profiles",
+      "value": 0,
+      "limit": 0,
+      "passed": true
+    }
+  ],
+  "gate_passed": true,
+  "gate_checks": [
+    {
+      "name": "gate_marginal_w1",
+      "value": 0.385093005137515,
+      "limit": 0.4010694450839805,
+      "passed": true
+    },
+    {
+      "name": "gate_energy",
+      "value": 0.33324176088051644,
+      "limit": 0.3666485154249383,
+      "passed": true
+    },
+    {
+      "name": "gate_exact_training_copy_rate",
+      "value": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "gate_variance_lower",
+      "value": 0.8401206871488544,
+      "limit": 0.8,
+      "passed": true
+    },
+    {
+      "name": "gate_variance_upper",
+      "value": 0.8401206871488544,
+      "limit": 1.2,
+      "passed": true
+    },
+    {
+      "name": "gate_rank_correlation_rmse",
+      "value": 0.13607538558966698,
+      "limit": 0.19728925834643724,
+      "passed": true
+    },
+    {
+      "name": "gate_model_median_w1",
+      "value": 0.12215802469135803,
+      "limit": 0.14813086419753083,
+      "passed": true
+    },
+    {
+      "name": "gate_Kriek_energy",
+      "value": 0.4989046495652829,
+      "limit": 0.6138368310398322,
+      "passed": true
+    },
+    {
+      "name": "gate_Kriek_coverage",
+      "value": 0.9166666666666666,
+      "limit": 0.8666666666666666,
+      "passed": true
+    },
+    {
+      "name": "gate_Lambic_energy",
+      "value": 0.32244745235019495,
+      "limit": 0.38189244383663346,
+      "passed": true
+    },
+    {
+      "name": "gate_Lambic_coverage",
+      "value": 1.0,
+      "limit": 0.95,
+      "passed": true
+    },
+    {
+      "name": "gate_Tripel_energy",
+      "value": 0.17837318072607156,
+      "limit": 0.21421082602583094,
+      "passed": true
+    },
+    {
+      "name": "gate_Tripel_coverage",
+      "value": 0.9296296296296296,
+      "limit": 0.8796296296296295,
+      "passed": true
+    },
+    {
+      "name": "gate_all_passed",
+      "value": true,
+      "limit": true,
+      "passed": true
+    }
+  ],
+  "replacement_gate_passed": true,
+  "all_passed": true,
+  "failures": [],
+  "checks": [
+    {
+      "name": "profiles_row_count",
+      "value": 300,
+      "limit": 300,
+      "passed": true
+    },
+    {
+      "name": "profiles_per_style",
+      "value": {
+        "Tripel": 100,
+        "Kriek": 100,
+        "Lambic": 100
+      },
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "name": "method_label",
+      "value": [
+        "hybrid_support_projected"
+      ],
+      "limit": "hybrid_support_projected",
+      "passed": true
+    },
+    {
+      "name": "deterministic_same_seed",
+      "value": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "different_seed_differs",
+      "value": 127.00944310269527,
+      "limit": ">0",
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Tripel_DMS",
+      "value": 17.1,
+      "limit": 17.1,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Tripel_X23butanedione",
+      "value": 0.081,
+      "limit": 0.081,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Tripel_X4VG",
+      "value": 0.18000000000000002,
+      "limit": 0.18000000000000002,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Kriek_DMS",
+      "value": 17.1,
+      "limit": 17.1,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Kriek_X23butanedione",
+      "value": 0.081,
+      "limit": 0.081,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Kriek_X4VG",
+      "value": 0.009701583345085071,
+      "limit": 0.18000000000000002,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Lambic_DMS",
+      "value": 17.1,
+      "limit": 17.1,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Lambic_X23butanedione",
+      "value": 0.081,
+      "limit": 0.081,
+      "passed": true
+    },
+    {
+      "name": "defect_cap_Lambic_X4VG",
+      "value": 0.03542000001190285,
+      "limit": 0.18000000000000002,
+      "passed": true
+    },
+    {
+      "name": "gate_marginal_w1",
+      "value": 0.385093005137515,
+      "limit": 0.4010694450839805,
+      "passed": true
+    },
+    {
+      "name": "gate_energy",
+      "value": 0.33324176088051644,
+      "limit": 0.3666485154249383,
+      "passed": true
+    },
+    {
+      "name": "gate_exact_training_copy_rate",
+      "value": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "gate_variance_lower",
+      "value": 0.8401206871488544,
+      "limit": 0.8,
+      "passed": true
+    },
+    {
+      "name": "gate_variance_upper",
+      "value": 0.8401206871488544,
+      "limit": 1.2,
+      "passed": true
+    },
+    {
+      "name": "gate_rank_correlation_rmse",
+      "value": 0.13607538558966698,
+      "limit": 0.19728925834643724,
+      "passed": true
+    },
+    {
+      "name": "gate_model_median_w1",
+      "value": 0.12215802469135803,
+      "limit": 0.14813086419753083,
+      "passed": true
+    },
+    {
+      "name": "gate_Kriek_energy",
+      "value": 0.4989046495652829,
+      "limit": 0.6138368310398322,
+      "passed": true
+    },
+    {
+      "name": "gate_Kriek_coverage",
+      "value": 0.9166666666666666,
+      "limit": 0.8666666666666666,
+      "passed": true
+    },
+    {
+      "name": "gate_Lambic_energy",
+      "value": 0.32244745235019495,
+      "limit": 0.38189244383663346,
+      "passed": true
+    },
+    {
+      "name": "gate_Lambic_coverage",
+      "value": 1.0,
+      "limit": 0.95,
+      "passed": true
+    },
+    {
+      "name": "gate_Tripel_energy",
+      "value": 0.17837318072607156,
+      "limit": 0.21421082602583094,
+      "passed": true
+    },
+    {
+      "name": "gate_Tripel_coverage",
+      "value": 0.9296296296296296,
+      "limit": 0.8796296296296295,
+      "passed": true
+    },
+    {
+      "name": "gate_all_passed",
+      "value": true,
+      "limit": true,
+      "passed": true
+    },
+    {
+      "name": "columns_match_official",
+      "value": 227,
+      "limit": 227,
+      "passed": true
+    },
+    {
+      "name": "no_nan_in_profiles",
+      "value": 0,
+      "limit": 0,
+      "passed": true
+    }
+  ],
+  "note": "integrity_checks must all pass for the run to be usable; gate_checks report the pre-registered replacement decision and may fail without invalidating the run"
+}

@@ -58,17 +58,56 @@ class DeliveryCurrentTests(unittest.TestCase):
         else:
             self.assertEqual(data['status'], 'passed')
 
-    def test_q3_generation_v2_is_reported_not_adopted(self):
-        if not (d.Q3G2/'generated_profiles.csv').exists():
-            self.skipTest('v2 output absent')
-        self.assertIn('q3_generation_v2', d.dynamic_tables())
-        v2 = read_json(d.Q3G2/'verification.json')
-        self.assertTrue(v2['integrity_passed'])
-        self.assertFalse(v2['gate_passed'])
-        from beer_models.current_runtime import generated_source
-        self.assertIn('task4_raw_q3', str(generated_source()))
+    def test_q1_panelmean_reported_not_adopted(self):
+        if not (d.Q1P/'summary.json').exists():
+            self.skipTest('panel-mean output absent')
+        self.assertIn('q1_panelmean', d.dynamic_tables())
+        info = read_json(d.Q1P/'summary.json')
+        self.assertTrue(str(info['adoption_recommendation']).startswith('do_not_adopt'))
+        table = d.conclusions().set_index('claim')
+        self.assertIn('面板均值直接回归 MAE', table.index)
+        metrics = pd.read_csv(d.Q1P/'q1__panel_mean_metrics.csv')
+        expected = metrics[(metrics.method == 'extra_trees_direct') &
+                           (metrics.scope == 'pooled_3repeats')].panel_mean_mae.iloc[0]
+        self.assertAlmostEqual(float(table.loc['面板均值直接回归 MAE', 'value']),
+                               float(expected), places=9)
+        self.assertLess(float(expected), 0.4622338)
+        issues = set(d.unresolved()['issue'])
+        self.assertIn('面板均值直接回归', issues)
+
+    def test_q2_sensitivity_is_reported(self):
+        if not (d.Q2S/'summary.json').exists():
+            self.skipTest('sensitivity output absent')
+        self.assertIn('q2_sensitivity', d.dynamic_tables())
+        verdict = read_json(d.Q2S/'summary.json')['verdict']
+        self.assertTrue(verdict['threshold_stable'])
+        self.assertTrue(verdict['resolution_stable'])
+        table = d.conclusions().set_index('claim')
+        self.assertEqual(str(table.loc['参数敏感性', 'value']), '阈值不敏感、分辨率稳健')
+
+    def test_q3_generation_v1_is_reported_not_adopted(self):
+        v1 = read_json(d.Q3G/'verification.json')
+        self.assertTrue(v1['integrity_passed'])
+        self.assertFalse(v1['gate_passed'])
         table = d.conclusions().set_index('claim')
         self.assertIn('生成器 v2 门槛', table.index)
+
+    def test_q3_generation_v3_is_adopted_after_gate(self):
+        if not (d.Q3G3/'generated_profiles.csv').exists():
+            self.skipTest('v3 output absent')
+        v3 = read_json(d.Q3G3/'verification.json')
+        self.assertTrue(v3['integrity_passed'])
+        self.assertTrue(v3['replacement_gate_passed'])
+        groups = d.dynamic_tables()
+        self.assertEqual(groups['q3_generation'][0], d.Q3G3)
+        from beer_models.current_runtime import generated_source
+        self.assertIn('q3_copula_v3', str(generated_source()))
+        table = d.conclusions().set_index('claim')
+        self.assertIn('生成器 v3 门槛', table.index)
+        gates = d._gate_state(d.Q3G3)
+        expected = '通过 %d/%d' % (gates['gate_checks']-len(gates['failures']),
+                                   gates['gate_checks'])
+        self.assertEqual(str(table.loc['替换门槛状态', 'value']), expected)
 
 
 if __name__ == '__main__':

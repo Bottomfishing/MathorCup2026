@@ -10,8 +10,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from beer_models.generation_copula import (
     DEFECT_TRANSFORMS,
+    HYBRID_METHOD,
     CopulaQuantileGenerator,
     DonorResidualGenerator,
+    HybridSupportGenerator,
     _empirical_quantile_map,
     defect_caps,
     physical_values,
@@ -232,6 +234,96 @@ class DonorResidualGeneratorTest(unittest.TestCase):
         no_caps = DonorResidualGenerator(features=FEATURES, components=4).fit(self.x, self.styles)
         _, metadata = no_caps.sample("Tripel", 10, 2)
         self.assertEqual(metadata["caps"], {})
+
+
+class HybridSupportGeneratorTest(unittest.TestCase):
+    """v3 generator: pre-registered interior/donor mixture + caps applied last."""
+
+    def setUp(self):
+        self.x, self.styles = synthetic()
+        self.generator = HybridSupportGenerator(
+            features=FEATURES, components=4, defect_thresholds=THRESHOLDS,
+            interior_fraction=0.5).fit(self.x, self.styles)
+
+    def test_protocol_records_pre_registered_mixture(self):
+        protocol = self.generator.protocol()
+        self.assertEqual(protocol["component"], "HybridSupportGenerator")
+        self.assertEqual(protocol["method"], HYBRID_METHOD)
+        self.assertEqual(HYBRID_METHOD, "hybrid_support_projected")
+        self.assertEqual(protocol["interior_fraction"], 0.5)
+        self.assertEqual(protocol["interior_seed_offset"], 7919)
+        self.assertEqual(protocol["outer_component"], "donor_residual_projected")
+        self.assertIn("StyleGenerator", protocol["interior_component"])
+        for style in ("Tripel", "Kriek", "Lambic"):
+            self.assertEqual(protocol["donor_pool_size"][style], 12)
+            self.assertGreater(protocol["support_radius"][style], 0.0)
+
+    def test_mixture_counts_in_metadata(self):
+        generated, metadata = self.generator.sample("Kriek", 20, 7)
+        self.assertEqual(generated.shape, (20, len(FEATURES)))
+        self.assertEqual(metadata["method"], HYBRID_METHOD)
+        self.assertEqual(metadata["n_interior"] + metadata["n_donor"], 20)
+        self.assertEqual(metadata["n_interior"], 10)
+        self.assertEqual(metadata["n_donor"], 10)
+        _, smaller = self.generator.sample("Lambic", 7, 7)
+        self.assertEqual(smaller["n_interior"] + smaller["n_donor"], 7)
+        unique = np.unique(np.round(generated, 12), axis=0)
+        self.assertEqual(len(unique), 20, "mixture spectra must be distinct")
+
+    def test_caps_apply_and_deterministic(self):
+        first, metadata = self.generator.sample("Tripel", 200, 4)
+        second, _ = self.generator.sample("Tripel", 200, 4)
+        self.assertTrue(np.array_equal(first, second))
+        for field in THRESHOLDS:
+            j = FEATURES.index(field)
+            cap = 0.9 * THRESHOLDS[field]
+            self.assertLessEqual(physical_values(first[:, j], field).max(), cap * (1 + 1e-12))
+            self.assertIn(field, metadata["projection"])
+        third, _ = self.generator.sample("Tripel", 20, 5)
+        self.assertFalse(np.allclose(first[:20], third))
+
+    def test_interior_fraction_validation_and_input_checks(self):
+        with self.assertRaises(ValueError):
+            HybridSupportGenerator(features=FEATURES, interior_fraction=1.5)
+        with self.assertRaises(ValueError):
+            HybridSupportGenerator(features=FEATURES, interior_fraction=-0.1)
+        with self.assertRaises(ValueError):
+            HybridSupportGenerator(features=FEATURES, components=4).sample("Tripel", 5, 1)
+        with self.assertRaises(ValueError):
+            self.generator.sample("unknown style", 5, 1)
+        with self.assertRaises(ValueError):
+            self.generator.sample("Tripel", 0, 1)
+
+    def test_hybrid_leaves_lower_versions_untouched(self):
+        v1 = CopulaQuantileGenerator(features=FEATURES, components=4).fit(self.x, self.styles)
+        v2 = DonorResidualGenerator(features=FEATURES, components=4).fit(self.x, self.styles)
+        _, metadata_v1 = v1.sample("Tripel", 10, 3)
+        _, metadata_v2 = v2.sample("Tripel", 10, 3)
+        self.assertEqual(metadata_v1["method"], "copula_quantile_projected")
+        self.assertEqual(metadata_v2["method"], "donor_residual_projected")
+        self.assertEqual(v2.protocol()["method"], "donor_residual_projected")
+        self.assertEqual(self.generator.protocol()["method"], HYBRID_METHOD)
+
+
+    def test_profiles_contract_matches_official_columns(self):
+        root = Path(__file__).resolve().parents[1]
+        official = root / "outputs" / "task4_raw_q3_20261026" / "generated_profiles.csv"
+        if not official.is_file():
+            self.skipTest("official generated_profiles.csv not available")
+        import pandas as pd
+        reference = list(pd.read_csv(official, nrows=0).columns)
+        self.assertEqual(len(reference), 227)
+        candidate = root / "outputs" / "q3_copula_v3_20261028" / "generated_profiles.csv"
+        self.assertTrue(candidate.is_file(), "v3 delivered spectra must exist")
+        self.assertEqual(list(pd.read_csv(candidate, nrows=0).columns), reference)
+
+    def test_gate_rules_reused_not_redefined(self):
+        script = (Path(__file__).resolve().parents[1] / "scripts"
+                  / "q3_official_generation_20261028.py").read_text(encoding="utf-8")
+        self.assertIn("def build_gate", script, "gate must be defined once and reused by the gate checks")
+        self.assertEqual(script.count("def build_gate"), 1)
+        self.assertIn("build_gate(validation, candidate=primary)", script)
+        self.assertNotIn("V3_GATE", script, "v3 must not introduce a parallel gate definition")
 
 
 if __name__ == "__main__":

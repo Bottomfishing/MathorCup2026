@@ -101,7 +101,9 @@ def auxiliary_defects(frame, q3, targets):
     return pd.DataFrame(rows), pd.DataFrame(styles)
 
 
-GENERATED_CANDIDATES = [ROOT/'outputs/q3_copula_v2_20261028', ROOT/'outputs/q3_copula_20261028',
+GENERATED_CANDIDATES = [ROOT/'outputs/q3_copula_v3_20261028',
+                        ROOT/'outputs/q3_copula_v2_20261028',
+                        ROOT/'outputs/q3_copula_20261028',
                         ROOT/'outputs/task4_raw_q3_20261026']
 
 

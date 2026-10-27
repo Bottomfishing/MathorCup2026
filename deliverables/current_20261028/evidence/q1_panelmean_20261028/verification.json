@@ -1,0 +1,48 @@
+{
+  "all_pass": true,
+  "checks": {
+    "protocol_written_first": true,
+    "rows_12500_primary": true,
+    "rows_12500_secondary": true,
+    "unique_cells_primary": true,
+    "unique_cells_secondary": true,
+    "no_missing_values": true,
+    "grade_range_0_6": true,
+    "truth_matches_official_distribution": true,
+    "baseline_reproduced": true,
+    "fold_count_3": true,
+    "seed_per_fold_deterministic": true,
+    "metrics_complete": true,
+    "gates_match_summary": true,
+    "adoption_recommendation_consistent": true
+  },
+  "diagnostics": {
+    "baseline_panel_mean_mae": 0.46223378991660674,
+    "baseline_within_one": 0.91112,
+    "truth_check": {
+      "max_abs_mean_diff": 1.3322676295501878e-15,
+      "median_cells_mismatch": 0
+    },
+    "fold_sizes": {
+      "0": 4200,
+      "1": 4150,
+      "2": 4150
+    },
+    "model_seeds": {
+      "0/0": 20261125,
+      "0/1": 20261225,
+      "0/2": 20261325,
+      "1/0": 20262125,
+      "1/1": 20262225,
+      "1/2": 20262325,
+      "2/0": 20263125,
+      "2/1": 20263225,
+      "2/2": 20263325
+    },
+    "determinism": {
+      "identical_refit": true,
+      "max_abs_delta": 0.0
+    },
+    "n_cells": 12500
+  }
+}

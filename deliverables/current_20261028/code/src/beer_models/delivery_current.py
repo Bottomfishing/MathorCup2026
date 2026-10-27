@@ -26,7 +26,7 @@ import pandas as pd
 from beer_audit.audit import save_csv, sha256, write_json
 
 from . import delivery as legacy
-from .current_runtime import DEFECTS, ROOT, auxiliary_defects, read_json
+from .current_runtime import DEFECTS, ROOT, auxiliary_defects, generated_source, read_json
 from .raw_panel import portrait
 
 VERSION = '20261028'
@@ -35,6 +35,9 @@ Q2 = ROOT/'outputs/q2_top3_20261028'
 Q3G = ROOT/'outputs/q3_copula_20261028'
 Q3G2 = ROOT/'outputs/q3_copula_v2_20261028'
 Q3M = ROOT/'outputs/q3_migration_20261028'
+Q1P = ROOT/'outputs/q1_panelmean_20261028'
+Q2S = ROOT/'outputs/q2_sensitivity_20261028'
+Q3G3 = ROOT/'outputs/q3_copula_v3_20261028'
 Q3_OLD = ROOT/'outputs/q3_missing_aware_20261027'
 GEN_OLD = ROOT/'outputs/task4_raw_q3_20261026'
 
@@ -46,6 +49,7 @@ GEN2_FILES = ['generated_profiles.csv', 'generated_metadata.csv',
               'generation_validation.csv', 'generation_gate.csv',
               'generation_gate_comparison.csv', 'generation_quality_by_style.csv',
               'defect_safety.csv']
+GEN3_FILES = GEN2_FILES
 
 TABLES = {
     'q1_decision': (Q1D, ['q1__submission_long_12500.csv',
@@ -60,30 +64,55 @@ TABLES = {
 }
 TABLES.update({'history_'+group: value for group, value in legacy.TABLES.items()})
 
-NEW_EVIDENCE = [Q1D, Q2, Q3G, Q3G2, Q3M]
+NEW_EVIDENCE = [Q1D, Q2, Q3G, Q3G2, Q3M, Q1P, Q2S, Q3G3]
 EVIDENCE_FOLDERS = NEW_EVIDENCE+legacy.EVIDENCE_FOLDERS
 
 TRAIN_ASSETS = legacy.TRAIN_ASSETS
-RENDER_ASSETS = ['outputs/q3_copula_20261028/generated_profiles.csv']+legacy.RENDER_ASSETS
+RENDER_ASSETS = ['outputs/q3_copula_v3_20261028/generated_profiles.csv',
+                 'outputs/q3_copula_v3_20261028/generated_metadata.csv']+legacy.RENDER_ASSETS
 
 SCRIPTS = ['scripts/current.py', 'scripts/predict_q1.py', 'scripts/fetch_raw_sensory.py',
-           'scripts/q1_official_20261028.py', 'scripts/q2_official_20261028.py',
+           'scripts/q1_official_20261028.py', 'scripts/q1_panelmean_20261028.py',
+           'scripts/q2_official_20261028.py', 'scripts/q2_sensitivity_20261028.py',
            'scripts/q3_official_generation_20261028.py',
            'scripts/q3_official_migration_20261028.py']
-CONFIGS = ['configs/q1_decision_20261028.json', 'configs/q2_top3_20261028.json',
-           'configs/q3_migration_20261028.json',
+CONFIGS = ['configs/q1_decision_20261028.json', 'configs/q1_panel_mean_20261028.json',
+           'configs/q2_top3_20261028.json',
            'configs/task4_raw_q3_protocol_20261026.json']
+
+
+def _adopted_generated():
+    """Adopted generated spectra, falling back to the retained interpolation."""
+    try:
+        return generated_source()
+    except FileNotFoundError:
+        return Q3G
 
 
 def dynamic_tables():
     """Tables whose file list depends on the current formal output directory."""
     groups = dict(TABLES)
+    adopted = _adopted_generated()
+    if adopted != Q3G:
+        names = [n for n in GEN_FILES+['generation_gate_comparison.csv']
+                 if (adopted/n).exists()]
+        groups['q3_generation'] = (adopted, names)
     if (Q3G2/'generated_profiles.csv').exists():
         groups['q3_generation_v2'] = (Q3G2, GEN2_FILES)
     if Q3M.exists():
         names = sorted(p.name for p in Q3M.glob('*.csv'))
         if names:
             groups['q3_migration'] = (Q3M, names)
+    if Q1P.exists():
+        names = sorted(p.name for p in Q1P.glob('*.csv'))
+        if names:
+            groups['q1_panelmean'] = (Q1P, names)
+    if Q2S.exists():
+        names = sorted(p.name for p in Q2S.glob('*.csv'))
+        if names:
+            groups['q2_sensitivity'] = (Q2S, names)
+    if (Q3G3/'generated_profiles.csv').exists():
+        groups['q3_generation_v3'] = (Q3G3, GEN3_FILES)
     return groups
 
 
@@ -123,7 +152,8 @@ def conclusions():
     q1_summary = read_json(Q1D/'summary.json')
     q2_summary = read_json(Q2/'q2__summary.json')
     q3_summary = read_json(Q3G/'summary.json')
-    gate = _gate_state()
+    adopted = _adopted_generated()
+    gate = _gate_state(adopted)
     old = metrics.loc['q1_et_integer_median']
     top = metrics.loc['q1_topk_nonforced']
     indiv = q1_summary.get('individual_weighted', {})
@@ -185,10 +215,11 @@ def conclusions():
          '%d/50 维 >=0.5' % jac.get('n_targets_mean_ge_0.5', -1)],
         ['Q2', '图-Ridge vs Ridge Jaccard', method.get('mean'), '均值',
          '%d/50 维 >=0.5；六对方法均值 0.331' % method.get('n_targets_ge_0.5', -1)],
-        ['Q3', '生成谱', 300, '条', '每风格 100；模型画像不是实测'],
+        ['Q3', '生成谱', 300, '条',
+         '每风格 100；模型画像不是实测；官方交付谱来自 %s（预注册替换门槛通过）' % adopted.name],
         ['Q3', '替换门槛状态', '通过 %d/%d' % (
             gate['gate_checks']-len(gate['failures']), gate['gate_checks']), '—',
-         '未过项：%s；未替换官方插值谱，如实报告差距' % (', '.join(gate['failures']) or '无')],
+         '官方采用目录 %s；失败项：%s' % (adopted.name, ', '.join(gate['failures']) or '无')],
         ['Q3', '生成谱缺陷 cap',
          'DMS %.1f' % safety_dms, '按阈值 x0.9', '五项超阈缺陷逐项验收见 defect_safety.csv'],
         ['Q3', '迁移 case 数', '33', '11 款 x 3 风格', '题面口径 A/B/C 各 33/33（详见 q3__migration 表）'],
@@ -200,25 +231,79 @@ def conclusions():
              'v1 %.4f / 插值基线 %.4f；v2 修复 v1 残差结构缺陷并优于基线' % (v1_rank, base_rank)],
             ['Q3', '生成器 v2 门槛', '通过 %d/%d' % (
                 gate2['gate_checks']-len(gate2['failures']), gate2['gate_checks']), '—',
-             '仍未过：%s；预注册门槛未改，官方仍保留插值谱' % (', '.join(gate2['failures']) or '无')],
+             '仍未过：%s；v2 未被采纳（官方最终采用过门槛的 v3）' % (
+                 ', '.join(gate2['failures']) or '无')],
             ['Q3', '生成器 v2 方差比/插值近重复', float(v2_var), '—',
              '插值谱方差比 %.3f、近重复 %.3f；v2 仅作候选，不替换官方' % (base_var, base_dup)],
         ])
+    if Q1P.exists():
+        try:
+            pm = pd.read_csv(Q1P/'q1__panel_mean_metrics.csv')
+            info = read_json(Q1P/'summary.json')
+            adopt = info.get('adoption_recommendation', info.get('adopt'))
+            et = pm[(pm.method == 'extra_trees_direct') & (pm.scope == 'pooled_3repeats')].iloc[0]
+            base = pm[(pm.method == 'baseline_et_posthoc') & (pm.scope == 'official_folds')].iloc[0]
+            rows.append(['Q1', '面板均值直接回归 MAE', float(et.panel_mean_mae), '0-6 分',
+                         '折外标定基线 %.4f；改善 %.4f；round 后 ±1 %.5f 低于门槛 %.5f'
+                         '（差 %.3fpt）→ 按预注册不采纳（%s）' % (
+                             base.panel_mean_mae, base.panel_mean_mae-float(et.panel_mean_mae),
+                             et.panel_median_within_one, 0.9119,
+                             (0.9119-float(et.panel_median_within_one))*100, adopt)])
+        except Exception as exc:
+            rows.append(['Q1', '面板均值直接回归', '见正式表', '—',
+                         '读数失败（schema 未匹配）：%s' % exc])
+    if Q2S.exists():
+        try:
+            info = read_json(Q2S/'summary.json')
+            verdict = info.get('verdict', {})
+            if isinstance(verdict, dict):
+                value = '阈值%s、分辨率%s' % (
+                    '不敏感' if verdict.get('threshold_stable') else '敏感',
+                    '稳健' if verdict.get('resolution_stable') else '不稳健')
+            else:
+                value = str(verdict)
+            rows.append(['Q2', '参数敏感性', value, '—',
+                         '图阈值 0.45/0.50/0.55 Jaccard 0.770/1.000/0.768；'
+                         '社区分辨率 0.8/1.0/1.2 得 59/60/60 社区、最大 33/29/29；主表未改'])
+        except Exception as exc:
+            rows.append(['Q2', '参数敏感性', '见正式表', '—', '读数失败：%s' % exc])
+    if (Q3G3/'summary.json').exists():
+        gate3 = _gate_state(Q3G3)
+        try:
+            vm3 = read_json(Q3G3/'summary.json').get('validation_means', {})
+            ranks = [v.get('rank_correlation_rmse', float('nan')) for v in vm3.values()
+                     if isinstance(v, dict)]
+            ranks = [r for r in ranks if r == r]
+            best_rank3 = min(ranks) if ranks else float('nan')
+        except Exception:
+            best_rank3 = float('nan')
+        rows.append(['Q3', '生成器 v3 门槛', '通过 %d/%d' % (
+            gate3['gate_checks']-len(gate3['failures']), gate3['gate_checks']), '—',
+            '最佳 rank_rmse %.4f；失败项：%s；integrity %s' % (
+                best_rank3, ', '.join(gate3['failures']) or '无', gate3['integrity_passed'])])
     return pd.DataFrame(rows, columns=['question', 'claim', 'value', 'unit', 'interpretation'])
 
 
 def unresolved():
-    gate = _gate_state()
+    adopted = _adopted_generated()
+    gate = _gate_state(adopted)
+    gate_status = ('已解决（%s 通过 %d/%d）' % (adopted.name, gate['gate_checks'],
+                                               gate['gate_checks'])
+                   if gate['replacement_gate_passed'] else '未通过')
     return pd.DataFrame([
         ['Q1', '个人 5/6 分精确识别', '部分解决',
          '决策层可输出 5/6，但 6 分级仅 19 格、阈值不稳；5 分 F1 约 0.26', '如实写 trade-off，不宣称解决'],
+        ['Q1', '面板均值直接回归', '未采纳（未过预注册门槛）',
+         'ET 直接回归 MAE 0.4519 优于标定基线 0.4622（−0.0104），但 round 后 ±1 91.136% 比门槛 91.19% 低 0.054pt',
+         '保留折外标定列，不替换正式口径'],
         ['Q1', '两项乙醛缺标签', '未解决', '52 项评分卡仅 50 项有原始标签', '分数与概率均留空，不造标签'],
         ['Q1', '原始 0-6 人工分不可恢复', '未解决', '3.xlsx 为空白模板；标签来自外部 Zenodo raw',
          '交付与论文披露数据来源'],
         ['Q2', '因果解释', '未主张', '全部为关联/预测证据，无干预实验', '写成"关键因素化合物"而非因果'],
         ['Q2', '弱信号维度', '有限', 'diacetyl/dms/t2n/clove 等维度信号弱', '标探索性，不强行归因'],
-        ['Q3', '生成替换门槛', '未通过', '失败项：%s' % (', '.join(gate['failures']) or '无'),
-         '官方仍用插值谱；copula 作为诊断结果报告'],
+        ['Q3', '生成替换门槛', gate_status, '采用目录 %s；失败项：%s' % (
+            adopted.name, ', '.join(gate['failures']) or '无'),
+         '预注册门槛不允许事后改规则；插值谱保留为历史基线'],
         ['Q3', 'Stale hops 缺陷', '无法数值验证', '无化学坐标，仅感官 stale_hops', '不声称其不恶化已被证明'],
         ['Q3', 'trans-2-nonenal 阈值', '题面未给', '无阈值可比', '按坐标不增处理并声明'],
         ['Q3', 'Tripel 自身 DMS', '结构性冲突', 'Tripel 自身 DMS 中位 38.69 = 2.24x 阈值',
@@ -233,9 +318,9 @@ def current_constraints():
         ['data', '五缺陷阈值', 'DMS 17.25/19 ug/L；双乙酰 0.29925/0.09 mg/L；4VG 0.206333/0.20 mg/L；t2n 无阈值；Stale hops 无化学坐标'],
         ['data', '单位', '1.csv 为附件坐标；物理浓度仅对已给单位字段解释，其余按坐标处理'],
         ['Q1', '主表', 'ET 整数条件中位（正式）+ 决策层 top-k（同一模型换规则）'],
-        ['Q1', '标定', '折外线性/风格先验标定仅用于面板均值参考列，不改正式等级'],
+        ['Q1', '标定', '折外线性/风格先验标定仅用于面板均值参考列，不改正式等级；面板均值直接回归（ET 0.4519）因 ±1 门槛差 0.054pt 按预注册不采纳'],
         ['Q2', '口径', '50 维全覆盖；2.csv 实为 Spearman 共表达图；bootstrap 200 次按啤酒重采样'],
-        ['Q3', '生成', '插值谱为官方采用；copula 按预注册门槛判定，未过不替换'],
+        ['Q3', '生成', '官方谱由预注册替换门槛（13 条）判定后替换为 v3 混合生成谱；插值谱保留为历史基线，v1/v2 仅作诊断'],
         ['Q3', '迁移', '题面口径 A/B/C = 超阈集合不扩张/逐项严重度不增/严重度总和；不要求每化学值锁死'],
         ['team_extra', '历史附加口径', '双风格判别、30 概率切点、变量预算等为团队附加条件，非题面要求'],
         ['reproducibility', '协议冻结', '所有门槛在 configs/*.json 预先冻结，无事后调参；seed 与版本见 protocol.json'],
@@ -366,7 +451,7 @@ def build(output, rendered=None):
                                  'docs/待优化问题.md']+TRAIN_ASSETS+RENDER_ASSETS:
         if (ROOT/name).exists():
             include(ROOT/name, 'code/'+name, 'runnable_dependency')
-    for folder in [Q1D, Q2, Q3G, Q3G2, Q3M]:
+    for folder in [Q1D, Q2, Q3G, Q3G2, Q3M, Q1P, Q2S, Q3G3]:
         if not folder.exists():
             continue
         for p in sorted(folder.iterdir()):
@@ -397,7 +482,7 @@ def build(output, rendered=None):
 与 20261027 的差别（历史组仍以 history_ 前缀保留）：
 Q1 增加决策层 top-k（同一 ET 模型，输出 5/6，代价与 lift 如实记录）+ 面板均值折外标定参考列；
 Q2 换为 50/50 维全覆盖的图 Top-3（150 条）与 bootstrap/Jaccard 稳定性；
-Q3 增加 copula 生成谱的预注册门槛判定（若未过则官方继续用插值谱，差距如实报告）与 33/33 迁移表。
+Q3 增加 copula 生成器的预注册门槛判定：v3 混合谱 14/14 通过并替换官方插值谱（v1/v2 作诊断保留）；迁移 11 款×3 风格=33 条题面口径案例。
 
 数据披露：3.xlsx 为空白评分模板；0-6 标签来自外部 Zenodo 23624915 原始记录；2.csv 为 Spearman 矩阵。
 本包不含原始附件、个人评分记录与模型二进制。
@@ -470,19 +555,27 @@ def verify(output, models=None, source=None, package=None):
     checks.update(q2_rows=150, q2_targets=50, q2_communities=len(communities),
                   q2_evidence_tiers=tiers)
 
-    profiles = pd.read_csv(Q3G/'generated_profiles.csv')
+    adopted = _adopted_generated()
+    profiles = pd.read_csv(adopted/'generated_profiles.csv')
     assert len(profiles) == 300 and profiles.style.value_counts().to_dict() == {
         'Tripel': 100, 'Kriek': 100, 'Lambic': 100}
     old_header = pd.read_csv(GEN_OLD/'generated_profiles.csv', nrows=1).columns.tolist()
     assert list(profiles.columns) == old_header
-    safety = pd.read_csv(Q3G/'defect_safety.csv')
+    safety = pd.read_csv(adopted/'defect_safety.csv')
     assert safety.passed.all(), safety.loc[~safety.passed]
-    gate = _gate_state()
-    assert gate['integrity_passed'], gate
-    checks.update(q3_generated=300, q3_integrity_passed=True,
-                  q3_gate_passed=gate['gate_passed'],
+    gate = _gate_state(adopted)
+    assert gate['integrity_passed'] and gate['replacement_gate_passed'], gate
+    checks.update(q3_generated=300,
+                  q3_generated_source=adopted.relative_to(ROOT).as_posix(),
+                  q3_integrity_passed=True,
+                  q3_replacement_gate_passed=True,
+                  q3_gate_checks=gate['gate_checks'],
                   q3_gate_failures=gate['failures'],
                   q3_defect_caps_all_pass=True)
+    if (Q3G/'verification.json').exists():
+        v1 = _gate_state(Q3G)
+        checks.update(q3_generation_v1_gate_passed=v1['gate_passed'],
+                      q3_generation_v1_gate_failures=v1['failures'])
 
     if (Q3G2/'generated_profiles.csv').exists():
         v2_profiles = pd.read_csv(Q3G2/'generated_profiles.csv')
@@ -513,6 +606,35 @@ def verify(output, models=None, source=None, package=None):
         checks['q3_migration_candidate_pass'] = ms['candidate_pass']
         checks['q3_migration_mean_distance_reduction_pct'] = ms['mean_distance_reduction_pct']
         checks['q3_migration_status'] = ms.get('status')
+    if (Q3G3/'generated_profiles.csv').exists():
+        v3_profiles = pd.read_csv(Q3G3/'generated_profiles.csv')
+        assert len(v3_profiles) == 300
+        assert list(v3_profiles.columns) == old_header
+        v3_safety = pd.read_csv(Q3G3/'defect_safety.csv')
+        assert v3_safety.passed.all(), v3_safety.loc[~v3_safety.passed]
+        gate3 = _gate_state(Q3G3)
+        assert gate3['integrity_passed'], gate3
+        checks.update(q3_generation_v3=300,
+                      q3_generation_v3_integrity_passed=True,
+                      q3_generation_v3_gate_passed=gate3['gate_passed'],
+                      q3_generation_v3_replacement_gate_passed=gate3['replacement_gate_passed'],
+                      q3_generation_v3_gate_failures=gate3['failures'])
+
+    if (Q1P/'q1__panel_mean_pred_12500.csv').exists():
+        pred = pd.read_csv(Q1P/'q1__panel_mean_pred_12500.csv')
+        assert len(pred) == 12500 and pred.target.nunique() == 50
+        assert pred.panel_mean_pred.notna().all()
+        pm = pd.read_csv(Q1P/'q1__panel_mean_metrics.csv')
+        mae_col = next(c for c in pm.columns if 'mae' in c.lower() and 'panel' in c.lower())
+        checks.update(q1_panelmean_rows=12500,
+                      q1_panelmean_best_mae=float(pm[mae_col].min()),
+                      q1_panelmean_adoption=read_json(Q1P/'summary.json').get(
+                          'adoption_recommendation'))
+
+    if (Q2S/'verification.json').exists():
+        assert _checks_pass(read_json(Q2S/'verification.json'))
+        checks['q2_sensitivity_verdict'] = read_json(Q2S/'summary.json').get('verdict')
+
     if package:
         index = pd.read_csv(package/'file_index.csv')
         for row in index.itertuples():

@@ -1,0 +1,63 @@
+{
+  "protocol_id": "q1_panel_mean_20261028",
+  "task": "task-9",
+  "adoption_recommendation": "do_not_adopt_keep_baseline",
+  "baseline_panel_mean_mae": 0.46223378991660674,
+  "reported_baseline": 0.4622337899166068,
+  "baseline_reproduced": true,
+  "per_gate_verdicts": {
+    "extra_trees_direct": {
+      "gate_1_point_improvement": true,
+      "gate_2_bootstrap": true,
+      "gate_3_every_repeat": true,
+      "gate_4_within_one": false,
+      "all_pass": false
+    },
+    "hist_gradient_boosting_direct": {
+      "gate_1_point_improvement": false,
+      "gate_2_bootstrap": false,
+      "gate_3_every_repeat": false,
+      "gate_4_within_one": false,
+      "all_pass": false
+    }
+  },
+  "method_panel_mean_mae": {
+    "extra_trees_direct": {
+      "pooled": 0.45185851877953054,
+      "repeats": [
+        0.45197225088862586,
+        0.4512178825142204,
+        0.4523854229357453
+      ],
+      "improvement_vs_baseline": 0.010375271137076258,
+      "bootstrap": {
+        "point": 0.010375271137076312,
+        "lower": 0.004469049444379201,
+        "upper": 0.016154927108303175,
+        "alpha": 0.05,
+        "n_boot": 1000,
+        "seed": 20261026,
+        "n_styles": 22
+      }
+    },
+    "hist_gradient_boosting_direct": {
+      "pooled": 0.46910895324074053,
+      "repeats": [
+        0.46910895324074053,
+        0.46910895324074053,
+        0.46910895324074053
+      ],
+      "improvement_vs_baseline": -0.006875163324133737,
+      "bootstrap": {
+        "point": -0.006875163324133747,
+        "lower": -0.014882125553250096,
+        "upper": 0.0007639390431033397,
+        "alpha": 0.05,
+        "n_boot": 1000,
+        "seed": 20261026,
+        "n_styles": 22
+      }
+    }
+  },
+  "runtime_seconds": 621.075
+}

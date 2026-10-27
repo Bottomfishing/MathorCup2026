@@ -1,0 +1,42 @@
+{
+  "checks": {
+    "baseline_identical_to_main_table": true,
+    "baseline_rows_150": true,
+    "threshold_grid_complete": true,
+    "resolution_grid_complete": true,
+    "all_threshold_variants_150_rows": true,
+    "evidence_tiers_for_all_thresholds": true,
+    "figures_written": true,
+    "verdict_recorded": true
+  },
+  "all_pass": true,
+  "observed": {
+    "baseline_identity": {
+      "main_table": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q2_top3_20261028\\q2__top3_all50_150.csv",
+      "compared_rows": 150,
+      "mismatches": [],
+      "mismatch_targets": [],
+      "identical": true
+    },
+    "threshold_jaccard_mean": {
+      "0.40": 0.6819999999999999,
+      "0.45": 0.77,
+      "0.50": 1.0,
+      "0.55": 0.768,
+      "0.60": 0.6359999999999999
+    },
+    "resolution_communities": {
+      "0.6": 57,
+      "0.7": 58,
+      "0.8": 59,
+      "0.9": 59,
+      "1.0": 60,
+      "1.1": 60,
+      "1.2": 60,
+      "1.3": 61,
+      "1.4": 61,
+      "1.5": 61,
+      "1.6": 63
+    }
+  }
+}

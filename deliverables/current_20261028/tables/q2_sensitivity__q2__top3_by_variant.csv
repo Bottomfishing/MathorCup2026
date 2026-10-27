@@ -1,0 +1,751 @@
+﻿threshold,target,rank,field,chemical_name
+0.4,A_malt_all,1,octyl_acetate,Octyl acetate
+0.4,A_malt_all,2,ethyl.furoate,Ethyl furoate
+0.4,A_malt_all,3,MeSH,Methanethiol
+0.4,A_malt_grain,1,car.3.en.2.one,Car-3-en-2-one
+0.4,A_malt_grain,2,furfural,Furfural
+0.4,A_malt_grain,3,octyl_acetate,Octyl acetate
+0.4,A_malt_bread,1,furfural,Furfural
+0.4,A_malt_bread,2,octyl_acetate,Octyl acetate
+0.4,A_malt_bread,3,ethyl.furoate,Ethyl furoate
+0.4,A_malt_cara,1,octyl_acetate,Octyl acetate
+0.4,A_malt_cara,2,acetaldehyde,Acetaldehyde
+0.4,A_malt_cara,3,alpha.calacorene,Î±-calacorene
+0.4,A_malt_burn,1,methylpyrazine,Methylpyrazine
+0.4,A_malt_burn,2,ethyl..E..linalool,Ethyl linalool
+0.4,A_malt_burn,3,MeSH,Methanethiol
+0.4,A_hops_all,1,iron,Iron
+0.4,A_hops_all,2,DMS,Dimethyl sulfide
+0.4,A_hops_all,3,X6.methyl.5.hepten.2.one,Methyl heptenone
+0.4,A_hops_citrus,1,geraniol,Geraniol
+0.4,A_hops_citrus,2,citronellol,Citronellol
+0.4,A_hops_citrus,3,X6.methyl.5.hepten.2.one,Methyl heptenone
+0.4,A_hops_tropical,1,DMS,Dimethyl sulfide
+0.4,A_hops_tropical,2,citronellol,Citronellol
+0.4,A_hops_tropical,3,beta.phellandrene,Beta-phellandrene
+0.4,A_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.4,A_hops_noble,2,iron,Iron
+0.4,A_hops_noble,3,DMS,Dimethyl sulfide
+0.4,A_hops_woody,1,ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate
+0.4,A_hops_woody,2,iron,Iron
+0.4,A_hops_woody,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.4,A_esters_all,1,acetaldehyde,Acetaldehyde
+0.4,A_esters_all,2,n.hexanol,N-hexanol
+0.4,A_esters_all,3,iron,Iron
+0.4,A_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.4,A_esters_ethac,2,ethyl_acetate,Ethyl acetate
+0.4,A_esters_ethac,3,X2E.6Z.farnesal,"E,Z-farnesal"
+0.4,A_esters_isoaa,1,n.hexanol,N-hexanol
+0.4,A_esters_isoaa,2,ambroxide,Ambroxide
+0.4,A_esters_isoaa,3,humulene.epoxide.II,Humulene epoxide II
+0.4,A_esters_flower,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.4,A_esters_flower,2,beta.phellandrene,Beta-phellandrene
+0.4,A_esters_flower,3,X.E..beta.ionone,E-Î²-ionone
+0.4,A_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol
+0.4,A_esters_fruity,2,beta.phellandrene,Beta-phellandrene
+0.4,A_esters_fruity,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.4,F_malt_all,1,acetaldehyde,Acetaldehyde
+0.4,F_malt_all,2,MeSH,Methanethiol
+0.4,F_malt_all,3,X4VG,4-vinylguaiacol
+0.4,F_malt_grain,1,terpinen.4.ol,Terpinen-4-ol
+0.4,F_malt_grain,2,octyl_acetate,Octyl acetate
+0.4,F_malt_grain,3,X3.methyl.2.butenal,3-methyl-2-butenal
+0.4,F_malt_bread,1,acetaldehyde,Acetaldehyde
+0.4,F_malt_bread,2,terpinen.4.ol,Terpinen-4-ol
+0.4,F_malt_bread,3,geraniol,Geraniol
+0.4,F_malt_cara,1,acetaldehyde,Acetaldehyde
+0.4,F_malt_cara,2,alpha.calacorene,Î±-calacorene
+0.4,F_malt_cara,3,octyl_acetate,Octyl acetate
+0.4,F_malt_burn,1,MeSH,Methanethiol
+0.4,F_malt_burn,2,y.methyl.1.octanol,Y-methyl-1-octanol
+0.4,F_malt_burn,3,DES,Diethyl sulfide
+0.4,F_hops_all,1,iron,Iron
+0.4,F_hops_all,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.4,F_hops_all,3,DMS,Dimethyl sulfide
+0.4,F_hops_citrus,1,geraniol,Geraniol
+0.4,F_hops_citrus,2,citronellol,Citronellol
+0.4,F_hops_citrus,3,geosmin,Geosmin
+0.4,F_hops_tropical,1,geraniol,Geraniol
+0.4,F_hops_tropical,2,beta.phellandrene,Beta-phellandrene
+0.4,F_hops_tropical,3,X6.methyl.5.hepten.2.one,Methyl heptenone
+0.4,F_hops_noble,1,iron,Iron
+0.4,F_hops_noble,2,ethyl_octanoate,Ethyl octanoate
+0.4,F_hops_noble,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.4,F_hops_woody,1,manool,Manool
+0.4,F_hops_woody,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.4,F_hops_woody,3,geosmin,Geosmin
+0.4,F_esters_all,1,acetaldehyde,Acetaldehyde
+0.4,F_esters_all,2,n.hexanol,N-hexanol
+0.4,F_esters_all,3,X1.10.di.epi.cubenol,Epicubenol
+0.4,F_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.4,F_esters_ethac,2,glycerol,Glycerol
+0.4,F_esters_ethac,3,MeSH,Methanethiol
+0.4,F_esters_isoaa,1,n.hexanol,N-hexanol
+0.4,F_esters_isoaa,2,acetaldehyde,Acetaldehyde
+0.4,F_esters_isoaa,3,phenethyl_alcohol,Phenethyl alcohol
+0.4,F_esters_flower,1,beta.phellandrene,Beta-phellandrene
+0.4,F_esters_flower,2,eucalyptol,Eucalyptol
+0.4,F_esters_flower,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.4,F_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol
+0.4,F_esters_fruity,2,beta.phellandrene,Beta-phellandrene
+0.4,F_esters_fruity,3,hydroxy.methyl.furfural,5-hydroxymethylfurfural
+0.4,acidity,1,lactic_acid.mg.L.,Lactic acid
+0.4,acidity,2,acetic_acid.g.L.,Acetic acid
+0.4,acidity,3,iron,Iron
+0.4,bitternes,1,iron,Iron
+0.4,bitternes,2,ethyl_octanoate,Ethyl octanoate
+0.4,bitternes,3,ethyl_decanoate,Ethyl decanoate
+0.4,sweetness,1,ethyl_decanoate,Ethyl decanoate
+0.4,sweetness,2,iron,Iron
+0.4,sweetness,3,ethyl_octanoate,Ethyl octanoate
+0.4,X4vg,1,X4VG,4-vinylguaiacol
+0.4,X4vg,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.4,X4vg,3,delta.terpinyl.acetate,Terpiryl acetate
+0.4,diacetyl,1,beta.phellandrene,Beta-phellandrene
+0.4,diacetyl,2,dehydroxy.cis.linalool.oxide,Dehydroxy-cis-linalool oxide
+0.4,diacetyl,3,DMS,Dimethyl sulfide
+0.4,dms,1,SO2.mg.L.,Sulfur dioxide
+0.4,dms,2,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol"
+0.4,dms,3,butylated.hydroxytoluene,Butylated hydroxytoluene
+0.4,metallic,1,iron,Iron
+0.4,metallic,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.4,metallic,3,X6.methyl.5.hepten.2.one,Methyl heptenone
+0.4,stale_hops,1,gamma.eudesmol,Gamma-eudesmol
+0.4,stale_hops,2,X2.butyloctanoate,2-butyl octanoate
+0.4,stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.4,t2n,1,germacrene.D,Germacrene D
+0.4,t2n,2,glycerol,Glycerol
+0.4,t2n,3,isopentyl.hexanoate,Isopentyl hexanoate
+0.4,orange,1,X1.alpha.terpineol,Alpha-terpineol
+0.4,orange,2,limonene,Limonene
+0.4,orange,3,geraniol,Geraniol
+0.4,coriander,1,x.methyl.1.octanol,X-methyl-1-octanol
+0.4,coriander,2,geraniol,Geraniol
+0.4,coriander,3,linalool,Linalool
+0.4,clove,1,limonene,Limonene
+0.4,clove,2,linalool,Linalool
+0.4,clove,3,eucalyptol,Eucalyptol
+0.4,lactic,1,lactic_acid.mg.L.,Lactic acid
+0.4,lactic,2,acetic_acid.g.L.,Acetic acid
+0.4,lactic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.4,acetic,1,acetic_acid.g.L.,Acetic acid
+0.4,acetic,2,lactic_acid.mg.L.,Lactic acid
+0.4,acetic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.4,barnyard,1,gamma.eudesmol,Gamma-eudesmol
+0.4,barnyard,2,X2.butyloctanoate,2-butyl octanoate
+0.4,barnyard,3,iron,Iron
+0.4,alcohol,1,acetaldehyde,Acetaldehyde
+0.4,alcohol,2,ethyl_hexanoate,Ethyl hexanoate
+0.4,alcohol,3,ethyl_octanoate,Ethyl octanoate
+0.4,aftertaste,1,acetaldehyde,Acetaldehyde
+0.4,aftertaste,2,glycerol,Glycerol
+0.4,aftertaste,3,ethyl_octanoate,Ethyl octanoate
+0.4,body,1,acetaldehyde,Acetaldehyde
+0.4,body,2,glycerol,Glycerol
+0.4,body,3,ethyl_hexanoate,Ethyl hexanoate
+0.4,co2,1,ethyl_octanoate,Ethyl octanoate
+0.4,co2,2,ethyl_hexanoate,Ethyl hexanoate
+0.4,co2,3,X3.methyl.2.hexanol,3-methyl-2-hexanol
+0.4,overall,1,ethyl_acetate,Ethyl acetate
+0.4,overall,2,X2.butyloctanoate,2-butyl octanoate
+0.4,overall,3,acetaldehyde,Acetaldehyde
+0.45,A_malt_all,1,octyl_acetate,Octyl acetate
+0.45,A_malt_all,2,ethyl.furoate,Ethyl furoate
+0.45,A_malt_all,3,MeSH,Methanethiol
+0.45,A_malt_grain,1,furfural,Furfural
+0.45,A_malt_grain,2,car.3.en.2.one,Car-3-en-2-one
+0.45,A_malt_grain,3,X5.methylfurfural,5-methylfurfural
+0.45,A_malt_bread,1,furfural,Furfural
+0.45,A_malt_bread,2,octyl_acetate,Octyl acetate
+0.45,A_malt_bread,3,ethyl.furoate,Ethyl furoate
+0.45,A_malt_cara,1,octyl_acetate,Octyl acetate
+0.45,A_malt_cara,2,acetaldehyde,Acetaldehyde
+0.45,A_malt_cara,3,alpha.calacorene,Î±-calacorene
+0.45,A_malt_burn,1,methylpyrazine,Methylpyrazine
+0.45,A_malt_burn,2,ethyl..E..linalool,Ethyl linalool
+0.45,A_malt_burn,3,MeSH,Methanethiol
+0.45,A_hops_all,1,iron,Iron
+0.45,A_hops_all,2,geraniol,Geraniol
+0.45,A_hops_all,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.45,A_hops_citrus,1,geraniol,Geraniol
+0.45,A_hops_citrus,2,citronellol,Citronellol
+0.45,A_hops_citrus,3,terpinolene,Terpinolene
+0.45,A_hops_tropical,1,citronellol,Citronellol
+0.45,A_hops_tropical,2,DMS,Dimethyl sulfide
+0.45,A_hops_tropical,3,geraniol,Geraniol
+0.45,A_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.45,A_hops_noble,2,ethyl_decanoate,Ethyl decanoate
+0.45,A_hops_noble,3,iron,Iron
+0.45,A_hops_woody,1,ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate
+0.45,A_hops_woody,2,iron,Iron
+0.45,A_hops_woody,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.45,A_esters_all,1,acetaldehyde,Acetaldehyde
+0.45,A_esters_all,2,n.hexanol,N-hexanol
+0.45,A_esters_all,3,iron,Iron
+0.45,A_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.45,A_esters_ethac,2,isobutyl_acetate,Isobutyl acetate
+0.45,A_esters_ethac,3,ethyl_acetate,Ethyl acetate
+0.45,A_esters_isoaa,1,n.hexanol,N-hexanol
+0.45,A_esters_isoaa,2,ambroxide,Ambroxide
+0.45,A_esters_isoaa,3,humulene.epoxide.II,Humulene epoxide II
+0.45,A_esters_flower,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.45,A_esters_flower,2,beta.phellandrene,Beta-phellandrene
+0.45,A_esters_flower,3,X.E..beta.ionone,E-Î²-ionone
+0.45,A_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol
+0.45,A_esters_fruity,2,beta.phellandrene,Beta-phellandrene
+0.45,A_esters_fruity,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.45,F_malt_all,1,acetaldehyde,Acetaldehyde
+0.45,F_malt_all,2,MeSH,Methanethiol
+0.45,F_malt_all,3,X4VG,4-vinylguaiacol
+0.45,F_malt_grain,1,terpinen.4.ol,Terpinen-4-ol
+0.45,F_malt_grain,2,octyl_acetate,Octyl acetate
+0.45,F_malt_grain,3,furfural,Furfural
+0.45,F_malt_bread,1,acetaldehyde,Acetaldehyde
+0.45,F_malt_bread,2,terpinen.4.ol,Terpinen-4-ol
+0.45,F_malt_bread,3,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol"
+0.45,F_malt_cara,1,acetaldehyde,Acetaldehyde
+0.45,F_malt_cara,2,alpha.calacorene,Î±-calacorene
+0.45,F_malt_cara,3,octyl_acetate,Octyl acetate
+0.45,F_malt_burn,1,MeSH,Methanethiol
+0.45,F_malt_burn,2,DES,Diethyl sulfide
+0.45,F_malt_burn,3,methylpyrazine,Methylpyrazine
+0.45,F_hops_all,1,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.45,F_hops_all,2,iron,Iron
+0.45,F_hops_all,3,ethyl_octanoate,Ethyl octanoate
+0.45,F_hops_citrus,1,geraniol,Geraniol
+0.45,F_hops_citrus,2,citronellol,Citronellol
+0.45,F_hops_citrus,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.45,F_hops_tropical,1,geraniol,Geraniol
+0.45,F_hops_tropical,2,beta.phellandrene,Beta-phellandrene
+0.45,F_hops_tropical,3,citronellol,Citronellol
+0.45,F_hops_noble,1,iron,Iron
+0.45,F_hops_noble,2,ethyl_octanoate,Ethyl octanoate
+0.45,F_hops_noble,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.45,F_hops_woody,1,manool,Manool
+0.45,F_hops_woody,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.45,F_hops_woody,3,isobutanol,Isobutanol
+0.45,F_esters_all,1,acetaldehyde,Acetaldehyde
+0.45,F_esters_all,2,n.hexanol,N-hexanol
+0.45,F_esters_all,3,isopentyl_acetate,Isoamyl acetate
+0.45,F_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.45,F_esters_ethac,2,glycerol,Glycerol
+0.45,F_esters_ethac,3,ethyl_hexanoate,Ethyl hexanoate
+0.45,F_esters_isoaa,1,n.hexanol,N-hexanol
+0.45,F_esters_isoaa,2,acetaldehyde,Acetaldehyde
+0.45,F_esters_isoaa,3,isopentyl_acetate,Isoamyl acetate
+0.45,F_esters_flower,1,beta.phellandrene,Beta-phellandrene
+0.45,F_esters_flower,2,eucalyptol,Eucalyptol
+0.45,F_esters_flower,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.45,F_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol
+0.45,F_esters_fruity,2,DES,Diethyl sulfide
+0.45,F_esters_fruity,3,beta.phellandrene,Beta-phellandrene
+0.45,acidity,1,lactic_acid.mg.L.,Lactic acid
+0.45,acidity,2,acetic_acid.g.L.,Acetic acid
+0.45,acidity,3,iron,Iron
+0.45,bitternes,1,iron,Iron
+0.45,bitternes,2,ethyl_octanoate,Ethyl octanoate
+0.45,bitternes,3,ethyl_decanoate,Ethyl decanoate
+0.45,sweetness,1,ethyl_decanoate,Ethyl decanoate
+0.45,sweetness,2,iron,Iron
+0.45,sweetness,3,ethyl_octanoate,Ethyl octanoate
+0.45,X4vg,1,X4VG,4-vinylguaiacol
+0.45,X4vg,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.45,X4vg,3,delta.terpinyl.acetate,Terpiryl acetate
+0.45,diacetyl,1,dehydroxy.cis.linalool.oxide,Dehydroxy-cis-linalool oxide
+0.45,diacetyl,2,beta.phellandrene,Beta-phellandrene
+0.45,diacetyl,3,ethyl_decanoate,Ethyl decanoate
+0.45,dms,1,X.Z..dihydro.apofarnesal,Z-dihydro-apofarnesal
+0.45,dms,2,SO2.mg.L.,Sulfur dioxide
+0.45,dms,3,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol"
+0.45,metallic,1,iron,Iron
+0.45,metallic,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.45,metallic,3,neryl.formate,Neryl formate
+0.45,stale_hops,1,X2.butyloctanoate,2-butyl octanoate
+0.45,stale_hops,2,gamma.eudesmol,Gamma-eudesmol
+0.45,stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.45,t2n,1,germacrene.D,Germacrene D
+0.45,t2n,2,isopentyl.hexanoate,Isopentyl hexanoate
+0.45,t2n,3,glycerol,Glycerol
+0.45,orange,1,X1.alpha.terpineol,Alpha-terpineol
+0.45,orange,2,geraniol,Geraniol
+0.45,orange,3,limonene,Limonene
+0.45,coriander,1,geraniol,Geraniol
+0.45,coriander,2,x.methyl.1.octanol,X-methyl-1-octanol
+0.45,coriander,3,linalool,Linalool
+0.45,clove,1,eucalyptol,Eucalyptol
+0.45,clove,2,limonene,Limonene
+0.45,clove,3,linalool,Linalool
+0.45,lactic,1,lactic_acid.mg.L.,Lactic acid
+0.45,lactic,2,acetic_acid.g.L.,Acetic acid
+0.45,lactic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.45,acetic,1,lactic_acid.mg.L.,Lactic acid
+0.45,acetic,2,acetic_acid.g.L.,Acetic acid
+0.45,acetic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.45,barnyard,1,gamma.eudesmol,Gamma-eudesmol
+0.45,barnyard,2,X2.butyloctanoate,2-butyl octanoate
+0.45,barnyard,3,iron,Iron
+0.45,alcohol,1,acetaldehyde,Acetaldehyde
+0.45,alcohol,2,ethyl_hexanoate,Ethyl hexanoate
+0.45,alcohol,3,ethyl_octanoate,Ethyl octanoate
+0.45,aftertaste,1,acetaldehyde,Acetaldehyde
+0.45,aftertaste,2,glycerol,Glycerol
+0.45,aftertaste,3,ethyl_octanoate,Ethyl octanoate
+0.45,body,1,acetaldehyde,Acetaldehyde
+0.45,body,2,glycerol,Glycerol
+0.45,body,3,ethyl_hexanoate,Ethyl hexanoate
+0.45,co2,1,ethyl_octanoate,Ethyl octanoate
+0.45,co2,2,ethyl_hexanoate,Ethyl hexanoate
+0.45,co2,3,X3.methyl.2.hexanol,3-methyl-2-hexanol
+0.45,overall,1,ethyl_acetate,Ethyl acetate
+0.45,overall,2,X2.butyloctanoate,2-butyl octanoate
+0.45,overall,3,ethyl_hexanoate,Ethyl hexanoate
+0.5,A_malt_all,1,octyl_acetate,Octyl acetate
+0.5,A_malt_all,2,ethyl.furoate,Ethyl furoate
+0.5,A_malt_all,3,MeSH,Methanethiol
+0.5,A_malt_grain,1,furfural,Furfural
+0.5,A_malt_grain,2,car.3.en.2.one,Car-3-en-2-one
+0.5,A_malt_grain,3,X5.methylfurfural,5-methylfurfural
+0.5,A_malt_bread,1,furfural,Furfural
+0.5,A_malt_bread,2,octyl_acetate,Octyl acetate
+0.5,A_malt_bread,3,ethyl.furoate,Ethyl furoate
+0.5,A_malt_cara,1,octyl_acetate,Octyl acetate
+0.5,A_malt_cara,2,acetaldehyde,Acetaldehyde
+0.5,A_malt_cara,3,alpha.calacorene,Î±-calacorene
+0.5,A_malt_burn,1,methylpyrazine,Methylpyrazine
+0.5,A_malt_burn,2,ethyl..E..linalool,Ethyl linalool
+0.5,A_malt_burn,3,nerol,Nerol
+0.5,A_hops_all,1,geraniol,Geraniol
+0.5,A_hops_all,2,citronellol,Citronellol
+0.5,A_hops_all,3,iron,Iron
+0.5,A_hops_citrus,1,citronellol,Citronellol
+0.5,A_hops_citrus,2,geraniol,Geraniol
+0.5,A_hops_citrus,3,linalool,Linalool
+0.5,A_hops_tropical,1,citronellol,Citronellol
+0.5,A_hops_tropical,2,DMS,Dimethyl sulfide
+0.5,A_hops_tropical,3,beta.phellandrene,Beta-phellandrene
+0.5,A_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.5,A_hops_noble,2,ethyl_decanoate,Ethyl decanoate
+0.5,A_hops_noble,3,butyl.acetate,Butyl acetate
+0.5,A_hops_woody,1,ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate
+0.5,A_hops_woody,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.5,A_hops_woody,3,X2Z.6E.farnesol,"Z,E-farnesol"
+0.5,A_esters_all,1,acetaldehyde,Acetaldehyde
+0.5,A_esters_all,2,n.hexanol,N-hexanol
+0.5,A_esters_all,3,X.E..beta.ionone,E-Î²-ionone
+0.5,A_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.5,A_esters_ethac,2,ethyl_acetate,Ethyl acetate
+0.5,A_esters_ethac,3,isobutyl_acetate,Isobutyl acetate
+0.5,A_esters_isoaa,1,n.hexanol,N-hexanol
+0.5,A_esters_isoaa,2,ambroxide,Ambroxide
+0.5,A_esters_isoaa,3,humulene.epoxide.II,Humulene epoxide II
+0.5,A_esters_flower,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.5,A_esters_flower,2,beta.phellandrene,Beta-phellandrene
+0.5,A_esters_flower,3,X.E..alpha.ionone,E-Î±-ionone
+0.5,A_esters_fruity,1,beta.phellandrene,Beta-phellandrene
+0.5,A_esters_fruity,2,X1.10.di.epi.cubenol,Epicubenol
+0.5,A_esters_fruity,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.5,F_malt_all,1,acetaldehyde,Acetaldehyde
+0.5,F_malt_all,2,MeSH,Methanethiol
+0.5,F_malt_all,3,X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine"
+0.5,F_malt_grain,1,terpinen.4.ol,Terpinen-4-ol
+0.5,F_malt_grain,2,furfural,Furfural
+0.5,F_malt_grain,3,octyl_acetate,Octyl acetate
+0.5,F_malt_bread,1,acetaldehyde,Acetaldehyde
+0.5,F_malt_bread,2,car.3.en.2.one,Car-3-en-2-one
+0.5,F_malt_bread,3,terpinen.4.ol,Terpinen-4-ol
+0.5,F_malt_cara,1,acetaldehyde,Acetaldehyde
+0.5,F_malt_cara,2,alpha.calacorene,Î±-calacorene
+0.5,F_malt_cara,3,octyl_acetate,Octyl acetate
+0.5,F_malt_burn,1,MeSH,Methanethiol
+0.5,F_malt_burn,2,DES,Diethyl sulfide
+0.5,F_malt_burn,3,y.methyl.1.octanol,Y-methyl-1-octanol
+0.5,F_hops_all,1,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.5,F_hops_all,2,iron,Iron
+0.5,F_hops_all,3,ethyl_octanoate,Ethyl octanoate
+0.5,F_hops_citrus,1,geraniol,Geraniol
+0.5,F_hops_citrus,2,citronellol,Citronellol
+0.5,F_hops_citrus,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.5,F_hops_tropical,1,geraniol,Geraniol
+0.5,F_hops_tropical,2,citronellol,Citronellol
+0.5,F_hops_tropical,3,beta.phellandrene,Beta-phellandrene
+0.5,F_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.5,F_hops_noble,2,iron,Iron
+0.5,F_hops_noble,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.5,F_hops_woody,1,manool,Manool
+0.5,F_hops_woody,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.5,F_hops_woody,3,isobutanol,Isobutanol
+0.5,F_esters_all,1,acetaldehyde,Acetaldehyde
+0.5,F_esters_all,2,n.hexanol,N-hexanol
+0.5,F_esters_all,3,X1.10.di.epi.cubenol,Epicubenol
+0.5,F_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.5,F_esters_ethac,2,glycerol,Glycerol
+0.5,F_esters_ethac,3,n.hexanol,N-hexanol
+0.5,F_esters_isoaa,1,n.hexanol,N-hexanol
+0.5,F_esters_isoaa,2,acetaldehyde,Acetaldehyde
+0.5,F_esters_isoaa,3,isopentyl_acetate,Isoamyl acetate
+0.5,F_esters_flower,1,beta.phellandrene,Beta-phellandrene
+0.5,F_esters_flower,2,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.5,F_esters_flower,3,DES,Diethyl sulfide
+0.5,F_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol
+0.5,F_esters_fruity,2,beta.phellandrene,Beta-phellandrene
+0.5,F_esters_fruity,3,DES,Diethyl sulfide
+0.5,acidity,1,lactic_acid.mg.L.,Lactic acid
+0.5,acidity,2,acetic_acid.g.L.,Acetic acid
+0.5,acidity,3,E.cinnamaldehyde,Cinnamaldehyde
+0.5,bitternes,1,ethyl_octanoate,Ethyl octanoate
+0.5,bitternes,2,ethyl_decanoate,Ethyl decanoate
+0.5,bitternes,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.5,sweetness,1,ethyl_decanoate,Ethyl decanoate
+0.5,sweetness,2,ethyl_octanoate,Ethyl octanoate
+0.5,sweetness,3,octyl_acetate,Octyl acetate
+0.5,X4vg,1,X4VG,4-vinylguaiacol
+0.5,X4vg,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.5,X4vg,3,DES,Diethyl sulfide
+0.5,diacetyl,1,beta.phellandrene,Beta-phellandrene
+0.5,diacetyl,2,ethyl_decanoate,Ethyl decanoate
+0.5,diacetyl,3,pentyl.octanoate,Pentyl octanoate
+0.5,dms,1,X.Z..dihydro.apofarnesal,Z-dihydro-apofarnesal
+0.5,dms,2,SO2.mg.L.,Sulfur dioxide
+0.5,dms,3,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol"
+0.5,metallic,1,iron,Iron
+0.5,metallic,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.5,metallic,3,neryl.formate,Neryl formate
+0.5,stale_hops,1,X2.butyloctanoate,2-butyl octanoate
+0.5,stale_hops,2,gamma.eudesmol,Gamma-eudesmol
+0.5,stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.5,t2n,1,germacrene.D,Germacrene D
+0.5,t2n,2,isopentyl.hexanoate,Isopentyl hexanoate
+0.5,t2n,3,glycerol,Glycerol
+0.5,orange,1,X1.alpha.terpineol,Alpha-terpineol
+0.5,orange,2,geraniol,Geraniol
+0.5,orange,3,linalool,Linalool
+0.5,coriander,1,geraniol,Geraniol
+0.5,coriander,2,linalool,Linalool
+0.5,coriander,3,x.methyl.1.octanol,X-methyl-1-octanol
+0.5,clove,1,limonene,Limonene
+0.5,clove,2,linalool,Linalool
+0.5,clove,3,car.3.en.2.one,Car-3-en-2-one
+0.5,lactic,1,lactic_acid.mg.L.,Lactic acid
+0.5,lactic,2,acetic_acid.g.L.,Acetic acid
+0.5,lactic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.5,acetic,1,lactic_acid.mg.L.,Lactic acid
+0.5,acetic,2,acetic_acid.g.L.,Acetic acid
+0.5,acetic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.5,barnyard,1,gamma.eudesmol,Gamma-eudesmol
+0.5,barnyard,2,X2.butyloctanoate,2-butyl octanoate
+0.5,barnyard,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.5,alcohol,1,acetaldehyde,Acetaldehyde
+0.5,alcohol,2,ethyl_hexanoate,Ethyl hexanoate
+0.5,alcohol,3,ethyl_octanoate,Ethyl octanoate
+0.5,aftertaste,1,acetaldehyde,Acetaldehyde
+0.5,aftertaste,2,glycerol,Glycerol
+0.5,aftertaste,3,ethyl_octanoate,Ethyl octanoate
+0.5,body,1,acetaldehyde,Acetaldehyde
+0.5,body,2,glycerol,Glycerol
+0.5,body,3,ethyl_hexanoate,Ethyl hexanoate
+0.5,co2,1,ethyl_octanoate,Ethyl octanoate
+0.5,co2,2,ethyl_hexanoate,Ethyl hexanoate
+0.5,co2,3,X3.methyl.2.hexanol,3-methyl-2-hexanol
+0.5,overall,1,ethyl_acetate,Ethyl acetate
+0.5,overall,2,acetaldehyde,Acetaldehyde
+0.5,overall,3,X2.butyloctanoate,2-butyl octanoate
+0.55,A_malt_all,1,ethyl.furoate,Ethyl furoate
+0.55,A_malt_all,2,X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine"
+0.55,A_malt_all,3,MeSH,Methanethiol
+0.55,A_malt_grain,1,car.3.en.2.one,Car-3-en-2-one
+0.55,A_malt_grain,2,X5.methylfurfural,5-methylfurfural
+0.55,A_malt_grain,3,dimethoxy..E..citral,Dimethoxy-E-citral
+0.55,A_malt_bread,1,furfural,Furfural
+0.55,A_malt_bread,2,ethyl.furoate,Ethyl furoate
+0.55,A_malt_bread,3,X1.10.di.epi.cubenol,Epicubenol
+0.55,A_malt_cara,1,acetaldehyde,Acetaldehyde
+0.55,A_malt_cara,2,octyl_acetate,Octyl acetate
+0.55,A_malt_cara,3,alpha.calacorene,Î±-calacorene
+0.55,A_malt_burn,1,methylpyrazine,Methylpyrazine
+0.55,A_malt_burn,2,E.ocimenone,Ocimenone
+0.55,A_malt_burn,3,ethyl..E..linalool,Ethyl linalool
+0.55,A_hops_all,1,citronellol,Citronellol
+0.55,A_hops_all,2,iron,Iron
+0.55,A_hops_all,3,ethyl_octanoate,Ethyl octanoate
+0.55,A_hops_citrus,1,citronellol,Citronellol
+0.55,A_hops_citrus,2,X5.methylfurfural,5-methylfurfural
+0.55,A_hops_citrus,3,terpinolene,Terpinolene
+0.55,A_hops_tropical,1,citronellol,Citronellol
+0.55,A_hops_tropical,2,DMS,Dimethyl sulfide
+0.55,A_hops_tropical,3,beta.phellandrene,Beta-phellandrene
+0.55,A_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.55,A_hops_noble,2,ethyl_decanoate,Ethyl decanoate
+0.55,A_hops_noble,3,iron,Iron
+0.55,A_hops_woody,1,ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate
+0.55,A_hops_woody,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.55,A_hops_woody,3,X2Z.6E.farnesol,"Z,E-farnesol"
+0.55,A_esters_all,1,acetaldehyde,Acetaldehyde
+0.55,A_esters_all,2,n.hexanol,N-hexanol
+0.55,A_esters_all,3,isopentyl_acetate,Isoamyl acetate
+0.55,A_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.55,A_esters_ethac,2,ethyl_acetate,Ethyl acetate
+0.55,A_esters_ethac,3,isobutyl_acetate,Isobutyl acetate
+0.55,A_esters_isoaa,1,n.hexanol,N-hexanol
+0.55,A_esters_isoaa,2,isopentyl_acetate,Isoamyl acetate
+0.55,A_esters_isoaa,3,humulene.epoxide.II,Humulene epoxide II
+0.55,A_esters_flower,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.55,A_esters_flower,2,X.E..alpha.ionone,E-Î±-ionone
+0.55,A_esters_flower,3,beta.phellandrene,Beta-phellandrene
+0.55,A_esters_fruity,1,beta.phellandrene,Beta-phellandrene
+0.55,A_esters_fruity,2,X1.10.di.epi.cubenol,Epicubenol
+0.55,A_esters_fruity,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.55,F_malt_all,1,acetaldehyde,Acetaldehyde
+0.55,F_malt_all,2,X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine"
+0.55,F_malt_all,3,MeSH,Methanethiol
+0.55,F_malt_grain,1,terpinen.4.ol,Terpinen-4-ol
+0.55,F_malt_grain,2,X3.methyl.2.butenal,3-methyl-2-butenal
+0.55,F_malt_grain,3,car.3.en.2.one,Car-3-en-2-one
+0.55,F_malt_bread,1,dimethoxy..E..citral,Dimethoxy-E-citral
+0.55,F_malt_bread,2,car.3.en.2.one,Car-3-en-2-one
+0.55,F_malt_bread,3,acetaldehyde,Acetaldehyde
+0.55,F_malt_cara,1,acetaldehyde,Acetaldehyde
+0.55,F_malt_cara,2,alpha.calacorene,Î±-calacorene
+0.55,F_malt_cara,3,octyl_acetate,Octyl acetate
+0.55,F_malt_burn,1,MeSH,Methanethiol
+0.55,F_malt_burn,2,y.methyl.1.octanol,Y-methyl-1-octanol
+0.55,F_malt_burn,3,X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine"
+0.55,F_hops_all,1,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.55,F_hops_all,2,iron,Iron
+0.55,F_hops_all,3,ethyl_octanoate,Ethyl octanoate
+0.55,F_hops_citrus,1,citronellol,Citronellol
+0.55,F_hops_citrus,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.55,F_hops_citrus,3,geraniol,Geraniol
+0.55,F_hops_tropical,1,beta.phellandrene,Beta-phellandrene
+0.55,F_hops_tropical,2,citronellol,Citronellol
+0.55,F_hops_tropical,3,terpinolene,Terpinolene
+0.55,F_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.55,F_hops_noble,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.55,F_hops_noble,3,iron,Iron
+0.55,F_hops_woody,1,manool,Manool
+0.55,F_hops_woody,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.55,F_hops_woody,3,isobutanol,Isobutanol
+0.55,F_esters_all,1,acetaldehyde,Acetaldehyde
+0.55,F_esters_all,2,n.hexanol,N-hexanol
+0.55,F_esters_all,3,X1.10.di.epi.cubenol,Epicubenol
+0.55,F_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.55,F_esters_ethac,2,n.hexanol,N-hexanol
+0.55,F_esters_ethac,3,glycerol,Glycerol
+0.55,F_esters_isoaa,1,n.hexanol,N-hexanol
+0.55,F_esters_isoaa,2,isopentyl_acetate,Isoamyl acetate
+0.55,F_esters_isoaa,3,acetaldehyde,Acetaldehyde
+0.55,F_esters_flower,1,beta.phellandrene,Beta-phellandrene
+0.55,F_esters_flower,2,terpinolene,Terpinolene
+0.55,F_esters_flower,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.55,F_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol
+0.55,F_esters_fruity,2,X1.propanol,1-propanol
+0.55,F_esters_fruity,3,beta.phellandrene,Beta-phellandrene
+0.55,acidity,1,lactic_acid.mg.L.,Lactic acid
+0.55,acidity,2,acetic_acid.g.L.,Acetic acid
+0.55,acidity,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.55,bitternes,1,ethyl_octanoate,Ethyl octanoate
+0.55,bitternes,2,ethyl_decanoate,Ethyl decanoate
+0.55,bitternes,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.55,sweetness,1,ethyl_decanoate,Ethyl decanoate
+0.55,sweetness,2,ethyl_octanoate,Ethyl octanoate
+0.55,sweetness,3,iron,Iron
+0.55,X4vg,1,X4VG,4-vinylguaiacol
+0.55,X4vg,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.55,X4vg,3,camphor,Camphor
+0.55,diacetyl,1,beta.phellandrene,Beta-phellandrene
+0.55,diacetyl,2,ethyl_decanoate,Ethyl decanoate
+0.55,diacetyl,3,pentyl.octanoate,Pentyl octanoate
+0.55,dms,1,SO2.mg.L.,Sulfur dioxide
+0.55,dms,2,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol"
+0.55,dms,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.55,metallic,1,iron,Iron
+0.55,metallic,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.55,metallic,3,neryl.formate,Neryl formate
+0.55,stale_hops,1,X2.butyloctanoate,2-butyl octanoate
+0.55,stale_hops,2,gamma.eudesmol,Gamma-eudesmol
+0.55,stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.55,t2n,1,germacrene.D,Germacrene D
+0.55,t2n,2,alpha.phellandrene,Î±-phellandrene
+0.55,t2n,3,isopentyl.hexanoate,Isopentyl hexanoate
+0.55,orange,1,X1.alpha.terpineol,Alpha-terpineol
+0.55,orange,2,linalool,Linalool
+0.55,orange,3,isoamyl_alcohol,Isoamyl alcohol
+0.55,coriander,1,x.methyl.1.octanol,X-methyl-1-octanol
+0.55,coriander,2,linalool,Linalool
+0.55,coriander,3,X1.alpha.terpineol,Alpha-terpineol
+0.55,clove,1,linalool,Linalool
+0.55,clove,2,car.3.en.2.one,Car-3-en-2-one
+0.55,clove,3,limonene,Limonene
+0.55,lactic,1,lactic_acid.mg.L.,Lactic acid
+0.55,lactic,2,acetic_acid.g.L.,Acetic acid
+0.55,lactic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.55,acetic,1,lactic_acid.mg.L.,Lactic acid
+0.55,acetic,2,acetic_acid.g.L.,Acetic acid
+0.55,acetic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.55,barnyard,1,gamma.eudesmol,Gamma-eudesmol
+0.55,barnyard,2,X2.butyloctanoate,2-butyl octanoate
+0.55,barnyard,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.55,alcohol,1,acetaldehyde,Acetaldehyde
+0.55,alcohol,2,ethyl_hexanoate,Ethyl hexanoate
+0.55,alcohol,3,ethyl_octanoate,Ethyl octanoate
+0.55,aftertaste,1,acetaldehyde,Acetaldehyde
+0.55,aftertaste,2,ethyl_octanoate,Ethyl octanoate
+0.55,aftertaste,3,glycerol,Glycerol
+0.55,body,1,acetaldehyde,Acetaldehyde
+0.55,body,2,glycerol,Glycerol
+0.55,body,3,ethyl_hexanoate,Ethyl hexanoate
+0.55,co2,1,ethyl_octanoate,Ethyl octanoate
+0.55,co2,2,ethyl_hexanoate,Ethyl hexanoate
+0.55,co2,3,X3.methyl.2.hexanol,3-methyl-2-hexanol
+0.55,overall,1,ethyl_acetate,Ethyl acetate
+0.55,overall,2,acetaldehyde,Acetaldehyde
+0.55,overall,3,X2.butyloctanoate,2-butyl octanoate
+0.6,A_malt_all,1,ethyl.furoate,Ethyl furoate
+0.6,A_malt_all,2,X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine"
+0.6,A_malt_all,3,X5.methylfurfural,5-methylfurfural
+0.6,A_malt_grain,1,car.3.en.2.one,Car-3-en-2-one
+0.6,A_malt_grain,2,X5.methylfurfural,5-methylfurfural
+0.6,A_malt_grain,3,dimethoxy..E..citral,Dimethoxy-E-citral
+0.6,A_malt_bread,1,furfural,Furfural
+0.6,A_malt_bread,2,ethyl.furoate,Ethyl furoate
+0.6,A_malt_bread,3,X5.methylfurfural,5-methylfurfural
+0.6,A_malt_cara,1,acetaldehyde,Acetaldehyde
+0.6,A_malt_cara,2,octyl_acetate,Octyl acetate
+0.6,A_malt_cara,3,alpha.calacorene,Î±-calacorene
+0.6,A_malt_burn,1,E.ocimenone,Ocimenone
+0.6,A_malt_burn,2,ethyl..E..linalool,Ethyl linalool
+0.6,A_malt_burn,3,y.methyl.1.octanol,Y-methyl-1-octanol
+0.6,A_hops_all,1,citronellol,Citronellol
+0.6,A_hops_all,2,iron,Iron
+0.6,A_hops_all,3,ethyl_octanoate,Ethyl octanoate
+0.6,A_hops_citrus,1,citronellol,Citronellol
+0.6,A_hops_citrus,2,X5.methylfurfural,5-methylfurfural
+0.6,A_hops_citrus,3,linalool,Linalool
+0.6,A_hops_tropical,1,citronellol,Citronellol
+0.6,A_hops_tropical,2,DMS,Dimethyl sulfide
+0.6,A_hops_tropical,3,beta.phellandrene,Beta-phellandrene
+0.6,A_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.6,A_hops_noble,2,ethyl_decanoate,Ethyl decanoate
+0.6,A_hops_noble,3,citronellol,Citronellol
+0.6,A_hops_woody,1,ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate
+0.6,A_hops_woody,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,A_hops_woody,3,phenethyl_acetate,Phenethyl acetate
+0.6,A_esters_all,1,acetaldehyde,Acetaldehyde
+0.6,A_esters_all,2,n.hexanol,N-hexanol
+0.6,A_esters_all,3,isopentyl_acetate,Isoamyl acetate
+0.6,A_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.6,A_esters_ethac,2,ethyl_acetate,Ethyl acetate
+0.6,A_esters_ethac,3,ethyl.hexadecanoate,Ethyl hexadecanoate
+0.6,A_esters_isoaa,1,n.hexanol,N-hexanol
+0.6,A_esters_isoaa,2,isopentyl_acetate,Isoamyl acetate
+0.6,A_esters_isoaa,3,humulene.epoxide.II,Humulene epoxide II
+0.6,A_esters_flower,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.6,A_esters_flower,2,beta.phellandrene,Beta-phellandrene
+0.6,A_esters_flower,3,X.E..beta.ionone,E-Î²-ionone
+0.6,A_esters_fruity,1,beta.phellandrene,Beta-phellandrene
+0.6,A_esters_fruity,2,X1.10.di.epi.cubenol,Epicubenol
+0.6,A_esters_fruity,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.6,F_malt_all,1,acetaldehyde,Acetaldehyde
+0.6,F_malt_all,2,X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine"
+0.6,F_malt_all,3,MeSH,Methanethiol
+0.6,F_malt_grain,1,terpinen.4.ol,Terpinen-4-ol
+0.6,F_malt_grain,2,X3.methyl.2.butenal,3-methyl-2-butenal
+0.6,F_malt_grain,3,car.3.en.2.one,Car-3-en-2-one
+0.6,F_malt_bread,1,dimethoxy..E..citral,Dimethoxy-E-citral
+0.6,F_malt_bread,2,car.3.en.2.one,Car-3-en-2-one
+0.6,F_malt_bread,3,terpinen.4.ol,Terpinen-4-ol
+0.6,F_malt_cara,1,acetaldehyde,Acetaldehyde
+0.6,F_malt_cara,2,alpha.calacorene,Î±-calacorene
+0.6,F_malt_cara,3,octyl_acetate,Octyl acetate
+0.6,F_malt_burn,1,y.methyl.1.octanol,Y-methyl-1-octanol
+0.6,F_malt_burn,2,MeSH,Methanethiol
+0.6,F_malt_burn,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.6,F_hops_all,1,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.6,F_hops_all,2,y.methyl.1.octanol,Y-methyl-1-octanol
+0.6,F_hops_all,3,ethyl_octanoate,Ethyl octanoate
+0.6,F_hops_citrus,1,citronellol,Citronellol
+0.6,F_hops_citrus,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.6,F_hops_citrus,3,geraniol,Geraniol
+0.6,F_hops_tropical,1,citronellol,Citronellol
+0.6,F_hops_tropical,2,terpinolene,Terpinolene
+0.6,F_hops_tropical,3,beta.phellandrene,Beta-phellandrene
+0.6,F_hops_noble,1,ethyl_octanoate,Ethyl octanoate
+0.6,F_hops_noble,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.6,F_hops_noble,3,iron,Iron
+0.6,F_hops_woody,1,manool,Manool
+0.6,F_hops_woody,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.6,F_hops_woody,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,F_esters_all,1,acetaldehyde,Acetaldehyde
+0.6,F_esters_all,2,n.hexanol,N-hexanol
+0.6,F_esters_all,3,isopentyl_acetate,Isoamyl acetate
+0.6,F_esters_ethac,1,acetaldehyde,Acetaldehyde
+0.6,F_esters_ethac,2,n.hexanol,N-hexanol
+0.6,F_esters_ethac,3,ethyl_hexanoate,Ethyl hexanoate
+0.6,F_esters_isoaa,1,n.hexanol,N-hexanol
+0.6,F_esters_isoaa,2,isopentyl_acetate,Isoamyl acetate
+0.6,F_esters_isoaa,3,isobutyl_acetate,Isobutyl acetate
+0.6,F_esters_flower,1,beta.phellandrene,Beta-phellandrene
+0.6,F_esters_flower,2,terpinolene,Terpinolene
+0.6,F_esters_flower,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one
+0.6,F_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol
+0.6,F_esters_fruity,2,X1.propanol,1-propanol
+0.6,F_esters_fruity,3,beta.phellandrene,Beta-phellandrene
+0.6,acidity,1,lactic_acid.mg.L.,Lactic acid
+0.6,acidity,2,acetic_acid.g.L.,Acetic acid
+0.6,acidity,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,bitternes,1,ethyl_octanoate,Ethyl octanoate
+0.6,bitternes,2,ethyl_decanoate,Ethyl decanoate
+0.6,bitternes,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol
+0.6,sweetness,1,ethyl_decanoate,Ethyl decanoate
+0.6,sweetness,2,ethyl_octanoate,Ethyl octanoate
+0.6,sweetness,3,iron,Iron
+0.6,X4vg,1,X4VG,4-vinylguaiacol
+0.6,X4vg,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,X4vg,3,camphor,Camphor
+0.6,diacetyl,1,ethyl_decanoate,Ethyl decanoate
+0.6,diacetyl,2,beta.phellandrene,Beta-phellandrene
+0.6,diacetyl,3,X.E..beta.ionone,E-Î²-ionone
+0.6,dms,1,SO2.mg.L.,Sulfur dioxide
+0.6,dms,2,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol"
+0.6,dms,3,X4.ethyl.guaiacol,4-ethyl-guaiacol
+0.6,metallic,1,iron,Iron
+0.6,metallic,2,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,metallic,3,neryl.formate,Neryl formate
+0.6,stale_hops,1,X2.butyloctanoate,2-butyl octanoate
+0.6,stale_hops,2,gamma.eudesmol,Gamma-eudesmol
+0.6,stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde
+0.6,t2n,1,germacrene.D,Germacrene D
+0.6,t2n,2,isopentyl.hexanoate,Isopentyl hexanoate
+0.6,t2n,3,X2.butyloctanoate,2-butyl octanoate
+0.6,orange,1,X1.alpha.terpineol,Alpha-terpineol
+0.6,orange,2,linalool,Linalool
+0.6,orange,3,isoamyl_alcohol,Isoamyl alcohol
+0.6,coriander,1,linalool,Linalool
+0.6,coriander,2,x.methyl.1.octanol,X-methyl-1-octanol
+0.6,coriander,3,X1.alpha.terpineol,Alpha-terpineol
+0.6,clove,1,linalool,Linalool
+0.6,clove,2,car.3.en.2.one,Car-3-en-2-one
+0.6,clove,3,limonene,Limonene
+0.6,lactic,1,lactic_acid.mg.L.,Lactic acid
+0.6,lactic,2,acetic_acid.g.L.,Acetic acid
+0.6,lactic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,acetic,1,lactic_acid.mg.L.,Lactic acid
+0.6,acetic,2,acetic_acid.g.L.,Acetic acid
+0.6,acetic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,barnyard,1,gamma.eudesmol,Gamma-eudesmol
+0.6,barnyard,2,X2.butyloctanoate,2-butyl octanoate
+0.6,barnyard,3,iron,Iron
+0.6,alcohol,1,acetaldehyde,Acetaldehyde
+0.6,alcohol,2,ethyl_octanoate,Ethyl octanoate
+0.6,alcohol,3,ethyl_hexanoate,Ethyl hexanoate
+0.6,aftertaste,1,acetaldehyde,Acetaldehyde
+0.6,aftertaste,2,ethyl_octanoate,Ethyl octanoate
+0.6,aftertaste,3,ethyl_isovalerate,Ethyl 3-methylbutyrate
+0.6,body,1,acetaldehyde,Acetaldehyde
+0.6,body,2,glycerol,Glycerol
+0.6,body,3,ethyl_hexanoate,Ethyl hexanoate
+0.6,co2,1,ethyl_octanoate,Ethyl octanoate
+0.6,co2,2,ethyl_hexanoate,Ethyl hexanoate
+0.6,co2,3,X3.methyl.2.hexanol,3-methyl-2-hexanol
+0.6,overall,1,ethyl_acetate,Ethyl acetate
+0.6,overall,2,ethyl_hexanoate,Ethyl hexanoate
+0.6,overall,3,X2.butyloctanoate,2-butyl octanoate

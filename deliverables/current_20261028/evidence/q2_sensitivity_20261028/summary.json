@@ -1,0 +1,343 @@
+{
+  "generated": "2026-10-28",
+  "purpose": "pre-registered sensitivity evidence for the delivered Q2 50xTop-3 table",
+  "main_table": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q2_top3_20261028\\q2__top3_all50_150.csv",
+  "baseline_variant": {
+    "threshold": 0.5,
+    "resolution": 1.0
+  },
+  "grids": {
+    "thresholds": [
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6
+    ],
+    "boundary_thresholds": [
+      0.45,
+      0.5,
+      0.55
+    ],
+    "resolutions_required": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "resolutions_curve": [
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4,
+      1.5,
+      1.6
+    ]
+  },
+  "criteria": {
+    "threshold": "for thresholds [0.45, 0.5, 0.55]: jaccard_mean >= 0.5 and at least 40/50 dimensions with overlap >= 2 of 3",
+    "resolution": "for resolutions [0.8, 1.0, 1.2]: 40 <= communities <= 80 and largest community < 20% of nodes",
+    "stable_min_jaccard": 0.5,
+    "stable_min_targets": 40,
+    "community_range": [
+      40,
+      80
+    ],
+    "max_largest_share": 0.2
+  },
+  "verdict": {
+    "threshold_stable": true,
+    "threshold_criterion": "for thresholds [0.45, 0.5, 0.55]: jaccard_mean >= 0.5 and at least 40/50 dimensions with overlap >= 2 of 3",
+    "threshold_details": {
+      "0.45": {
+        "jaccard_mean": 0.77,
+        "jaccard_median": 1.0,
+        "n_targets_overlap_ge_2": 50,
+        "n_targets_jaccard_ge_0.5": 50,
+        "pass": true
+      },
+      "0.50": {
+        "jaccard_mean": 1.0,
+        "jaccard_median": 1.0,
+        "n_targets_overlap_ge_2": 50,
+        "n_targets_jaccard_ge_0.5": 50,
+        "pass": true
+      },
+      "0.55": {
+        "jaccard_mean": 0.768,
+        "jaccard_median": 1.0,
+        "n_targets_overlap_ge_2": 48,
+        "n_targets_jaccard_ge_0.5": 48,
+        "pass": true
+      }
+    },
+    "resolution_stable": true,
+    "resolution_criterion": "for resolutions [0.8, 1.0, 1.2]: 40 <= communities <= 80 and largest community < 20% of nodes",
+    "resolution_details": {
+      "0.8": {
+        "n_communities": 59,
+        "largest_community": 33,
+        "largest_share": 0.14285714285714285,
+        "pass": true
+      },
+      "1.0": {
+        "n_communities": 60,
+        "largest_community": 29,
+        "largest_share": 0.12554112554112554,
+        "pass": true
+      },
+      "1.2": {
+        "n_communities": 60,
+        "largest_community": 29,
+        "largest_share": 0.12554112554112554,
+        "pass": true
+      }
+    },
+    "resolution_stable_range": [
+      0.6,
+      1.6
+    ],
+    "headline": "主结论对图阈值与社区分辨率均不敏感，Top-3 主表不是调参产物"
+  },
+  "baseline_identity": {
+    "main_table": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q2_top3_20261028\\q2__top3_all50_150.csv",
+    "compared_rows": 150,
+    "mismatches": [],
+    "mismatch_targets": [],
+    "identical": true
+  },
+  "threshold_sweep": [
+    {
+      "threshold": 0.4,
+      "n_edges": 1660,
+      "n_communities": 22,
+      "largest_community": 58,
+      "mean_degree": 14.372294372294371,
+      "n_targets": 50,
+      "jaccard_mean": 0.6819999999999999,
+      "jaccard_median": 0.5,
+      "jaccard_min": 0.2,
+      "overlap_mean": 2.34,
+      "n_targets_jaccard_ge_0_5": 47,
+      "n_targets_overlap_ge_2": 47,
+      "n_targets_identical": 20,
+      "importance_spearman_mean": 0.9335522295977243,
+      "kendall_tau_top3_mean": 0.7304964539007093,
+      "frequency_spearman_mean": 0.8376935200551974,
+      "tier_A": 8,
+      "tier_B": 58,
+      "tier_C": 84,
+      "confidence_high": 8,
+      "confidence_medium": 26,
+      "confidence_low": 116
+    },
+    {
+      "threshold": 0.45,
+      "n_edges": 1038,
+      "n_communities": 34,
+      "largest_community": 46,
+      "mean_degree": 8.987012987012987,
+      "n_targets": 50,
+      "jaccard_mean": 0.77,
+      "jaccard_median": 1.0,
+      "jaccard_min": 0.5,
+      "overlap_mean": 2.54,
+      "n_targets_jaccard_ge_0_5": 50,
+      "n_targets_overlap_ge_2": 50,
+      "n_targets_identical": 27,
+      "importance_spearman_mean": 0.9513637163389583,
+      "kendall_tau_top3_mean": 0.8266666666666667,
+      "frequency_spearman_mean": 0.8712538034082997,
+      "tier_A": 8,
+      "tier_B": 68,
+      "tier_C": 74,
+      "confidence_high": 8,
+      "confidence_medium": 33,
+      "confidence_low": 109
+    },
+    {
+      "threshold": 0.5,
+      "n_edges": 645,
+      "n_communities": 60,
+      "largest_community": 29,
+      "mean_degree": 5.584415584415584,
+      "n_targets": 50,
+      "jaccard_mean": 1.0,
+      "jaccard_median": 1.0,
+      "jaccard_min": 1.0,
+      "overlap_mean": 3.0,
+      "n_targets_jaccard_ge_0_5": 50,
+      "n_targets_overlap_ge_2": 50,
+      "n_targets_identical": 50,
+      "importance_spearman_mean": 1.0,
+      "kendall_tau_top3_mean": 1.0,
+      "frequency_spearman_mean": 1.0,
+      "tier_A": 7,
+      "tier_B": 71,
+      "tier_C": 72,
+      "confidence_high": 7,
+      "confidence_medium": 38,
+      "confidence_low": 105
+    },
+    {
+      "threshold": 0.55,
+      "n_edges": 409,
+      "n_communities": 95,
+      "largest_community": 31,
+      "mean_degree": 3.5411255411255413,
+      "n_targets": 50,
+      "jaccard_mean": 0.768,
+      "jaccard_median": 1.0,
+      "jaccard_min": 0.2,
+      "overlap_mean": 2.52,
+      "n_targets_jaccard_ge_0_5": 48,
+      "n_targets_overlap_ge_2": 48,
+      "n_targets_identical": 28,
+      "importance_spearman_mean": 0.9476817439190195,
+      "kendall_tau_top3_mean": 0.7222222222222222,
+      "frequency_spearman_mean": 0.853477985903546,
+      "tier_A": 8,
+      "tier_B": 70,
+      "tier_C": 72,
+      "confidence_high": 8,
+      "confidence_medium": 36,
+      "confidence_low": 106
+    },
+    {
+      "threshold": 0.6,
+      "n_edges": 266,
+      "n_communities": 120,
+      "largest_community": 23,
+      "mean_degree": 2.303030303030303,
+      "n_targets": 50,
+      "jaccard_mean": 0.6359999999999999,
+      "jaccard_median": 0.5,
+      "jaccard_min": 0.2,
+      "overlap_mean": 2.24,
+      "n_targets_jaccard_ge_0_5": 46,
+      "n_targets_overlap_ge_2": 46,
+      "n_targets_identical": 16,
+      "importance_spearman_mean": 0.9268749985718694,
+      "kendall_tau_top3_mean": 0.7971014492753624,
+      "frequency_spearman_mean": 0.8091620994726418,
+      "tier_A": 7,
+      "tier_B": 75,
+      "tier_C": 68,
+      "confidence_high": 7,
+      "confidence_medium": 40,
+      "confidence_low": 103
+    }
+  ],
+  "resolution_sweep": [
+    {
+      "resolution": 0.6,
+      "n_communities": 57,
+      "largest_community": 45,
+      "largest_share": 0.19480519480519481,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 0.7,
+      "n_communities": 58,
+      "largest_community": 36,
+      "largest_share": 0.15584415584415584,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 0.8,
+      "n_communities": 59,
+      "largest_community": 33,
+      "largest_share": 0.14285714285714285,
+      "n_nodes": 231,
+      "in_required_grid": true,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 0.9,
+      "n_communities": 59,
+      "largest_community": 33,
+      "largest_share": 0.14285714285714285,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 1.0,
+      "n_communities": 60,
+      "largest_community": 29,
+      "largest_share": 0.12554112554112554,
+      "n_nodes": 231,
+      "in_required_grid": true,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 1.1,
+      "n_communities": 60,
+      "largest_community": 28,
+      "largest_share": 0.12121212121212122,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 1.2,
+      "n_communities": 60,
+      "largest_community": 29,
+      "largest_share": 0.12554112554112554,
+      "n_nodes": 231,
+      "in_required_grid": true,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 1.3,
+      "n_communities": 61,
+      "largest_community": 29,
+      "largest_share": 0.12554112554112554,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 1.4,
+      "n_communities": 61,
+      "largest_community": 28,
+      "largest_share": 0.12121212121212122,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 1.5,
+      "n_communities": 61,
+      "largest_community": 27,
+      "largest_share": 0.11688311688311688,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    },
+    {
+      "resolution": 1.6,
+      "n_communities": 63,
+      "largest_community": 22,
+      "largest_share": 0.09523809523809523,
+      "n_nodes": 231,
+      "in_required_grid": false,
+      "passes_criterion": true
+    }
+  ],
+  "bootstrap": {
+    "unit": "beer",
+    "repeats": 200,
+    "seed": 20261027,
+    "note": "all threshold variants reuse the same seeded beer resamples, so the comparison is paired and isolates the graph parameter"
+  },
+  "method": "Ridge (alpha=1000.0) on 219 candidates + graph neighbourhood weighting (weight=0.5) with |rho| threshold and Louvain resolution varied; Louvain seed=42"
+}

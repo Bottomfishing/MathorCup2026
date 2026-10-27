@@ -1,0 +1,138 @@
+{
+  "protocol_id": "q1_panel_mean_20261028",
+  "task": "task-9",
+  "frozen_at": "2026-10-28",
+  "frozen_before_any_candidate_result": true,
+  "post_result_retuning": false,
+  "declaration": "This protocol was written before any candidate model was fitted. No hyperparameter, feature, fold or threshold may be changed after seeing candidate results; if a gate fails the honest outcome is 'do not adopt'.",
+  "question": "Can a model trained directly on the panel-weighted mean (beer x target, 0-6 scale) beat the current post-hoc calibration baseline (0.462234 panel-mean OOF MAE) significantly enough to adopt?",
+  "inputs": {
+    "source_attachments": "C:/Users/wb198/Desktop/2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题/2026年MathorCup大数据挑战赛-赛道A初赛/附件",
+    "raw_sensory": "data/reference/zenodo23624915/Raw sensory data anonymized.csv",
+    "raw_protocol": "configs/r2_raw_panel_protocol_20261026.json",
+    "official_folds": "outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv",
+    "official_panel_distribution": "outputs/r2_raw_q1_20261026/observed_panel_distribution.csv",
+    "official_et_oof": "outputs/r2_raw_q1_20261026/oof_predictions.csv.gz",
+    "reference_calibrated_panel_mean": "outputs/q1_decision_20261028/q1__calibrated_panel_mean_12500.csv",
+    "final_protocol": "configs/final_protocol.json",
+    "repeated_protocol": "configs/task5_repeated_nested_protocol_20261026.json"
+  },
+  "truth_definition": {
+    "panel_weighted_mean": "sum_k k * P(grade=k) over the weighted original 0-6 rating distribution of the beer x target panel (same weights as q1_decision_20261028: equal per beer, equal per taster within beer, repeated presentations share the taster weight).",
+    "panel_weighted_median": "lower weighted median of the same distribution.",
+    "consistency_check": "recomputed truth must match outputs/r2_raw_q1_20261026/observed_panel_distribution.csv at 1e-12",
+    "targets": "the 50 targets with raw panel labels; the two acetaldehyde slots stay excluded, as in the official Q1 delivery"
+  },
+  "folds": {
+    "scheme": "frozen official Q1 folds, one outer_fold per beer from outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv (style-stratified, outer_seed 20261024, 3 folds)",
+    "outer_folds": 3,
+    "outer_seed": 20261024,
+    "inner_folds": 2,
+    "inner_seed_rule": "20261024 + 100 + outer_fold",
+    "repeats": 3,
+    "repeat_definition": "the three model seeds of the formal repeated-validation protocol (task5): repeat r uses model seed 20261026 + r*1000 + outer_fold*100 + 99 for the outer-training fit; folds are held fixed so all repeats and the baseline are paired cell by cell",
+    "inner_use": "fixed hyperparameters from configs/final_protocol.json -> inner folds are audit only (inner-OOF MAE), never used for selection"
+  },
+  "features": {
+    "matrix": "1.csv numeric columns minus the 7 excluded derived fields of configs/r2_raw_panel_protocol_20261026.json = 224 predictors",
+    "preprocessing": "median imputation and RobustAsinh fitted on the outer-training beers only (inside the scikit-learn pipeline), same as beer_models.baseline.make_pipeline",
+    "style_is_not_a_feature": true,
+    "labels_or_ids_are_not_features": true
+  },
+  "candidates": {
+    "extra_trees_direct": {
+      "role": "primary",
+      "estimator": "sklearn.ensemble.ExtraTreesRegressor(n_estimators=300, min_samples_leaf=3, max_features=0.7, random_state=seed, n_jobs=1)",
+      "target": "50 panel-weighted means (multi-output regression)",
+      "preprocessing": "SimpleImputer(median, keep_empty_features=True) + RobustAsinh"
+    },
+    "hist_gradient_boosting_direct": {
+      "role": "secondary",
+      "estimator": "sklearn.multioutput.MultiOutputRegressor(sklearn.ensemble.HistGradientBoostingRegressor(max_iter=300, learning_rate=0.05, max_leaf_nodes=31, l2_regularization=1.0, random_state=seed))",
+      "target": "50 panel-weighted means (multi-output regression)",
+      "preprocessing": "SimpleImputer(median, keep_empty_features=True) + RobustAsinh"
+    },
+    "baseline_et_posthoc": {
+      "role": "reference, not a candidate for adoption",
+      "definition": "official Extra Trees OOF integer conditional median (r2_raw_q1, method=extra_trees, predicted_grade) mapped to the panel-mean scale by the frozen fold-wise per-target linear calibration with a fold-wise style-mean covariate (beer_models.q1_decision.fold_style_mean + calibrate_panel_mean), exactly the 0.462234 baseline",
+      "no_retraining": true
+    }
+  },
+  "reported_baseline": {
+    "name": "ET integer median + fold-wise style+linear calibration",
+    "panel_mean_mae": 0.4622337899166068,
+    "source": "outputs/q1_decision_20261028/q1__metrics_summary.csv (method 'calibration:ET integer + style mean, fold-wise linear')",
+    "reproduction_check": "the script must reproduce this number from the frozen inputs at 1e-9 before any candidate is scored"
+  },
+  "metrics": {
+    "primary": "OOF beer-level panel-mean MAE = mean(|panel_mean_pred - panel_mean_reference|) over 250 beers x 50 targets",
+    "secondary": [
+      "round(pred) clipped to 0..6 vs panel-weighted median: exact rate and within-one rate",
+      "macro Spearman across the 50 targets between panel_mean_pred and panel_mean_reference",
+      "Pearson correlation of panel_mean_pred with the frozen official calibrated panel-mean column outputs/q1_decision_20261028/q1__calibrated_panel_mean_12500.csv:panel_mean_calibrated",
+      "per-repeat MAE (repeat 0/1/2) and the pooled 3-repeat mean MAE",
+      "audit only: inner-OOF MAE of the primary candidate (2 inner folds x 3 outer folds x 3 seeds)"
+    ],
+    "rounding": "grade_round_pred = clip(rint(panel_mean_pred), 0, 6); rint uses banker's rounding (ties to even), declared and deterministic"
+  },
+  "uncertainty": {
+    "method": "paired beer bootstrap, 1000 draws, beers resampled within tasting style, seed 20261026",
+    "statistic": "mean over the 3 repeats of each beer's (baseline absolute error - candidate absolute error) averaged over its 50 targets; positive = candidate better",
+    "interval": "2.5% and 97.5% percentiles of the bootstrap distribution of the mean statistic",
+    "not_claimed": "fixed-fold resampling only; it is not a full-refit confidence interval and not an independent external validation"
+  },
+  "adoption_gates": {
+    "gate_1_point_improvement": "pooled 3-repeat panel-mean MAE <= 0.4622337899166068 - 0.010",
+    "gate_2_bootstrap": "paired beer-bootstrap 95% interval lower bound > 0",
+    "gate_3_every_repeat": "for each of the 3 repeats, panel-mean MAE < 0.4622337899166068",
+    "gate_4_within_one": "pooled round(panel_mean_pred) vs panel-weighted median within-one rate >= 0.9119 (the current 0.9169 rate minus 0.5 percentage point)",
+    "all_required": true,
+    "if_any_fails": "summary.adoption_recommendation = 'do_not_adopt_keep_baseline'"
+  },
+  "outputs": {
+    "directory": "outputs/q1_panelmean_20261028/",
+    "files": [
+      "q1__panel_mean_pred_12500.csv (primary candidate, columns beer,target,panel_mean_pred,grade_round_pred,panel_mean_reference,panel_median_reference,outer_fold,seed)",
+      "q1__panel_mean_pred_hgb_12500.csv (secondary candidate, same columns plus method)",
+      "q1__panel_mean_metrics.csv (method x scope, all metrics)",
+      "q1__panel_mean_comparison.json (per-candidate gates and bootstrap)",
+      "protocol.json (this protocol + resolved inputs + input hashes)",
+      "verification.json (checks + all_pass)",
+      "summary.json (adoption_recommendation, per-gate verdicts, headline numbers)"
+    ]
+  },
+  "constraints": {
+    "no_retraining_of_the_official_q1_int_grade_model": true,
+    "no_modification_of_delivery_or_existing_outputs": true,
+    "no_causal_claim": true,
+    "scope": "post-development reuse of the same 250 beers; fixed-fold bootstrap; not external validation"
+  },
+  "stage": "protocol_written_before_computation",
+  "resolved_inputs": {
+    "source_attachments": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",
+    "raw_sensory": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+    "raw_protocol": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\configs\\r2_raw_panel_protocol_20261026.json",
+    "official_folds": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\rating_weights_and_folds.csv",
+    "official_panel_distribution": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\observed_panel_distribution.csv",
+    "official_et_oof": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\oof_predictions.csv.gz",
+    "reference_calibrated_panel_mean": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\q1_decision_20261028\\q1__calibrated_panel_mean_12500.csv",
+    "final_protocol": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\configs\\final_protocol.json",
+    "repeated_protocol": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\configs\\task5_repeated_nested_protocol_20261026.json",
+    "config": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\configs\\q1_panel_mean_20261028.json"
+  },
+  "input_sha256": {
+    "raw_sensory": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+    "raw_protocol": "28f7010b62e88d10fba77ad24f709d92eb79ca1519c1acfc17292a9182409875",
+    "official_folds": "5f6dd1f5a0ebccecbf1971db48be09e5b3fa8d9641192a66f016ef0aeda4b8f1",
+    "official_panel_distribution": "c2513c76c52fbb5d534c782758459ab2c4d861bde18a7c6f7f567880d42352c6",
+    "official_et_oof": "14c5979794e10190dacc465b3b0ee4f540614bedd0030f8370c24eac4325a3c0",
+    "reference_calibrated_panel_mean": "de7ed25154967c41beaa05a11e35ae10f1c96db47ccfe69dd0fa69e9af17edc4",
+    "final_protocol": "c119de85068681230b2373a98ea91befe472e27f3c3a2a0d839547e72eeafa08",
+    "repeated_protocol": "89a486d7f6f862cdf0890bf1f0916907d4ed69a6dc9e9ea0b9a1d5122b07c4d5",
+    "config": "007bdf47299910c25f61241205c856856d2dd48bb19fd8dfb9e70b57d9707ab4"
+  },
+  "script": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\scripts\\q1_panelmean_20261028.py",
+  "script_sha256": "7e2e35d037263bf79a73674c9b128f9c0985416196157fc94da557790850b2c5",
+  "module_sha256": "48e8f16eab2fc33cd81c5492e77c798429908eab3c7f9bb104cc4dab28c9c98a",
+  "started_at_unix": 1793109629
+}
