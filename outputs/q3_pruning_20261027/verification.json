@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "cached_development_models": 20,
+  "cached_fresh_validation_models": 12,
+  "selected_and_controls_fresh_replay_points": 33,
+  "adopted_case_greedy_deletion_rounds_replayed": 5,
+  "adopted_case_parameter_draws_replayed": 40,
+  "full_official_Q1_selected_replay_points": 11,
+  "current_stability_qualified_four_proxy_cases": [
+    119
+  ],
+  "data_source4vg_censored_count": 9,
+  "source_positive4vg_beers": [
+    230,
+    119
+  ],
+  "independent_refits_in_verifier": 0,
+  "causal_or_all_five_safety_certified": false,
+  "all_selection_hashes_preserved": true
+}

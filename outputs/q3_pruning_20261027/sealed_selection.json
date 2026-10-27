@@ -1,0 +1,9 @@
+{
+  "selection_sha256": {
+    "selected_profiles.csv": "fab25e7a10a0645692bb20e42eb0ff7cb8df8113b5beaee59cac8f16572507f0",
+    "design_assessment.csv": "a972304ebec04d1b0ff9d9ac5808a277fabaafd0edcdc8f3c80fb18d057b9d68"
+  },
+  "protocol_sha256": "67c7f7bf0ab8d131073fbbbf79baed69b49310b4fd4a9191cde212d26f75c497",
+  "viewed_previous_validation_models_reclassified_development": 12,
+  "fresh_validation_models_opened": false
+}

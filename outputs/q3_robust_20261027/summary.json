@@ -1,0 +1,14 @@
+{
+  "status": "completed_frozen_robust_design_and_validation",
+  "final_source_plans": 11,
+  "stable_four_proxy_conditional_plans": 0,
+  "nominal_final_plans": 3,
+  "design_qualified_final_plans": 1,
+  "all_five_true_nonworsening_certified": 0,
+  "stale_evidence_sufficient": false,
+  "q1_model_changed": false,
+  "phase3_started": false,
+  "validation_joint_min": 0.0,
+  "validation_joint_max": 0.4166666666666667,
+  "selected_sha256": "09edb50bcd5259dcdad5e0c43ce27c5ff39fb6161dd30c7f863cf8db0a931633"
+}

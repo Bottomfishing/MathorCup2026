@@ -1,0 +1,31 @@
+{
+  "base": "configs/q3_robust_protocol_20261027.json",
+  "reason": "Style-only feature ranking failed sealed checks. After that disclosure, use risk-aware backward pruning and integrate parameter-neighborhood stress into design. This is adaptive development on the same250 beers, not a pristine independent evaluation.",
+  "seed": 20261127,
+  "design_models": "All8 previous design and12 already-viewed validation models now explicitly constitute20 DEVELOPMENT models. No claim that those12 remain sealed.",
+  "seed_spectra": "28 measured Tripel profiles with4VG locked to source and three supported defect coordinates capped within frozen empirical lowering bounds; also previous broad selected and previous robust budget96/144 spectra. Seeds are initializers for sparse backward selection, not new claims from an old-anchor grid.",
+  "chemical_seed_levels": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "maximum_changed_fields": 144,
+  "pruning": "Among full spectra already passing unchanged nominal and20-model design requirements, retain up to3 by greatest normalized minimum guard surplus. At each iteration try resetting consecutive blocks of16,8,4,1 currently changed NONPROTECTED fields to source, ordered by absolute robust-space change. Keep only actual nominal+design-qualified deletions; prefer most columns removed, then largest guard surplus, then lower objective. Stop at144 columns or when no tested deletion passes. Protected three reducible values stay fixed during deletion. Preserve4VG. At most80 deletion rounds per seed.",
+  "design_requirements": "Unchanged: nominal style margins>=.01, distance improvement>=.1, support; all5 grades and4 nonzero probabilities nonincrease; DEVELOPMENT joint fraction>=.75, each4 probability delta q80<=-.002, each style margin q20>=0.",
+  "guard_surplus": "Minimum of(joint fraction minus.75)/.25, (-q80-.002)/.002 for each4 risks, and style q20/.01 for each classifier. Rank surplus before objective to avoid smallest-distance boundary plans.",
+  "parameter_design_stress": {
+    "draws": 8,
+    "required_passes": 7,
+    "sd": 0.01,
+    "meaning": "Independent progress jitter for currently changed coordinates along source-to-seed supplied-coordinate segments; clipping to[0,1]. Never perturb locked/censored fields; not assay-error bounds."
+  },
+  "selection": "Per source choose among<=144-column qualified pruned candidates that pass7/8 design perturbations by maximum guard surplus, then lower objective, then fewer changed coordinates. If none, retain explicitly failed nearest proposal. Save and hash all selections before fresh validation.",
+  "validation_ensemble": {
+    "refits": 12,
+    "seed": 202611970
+  },
+  "validation_adoption": "Unchanged: fixed-plan joint>=9/12, each4 nonzero delta q80<=0;32 fresh parameter perturbations require>=26/32 nominal+development-qualified. No re-selection or further search after fresh validation.",
+  "comparisons": "Previous broad and previous robust FIXED final spectra evaluated in the same new12 refits as pruned designs. Never choose among them using validation.",
+  "stale": "Unestablished regardless of ensemble agreement, unchanged zeros or reference labels. A stable four-proxy conditional spectrum never becomes certified all-five transfer or brewing recipe.",
+  "stopping": "Complete this focused risk-aware pruning comparison and frozen validation; report adoption/nonadoption and exact limits. Do not lower gates or repeatedly create new holdouts. Push stage2 work and stop before phase3."
+}

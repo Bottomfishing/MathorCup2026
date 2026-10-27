@@ -1,0 +1,14 @@
+{
+  "status": "completed_source_scale_correction_and_sealed_checks",
+  "stable_four_proxy_conditional_plans": 0,
+  "all_five_true_nonworsening_certified": 0,
+  "q1_model_changed": false,
+  "phase3_started": false,
+  "development_models": 20,
+  "fresh_validation_models": 12,
+  "model_cache": "outputs/q3_pruning_20261027/models",
+  "selection_sha256_unchanged": {
+    "selected_profiles.csv": "4510412f789f6a5d0e222ec397b2068eacef3718677bf950625d4c6ffbfe0f16",
+    "design_assessment.csv": "1518d66e46cf8c1b1d16db8d40120df080f3d1433b2cc3c0499cbf9a78761cdf"
+  }
+}

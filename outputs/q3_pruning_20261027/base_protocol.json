@@ -1,0 +1,83 @@
+{
+  "base_commit": "8c709de",
+  "scope": "User-authorized stage2 continuation; Q1 official model unchanged; no phase3 cleanup",
+  "reason": "Previous 6 nominal broad-domain plans changed209-216 coordinates and jointly passed only0-3 of10 refits. Integrate sparsity and refit robustness in design, rather than inspect them only afterwards.",
+  "seed": 20261027,
+  "budgets": [
+    96,
+    144
+  ],
+  "groups": [
+    "Yeast",
+    "Hops",
+    "Malt",
+    "Wild flora",
+    "Spices",
+    "Other"
+  ],
+  "feature_ranking": "For each source, rank nonprotected fields by positive Tripel-vs-Pils/Lager logistic contribution toward the mean of28 measured Tripels, using the unchanged full-training style model. Ties by original feature index. Retain up to budget minus3 nonprotected fields; three supported decreasing chemical coordinates also count toward budget. No risk-validation models enter ranking.",
+  "neighbors": 5,
+  "domain": "Choose5 nearest measured Tripels by robust-asinh RMS on retained nonprotected fields before sensory evaluation. A shared convex endpoint plus six origin-group progress parameters in[0,1]. Interpolation remains supplied-coordinate statistical design, not a recipe or independently controllable causal knobs.",
+  "reducible_fields": [
+    "DMS",
+    "X2.3.butanedione",
+    "X.E..2.nonenal"
+  ],
+  "chemical_limits": "Each reducible field ranges from max(compatible observed global minimum, source value minus0.5 observed training IQR) to source, with source as floor if already below minimum. For identity coordinates additionally enforce nonnegative floor. Exclude documented mapping-conflict beer rows when deriving bounds. DMS log10 decrement is at most0.5 log10-IQR, not an arithmetic concentration decrement. Keep zero/censored4VG coordinate fixed. No invented threshold or uniform inverse transform.",
+  "missingness": "Reuse pinned source imputation and explicitly conditional zero Diacetyl bound for119/28. These sources remain conditional; no recovered measurement.",
+  "search": {
+    "sobol_power": 9,
+    "rounds": 6,
+    "batch_size": 128,
+    "elite": 24,
+    "scales": [
+      0.18,
+      0.14,
+      0.11,
+      0.08,
+      0.06,
+      0.04
+    ]
+  },
+  "design_ensemble": {
+    "refits": 8,
+    "seed": 202610270,
+    "source": "style-stratified beer bootstrap; all rating records follow each beer occurrence; imputation fitted inside draw; same ET300 and two style families"
+  },
+  "validation_ensemble": {
+    "refits": 12,
+    "seed": 202611970
+  },
+  "nominal": {
+    "minimum_distance_improvement": 0.1,
+    "minimum_style_probability_margin": 0.01,
+    "nonincrease_tolerance": 1e-10
+  },
+  "design_requirements": {
+    "minimum_joint_refit_fraction": 0.75,
+    "probability_delta_quantile": 0.8,
+    "maximum_four_nonzero_delta_quantile": -0.002,
+    "minimum_style_margin_quantile": 0.0,
+    "style_margin_quantile": 0.2
+  },
+  "joint_definition": "Both classifiers Tripel AND all5 integer grades nonincrease AND uncalibrated P>=1 nonincrease for all4 historically supported defects in the SAME refit. Stale probability is reported as sensitivity, never certified by model agreement.",
+  "selection": "Among nominal+design-qualified spectra, minimize0.5*(targetRMS/sourceTargetRMS)+0.35*changeRMS+0.15*(changedCount/224). Ties by actual changedCount then generation order. Within each budget save one; choose final per-source budget before validation by same objective among qualified, or lexicographically nearest failed design if none. Keep restricted proposals explicitly failed.",
+  "search_ranking": "Lexicographic nominal structural violations, nominal grade/probability violations, design guard violations, positive normalized design slack, objective. No validation results used.",
+  "validation_adoption": {
+    "minimum_joint_refit_fraction": 0.75,
+    "maximum_four_nonzero_delta_quantile": 0.0,
+    "probability_delta_quantile": 0.8,
+    "minimum_parameter_pass_fraction": 0.8,
+    "parameter_draws": 32,
+    "parameter_sd": 0.01
+  },
+  "adoption_scope": "Only a stable FOUR-defect-proxy conditional chemical target spectrum if all frozen gates pass. All-five true nonworsening, causal brewing feasibility and actual-after measurements remain unestablished, especially Stale. No guarantees of success or forced success quota.",
+  "comparisons": "Run previous selected broad-domain spectra on same design and sealed validation refits, matched by source. Compare changed count, target distance, grade, risk, joint pass and per-target deltas. Prior candidate selection has already seen historical250-beer evidence, so all new estimates are development sensitivity, not an untouched external test.",
+  "sensitivity": [
+    "five_uncalibrated_nonzero",
+    "old30_probability_conditions_on_official_model",
+    "raw_missing_source_vs_conditional_zero",
+    "parameter_perturbations_not_assay_error"
+  ],
+  "stopping": "Complete both predeclared budgets, frozen validation, concrete before-after tables and necessary implementation verification. Do not tune on sealed outcomes. Push main and stop before phase3. Do not delete old outputs or user delivery folder."
+}

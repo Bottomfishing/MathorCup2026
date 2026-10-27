@@ -1,0 +1,8 @@
+{
+  "protocol_sha256": "84afc554aa5503fb83ba3e296a4b916bdc00f53efe53adbce82a2e565038630b",
+  "selection_sha256": {
+    "selected_profiles.csv": "4510412f789f6a5d0e222ec397b2068eacef3718677bf950625d4c6ffbfe0f16",
+    "design_assessment.csv": "1518d66e46cf8c1b1d16db8d40120df080f3d1433b2cc3c0499cbf9a78761cdf"
+  },
+  "newly_sealed_validation_outcomes_read": false
+}

@@ -1,0 +1,12 @@
+﻿beer,five_integer_nonincrease,five_uncalibrated_nonzero_nonincrease,five_calibrated_nonzero_nonincrease,all_thirty_probability_nonincrease,stale_safety_certified
+124,True,False,False,False,False
+81,True,True,True,False,False
+218,True,False,False,False,False
+96,True,True,True,False,False
+230,True,False,False,False,False
+185,True,False,False,False,False
+139,True,False,False,False,False
+209,True,False,False,False,False
+119,True,True,True,False,False
+90,True,False,False,False,False
+28,True,False,False,False,False

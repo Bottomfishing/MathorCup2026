@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "all_new_spectra_reconstructed": 28270,
+  "nominal_four_nonzero_repredicted_points": 28270,
+  "design_ensemble_cached_replay_points": 66,
+  "design_ensemble_refits": 8,
+  "validation_ensemble_cached_replay_points": 33,
+  "validation_ensemble_refits": 12,
+  "full_official_Q1_selected_replays": 22,
+  "maximum_sampled_replay_difference": 1.1368683772161603e-13,
+  "all_design_candidates_independently_ensemble_repredicted": false,
+  "new_independent_bootstrap_fits_in_verifier": 0,
+  "selection_seal_unchanged": true,
+  "external_data_validation": false,
+  "physical_safety_certified": false
+}

@@ -1,0 +1,17 @@
+{
+  "base": "configs/q3_pruning_protocol_20261027.json",
+  "correction": "Source evidence actually has9 zero/censored4VG references and TWO positive references: beer230=.019403 and119=.143755 mg/L. Old saved numeric tables are correct; old narrative claiming11 zeros was wrong. Extend supported concentration-lowering controls to these two compatible positive log10 pairs, retaining exact lock for the9 censored sources. This corrects the source-scale premise; do not change labels, guard thresholds or nominal Q1.",
+  "allow_positive_4vg_reduction": true,
+  "reducible_fields": [
+    "DMS",
+    "X2.3.butanedione",
+    "X.E..2.nonenal",
+    "X4VG"
+  ],
+  "lowering": "Same max(empirical compatible positive floor, source minus0.5 compatible observed log10-IQR) rule for positive4VG. Zero/censored-source lower equals source. No uniform exponentiation or fabricated concentration for zeros.",
+  "seeds": "For the TWO positive-reference sources only, take their existing fixed sparse96/144 plans and test4VG source-to-supported-lower progress0,.5,1. All other coordinates stay at each sparse plan. The9 censored sources retain their previous sparse failed proposals. This is a six-candidate supported-coordinate correction per positive source; no new old-anchor grid or unconstrained expansion.",
+  "design": "Same20 explicitly developmental models and unchanged nominal/design requirements,144-coordinate cap, guard-surplus selection and7/8 design perturbation gate. Corrected candidates selected before newly sealed model outcomes are read.",
+  "validation": "Use the12 fresh models with seed202611970 specified in prior pruning protocol; their outcomes have not been read before freezing this correction. Do not use their already-computed outcomes on the superseded locked4VG plans for selection. Save and hash corrected selections before predicting them. Same9/12, q80<=0 and26/32 stress gates; no further holdout rounds.",
+  "stale": "Still unestablished. Stable4-proxy chemical targets remain conditional, not actual measured after-transfer safety or a brewing recipe.",
+  "stop": "Complete corrected design, matched fresh checks, numerical validation and concise delivery; no additional tuning on these validation results; push main and stop before phase3."
+}

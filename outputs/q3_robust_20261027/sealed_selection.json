@@ -1,0 +1,10 @@
+{
+  "validation_opened": false,
+  "selection_sha256": {
+    "selected_profiles.csv": "9417503d211a7b573a91d77f6d472ef89a0065d8e9a16e20ecf53d67131fa304",
+    "selected_parameters.csv": "67f67916b8247dcacf6c951b73bb957ea13ad249815fd5fa3ea57924d936629a",
+    "design_choices.csv": "8110ee8dce63290cb45ca8e844bbb773508de245ceac13c784f42738138c138c",
+    "final_choices_before_validation.csv": "09edb50bcd5259dcdad5e0c43ce27c5ff39fb6161dd30c7f863cf8db0a931633"
+  },
+  "protocol_sha256": "fbe48499f15a2e60092605fae7de36f9edb681427695eb976a6bed78d2048b14"
+}
