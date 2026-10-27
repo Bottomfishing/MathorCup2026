@@ -1,0 +1,16 @@
+{
+  "beer": 119,
+  "field": "X2.3.butanedione",
+  "operation": "preserve_unknown_source_value",
+  "source_value": null,
+  "after_value": null,
+  "chemical_delta_identically_zero_for_any_source_value": true,
+  "measured_value_recovered": false,
+  "model_qualification_no_longer_requires_exact_zero": false,
+  "finite_model_support_domain": [
+    0.0,
+    121.7310182
+  ],
+  "true_source_bound_established": false,
+  "physical_or_Stale_safety_certified": false
+}

@@ -1,0 +1,2 @@
+﻿beer,original_coordinate_missing,calibrated_reference,raw_value_recovered,empirical_model_support_lower,empirical_model_support_upper,support_is_real_source_bound,support_unit
+119,True,0.0,False,0.0,121.7310182,False,supplied_coordinate_reference_unit_not_automatically_source_unit

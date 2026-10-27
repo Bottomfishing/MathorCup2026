@@ -1,0 +1,10 @@
+﻿repeat,outer_fold,selected
+0,0,all_et_leaf10
+0,1,age_logit_C0.1
+0,2,age_logit_C0.1
+1,0,shared_et
+1,1,shared_et
+1,2,all_et_leaf10
+2,0,age_logit_C0.1
+2,1,all_et_leaf10
+2,2,all_et_leaf10

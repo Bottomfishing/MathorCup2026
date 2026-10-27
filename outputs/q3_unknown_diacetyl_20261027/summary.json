@@ -1,0 +1,57 @@
+{
+  "status": "completed",
+  "protocol_sha256": "7998eb709265cc08c01fcbf6c7526af9095486fb1396c1c990d6f6f35f0f6575",
+  "zero_assumption_removed_for_chemical_rule": true,
+  "zero_assumption_removed_for_model_qualification": false,
+  "interval_results": {
+    "development": {
+      "qualified_on_empirical_support": true,
+      "evaluated_representatives": 1575,
+      "min_joint_fraction": 0.9,
+      "max_nonzero_delta_q80": [
+        -0.15580885102551786,
+        -0.014382394162274749,
+        -0.026372898019088556,
+        -0.05508368026594235
+      ],
+      "nominal_all_tree_guards": true,
+      "nominal_logistic_margin_lower_bound": 0.5847348750663068,
+      "logistic_q20_margin_lower_bound": 0.16912328682923744,
+      "distance_improvement_lower_bound": 0.10826370667204765,
+      "maximum_nearest_support_distance": 0.48388431858979863,
+      "nominal_and_geometric_certified": true,
+      "logistic_design_margin_certified": true
+    },
+    "validation": {
+      "qualified_on_empirical_support": false,
+      "evaluated_representatives": 1133,
+      "min_joint_fraction": 0.6666666666666666,
+      "max_nonzero_delta_q80": [
+        -0.11364465328909822,
+        -0.013516779753168371,
+        -0.010279871231061307,
+        -0.07482785733813543
+      ],
+      "nominal_all_tree_guards": true,
+      "nominal_logistic_margin_lower_bound": 0.5847348750663068,
+      "logistic_q20_margin_lower_bound": -0.7991798785050587,
+      "distance_improvement_lower_bound": 0.10826370667204765,
+      "maximum_nearest_support_distance": 0.48388431858979863,
+      "nominal_and_geometric_certified": true,
+      "logistic_design_margin_certified": true
+    }
+  },
+  "joint_unknown_parameter_fraction": null,
+  "q1_model_sha256": "79f373e2f79d167dda580832ea4d68babdb53f043f2797c55d773a4eef8c7a0b",
+  "raw_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "3.xlsx": "fe4dcabd48431e6d677c095962ea9c447e10e509c4f3f8dd511a48c5541ab587",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "target_profile_sha256": "fab25e7a10a0645692bb20e42eb0ff7cb8df8113b5beaee59cac8f16572507f0",
+  "true_unknown_concentration_recovered": false,
+  "true_all_five_safety_certified": false,
+  "phase3_started": false
+}

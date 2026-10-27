@@ -1,0 +1,22 @@
+{
+  "base_commit": "7119e50",
+  "scope": "Stage2 only: evidence for Stale nonzero risk and removal of source119 exact-zero Diacetyl dependence. No Q1 integer-model or phase3 change.",
+  "source_evidence": "Attachment1 and original Supplementary File S1 both have missing Diacetyl for119/28; calibrated table has0. They are same-source versions, not independent measurements. Do not recover a raw value or detection limit from0 without evidence.",
+  "unknown_diacetyl": "Preserve the source unknown concentration symbolically before/after. Publish NA in that coordinate and a preserve_unknown_source rule, not a measured or designed0. Chemical delta is identically0 for any source value. For model-domain robustness inspect [0, maximum compatible observed Diacetyl] as empirical model support, NOT a proven bound on the missing real concentration. Also explicitly check raw-NA ordinary imputation.",
+  "tree_interval": "Derive all reachable splits for the uncertain coordinate on each source/after tree path, accounting for sklearn float32 routing. Evaluate representatives on both sides of every reachable threshold. All five integer/risk and ET style predictions are piecewise constant on these cells. Use analytic endpoint bounds for logistic target-vs-other logits; continuous distance/support are checked separately, never call a finite arbitrary grid a universal proof.",
+  "stale_target": "P(individual original Stale rating>=1), beer and taster balanced using existing genuine0-6 labels. This improves only nonzero risk if qualified; it neither relabels Stale nor solves integer high-score or all-severity prediction. No forum descriptors, source labels copied to target, or zero-template labels.",
+  "stale_candidates": ["training_prior", "shared_et", "age_logit_C0.1", "age_logit_C1", "age_et_leaf10", "all_et_leaf10"],
+  "features": "Aging subset fixed from nonempty aging annotation in existing dictionary before outcome comparisons;24 of224 columns. No sensory, style, beer ID, taster ID, storage guesses or external labels as inputs. Logit uses training-only median/robust-asinh/standardization. ET fits unique-beer nonzero fractions with leaf10,300 trees,max_features0.7. No leaf1/3 repetition already shown unsuccessful.",
+  "outer_seeds": [20261027, 20261028, 20261029],
+  "outer_folds": 3,
+  "inner_folds": 2,
+  "inner_seed": 20261101,
+  "model_seed": 20261103,
+  "selection": "Within each outer training set choose one candidate on inner-OOF expected individual binary Brier. Prior wins numerical ties, then listed order. Fit all preprocessing only inside training. No calibrator or threshold chosen using outer predictions.",
+  "primary": "Expected individual nonzero Brier averaged equally over250 beers with existing within-beer taster weights; report reducible fraction-MSE separately. Compare inner-selected workflow to training-only prior and same-split shared uncalibrated ET, per-repeat and paired per-beer averaged over3 repeats.",
+  "adoption": {"minimum_mean_prior_Brier_gain": 0.0005, "prior_gain_lower99_positive": true, "shared_gain_lower95_positive": true, "every_repeat_prior_gain_positive": true, "minimum_mean_soft_label_AUC": 0.6, "minimum_selected_prediction_sd": 0.01},
+  "bootstrap": {"repeats": 2000, "seed": 20261105, "unit": "style-stratified beer after averaging3 repeated losses; fixed-OOF interval, not refitting or external validation"},
+  "development_disclosure": "All250 beers and the outer splits have been repeatedly viewed in this project. New nested candidate selection matches the procedure but does not turn the data into an untouched external test. Do not tune this candidate set or gates after results.",
+  "q3_integration": "Only if predictive adoption passes may the new nonzero-risk model become an additional Stale guard. First evaluate fixed119 plan, and predeclared controls restoring all24 aging fields or only7 aging-decrease fields to source. Keep existing4 guards, style, support, and budgets; no physical or all-five real-effect certification from model agreement. If model fails, retain abstention for unsupported Stale instead of inventing safety.",
+  "delivery": "Implement/run/verify both parts, state what is actually resolved or still unknown, push main, stop before phase3. Preserve prior experiments and user delivery folder; do not upload raw records, reference workbook or model binaries."
+}

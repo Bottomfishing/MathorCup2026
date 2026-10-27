@@ -1,0 +1,3001 @@
+﻿repeat,fold,beer,classifier,domain,observed,predicted,correct
+0,0,2,logistic,full,Low/No alcohol,Low/No alcohol,True
+0,0,40,logistic,full,Low/No alcohol,Pils/Lager,False
+0,0,247,logistic,full,Fruitbeer,Fruitbeer,True
+0,0,124,logistic,full,Pils/Lager,Pils/Lager,True
+0,0,207,logistic,full,Fruitbeer,Fruitbeer,True
+0,0,141,logistic,full,Low/No alcohol,Low/No alcohol,True
+0,0,33,logistic,full,Fruitbeer,Fruitbeer,True
+0,0,64,logistic,full,Blond,Wheat,False
+0,0,190,logistic,full,Flanders old brown,Flanders old brown,True
+0,0,228,logistic,full,Tripel,Dubbel,False
+0,0,166,logistic,full,Saison,Hoppy,False
+0,0,216,logistic,full,Scotch,Christmas,False
+0,0,200,logistic,full,West Flanders ale,Flanders old brown,False
+0,0,139,logistic,full,Pils/Lager,Pils/Lager,True
+0,0,111,logistic,full,Dubbel,Stout/Porter,False
+0,0,224,logistic,full,Wheat,Wheat,True
+0,0,54,logistic,full,Kriek,Kriek,True
+0,0,11,logistic,full,Amber,Blond,False
+0,0,84,logistic,full,West Flanders ale,Lambic,False
+0,0,74,logistic,full,Faro,Lambic,False
+0,0,20,logistic,full,Saison,Saison,True
+0,0,122,logistic,full,Brett/cofermented,Brett/cofermented,True
+0,0,194,logistic,full,Dubbel,Strong ale,False
+0,0,160,logistic,full,Wheat,Wheat,True
+0,0,232,logistic,full,Kriek,Kriek,True
+0,0,61,logistic,full,Stout/Porter,Stout/Porter,True
+0,0,138,logistic,full,Kriek,Kriek,True
+0,0,135,logistic,full,Tripel,Blond,False
+0,0,241,logistic,full,Kriek,Kriek,True
+0,0,128,logistic,full,Amber,Amber,True
+0,0,112,logistic,full,Brown,Dubbel,False
+0,0,129,logistic,full,Brown,Christmas,False
+0,0,97,logistic,full,Hoppy,Blond,False
+0,0,87,logistic,full,Stout/Porter,Dubbel,False
+0,0,201,logistic,full,Stout/Porter,Strong ale,False
+0,0,37,logistic,full,Strong ale,Christmas,False
+0,0,119,logistic,full,Pils/Lager,Pils/Lager,True
+0,0,90,logistic,full,Pils/Lager,Pils/Lager,True
+0,0,92,logistic,full,Amber,Saison,False
+0,0,76,logistic,full,Blond,Tripel,False
+0,0,107,logistic,full,Dubbel,Christmas,False
+0,0,205,logistic,full,Brut,Brut,True
+0,0,53,logistic,full,Brown,Dubbel,False
+0,0,136,logistic,full,Blond,Blond,True
+0,0,243,logistic,full,Wheat,Wheat,True
+0,0,240,logistic,full,Tripel,Tripel,True
+0,0,150,logistic,full,Brett/cofermented,Tripel,False
+0,0,23,logistic,full,Tripel,Blond,False
+0,0,226,logistic,full,Strong ale,Strong ale,True
+0,0,132,logistic,full,Saison,Hoppy,False
+0,0,47,logistic,full,Tripel,Tripel,True
+0,0,115,logistic,full,Lambic,Fruitbeer,False
+0,0,149,logistic,full,Blond,Blond,True
+0,0,80,logistic,full,Hoppy,Hoppy,True
+0,0,120,logistic,full,Hoppy,Hoppy,True
+0,0,18,logistic,full,Lambic,Lambic,True
+0,0,118,logistic,full,West Flanders ale,West Flanders ale,True
+0,0,145,logistic,full,Saison,Saison,True
+0,0,125,logistic,full,Blond,Tripel,False
+0,0,144,logistic,full,Lambic,Lambic,True
+0,0,36,logistic,full,Brown,Strong ale,False
+0,0,31,logistic,full,Hoppy,Hoppy,True
+0,0,94,logistic,full,Blond,Hoppy,False
+0,0,75,logistic,full,Lambic,Lambic,True
+0,0,121,logistic,full,Blond,Blond,True
+0,0,208,logistic,full,Wheat,Wheat,True
+0,0,214,logistic,full,Christmas,Strong ale,False
+0,0,215,logistic,full,Blond,Tripel,False
+0,0,248,logistic,full,Blond,Blond,True
+0,0,65,logistic,full,Hoppy,Saison,False
+0,0,217,logistic,full,Tripel,Blond,False
+0,0,68,logistic,full,Tripel,Brett/cofermented,False
+0,0,102,logistic,full,Christmas,Brown,False
+0,0,210,logistic,full,Amber,Blond,False
+0,0,189,logistic,full,Tripel,Tripel,True
+0,0,95,logistic,full,Christmas,Strong ale,False
+0,0,3,logistic,full,Blond,Blond,True
+0,0,192,logistic,full,Brut,Tripel,False
+0,0,239,logistic,full,Tripel,Blond,False
+0,0,103,logistic,full,Stout/Porter,Scotch,False
+0,0,175,logistic,full,Strong ale,Dubbel,False
+0,0,196,logistic,full,Strong ale,Strong ale,True
+0,0,4,logistic,full,Strong ale,Strong ale,True
+0,0,99,logistic,full,Strong ale,Strong ale,True
+0,0,2,logistic,masked,Low/No alcohol,Low/No alcohol,True
+0,0,40,logistic,masked,Low/No alcohol,Pils/Lager,False
+0,0,247,logistic,masked,Fruitbeer,Fruitbeer,True
+0,0,124,logistic,masked,Pils/Lager,Pils/Lager,True
+0,0,207,logistic,masked,Fruitbeer,Fruitbeer,True
+0,0,141,logistic,masked,Low/No alcohol,Low/No alcohol,True
+0,0,33,logistic,masked,Fruitbeer,Fruitbeer,True
+0,0,64,logistic,masked,Blond,Wheat,False
+0,0,190,logistic,masked,Flanders old brown,Flanders old brown,True
+0,0,228,logistic,masked,Tripel,Dubbel,False
+0,0,166,logistic,masked,Saison,Hoppy,False
+0,0,216,logistic,masked,Scotch,Christmas,False
+0,0,200,logistic,masked,West Flanders ale,Flanders old brown,False
+0,0,139,logistic,masked,Pils/Lager,Pils/Lager,True
+0,0,111,logistic,masked,Dubbel,Stout/Porter,False
+0,0,224,logistic,masked,Wheat,Wheat,True
+0,0,54,logistic,masked,Kriek,Kriek,True
+0,0,11,logistic,masked,Amber,Blond,False
+0,0,84,logistic,masked,West Flanders ale,Lambic,False
+0,0,74,logistic,masked,Faro,Lambic,False
+0,0,20,logistic,masked,Saison,Saison,True
+0,0,122,logistic,masked,Brett/cofermented,Brett/cofermented,True
+0,0,194,logistic,masked,Dubbel,Strong ale,False
+0,0,160,logistic,masked,Wheat,Wheat,True
+0,0,232,logistic,masked,Kriek,Kriek,True
+0,0,61,logistic,masked,Stout/Porter,Stout/Porter,True
+0,0,138,logistic,masked,Kriek,Kriek,True
+0,0,135,logistic,masked,Tripel,Blond,False
+0,0,241,logistic,masked,Kriek,Kriek,True
+0,0,128,logistic,masked,Amber,Amber,True
+0,0,112,logistic,masked,Brown,Dubbel,False
+0,0,129,logistic,masked,Brown,Christmas,False
+0,0,97,logistic,masked,Hoppy,Blond,False
+0,0,87,logistic,masked,Stout/Porter,Dubbel,False
+0,0,201,logistic,masked,Stout/Porter,Strong ale,False
+0,0,37,logistic,masked,Strong ale,Christmas,False
+0,0,119,logistic,masked,Pils/Lager,Pils/Lager,True
+0,0,90,logistic,masked,Pils/Lager,Pils/Lager,True
+0,0,92,logistic,masked,Amber,Saison,False
+0,0,76,logistic,masked,Blond,Tripel,False
+0,0,107,logistic,masked,Dubbel,Christmas,False
+0,0,205,logistic,masked,Brut,Brut,True
+0,0,53,logistic,masked,Brown,Dubbel,False
+0,0,136,logistic,masked,Blond,Blond,True
+0,0,243,logistic,masked,Wheat,Wheat,True
+0,0,240,logistic,masked,Tripel,Tripel,True
+0,0,150,logistic,masked,Brett/cofermented,Tripel,False
+0,0,23,logistic,masked,Tripel,Blond,False
+0,0,226,logistic,masked,Strong ale,Strong ale,True
+0,0,132,logistic,masked,Saison,Hoppy,False
+0,0,47,logistic,masked,Tripel,Tripel,True
+0,0,115,logistic,masked,Lambic,Fruitbeer,False
+0,0,149,logistic,masked,Blond,Blond,True
+0,0,80,logistic,masked,Hoppy,Hoppy,True
+0,0,120,logistic,masked,Hoppy,Hoppy,True
+0,0,18,logistic,masked,Lambic,Lambic,True
+0,0,118,logistic,masked,West Flanders ale,West Flanders ale,True
+0,0,145,logistic,masked,Saison,Saison,True
+0,0,125,logistic,masked,Blond,Tripel,False
+0,0,144,logistic,masked,Lambic,Lambic,True
+0,0,36,logistic,masked,Brown,Strong ale,False
+0,0,31,logistic,masked,Hoppy,Hoppy,True
+0,0,94,logistic,masked,Blond,Hoppy,False
+0,0,75,logistic,masked,Lambic,Lambic,True
+0,0,121,logistic,masked,Blond,Blond,True
+0,0,208,logistic,masked,Wheat,Wheat,True
+0,0,214,logistic,masked,Christmas,Strong ale,False
+0,0,215,logistic,masked,Blond,Tripel,False
+0,0,248,logistic,masked,Blond,Blond,True
+0,0,65,logistic,masked,Hoppy,Saison,False
+0,0,217,logistic,masked,Tripel,Blond,False
+0,0,68,logistic,masked,Tripel,Brett/cofermented,False
+0,0,102,logistic,masked,Christmas,Brown,False
+0,0,210,logistic,masked,Amber,Blond,False
+0,0,189,logistic,masked,Tripel,Tripel,True
+0,0,95,logistic,masked,Christmas,Strong ale,False
+0,0,3,logistic,masked,Blond,Blond,True
+0,0,192,logistic,masked,Brut,Tripel,False
+0,0,239,logistic,masked,Tripel,Blond,False
+0,0,103,logistic,masked,Stout/Porter,Scotch,False
+0,0,175,logistic,masked,Strong ale,Dubbel,False
+0,0,196,logistic,masked,Strong ale,Strong ale,True
+0,0,4,logistic,masked,Strong ale,Strong ale,True
+0,0,99,logistic,masked,Strong ale,Strong ale,True
+0,0,2,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+0,0,40,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+0,0,247,extra_trees,full,Fruitbeer,Fruitbeer,True
+0,0,124,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,0,207,extra_trees,full,Fruitbeer,Fruitbeer,True
+0,0,141,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+0,0,33,extra_trees,full,Fruitbeer,Fruitbeer,True
+0,0,64,extra_trees,full,Blond,Wheat,False
+0,0,190,extra_trees,full,Flanders old brown,Flanders old brown,True
+0,0,228,extra_trees,full,Tripel,Blond,False
+0,0,166,extra_trees,full,Saison,Saison,True
+0,0,216,extra_trees,full,Scotch,Scotch,True
+0,0,200,extra_trees,full,West Flanders ale,Flanders old brown,False
+0,0,139,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,0,111,extra_trees,full,Dubbel,Brett/cofermented,False
+0,0,224,extra_trees,full,Wheat,Wheat,True
+0,0,54,extra_trees,full,Kriek,Kriek,True
+0,0,11,extra_trees,full,Amber,Amber,True
+0,0,84,extra_trees,full,West Flanders ale,Flanders old brown,False
+0,0,74,extra_trees,full,Faro,Lambic,False
+0,0,20,extra_trees,full,Saison,Saison,True
+0,0,122,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+0,0,194,extra_trees,full,Dubbel,Christmas,False
+0,0,160,extra_trees,full,Wheat,Wheat,True
+0,0,232,extra_trees,full,Kriek,Kriek,True
+0,0,61,extra_trees,full,Stout/Porter,Stout/Porter,True
+0,0,138,extra_trees,full,Kriek,Kriek,True
+0,0,135,extra_trees,full,Tripel,Hoppy,False
+0,0,241,extra_trees,full,Kriek,Kriek,True
+0,0,128,extra_trees,full,Amber,Saison,False
+0,0,112,extra_trees,full,Brown,Dubbel,False
+0,0,129,extra_trees,full,Brown,Scotch,False
+0,0,97,extra_trees,full,Hoppy,Tripel,False
+0,0,87,extra_trees,full,Stout/Porter,Stout/Porter,True
+0,0,201,extra_trees,full,Stout/Porter,Brett/cofermented,False
+0,0,37,extra_trees,full,Strong ale,Brown,False
+0,0,119,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,0,90,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,0,92,extra_trees,full,Amber,Amber,True
+0,0,76,extra_trees,full,Blond,Blond,True
+0,0,107,extra_trees,full,Dubbel,Stout/Porter,False
+0,0,205,extra_trees,full,Brut,Brut,True
+0,0,53,extra_trees,full,Brown,Dubbel,False
+0,0,136,extra_trees,full,Blond,Blond,True
+0,0,243,extra_trees,full,Wheat,Wheat,True
+0,0,240,extra_trees,full,Tripel,Tripel,True
+0,0,150,extra_trees,full,Brett/cofermented,Amber,False
+0,0,23,extra_trees,full,Tripel,Blond,False
+0,0,226,extra_trees,full,Strong ale,Dubbel,False
+0,0,132,extra_trees,full,Saison,Hoppy,False
+0,0,47,extra_trees,full,Tripel,Tripel,True
+0,0,115,extra_trees,full,Lambic,Lambic,True
+0,0,149,extra_trees,full,Blond,Blond,True
+0,0,80,extra_trees,full,Hoppy,Hoppy,True
+0,0,120,extra_trees,full,Hoppy,Hoppy,True
+0,0,18,extra_trees,full,Lambic,Lambic,True
+0,0,118,extra_trees,full,West Flanders ale,West Flanders ale,True
+0,0,145,extra_trees,full,Saison,Hoppy,False
+0,0,125,extra_trees,full,Blond,Saison,False
+0,0,144,extra_trees,full,Lambic,Lambic,True
+0,0,36,extra_trees,full,Brown,Stout/Porter,False
+0,0,31,extra_trees,full,Hoppy,Hoppy,True
+0,0,94,extra_trees,full,Blond,Blond,True
+0,0,75,extra_trees,full,Lambic,Lambic,True
+0,0,121,extra_trees,full,Blond,Blond,True
+0,0,208,extra_trees,full,Wheat,Wheat,True
+0,0,214,extra_trees,full,Christmas,Strong ale,False
+0,0,215,extra_trees,full,Blond,Tripel,False
+0,0,248,extra_trees,full,Blond,Blond,True
+0,0,65,extra_trees,full,Hoppy,Hoppy,True
+0,0,217,extra_trees,full,Tripel,Tripel,True
+0,0,68,extra_trees,full,Tripel,Hoppy,False
+0,0,102,extra_trees,full,Christmas,Strong ale,False
+0,0,210,extra_trees,full,Amber,Dubbel,False
+0,0,189,extra_trees,full,Tripel,Tripel,True
+0,0,95,extra_trees,full,Christmas,Christmas,True
+0,0,3,extra_trees,full,Blond,Blond,True
+0,0,192,extra_trees,full,Brut,Brut,True
+0,0,239,extra_trees,full,Tripel,Tripel,True
+0,0,103,extra_trees,full,Stout/Porter,Scotch,False
+0,0,175,extra_trees,full,Strong ale,Strong ale,True
+0,0,196,extra_trees,full,Strong ale,Strong ale,True
+0,0,4,extra_trees,full,Strong ale,Strong ale,True
+0,0,99,extra_trees,full,Strong ale,Strong ale,True
+0,0,2,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+0,0,40,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+0,0,247,extra_trees,masked,Fruitbeer,Fruitbeer,True
+0,0,124,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,0,207,extra_trees,masked,Fruitbeer,Fruitbeer,True
+0,0,141,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+0,0,33,extra_trees,masked,Fruitbeer,Fruitbeer,True
+0,0,64,extra_trees,masked,Blond,Wheat,False
+0,0,190,extra_trees,masked,Flanders old brown,Flanders old brown,True
+0,0,228,extra_trees,masked,Tripel,Blond,False
+0,0,166,extra_trees,masked,Saison,Saison,True
+0,0,216,extra_trees,masked,Scotch,Scotch,True
+0,0,200,extra_trees,masked,West Flanders ale,Flanders old brown,False
+0,0,139,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,0,111,extra_trees,masked,Dubbel,Brett/cofermented,False
+0,0,224,extra_trees,masked,Wheat,Wheat,True
+0,0,54,extra_trees,masked,Kriek,Kriek,True
+0,0,11,extra_trees,masked,Amber,Amber,True
+0,0,84,extra_trees,masked,West Flanders ale,Flanders old brown,False
+0,0,74,extra_trees,masked,Faro,Lambic,False
+0,0,20,extra_trees,masked,Saison,Saison,True
+0,0,122,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+0,0,194,extra_trees,masked,Dubbel,Brown,False
+0,0,160,extra_trees,masked,Wheat,Wheat,True
+0,0,232,extra_trees,masked,Kriek,Kriek,True
+0,0,61,extra_trees,masked,Stout/Porter,Stout/Porter,True
+0,0,138,extra_trees,masked,Kriek,Kriek,True
+0,0,135,extra_trees,masked,Tripel,Hoppy,False
+0,0,241,extra_trees,masked,Kriek,Kriek,True
+0,0,128,extra_trees,masked,Amber,Saison,False
+0,0,112,extra_trees,masked,Brown,Dubbel,False
+0,0,129,extra_trees,masked,Brown,Dubbel,False
+0,0,97,extra_trees,masked,Hoppy,Tripel,False
+0,0,87,extra_trees,masked,Stout/Porter,Stout/Porter,True
+0,0,201,extra_trees,masked,Stout/Porter,Stout/Porter,True
+0,0,37,extra_trees,masked,Strong ale,Strong ale,True
+0,0,119,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,0,90,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,0,92,extra_trees,masked,Amber,Amber,True
+0,0,76,extra_trees,masked,Blond,Blond,True
+0,0,107,extra_trees,masked,Dubbel,Stout/Porter,False
+0,0,205,extra_trees,masked,Brut,Brut,True
+0,0,53,extra_trees,masked,Brown,Dubbel,False
+0,0,136,extra_trees,masked,Blond,Blond,True
+0,0,243,extra_trees,masked,Wheat,Wheat,True
+0,0,240,extra_trees,masked,Tripel,Tripel,True
+0,0,150,extra_trees,masked,Brett/cofermented,Blond,False
+0,0,23,extra_trees,masked,Tripel,Blond,False
+0,0,226,extra_trees,masked,Strong ale,Brown,False
+0,0,132,extra_trees,masked,Saison,Hoppy,False
+0,0,47,extra_trees,masked,Tripel,Tripel,True
+0,0,115,extra_trees,masked,Lambic,Lambic,True
+0,0,149,extra_trees,masked,Blond,Blond,True
+0,0,80,extra_trees,masked,Hoppy,Hoppy,True
+0,0,120,extra_trees,masked,Hoppy,Hoppy,True
+0,0,18,extra_trees,masked,Lambic,Lambic,True
+0,0,118,extra_trees,masked,West Flanders ale,West Flanders ale,True
+0,0,145,extra_trees,masked,Saison,Hoppy,False
+0,0,125,extra_trees,masked,Blond,Hoppy,False
+0,0,144,extra_trees,masked,Lambic,Lambic,True
+0,0,36,extra_trees,masked,Brown,Stout/Porter,False
+0,0,31,extra_trees,masked,Hoppy,Hoppy,True
+0,0,94,extra_trees,masked,Blond,Blond,True
+0,0,75,extra_trees,masked,Lambic,Lambic,True
+0,0,121,extra_trees,masked,Blond,Blond,True
+0,0,208,extra_trees,masked,Wheat,Wheat,True
+0,0,214,extra_trees,masked,Christmas,Strong ale,False
+0,0,215,extra_trees,masked,Blond,Blond,True
+0,0,248,extra_trees,masked,Blond,Blond,True
+0,0,65,extra_trees,masked,Hoppy,Hoppy,True
+0,0,217,extra_trees,masked,Tripel,Tripel,True
+0,0,68,extra_trees,masked,Tripel,Hoppy,False
+0,0,102,extra_trees,masked,Christmas,Strong ale,False
+0,0,210,extra_trees,masked,Amber,Dubbel,False
+0,0,189,extra_trees,masked,Tripel,Tripel,True
+0,0,95,extra_trees,masked,Christmas,Stout/Porter,False
+0,0,3,extra_trees,masked,Blond,Blond,True
+0,0,192,extra_trees,masked,Brut,Tripel,False
+0,0,239,extra_trees,masked,Tripel,Tripel,True
+0,0,103,extra_trees,masked,Stout/Porter,Scotch,False
+0,0,175,extra_trees,masked,Strong ale,Strong ale,True
+0,0,196,extra_trees,masked,Strong ale,Tripel,False
+0,0,4,extra_trees,masked,Strong ale,Strong ale,True
+0,0,99,extra_trees,masked,Strong ale,Strong ale,True
+0,1,10,logistic,full,Low/No alcohol,Low/No alcohol,True
+0,1,86,logistic,full,Low/No alcohol,Low/No alcohol,True
+0,1,83,logistic,full,Low/No alcohol,Low/No alcohol,True
+0,1,48,logistic,full,Dubbel,Brown,False
+0,1,227,logistic,full,Fruitbeer,Fruitbeer,True
+0,1,22,logistic,full,Wheat,Wheat,True
+0,1,96,logistic,full,Pils/Lager,Pils/Lager,True
+0,1,230,logistic,full,Pils/Lager,Pils/Lager,True
+0,1,161,logistic,full,Flanders old brown,West Flanders ale,False
+0,1,195,logistic,full,Wheat,Blond,False
+0,1,142,logistic,full,Wheat,Wheat,True
+0,1,211,logistic,full,Lambic,West Flanders ale,False
+0,1,116,logistic,full,Lambic,Lambic,True
+0,1,183,logistic,full,Saison,Amber,False
+0,1,46,logistic,full,Blond,Blond,True
+0,1,213,logistic,full,Hoppy,Tripel,False
+0,1,5,logistic,full,Blond,Tripel,False
+0,1,209,logistic,full,Pils/Lager,Pils/Lager,True
+0,1,188,logistic,full,Stout/Porter,Dubbel,False
+0,1,169,logistic,full,Hoppy,Hoppy,True
+0,1,43,logistic,full,Amber,Blond,False
+0,1,100,logistic,full,Dubbel,Brown,False
+0,1,151,logistic,full,Faro,Lambic,False
+0,1,156,logistic,full,Kriek,West Flanders ale,False
+0,1,70,logistic,full,Blond,Amber,False
+0,1,113,logistic,full,Blond,Blond,True
+0,1,176,logistic,full,West Flanders ale,West Flanders ale,True
+0,1,59,logistic,full,Blond,Blond,True
+0,1,244,logistic,full,West Flanders ale,Strong ale,False
+0,1,110,logistic,full,Blond,Blond,True
+0,1,72,logistic,full,Hoppy,Tripel,False
+0,1,186,logistic,full,Strong ale,Strong ale,True
+0,1,246,logistic,full,Blond,Tripel,False
+0,1,177,logistic,full,Fruitbeer,Lambic,False
+0,1,159,logistic,full,Flanders old brown,Brown,False
+0,1,206,logistic,full,Brown,Brown,True
+0,1,24,logistic,full,Kriek,Kriek,True
+0,1,180,logistic,full,Christmas,Amber,False
+0,1,49,logistic,full,Blond,Blond,True
+0,1,134,logistic,full,Strong ale,Tripel,False
+0,1,29,logistic,full,Saison,Blond,False
+0,1,16,logistic,full,Dubbel,Amber,False
+0,1,222,logistic,full,Brett/cofermented,Brett/cofermented,True
+0,1,32,logistic,full,Amber,Amber,True
+0,1,27,logistic,full,Hoppy,Hoppy,True
+0,1,13,logistic,full,Christmas,Brown,False
+0,1,152,logistic,full,Wheat,Wheat,True
+0,1,19,logistic,full,Amber,Amber,True
+0,1,6,logistic,full,Amber,Amber,True
+0,1,212,logistic,full,Stout/Porter,Strong ale,False
+0,1,147,logistic,full,Tripel,Tripel,True
+0,1,66,logistic,full,Tripel,Tripel,True
+0,1,249,logistic,full,Blond,Tripel,False
+0,1,104,logistic,full,Strong ale,Dubbel,False
+0,1,101,logistic,full,Blond,Blond,True
+0,1,237,logistic,full,Brown,Brown,True
+0,1,41,logistic,full,Lambic,Lambic,True
+0,1,153,logistic,full,Kriek,Kriek,True
+0,1,168,logistic,full,Scotch,Brown,False
+0,1,8,logistic,full,Hoppy,Hoppy,True
+0,1,52,logistic,full,Stout/Porter,Stout/Porter,True
+0,1,204,logistic,full,Tripel,Tripel,True
+0,1,108,logistic,full,Brown,Tripel,False
+0,1,45,logistic,full,Tripel,Tripel,True
+0,1,242,logistic,full,Saison,Tripel,False
+0,1,38,logistic,full,Christmas,Strong ale,False
+0,1,35,logistic,full,Blond,Blond,True
+0,1,235,logistic,full,Strong ale,Strong ale,True
+0,1,89,logistic,full,Brown,Strong ale,False
+0,1,114,logistic,full,Hoppy,Hoppy,True
+0,1,225,logistic,full,Strong ale,Tripel,False
+0,1,133,logistic,full,Strong ale,Blond,False
+0,1,182,logistic,full,Stout/Porter,Brown,False
+0,1,17,logistic,full,Tripel,Tripel,True
+0,1,198,logistic,full,Dubbel,Stout/Porter,False
+0,1,15,logistic,full,Tripel,Blond,False
+0,1,1,logistic,full,Brut,Strong ale,False
+0,1,140,logistic,full,Tripel,Wheat,False
+0,1,233,logistic,full,Scotch,Dubbel,False
+0,1,199,logistic,full,Tripel,Tripel,True
+0,1,203,logistic,full,Brett/cofermented,Strong ale,False
+0,1,21,logistic,full,Lambic,Lambic,True
+0,1,171,logistic,full,Tripel,Hoppy,False
+0,1,10,logistic,masked,Low/No alcohol,Low/No alcohol,True
+0,1,86,logistic,masked,Low/No alcohol,Low/No alcohol,True
+0,1,83,logistic,masked,Low/No alcohol,Low/No alcohol,True
+0,1,48,logistic,masked,Dubbel,Brown,False
+0,1,227,logistic,masked,Fruitbeer,Fruitbeer,True
+0,1,22,logistic,masked,Wheat,Wheat,True
+0,1,96,logistic,masked,Pils/Lager,Pils/Lager,True
+0,1,230,logistic,masked,Pils/Lager,Pils/Lager,True
+0,1,161,logistic,masked,Flanders old brown,Faro,False
+0,1,195,logistic,masked,Wheat,Blond,False
+0,1,142,logistic,masked,Wheat,Wheat,True
+0,1,211,logistic,masked,Lambic,West Flanders ale,False
+0,1,116,logistic,masked,Lambic,Lambic,True
+0,1,183,logistic,masked,Saison,Amber,False
+0,1,46,logistic,masked,Blond,Blond,True
+0,1,213,logistic,masked,Hoppy,Tripel,False
+0,1,5,logistic,masked,Blond,Tripel,False
+0,1,209,logistic,masked,Pils/Lager,Pils/Lager,True
+0,1,188,logistic,masked,Stout/Porter,Dubbel,False
+0,1,169,logistic,masked,Hoppy,Hoppy,True
+0,1,43,logistic,masked,Amber,Blond,False
+0,1,100,logistic,masked,Dubbel,Brown,False
+0,1,151,logistic,masked,Faro,West Flanders ale,False
+0,1,156,logistic,masked,Kriek,West Flanders ale,False
+0,1,70,logistic,masked,Blond,Amber,False
+0,1,113,logistic,masked,Blond,Blond,True
+0,1,176,logistic,masked,West Flanders ale,West Flanders ale,True
+0,1,59,logistic,masked,Blond,Blond,True
+0,1,244,logistic,masked,West Flanders ale,Strong ale,False
+0,1,110,logistic,masked,Blond,Blond,True
+0,1,72,logistic,masked,Hoppy,Tripel,False
+0,1,186,logistic,masked,Strong ale,Strong ale,True
+0,1,246,logistic,masked,Blond,Tripel,False
+0,1,177,logistic,masked,Fruitbeer,Lambic,False
+0,1,159,logistic,masked,Flanders old brown,Brown,False
+0,1,206,logistic,masked,Brown,Brown,True
+0,1,24,logistic,masked,Kriek,Kriek,True
+0,1,180,logistic,masked,Christmas,Amber,False
+0,1,49,logistic,masked,Blond,Blond,True
+0,1,134,logistic,masked,Strong ale,Tripel,False
+0,1,29,logistic,masked,Saison,Blond,False
+0,1,16,logistic,masked,Dubbel,Amber,False
+0,1,222,logistic,masked,Brett/cofermented,Brett/cofermented,True
+0,1,32,logistic,masked,Amber,Amber,True
+0,1,27,logistic,masked,Hoppy,Hoppy,True
+0,1,13,logistic,masked,Christmas,Brown,False
+0,1,152,logistic,masked,Wheat,Wheat,True
+0,1,19,logistic,masked,Amber,Amber,True
+0,1,6,logistic,masked,Amber,Amber,True
+0,1,212,logistic,masked,Stout/Porter,Strong ale,False
+0,1,147,logistic,masked,Tripel,Tripel,True
+0,1,66,logistic,masked,Tripel,Tripel,True
+0,1,249,logistic,masked,Blond,Tripel,False
+0,1,104,logistic,masked,Strong ale,Dubbel,False
+0,1,101,logistic,masked,Blond,Blond,True
+0,1,237,logistic,masked,Brown,Brown,True
+0,1,41,logistic,masked,Lambic,Lambic,True
+0,1,153,logistic,masked,Kriek,Kriek,True
+0,1,168,logistic,masked,Scotch,Brown,False
+0,1,8,logistic,masked,Hoppy,Hoppy,True
+0,1,52,logistic,masked,Stout/Porter,Stout/Porter,True
+0,1,204,logistic,masked,Tripel,Tripel,True
+0,1,108,logistic,masked,Brown,Tripel,False
+0,1,45,logistic,masked,Tripel,Tripel,True
+0,1,242,logistic,masked,Saison,Tripel,False
+0,1,38,logistic,masked,Christmas,Strong ale,False
+0,1,35,logistic,masked,Blond,Blond,True
+0,1,235,logistic,masked,Strong ale,Strong ale,True
+0,1,89,logistic,masked,Brown,Strong ale,False
+0,1,114,logistic,masked,Hoppy,Hoppy,True
+0,1,225,logistic,masked,Strong ale,Tripel,False
+0,1,133,logistic,masked,Strong ale,Blond,False
+0,1,182,logistic,masked,Stout/Porter,Brown,False
+0,1,17,logistic,masked,Tripel,Tripel,True
+0,1,198,logistic,masked,Dubbel,Stout/Porter,False
+0,1,15,logistic,masked,Tripel,Blond,False
+0,1,1,logistic,masked,Brut,Strong ale,False
+0,1,140,logistic,masked,Tripel,Wheat,False
+0,1,233,logistic,masked,Scotch,Dubbel,False
+0,1,199,logistic,masked,Tripel,Tripel,True
+0,1,203,logistic,masked,Brett/cofermented,Strong ale,False
+0,1,21,logistic,masked,Lambic,Lambic,True
+0,1,171,logistic,masked,Tripel,Hoppy,False
+0,1,10,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+0,1,86,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+0,1,83,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+0,1,48,extra_trees,full,Dubbel,Dubbel,True
+0,1,227,extra_trees,full,Fruitbeer,Fruitbeer,True
+0,1,22,extra_trees,full,Wheat,Wheat,True
+0,1,96,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,1,230,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,1,161,extra_trees,full,Flanders old brown,West Flanders ale,False
+0,1,195,extra_trees,full,Wheat,Saison,False
+0,1,142,extra_trees,full,Wheat,Wheat,True
+0,1,211,extra_trees,full,Lambic,Faro,False
+0,1,116,extra_trees,full,Lambic,Lambic,True
+0,1,183,extra_trees,full,Saison,Blond,False
+0,1,46,extra_trees,full,Blond,Blond,True
+0,1,213,extra_trees,full,Hoppy,Blond,False
+0,1,5,extra_trees,full,Blond,Brett/cofermented,False
+0,1,209,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,1,188,extra_trees,full,Stout/Porter,Brown,False
+0,1,169,extra_trees,full,Hoppy,Hoppy,True
+0,1,43,extra_trees,full,Amber,Blond,False
+0,1,100,extra_trees,full,Dubbel,Brown,False
+0,1,151,extra_trees,full,Faro,Lambic,False
+0,1,156,extra_trees,full,Kriek,Kriek,True
+0,1,70,extra_trees,full,Blond,Blond,True
+0,1,113,extra_trees,full,Blond,Blond,True
+0,1,176,extra_trees,full,West Flanders ale,West Flanders ale,True
+0,1,59,extra_trees,full,Blond,Brett/cofermented,False
+0,1,244,extra_trees,full,West Flanders ale,West Flanders ale,True
+0,1,110,extra_trees,full,Blond,Blond,True
+0,1,72,extra_trees,full,Hoppy,Tripel,False
+0,1,186,extra_trees,full,Strong ale,Strong ale,True
+0,1,246,extra_trees,full,Blond,Tripel,False
+0,1,177,extra_trees,full,Fruitbeer,Kriek,False
+0,1,159,extra_trees,full,Flanders old brown,West Flanders ale,False
+0,1,206,extra_trees,full,Brown,Dubbel,False
+0,1,24,extra_trees,full,Kriek,Kriek,True
+0,1,180,extra_trees,full,Christmas,Dubbel,False
+0,1,49,extra_trees,full,Blond,Blond,True
+0,1,134,extra_trees,full,Strong ale,Tripel,False
+0,1,29,extra_trees,full,Saison,Blond,False
+0,1,16,extra_trees,full,Dubbel,Brown,False
+0,1,222,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+0,1,32,extra_trees,full,Amber,Amber,True
+0,1,27,extra_trees,full,Hoppy,Hoppy,True
+0,1,13,extra_trees,full,Christmas,Brown,False
+0,1,152,extra_trees,full,Wheat,Blond,False
+0,1,19,extra_trees,full,Amber,Amber,True
+0,1,6,extra_trees,full,Amber,Amber,True
+0,1,212,extra_trees,full,Stout/Porter,Dubbel,False
+0,1,147,extra_trees,full,Tripel,Tripel,True
+0,1,66,extra_trees,full,Tripel,Tripel,True
+0,1,249,extra_trees,full,Blond,Saison,False
+0,1,104,extra_trees,full,Strong ale,Brown,False
+0,1,101,extra_trees,full,Blond,Brut,False
+0,1,237,extra_trees,full,Brown,Brown,True
+0,1,41,extra_trees,full,Lambic,Lambic,True
+0,1,153,extra_trees,full,Kriek,Kriek,True
+0,1,168,extra_trees,full,Scotch,Brown,False
+0,1,8,extra_trees,full,Hoppy,Blond,False
+0,1,52,extra_trees,full,Stout/Porter,Dubbel,False
+0,1,204,extra_trees,full,Tripel,Wheat,False
+0,1,108,extra_trees,full,Brown,Amber,False
+0,1,45,extra_trees,full,Tripel,Tripel,True
+0,1,242,extra_trees,full,Saison,Blond,False
+0,1,38,extra_trees,full,Christmas,Christmas,True
+0,1,35,extra_trees,full,Blond,Blond,True
+0,1,235,extra_trees,full,Strong ale,Strong ale,True
+0,1,89,extra_trees,full,Brown,Stout/Porter,False
+0,1,114,extra_trees,full,Hoppy,Hoppy,True
+0,1,225,extra_trees,full,Strong ale,Tripel,False
+0,1,133,extra_trees,full,Strong ale,Blond,False
+0,1,182,extra_trees,full,Stout/Porter,Strong ale,False
+0,1,17,extra_trees,full,Tripel,Tripel,True
+0,1,198,extra_trees,full,Dubbel,Dubbel,True
+0,1,15,extra_trees,full,Tripel,Blond,False
+0,1,1,extra_trees,full,Brut,Brut,True
+0,1,140,extra_trees,full,Tripel,Wheat,False
+0,1,233,extra_trees,full,Scotch,Strong ale,False
+0,1,199,extra_trees,full,Tripel,Tripel,True
+0,1,203,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+0,1,21,extra_trees,full,Lambic,Lambic,True
+0,1,171,extra_trees,full,Tripel,Tripel,True
+0,1,10,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+0,1,86,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+0,1,83,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+0,1,48,extra_trees,masked,Dubbel,Dubbel,True
+0,1,227,extra_trees,masked,Fruitbeer,Fruitbeer,True
+0,1,22,extra_trees,masked,Wheat,Wheat,True
+0,1,96,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,1,230,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,1,161,extra_trees,masked,Flanders old brown,West Flanders ale,False
+0,1,195,extra_trees,masked,Wheat,Blond,False
+0,1,142,extra_trees,masked,Wheat,Wheat,True
+0,1,211,extra_trees,masked,Lambic,Faro,False
+0,1,116,extra_trees,masked,Lambic,Lambic,True
+0,1,183,extra_trees,masked,Saison,Blond,False
+0,1,46,extra_trees,masked,Blond,Blond,True
+0,1,213,extra_trees,masked,Hoppy,Blond,False
+0,1,5,extra_trees,masked,Blond,Brett/cofermented,False
+0,1,209,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,1,188,extra_trees,masked,Stout/Porter,Brown,False
+0,1,169,extra_trees,masked,Hoppy,Saison,False
+0,1,43,extra_trees,masked,Amber,Blond,False
+0,1,100,extra_trees,masked,Dubbel,Brown,False
+0,1,151,extra_trees,masked,Faro,Lambic,False
+0,1,156,extra_trees,masked,Kriek,Kriek,True
+0,1,70,extra_trees,masked,Blond,Blond,True
+0,1,113,extra_trees,masked,Blond,Blond,True
+0,1,176,extra_trees,masked,West Flanders ale,West Flanders ale,True
+0,1,59,extra_trees,masked,Blond,Brett/cofermented,False
+0,1,244,extra_trees,masked,West Flanders ale,West Flanders ale,True
+0,1,110,extra_trees,masked,Blond,Blond,True
+0,1,72,extra_trees,masked,Hoppy,Tripel,False
+0,1,186,extra_trees,masked,Strong ale,Strong ale,True
+0,1,246,extra_trees,masked,Blond,Tripel,False
+0,1,177,extra_trees,masked,Fruitbeer,Kriek,False
+0,1,159,extra_trees,masked,Flanders old brown,West Flanders ale,False
+0,1,206,extra_trees,masked,Brown,Dubbel,False
+0,1,24,extra_trees,masked,Kriek,Kriek,True
+0,1,180,extra_trees,masked,Christmas,Dubbel,False
+0,1,49,extra_trees,masked,Blond,Blond,True
+0,1,134,extra_trees,masked,Strong ale,Tripel,False
+0,1,29,extra_trees,masked,Saison,Blond,False
+0,1,16,extra_trees,masked,Dubbel,Brown,False
+0,1,222,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+0,1,32,extra_trees,masked,Amber,Amber,True
+0,1,27,extra_trees,masked,Hoppy,Hoppy,True
+0,1,13,extra_trees,masked,Christmas,Brown,False
+0,1,152,extra_trees,masked,Wheat,Blond,False
+0,1,19,extra_trees,masked,Amber,Amber,True
+0,1,6,extra_trees,masked,Amber,Dubbel,False
+0,1,212,extra_trees,masked,Stout/Porter,Dubbel,False
+0,1,147,extra_trees,masked,Tripel,Tripel,True
+0,1,66,extra_trees,masked,Tripel,Tripel,True
+0,1,249,extra_trees,masked,Blond,Saison,False
+0,1,104,extra_trees,masked,Strong ale,Brown,False
+0,1,101,extra_trees,masked,Blond,Brut,False
+0,1,237,extra_trees,masked,Brown,Brown,True
+0,1,41,extra_trees,masked,Lambic,Lambic,True
+0,1,153,extra_trees,masked,Kriek,Kriek,True
+0,1,168,extra_trees,masked,Scotch,Brown,False
+0,1,8,extra_trees,masked,Hoppy,Blond,False
+0,1,52,extra_trees,masked,Stout/Porter,Dubbel,False
+0,1,204,extra_trees,masked,Tripel,Wheat,False
+0,1,108,extra_trees,masked,Brown,Amber,False
+0,1,45,extra_trees,masked,Tripel,Tripel,True
+0,1,242,extra_trees,masked,Saison,Blond,False
+0,1,38,extra_trees,masked,Christmas,Strong ale,False
+0,1,35,extra_trees,masked,Blond,Blond,True
+0,1,235,extra_trees,masked,Strong ale,Strong ale,True
+0,1,89,extra_trees,masked,Brown,Christmas,False
+0,1,114,extra_trees,masked,Hoppy,Hoppy,True
+0,1,225,extra_trees,masked,Strong ale,Tripel,False
+0,1,133,extra_trees,masked,Strong ale,Blond,False
+0,1,182,extra_trees,masked,Stout/Porter,Scotch,False
+0,1,17,extra_trees,masked,Tripel,Tripel,True
+0,1,198,extra_trees,masked,Dubbel,Dubbel,True
+0,1,15,extra_trees,masked,Tripel,Blond,False
+0,1,1,extra_trees,masked,Brut,Tripel,False
+0,1,140,extra_trees,masked,Tripel,Wheat,False
+0,1,233,extra_trees,masked,Scotch,Strong ale,False
+0,1,199,extra_trees,masked,Tripel,Tripel,True
+0,1,203,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+0,1,21,extra_trees,masked,Lambic,Lambic,True
+0,1,171,extra_trees,masked,Tripel,Blond,False
+0,2,165,logistic,full,Fruitbeer,Fruitbeer,True
+0,2,155,logistic,full,Low/No alcohol,Low/No alcohol,True
+0,2,179,logistic,full,Flanders old brown,West Flanders ale,False
+0,2,50,logistic,full,Fruitbeer,Fruitbeer,True
+0,2,88,logistic,full,Kriek,Kriek,True
+0,2,77,logistic,full,Blond,Blond,True
+0,2,81,logistic,full,Pils/Lager,Pils/Lager,True
+0,2,202,logistic,full,Stout/Porter,Stout/Porter,True
+0,2,218,logistic,full,Pils/Lager,Pils/Lager,True
+0,2,44,logistic,full,Wheat,Wheat,True
+0,2,137,logistic,full,Amber,Blond,False
+0,2,236,logistic,full,Brett/cofermented,Brett/cofermented,True
+0,2,223,logistic,full,Low/No alcohol,Low/No alcohol,True
+0,2,197,logistic,full,Wheat,Wheat,True
+0,2,185,logistic,full,Pils/Lager,Pils/Lager,True
+0,2,250,logistic,full,Faro,Lambic,False
+0,2,158,logistic,full,Amber,Christmas,False
+0,2,58,logistic,full,Saison,Hoppy,False
+0,2,56,logistic,full,Saison,Dubbel,False
+0,2,172,logistic,full,Wheat,Wheat,True
+0,2,7,logistic,full,Saison,Wheat,False
+0,2,62,logistic,full,Blond,Blond,True
+0,2,55,logistic,full,Hoppy,Hoppy,True
+0,2,26,logistic,full,West Flanders ale,West Flanders ale,True
+0,2,105,logistic,full,Strong ale,Hoppy,False
+0,2,167,logistic,full,Flanders old brown,West Flanders ale,False
+0,2,82,logistic,full,Kriek,Kriek,True
+0,2,178,logistic,full,West Flanders ale,West Flanders ale,True
+0,2,231,logistic,full,Stout/Porter,Stout/Porter,True
+0,2,219,logistic,full,Hoppy,Saison,False
+0,2,42,logistic,full,Lambic,Lambic,True
+0,2,109,logistic,full,Brown,Strong ale,False
+0,2,220,logistic,full,Kriek,Kriek,True
+0,2,14,logistic,full,Brett/cofermented,Dubbel,False
+0,2,173,logistic,full,Stout/Porter,Stout/Porter,True
+0,2,106,logistic,full,Christmas,Tripel,False
+0,2,93,logistic,full,Tripel,Hoppy,False
+0,2,238,logistic,full,Blond,Tripel,False
+0,2,69,logistic,full,Tripel,Tripel,True
+0,2,193,logistic,full,Blond,Tripel,False
+0,2,39,logistic,full,Hoppy,Hoppy,True
+0,2,12,logistic,full,Lambic,West Flanders ale,False
+0,2,164,logistic,full,Blond,Hoppy,False
+0,2,98,logistic,full,Brown,Dubbel,False
+0,2,221,logistic,full,Dubbel,Brown,False
+0,2,174,logistic,full,Dubbel,Stout/Porter,False
+0,2,79,logistic,full,Hoppy,Stout/Porter,False
+0,2,184,logistic,full,Fruitbeer,Fruitbeer,True
+0,2,78,logistic,full,Brown,Brown,True
+0,2,234,logistic,full,Blond,Brett/cofermented,False
+0,2,127,logistic,full,Blond,Blond,True
+0,2,245,logistic,full,Tripel,Tripel,True
+0,2,191,logistic,full,Tripel,Tripel,True
+0,2,60,logistic,full,Christmas,Brown,False
+0,2,51,logistic,full,Strong ale,Strong ale,True
+0,2,28,logistic,full,Pils/Lager,Amber,False
+0,2,146,logistic,full,Scotch,Scotch,True
+0,2,30,logistic,full,Blond,Blond,True
+0,2,126,logistic,full,Amber,Scotch,False
+0,2,162,logistic,full,Lambic,Lambic,True
+0,2,123,logistic,full,Stout/Porter,Strong ale,False
+0,2,130,logistic,full,Brut,Tripel,False
+0,2,9,logistic,full,Hoppy,Amber,False
+0,2,131,logistic,full,Scotch,Dubbel,False
+0,2,34,logistic,full,Tripel,Stout/Porter,False
+0,2,187,logistic,full,Dubbel,Dubbel,True
+0,2,154,logistic,full,Tripel,Blond,False
+0,2,170,logistic,full,Strong ale,Tripel,False
+0,2,181,logistic,full,Christmas,Amber,False
+0,2,57,logistic,full,Tripel,Tripel,True
+0,2,143,logistic,full,Hoppy,Hoppy,True
+0,2,229,logistic,full,Wheat,Blond,False
+0,2,148,logistic,full,Strong ale,Brown,False
+0,2,73,logistic,full,Blond,Tripel,False
+0,2,91,logistic,full,Strong ale,Strong ale,True
+0,2,163,logistic,full,Tripel,Amber,False
+0,2,71,logistic,full,Blond,Amber,False
+0,2,67,logistic,full,Stout/Porter,Amber,False
+0,2,63,logistic,full,Amber,Amber,True
+0,2,25,logistic,full,Brown,Blond,False
+0,2,85,logistic,full,Tripel,Tripel,True
+0,2,117,logistic,full,Strong ale,Strong ale,True
+0,2,157,logistic,full,Tripel,Brett/cofermented,False
+0,2,165,logistic,masked,Fruitbeer,Fruitbeer,True
+0,2,155,logistic,masked,Low/No alcohol,Low/No alcohol,True
+0,2,179,logistic,masked,Flanders old brown,West Flanders ale,False
+0,2,50,logistic,masked,Fruitbeer,Fruitbeer,True
+0,2,88,logistic,masked,Kriek,Kriek,True
+0,2,77,logistic,masked,Blond,Blond,True
+0,2,81,logistic,masked,Pils/Lager,Pils/Lager,True
+0,2,202,logistic,masked,Stout/Porter,Stout/Porter,True
+0,2,218,logistic,masked,Pils/Lager,Pils/Lager,True
+0,2,44,logistic,masked,Wheat,Wheat,True
+0,2,137,logistic,masked,Amber,Blond,False
+0,2,236,logistic,masked,Brett/cofermented,Brett/cofermented,True
+0,2,223,logistic,masked,Low/No alcohol,Low/No alcohol,True
+0,2,197,logistic,masked,Wheat,Wheat,True
+0,2,185,logistic,masked,Pils/Lager,Pils/Lager,True
+0,2,250,logistic,masked,Faro,Lambic,False
+0,2,158,logistic,masked,Amber,Christmas,False
+0,2,58,logistic,masked,Saison,Hoppy,False
+0,2,56,logistic,masked,Saison,Dubbel,False
+0,2,172,logistic,masked,Wheat,Wheat,True
+0,2,7,logistic,masked,Saison,Wheat,False
+0,2,62,logistic,masked,Blond,Blond,True
+0,2,55,logistic,masked,Hoppy,Hoppy,True
+0,2,26,logistic,masked,West Flanders ale,West Flanders ale,True
+0,2,105,logistic,masked,Strong ale,Hoppy,False
+0,2,167,logistic,masked,Flanders old brown,West Flanders ale,False
+0,2,82,logistic,masked,Kriek,Kriek,True
+0,2,178,logistic,masked,West Flanders ale,West Flanders ale,True
+0,2,231,logistic,masked,Stout/Porter,Stout/Porter,True
+0,2,219,logistic,masked,Hoppy,Saison,False
+0,2,42,logistic,masked,Lambic,Lambic,True
+0,2,109,logistic,masked,Brown,Strong ale,False
+0,2,220,logistic,masked,Kriek,Kriek,True
+0,2,14,logistic,masked,Brett/cofermented,Dubbel,False
+0,2,173,logistic,masked,Stout/Porter,Stout/Porter,True
+0,2,106,logistic,masked,Christmas,Tripel,False
+0,2,93,logistic,masked,Tripel,Hoppy,False
+0,2,238,logistic,masked,Blond,Tripel,False
+0,2,69,logistic,masked,Tripel,Tripel,True
+0,2,193,logistic,masked,Blond,Tripel,False
+0,2,39,logistic,masked,Hoppy,Hoppy,True
+0,2,12,logistic,masked,Lambic,West Flanders ale,False
+0,2,164,logistic,masked,Blond,Hoppy,False
+0,2,98,logistic,masked,Brown,Dubbel,False
+0,2,221,logistic,masked,Dubbel,Brown,False
+0,2,174,logistic,masked,Dubbel,Stout/Porter,False
+0,2,79,logistic,masked,Hoppy,Stout/Porter,False
+0,2,184,logistic,masked,Fruitbeer,Fruitbeer,True
+0,2,78,logistic,masked,Brown,Brown,True
+0,2,234,logistic,masked,Blond,Brett/cofermented,False
+0,2,127,logistic,masked,Blond,Blond,True
+0,2,245,logistic,masked,Tripel,Tripel,True
+0,2,191,logistic,masked,Tripel,Tripel,True
+0,2,60,logistic,masked,Christmas,Brown,False
+0,2,51,logistic,masked,Strong ale,Strong ale,True
+0,2,28,logistic,masked,Pils/Lager,Amber,False
+0,2,146,logistic,masked,Scotch,Scotch,True
+0,2,30,logistic,masked,Blond,Blond,True
+0,2,126,logistic,masked,Amber,Scotch,False
+0,2,162,logistic,masked,Lambic,Lambic,True
+0,2,123,logistic,masked,Stout/Porter,Strong ale,False
+0,2,130,logistic,masked,Brut,Tripel,False
+0,2,9,logistic,masked,Hoppy,Blond,False
+0,2,131,logistic,masked,Scotch,Dubbel,False
+0,2,34,logistic,masked,Tripel,Stout/Porter,False
+0,2,187,logistic,masked,Dubbel,Dubbel,True
+0,2,154,logistic,masked,Tripel,Blond,False
+0,2,170,logistic,masked,Strong ale,Tripel,False
+0,2,181,logistic,masked,Christmas,Amber,False
+0,2,57,logistic,masked,Tripel,Tripel,True
+0,2,143,logistic,masked,Hoppy,Hoppy,True
+0,2,229,logistic,masked,Wheat,Blond,False
+0,2,148,logistic,masked,Strong ale,Brown,False
+0,2,73,logistic,masked,Blond,Tripel,False
+0,2,91,logistic,masked,Strong ale,Strong ale,True
+0,2,163,logistic,masked,Tripel,Amber,False
+0,2,71,logistic,masked,Blond,Amber,False
+0,2,67,logistic,masked,Stout/Porter,Amber,False
+0,2,63,logistic,masked,Amber,Amber,True
+0,2,25,logistic,masked,Brown,Blond,False
+0,2,85,logistic,masked,Tripel,Tripel,True
+0,2,117,logistic,masked,Strong ale,Strong ale,True
+0,2,157,logistic,masked,Tripel,Brett/cofermented,False
+0,2,165,extra_trees,full,Fruitbeer,Fruitbeer,True
+0,2,155,extra_trees,full,Low/No alcohol,Pils/Lager,False
+0,2,179,extra_trees,full,Flanders old brown,Fruitbeer,False
+0,2,50,extra_trees,full,Fruitbeer,Fruitbeer,True
+0,2,88,extra_trees,full,Kriek,Kriek,True
+0,2,77,extra_trees,full,Blond,Saison,False
+0,2,81,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,2,202,extra_trees,full,Stout/Porter,Stout/Porter,True
+0,2,218,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,2,44,extra_trees,full,Wheat,Wheat,True
+0,2,137,extra_trees,full,Amber,Blond,False
+0,2,236,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+0,2,223,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+0,2,197,extra_trees,full,Wheat,Wheat,True
+0,2,185,extra_trees,full,Pils/Lager,Pils/Lager,True
+0,2,250,extra_trees,full,Faro,Lambic,False
+0,2,158,extra_trees,full,Amber,Blond,False
+0,2,58,extra_trees,full,Saison,Hoppy,False
+0,2,56,extra_trees,full,Saison,Blond,False
+0,2,172,extra_trees,full,Wheat,Wheat,True
+0,2,7,extra_trees,full,Saison,Wheat,False
+0,2,62,extra_trees,full,Blond,Blond,True
+0,2,55,extra_trees,full,Hoppy,Hoppy,True
+0,2,26,extra_trees,full,West Flanders ale,West Flanders ale,True
+0,2,105,extra_trees,full,Strong ale,Stout/Porter,False
+0,2,167,extra_trees,full,Flanders old brown,West Flanders ale,False
+0,2,82,extra_trees,full,Kriek,Kriek,True
+0,2,178,extra_trees,full,West Flanders ale,West Flanders ale,True
+0,2,231,extra_trees,full,Stout/Porter,Dubbel,False
+0,2,219,extra_trees,full,Hoppy,Saison,False
+0,2,42,extra_trees,full,Lambic,Lambic,True
+0,2,109,extra_trees,full,Brown,Amber,False
+0,2,220,extra_trees,full,Kriek,Kriek,True
+0,2,14,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+0,2,173,extra_trees,full,Stout/Porter,Stout/Porter,True
+0,2,106,extra_trees,full,Christmas,Tripel,False
+0,2,93,extra_trees,full,Tripel,Strong ale,False
+0,2,238,extra_trees,full,Blond,Blond,True
+0,2,69,extra_trees,full,Tripel,Tripel,True
+0,2,193,extra_trees,full,Blond,Blond,True
+0,2,39,extra_trees,full,Hoppy,Hoppy,True
+0,2,12,extra_trees,full,Lambic,West Flanders ale,False
+0,2,164,extra_trees,full,Blond,Blond,True
+0,2,98,extra_trees,full,Brown,Dubbel,False
+0,2,221,extra_trees,full,Dubbel,Brown,False
+0,2,174,extra_trees,full,Dubbel,Dubbel,True
+0,2,79,extra_trees,full,Hoppy,Stout/Porter,False
+0,2,184,extra_trees,full,Fruitbeer,Fruitbeer,True
+0,2,78,extra_trees,full,Brown,Brown,True
+0,2,234,extra_trees,full,Blond,Brut,False
+0,2,127,extra_trees,full,Blond,Tripel,False
+0,2,245,extra_trees,full,Tripel,Tripel,True
+0,2,191,extra_trees,full,Tripel,Tripel,True
+0,2,60,extra_trees,full,Christmas,Brown,False
+0,2,51,extra_trees,full,Strong ale,Christmas,False
+0,2,28,extra_trees,full,Pils/Lager,Saison,False
+0,2,146,extra_trees,full,Scotch,Scotch,True
+0,2,30,extra_trees,full,Blond,Tripel,False
+0,2,126,extra_trees,full,Amber,Scotch,False
+0,2,162,extra_trees,full,Lambic,Lambic,True
+0,2,123,extra_trees,full,Stout/Porter,Christmas,False
+0,2,130,extra_trees,full,Brut,Kriek,False
+0,2,9,extra_trees,full,Hoppy,Blond,False
+0,2,131,extra_trees,full,Scotch,Dubbel,False
+0,2,34,extra_trees,full,Tripel,Tripel,True
+0,2,187,extra_trees,full,Dubbel,Dubbel,True
+0,2,154,extra_trees,full,Tripel,Tripel,True
+0,2,170,extra_trees,full,Strong ale,Christmas,False
+0,2,181,extra_trees,full,Christmas,Brown,False
+0,2,57,extra_trees,full,Tripel,Tripel,True
+0,2,143,extra_trees,full,Hoppy,Hoppy,True
+0,2,229,extra_trees,full,Wheat,Tripel,False
+0,2,148,extra_trees,full,Strong ale,Brown,False
+0,2,73,extra_trees,full,Blond,Tripel,False
+0,2,91,extra_trees,full,Strong ale,Strong ale,True
+0,2,163,extra_trees,full,Tripel,Strong ale,False
+0,2,71,extra_trees,full,Blond,Blond,True
+0,2,67,extra_trees,full,Stout/Porter,Stout/Porter,True
+0,2,63,extra_trees,full,Amber,Amber,True
+0,2,25,extra_trees,full,Brown,Dubbel,False
+0,2,85,extra_trees,full,Tripel,Tripel,True
+0,2,117,extra_trees,full,Strong ale,Stout/Porter,False
+0,2,157,extra_trees,full,Tripel,Strong ale,False
+0,2,165,extra_trees,masked,Fruitbeer,Fruitbeer,True
+0,2,155,extra_trees,masked,Low/No alcohol,Pils/Lager,False
+0,2,179,extra_trees,masked,Flanders old brown,West Flanders ale,False
+0,2,50,extra_trees,masked,Fruitbeer,Fruitbeer,True
+0,2,88,extra_trees,masked,Kriek,Kriek,True
+0,2,77,extra_trees,masked,Blond,Pils/Lager,False
+0,2,81,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,2,202,extra_trees,masked,Stout/Porter,Stout/Porter,True
+0,2,218,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,2,44,extra_trees,masked,Wheat,Wheat,True
+0,2,137,extra_trees,masked,Amber,Blond,False
+0,2,236,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+0,2,223,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+0,2,197,extra_trees,masked,Wheat,Wheat,True
+0,2,185,extra_trees,masked,Pils/Lager,Pils/Lager,True
+0,2,250,extra_trees,masked,Faro,Lambic,False
+0,2,158,extra_trees,masked,Amber,Amber,True
+0,2,58,extra_trees,masked,Saison,Hoppy,False
+0,2,56,extra_trees,masked,Saison,Blond,False
+0,2,172,extra_trees,masked,Wheat,Wheat,True
+0,2,7,extra_trees,masked,Saison,Hoppy,False
+0,2,62,extra_trees,masked,Blond,Blond,True
+0,2,55,extra_trees,masked,Hoppy,Hoppy,True
+0,2,26,extra_trees,masked,West Flanders ale,West Flanders ale,True
+0,2,105,extra_trees,masked,Strong ale,Stout/Porter,False
+0,2,167,extra_trees,masked,Flanders old brown,West Flanders ale,False
+0,2,82,extra_trees,masked,Kriek,Kriek,True
+0,2,178,extra_trees,masked,West Flanders ale,West Flanders ale,True
+0,2,231,extra_trees,masked,Stout/Porter,Dubbel,False
+0,2,219,extra_trees,masked,Hoppy,Saison,False
+0,2,42,extra_trees,masked,Lambic,Lambic,True
+0,2,109,extra_trees,masked,Brown,Amber,False
+0,2,220,extra_trees,masked,Kriek,Kriek,True
+0,2,14,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+0,2,173,extra_trees,masked,Stout/Porter,Stout/Porter,True
+0,2,106,extra_trees,masked,Christmas,Tripel,False
+0,2,93,extra_trees,masked,Tripel,Amber,False
+0,2,238,extra_trees,masked,Blond,Blond,True
+0,2,69,extra_trees,masked,Tripel,Tripel,True
+0,2,193,extra_trees,masked,Blond,Blond,True
+0,2,39,extra_trees,masked,Hoppy,Hoppy,True
+0,2,12,extra_trees,masked,Lambic,Fruitbeer,False
+0,2,164,extra_trees,masked,Blond,Tripel,False
+0,2,98,extra_trees,masked,Brown,Dubbel,False
+0,2,221,extra_trees,masked,Dubbel,Brown,False
+0,2,174,extra_trees,masked,Dubbel,Dubbel,True
+0,2,79,extra_trees,masked,Hoppy,Stout/Porter,False
+0,2,184,extra_trees,masked,Fruitbeer,Fruitbeer,True
+0,2,78,extra_trees,masked,Brown,Brown,True
+0,2,234,extra_trees,masked,Blond,Brut,False
+0,2,127,extra_trees,masked,Blond,Tripel,False
+0,2,245,extra_trees,masked,Tripel,Tripel,True
+0,2,191,extra_trees,masked,Tripel,Tripel,True
+0,2,60,extra_trees,masked,Christmas,Strong ale,False
+0,2,51,extra_trees,masked,Strong ale,Christmas,False
+0,2,28,extra_trees,masked,Pils/Lager,Saison,False
+0,2,146,extra_trees,masked,Scotch,Scotch,True
+0,2,30,extra_trees,masked,Blond,Tripel,False
+0,2,126,extra_trees,masked,Amber,Scotch,False
+0,2,162,extra_trees,masked,Lambic,Lambic,True
+0,2,123,extra_trees,masked,Stout/Porter,Christmas,False
+0,2,130,extra_trees,masked,Brut,Kriek,False
+0,2,9,extra_trees,masked,Hoppy,Blond,False
+0,2,131,extra_trees,masked,Scotch,Brown,False
+0,2,34,extra_trees,masked,Tripel,Tripel,True
+0,2,187,extra_trees,masked,Dubbel,Dubbel,True
+0,2,154,extra_trees,masked,Tripel,Tripel,True
+0,2,170,extra_trees,masked,Strong ale,Christmas,False
+0,2,181,extra_trees,masked,Christmas,Strong ale,False
+0,2,57,extra_trees,masked,Tripel,Tripel,True
+0,2,143,extra_trees,masked,Hoppy,Hoppy,True
+0,2,229,extra_trees,masked,Wheat,Tripel,False
+0,2,148,extra_trees,masked,Strong ale,Brown,False
+0,2,73,extra_trees,masked,Blond,Tripel,False
+0,2,91,extra_trees,masked,Strong ale,Strong ale,True
+0,2,163,extra_trees,masked,Tripel,Strong ale,False
+0,2,71,extra_trees,masked,Blond,Blond,True
+0,2,67,extra_trees,masked,Stout/Porter,Stout/Porter,True
+0,2,63,extra_trees,masked,Amber,Tripel,False
+0,2,25,extra_trees,masked,Brown,Dubbel,False
+0,2,85,extra_trees,masked,Tripel,Tripel,True
+0,2,117,extra_trees,masked,Strong ale,Stout/Porter,False
+0,2,157,extra_trees,masked,Tripel,Brett/cofermented,False
+1,0,2,logistic,full,Low/No alcohol,Low/No alcohol,True
+1,0,83,logistic,full,Low/No alcohol,Low/No alcohol,True
+1,0,40,logistic,full,Low/No alcohol,Pils/Lager,False
+1,0,247,logistic,full,Fruitbeer,Fruitbeer,True
+1,0,165,logistic,full,Fruitbeer,Fruitbeer,True
+1,0,33,logistic,full,Fruitbeer,Fruitbeer,True
+1,0,77,logistic,full,Blond,Blond,True
+1,0,81,logistic,full,Pils/Lager,Pils/Lager,True
+1,0,64,logistic,full,Blond,Wheat,False
+1,0,218,logistic,full,Pils/Lager,Pils/Lager,True
+1,0,190,logistic,full,Flanders old brown,Flanders old brown,True
+1,0,197,logistic,full,Wheat,Wheat,True
+1,0,139,logistic,full,Pils/Lager,Pils/Lager,True
+1,0,224,logistic,full,Wheat,Wheat,True
+1,0,54,logistic,full,Kriek,Kriek,True
+1,0,5,logistic,full,Blond,Hoppy,False
+1,0,58,logistic,full,Saison,Hoppy,False
+1,0,11,logistic,full,Amber,Tripel,False
+1,0,84,logistic,full,West Flanders ale,Lambic,False
+1,0,188,logistic,full,Stout/Porter,Dubbel,False
+1,0,160,logistic,full,Wheat,Wheat,True
+1,0,7,logistic,full,Saison,Tripel,False
+1,0,62,logistic,full,Blond,Blond,True
+1,0,151,logistic,full,Faro,Lambic,False
+1,0,156,logistic,full,Kriek,Lambic,False
+1,0,138,logistic,full,Kriek,Kriek,True
+1,0,105,logistic,full,Strong ale,Hoppy,False
+1,0,128,logistic,full,Amber,Amber,True
+1,0,178,logistic,full,West Flanders ale,Lambic,False
+1,0,112,logistic,full,Brown,Strong ale,False
+1,0,129,logistic,full,Brown,Christmas,False
+1,0,186,logistic,full,Strong ale,Brown,False
+1,0,97,logistic,full,Hoppy,Blond,False
+1,0,220,logistic,full,Kriek,Kriek,True
+1,0,173,logistic,full,Stout/Porter,Stout/Porter,True
+1,0,119,logistic,full,Pils/Lager,Pils/Lager,True
+1,0,238,logistic,full,Blond,Blond,True
+1,0,107,logistic,full,Dubbel,Strong ale,False
+1,0,205,logistic,full,Brut,Brut,True
+1,0,53,logistic,full,Brown,Scotch,False
+1,0,69,logistic,full,Tripel,Blond,False
+1,0,150,logistic,full,Brett/cofermented,Hoppy,False
+1,0,132,logistic,full,Saison,Hoppy,False
+1,0,115,logistic,full,Lambic,Fruitbeer,False
+1,0,149,logistic,full,Blond,Blond,True
+1,0,174,logistic,full,Dubbel,Stout/Porter,False
+1,0,118,logistic,full,West Flanders ale,Flanders old brown,False
+1,0,6,logistic,full,Amber,Dubbel,False
+1,0,249,logistic,full,Blond,Saison,False
+1,0,127,logistic,full,Blond,Blond,True
+1,0,41,logistic,full,Lambic,Lambic,True
+1,0,126,logistic,full,Amber,Scotch,False
+1,0,162,logistic,full,Lambic,Lambic,True
+1,0,123,logistic,full,Stout/Porter,Christmas,False
+1,0,130,logistic,full,Brut,Christmas,False
+1,0,31,logistic,full,Hoppy,Hoppy,True
+1,0,52,logistic,full,Stout/Porter,Stout/Porter,True
+1,0,94,logistic,full,Blond,Blond,True
+1,0,34,logistic,full,Tripel,Stout/Porter,False
+1,0,187,logistic,full,Dubbel,Dubbel,True
+1,0,45,logistic,full,Tripel,Tripel,True
+1,0,154,logistic,full,Tripel,Tripel,True
+1,0,242,logistic,full,Saison,Tripel,False
+1,0,208,logistic,full,Wheat,Wheat,True
+1,0,38,logistic,full,Christmas,Strong ale,False
+1,0,214,logistic,full,Christmas,Christmas,True
+1,0,235,logistic,full,Strong ale,Strong ale,True
+1,0,89,logistic,full,Brown,Brown,True
+1,0,114,logistic,full,Hoppy,Christmas,False
+1,0,143,logistic,full,Hoppy,Hoppy,True
+1,0,133,logistic,full,Strong ale,Blond,False
+1,0,17,logistic,full,Tripel,Strong ale,False
+1,0,65,logistic,full,Hoppy,Saison,False
+1,0,140,logistic,full,Tripel,Wheat,False
+1,0,189,logistic,full,Tripel,Tripel,True
+1,0,233,logistic,full,Scotch,Hoppy,False
+1,0,95,logistic,full,Christmas,Christmas,True
+1,0,203,logistic,full,Brett/cofermented,Strong ale,False
+1,0,85,logistic,full,Tripel,Blond,False
+1,0,3,logistic,full,Blond,Blond,True
+1,0,21,logistic,full,Lambic,Lambic,True
+1,0,239,logistic,full,Tripel,Blond,False
+1,0,117,logistic,full,Strong ale,Strong ale,True
+1,0,4,logistic,full,Strong ale,Strong ale,True
+1,0,2,logistic,masked,Low/No alcohol,Low/No alcohol,True
+1,0,83,logistic,masked,Low/No alcohol,Low/No alcohol,True
+1,0,40,logistic,masked,Low/No alcohol,Pils/Lager,False
+1,0,247,logistic,masked,Fruitbeer,Fruitbeer,True
+1,0,165,logistic,masked,Fruitbeer,Fruitbeer,True
+1,0,33,logistic,masked,Fruitbeer,Fruitbeer,True
+1,0,77,logistic,masked,Blond,Blond,True
+1,0,81,logistic,masked,Pils/Lager,Pils/Lager,True
+1,0,64,logistic,masked,Blond,Wheat,False
+1,0,218,logistic,masked,Pils/Lager,Pils/Lager,True
+1,0,190,logistic,masked,Flanders old brown,Flanders old brown,True
+1,0,197,logistic,masked,Wheat,Wheat,True
+1,0,139,logistic,masked,Pils/Lager,Pils/Lager,True
+1,0,224,logistic,masked,Wheat,Wheat,True
+1,0,54,logistic,masked,Kriek,Kriek,True
+1,0,5,logistic,masked,Blond,Hoppy,False
+1,0,58,logistic,masked,Saison,Hoppy,False
+1,0,11,logistic,masked,Amber,Tripel,False
+1,0,84,logistic,masked,West Flanders ale,Lambic,False
+1,0,188,logistic,masked,Stout/Porter,Dubbel,False
+1,0,160,logistic,masked,Wheat,Wheat,True
+1,0,7,logistic,masked,Saison,Tripel,False
+1,0,62,logistic,masked,Blond,Blond,True
+1,0,151,logistic,masked,Faro,Lambic,False
+1,0,156,logistic,masked,Kriek,Lambic,False
+1,0,138,logistic,masked,Kriek,Kriek,True
+1,0,105,logistic,masked,Strong ale,Hoppy,False
+1,0,128,logistic,masked,Amber,Amber,True
+1,0,178,logistic,masked,West Flanders ale,Lambic,False
+1,0,112,logistic,masked,Brown,Strong ale,False
+1,0,129,logistic,masked,Brown,Christmas,False
+1,0,186,logistic,masked,Strong ale,Brown,False
+1,0,97,logistic,masked,Hoppy,Blond,False
+1,0,220,logistic,masked,Kriek,Kriek,True
+1,0,173,logistic,masked,Stout/Porter,Stout/Porter,True
+1,0,119,logistic,masked,Pils/Lager,Pils/Lager,True
+1,0,238,logistic,masked,Blond,Blond,True
+1,0,107,logistic,masked,Dubbel,Strong ale,False
+1,0,205,logistic,masked,Brut,Brut,True
+1,0,53,logistic,masked,Brown,Scotch,False
+1,0,69,logistic,masked,Tripel,Blond,False
+1,0,150,logistic,masked,Brett/cofermented,Hoppy,False
+1,0,132,logistic,masked,Saison,Hoppy,False
+1,0,115,logistic,masked,Lambic,Fruitbeer,False
+1,0,149,logistic,masked,Blond,Blond,True
+1,0,174,logistic,masked,Dubbel,Stout/Porter,False
+1,0,118,logistic,masked,West Flanders ale,Flanders old brown,False
+1,0,6,logistic,masked,Amber,Dubbel,False
+1,0,249,logistic,masked,Blond,Saison,False
+1,0,127,logistic,masked,Blond,Blond,True
+1,0,41,logistic,masked,Lambic,Lambic,True
+1,0,126,logistic,masked,Amber,Scotch,False
+1,0,162,logistic,masked,Lambic,Lambic,True
+1,0,123,logistic,masked,Stout/Porter,Christmas,False
+1,0,130,logistic,masked,Brut,Christmas,False
+1,0,31,logistic,masked,Hoppy,Hoppy,True
+1,0,52,logistic,masked,Stout/Porter,Stout/Porter,True
+1,0,94,logistic,masked,Blond,Blond,True
+1,0,34,logistic,masked,Tripel,Stout/Porter,False
+1,0,187,logistic,masked,Dubbel,Dubbel,True
+1,0,45,logistic,masked,Tripel,Tripel,True
+1,0,154,logistic,masked,Tripel,Tripel,True
+1,0,242,logistic,masked,Saison,Tripel,False
+1,0,208,logistic,masked,Wheat,Wheat,True
+1,0,38,logistic,masked,Christmas,Strong ale,False
+1,0,214,logistic,masked,Christmas,Christmas,True
+1,0,235,logistic,masked,Strong ale,Strong ale,True
+1,0,89,logistic,masked,Brown,Brown,True
+1,0,114,logistic,masked,Hoppy,Christmas,False
+1,0,143,logistic,masked,Hoppy,Hoppy,True
+1,0,133,logistic,masked,Strong ale,Blond,False
+1,0,17,logistic,masked,Tripel,Strong ale,False
+1,0,65,logistic,masked,Hoppy,Saison,False
+1,0,140,logistic,masked,Tripel,Wheat,False
+1,0,189,logistic,masked,Tripel,Tripel,True
+1,0,233,logistic,masked,Scotch,Hoppy,False
+1,0,95,logistic,masked,Christmas,Christmas,True
+1,0,203,logistic,masked,Brett/cofermented,Strong ale,False
+1,0,85,logistic,masked,Tripel,Blond,False
+1,0,3,logistic,masked,Blond,Blond,True
+1,0,21,logistic,masked,Lambic,Lambic,True
+1,0,239,logistic,masked,Tripel,Blond,False
+1,0,117,logistic,masked,Strong ale,Strong ale,True
+1,0,4,logistic,masked,Strong ale,Strong ale,True
+1,0,2,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+1,0,83,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+1,0,40,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+1,0,247,extra_trees,full,Fruitbeer,Fruitbeer,True
+1,0,165,extra_trees,full,Fruitbeer,Fruitbeer,True
+1,0,33,extra_trees,full,Fruitbeer,Low/No alcohol,False
+1,0,77,extra_trees,full,Blond,Pils/Lager,False
+1,0,81,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,0,64,extra_trees,full,Blond,Wheat,False
+1,0,218,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,0,190,extra_trees,full,Flanders old brown,West Flanders ale,False
+1,0,197,extra_trees,full,Wheat,Wheat,True
+1,0,139,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,0,224,extra_trees,full,Wheat,Wheat,True
+1,0,54,extra_trees,full,Kriek,Kriek,True
+1,0,5,extra_trees,full,Blond,Brett/cofermented,False
+1,0,58,extra_trees,full,Saison,Hoppy,False
+1,0,11,extra_trees,full,Amber,Amber,True
+1,0,84,extra_trees,full,West Flanders ale,Flanders old brown,False
+1,0,188,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,0,160,extra_trees,full,Wheat,Wheat,True
+1,0,7,extra_trees,full,Saison,Wheat,False
+1,0,62,extra_trees,full,Blond,Blond,True
+1,0,151,extra_trees,full,Faro,Lambic,False
+1,0,156,extra_trees,full,Kriek,Lambic,False
+1,0,138,extra_trees,full,Kriek,Kriek,True
+1,0,105,extra_trees,full,Strong ale,Stout/Porter,False
+1,0,128,extra_trees,full,Amber,Amber,True
+1,0,178,extra_trees,full,West Flanders ale,Lambic,False
+1,0,112,extra_trees,full,Brown,Amber,False
+1,0,129,extra_trees,full,Brown,Dubbel,False
+1,0,186,extra_trees,full,Strong ale,Strong ale,True
+1,0,97,extra_trees,full,Hoppy,Tripel,False
+1,0,220,extra_trees,full,Kriek,Kriek,True
+1,0,173,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,0,119,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,0,238,extra_trees,full,Blond,Blond,True
+1,0,107,extra_trees,full,Dubbel,Stout/Porter,False
+1,0,205,extra_trees,full,Brut,Brut,True
+1,0,53,extra_trees,full,Brown,Scotch,False
+1,0,69,extra_trees,full,Tripel,Lambic,False
+1,0,150,extra_trees,full,Brett/cofermented,Scotch,False
+1,0,132,extra_trees,full,Saison,Hoppy,False
+1,0,115,extra_trees,full,Lambic,Lambic,True
+1,0,149,extra_trees,full,Blond,Blond,True
+1,0,174,extra_trees,full,Dubbel,Scotch,False
+1,0,118,extra_trees,full,West Flanders ale,Flanders old brown,False
+1,0,6,extra_trees,full,Amber,Dubbel,False
+1,0,249,extra_trees,full,Blond,Saison,False
+1,0,127,extra_trees,full,Blond,Tripel,False
+1,0,41,extra_trees,full,Lambic,Lambic,True
+1,0,126,extra_trees,full,Amber,Scotch,False
+1,0,162,extra_trees,full,Lambic,Faro,False
+1,0,123,extra_trees,full,Stout/Porter,Scotch,False
+1,0,130,extra_trees,full,Brut,Kriek,False
+1,0,31,extra_trees,full,Hoppy,Hoppy,True
+1,0,52,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,0,94,extra_trees,full,Blond,Blond,True
+1,0,34,extra_trees,full,Tripel,Strong ale,False
+1,0,187,extra_trees,full,Dubbel,Dubbel,True
+1,0,45,extra_trees,full,Tripel,Tripel,True
+1,0,154,extra_trees,full,Tripel,Saison,False
+1,0,242,extra_trees,full,Saison,Blond,False
+1,0,208,extra_trees,full,Wheat,Wheat,True
+1,0,38,extra_trees,full,Christmas,Strong ale,False
+1,0,214,extra_trees,full,Christmas,Scotch,False
+1,0,235,extra_trees,full,Strong ale,Strong ale,True
+1,0,89,extra_trees,full,Brown,Stout/Porter,False
+1,0,114,extra_trees,full,Hoppy,Hoppy,True
+1,0,143,extra_trees,full,Hoppy,Hoppy,True
+1,0,133,extra_trees,full,Strong ale,Strong ale,True
+1,0,17,extra_trees,full,Tripel,Tripel,True
+1,0,65,extra_trees,full,Hoppy,Hoppy,True
+1,0,140,extra_trees,full,Tripel,Wheat,False
+1,0,189,extra_trees,full,Tripel,Tripel,True
+1,0,233,extra_trees,full,Scotch,Brown,False
+1,0,95,extra_trees,full,Christmas,Strong ale,False
+1,0,203,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+1,0,85,extra_trees,full,Tripel,Tripel,True
+1,0,3,extra_trees,full,Blond,Blond,True
+1,0,21,extra_trees,full,Lambic,Lambic,True
+1,0,239,extra_trees,full,Tripel,Blond,False
+1,0,117,extra_trees,full,Strong ale,Stout/Porter,False
+1,0,4,extra_trees,full,Strong ale,Strong ale,True
+1,0,2,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+1,0,83,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+1,0,40,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+1,0,247,extra_trees,masked,Fruitbeer,Fruitbeer,True
+1,0,165,extra_trees,masked,Fruitbeer,Fruitbeer,True
+1,0,33,extra_trees,masked,Fruitbeer,Fruitbeer,True
+1,0,77,extra_trees,masked,Blond,Pils/Lager,False
+1,0,81,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,0,64,extra_trees,masked,Blond,Wheat,False
+1,0,218,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,0,190,extra_trees,masked,Flanders old brown,West Flanders ale,False
+1,0,197,extra_trees,masked,Wheat,Wheat,True
+1,0,139,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,0,224,extra_trees,masked,Wheat,Wheat,True
+1,0,54,extra_trees,masked,Kriek,Kriek,True
+1,0,5,extra_trees,masked,Blond,Brett/cofermented,False
+1,0,58,extra_trees,masked,Saison,Hoppy,False
+1,0,11,extra_trees,masked,Amber,Amber,True
+1,0,84,extra_trees,masked,West Flanders ale,Flanders old brown,False
+1,0,188,extra_trees,masked,Stout/Porter,Dubbel,False
+1,0,160,extra_trees,masked,Wheat,Wheat,True
+1,0,7,extra_trees,masked,Saison,Wheat,False
+1,0,62,extra_trees,masked,Blond,Blond,True
+1,0,151,extra_trees,masked,Faro,Lambic,False
+1,0,156,extra_trees,masked,Kriek,Lambic,False
+1,0,138,extra_trees,masked,Kriek,Kriek,True
+1,0,105,extra_trees,masked,Strong ale,Stout/Porter,False
+1,0,128,extra_trees,masked,Amber,Amber,True
+1,0,178,extra_trees,masked,West Flanders ale,Lambic,False
+1,0,112,extra_trees,masked,Brown,Amber,False
+1,0,129,extra_trees,masked,Brown,Dubbel,False
+1,0,186,extra_trees,masked,Strong ale,Brown,False
+1,0,97,extra_trees,masked,Hoppy,Tripel,False
+1,0,220,extra_trees,masked,Kriek,Kriek,True
+1,0,173,extra_trees,masked,Stout/Porter,Stout/Porter,True
+1,0,119,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,0,238,extra_trees,masked,Blond,Saison,False
+1,0,107,extra_trees,masked,Dubbel,Stout/Porter,False
+1,0,205,extra_trees,masked,Brut,Brut,True
+1,0,53,extra_trees,masked,Brown,Scotch,False
+1,0,69,extra_trees,masked,Tripel,Lambic,False
+1,0,150,extra_trees,masked,Brett/cofermented,Scotch,False
+1,0,132,extra_trees,masked,Saison,Hoppy,False
+1,0,115,extra_trees,masked,Lambic,Fruitbeer,False
+1,0,149,extra_trees,masked,Blond,Blond,True
+1,0,174,extra_trees,masked,Dubbel,Scotch,False
+1,0,118,extra_trees,masked,West Flanders ale,Flanders old brown,False
+1,0,6,extra_trees,masked,Amber,Dubbel,False
+1,0,249,extra_trees,masked,Blond,Saison,False
+1,0,127,extra_trees,masked,Blond,Tripel,False
+1,0,41,extra_trees,masked,Lambic,Lambic,True
+1,0,126,extra_trees,masked,Amber,Scotch,False
+1,0,162,extra_trees,masked,Lambic,Lambic,True
+1,0,123,extra_trees,masked,Stout/Porter,Scotch,False
+1,0,130,extra_trees,masked,Brut,Kriek,False
+1,0,31,extra_trees,masked,Hoppy,Hoppy,True
+1,0,52,extra_trees,masked,Stout/Porter,Stout/Porter,True
+1,0,94,extra_trees,masked,Blond,Blond,True
+1,0,34,extra_trees,masked,Tripel,Tripel,True
+1,0,187,extra_trees,masked,Dubbel,Dubbel,True
+1,0,45,extra_trees,masked,Tripel,Tripel,True
+1,0,154,extra_trees,masked,Tripel,Saison,False
+1,0,242,extra_trees,masked,Saison,Blond,False
+1,0,208,extra_trees,masked,Wheat,Wheat,True
+1,0,38,extra_trees,masked,Christmas,Strong ale,False
+1,0,214,extra_trees,masked,Christmas,Strong ale,False
+1,0,235,extra_trees,masked,Strong ale,Strong ale,True
+1,0,89,extra_trees,masked,Brown,Brown,True
+1,0,114,extra_trees,masked,Hoppy,Hoppy,True
+1,0,143,extra_trees,masked,Hoppy,Hoppy,True
+1,0,133,extra_trees,masked,Strong ale,Blond,False
+1,0,17,extra_trees,masked,Tripel,Tripel,True
+1,0,65,extra_trees,masked,Hoppy,Hoppy,True
+1,0,140,extra_trees,masked,Tripel,Wheat,False
+1,0,189,extra_trees,masked,Tripel,Tripel,True
+1,0,233,extra_trees,masked,Scotch,Brown,False
+1,0,95,extra_trees,masked,Christmas,Strong ale,False
+1,0,203,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+1,0,85,extra_trees,masked,Tripel,Tripel,True
+1,0,3,extra_trees,masked,Blond,Blond,True
+1,0,21,extra_trees,masked,Lambic,Lambic,True
+1,0,239,extra_trees,masked,Tripel,Brut,False
+1,0,117,extra_trees,masked,Strong ale,Stout/Porter,False
+1,0,4,extra_trees,masked,Strong ale,Strong ale,True
+1,1,48,logistic,full,Dubbel,Brown,False
+1,1,207,logistic,full,Fruitbeer,Fruitbeer,True
+1,1,155,logistic,full,Low/No alcohol,Pils/Lager,False
+1,1,141,logistic,full,Low/No alcohol,Pils/Lager,False
+1,1,179,logistic,full,Flanders old brown,Brown,False
+1,1,88,logistic,full,Kriek,Kriek,True
+1,1,202,logistic,full,Stout/Porter,Stout/Porter,True
+1,1,44,logistic,full,Wheat,Wheat,True
+1,1,161,logistic,full,Flanders old brown,Flanders old brown,True
+1,1,142,logistic,full,Wheat,Wheat,True
+1,1,223,logistic,full,Low/No alcohol,Low/No alcohol,True
+1,1,211,logistic,full,Lambic,Faro,False
+1,1,216,logistic,full,Scotch,Scotch,True
+1,1,200,logistic,full,West Flanders ale,West Flanders ale,True
+1,1,183,logistic,full,Saison,Saison,True
+1,1,111,logistic,full,Dubbel,Stout/Porter,False
+1,1,209,logistic,full,Pils/Lager,Pils/Lager,True
+1,1,56,logistic,full,Saison,Blond,False
+1,1,172,logistic,full,Wheat,Wheat,True
+1,1,74,logistic,full,Faro,Lambic,False
+1,1,122,logistic,full,Brett/cofermented,Brett/cofermented,True
+1,1,194,logistic,full,Dubbel,Strong ale,False
+1,1,43,logistic,full,Amber,Blond,False
+1,1,100,logistic,full,Dubbel,Stout/Porter,False
+1,1,232,logistic,full,Kriek,Kriek,True
+1,1,61,logistic,full,Stout/Porter,Stout/Porter,True
+1,1,70,logistic,full,Blond,Amber,False
+1,1,176,logistic,full,West Flanders ale,West Flanders ale,True
+1,1,59,logistic,full,Blond,Blond,True
+1,1,82,logistic,full,Kriek,Kriek,True
+1,1,231,logistic,full,Stout/Porter,Stout/Porter,True
+1,1,109,logistic,full,Brown,Strong ale,False
+1,1,37,logistic,full,Strong ale,Tripel,False
+1,1,177,logistic,full,Fruitbeer,Fruitbeer,True
+1,1,90,logistic,full,Pils/Lager,Pils/Lager,True
+1,1,92,logistic,full,Amber,Saison,False
+1,1,93,logistic,full,Tripel,Strong ale,False
+1,1,76,logistic,full,Blond,Tripel,False
+1,1,136,logistic,full,Blond,Blond,True
+1,1,180,logistic,full,Christmas,Brown,False
+1,1,49,logistic,full,Blond,Blond,True
+1,1,39,logistic,full,Hoppy,Saison,False
+1,1,12,logistic,full,Lambic,West Flanders ale,False
+1,1,23,logistic,full,Tripel,Blond,False
+1,1,226,logistic,full,Strong ale,Strong ale,True
+1,1,29,logistic,full,Saison,Blond,False
+1,1,47,logistic,full,Tripel,Tripel,True
+1,1,80,logistic,full,Hoppy,Hoppy,True
+1,1,120,logistic,full,Hoppy,Hoppy,True
+1,1,222,logistic,full,Brett/cofermented,Brett/cofermented,True
+1,1,18,logistic,full,Lambic,Lambic,True
+1,1,98,logistic,full,Brown,Blond,False
+1,1,32,logistic,full,Amber,Amber,True
+1,1,27,logistic,full,Hoppy,Hoppy,True
+1,1,13,logistic,full,Christmas,Brown,False
+1,1,152,logistic,full,Wheat,Wheat,True
+1,1,212,logistic,full,Stout/Porter,Stout/Porter,True
+1,1,101,logistic,full,Blond,Blond,True
+1,1,191,logistic,full,Tripel,Tripel,True
+1,1,51,logistic,full,Strong ale,Christmas,False
+1,1,144,logistic,full,Lambic,Lambic,True
+1,1,28,logistic,full,Pils/Lager,Saison,False
+1,1,168,logistic,full,Scotch,Brown,False
+1,1,30,logistic,full,Blond,Blond,True
+1,1,8,logistic,full,Hoppy,Hoppy,True
+1,1,9,logistic,full,Hoppy,Christmas,False
+1,1,204,logistic,full,Tripel,Tripel,True
+1,1,108,logistic,full,Brown,Tripel,False
+1,1,170,logistic,full,Strong ale,Tripel,False
+1,1,215,logistic,full,Blond,Blond,True
+1,1,181,logistic,full,Christmas,Stout/Porter,False
+1,1,57,logistic,full,Tripel,Tripel,True
+1,1,148,logistic,full,Strong ale,Brown,False
+1,1,248,logistic,full,Blond,Blond,True
+1,1,73,logistic,full,Blond,Christmas,False
+1,1,68,logistic,full,Tripel,Blond,False
+1,1,1,logistic,full,Brut,Brut,True
+1,1,71,logistic,full,Blond,Amber,False
+1,1,210,logistic,full,Amber,Blond,False
+1,1,199,logistic,full,Tripel,Tripel,True
+1,1,25,logistic,full,Brown,Blond,False
+1,1,175,logistic,full,Strong ale,Dubbel,False
+1,1,157,logistic,full,Tripel,Brut,False
+1,1,48,logistic,masked,Dubbel,Brown,False
+1,1,207,logistic,masked,Fruitbeer,Fruitbeer,True
+1,1,155,logistic,masked,Low/No alcohol,Pils/Lager,False
+1,1,141,logistic,masked,Low/No alcohol,Pils/Lager,False
+1,1,179,logistic,masked,Flanders old brown,Brown,False
+1,1,88,logistic,masked,Kriek,Kriek,True
+1,1,202,logistic,masked,Stout/Porter,Stout/Porter,True
+1,1,44,logistic,masked,Wheat,Wheat,True
+1,1,161,logistic,masked,Flanders old brown,Flanders old brown,True
+1,1,142,logistic,masked,Wheat,Wheat,True
+1,1,223,logistic,masked,Low/No alcohol,Low/No alcohol,True
+1,1,211,logistic,masked,Lambic,Faro,False
+1,1,216,logistic,masked,Scotch,Scotch,True
+1,1,200,logistic,masked,West Flanders ale,West Flanders ale,True
+1,1,183,logistic,masked,Saison,Saison,True
+1,1,111,logistic,masked,Dubbel,Stout/Porter,False
+1,1,209,logistic,masked,Pils/Lager,Pils/Lager,True
+1,1,56,logistic,masked,Saison,Blond,False
+1,1,172,logistic,masked,Wheat,Wheat,True
+1,1,74,logistic,masked,Faro,Lambic,False
+1,1,122,logistic,masked,Brett/cofermented,Brett/cofermented,True
+1,1,194,logistic,masked,Dubbel,Strong ale,False
+1,1,43,logistic,masked,Amber,Blond,False
+1,1,100,logistic,masked,Dubbel,Stout/Porter,False
+1,1,232,logistic,masked,Kriek,Kriek,True
+1,1,61,logistic,masked,Stout/Porter,Stout/Porter,True
+1,1,70,logistic,masked,Blond,Amber,False
+1,1,176,logistic,masked,West Flanders ale,West Flanders ale,True
+1,1,59,logistic,masked,Blond,Blond,True
+1,1,82,logistic,masked,Kriek,Kriek,True
+1,1,231,logistic,masked,Stout/Porter,Stout/Porter,True
+1,1,109,logistic,masked,Brown,Strong ale,False
+1,1,37,logistic,masked,Strong ale,Tripel,False
+1,1,177,logistic,masked,Fruitbeer,Fruitbeer,True
+1,1,90,logistic,masked,Pils/Lager,Pils/Lager,True
+1,1,92,logistic,masked,Amber,Saison,False
+1,1,93,logistic,masked,Tripel,Strong ale,False
+1,1,76,logistic,masked,Blond,Tripel,False
+1,1,136,logistic,masked,Blond,Blond,True
+1,1,180,logistic,masked,Christmas,Brown,False
+1,1,49,logistic,masked,Blond,Blond,True
+1,1,39,logistic,masked,Hoppy,Saison,False
+1,1,12,logistic,masked,Lambic,West Flanders ale,False
+1,1,23,logistic,masked,Tripel,Blond,False
+1,1,226,logistic,masked,Strong ale,Strong ale,True
+1,1,29,logistic,masked,Saison,Blond,False
+1,1,47,logistic,masked,Tripel,Tripel,True
+1,1,80,logistic,masked,Hoppy,Hoppy,True
+1,1,120,logistic,masked,Hoppy,Hoppy,True
+1,1,222,logistic,masked,Brett/cofermented,Brett/cofermented,True
+1,1,18,logistic,masked,Lambic,Lambic,True
+1,1,98,logistic,masked,Brown,Blond,False
+1,1,32,logistic,masked,Amber,Amber,True
+1,1,27,logistic,masked,Hoppy,Hoppy,True
+1,1,13,logistic,masked,Christmas,Brown,False
+1,1,152,logistic,masked,Wheat,Wheat,True
+1,1,212,logistic,masked,Stout/Porter,Stout/Porter,True
+1,1,101,logistic,masked,Blond,Blond,True
+1,1,191,logistic,masked,Tripel,Tripel,True
+1,1,51,logistic,masked,Strong ale,Christmas,False
+1,1,144,logistic,masked,Lambic,Lambic,True
+1,1,28,logistic,masked,Pils/Lager,Saison,False
+1,1,168,logistic,masked,Scotch,Brown,False
+1,1,30,logistic,masked,Blond,Blond,True
+1,1,8,logistic,masked,Hoppy,Hoppy,True
+1,1,9,logistic,masked,Hoppy,Christmas,False
+1,1,204,logistic,masked,Tripel,Tripel,True
+1,1,108,logistic,masked,Brown,Tripel,False
+1,1,170,logistic,masked,Strong ale,Tripel,False
+1,1,215,logistic,masked,Blond,Blond,True
+1,1,181,logistic,masked,Christmas,Stout/Porter,False
+1,1,57,logistic,masked,Tripel,Tripel,True
+1,1,148,logistic,masked,Strong ale,Brown,False
+1,1,248,logistic,masked,Blond,Blond,True
+1,1,73,logistic,masked,Blond,Tripel,False
+1,1,68,logistic,masked,Tripel,Blond,False
+1,1,1,logistic,masked,Brut,Brut,True
+1,1,71,logistic,masked,Blond,Amber,False
+1,1,210,logistic,masked,Amber,Blond,False
+1,1,199,logistic,masked,Tripel,Tripel,True
+1,1,25,logistic,masked,Brown,Blond,False
+1,1,175,logistic,masked,Strong ale,Dubbel,False
+1,1,157,logistic,masked,Tripel,Brut,False
+1,1,48,extra_trees,full,Dubbel,Dubbel,True
+1,1,207,extra_trees,full,Fruitbeer,Fruitbeer,True
+1,1,155,extra_trees,full,Low/No alcohol,Pils/Lager,False
+1,1,141,extra_trees,full,Low/No alcohol,Pils/Lager,False
+1,1,179,extra_trees,full,Flanders old brown,Fruitbeer,False
+1,1,88,extra_trees,full,Kriek,Kriek,True
+1,1,202,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,1,44,extra_trees,full,Wheat,Wheat,True
+1,1,161,extra_trees,full,Flanders old brown,Flanders old brown,True
+1,1,142,extra_trees,full,Wheat,Wheat,True
+1,1,223,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+1,1,211,extra_trees,full,Lambic,Faro,False
+1,1,216,extra_trees,full,Scotch,Brown,False
+1,1,200,extra_trees,full,West Flanders ale,Flanders old brown,False
+1,1,183,extra_trees,full,Saison,Saison,True
+1,1,111,extra_trees,full,Dubbel,Stout/Porter,False
+1,1,209,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,1,56,extra_trees,full,Saison,Blond,False
+1,1,172,extra_trees,full,Wheat,Wheat,True
+1,1,74,extra_trees,full,Faro,Lambic,False
+1,1,122,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+1,1,194,extra_trees,full,Dubbel,Strong ale,False
+1,1,43,extra_trees,full,Amber,Saison,False
+1,1,100,extra_trees,full,Dubbel,Scotch,False
+1,1,232,extra_trees,full,Kriek,Kriek,True
+1,1,61,extra_trees,full,Stout/Porter,Dubbel,False
+1,1,70,extra_trees,full,Blond,Blond,True
+1,1,176,extra_trees,full,West Flanders ale,Flanders old brown,False
+1,1,59,extra_trees,full,Blond,Blond,True
+1,1,82,extra_trees,full,Kriek,Kriek,True
+1,1,231,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,1,109,extra_trees,full,Brown,Saison,False
+1,1,37,extra_trees,full,Strong ale,Christmas,False
+1,1,177,extra_trees,full,Fruitbeer,Kriek,False
+1,1,90,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,1,92,extra_trees,full,Amber,Saison,False
+1,1,93,extra_trees,full,Tripel,Hoppy,False
+1,1,76,extra_trees,full,Blond,Blond,True
+1,1,136,extra_trees,full,Blond,Tripel,False
+1,1,180,extra_trees,full,Christmas,Scotch,False
+1,1,49,extra_trees,full,Blond,Blond,True
+1,1,39,extra_trees,full,Hoppy,Saison,False
+1,1,12,extra_trees,full,Lambic,West Flanders ale,False
+1,1,23,extra_trees,full,Tripel,Blond,False
+1,1,226,extra_trees,full,Strong ale,Dubbel,False
+1,1,29,extra_trees,full,Saison,Blond,False
+1,1,47,extra_trees,full,Tripel,Tripel,True
+1,1,80,extra_trees,full,Hoppy,Saison,False
+1,1,120,extra_trees,full,Hoppy,Saison,False
+1,1,222,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+1,1,18,extra_trees,full,Lambic,Lambic,True
+1,1,98,extra_trees,full,Brown,Dubbel,False
+1,1,32,extra_trees,full,Amber,Amber,True
+1,1,27,extra_trees,full,Hoppy,Hoppy,True
+1,1,13,extra_trees,full,Christmas,Brown,False
+1,1,152,extra_trees,full,Wheat,Wheat,True
+1,1,212,extra_trees,full,Stout/Porter,Dubbel,False
+1,1,101,extra_trees,full,Blond,Brut,False
+1,1,191,extra_trees,full,Tripel,Tripel,True
+1,1,51,extra_trees,full,Strong ale,Christmas,False
+1,1,144,extra_trees,full,Lambic,Lambic,True
+1,1,28,extra_trees,full,Pils/Lager,Saison,False
+1,1,168,extra_trees,full,Scotch,Brown,False
+1,1,30,extra_trees,full,Blond,Blond,True
+1,1,8,extra_trees,full,Hoppy,Tripel,False
+1,1,9,extra_trees,full,Hoppy,Blond,False
+1,1,204,extra_trees,full,Tripel,Tripel,True
+1,1,108,extra_trees,full,Brown,Amber,False
+1,1,170,extra_trees,full,Strong ale,Brown,False
+1,1,215,extra_trees,full,Blond,Blond,True
+1,1,181,extra_trees,full,Christmas,Stout/Porter,False
+1,1,57,extra_trees,full,Tripel,Tripel,True
+1,1,148,extra_trees,full,Strong ale,Brown,False
+1,1,248,extra_trees,full,Blond,Blond,True
+1,1,73,extra_trees,full,Blond,Tripel,False
+1,1,68,extra_trees,full,Tripel,Tripel,True
+1,1,1,extra_trees,full,Brut,Brut,True
+1,1,71,extra_trees,full,Blond,Tripel,False
+1,1,210,extra_trees,full,Amber,Brown,False
+1,1,199,extra_trees,full,Tripel,Tripel,True
+1,1,25,extra_trees,full,Brown,Stout/Porter,False
+1,1,175,extra_trees,full,Strong ale,Scotch,False
+1,1,157,extra_trees,full,Tripel,Strong ale,False
+1,1,48,extra_trees,masked,Dubbel,Dubbel,True
+1,1,207,extra_trees,masked,Fruitbeer,Fruitbeer,True
+1,1,155,extra_trees,masked,Low/No alcohol,Pils/Lager,False
+1,1,141,extra_trees,masked,Low/No alcohol,Pils/Lager,False
+1,1,179,extra_trees,masked,Flanders old brown,Fruitbeer,False
+1,1,88,extra_trees,masked,Kriek,Kriek,True
+1,1,202,extra_trees,masked,Stout/Porter,Stout/Porter,True
+1,1,44,extra_trees,masked,Wheat,Wheat,True
+1,1,161,extra_trees,masked,Flanders old brown,Flanders old brown,True
+1,1,142,extra_trees,masked,Wheat,Wheat,True
+1,1,223,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+1,1,211,extra_trees,masked,Lambic,Lambic,True
+1,1,216,extra_trees,masked,Scotch,Scotch,True
+1,1,200,extra_trees,masked,West Flanders ale,Flanders old brown,False
+1,1,183,extra_trees,masked,Saison,Saison,True
+1,1,111,extra_trees,masked,Dubbel,Stout/Porter,False
+1,1,209,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,1,56,extra_trees,masked,Saison,Blond,False
+1,1,172,extra_trees,masked,Wheat,Wheat,True
+1,1,74,extra_trees,masked,Faro,Lambic,False
+1,1,122,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+1,1,194,extra_trees,masked,Dubbel,Dubbel,True
+1,1,43,extra_trees,masked,Amber,Saison,False
+1,1,100,extra_trees,masked,Dubbel,Scotch,False
+1,1,232,extra_trees,masked,Kriek,Kriek,True
+1,1,61,extra_trees,masked,Stout/Porter,Dubbel,False
+1,1,70,extra_trees,masked,Blond,Blond,True
+1,1,176,extra_trees,masked,West Flanders ale,Flanders old brown,False
+1,1,59,extra_trees,masked,Blond,Blond,True
+1,1,82,extra_trees,masked,Kriek,Kriek,True
+1,1,231,extra_trees,masked,Stout/Porter,Stout/Porter,True
+1,1,109,extra_trees,masked,Brown,Saison,False
+1,1,37,extra_trees,masked,Strong ale,Christmas,False
+1,1,177,extra_trees,masked,Fruitbeer,Kriek,False
+1,1,90,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,1,92,extra_trees,masked,Amber,Saison,False
+1,1,93,extra_trees,masked,Tripel,Hoppy,False
+1,1,76,extra_trees,masked,Blond,Blond,True
+1,1,136,extra_trees,masked,Blond,Tripel,False
+1,1,180,extra_trees,masked,Christmas,Scotch,False
+1,1,49,extra_trees,masked,Blond,Blond,True
+1,1,39,extra_trees,masked,Hoppy,Saison,False
+1,1,12,extra_trees,masked,Lambic,West Flanders ale,False
+1,1,23,extra_trees,masked,Tripel,Blond,False
+1,1,226,extra_trees,masked,Strong ale,Dubbel,False
+1,1,29,extra_trees,masked,Saison,Blond,False
+1,1,47,extra_trees,masked,Tripel,Tripel,True
+1,1,80,extra_trees,masked,Hoppy,Saison,False
+1,1,120,extra_trees,masked,Hoppy,Saison,False
+1,1,222,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+1,1,18,extra_trees,masked,Lambic,Lambic,True
+1,1,98,extra_trees,masked,Brown,Dubbel,False
+1,1,32,extra_trees,masked,Amber,Amber,True
+1,1,27,extra_trees,masked,Hoppy,Hoppy,True
+1,1,13,extra_trees,masked,Christmas,Brown,False
+1,1,152,extra_trees,masked,Wheat,Wheat,True
+1,1,212,extra_trees,masked,Stout/Porter,Christmas,False
+1,1,101,extra_trees,masked,Blond,Brut,False
+1,1,191,extra_trees,masked,Tripel,Tripel,True
+1,1,51,extra_trees,masked,Strong ale,Christmas,False
+1,1,144,extra_trees,masked,Lambic,Lambic,True
+1,1,28,extra_trees,masked,Pils/Lager,Saison,False
+1,1,168,extra_trees,masked,Scotch,Brown,False
+1,1,30,extra_trees,masked,Blond,Blond,True
+1,1,8,extra_trees,masked,Hoppy,Tripel,False
+1,1,9,extra_trees,masked,Hoppy,Blond,False
+1,1,204,extra_trees,masked,Tripel,Tripel,True
+1,1,108,extra_trees,masked,Brown,Amber,False
+1,1,170,extra_trees,masked,Strong ale,Brown,False
+1,1,215,extra_trees,masked,Blond,Blond,True
+1,1,181,extra_trees,masked,Christmas,Stout/Porter,False
+1,1,57,extra_trees,masked,Tripel,Tripel,True
+1,1,148,extra_trees,masked,Strong ale,Brown,False
+1,1,248,extra_trees,masked,Blond,Blond,True
+1,1,73,extra_trees,masked,Blond,Tripel,False
+1,1,68,extra_trees,masked,Tripel,Tripel,True
+1,1,1,extra_trees,masked,Brut,Tripel,False
+1,1,71,extra_trees,masked,Blond,Tripel,False
+1,1,210,extra_trees,masked,Amber,Brown,False
+1,1,199,extra_trees,masked,Tripel,Tripel,True
+1,1,25,extra_trees,masked,Brown,Stout/Porter,False
+1,1,175,extra_trees,masked,Strong ale,Scotch,False
+1,1,157,extra_trees,masked,Tripel,Strong ale,False
+1,2,10,logistic,full,Low/No alcohol,Low/No alcohol,True
+1,2,86,logistic,full,Low/No alcohol,Low/No alcohol,True
+1,2,124,logistic,full,Pils/Lager,Pils/Lager,True
+1,2,50,logistic,full,Fruitbeer,Fruitbeer,True
+1,2,227,logistic,full,Fruitbeer,Fruitbeer,True
+1,2,22,logistic,full,Wheat,Wheat,True
+1,2,96,logistic,full,Pils/Lager,Pils/Lager,True
+1,2,230,logistic,full,Pils/Lager,Pils/Lager,True
+1,2,195,logistic,full,Wheat,Blond,False
+1,2,137,logistic,full,Amber,Blond,False
+1,2,236,logistic,full,Brett/cofermented,Brett/cofermented,True
+1,2,228,logistic,full,Tripel,Dubbel,False
+1,2,185,logistic,full,Pils/Lager,Pils/Lager,True
+1,2,166,logistic,full,Saison,Saison,True
+1,2,116,logistic,full,Lambic,Lambic,True
+1,2,46,logistic,full,Blond,Blond,True
+1,2,213,logistic,full,Hoppy,Tripel,False
+1,2,250,logistic,full,Faro,Lambic,False
+1,2,158,logistic,full,Amber,Christmas,False
+1,2,20,logistic,full,Saison,Saison,True
+1,2,169,logistic,full,Hoppy,Hoppy,True
+1,2,55,logistic,full,Hoppy,Hoppy,True
+1,2,26,logistic,full,West Flanders ale,West Flanders ale,True
+1,2,113,logistic,full,Blond,Blond,True
+1,2,167,logistic,full,Flanders old brown,West Flanders ale,False
+1,2,135,logistic,full,Tripel,Hoppy,False
+1,2,241,logistic,full,Kriek,Kriek,True
+1,2,244,logistic,full,West Flanders ale,Strong ale,False
+1,2,110,logistic,full,Blond,Blond,True
+1,2,219,logistic,full,Hoppy,Hoppy,True
+1,2,42,logistic,full,Lambic,Lambic,True
+1,2,72,logistic,full,Hoppy,Tripel,False
+1,2,246,logistic,full,Blond,Blond,True
+1,2,87,logistic,full,Stout/Porter,Dubbel,False
+1,2,201,logistic,full,Stout/Porter,Strong ale,False
+1,2,14,logistic,full,Brett/cofermented,Dubbel,False
+1,2,106,logistic,full,Christmas,Blond,False
+1,2,159,logistic,full,Flanders old brown,Dubbel,False
+1,2,206,logistic,full,Brown,Brown,True
+1,2,24,logistic,full,Kriek,Kriek,True
+1,2,243,logistic,full,Wheat,Wheat,True
+1,2,134,logistic,full,Strong ale,Tripel,False
+1,2,193,logistic,full,Blond,Brown,False
+1,2,240,logistic,full,Tripel,Tripel,True
+1,2,16,logistic,full,Dubbel,Brown,False
+1,2,164,logistic,full,Blond,Blond,True
+1,2,221,logistic,full,Dubbel,Amber,False
+1,2,79,logistic,full,Hoppy,Stout/Porter,False
+1,2,184,logistic,full,Fruitbeer,Fruitbeer,True
+1,2,19,logistic,full,Amber,Blond,False
+1,2,145,logistic,full,Saison,Saison,True
+1,2,125,logistic,full,Blond,Blond,True
+1,2,78,logistic,full,Brown,Brown,True
+1,2,234,logistic,full,Blond,Brett/cofermented,False
+1,2,147,logistic,full,Tripel,Tripel,True
+1,2,66,logistic,full,Tripel,Tripel,True
+1,2,104,logistic,full,Strong ale,Brown,False
+1,2,237,logistic,full,Brown,Strong ale,False
+1,2,245,logistic,full,Tripel,Tripel,True
+1,2,60,logistic,full,Christmas,Stout/Porter,False
+1,2,153,logistic,full,Kriek,Kriek,True
+1,2,146,logistic,full,Scotch,Amber,False
+1,2,36,logistic,full,Brown,Strong ale,False
+1,2,131,logistic,full,Scotch,Brown,False
+1,2,75,logistic,full,Lambic,Lambic,True
+1,2,121,logistic,full,Blond,Blond,True
+1,2,35,logistic,full,Blond,Blond,True
+1,2,225,logistic,full,Strong ale,Strong ale,True
+1,2,182,logistic,full,Stout/Porter,Strong ale,False
+1,2,229,logistic,full,Wheat,Tripel,False
+1,2,198,logistic,full,Dubbel,Dubbel,True
+1,2,91,logistic,full,Strong ale,Strong ale,True
+1,2,217,logistic,full,Tripel,Tripel,True
+1,2,163,logistic,full,Tripel,Tripel,True
+1,2,15,logistic,full,Tripel,Hoppy,False
+1,2,102,logistic,full,Christmas,Brown,False
+1,2,67,logistic,full,Stout/Porter,Amber,False
+1,2,63,logistic,full,Amber,Amber,True
+1,2,192,logistic,full,Brut,Tripel,False
+1,2,171,logistic,full,Tripel,Hoppy,False
+1,2,103,logistic,full,Stout/Porter,Scotch,False
+1,2,196,logistic,full,Strong ale,Strong ale,True
+1,2,99,logistic,full,Strong ale,Strong ale,True
+1,2,10,logistic,masked,Low/No alcohol,Low/No alcohol,True
+1,2,86,logistic,masked,Low/No alcohol,Low/No alcohol,True
+1,2,124,logistic,masked,Pils/Lager,Pils/Lager,True
+1,2,50,logistic,masked,Fruitbeer,Fruitbeer,True
+1,2,227,logistic,masked,Fruitbeer,Fruitbeer,True
+1,2,22,logistic,masked,Wheat,Wheat,True
+1,2,96,logistic,masked,Pils/Lager,Pils/Lager,True
+1,2,230,logistic,masked,Pils/Lager,Pils/Lager,True
+1,2,195,logistic,masked,Wheat,Blond,False
+1,2,137,logistic,masked,Amber,Blond,False
+1,2,236,logistic,masked,Brett/cofermented,Brett/cofermented,True
+1,2,228,logistic,masked,Tripel,Dubbel,False
+1,2,185,logistic,masked,Pils/Lager,Pils/Lager,True
+1,2,166,logistic,masked,Saison,Saison,True
+1,2,116,logistic,masked,Lambic,Lambic,True
+1,2,46,logistic,masked,Blond,Blond,True
+1,2,213,logistic,masked,Hoppy,Tripel,False
+1,2,250,logistic,masked,Faro,Lambic,False
+1,2,158,logistic,masked,Amber,Christmas,False
+1,2,20,logistic,masked,Saison,Saison,True
+1,2,169,logistic,masked,Hoppy,Hoppy,True
+1,2,55,logistic,masked,Hoppy,Hoppy,True
+1,2,26,logistic,masked,West Flanders ale,West Flanders ale,True
+1,2,113,logistic,masked,Blond,Blond,True
+1,2,167,logistic,masked,Flanders old brown,West Flanders ale,False
+1,2,135,logistic,masked,Tripel,Hoppy,False
+1,2,241,logistic,masked,Kriek,Kriek,True
+1,2,244,logistic,masked,West Flanders ale,Strong ale,False
+1,2,110,logistic,masked,Blond,Blond,True
+1,2,219,logistic,masked,Hoppy,Hoppy,True
+1,2,42,logistic,masked,Lambic,Lambic,True
+1,2,72,logistic,masked,Hoppy,Tripel,False
+1,2,246,logistic,masked,Blond,Blond,True
+1,2,87,logistic,masked,Stout/Porter,Dubbel,False
+1,2,201,logistic,masked,Stout/Porter,Strong ale,False
+1,2,14,logistic,masked,Brett/cofermented,Dubbel,False
+1,2,106,logistic,masked,Christmas,Blond,False
+1,2,159,logistic,masked,Flanders old brown,Dubbel,False
+1,2,206,logistic,masked,Brown,Brown,True
+1,2,24,logistic,masked,Kriek,Kriek,True
+1,2,243,logistic,masked,Wheat,Wheat,True
+1,2,134,logistic,masked,Strong ale,Tripel,False
+1,2,193,logistic,masked,Blond,Brown,False
+1,2,240,logistic,masked,Tripel,Tripel,True
+1,2,16,logistic,masked,Dubbel,Brown,False
+1,2,164,logistic,masked,Blond,Blond,True
+1,2,221,logistic,masked,Dubbel,Amber,False
+1,2,79,logistic,masked,Hoppy,Stout/Porter,False
+1,2,184,logistic,masked,Fruitbeer,Fruitbeer,True
+1,2,19,logistic,masked,Amber,Tripel,False
+1,2,145,logistic,masked,Saison,Saison,True
+1,2,125,logistic,masked,Blond,Blond,True
+1,2,78,logistic,masked,Brown,Brown,True
+1,2,234,logistic,masked,Blond,Brett/cofermented,False
+1,2,147,logistic,masked,Tripel,Tripel,True
+1,2,66,logistic,masked,Tripel,Tripel,True
+1,2,104,logistic,masked,Strong ale,Brown,False
+1,2,237,logistic,masked,Brown,Strong ale,False
+1,2,245,logistic,masked,Tripel,Tripel,True
+1,2,60,logistic,masked,Christmas,Stout/Porter,False
+1,2,153,logistic,masked,Kriek,Kriek,True
+1,2,146,logistic,masked,Scotch,Amber,False
+1,2,36,logistic,masked,Brown,Strong ale,False
+1,2,131,logistic,masked,Scotch,Brown,False
+1,2,75,logistic,masked,Lambic,Lambic,True
+1,2,121,logistic,masked,Blond,Blond,True
+1,2,35,logistic,masked,Blond,Blond,True
+1,2,225,logistic,masked,Strong ale,Strong ale,True
+1,2,182,logistic,masked,Stout/Porter,Strong ale,False
+1,2,229,logistic,masked,Wheat,Tripel,False
+1,2,198,logistic,masked,Dubbel,Dubbel,True
+1,2,91,logistic,masked,Strong ale,Strong ale,True
+1,2,217,logistic,masked,Tripel,Tripel,True
+1,2,163,logistic,masked,Tripel,Tripel,True
+1,2,15,logistic,masked,Tripel,Hoppy,False
+1,2,102,logistic,masked,Christmas,Brown,False
+1,2,67,logistic,masked,Stout/Porter,Amber,False
+1,2,63,logistic,masked,Amber,Amber,True
+1,2,192,logistic,masked,Brut,Tripel,False
+1,2,171,logistic,masked,Tripel,Hoppy,False
+1,2,103,logistic,masked,Stout/Porter,Scotch,False
+1,2,196,logistic,masked,Strong ale,Strong ale,True
+1,2,99,logistic,masked,Strong ale,Strong ale,True
+1,2,10,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+1,2,86,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+1,2,124,extra_trees,full,Pils/Lager,Low/No alcohol,False
+1,2,50,extra_trees,full,Fruitbeer,Fruitbeer,True
+1,2,227,extra_trees,full,Fruitbeer,Fruitbeer,True
+1,2,22,extra_trees,full,Wheat,Wheat,True
+1,2,96,extra_trees,full,Pils/Lager,Low/No alcohol,False
+1,2,230,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,2,195,extra_trees,full,Wheat,Blond,False
+1,2,137,extra_trees,full,Amber,Blond,False
+1,2,236,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+1,2,228,extra_trees,full,Tripel,Blond,False
+1,2,185,extra_trees,full,Pils/Lager,Pils/Lager,True
+1,2,166,extra_trees,full,Saison,Saison,True
+1,2,116,extra_trees,full,Lambic,Lambic,True
+1,2,46,extra_trees,full,Blond,Blond,True
+1,2,213,extra_trees,full,Hoppy,Blond,False
+1,2,250,extra_trees,full,Faro,Lambic,False
+1,2,158,extra_trees,full,Amber,Blond,False
+1,2,20,extra_trees,full,Saison,Saison,True
+1,2,169,extra_trees,full,Hoppy,Saison,False
+1,2,55,extra_trees,full,Hoppy,Amber,False
+1,2,26,extra_trees,full,West Flanders ale,West Flanders ale,True
+1,2,113,extra_trees,full,Blond,Blond,True
+1,2,167,extra_trees,full,Flanders old brown,West Flanders ale,False
+1,2,135,extra_trees,full,Tripel,Hoppy,False
+1,2,241,extra_trees,full,Kriek,Kriek,True
+1,2,244,extra_trees,full,West Flanders ale,West Flanders ale,True
+1,2,110,extra_trees,full,Blond,Blond,True
+1,2,219,extra_trees,full,Hoppy,Hoppy,True
+1,2,42,extra_trees,full,Lambic,Lambic,True
+1,2,72,extra_trees,full,Hoppy,Tripel,False
+1,2,246,extra_trees,full,Blond,Blond,True
+1,2,87,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,2,201,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,2,14,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+1,2,106,extra_trees,full,Christmas,Blond,False
+1,2,159,extra_trees,full,Flanders old brown,West Flanders ale,False
+1,2,206,extra_trees,full,Brown,Dubbel,False
+1,2,24,extra_trees,full,Kriek,Kriek,True
+1,2,243,extra_trees,full,Wheat,Wheat,True
+1,2,134,extra_trees,full,Strong ale,Tripel,False
+1,2,193,extra_trees,full,Blond,Blond,True
+1,2,240,extra_trees,full,Tripel,Tripel,True
+1,2,16,extra_trees,full,Dubbel,Brown,False
+1,2,164,extra_trees,full,Blond,Blond,True
+1,2,221,extra_trees,full,Dubbel,Strong ale,False
+1,2,79,extra_trees,full,Hoppy,Stout/Porter,False
+1,2,184,extra_trees,full,Fruitbeer,Fruitbeer,True
+1,2,19,extra_trees,full,Amber,Blond,False
+1,2,145,extra_trees,full,Saison,Saison,True
+1,2,125,extra_trees,full,Blond,Blond,True
+1,2,78,extra_trees,full,Brown,Strong ale,False
+1,2,234,extra_trees,full,Blond,Blond,True
+1,2,147,extra_trees,full,Tripel,Blond,False
+1,2,66,extra_trees,full,Tripel,Tripel,True
+1,2,104,extra_trees,full,Strong ale,Strong ale,True
+1,2,237,extra_trees,full,Brown,Strong ale,False
+1,2,245,extra_trees,full,Tripel,Tripel,True
+1,2,60,extra_trees,full,Christmas,Stout/Porter,False
+1,2,153,extra_trees,full,Kriek,Kriek,True
+1,2,146,extra_trees,full,Scotch,Amber,False
+1,2,36,extra_trees,full,Brown,Strong ale,False
+1,2,131,extra_trees,full,Scotch,Brown,False
+1,2,75,extra_trees,full,Lambic,Lambic,True
+1,2,121,extra_trees,full,Blond,Blond,True
+1,2,35,extra_trees,full,Blond,Blond,True
+1,2,225,extra_trees,full,Strong ale,Tripel,False
+1,2,182,extra_trees,full,Stout/Porter,Christmas,False
+1,2,229,extra_trees,full,Wheat,Tripel,False
+1,2,198,extra_trees,full,Dubbel,Brown,False
+1,2,91,extra_trees,full,Strong ale,Strong ale,True
+1,2,217,extra_trees,full,Tripel,Tripel,True
+1,2,163,extra_trees,full,Tripel,Tripel,True
+1,2,15,extra_trees,full,Tripel,Blond,False
+1,2,102,extra_trees,full,Christmas,Strong ale,False
+1,2,67,extra_trees,full,Stout/Porter,Stout/Porter,True
+1,2,63,extra_trees,full,Amber,Tripel,False
+1,2,192,extra_trees,full,Brut,Tripel,False
+1,2,171,extra_trees,full,Tripel,Tripel,True
+1,2,103,extra_trees,full,Stout/Porter,Scotch,False
+1,2,196,extra_trees,full,Strong ale,Tripel,False
+1,2,99,extra_trees,full,Strong ale,Strong ale,True
+1,2,10,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+1,2,86,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+1,2,124,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,2,50,extra_trees,masked,Fruitbeer,Fruitbeer,True
+1,2,227,extra_trees,masked,Fruitbeer,Fruitbeer,True
+1,2,22,extra_trees,masked,Wheat,Wheat,True
+1,2,96,extra_trees,masked,Pils/Lager,Low/No alcohol,False
+1,2,230,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,2,195,extra_trees,masked,Wheat,Saison,False
+1,2,137,extra_trees,masked,Amber,Blond,False
+1,2,236,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+1,2,228,extra_trees,masked,Tripel,Blond,False
+1,2,185,extra_trees,masked,Pils/Lager,Pils/Lager,True
+1,2,166,extra_trees,masked,Saison,Saison,True
+1,2,116,extra_trees,masked,Lambic,Lambic,True
+1,2,46,extra_trees,masked,Blond,Blond,True
+1,2,213,extra_trees,masked,Hoppy,Blond,False
+1,2,250,extra_trees,masked,Faro,Lambic,False
+1,2,158,extra_trees,masked,Amber,Amber,True
+1,2,20,extra_trees,masked,Saison,Saison,True
+1,2,169,extra_trees,masked,Hoppy,Hoppy,True
+1,2,55,extra_trees,masked,Hoppy,Hoppy,True
+1,2,26,extra_trees,masked,West Flanders ale,West Flanders ale,True
+1,2,113,extra_trees,masked,Blond,Blond,True
+1,2,167,extra_trees,masked,Flanders old brown,West Flanders ale,False
+1,2,135,extra_trees,masked,Tripel,Hoppy,False
+1,2,241,extra_trees,masked,Kriek,Kriek,True
+1,2,244,extra_trees,masked,West Flanders ale,West Flanders ale,True
+1,2,110,extra_trees,masked,Blond,Blond,True
+1,2,219,extra_trees,masked,Hoppy,Hoppy,True
+1,2,42,extra_trees,masked,Lambic,Lambic,True
+1,2,72,extra_trees,masked,Hoppy,Tripel,False
+1,2,246,extra_trees,masked,Blond,Blond,True
+1,2,87,extra_trees,masked,Stout/Porter,Stout/Porter,True
+1,2,201,extra_trees,masked,Stout/Porter,Stout/Porter,True
+1,2,14,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+1,2,106,extra_trees,masked,Christmas,Blond,False
+1,2,159,extra_trees,masked,Flanders old brown,West Flanders ale,False
+1,2,206,extra_trees,masked,Brown,Dubbel,False
+1,2,24,extra_trees,masked,Kriek,Kriek,True
+1,2,243,extra_trees,masked,Wheat,Wheat,True
+1,2,134,extra_trees,masked,Strong ale,Tripel,False
+1,2,193,extra_trees,masked,Blond,Blond,True
+1,2,240,extra_trees,masked,Tripel,Tripel,True
+1,2,16,extra_trees,masked,Dubbel,Brown,False
+1,2,164,extra_trees,masked,Blond,Blond,True
+1,2,221,extra_trees,masked,Dubbel,Christmas,False
+1,2,79,extra_trees,masked,Hoppy,Stout/Porter,False
+1,2,184,extra_trees,masked,Fruitbeer,Kriek,False
+1,2,19,extra_trees,masked,Amber,Brown,False
+1,2,145,extra_trees,masked,Saison,Saison,True
+1,2,125,extra_trees,masked,Blond,Blond,True
+1,2,78,extra_trees,masked,Brown,Strong ale,False
+1,2,234,extra_trees,masked,Blond,Blond,True
+1,2,147,extra_trees,masked,Tripel,Tripel,True
+1,2,66,extra_trees,masked,Tripel,Tripel,True
+1,2,104,extra_trees,masked,Strong ale,Strong ale,True
+1,2,237,extra_trees,masked,Brown,Strong ale,False
+1,2,245,extra_trees,masked,Tripel,Tripel,True
+1,2,60,extra_trees,masked,Christmas,Stout/Porter,False
+1,2,153,extra_trees,masked,Kriek,Kriek,True
+1,2,146,extra_trees,masked,Scotch,Amber,False
+1,2,36,extra_trees,masked,Brown,Strong ale,False
+1,2,131,extra_trees,masked,Scotch,Brown,False
+1,2,75,extra_trees,masked,Lambic,Lambic,True
+1,2,121,extra_trees,masked,Blond,Blond,True
+1,2,35,extra_trees,masked,Blond,Blond,True
+1,2,225,extra_trees,masked,Strong ale,Tripel,False
+1,2,182,extra_trees,masked,Stout/Porter,Strong ale,False
+1,2,229,extra_trees,masked,Wheat,Tripel,False
+1,2,198,extra_trees,masked,Dubbel,Brown,False
+1,2,91,extra_trees,masked,Strong ale,Strong ale,True
+1,2,217,extra_trees,masked,Tripel,Tripel,True
+1,2,163,extra_trees,masked,Tripel,Tripel,True
+1,2,15,extra_trees,masked,Tripel,Blond,False
+1,2,102,extra_trees,masked,Christmas,Strong ale,False
+1,2,67,extra_trees,masked,Stout/Porter,Stout/Porter,True
+1,2,63,extra_trees,masked,Amber,Tripel,False
+1,2,192,extra_trees,masked,Brut,Tripel,False
+1,2,171,extra_trees,masked,Tripel,Tripel,True
+1,2,103,extra_trees,masked,Stout/Porter,Scotch,False
+1,2,196,extra_trees,masked,Strong ale,Tripel,False
+1,2,99,extra_trees,masked,Strong ale,Strong ale,True
+2,0,10,logistic,full,Low/No alcohol,Low/No alcohol,True
+2,0,2,logistic,full,Low/No alcohol,Low/No alcohol,True
+2,0,48,logistic,full,Dubbel,Brown,False
+2,0,165,logistic,full,Fruitbeer,Fruitbeer,True
+2,0,50,logistic,full,Fruitbeer,Fruitbeer,True
+2,0,227,logistic,full,Fruitbeer,Fruitbeer,True
+2,0,77,logistic,full,Blond,Blond,True
+2,0,81,logistic,full,Pils/Lager,Pils/Lager,True
+2,0,202,logistic,full,Stout/Porter,Stout/Porter,True
+2,0,64,logistic,full,Blond,Dubbel,False
+2,0,161,logistic,full,Flanders old brown,Flanders old brown,True
+2,0,236,logistic,full,Brett/cofermented,Brett/cofermented,True
+2,0,223,logistic,full,Low/No alcohol,Low/No alcohol,True
+2,0,197,logistic,full,Wheat,Wheat,True
+2,0,185,logistic,full,Pils/Lager,Pils/Lager,True
+2,0,166,logistic,full,Saison,Hoppy,False
+2,0,216,logistic,full,Scotch,Scotch,True
+2,0,200,logistic,full,West Flanders ale,Flanders old brown,False
+2,0,139,logistic,full,Pils/Lager,Pils/Lager,True
+2,0,250,logistic,full,Faro,Lambic,False
+2,0,54,logistic,full,Kriek,Kriek,True
+2,0,58,logistic,full,Saison,Hoppy,False
+2,0,84,logistic,full,West Flanders ale,Lambic,False
+2,0,188,logistic,full,Stout/Porter,Dubbel,False
+2,0,160,logistic,full,Wheat,Wheat,True
+2,0,43,logistic,full,Amber,Blond,False
+2,0,55,logistic,full,Hoppy,Hoppy,True
+2,0,156,logistic,full,Kriek,Fruitbeer,False
+2,0,138,logistic,full,Kriek,Kriek,True
+2,0,113,logistic,full,Blond,Blond,True
+2,0,105,logistic,full,Strong ale,Hoppy,False
+2,0,178,logistic,full,West Flanders ale,West Flanders ale,True
+2,0,112,logistic,full,Brown,Strong ale,False
+2,0,219,logistic,full,Hoppy,Hoppy,True
+2,0,97,logistic,full,Hoppy,Scotch,False
+2,0,220,logistic,full,Kriek,Kriek,True
+2,0,90,logistic,full,Pils/Lager,Pils/Lager,True
+2,0,93,logistic,full,Tripel,Hoppy,False
+2,0,107,logistic,full,Dubbel,Strong ale,False
+2,0,206,logistic,full,Brown,Blond,False
+2,0,136,logistic,full,Blond,Blond,True
+2,0,134,logistic,full,Strong ale,Amber,False
+2,0,240,logistic,full,Tripel,Tripel,True
+2,0,12,logistic,full,Lambic,Lambic,True
+2,0,132,logistic,full,Saison,Hoppy,False
+2,0,47,logistic,full,Tripel,Blond,False
+2,0,164,logistic,full,Blond,Blond,True
+2,0,80,logistic,full,Hoppy,Hoppy,True
+2,0,120,logistic,full,Hoppy,Hoppy,True
+2,0,222,logistic,full,Brett/cofermented,Brett/cofermented,True
+2,0,18,logistic,full,Lambic,Lambic,True
+2,0,98,logistic,full,Brown,Blond,False
+2,0,221,logistic,full,Dubbel,Brown,False
+2,0,32,logistic,full,Amber,Amber,True
+2,0,13,logistic,full,Christmas,Blond,False
+2,0,19,logistic,full,Amber,Amber,True
+2,0,234,logistic,full,Blond,Tripel,False
+2,0,249,logistic,full,Blond,Saison,False
+2,0,60,logistic,full,Christmas,Hoppy,False
+2,0,144,logistic,full,Lambic,Lambic,True
+2,0,41,logistic,full,Lambic,Lambic,True
+2,0,126,logistic,full,Amber,Scotch,False
+2,0,123,logistic,full,Stout/Porter,Strong ale,False
+2,0,52,logistic,full,Stout/Porter,Stout/Porter,True
+2,0,204,logistic,full,Tripel,Tripel,True
+2,0,108,logistic,full,Brown,Amber,False
+2,0,121,logistic,full,Blond,Tripel,False
+2,0,242,logistic,full,Saison,Amber,False
+2,0,208,logistic,full,Wheat,Wheat,True
+2,0,38,logistic,full,Christmas,Strong ale,False
+2,0,170,logistic,full,Strong ale,Tripel,False
+2,0,35,logistic,full,Blond,Blond,True
+2,0,225,logistic,full,Strong ale,Tripel,False
+2,0,229,logistic,full,Wheat,Blond,False
+2,0,148,logistic,full,Strong ale,Brown,False
+2,0,73,logistic,full,Blond,Christmas,False
+2,0,217,logistic,full,Tripel,Blond,False
+2,0,163,logistic,full,Tripel,Amber,False
+2,0,1,logistic,full,Brut,Brut,True
+2,0,140,logistic,full,Tripel,Tripel,True
+2,0,199,logistic,full,Tripel,Amber,False
+2,0,85,logistic,full,Tripel,Blond,False
+2,0,192,logistic,full,Brut,Tripel,False
+2,0,99,logistic,full,Strong ale,Strong ale,True
+2,0,10,logistic,masked,Low/No alcohol,Low/No alcohol,True
+2,0,2,logistic,masked,Low/No alcohol,Low/No alcohol,True
+2,0,48,logistic,masked,Dubbel,Brown,False
+2,0,165,logistic,masked,Fruitbeer,Fruitbeer,True
+2,0,50,logistic,masked,Fruitbeer,Fruitbeer,True
+2,0,227,logistic,masked,Fruitbeer,Fruitbeer,True
+2,0,77,logistic,masked,Blond,Blond,True
+2,0,81,logistic,masked,Pils/Lager,Pils/Lager,True
+2,0,202,logistic,masked,Stout/Porter,Stout/Porter,True
+2,0,64,logistic,masked,Blond,Dubbel,False
+2,0,161,logistic,masked,Flanders old brown,Flanders old brown,True
+2,0,236,logistic,masked,Brett/cofermented,Brett/cofermented,True
+2,0,223,logistic,masked,Low/No alcohol,Low/No alcohol,True
+2,0,197,logistic,masked,Wheat,Wheat,True
+2,0,185,logistic,masked,Pils/Lager,Pils/Lager,True
+2,0,166,logistic,masked,Saison,Hoppy,False
+2,0,216,logistic,masked,Scotch,Scotch,True
+2,0,200,logistic,masked,West Flanders ale,Flanders old brown,False
+2,0,139,logistic,masked,Pils/Lager,Pils/Lager,True
+2,0,250,logistic,masked,Faro,Lambic,False
+2,0,54,logistic,masked,Kriek,Kriek,True
+2,0,58,logistic,masked,Saison,Hoppy,False
+2,0,84,logistic,masked,West Flanders ale,Lambic,False
+2,0,188,logistic,masked,Stout/Porter,Dubbel,False
+2,0,160,logistic,masked,Wheat,Wheat,True
+2,0,43,logistic,masked,Amber,Blond,False
+2,0,55,logistic,masked,Hoppy,Hoppy,True
+2,0,156,logistic,masked,Kriek,Fruitbeer,False
+2,0,138,logistic,masked,Kriek,Kriek,True
+2,0,113,logistic,masked,Blond,Blond,True
+2,0,105,logistic,masked,Strong ale,Hoppy,False
+2,0,178,logistic,masked,West Flanders ale,West Flanders ale,True
+2,0,112,logistic,masked,Brown,Strong ale,False
+2,0,219,logistic,masked,Hoppy,Hoppy,True
+2,0,97,logistic,masked,Hoppy,Scotch,False
+2,0,220,logistic,masked,Kriek,Kriek,True
+2,0,90,logistic,masked,Pils/Lager,Pils/Lager,True
+2,0,93,logistic,masked,Tripel,Hoppy,False
+2,0,107,logistic,masked,Dubbel,Strong ale,False
+2,0,206,logistic,masked,Brown,Blond,False
+2,0,136,logistic,masked,Blond,Blond,True
+2,0,134,logistic,masked,Strong ale,Amber,False
+2,0,240,logistic,masked,Tripel,Tripel,True
+2,0,12,logistic,masked,Lambic,Lambic,True
+2,0,132,logistic,masked,Saison,Hoppy,False
+2,0,47,logistic,masked,Tripel,Blond,False
+2,0,164,logistic,masked,Blond,Blond,True
+2,0,80,logistic,masked,Hoppy,Hoppy,True
+2,0,120,logistic,masked,Hoppy,Hoppy,True
+2,0,222,logistic,masked,Brett/cofermented,Brett/cofermented,True
+2,0,18,logistic,masked,Lambic,Lambic,True
+2,0,98,logistic,masked,Brown,Blond,False
+2,0,221,logistic,masked,Dubbel,Brown,False
+2,0,32,logistic,masked,Amber,Amber,True
+2,0,13,logistic,masked,Christmas,Blond,False
+2,0,19,logistic,masked,Amber,Christmas,False
+2,0,234,logistic,masked,Blond,Tripel,False
+2,0,249,logistic,masked,Blond,Saison,False
+2,0,60,logistic,masked,Christmas,Tripel,False
+2,0,144,logistic,masked,Lambic,Lambic,True
+2,0,41,logistic,masked,Lambic,Lambic,True
+2,0,126,logistic,masked,Amber,Scotch,False
+2,0,123,logistic,masked,Stout/Porter,Christmas,False
+2,0,52,logistic,masked,Stout/Porter,Stout/Porter,True
+2,0,204,logistic,masked,Tripel,Tripel,True
+2,0,108,logistic,masked,Brown,Amber,False
+2,0,121,logistic,masked,Blond,Tripel,False
+2,0,242,logistic,masked,Saison,Amber,False
+2,0,208,logistic,masked,Wheat,Wheat,True
+2,0,38,logistic,masked,Christmas,Strong ale,False
+2,0,170,logistic,masked,Strong ale,Tripel,False
+2,0,35,logistic,masked,Blond,Blond,True
+2,0,225,logistic,masked,Strong ale,Tripel,False
+2,0,229,logistic,masked,Wheat,Blond,False
+2,0,148,logistic,masked,Strong ale,Brown,False
+2,0,73,logistic,masked,Blond,Christmas,False
+2,0,217,logistic,masked,Tripel,Blond,False
+2,0,163,logistic,masked,Tripel,Amber,False
+2,0,1,logistic,masked,Brut,Brut,True
+2,0,140,logistic,masked,Tripel,Tripel,True
+2,0,199,logistic,masked,Tripel,Tripel,True
+2,0,85,logistic,masked,Tripel,Blond,False
+2,0,192,logistic,masked,Brut,Tripel,False
+2,0,99,logistic,masked,Strong ale,Strong ale,True
+2,0,10,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+2,0,2,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+2,0,48,extra_trees,full,Dubbel,Dubbel,True
+2,0,165,extra_trees,full,Fruitbeer,Fruitbeer,True
+2,0,50,extra_trees,full,Fruitbeer,Fruitbeer,True
+2,0,227,extra_trees,full,Fruitbeer,Fruitbeer,True
+2,0,77,extra_trees,full,Blond,Pils/Lager,False
+2,0,81,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,0,202,extra_trees,full,Stout/Porter,Stout/Porter,True
+2,0,64,extra_trees,full,Blond,Wheat,False
+2,0,161,extra_trees,full,Flanders old brown,Flanders old brown,True
+2,0,236,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+2,0,223,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+2,0,197,extra_trees,full,Wheat,Wheat,True
+2,0,185,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,0,166,extra_trees,full,Saison,Hoppy,False
+2,0,216,extra_trees,full,Scotch,Scotch,True
+2,0,200,extra_trees,full,West Flanders ale,West Flanders ale,True
+2,0,139,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,0,250,extra_trees,full,Faro,Lambic,False
+2,0,54,extra_trees,full,Kriek,Kriek,True
+2,0,58,extra_trees,full,Saison,Hoppy,False
+2,0,84,extra_trees,full,West Flanders ale,Flanders old brown,False
+2,0,188,extra_trees,full,Stout/Porter,Scotch,False
+2,0,160,extra_trees,full,Wheat,Wheat,True
+2,0,43,extra_trees,full,Amber,Blond,False
+2,0,55,extra_trees,full,Hoppy,Amber,False
+2,0,156,extra_trees,full,Kriek,Fruitbeer,False
+2,0,138,extra_trees,full,Kriek,Kriek,True
+2,0,113,extra_trees,full,Blond,Blond,True
+2,0,105,extra_trees,full,Strong ale,Stout/Porter,False
+2,0,178,extra_trees,full,West Flanders ale,West Flanders ale,True
+2,0,112,extra_trees,full,Brown,Dubbel,False
+2,0,219,extra_trees,full,Hoppy,Hoppy,True
+2,0,97,extra_trees,full,Hoppy,Tripel,False
+2,0,220,extra_trees,full,Kriek,Kriek,True
+2,0,90,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,0,93,extra_trees,full,Tripel,Amber,False
+2,0,107,extra_trees,full,Dubbel,Strong ale,False
+2,0,206,extra_trees,full,Brown,Dubbel,False
+2,0,136,extra_trees,full,Blond,Blond,True
+2,0,134,extra_trees,full,Strong ale,Tripel,False
+2,0,240,extra_trees,full,Tripel,Tripel,True
+2,0,12,extra_trees,full,Lambic,Faro,False
+2,0,132,extra_trees,full,Saison,Hoppy,False
+2,0,47,extra_trees,full,Tripel,Tripel,True
+2,0,164,extra_trees,full,Blond,Blond,True
+2,0,80,extra_trees,full,Hoppy,Hoppy,True
+2,0,120,extra_trees,full,Hoppy,Hoppy,True
+2,0,222,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+2,0,18,extra_trees,full,Lambic,Lambic,True
+2,0,98,extra_trees,full,Brown,Scotch,False
+2,0,221,extra_trees,full,Dubbel,Brown,False
+2,0,32,extra_trees,full,Amber,Amber,True
+2,0,13,extra_trees,full,Christmas,Dubbel,False
+2,0,19,extra_trees,full,Amber,Amber,True
+2,0,234,extra_trees,full,Blond,Blond,True
+2,0,249,extra_trees,full,Blond,Saison,False
+2,0,60,extra_trees,full,Christmas,Strong ale,False
+2,0,144,extra_trees,full,Lambic,Lambic,True
+2,0,41,extra_trees,full,Lambic,Lambic,True
+2,0,126,extra_trees,full,Amber,Scotch,False
+2,0,123,extra_trees,full,Stout/Porter,Christmas,False
+2,0,52,extra_trees,full,Stout/Porter,Stout/Porter,True
+2,0,204,extra_trees,full,Tripel,Tripel,True
+2,0,108,extra_trees,full,Brown,Amber,False
+2,0,121,extra_trees,full,Blond,Blond,True
+2,0,242,extra_trees,full,Saison,Blond,False
+2,0,208,extra_trees,full,Wheat,Wheat,True
+2,0,38,extra_trees,full,Christmas,Strong ale,False
+2,0,170,extra_trees,full,Strong ale,Strong ale,True
+2,0,35,extra_trees,full,Blond,Blond,True
+2,0,225,extra_trees,full,Strong ale,Tripel,False
+2,0,229,extra_trees,full,Wheat,Wheat,True
+2,0,148,extra_trees,full,Strong ale,Brown,False
+2,0,73,extra_trees,full,Blond,Tripel,False
+2,0,217,extra_trees,full,Tripel,Tripel,True
+2,0,163,extra_trees,full,Tripel,Amber,False
+2,0,1,extra_trees,full,Brut,Tripel,False
+2,0,140,extra_trees,full,Tripel,Wheat,False
+2,0,199,extra_trees,full,Tripel,Tripel,True
+2,0,85,extra_trees,full,Tripel,Tripel,True
+2,0,192,extra_trees,full,Brut,Wheat,False
+2,0,99,extra_trees,full,Strong ale,Strong ale,True
+2,0,10,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+2,0,2,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+2,0,48,extra_trees,masked,Dubbel,Dubbel,True
+2,0,165,extra_trees,masked,Fruitbeer,Fruitbeer,True
+2,0,50,extra_trees,masked,Fruitbeer,Fruitbeer,True
+2,0,227,extra_trees,masked,Fruitbeer,Fruitbeer,True
+2,0,77,extra_trees,masked,Blond,Blond,True
+2,0,81,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,0,202,extra_trees,masked,Stout/Porter,Stout/Porter,True
+2,0,64,extra_trees,masked,Blond,Wheat,False
+2,0,161,extra_trees,masked,Flanders old brown,Flanders old brown,True
+2,0,236,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+2,0,223,extra_trees,masked,Low/No alcohol,Pils/Lager,False
+2,0,197,extra_trees,masked,Wheat,Wheat,True
+2,0,185,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,0,166,extra_trees,masked,Saison,Blond,False
+2,0,216,extra_trees,masked,Scotch,Scotch,True
+2,0,200,extra_trees,masked,West Flanders ale,West Flanders ale,True
+2,0,139,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,0,250,extra_trees,masked,Faro,Lambic,False
+2,0,54,extra_trees,masked,Kriek,Kriek,True
+2,0,58,extra_trees,masked,Saison,Hoppy,False
+2,0,84,extra_trees,masked,West Flanders ale,Flanders old brown,False
+2,0,188,extra_trees,masked,Stout/Porter,Scotch,False
+2,0,160,extra_trees,masked,Wheat,Wheat,True
+2,0,43,extra_trees,masked,Amber,Blond,False
+2,0,55,extra_trees,masked,Hoppy,Amber,False
+2,0,156,extra_trees,masked,Kriek,Fruitbeer,False
+2,0,138,extra_trees,masked,Kriek,Kriek,True
+2,0,113,extra_trees,masked,Blond,Blond,True
+2,0,105,extra_trees,masked,Strong ale,Stout/Porter,False
+2,0,178,extra_trees,masked,West Flanders ale,West Flanders ale,True
+2,0,112,extra_trees,masked,Brown,Dubbel,False
+2,0,219,extra_trees,masked,Hoppy,Hoppy,True
+2,0,97,extra_trees,masked,Hoppy,Tripel,False
+2,0,220,extra_trees,masked,Kriek,Kriek,True
+2,0,90,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,0,93,extra_trees,masked,Tripel,Amber,False
+2,0,107,extra_trees,masked,Dubbel,Stout/Porter,False
+2,0,206,extra_trees,masked,Brown,Dubbel,False
+2,0,136,extra_trees,masked,Blond,Blond,True
+2,0,134,extra_trees,masked,Strong ale,Tripel,False
+2,0,240,extra_trees,masked,Tripel,Tripel,True
+2,0,12,extra_trees,masked,Lambic,Faro,False
+2,0,132,extra_trees,masked,Saison,Hoppy,False
+2,0,47,extra_trees,masked,Tripel,Tripel,True
+2,0,164,extra_trees,masked,Blond,Blond,True
+2,0,80,extra_trees,masked,Hoppy,Hoppy,True
+2,0,120,extra_trees,masked,Hoppy,Hoppy,True
+2,0,222,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+2,0,18,extra_trees,masked,Lambic,Lambic,True
+2,0,98,extra_trees,masked,Brown,Scotch,False
+2,0,221,extra_trees,masked,Dubbel,Brown,False
+2,0,32,extra_trees,masked,Amber,Amber,True
+2,0,13,extra_trees,masked,Christmas,Brown,False
+2,0,19,extra_trees,masked,Amber,Amber,True
+2,0,234,extra_trees,masked,Blond,Blond,True
+2,0,249,extra_trees,masked,Blond,Saison,False
+2,0,60,extra_trees,masked,Christmas,Strong ale,False
+2,0,144,extra_trees,masked,Lambic,Lambic,True
+2,0,41,extra_trees,masked,Lambic,Lambic,True
+2,0,126,extra_trees,masked,Amber,Scotch,False
+2,0,123,extra_trees,masked,Stout/Porter,Christmas,False
+2,0,52,extra_trees,masked,Stout/Porter,Stout/Porter,True
+2,0,204,extra_trees,masked,Tripel,Tripel,True
+2,0,108,extra_trees,masked,Brown,Amber,False
+2,0,121,extra_trees,masked,Blond,Blond,True
+2,0,242,extra_trees,masked,Saison,Blond,False
+2,0,208,extra_trees,masked,Wheat,Wheat,True
+2,0,38,extra_trees,masked,Christmas,Strong ale,False
+2,0,170,extra_trees,masked,Strong ale,Strong ale,True
+2,0,35,extra_trees,masked,Blond,Blond,True
+2,0,225,extra_trees,masked,Strong ale,Tripel,False
+2,0,229,extra_trees,masked,Wheat,Wheat,True
+2,0,148,extra_trees,masked,Strong ale,Brown,False
+2,0,73,extra_trees,masked,Blond,Tripel,False
+2,0,217,extra_trees,masked,Tripel,Tripel,True
+2,0,163,extra_trees,masked,Tripel,Amber,False
+2,0,1,extra_trees,masked,Brut,Tripel,False
+2,0,140,extra_trees,masked,Tripel,Wheat,False
+2,0,199,extra_trees,masked,Tripel,Tripel,True
+2,0,85,extra_trees,masked,Tripel,Tripel,True
+2,0,192,extra_trees,masked,Brut,Tripel,False
+2,0,99,extra_trees,masked,Strong ale,Brown,False
+2,1,40,logistic,full,Low/No alcohol,Pils/Lager,False
+2,1,247,logistic,full,Fruitbeer,Fruitbeer,True
+2,1,124,logistic,full,Pils/Lager,Pils/Lager,True
+2,1,155,logistic,full,Low/No alcohol,Pils/Lager,False
+2,1,141,logistic,full,Low/No alcohol,Low/No alcohol,True
+2,1,33,logistic,full,Fruitbeer,Fruitbeer,True
+2,1,88,logistic,full,Kriek,Kriek,True
+2,1,195,logistic,full,Wheat,Blond,False
+2,1,228,logistic,full,Tripel,Brown,False
+2,1,116,logistic,full,Lambic,Lambic,True
+2,1,183,logistic,full,Saison,Saison,True
+2,1,158,logistic,full,Amber,Amber,True
+2,1,11,logistic,full,Amber,Amber,True
+2,1,172,logistic,full,Wheat,Wheat,True
+2,1,122,logistic,full,Brett/cofermented,Brett/cofermented,True
+2,1,194,logistic,full,Dubbel,Brown,False
+2,1,7,logistic,full,Saison,Wheat,False
+2,1,62,logistic,full,Blond,Blond,True
+2,1,26,logistic,full,West Flanders ale,West Flanders ale,True
+2,1,151,logistic,full,Faro,West Flanders ale,False
+2,1,70,logistic,full,Blond,Amber,False
+2,1,176,logistic,full,West Flanders ale,Lambic,False
+2,1,167,logistic,full,Flanders old brown,Flanders old brown,True
+2,1,59,logistic,full,Blond,Blond,True
+2,1,135,logistic,full,Tripel,Blond,False
+2,1,129,logistic,full,Brown,Christmas,False
+2,1,42,logistic,full,Lambic,Lambic,True
+2,1,186,logistic,full,Strong ale,Strong ale,True
+2,1,246,logistic,full,Blond,Brown,False
+2,1,201,logistic,full,Stout/Porter,Strong ale,False
+2,1,173,logistic,full,Stout/Porter,Stout/Porter,True
+2,1,37,logistic,full,Strong ale,Brown,False
+2,1,119,logistic,full,Pils/Lager,Blond,False
+2,1,159,logistic,full,Flanders old brown,Dubbel,False
+2,1,92,logistic,full,Amber,Amber,True
+2,1,205,logistic,full,Brut,Strong ale,False
+2,1,53,logistic,full,Brown,Dubbel,False
+2,1,24,logistic,full,Kriek,Kriek,True
+2,1,69,logistic,full,Tripel,Tripel,True
+2,1,180,logistic,full,Christmas,Stout/Porter,False
+2,1,243,logistic,full,Wheat,Wheat,True
+2,1,193,logistic,full,Blond,Brown,False
+2,1,29,logistic,full,Saison,Blond,False
+2,1,16,logistic,full,Dubbel,Brown,False
+2,1,115,logistic,full,Lambic,Fruitbeer,False
+2,1,27,logistic,full,Hoppy,Hoppy,True
+2,1,79,logistic,full,Hoppy,Stout/Porter,False
+2,1,152,logistic,full,Wheat,Wheat,True
+2,1,125,logistic,full,Blond,Blond,True
+2,1,212,logistic,full,Stout/Porter,Stout/Porter,True
+2,1,147,logistic,full,Tripel,Tripel,True
+2,1,104,logistic,full,Strong ale,Brown,False
+2,1,101,logistic,full,Blond,Blond,True
+2,1,237,logistic,full,Brown,Strong ale,False
+2,1,127,logistic,full,Blond,Blond,True
+2,1,245,logistic,full,Tripel,Tripel,True
+2,1,51,logistic,full,Strong ale,Strong ale,True
+2,1,28,logistic,full,Pils/Lager,Amber,False
+2,1,153,logistic,full,Kriek,Kriek,True
+2,1,146,logistic,full,Scotch,Amber,False
+2,1,30,logistic,full,Blond,Blond,True
+2,1,36,logistic,full,Brown,Strong ale,False
+2,1,8,logistic,full,Hoppy,Tripel,False
+2,1,31,logistic,full,Hoppy,Hoppy,True
+2,1,94,logistic,full,Blond,Blond,True
+2,1,131,logistic,full,Scotch,Brown,False
+2,1,34,logistic,full,Tripel,Strong ale,False
+2,1,187,logistic,full,Dubbel,Dubbel,True
+2,1,181,logistic,full,Christmas,Stout/Porter,False
+2,1,57,logistic,full,Tripel,Wheat,False
+2,1,143,logistic,full,Hoppy,Hoppy,True
+2,1,65,logistic,full,Hoppy,Saison,False
+2,1,198,logistic,full,Dubbel,Dubbel,True
+2,1,71,logistic,full,Blond,Tripel,False
+2,1,210,logistic,full,Amber,Tripel,False
+2,1,189,logistic,full,Tripel,Tripel,True
+2,1,95,logistic,full,Christmas,Strong ale,False
+2,1,203,logistic,full,Brett/cofermented,Tripel,False
+2,1,21,logistic,full,Lambic,Lambic,True
+2,1,171,logistic,full,Tripel,Tripel,True
+2,1,103,logistic,full,Stout/Porter,Scotch,False
+2,1,196,logistic,full,Strong ale,Strong ale,True
+2,1,4,logistic,full,Strong ale,Strong ale,True
+2,1,40,logistic,masked,Low/No alcohol,Pils/Lager,False
+2,1,247,logistic,masked,Fruitbeer,Fruitbeer,True
+2,1,124,logistic,masked,Pils/Lager,Pils/Lager,True
+2,1,155,logistic,masked,Low/No alcohol,Pils/Lager,False
+2,1,141,logistic,masked,Low/No alcohol,Low/No alcohol,True
+2,1,33,logistic,masked,Fruitbeer,Fruitbeer,True
+2,1,88,logistic,masked,Kriek,Kriek,True
+2,1,195,logistic,masked,Wheat,Blond,False
+2,1,228,logistic,masked,Tripel,Brown,False
+2,1,116,logistic,masked,Lambic,Lambic,True
+2,1,183,logistic,masked,Saison,Saison,True
+2,1,158,logistic,masked,Amber,Amber,True
+2,1,11,logistic,masked,Amber,Amber,True
+2,1,172,logistic,masked,Wheat,Wheat,True
+2,1,122,logistic,masked,Brett/cofermented,Brett/cofermented,True
+2,1,194,logistic,masked,Dubbel,Brown,False
+2,1,7,logistic,masked,Saison,Wheat,False
+2,1,62,logistic,masked,Blond,Blond,True
+2,1,26,logistic,masked,West Flanders ale,West Flanders ale,True
+2,1,151,logistic,masked,Faro,West Flanders ale,False
+2,1,70,logistic,masked,Blond,Amber,False
+2,1,176,logistic,masked,West Flanders ale,Lambic,False
+2,1,167,logistic,masked,Flanders old brown,Flanders old brown,True
+2,1,59,logistic,masked,Blond,Blond,True
+2,1,135,logistic,masked,Tripel,Blond,False
+2,1,129,logistic,masked,Brown,Christmas,False
+2,1,42,logistic,masked,Lambic,Lambic,True
+2,1,186,logistic,masked,Strong ale,Strong ale,True
+2,1,246,logistic,masked,Blond,Brown,False
+2,1,201,logistic,masked,Stout/Porter,Strong ale,False
+2,1,173,logistic,masked,Stout/Porter,Stout/Porter,True
+2,1,37,logistic,masked,Strong ale,Brown,False
+2,1,119,logistic,masked,Pils/Lager,Blond,False
+2,1,159,logistic,masked,Flanders old brown,Dubbel,False
+2,1,92,logistic,masked,Amber,Amber,True
+2,1,205,logistic,masked,Brut,Strong ale,False
+2,1,53,logistic,masked,Brown,Dubbel,False
+2,1,24,logistic,masked,Kriek,Kriek,True
+2,1,69,logistic,masked,Tripel,Tripel,True
+2,1,180,logistic,masked,Christmas,Stout/Porter,False
+2,1,243,logistic,masked,Wheat,Wheat,True
+2,1,193,logistic,masked,Blond,Brown,False
+2,1,29,logistic,masked,Saison,Blond,False
+2,1,16,logistic,masked,Dubbel,Brown,False
+2,1,115,logistic,masked,Lambic,Fruitbeer,False
+2,1,27,logistic,masked,Hoppy,Hoppy,True
+2,1,79,logistic,masked,Hoppy,Stout/Porter,False
+2,1,152,logistic,masked,Wheat,Wheat,True
+2,1,125,logistic,masked,Blond,Blond,True
+2,1,212,logistic,masked,Stout/Porter,Stout/Porter,True
+2,1,147,logistic,masked,Tripel,Tripel,True
+2,1,104,logistic,masked,Strong ale,Brown,False
+2,1,101,logistic,masked,Blond,Blond,True
+2,1,237,logistic,masked,Brown,Strong ale,False
+2,1,127,logistic,masked,Blond,Blond,True
+2,1,245,logistic,masked,Tripel,Tripel,True
+2,1,51,logistic,masked,Strong ale,Strong ale,True
+2,1,28,logistic,masked,Pils/Lager,Amber,False
+2,1,153,logistic,masked,Kriek,Kriek,True
+2,1,146,logistic,masked,Scotch,Amber,False
+2,1,30,logistic,masked,Blond,Blond,True
+2,1,36,logistic,masked,Brown,Strong ale,False
+2,1,8,logistic,masked,Hoppy,Tripel,False
+2,1,31,logistic,masked,Hoppy,Hoppy,True
+2,1,94,logistic,masked,Blond,Hoppy,False
+2,1,131,logistic,masked,Scotch,Brown,False
+2,1,34,logistic,masked,Tripel,Strong ale,False
+2,1,187,logistic,masked,Dubbel,Dubbel,True
+2,1,181,logistic,masked,Christmas,Stout/Porter,False
+2,1,57,logistic,masked,Tripel,Wheat,False
+2,1,143,logistic,masked,Hoppy,Hoppy,True
+2,1,65,logistic,masked,Hoppy,Saison,False
+2,1,198,logistic,masked,Dubbel,Dubbel,True
+2,1,71,logistic,masked,Blond,Tripel,False
+2,1,210,logistic,masked,Amber,Tripel,False
+2,1,189,logistic,masked,Tripel,Tripel,True
+2,1,95,logistic,masked,Christmas,Strong ale,False
+2,1,203,logistic,masked,Brett/cofermented,Tripel,False
+2,1,21,logistic,masked,Lambic,Lambic,True
+2,1,171,logistic,masked,Tripel,Tripel,True
+2,1,103,logistic,masked,Stout/Porter,Scotch,False
+2,1,196,logistic,masked,Strong ale,Strong ale,True
+2,1,4,logistic,masked,Strong ale,Strong ale,True
+2,1,40,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+2,1,247,extra_trees,full,Fruitbeer,Fruitbeer,True
+2,1,124,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,1,155,extra_trees,full,Low/No alcohol,Pils/Lager,False
+2,1,141,extra_trees,full,Low/No alcohol,Pils/Lager,False
+2,1,33,extra_trees,full,Fruitbeer,Fruitbeer,True
+2,1,88,extra_trees,full,Kriek,Kriek,True
+2,1,195,extra_trees,full,Wheat,Blond,False
+2,1,228,extra_trees,full,Tripel,Low/No alcohol,False
+2,1,116,extra_trees,full,Lambic,Lambic,True
+2,1,183,extra_trees,full,Saison,Saison,True
+2,1,158,extra_trees,full,Amber,Amber,True
+2,1,11,extra_trees,full,Amber,Low/No alcohol,False
+2,1,172,extra_trees,full,Wheat,Wheat,True
+2,1,122,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+2,1,194,extra_trees,full,Dubbel,Brown,False
+2,1,7,extra_trees,full,Saison,Wheat,False
+2,1,62,extra_trees,full,Blond,Blond,True
+2,1,26,extra_trees,full,West Flanders ale,West Flanders ale,True
+2,1,151,extra_trees,full,Faro,Lambic,False
+2,1,70,extra_trees,full,Blond,Blond,True
+2,1,176,extra_trees,full,West Flanders ale,Lambic,False
+2,1,167,extra_trees,full,Flanders old brown,West Flanders ale,False
+2,1,59,extra_trees,full,Blond,Brett/cofermented,False
+2,1,135,extra_trees,full,Tripel,Low/No alcohol,False
+2,1,129,extra_trees,full,Brown,Christmas,False
+2,1,42,extra_trees,full,Lambic,Lambic,True
+2,1,186,extra_trees,full,Strong ale,Strong ale,True
+2,1,246,extra_trees,full,Blond,Hoppy,False
+2,1,201,extra_trees,full,Stout/Porter,Stout/Porter,True
+2,1,173,extra_trees,full,Stout/Porter,Stout/Porter,True
+2,1,37,extra_trees,full,Strong ale,Brown,False
+2,1,119,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,1,159,extra_trees,full,Flanders old brown,West Flanders ale,False
+2,1,92,extra_trees,full,Amber,Saison,False
+2,1,205,extra_trees,full,Brut,Brut,True
+2,1,53,extra_trees,full,Brown,Dubbel,False
+2,1,24,extra_trees,full,Kriek,Kriek,True
+2,1,69,extra_trees,full,Tripel,Tripel,True
+2,1,180,extra_trees,full,Christmas,Stout/Porter,False
+2,1,243,extra_trees,full,Wheat,Wheat,True
+2,1,193,extra_trees,full,Blond,Blond,True
+2,1,29,extra_trees,full,Saison,Blond,False
+2,1,16,extra_trees,full,Dubbel,Brown,False
+2,1,115,extra_trees,full,Lambic,Lambic,True
+2,1,27,extra_trees,full,Hoppy,Hoppy,True
+2,1,79,extra_trees,full,Hoppy,Stout/Porter,False
+2,1,152,extra_trees,full,Wheat,Wheat,True
+2,1,125,extra_trees,full,Blond,Blond,True
+2,1,212,extra_trees,full,Stout/Porter,Stout/Porter,True
+2,1,147,extra_trees,full,Tripel,Tripel,True
+2,1,104,extra_trees,full,Strong ale,Brown,False
+2,1,101,extra_trees,full,Blond,Brut,False
+2,1,237,extra_trees,full,Brown,Strong ale,False
+2,1,127,extra_trees,full,Blond,Tripel,False
+2,1,245,extra_trees,full,Tripel,Tripel,True
+2,1,51,extra_trees,full,Strong ale,Strong ale,True
+2,1,28,extra_trees,full,Pils/Lager,Saison,False
+2,1,153,extra_trees,full,Kriek,Kriek,True
+2,1,146,extra_trees,full,Scotch,Scotch,True
+2,1,30,extra_trees,full,Blond,Blond,True
+2,1,36,extra_trees,full,Brown,Dubbel,False
+2,1,8,extra_trees,full,Hoppy,Tripel,False
+2,1,31,extra_trees,full,Hoppy,Hoppy,True
+2,1,94,extra_trees,full,Blond,Blond,True
+2,1,131,extra_trees,full,Scotch,Brown,False
+2,1,34,extra_trees,full,Tripel,Tripel,True
+2,1,187,extra_trees,full,Dubbel,Dubbel,True
+2,1,181,extra_trees,full,Christmas,Stout/Porter,False
+2,1,57,extra_trees,full,Tripel,Wheat,False
+2,1,143,extra_trees,full,Hoppy,Hoppy,True
+2,1,65,extra_trees,full,Hoppy,Hoppy,True
+2,1,198,extra_trees,full,Dubbel,Brown,False
+2,1,71,extra_trees,full,Blond,Tripel,False
+2,1,210,extra_trees,full,Amber,Brown,False
+2,1,189,extra_trees,full,Tripel,Tripel,True
+2,1,95,extra_trees,full,Christmas,Stout/Porter,False
+2,1,203,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+2,1,21,extra_trees,full,Lambic,Lambic,True
+2,1,171,extra_trees,full,Tripel,Tripel,True
+2,1,103,extra_trees,full,Stout/Porter,Scotch,False
+2,1,196,extra_trees,full,Strong ale,Tripel,False
+2,1,4,extra_trees,full,Strong ale,Strong ale,True
+2,1,40,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+2,1,247,extra_trees,masked,Fruitbeer,Fruitbeer,True
+2,1,124,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,1,155,extra_trees,masked,Low/No alcohol,Pils/Lager,False
+2,1,141,extra_trees,masked,Low/No alcohol,Pils/Lager,False
+2,1,33,extra_trees,masked,Fruitbeer,Fruitbeer,True
+2,1,88,extra_trees,masked,Kriek,Kriek,True
+2,1,195,extra_trees,masked,Wheat,Blond,False
+2,1,228,extra_trees,masked,Tripel,Low/No alcohol,False
+2,1,116,extra_trees,masked,Lambic,Lambic,True
+2,1,183,extra_trees,masked,Saison,Saison,True
+2,1,158,extra_trees,masked,Amber,Pils/Lager,False
+2,1,11,extra_trees,masked,Amber,Low/No alcohol,False
+2,1,172,extra_trees,masked,Wheat,Wheat,True
+2,1,122,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+2,1,194,extra_trees,masked,Dubbel,Brown,False
+2,1,7,extra_trees,masked,Saison,Wheat,False
+2,1,62,extra_trees,masked,Blond,Blond,True
+2,1,26,extra_trees,masked,West Flanders ale,West Flanders ale,True
+2,1,151,extra_trees,masked,Faro,Lambic,False
+2,1,70,extra_trees,masked,Blond,Blond,True
+2,1,176,extra_trees,masked,West Flanders ale,West Flanders ale,True
+2,1,167,extra_trees,masked,Flanders old brown,West Flanders ale,False
+2,1,59,extra_trees,masked,Blond,Brett/cofermented,False
+2,1,135,extra_trees,masked,Tripel,Low/No alcohol,False
+2,1,129,extra_trees,masked,Brown,Christmas,False
+2,1,42,extra_trees,masked,Lambic,Lambic,True
+2,1,186,extra_trees,masked,Strong ale,Strong ale,True
+2,1,246,extra_trees,masked,Blond,Tripel,False
+2,1,201,extra_trees,masked,Stout/Porter,Stout/Porter,True
+2,1,173,extra_trees,masked,Stout/Porter,Stout/Porter,True
+2,1,37,extra_trees,masked,Strong ale,Brown,False
+2,1,119,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,1,159,extra_trees,masked,Flanders old brown,West Flanders ale,False
+2,1,92,extra_trees,masked,Amber,Amber,True
+2,1,205,extra_trees,masked,Brut,Brut,True
+2,1,53,extra_trees,masked,Brown,Dubbel,False
+2,1,24,extra_trees,masked,Kriek,Kriek,True
+2,1,69,extra_trees,masked,Tripel,Tripel,True
+2,1,180,extra_trees,masked,Christmas,Stout/Porter,False
+2,1,243,extra_trees,masked,Wheat,Wheat,True
+2,1,193,extra_trees,masked,Blond,Blond,True
+2,1,29,extra_trees,masked,Saison,Blond,False
+2,1,16,extra_trees,masked,Dubbel,Dubbel,True
+2,1,115,extra_trees,masked,Lambic,Fruitbeer,False
+2,1,27,extra_trees,masked,Hoppy,Hoppy,True
+2,1,79,extra_trees,masked,Hoppy,Stout/Porter,False
+2,1,152,extra_trees,masked,Wheat,Wheat,True
+2,1,125,extra_trees,masked,Blond,Blond,True
+2,1,212,extra_trees,masked,Stout/Porter,Stout/Porter,True
+2,1,147,extra_trees,masked,Tripel,Tripel,True
+2,1,104,extra_trees,masked,Strong ale,Brown,False
+2,1,101,extra_trees,masked,Blond,Brut,False
+2,1,237,extra_trees,masked,Brown,Strong ale,False
+2,1,127,extra_trees,masked,Blond,Tripel,False
+2,1,245,extra_trees,masked,Tripel,Tripel,True
+2,1,51,extra_trees,masked,Strong ale,Strong ale,True
+2,1,28,extra_trees,masked,Pils/Lager,Saison,False
+2,1,153,extra_trees,masked,Kriek,Kriek,True
+2,1,146,extra_trees,masked,Scotch,Scotch,True
+2,1,30,extra_trees,masked,Blond,Blond,True
+2,1,36,extra_trees,masked,Brown,Dubbel,False
+2,1,8,extra_trees,masked,Hoppy,Tripel,False
+2,1,31,extra_trees,masked,Hoppy,Hoppy,True
+2,1,94,extra_trees,masked,Blond,Blond,True
+2,1,131,extra_trees,masked,Scotch,Brown,False
+2,1,34,extra_trees,masked,Tripel,Tripel,True
+2,1,187,extra_trees,masked,Dubbel,Dubbel,True
+2,1,181,extra_trees,masked,Christmas,Stout/Porter,False
+2,1,57,extra_trees,masked,Tripel,Wheat,False
+2,1,143,extra_trees,masked,Hoppy,Hoppy,True
+2,1,65,extra_trees,masked,Hoppy,Hoppy,True
+2,1,198,extra_trees,masked,Dubbel,Dubbel,True
+2,1,71,extra_trees,masked,Blond,Blond,True
+2,1,210,extra_trees,masked,Amber,Brown,False
+2,1,189,extra_trees,masked,Tripel,Tripel,True
+2,1,95,extra_trees,masked,Christmas,Stout/Porter,False
+2,1,203,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+2,1,21,extra_trees,masked,Lambic,Lambic,True
+2,1,171,extra_trees,masked,Tripel,Tripel,True
+2,1,103,extra_trees,masked,Stout/Porter,Scotch,False
+2,1,196,extra_trees,masked,Strong ale,Tripel,False
+2,1,4,extra_trees,masked,Strong ale,Strong ale,True
+2,2,86,logistic,full,Low/No alcohol,Low/No alcohol,True
+2,2,83,logistic,full,Low/No alcohol,Low/No alcohol,True
+2,2,207,logistic,full,Fruitbeer,Fruitbeer,True
+2,2,179,logistic,full,Flanders old brown,Kriek,False
+2,2,22,logistic,full,Wheat,Wheat,True
+2,2,218,logistic,full,Pils/Lager,Pils/Lager,True
+2,2,96,logistic,full,Pils/Lager,Blond,False
+2,2,230,logistic,full,Pils/Lager,Pils/Lager,True
+2,2,44,logistic,full,Wheat,Wheat,True
+2,2,142,logistic,full,Wheat,Wheat,True
+2,2,137,logistic,full,Amber,Blond,False
+2,2,211,logistic,full,Lambic,West Flanders ale,False
+2,2,190,logistic,full,Flanders old brown,Flanders old brown,True
+2,2,111,logistic,full,Dubbel,Dubbel,True
+2,2,46,logistic,full,Blond,Blond,True
+2,2,213,logistic,full,Hoppy,Blond,False
+2,2,224,logistic,full,Wheat,Blond,False
+2,2,5,logistic,full,Blond,Christmas,False
+2,2,209,logistic,full,Pils/Lager,Pils/Lager,True
+2,2,56,logistic,full,Saison,Dubbel,False
+2,2,74,logistic,full,Faro,Lambic,False
+2,2,20,logistic,full,Saison,Saison,True
+2,2,169,logistic,full,Hoppy,Hoppy,True
+2,2,100,logistic,full,Dubbel,Dubbel,True
+2,2,232,logistic,full,Kriek,Kriek,True
+2,2,61,logistic,full,Stout/Porter,Stout/Porter,True
+2,2,82,logistic,full,Kriek,Kriek,True
+2,2,241,logistic,full,Kriek,Kriek,True
+2,2,128,logistic,full,Amber,Saison,False
+2,2,244,logistic,full,West Flanders ale,Strong ale,False
+2,2,110,logistic,full,Blond,Blond,True
+2,2,231,logistic,full,Stout/Porter,Stout/Porter,True
+2,2,72,logistic,full,Hoppy,Strong ale,False
+2,2,109,logistic,full,Brown,Strong ale,False
+2,2,87,logistic,full,Stout/Porter,Dubbel,False
+2,2,14,logistic,full,Brett/cofermented,Brett/cofermented,True
+2,2,177,logistic,full,Fruitbeer,Amber,False
+2,2,106,logistic,full,Christmas,Blond,False
+2,2,238,logistic,full,Blond,Blond,True
+2,2,76,logistic,full,Blond,Tripel,False
+2,2,49,logistic,full,Blond,Blond,True
+2,2,39,logistic,full,Hoppy,Hoppy,True
+2,2,150,logistic,full,Brett/cofermented,Hoppy,False
+2,2,23,logistic,full,Tripel,Blond,False
+2,2,226,logistic,full,Strong ale,Strong ale,True
+2,2,149,logistic,full,Blond,Blond,True
+2,2,174,logistic,full,Dubbel,Brown,False
+2,2,118,logistic,full,West Flanders ale,West Flanders ale,True
+2,2,184,logistic,full,Fruitbeer,Fruitbeer,True
+2,2,145,logistic,full,Saison,Blond,False
+2,2,6,logistic,full,Amber,Dubbel,False
+2,2,78,logistic,full,Brown,Brown,True
+2,2,66,logistic,full,Tripel,Tripel,True
+2,2,191,logistic,full,Tripel,Tripel,True
+2,2,168,logistic,full,Scotch,Brown,False
+2,2,162,logistic,full,Lambic,Lambic,True
+2,2,130,logistic,full,Brut,Christmas,False
+2,2,9,logistic,full,Hoppy,Christmas,False
+2,2,75,logistic,full,Lambic,Lambic,True
+2,2,45,logistic,full,Tripel,Tripel,True
+2,2,154,logistic,full,Tripel,Brett/cofermented,False
+2,2,214,logistic,full,Christmas,Christmas,True
+2,2,215,logistic,full,Blond,Blond,True
+2,2,235,logistic,full,Strong ale,Strong ale,True
+2,2,89,logistic,full,Brown,Strong ale,False
+2,2,114,logistic,full,Hoppy,Hoppy,True
+2,2,133,logistic,full,Strong ale,Blond,False
+2,2,182,logistic,full,Stout/Porter,Brown,False
+2,2,17,logistic,full,Tripel,Tripel,True
+2,2,248,logistic,full,Blond,Blond,True
+2,2,91,logistic,full,Strong ale,Strong ale,True
+2,2,68,logistic,full,Tripel,Brett/cofermented,False
+2,2,15,logistic,full,Tripel,Dubbel,False
+2,2,102,logistic,full,Christmas,Strong ale,False
+2,2,67,logistic,full,Stout/Porter,Christmas,False
+2,2,233,logistic,full,Scotch,Hoppy,False
+2,2,63,logistic,full,Amber,Tripel,False
+2,2,25,logistic,full,Brown,Blond,False
+2,2,3,logistic,full,Blond,Blond,True
+2,2,239,logistic,full,Tripel,Blond,False
+2,2,117,logistic,full,Strong ale,Strong ale,True
+2,2,175,logistic,full,Strong ale,Dubbel,False
+2,2,157,logistic,full,Tripel,Brut,False
+2,2,86,logistic,masked,Low/No alcohol,Low/No alcohol,True
+2,2,83,logistic,masked,Low/No alcohol,Low/No alcohol,True
+2,2,207,logistic,masked,Fruitbeer,Fruitbeer,True
+2,2,179,logistic,masked,Flanders old brown,Kriek,False
+2,2,22,logistic,masked,Wheat,Wheat,True
+2,2,218,logistic,masked,Pils/Lager,Pils/Lager,True
+2,2,96,logistic,masked,Pils/Lager,Blond,False
+2,2,230,logistic,masked,Pils/Lager,Pils/Lager,True
+2,2,44,logistic,masked,Wheat,Wheat,True
+2,2,142,logistic,masked,Wheat,Wheat,True
+2,2,137,logistic,masked,Amber,Blond,False
+2,2,211,logistic,masked,Lambic,West Flanders ale,False
+2,2,190,logistic,masked,Flanders old brown,Flanders old brown,True
+2,2,111,logistic,masked,Dubbel,Dubbel,True
+2,2,46,logistic,masked,Blond,Blond,True
+2,2,213,logistic,masked,Hoppy,Blond,False
+2,2,224,logistic,masked,Wheat,Blond,False
+2,2,5,logistic,masked,Blond,Christmas,False
+2,2,209,logistic,masked,Pils/Lager,Pils/Lager,True
+2,2,56,logistic,masked,Saison,Dubbel,False
+2,2,74,logistic,masked,Faro,Lambic,False
+2,2,20,logistic,masked,Saison,Saison,True
+2,2,169,logistic,masked,Hoppy,Hoppy,True
+2,2,100,logistic,masked,Dubbel,Dubbel,True
+2,2,232,logistic,masked,Kriek,Kriek,True
+2,2,61,logistic,masked,Stout/Porter,Stout/Porter,True
+2,2,82,logistic,masked,Kriek,Kriek,True
+2,2,241,logistic,masked,Kriek,Kriek,True
+2,2,128,logistic,masked,Amber,Saison,False
+2,2,244,logistic,masked,West Flanders ale,Strong ale,False
+2,2,110,logistic,masked,Blond,Blond,True
+2,2,231,logistic,masked,Stout/Porter,Stout/Porter,True
+2,2,72,logistic,masked,Hoppy,Strong ale,False
+2,2,109,logistic,masked,Brown,Strong ale,False
+2,2,87,logistic,masked,Stout/Porter,Dubbel,False
+2,2,14,logistic,masked,Brett/cofermented,Brett/cofermented,True
+2,2,177,logistic,masked,Fruitbeer,Fruitbeer,True
+2,2,106,logistic,masked,Christmas,Blond,False
+2,2,238,logistic,masked,Blond,Blond,True
+2,2,76,logistic,masked,Blond,Tripel,False
+2,2,49,logistic,masked,Blond,Blond,True
+2,2,39,logistic,masked,Hoppy,Hoppy,True
+2,2,150,logistic,masked,Brett/cofermented,Hoppy,False
+2,2,23,logistic,masked,Tripel,Blond,False
+2,2,226,logistic,masked,Strong ale,Strong ale,True
+2,2,149,logistic,masked,Blond,Blond,True
+2,2,174,logistic,masked,Dubbel,Brown,False
+2,2,118,logistic,masked,West Flanders ale,West Flanders ale,True
+2,2,184,logistic,masked,Fruitbeer,Fruitbeer,True
+2,2,145,logistic,masked,Saison,Blond,False
+2,2,6,logistic,masked,Amber,Dubbel,False
+2,2,78,logistic,masked,Brown,Brown,True
+2,2,66,logistic,masked,Tripel,Tripel,True
+2,2,191,logistic,masked,Tripel,Tripel,True
+2,2,168,logistic,masked,Scotch,Brown,False
+2,2,162,logistic,masked,Lambic,Lambic,True
+2,2,130,logistic,masked,Brut,Christmas,False
+2,2,9,logistic,masked,Hoppy,Christmas,False
+2,2,75,logistic,masked,Lambic,Lambic,True
+2,2,45,logistic,masked,Tripel,Tripel,True
+2,2,154,logistic,masked,Tripel,Brett/cofermented,False
+2,2,214,logistic,masked,Christmas,Christmas,True
+2,2,215,logistic,masked,Blond,Blond,True
+2,2,235,logistic,masked,Strong ale,Strong ale,True
+2,2,89,logistic,masked,Brown,Strong ale,False
+2,2,114,logistic,masked,Hoppy,Hoppy,True
+2,2,133,logistic,masked,Strong ale,Blond,False
+2,2,182,logistic,masked,Stout/Porter,Brown,False
+2,2,17,logistic,masked,Tripel,Tripel,True
+2,2,248,logistic,masked,Blond,Blond,True
+2,2,91,logistic,masked,Strong ale,Strong ale,True
+2,2,68,logistic,masked,Tripel,Brett/cofermented,False
+2,2,15,logistic,masked,Tripel,Dubbel,False
+2,2,102,logistic,masked,Christmas,Strong ale,False
+2,2,67,logistic,masked,Stout/Porter,Christmas,False
+2,2,233,logistic,masked,Scotch,Hoppy,False
+2,2,63,logistic,masked,Amber,Tripel,False
+2,2,25,logistic,masked,Brown,Blond,False
+2,2,3,logistic,masked,Blond,Blond,True
+2,2,239,logistic,masked,Tripel,Blond,False
+2,2,117,logistic,masked,Strong ale,Strong ale,True
+2,2,175,logistic,masked,Strong ale,Dubbel,False
+2,2,157,logistic,masked,Tripel,Brut,False
+2,2,86,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+2,2,83,extra_trees,full,Low/No alcohol,Low/No alcohol,True
+2,2,207,extra_trees,full,Fruitbeer,Fruitbeer,True
+2,2,179,extra_trees,full,Flanders old brown,Fruitbeer,False
+2,2,22,extra_trees,full,Wheat,Wheat,True
+2,2,218,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,2,96,extra_trees,full,Pils/Lager,Low/No alcohol,False
+2,2,230,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,2,44,extra_trees,full,Wheat,Wheat,True
+2,2,142,extra_trees,full,Wheat,Wheat,True
+2,2,137,extra_trees,full,Amber,Blond,False
+2,2,211,extra_trees,full,Lambic,Faro,False
+2,2,190,extra_trees,full,Flanders old brown,West Flanders ale,False
+2,2,111,extra_trees,full,Dubbel,Brett/cofermented,False
+2,2,46,extra_trees,full,Blond,Blond,True
+2,2,213,extra_trees,full,Hoppy,Blond,False
+2,2,224,extra_trees,full,Wheat,Blond,False
+2,2,5,extra_trees,full,Blond,Brett/cofermented,False
+2,2,209,extra_trees,full,Pils/Lager,Pils/Lager,True
+2,2,56,extra_trees,full,Saison,Blond,False
+2,2,74,extra_trees,full,Faro,Lambic,False
+2,2,20,extra_trees,full,Saison,Saison,True
+2,2,169,extra_trees,full,Hoppy,Hoppy,True
+2,2,100,extra_trees,full,Dubbel,Dubbel,True
+2,2,232,extra_trees,full,Kriek,Kriek,True
+2,2,61,extra_trees,full,Stout/Porter,Stout/Porter,True
+2,2,82,extra_trees,full,Kriek,Kriek,True
+2,2,241,extra_trees,full,Kriek,Kriek,True
+2,2,128,extra_trees,full,Amber,Saison,False
+2,2,244,extra_trees,full,West Flanders ale,West Flanders ale,True
+2,2,110,extra_trees,full,Blond,Blond,True
+2,2,231,extra_trees,full,Stout/Porter,Stout/Porter,True
+2,2,72,extra_trees,full,Hoppy,Tripel,False
+2,2,109,extra_trees,full,Brown,Wheat,False
+2,2,87,extra_trees,full,Stout/Porter,Dubbel,False
+2,2,14,extra_trees,full,Brett/cofermented,Brett/cofermented,True
+2,2,177,extra_trees,full,Fruitbeer,Kriek,False
+2,2,106,extra_trees,full,Christmas,Blond,False
+2,2,238,extra_trees,full,Blond,Blond,True
+2,2,76,extra_trees,full,Blond,Tripel,False
+2,2,49,extra_trees,full,Blond,Blond,True
+2,2,39,extra_trees,full,Hoppy,Hoppy,True
+2,2,150,extra_trees,full,Brett/cofermented,Stout/Porter,False
+2,2,23,extra_trees,full,Tripel,Blond,False
+2,2,226,extra_trees,full,Strong ale,Amber,False
+2,2,149,extra_trees,full,Blond,Blond,True
+2,2,174,extra_trees,full,Dubbel,Brown,False
+2,2,118,extra_trees,full,West Flanders ale,West Flanders ale,True
+2,2,184,extra_trees,full,Fruitbeer,Kriek,False
+2,2,145,extra_trees,full,Saison,Hoppy,False
+2,2,6,extra_trees,full,Amber,Dubbel,False
+2,2,78,extra_trees,full,Brown,Strong ale,False
+2,2,66,extra_trees,full,Tripel,Tripel,True
+2,2,191,extra_trees,full,Tripel,Tripel,True
+2,2,168,extra_trees,full,Scotch,Stout/Porter,False
+2,2,162,extra_trees,full,Lambic,Lambic,True
+2,2,130,extra_trees,full,Brut,Kriek,False
+2,2,9,extra_trees,full,Hoppy,Blond,False
+2,2,75,extra_trees,full,Lambic,Lambic,True
+2,2,45,extra_trees,full,Tripel,Tripel,True
+2,2,154,extra_trees,full,Tripel,Tripel,True
+2,2,214,extra_trees,full,Christmas,Christmas,True
+2,2,215,extra_trees,full,Blond,Blond,True
+2,2,235,extra_trees,full,Strong ale,Strong ale,True
+2,2,89,extra_trees,full,Brown,Christmas,False
+2,2,114,extra_trees,full,Hoppy,Hoppy,True
+2,2,133,extra_trees,full,Strong ale,Strong ale,True
+2,2,182,extra_trees,full,Stout/Porter,Scotch,False
+2,2,17,extra_trees,full,Tripel,Tripel,True
+2,2,248,extra_trees,full,Blond,Blond,True
+2,2,91,extra_trees,full,Strong ale,Strong ale,True
+2,2,68,extra_trees,full,Tripel,Tripel,True
+2,2,15,extra_trees,full,Tripel,Tripel,True
+2,2,102,extra_trees,full,Christmas,Strong ale,False
+2,2,67,extra_trees,full,Stout/Porter,Christmas,False
+2,2,233,extra_trees,full,Scotch,Scotch,True
+2,2,63,extra_trees,full,Amber,Tripel,False
+2,2,25,extra_trees,full,Brown,Dubbel,False
+2,2,3,extra_trees,full,Blond,Blond,True
+2,2,239,extra_trees,full,Tripel,Tripel,True
+2,2,117,extra_trees,full,Strong ale,Stout/Porter,False
+2,2,175,extra_trees,full,Strong ale,Stout/Porter,False
+2,2,157,extra_trees,full,Tripel,Stout/Porter,False
+2,2,86,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+2,2,83,extra_trees,masked,Low/No alcohol,Low/No alcohol,True
+2,2,207,extra_trees,masked,Fruitbeer,Fruitbeer,True
+2,2,179,extra_trees,masked,Flanders old brown,Fruitbeer,False
+2,2,22,extra_trees,masked,Wheat,Wheat,True
+2,2,218,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,2,96,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,2,230,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,2,44,extra_trees,masked,Wheat,Wheat,True
+2,2,142,extra_trees,masked,Wheat,Wheat,True
+2,2,137,extra_trees,masked,Amber,Blond,False
+2,2,211,extra_trees,masked,Lambic,Faro,False
+2,2,190,extra_trees,masked,Flanders old brown,West Flanders ale,False
+2,2,111,extra_trees,masked,Dubbel,Brett/cofermented,False
+2,2,46,extra_trees,masked,Blond,Blond,True
+2,2,213,extra_trees,masked,Hoppy,Blond,False
+2,2,224,extra_trees,masked,Wheat,Wheat,True
+2,2,5,extra_trees,masked,Blond,Brett/cofermented,False
+2,2,209,extra_trees,masked,Pils/Lager,Pils/Lager,True
+2,2,56,extra_trees,masked,Saison,Blond,False
+2,2,74,extra_trees,masked,Faro,Lambic,False
+2,2,20,extra_trees,masked,Saison,Saison,True
+2,2,169,extra_trees,masked,Hoppy,Hoppy,True
+2,2,100,extra_trees,masked,Dubbel,Dubbel,True
+2,2,232,extra_trees,masked,Kriek,Kriek,True
+2,2,61,extra_trees,masked,Stout/Porter,Stout/Porter,True
+2,2,82,extra_trees,masked,Kriek,Kriek,True
+2,2,241,extra_trees,masked,Kriek,Kriek,True
+2,2,128,extra_trees,masked,Amber,Saison,False
+2,2,244,extra_trees,masked,West Flanders ale,West Flanders ale,True
+2,2,110,extra_trees,masked,Blond,Blond,True
+2,2,231,extra_trees,masked,Stout/Porter,Stout/Porter,True
+2,2,72,extra_trees,masked,Hoppy,Tripel,False
+2,2,109,extra_trees,masked,Brown,Amber,False
+2,2,87,extra_trees,masked,Stout/Porter,Dubbel,False
+2,2,14,extra_trees,masked,Brett/cofermented,Brett/cofermented,True
+2,2,177,extra_trees,masked,Fruitbeer,Kriek,False
+2,2,106,extra_trees,masked,Christmas,Blond,False
+2,2,238,extra_trees,masked,Blond,Blond,True
+2,2,76,extra_trees,masked,Blond,Blond,True
+2,2,49,extra_trees,masked,Blond,Blond,True
+2,2,39,extra_trees,masked,Hoppy,Hoppy,True
+2,2,150,extra_trees,masked,Brett/cofermented,Stout/Porter,False
+2,2,23,extra_trees,masked,Tripel,Blond,False
+2,2,226,extra_trees,masked,Strong ale,Amber,False
+2,2,149,extra_trees,masked,Blond,Blond,True
+2,2,174,extra_trees,masked,Dubbel,Brown,False
+2,2,118,extra_trees,masked,West Flanders ale,West Flanders ale,True
+2,2,184,extra_trees,masked,Fruitbeer,Kriek,False
+2,2,145,extra_trees,masked,Saison,Hoppy,False
+2,2,6,extra_trees,masked,Amber,Dubbel,False
+2,2,78,extra_trees,masked,Brown,Strong ale,False
+2,2,66,extra_trees,masked,Tripel,Tripel,True
+2,2,191,extra_trees,masked,Tripel,Tripel,True
+2,2,168,extra_trees,masked,Scotch,Stout/Porter,False
+2,2,162,extra_trees,masked,Lambic,Lambic,True
+2,2,130,extra_trees,masked,Brut,Kriek,False
+2,2,9,extra_trees,masked,Hoppy,Blond,False
+2,2,75,extra_trees,masked,Lambic,Lambic,True
+2,2,45,extra_trees,masked,Tripel,Tripel,True
+2,2,154,extra_trees,masked,Tripel,Tripel,True
+2,2,214,extra_trees,masked,Christmas,Christmas,True
+2,2,215,extra_trees,masked,Blond,Blond,True
+2,2,235,extra_trees,masked,Strong ale,Strong ale,True
+2,2,89,extra_trees,masked,Brown,Strong ale,False
+2,2,114,extra_trees,masked,Hoppy,Hoppy,True
+2,2,133,extra_trees,masked,Strong ale,Strong ale,True
+2,2,182,extra_trees,masked,Stout/Porter,Scotch,False
+2,2,17,extra_trees,masked,Tripel,Tripel,True
+2,2,248,extra_trees,masked,Blond,Blond,True
+2,2,91,extra_trees,masked,Strong ale,Strong ale,True
+2,2,68,extra_trees,masked,Tripel,Blond,False
+2,2,15,extra_trees,masked,Tripel,Tripel,True
+2,2,102,extra_trees,masked,Christmas,Strong ale,False
+2,2,67,extra_trees,masked,Stout/Porter,Christmas,False
+2,2,233,extra_trees,masked,Scotch,Scotch,True
+2,2,63,extra_trees,masked,Amber,Tripel,False
+2,2,25,extra_trees,masked,Brown,Dubbel,False
+2,2,3,extra_trees,masked,Blond,Blond,True
+2,2,239,extra_trees,masked,Tripel,Tripel,True
+2,2,117,extra_trees,masked,Strong ale,Stout/Porter,False
+2,2,175,extra_trees,masked,Strong ale,Stout/Porter,False
+2,2,157,extra_trees,masked,Tripel,Stout/Porter,False
