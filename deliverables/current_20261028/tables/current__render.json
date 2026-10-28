@@ -7,7 +7,7 @@
   "actual_after_measured": false,
   "generated_source": "outputs/q3_copula_v3_20261028",
   "generated_sha256": "826b5f61662203615567d9b8094e8d55969961448d783d09fba2ef5c2552e131",
-  "q1_model_sha256": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+  "q1_model_sha256": "82cf74966320e82d3a72a6585dcaa3c2c573a112c9c7f5e5e5fcae2fe80436ad",
   "q3_model_sha256": "d8244e50d5566c50341b6d7d5b3af7ef9bc6b7f53143957f97da244358759634",
   "q1_fullfit_rows": 13000,
   "q1_fullfit_source": "C:\\Users\\wb198\\Desktop\\2026年第七届MathorCup数学应用挑战赛—大数据竞赛初赛赛题\\2026年MathorCup大数据挑战赛-赛道A初赛\\附件",

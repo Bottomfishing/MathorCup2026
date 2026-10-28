@@ -1,0 +1,15 @@
+rule,passed,kind,version
+marginal_w1,True,substantive,v3
+energy,True,substantive,v3
+exact_training_copy_rate,True,substantive,v3
+variance_lower,True,substantive,v3
+variance_upper,True,substantive,v3
+rank_correlation_rmse,True,substantive,v3
+model_median_w1,True,substantive,v3
+Kriek_energy,True,substantive,v3
+Kriek_coverage,True,substantive,v3
+Lambic_energy,True,substantive,v3
+Lambic_coverage,True,substantive,v3
+Tripel_energy,True,substantive,v3
+Tripel_coverage,True,substantive,v3
+gate_all_passed,True,aggregate,v3

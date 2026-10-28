@@ -7,7 +7,7 @@ import pandas as pd
 from beer_audit.audit import sha256, write_json, save_csv
 from beer_audit.checks import numeric_frame
 from .panel_data import load_inputs
-from .q1_decision import observed_high_grade_rates
+from .q1_decision import observed_high_grade_rates, training_threshold
 from .raw_panel import fit_shared, median_grades
 from .inference import official_scores
 from .selective_tail import SelectiveTailPoint
@@ -24,19 +24,79 @@ def read_json(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
-def q1_decision_bundle(panel_median, targets, parents):
-    """Frozen official Q1 decision parameters stored inside the runtime bundle."""
+def q1_decision_bundle(panel_median, targets, parents, p_ge5_train=None, p6_train=None):
+    """Frozen official Q1 decision parameters stored inside the runtime bundle.
+
+    The official rule (T1) is a per-sample fixed-threshold decision: grade 6 when
+    ``p6 >= tau_6[target]``, grade 5 when ``p_ge5 >= tau_ge5[target]`` (and not 6),
+    otherwise ``min(legacy_integer_median, 4)``.  The thresholds are estimated once
+    here from historical inner-OOF probabilities of the fixed training panel and
+    the panel medians, so prediction never depends on the request batch size,
+    probability rank or row position.  The old per-fold top-k parameters are kept
+    under ``legacy_topk`` for reproducing historical tables only.
+
+    Backward compatibility: when ``p_ge5_train``/``p6_train`` are omitted the
+    bundle keeps the pre-T1 per-fold top-k rule (``runtime_decision``), which is
+    what historical callers and the pre-T1 bundle tests exercise.  Passing only
+    one of the two probability matrices is an error.
+    """
+    targets = list(targets)
+    if (p_ge5_train is None) != (p6_train is None):
+        raise ValueError('p_ge5_train and p6_train must be given together')
+    if p_ge5_train is None:
+        rate_ge5, rate_6 = observed_high_grade_rates(panel_median)
+        return dict(rule='non_forced_cumulative_probability_topk_with_parent_child_cap',
+                    forced=False, middle_cap=4,
+                    rate_source='observed_panel_weighted_median_high_grade_fractions_on_fixed_full_training_panel',
+                    rate_ge5=[float(value) for value in rate_ge5],
+                    rate_6=[float(value) for value in rate_6],
+                    targets=targets,
+                    parent_child_pairs=[[int(parent), int(child)] for parent, child in parents],
+                    implementation='beer_models.q1_decision.runtime_decision',
+                    implementation_sha256=sha256(ROOT/'src/beer_models/q1_decision.py'),
+                    official_grade_column='estimated_grade_0_6',
+                    legacy_grade_column='grade_legacy_integer_median')
+    order = np.tile(np.asarray(targets, dtype=object), len(panel_median))
+    details5 = training_threshold(p_ge5_train.ravel(), np.rint(panel_median).ravel(), order, 5)
+    details6 = training_threshold(p6_train.ravel(), np.rint(panel_median).ravel(), order, 6)
+    if [str(key) for key in details5['keys']] != [str(target) for target in targets]:
+        raise ValueError('threshold target order does not match the bundle targets')
     rate_ge5, rate_6 = observed_high_grade_rates(panel_median)
-    return dict(rule='non_forced_cumulative_probability_topk_with_parent_child_cap',
+    fallback5 = [target for target, tau in zip(targets, details5['tau']) if not np.isfinite(tau)]
+    fallback6 = [target for target, tau in zip(targets, details6['tau']) if not np.isfinite(tau)]
+    return dict(rule='fixed_threshold_quantile',
         forced=False, middle_cap=4,
         rate_source='observed_panel_weighted_median_high_grade_fractions_on_fixed_full_training_panel',
+        tau_source='historical_inner_OOF_extra_trees_probabilities_on_fixed_full_training_panel',
+        tau_ge5=[float(value) for value in details5['tau']],
+        tau_6=[float(value) for value in details6['tau']],
         rate_ge5=[float(value) for value in rate_ge5],
-        rate_6=[float(value) for value in rate_6], targets=list(targets),
+        rate_6=[float(value) for value in rate_6],
+        threshold_rate_ge5=[float(value) for value in details5['rate']],
+        threshold_rate_6=[float(value) for value in details6['rate']],
+        threshold_support=int(details5['support'][0]),
+        threshold_k_ge5=[int(value) for value in details5['k']],
+        threshold_k_6=[int(value) for value in details6['k']],
+        fallback_no_ge5=fallback5, fallback_no_6=fallback6,
+        targets=targets,
         parent_child_pairs=[[int(parent), int(child)] for parent, child in parents],
-        implementation='beer_models.q1_decision.runtime_decision',
+        implementation='beer_models.q1_decision.runtime_threshold_decision',
         implementation_sha256=sha256(ROOT/'src/beer_models/q1_decision.py'),
         official_grade_column='estimated_grade_0_6',
-        legacy_grade_column='grade_legacy_integer_median')
+        legacy_grade_column='grade_legacy_integer_median',
+        legacy_topk=dict(rule='non_forced_cumulative_probability_topk_with_parent_child_cap',
+            rate_ge5=[float(value) for value in rate_ge5],
+            rate_6=[float(value) for value in rate_6],
+            implementation='beer_models.q1_decision.runtime_decision',
+            status='historical_baseline_not_official'))
+
+
+def _inner_oof_probabilities(inner, beers, targets):
+    """Return ``(p_ge5, p6)`` training-panel matrices from the inner-OOF file."""
+    part = inner[inner['source'] == 'extra_trees']
+    def matrix(column):
+        return part.pivot(index='beer', columns='target', values=column).loc[beers, targets].to_numpy(float)
+    return matrix('p5') + matrix('p6'), matrix('p6')
 
 
 def train(source, raw, output):
@@ -52,9 +112,10 @@ def train(source, raw, output):
     print('Training fixed official Q1 ET + retained ordinal risk source', flush=True)
     shared = fit_shared(d, positions, bp, bp['model_seed']+999)
     panel_median = median_grades(d['distribution'])
-    decision = q1_decision_bundle(panel_median, d['targets'], d['parents'])
-    ordinal = RawOrdinalModel(rp).fit(d['x'], d['distribution'])
     inner = pd.read_csv(calibration, float_precision='round_trip')
+    p_ge5_train, p6_train = _inner_oof_probabilities(inner, d['ids'].beer, d['targets'])
+    decision = q1_decision_bundle(panel_median, d['targets'], d['parents'], p_ge5_train, p6_train)
+    ordinal = RawOrdinalModel(rp).fit(d['x'], d['distribution'])
     probabilities = {name: np.stack([part.pivot(index='beer', columns='target', values=f'p{k}')
         .loc[d['ids'].beer, d['targets']].to_numpy() for k in range(7)], axis=2)
         for name, part in inner.groupby('source')}
@@ -66,7 +127,7 @@ def train(source, raw, output):
         raw_panel_model=SelectiveTailPoint(shared, d['distribution'].mean((0, 1)), None, d['parents']),
         risk_panel_model=risk, risk_status=status, features=d['features'], targets=d['targets'],
         primary=d['primary'], scorecard_scope=d['scope'].to_dict('records'), protocol=bp, r2b_protocol=rp,
-        point_semantics='integer_conditional_median_then_non_forced_high_grade_topk_with_parent_cap',
+        point_semantics='integer_conditional_median_then_fixed_threshold_high_grade_with_parent_cap',
         score_status='raw_panel_balanced_median_prediction', grade_method=decision['rule'],
         q1_decision=decision,
         raw_source_sha256=d['manifest']['sha256'], qualified_on_historical_grouped_folds=True,

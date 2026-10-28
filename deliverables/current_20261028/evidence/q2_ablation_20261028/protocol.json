@@ -1,0 +1,95 @@
+{
+  "protocol_id": "q2_ablation_20261028",
+  "baseline_commit": "9fb9e57",
+  "purpose": "Direct ablation of the 2.csv co-expression neighbourhood term in the delivered Q2 compound-factor ranking: weight 0.5 (delivered) versus weight 0.0 (plain ridge).",
+  "question": "Does adding the graph-neighbourhood term produce a reliable improvement in bootstrap stability and/or held-out predictive utility, compared with a plain ridge ranking built from exactly the same samples and pipeline?",
+  "design": {
+    "identical_pipeline": true,
+    "samples": "250 beers, 50 panel targets from 4.csv, 219 candidate compounds (231 - 12 excluded)",
+    "preprocessing": "per-column median imputation -> arcsinh -> column standardisation; Y centred",
+    "model": "ridge, alpha=1000",
+    "variants": {
+      "graph": 0.5,
+      "no_graph": 0.0
+    },
+    "bootstrap": {
+      "repeats": 200,
+      "grouping": "beer (row resampling)",
+      "seed": 20261027
+    },
+    "graph_source": "2.csv (recomputed Spearman of 1.csv), threshold |rho| >= 0.5",
+    "descriptive_table_graph_source": "full-sample 2.csv graph, same as the delivered table",
+    "predictive_check": {
+      "folds": 5,
+      "grouping": "beer",
+      "fold_seed": 20261028,
+      "feature_selection": "top-3 per target inside the training fold only",
+      "graph_rebuilt_per_fold": true,
+      "reader_model": "ridge on the three selected standardised features, alpha=1.0",
+      "target": "held-out 4.csv standardised sensory responses"
+    }
+  },
+  "pre_registered_criteria": {
+    "predictive_mae": {
+      "gain": "MAE(no_graph) - MAE(graph), averaged over the 50 targets",
+      "threshold": 0.01,
+      "significance": "two-sided Wilcoxon signed-rank p < 0.05",
+      "breadth": "at least 60% of targets not worse for the graph variant"
+    },
+    "predictive_spearman": {
+      "gain": "rho(graph) - rho(no_graph), averaged over the 50 targets",
+      "threshold": 0.02,
+      "significance": "two-sided Wilcoxon signed-rank p < 0.05",
+      "breadth": "at least 60% of targets not worse for the graph variant"
+    },
+    "stability": {
+      "jaccard_delta": 0.02,
+      "frequency_delta": 0.05,
+      "note": "either margin counts as a stability improvement"
+    },
+    "verdict_mapping": {
+      "reliable_gain": "predictive reliable AND stability reliable",
+      "partial_gain": "exactly one of the two axes reliable",
+      "no_reliable_gain": "neither axis reliable"
+    }
+  },
+  "interpretation_limits": [
+    "Jaccard measures similarity only; it does not establish which ranking is correct.",
+    "Predictive utility is not causal evidence.",
+    "The delivered table uses the full-sample 2.csv graph; the predictive check rebuilds the graph inside each training fold so held-out beers never inform the graph.",
+    "The existing threshold and resolution sensitivity outputs are reused as-is and are not re-run here.",
+    "No parameter is tuned to favour the graph variant; 'no_reliable_gain' is an acceptable outcome."
+  ],
+  "reproduction": "python scripts/q2_ablation_20261028.py",
+  "inputs": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "6.csv": "a55004fb0390299a5c8089f0c37d3bfc006e7049963c84d7d9652affabe614ae"
+  },
+  "parameters": {
+    "ridge_alpha": 1000.0,
+    "graph_threshold": 0.5,
+    "neighbour_weight": 0.5,
+    "ablation_weight": 0.0,
+    "bootstrap_repeats": 200,
+    "bootstrap_seed": 20261027,
+    "excluded_features": [
+      "pH",
+      "color.EBC.",
+      "bitterness",
+      "GFS",
+      "unfermentables",
+      "kcalperc",
+      "esters_sum",
+      "aroma_hops_sum",
+      "acids_sum",
+      "sulfur_sum",
+      "protein.g.L.",
+      "betaglucan.mg.L."
+    ],
+    "predictive_folds": 5,
+    "predictive_seed": 20261028,
+    "small_ridge_alpha": 1.0
+  }
+}

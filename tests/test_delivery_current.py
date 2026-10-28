@@ -19,19 +19,27 @@ class DeliveryCurrentTests(unittest.TestCase):
 
     def test_conclusions_read_back_formal_metrics(self):
         table = d.conclusions().set_index('claim')
-        metrics = pd.read_csv(d.Q1D/'q1__metrics_summary.csv').set_index('method')
-        self.assertAlmostEqual(float(table.loc['决策层 top-k：面板中位 MAE', 'value']),
-                               float(metrics.loc['q1_topk_nonforced_parent_capped',
-                                                'panel_median_mae']), places=9)
+        metrics = pd.read_csv(d.Q1D/'q1__metrics_summary.csv').set_index(['scope', 'method'])
+        self.assertAlmostEqual(
+            float(table.loc['正式决策（逐样本固定阈值）：面板中位 MAE', 'value']),
+            float(metrics.loc[('beer_level', 'q1_fixed_threshold_quantile'),
+                              'panel_median_mae']), places=9)
         self.assertAlmostEqual(float(table.loc['ET 整数中位：面板中位 MAE', 'value']),
-                               float(metrics.loc['q1_et_integer_median', 'panel_median_mae']), places=9)
-        self.assertEqual(int(table.loc['预测≥5 分：格数/精确/召回', 'value']), 194)
-        self.assertEqual(int(table.loc['预测恰好 5 分：格数/精确/召回', 'value']), 180)
-        self.assertEqual(int(table.loc['预测恰好 6 分：格数/精确/召回', 'value']), 14)
+                               float(metrics.loc[('beer_level', 'q1_integer_median_legacy'),
+                                                 'panel_median_mae']), places=9)
+        self.assertEqual(int(table.loc['预测≥5 分：格数/精确/召回', 'value']), 380)
+        self.assertEqual(int(table.loc['预测恰好 5 分：格数/精确/召回', 'value']), 321)
+        self.assertEqual(int(table.loc['预测恰好 6 分：格数/精确/召回', 'value']), 59)
+        summary = read_json(d.Q1D/'summary.json')
+        invar = summary['batch_invariance']
+        self.assertTrue(invar)
+        self.assertTrue(all(c['pass_ok'] and c['mismatch'] == 0 for c in invar.values()))
+        self.assertIn('%d/%d 场景一致' % (len(invar), len(invar)),
+                      str(table.loc['批次无关性', 'value']))
         calibers = pd.read_csv(d.Q1D/'q1__metric_calibers.csv')
         beer = calibers[(calibers.scope == 'beer_level')
-                        & (calibers.prediction_set == 'q1_topk_nonforced_parent_capped')]
-        self.assertEqual(int(beer[beer.caliber == 'ge5'].iloc[0].true_positive), 51)
+                        & (calibers.prediction_set == 'q1_fixed_threshold_quantile')]
+        self.assertEqual(int(beer[beer.caliber == 'ge5'].iloc[0].true_positive), 36)
 
     def test_q2_rows_match_summary(self):
         self.assertEqual(len(pd.read_csv(d.Q2/'q2__top3_all50_150.csv')), 150)

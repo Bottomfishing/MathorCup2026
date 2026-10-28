@@ -19,6 +19,8 @@ Outputs (``--output``, default ``outputs/q3_migration_20261028``)
     s2c_migration_after_input_33.csv     33 rows in the official Q1 input layout
                                          (generated_id, style, method + 224 features, official order)
     s2c_sensory_before_after_52.csv      66 spectra x 52 targets from the official Q1 entry
+    s2c_det_grade_changes.csv     changed grade cells versus a --previous backup run (task B)
+    s2c_det_grade_change_matrix.csv per case/role up/down/unchanged grade counts (task B)
     s2c_evidence_by_case.csv      33 rows, per-case chemical/style/defect evidence and claim level
     verification.json              PASS/FAIL record plus per-case metrics
     summary.json                   machine-readable counts
@@ -72,8 +74,14 @@ from beer_models.q3_migration import (  # noqa: E402
 
 DEFAULT_RAW = ROOT / "data" / "reference" / "zenodo23624915" / "Raw sensory data anonymized.csv"
 DEFAULT_Q1_MODEL = ROOT / "outputs" / "current_models" / "q1.joblib"
+DEFAULT_PREVIOUS = ROOT / "outputs" / "q3_migration_20261028_pre_det"
 OFFICIAL_PROFILES = ROOT / "outputs" / "task4_raw_q3_20261026" / "generated_profiles.csv"
 SENSORY_TARGETS = 52
+# task B: after the Q1 decision rule changed, re-grade the 66 spectra and audit the direction
+# of every changed cell against the pre-det backup run.  The five listed off-flavour targets
+# must never get a worse grade; more than DET_MAX_CHANGED_CELLS changes means "stop and report".
+DET_DEFECT_TARGETS = ("dms", "diacetyl", "X4vg", "t2n", "stale_hops")
+DET_MAX_CHANGED_CELLS = 100
 
 
 def sha256_file(path: Path) -> str:
@@ -101,6 +109,9 @@ def parse_args(argv=None):
     parser.add_argument("--q1-model", type=Path, default=DEFAULT_Q1_MODEL,
                         help="official Q1 bundle used for the 52-target sensory profiles "
                              "(same entry as scripts/current.py predict --task q1)")
+    parser.add_argument("--previous", type=Path, default=DEFAULT_PREVIOUS,
+                        help="pre-det backup run used for the grade-direction audit "
+                             "(s2c_det_grade_changes.csv); skipped when the directory is absent")
     return parser.parse_args(argv)
 
 
@@ -239,6 +250,157 @@ def replay_sensory_table(data, output: Path, model_path: Path, workdir: Path,
         "replay_input_sha256": sha256_file(input_csv),
         "replayed_at": _now_iso(),
     }
+
+
+def compare_pre_det(previous: Path, sensory: pd.DataFrame, results: pd.DataFrame,
+                    evidence: pd.DataFrame, model_sha256: str):
+    """Audit the direction of every grade change versus a pre-det backup run.
+
+    Returns ``(report, grade_changes, grade_matrix)``.  ``report`` is stored in
+    ``summary.json`` under ``det_rerun``; the two frames become the delivered CSV tables.
+    A missing backup directory is not an error (fresh checkout): the comparison is skipped and
+    only recorded as unavailable.
+    """
+    change_columns = ["case_id", "source_beer", "target_style", "role", "target_52",
+                      "grade_old", "grade_new", "delta", "direction", "defect_target"]
+    matrix_columns = ["case_id", "source_beer", "target_style", "role", "cells", "up", "down",
+                      "unchanged", "defect_up", "defect_down", "defect_worse"]
+    if not previous.is_dir():
+        return {"available": False, "previous_directory": str(previous)}, (
+            pd.DataFrame(columns=change_columns)), pd.DataFrame(columns=matrix_columns)
+
+    old_sensory = pd.read_csv(previous / "s2c_sensory_before_after_52.csv")
+    old_evidence = pd.read_csv(previous / "s2c_evidence_by_case.csv")
+    old_results = pd.read_csv(previous / "s2c_migration_results.csv")
+    old_summary_path = previous / "summary.json"
+    old_summary = (json.loads(old_summary_path.read_text(encoding="utf-8"))
+                   if old_summary_path.is_file() else {})
+
+    keys = ["case_id", "role", "target_52"]
+    merged = (old_sensory[keys + ["grade_raw"]].rename(columns={"grade_raw": "grade_old"})
+              .merge(sensory[keys + ["grade_raw"]].rename(columns={"grade_raw": "grade_new"}),
+                     on=keys, how="outer", validate="one_to_one"))
+    merged["grade_old"] = pd.to_numeric(merged["grade_old"], errors="coerce")
+    merged["grade_new"] = pd.to_numeric(merged["grade_new"], errors="coerce")
+    both = merged["grade_old"].notna() & merged["grade_new"].notna()
+    merged["delta"] = np.where(both, merged["grade_new"] - merged["grade_old"], np.nan)
+    merged["direction"] = np.select(
+        [both & (np.abs(merged["delta"]) <= 1e-12), both & (merged["delta"] > 1e-12),
+         both & (merged["delta"] < -1e-12)],
+        ["unchanged", "up", "down"], default="unavailable")
+    merged["defect_target"] = merged["target_52"].isin(DET_DEFECT_TARGETS)
+    parsed = merged["case_id"].str.extract(r"^S(\d{3})_TO_(Tripel|Kriek|Lambic)$")
+    merged["source_beer"] = parsed[0].astype("Int64")
+    merged["target_style"] = parsed[1]
+
+    changed = merged.loc[merged["direction"].isin(["up", "down"])].copy()
+    changed["source_beer"] = changed["source_beer"].astype(int)
+    grade_changes = changed[change_columns].sort_values(
+        ["case_id", "role", "target_52"], kind="mergesort").reset_index(drop=True)
+
+    defect_worse = changed[(changed["direction"] == "up") & changed["defect_target"]]
+
+    def _matrix(frame):
+        frame = frame.copy()
+        frame["up"] = (frame["direction"] == "up").astype(int)
+        frame["down"] = (frame["direction"] == "down").astype(int)
+        frame["same"] = (frame["direction"] == "unchanged").astype(int)
+        frame["defect_up"] = ((frame["direction"] == "up") & frame["defect_target"]).astype(int)
+        frame["defect_down"] = ((frame["direction"] == "down") & frame["defect_target"]).astype(int)
+        grouped = frame.groupby(["case_id", "source_beer", "target_style", "role"],
+                                dropna=False).agg(
+            cells=("direction", "size"), up=("up", "sum"), down=("down", "sum"),
+            unchanged=("same", "sum"), defect_up=("defect_up", "sum"),
+            defect_down=("defect_down", "sum")).reset_index()
+        grouped["defect_worse"] = grouped["defect_up"]
+        return grouped[matrix_columns].sort_values(
+            ["case_id", "role"], kind="mergesort").reset_index(drop=True)
+
+    grade_matrix = _matrix(merged)
+
+    def _criteria(frame):
+        return {f"{criterion}_{scenario}": int(frame[f"{criterion}_{scenario}"].sum())
+                for scenario in THRESHOLD_SCENARIOS for criterion in ("A", "B", "C")}
+
+    criteria_old, criteria_new = _criteria(old_results), _criteria(results)
+
+    def _value_counts(frame, column):
+        counts = frame[column].astype(str).value_counts().sort_index()
+        return {str(key): int(value) for key, value in counts.items()}
+
+    status_columns = [f"defect_status_{name}" for name in
+                      ("DMS", "Diacetyl", "4VG", "t2n", "Stale_hops")]
+    shared_evidence = ["case_id", "claim_level", "style_nearest_centroid", *status_columns]
+    aligned = (old_evidence[shared_evidence].merge(
+        evidence[shared_evidence], on="case_id", how="outer", suffixes=("_old", "_new"),
+        validate="one_to_one"))
+    claim_changed = sorted(aligned.loc[
+        aligned["claim_level_old"] != aligned["claim_level_new"], "case_id"].astype(str).tolist())
+    style_changed = sorted(aligned.loc[
+        aligned["style_nearest_centroid_old"] != aligned["style_nearest_centroid_new"],
+        "case_id"].astype(str).tolist())
+    defect_status_changed = []
+    for _, row in aligned.iterrows():
+        if any(row[f"{column}_old"] != row[f"{column}_new"] for column in status_columns):
+            defect_status_changed.append(str(row["case_id"]))
+
+    def _role_counts(role):
+        subset = merged.loc[merged["role"] == role]
+        return {"up": int((subset["direction"] == "up").sum()),
+                "down": int((subset["direction"] == "down").sum()),
+                "unchanged": int((subset["direction"] == "unchanged").sum())}
+
+    defect_counts = {}
+    for target in DET_DEFECT_TARGETS:
+        subset = merged.loc[merged["target_52"] == target]
+        defect_counts[target] = {"up": int((subset["direction"] == "up").sum()),
+                                 "down": int((subset["direction"] == "down").sum()),
+                                 "unchanged": int((subset["direction"] == "unchanged").sum())}
+
+    report = {
+        "available": True,
+        "previous_directory": previous.name,
+        "previous_model_sha256": old_summary.get("sensory_pipeline", {}).get("q1_model_sha256"),
+        "current_model_sha256": model_sha256,
+        "model_sha_changed": (old_summary.get("sensory_pipeline", {}).get("q1_model_sha256")
+                              != model_sha256),
+        "cells_total": int(len(merged)),
+        "cells_compared": int(both.sum()),
+        "cells_unavailable_both": int((~both).sum()),
+        "changed_cells": int(len(changed)),
+        "changed_up": int((changed["direction"] == "up").sum()),
+        "changed_down": int((changed["direction"] == "down").sum()),
+        "unchanged_cells": int((merged["direction"] == "unchanged").sum()),
+        "changed_by_role": {role: _role_counts(role) for role in ("before", "after")},
+        "changed_by_target": {str(key): int(value) for key, value in
+                              changed["target_52"].value_counts().sort_index().items()},
+        "defect_target_counts": defect_counts,
+        "defect_worse_count": int(len(defect_worse)),
+        "defect_worse_max_delta": (float(defect_worse["delta"].max())
+                                   if len(defect_worse) else 0.0),
+        "defect_worse_cells": defect_worse[
+            ["case_id", "role", "target_52", "grade_old", "grade_new", "delta"]].to_dict("records"),
+        "criteria_old": criteria_old,
+        "criteria_new": criteria_new,
+        "criteria_unchanged": criteria_old == criteria_new,
+        "claim_level_counts_old": _value_counts(old_evidence, "claim_level"),
+        "claim_level_counts_new": _value_counts(evidence, "claim_level"),
+        "claim_level_changed_cases": claim_changed,
+        "style_nearest_centroid_counts_old": _value_counts(old_evidence, "style_nearest_centroid"),
+        "style_nearest_centroid_counts_new": _value_counts(evidence, "style_nearest_centroid"),
+        "style_nearest_centroid_changed_cases": style_changed,
+        "defect_status_counts_old": {name: int((old_evidence[f"defect_status_{name}"]
+                                               .astype(str) == "improved").sum())
+                                     for name in ("DMS", "Diacetyl", "4VG", "t2n", "Stale_hops")},
+        "defect_status_counts_new": {name: int((evidence[f"defect_status_{name}"]
+                                                .astype(str) == "improved").sum())
+                                     for name in ("DMS", "Diacetyl", "4VG", "t2n", "Stale_hops")},
+        "defect_status_changed_cases": sorted(defect_status_changed),
+        "grade_change_limit": DET_MAX_CHANGED_CELLS,
+        "grade_change_within_limit": bool(len(changed) <= DET_MAX_CHANGED_CELLS),
+        "compared_at": _now_iso(),
+    }
+    return report, grade_changes, grade_matrix
 
 
 def write_json(path: Path, payload) -> None:
@@ -397,6 +559,24 @@ def main(argv=None):
              {"spectra_long": spectra["long"], "spectra_wide": spectra["wide"],
               "after_input": spectra["after_input"], "sensory": sensory,
               "evidence": evidence}.items()})
+
+    # task B: audit the direction of every grade change versus the pre-det backup run
+    det_rerun, det_grade_changes, det_grade_matrix = compare_pre_det(
+        Path(args.previous).resolve(), sensory, results, evidence,
+        sha256_file(q1_model))
+    if det_rerun.get("available"):
+        det_grade_changes.to_csv(output / "s2c_det_grade_changes.csv", index=False,
+                                 encoding="utf-8-sig")
+        det_grade_matrix.to_csv(output / "s2c_det_grade_change_matrix.csv", index=False,
+                                encoding="utf-8-sig")
+        print("det rerun: model_changed=%s changed=%d up=%d down=%d defect_worse=%d compared=%d/%d"
+              % (det_rerun["model_sha_changed"], det_rerun["changed_cells"],
+                 det_rerun["changed_up"], det_rerun["changed_down"],
+                 det_rerun["defect_worse_count"], det_rerun["cells_compared"],
+                 det_rerun["cells_total"]))
+    else:
+        print("det rerun: previous directory %s absent, comparison skipped"
+              % det_rerun["previous_directory"])
 
     checks = []
 
@@ -597,6 +777,40 @@ def main(argv=None):
     check("sensory_decision_layer_grade_column", "grade_legacy_integer_median" in sensory.columns,
           None, passed="grade_legacy_integer_median" in sensory.columns,
           note="official grade is the decision-layer column; legacy median kept for traceability")
+    check("sensory_pipeline_sha_matches_model_file",
+          protocol["sensory_pipeline"]["q1_model_sha256"], sha256_file(q1_model))
+
+    # task B: the pre-det run (previous Q1 bundle) must be archived, and the new run must not
+    # worsen any of the five listed off-flavour grades nor move the chemical/style evidence.
+    check("det_rerun_previous_directory", det_rerun.get("previous_directory"), None,
+          passed=bool(det_rerun.get("available")),
+          note="backup of the pre-det artifacts (same 13 files) lives next to the deliverable "
+               "directory under outputs/q3_migration_20261028_pre_det")
+    if det_rerun.get("available"):
+        check("det_rerun_model_sha_changed", det_rerun["current_model_sha256"], None,
+              passed=det_rerun["model_sha_changed"],
+              note="previous q1.joblib %s -> current %s"
+                   % (str(det_rerun["previous_model_sha256"])[:12],
+                      det_rerun["current_model_sha256"][:12]))
+        check("det_rerun_cells_compared", det_rerun["cells_compared"],
+              SENSORY_TARGETS * 66 - 66 * 2,
+              note="3432 cells minus the 132 unlabelled card-target cells")
+        check("det_rerun_defect_worse_count", det_rerun["defect_worse_count"], 0,
+              note="grades on dms/diacetyl/X4vg/t2n/stale_hops must never go up")
+        check("det_rerun_changed_cells_within_limit", det_rerun["changed_cells"], None,
+              passed=det_rerun["grade_change_within_limit"],
+              note="limit %d changed cells; above that the task says stop and report"
+                   % DET_MAX_CHANGED_CELLS)
+        check("det_rerun_criteria_unchanged", det_rerun["criteria_unchanged"], True,
+              note="chemical A/B/C counts come from the migration math, not from Q1")
+        check("det_rerun_claim_levels_unchanged", det_rerun["claim_level_changed_cases"], [])
+        check("det_rerun_style_counts_unchanged",
+              det_rerun["style_nearest_centroid_changed_cases"], [])
+        check("det_rerun_defect_status_unchanged",
+              det_rerun["defect_status_changed_cases"], [])
+        check("det_rerun_grade_changes_rows", int(len(det_grade_changes)),
+              det_rerun["changed_cells"])
+        check("det_rerun_grade_matrix_rows", int(len(det_grade_matrix)), 66)
 
     cases = []
     evidence_index = evidence.set_index("case_id")
@@ -663,6 +877,7 @@ def main(argv=None):
         "sensory_missing_grade_raw": int(sensory["grade_raw"].isna().sum()),
         "sensory_pipeline": protocol["sensory_pipeline"],
         "sensory_replay": sensory_replay,
+        "det_rerun": det_rerun,
         "criteria_pass": {f"{criterion}_{scenario}": int(results[f"{criterion}_{scenario}"].sum())
                           for scenario in THRESHOLD_SCENARIOS for criterion in ("A", "B", "C")},
         "candidate_pass": {f"{criterion}_{scenario}": int(counts[f"n_pass_{criterion}_{scenario}"].sum())
@@ -711,6 +926,15 @@ def main(argv=None):
         f"（容差 {replay_tolerance:g}）；表 sha256 {sensory_replay['delivered_table_sha256'][:16]}…。",
         f"- 正式口径：estimated_grade_0_6 为决策层 top-k + 24 对父子 cap；"
         f"prob_ge5/prob_6 为决策层概率，risk-head 概率另存 prob_ge5_risk_head/prob_6_risk_head。",
+        (f"- 决策规则切换审计（task B）：对比 {det_rerun['previous_directory']}（旧 Q1，sha256 "
+         f"{str(det_rerun.get('previous_model_sha256'))[:16]}…），66 谱 × 52 target 中可比 "
+         f"{det_rerun['cells_compared']} 格，变化 {det_rerun['changed_cells']} 格"
+         f"（升 {det_rerun['changed_up']} / 降 {det_rerun['changed_down']} / 不变 "
+         f"{det_rerun['unchanged_cells']}）；五缺陷项（dms/diacetyl/X4vg/t2n/stale_hops）"
+         f"变差 {det_rerun['defect_worse_count']} 格；A/B/C、claim_level、风格判定、缺陷状态"
+         f"计数{'未变' if (det_rerun['criteria_unchanged'] and not det_rerun['claim_level_changed_cases'] and not det_rerun['style_nearest_centroid_changed_cases'] and not det_rerun['defect_status_changed_cases']) else '有变化（见 summary.json det_rerun）'}。"
+         if det_rerun.get("available") else
+         "- 决策规则切换审计（task B）：未找到 pre-det 备份目录，比较未执行。"),
         "- t2n 无阈值、Stale hops 无化学坐标：状态记 unknown，不属预注册 A/B/C 范围。",
         "",
         "诚实说明：迁移谱是附件 1 坐标体系内的统计目标，不是酿造配方或实测酒；"
@@ -750,6 +974,7 @@ def main(argv=None):
                         "mismatches_per_column", "max_abs_delta", "model_sha256",
                         "delivered_table_sha256", "replayed_at")
         },
+        "det_rerun": det_rerun,
         "honesty": HONESTY,
         "files": sorted(path.name for path in output.iterdir()),
         "elapsed_seconds": round(time.time() - started, 1),
@@ -768,6 +993,14 @@ def main(argv=None):
                       "spectra_long": int(len(long_df)),
                       "spectra_wide": int(len(wide_df)),
                       "sensory_rows": int(len(sensory)),
+                      "det_rerun": {key: det_rerun.get(key) for key in
+                                    ("available", "model_sha_changed", "cells_compared",
+                                     "changed_cells", "changed_up", "changed_down",
+                                     "defect_worse_count", "criteria_unchanged",
+                                     "claim_level_changed_cases",
+                                     "style_nearest_centroid_changed_cases",
+                                     "defect_status_changed_cases",
+                                     "grade_change_within_limit")},
                       "failed_checks": [item["name"] for item in checks if not item["passed"]],
                       "elapsed_seconds": verification["elapsed_seconds"]}, indent=2))
     return 0 if passed else 1

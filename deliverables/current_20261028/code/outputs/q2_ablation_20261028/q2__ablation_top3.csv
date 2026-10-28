@@ -1,0 +1,301 @@
+﻿variant,target,rank,field,chemical_name,ridge_coef,graph_importance,importance_rank,bootstrap_freq,bootstrap_jaccard_vs_full,r6_cross_corr,chemical_evidence,evidence_basis,confidence
+graph,A_malt_all,1,octyl_acetate,Octyl acetate,0.02222233766511814,0.031433978503335985,1,0.42,0.2645,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_malt_all,2,ethyl.furoate,Ethyl furoate,0.026755406770235073,0.031097291541716296,2,0.4,0.2645,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+graph,A_malt_all,3,MeSH,Methanethiol,0.02718614181947738,0.02997296852546173,3,0.325,0.2645,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_all,1,MeSH,Methanethiol,0.02718614181947738,0.02718614181947738,1,0.475,0.2615,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_all,2,ethyl.furoate,Ethyl furoate,0.026755406770235073,0.026755406770235073,2,0.46,0.2615,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+no_graph,A_malt_all,3,acetaldehyde,Acetaldehyde,0.023197822731641293,0.023197822731641293,3,0.205,0.2615,,B,化学机理同族(醛类)，与目标感官语义一致,low
+graph,A_malt_grain,1,furfural,Furfural,0.015513724046435688,0.021655493941352702,1,0.735,0.44600000000000006,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+graph,A_malt_grain,2,car.3.en.2.one,Car-3-en-2-one,-0.017295573537971873,0.021355520313761048,2,0.56,0.44600000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_malt_grain,3,X5.methylfurfural,5-methylfurfural,0.01465195492259357,0.017925209180926244,3,0.45,0.44600000000000006,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+no_graph,A_malt_grain,1,car.3.en.2.one,Car-3-en-2-one,-0.017295573537971873,0.017295573537971873,1,0.54,0.343,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_grain,2,furfural,Furfural,0.015513724046435688,0.015513724046435688,2,0.465,0.343,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+no_graph,A_malt_grain,3,X5.methylfurfural,5-methylfurfural,0.01465195492259357,0.01465195492259357,3,0.405,0.343,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+graph,A_malt_bread,1,furfural,Furfural,0.01950291541298353,0.02382096350359421,1,0.685,0.25800000000000006,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+graph,A_malt_bread,2,octyl_acetate,Octyl acetate,0.00787310593622589,0.017624563642717653,2,0.24,0.25800000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_malt_bread,3,ethyl.furoate,Ethyl furoate,0.014313940169945952,0.016387422420083633,3,0.175,0.25800000000000006,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,low
+no_graph,A_malt_bread,1,furfural,Furfural,0.01950291541298353,0.01950291541298353,1,0.55,0.2155,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,medium
+no_graph,A_malt_bread,2,CO2.PSI.,Carbon dioxide,0.014813560131180218,0.014813560131180218,2,0.215,0.2155,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_bread,3,ethyl.furoate,Ethyl furoate,0.014313940169945952,0.014313940169945952,3,0.21,0.2155,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,low
+graph,A_malt_cara,1,octyl_acetate,Octyl acetate,0.02527079969556328,0.03133792584622026,1,0.73,0.28650000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_malt_cara,2,acetaldehyde,Acetaldehyde,0.0216037680618933,0.024541808214831352,2,0.31,0.28650000000000003,,B,化学机理同族(醛类)，与目标感官语义一致,low
+graph,A_malt_cara,3,alpha.calacorene,Î±-calacorene,-0.02066410803673403,0.02323459804603603,3,0.195,0.28650000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_cara,1,octyl_acetate,Octyl acetate,0.02527079969556328,0.02527079969556328,1,0.6,0.27699999999999997,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_cara,2,acetaldehyde,Acetaldehyde,0.0216037680618933,0.0216037680618933,2,0.29,0.27699999999999997,,B,化学机理同族(醛类)，与目标感官语义一致,low
+no_graph,A_malt_cara,3,SO2.mg.L.,Sulfur dioxide,-0.02140325701917791,0.02140325701917791,3,0.295,0.27699999999999997,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_malt_burn,1,methylpyrazine,Methylpyrazine,0.022454717904562386,0.03149637806601189,1,0.475,0.259,,B,化学机理同族(吡嗪类)，与目标感官语义一致,medium
+graph,A_malt_burn,2,ethyl..E..linalool,Ethyl linalool,-0.02570385065523416,0.029224714031532345,2,0.345,0.259,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_malt_burn,3,nerol,Nerol,-0.015115112292208834,0.027967037619825913,3,0.24,0.259,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_burn,1,ethyl..E..linalool,Ethyl linalool,-0.02570385065523416,0.02570385065523416,1,0.4,0.2275,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_burn,2,MeSH,Methanethiol,0.023053425020773927,0.023053425020773927,2,0.21,0.2275,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_malt_burn,3,methylpyrazine,Methylpyrazine,0.022454717904562386,0.022454717904562386,3,0.395,0.2275,,B,化学机理同族(吡嗪类)，与目标感官语义一致,low
+graph,A_hops_all,1,geraniol,Geraniol,0.016566676618219974,0.024830409708022007,1,0.365,0.214,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_hops_all,2,citronellol,Citronellol,0.018364098862480686,0.024603031531258264,2,0.36,0.214,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_hops_all,3,iron,Iron,-0.023267949584123634,0.023267949584123634,3,0.215,0.214,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_hops_all,1,iron,Iron,-0.023267949584123634,0.023267949584123634,1,0.61,0.30300000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_hops_all,2,DMS,Dimethyl sulfide,0.019039574316183007,0.019039574316183007,2,0.34,0.30300000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_hops_all,3,X6.methyl.5.hepten.2.one,Methyl heptenone,0.018681225849880235,0.018681225849880235,3,0.315,0.30300000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_hops_citrus,1,citronellol,Citronellol,0.015513552533245165,0.020847177195251122,1,0.66,0.3225,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,A_hops_citrus,2,geraniol,Geraniol,0.015311510637975154,0.02061843851940958,2,0.525,0.3225,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,A_hops_citrus,3,linalool,Linalool,0.01061385576286885,0.016061574855591586,3,0.12,0.3225,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_hops_citrus,1,X6.methyl.5.hepten.2.one,Methyl heptenone,0.015694296888597577,0.015694296888597577,1,0.445,0.269,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_hops_citrus,2,citronellol,Citronellol,0.015513552533245165,0.015513552533245165,2,0.4,0.269,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,A_hops_citrus,3,geraniol,Geraniol,0.015311510637975154,0.015311510637975154,3,0.31,0.269,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_hops_tropical,1,citronellol,Citronellol,0.018468665182678298,0.022715947341263077,1,0.41,0.19200000000000003,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,A_hops_tropical,2,DMS,Dimethyl sulfide,0.020885440733582592,0.020885440733582592,2,0.265,0.19200000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_hops_tropical,3,beta.phellandrene,Beta-phellandrene,0.016705904927988787,0.019649608490979062,3,0.19,0.19200000000000003,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_hops_tropical,1,DMS,Dimethyl sulfide,0.020885440733582592,0.020885440733582592,1,0.515,0.199,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_hops_tropical,2,citronellol,Citronellol,0.018468665182678298,0.018468665182678298,2,0.29,0.199,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_hops_tropical,3,beta.phellandrene,Beta-phellandrene,0.016705904927988787,0.016705904927988787,3,0.11,0.199,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_hops_noble,1,ethyl_octanoate,Ethyl octanoate,0.018326201118633943,0.023631850483825437,1,0.825,0.397,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,A_hops_noble,2,ethyl_decanoate,Ethyl decanoate,0.01631763854054629,0.020080258429804196,2,0.35,0.397,,B,化学机理同族(酯类)，与目标感官语义一致,low
+graph,A_hops_noble,3,butyl.acetate,Butyl acetate,-0.015247331403196484,0.019259048183996243,3,0.39,0.397,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,A_hops_noble,1,ethyl_octanoate,Ethyl octanoate,0.018326201118633943,0.018326201118633943,1,0.5,0.23700000000000002,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+no_graph,A_hops_noble,2,iron,Iron,-0.01713472661233908,0.01713472661233908,2,0.32,0.23700000000000002,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_hops_noble,3,ethyl_decanoate,Ethyl decanoate,0.01631763854054629,0.01631763854054629,3,0.215,0.23700000000000002,,B,化学机理同族(酯类)，与目标感官语义一致,low
+graph,A_hops_woody,1,ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate,0.011444385227504421,0.013204495726647208,1,0.43,0.16649999999999998,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,A_hops_woody,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.009896753928358468,0.010643890792442082,2,0.225,0.16649999999999998,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_hops_woody,3,X2Z.6E.farnesol,"Z,E-farnesol",-0.008337776481695374,0.009667372153800183,3,0.105,0.16649999999999998,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_hops_woody,1,ethyl_2.methyl_butyrate,Ethyl 2-methylbutyrate,0.011444385227504421,0.011444385227504421,1,0.39,0.1895,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,A_hops_woody,2,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.009896753928358468,0.009896753928358468,2,0.245,0.1895,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_hops_woody,3,nerol,Nerol,-0.009439224073719396,0.009439224073719396,3,0.22,0.1895,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_esters_all,1,acetaldehyde,Acetaldehyde,0.026827303896137408,0.03129873332229713,1,0.875,0.3985,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_esters_all,2,n.hexanol,N-hexanol,0.020124313009118832,0.025661482921412848,2,0.56,0.3985,,B,化学机理同族(醇类)，与目标感官语义一致,medium
+graph,A_esters_all,3,X.E..beta.ionone,E-Î²-ionone,0.01777809180436616,0.021052616232522137,3,0.18,0.3985,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_esters_all,1,acetaldehyde,Acetaldehyde,0.026827303896137408,0.026827303896137408,1,0.89,0.35050000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_esters_all,2,n.hexanol,N-hexanol,0.020124313009118832,0.020124313009118832,2,0.375,0.35050000000000003,,B,化学机理同族(醇类)，与目标感官语义一致,low
+no_graph,A_esters_all,3,iron,Iron,0.018224036489997177,0.018224036489997177,3,0.185,0.35050000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_esters_ethac,1,acetaldehyde,Acetaldehyde,0.015739099753879826,0.020037870031419283,1,0.74,0.257,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_esters_ethac,2,ethyl_acetate,Ethyl acetate,0.010909790657473961,0.015051059815765789,2,0.135,0.257,,B,化学机理同族(酯类)，与目标感官语义一致,low
+graph,A_esters_ethac,3,isobutyl_acetate,Isobutyl acetate,0.010757554437580743,0.013975324567082888,3,0.23,0.257,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,A_esters_ethac,1,acetaldehyde,Acetaldehyde,0.015739099753879826,0.015739099753879826,1,0.565,0.18,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_esters_ethac,2,X2E.6Z.farnesal,"E,Z-farnesal",0.012347674895039937,0.012347674895039937,2,0.165,0.18,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_esters_ethac,3,ethyl_isovalerate,Ethyl 3-methylbutyrate,0.01145151275224438,0.01145151275224438,3,0.1,0.18,,B,化学机理同族(酯类)，与目标感官语义一致,low
+graph,A_esters_isoaa,1,n.hexanol,N-hexanol,0.019869439717383617,0.024283269459652496,1,0.68,0.25050000000000006,,B,化学机理同族(醇类)，与目标感官语义一致,medium
+graph,A_esters_isoaa,2,ambroxide,Ambroxide,-0.01641829208602235,0.019848310039240882,2,0.27,0.25050000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_esters_isoaa,3,humulene.epoxide.II,Humulene epoxide II,-0.016191711411677523,0.0190993476916607,3,0.17,0.25050000000000006,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_esters_isoaa,1,n.hexanol,N-hexanol,0.019869439717383617,0.019869439717383617,1,0.56,0.22050000000000003,,B,化学机理同族(醇类)，与目标感官语义一致,medium
+no_graph,A_esters_isoaa,2,ambroxide,Ambroxide,-0.01641829208602235,0.01641829208602235,2,0.25,0.22050000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_esters_isoaa,3,humulene.epoxide.II,Humulene epoxide II,-0.016191711411677523,0.016191711411677523,3,0.185,0.22050000000000003,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_esters_flower,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.017220685966435303,0.017220685966435303,1,0.525,0.265,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,A_esters_flower,2,beta.phellandrene,Beta-phellandrene,0.014297718359126722,0.016412745507565354,2,0.42,0.265,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,A_esters_flower,3,X.E..alpha.ionone,E-Î±-ionone,0.012493808347335517,0.01548658004991766,3,0.185,0.265,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_esters_flower,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.017220685966435303,0.017220685966435303,1,0.62,0.30200000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_esters_flower,2,beta.phellandrene,Beta-phellandrene,0.014297718359126722,0.014297718359126722,2,0.38,0.30200000000000005,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,A_esters_flower,3,X.E..beta.ionone,E-Î²-ionone,0.01309970866575844,0.01309970866575844,3,0.245,0.30200000000000005,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_esters_fruity,1,beta.phellandrene,Beta-phellandrene,0.018725589737022343,0.021273260043687094,1,0.49,0.3245,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,A_esters_fruity,2,X1.10.di.epi.cubenol,Epicubenol,-0.0184580953390451,0.021219740233064992,2,0.385,0.3245,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,A_esters_fruity,3,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.019769527012250387,0.019769527012250387,3,0.495,0.3245,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_esters_fruity,1,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.019769527012250387,0.019769527012250387,1,0.58,0.32049999999999995,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,A_esters_fruity,2,beta.phellandrene,Beta-phellandrene,0.018725589737022343,0.018725589737022343,2,0.445,0.32049999999999995,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,A_esters_fruity,3,X1.10.di.epi.cubenol,Epicubenol,-0.0184580953390451,0.0184580953390451,3,0.34,0.32049999999999995,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_malt_all,1,acetaldehyde,Acetaldehyde,0.030984756327512752,0.03454956411835172,1,0.835,0.345,,B,化学机理同族(醛类)，与目标感官语义一致,medium
+graph,F_malt_all,2,MeSH,Methanethiol,0.023893499823551885,0.0277644244101228,2,0.345,0.345,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_all,3,X2.6.dimethyl.pyrazine,"2,6-dimethylpyrazine",0.021248160466180197,0.026669607862631547,3,0.265,0.345,,B,化学机理同族(吡嗪类)，与目标感官语义一致,low
+no_graph,F_malt_all,1,acetaldehyde,Acetaldehyde,0.030984756327512752,0.030984756327512752,1,0.91,0.39150000000000007,,B,化学机理同族(醛类)，与目标感官语义一致,medium
+no_graph,F_malt_all,2,MeSH,Methanethiol,0.023893499823551885,0.023893499823551885,2,0.34,0.39150000000000007,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_all,3,X4VG,4-vinylguaiacol,-0.023561439963226006,0.023561439963226006,3,0.345,0.39150000000000007,,B,化学机理同族(酚类/香料)，与目标感官语义一致,low
+graph,F_malt_grain,1,terpinen.4.ol,Terpinen-4-ol,-0.013780521092865367,0.015717784499684466,1,0.51,0.2805,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_grain,2,furfural,Furfural,0.010431599713143738,0.015549748984572037,2,0.315,0.2805,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,low
+graph,F_malt_grain,3,octyl_acetate,Octyl acetate,0.010028112802918716,0.015243912659490585,3,0.335,0.2805,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_grain,1,terpinen.4.ol,Terpinen-4-ol,-0.013780521092865367,0.013780521092865367,1,0.54,0.2195,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_grain,2,X3.methyl.2.butenal,3-methyl-2-butenal,0.0128989866924222,0.0128989866924222,2,0.285,0.2195,,B,化学机理同族(醛类)，与目标感官语义一致,low
+no_graph,F_malt_grain,3,X.E..beta.ionone,E-Î²-ionone,-0.012391616488362345,0.012391616488362345,3,0.15,0.2195,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_bread,1,acetaldehyde,Acetaldehyde,0.014814487607261903,0.017015750662904422,1,0.29,0.22200000000000003,,B,化学机理同族(醛类)，与目标感官语义一致,low
+graph,F_malt_bread,2,car.3.en.2.one,Car-3-en-2-one,-0.011166608967822475,0.017010417627439045,2,0.26,0.22200000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_bread,3,terpinen.4.ol,Terpinen-4-ol,-0.013514571681504654,0.016015743822336486,3,0.44,0.22200000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_bread,1,acetaldehyde,Acetaldehyde,0.014814487607261903,0.014814487607261903,1,0.3,0.17300000000000001,,B,化学机理同族(醛类)，与目标感官语义一致,low
+no_graph,F_malt_bread,2,CO2.PSI.,Carbon dioxide,0.014253627763388605,0.014253627763388605,2,0.34,0.17300000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_bread,3,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",0.013526756785017819,0.013526756785017819,3,0.16,0.17300000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_cara,1,acetaldehyde,Acetaldehyde,0.024091495864727423,0.027912960084693877,1,0.88,0.48100000000000004,,B,化学机理同族(醛类)，与目标感官语义一致,medium
+graph,F_malt_cara,2,alpha.calacorene,Î±-calacorene,-0.02176607991923047,0.02438374993106267,2,0.51,0.48100000000000004,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_cara,3,octyl_acetate,Octyl acetate,0.020194529575227643,0.02304033323288043,3,0.47,0.48100000000000004,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_cara,1,acetaldehyde,Acetaldehyde,0.024091495864727423,0.024091495864727423,1,0.835,0.451,,B,化学机理同族(醛类)，与目标感官语义一致,medium
+no_graph,F_malt_cara,2,alpha.calacorene,Î±-calacorene,-0.02176607991923047,0.02176607991923047,2,0.48,0.451,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_cara,3,octyl_acetate,Octyl acetate,0.020194529575227643,0.020194529575227643,3,0.445,0.451,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_burn,1,MeSH,Methanethiol,0.02742114503025784,0.03167340682131205,1,0.7,0.25750000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_burn,2,DES,Diethyl sulfide,0.01274439194732644,0.02645496446245536,2,0.24,0.25750000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_malt_burn,3,y.methyl.1.octanol,Y-methyl-1-octanol,0.02106180412088558,0.02525397683463739,3,0.16,0.25750000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_burn,1,MeSH,Methanethiol,0.02742114503025784,0.02742114503025784,1,0.67,0.19200000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_burn,2,y.methyl.1.octanol,Y-methyl-1-octanol,0.02106180412088558,0.02106180412088558,2,0.2,0.19200000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_malt_burn,3,ethyl.furoate,Ethyl furoate,0.01945578347795475,0.01945578347795475,3,0.035,0.19200000000000003,,B,化学机理同族(呋喃/美拉德产物)，与目标感官语义一致,low
+graph,F_hops_all,1,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.029288657609638287,0.03334647568916369,1,0.85,0.38549999999999995,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,F_hops_all,2,iron,Iron,-0.027495825238494028,0.027495825238494028,2,0.365,0.38549999999999995,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_hops_all,3,ethyl_octanoate,Ethyl octanoate,0.020705221500550534,0.026770261143515366,3,0.33,0.38549999999999995,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,F_hops_all,1,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.029288657609638287,0.029288657609638287,1,0.845,0.4755,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,F_hops_all,2,iron,Iron,-0.027495825238494028,0.027495825238494028,2,0.795,0.4755,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_hops_all,3,DMS,Dimethyl sulfide,0.02092821555413215,0.02092821555413215,3,0.205,0.4755,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_hops_citrus,1,geraniol,Geraniol,0.014347260338328751,0.017705134973386417,1,0.485,0.321,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,F_hops_citrus,2,citronellol,Citronellol,0.014126782506360085,0.0169694347257309,2,0.385,0.321,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_hops_citrus,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.012621058765909726,0.015310508407395418,3,0.405,0.321,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,F_hops_citrus,1,geraniol,Geraniol,0.014347260338328751,0.014347260338328751,1,0.37,0.265,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,F_hops_citrus,2,geosmin,Geosmin,0.014222540944975335,0.014222540944975335,2,0.44,0.265,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_hops_citrus,3,citronellol,Citronellol,0.014126782506360085,0.014126782506360085,3,0.32,0.265,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_hops_tropical,1,geraniol,Geraniol,0.012715501771644717,0.018175783144785396,1,0.345,0.17850000000000002,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_hops_tropical,2,citronellol,Citronellol,0.013594597814222408,0.017115727009637413,2,0.25,0.17850000000000002,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_hops_tropical,3,beta.phellandrene,Beta-phellandrene,0.013640484682134163,0.016338059715389455,3,0.22,0.17850000000000002,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,F_hops_tropical,1,X6.methyl.5.hepten.2.one,Methyl heptenone,0.014872831134085229,0.014872831134085229,1,0.37,0.175,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_hops_tropical,2,DMS,Dimethyl sulfide,0.014337579411963716,0.014337579411963716,2,0.29,0.175,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_hops_tropical,3,beta.phellandrene,Beta-phellandrene,0.013640484682134163,0.013640484682134163,3,0.135,0.175,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_hops_noble,1,ethyl_octanoate,Ethyl octanoate,0.02060379278657735,0.02582739780733448,1,0.655,0.3585000000000001,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,F_hops_noble,2,iron,Iron,-0.024661988359699943,0.024661988359699943,2,0.34,0.3585000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_hops_noble,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.021233759873920236,0.024096924702596025,3,0.485,0.3585000000000001,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,F_hops_noble,1,iron,Iron,-0.024661988359699943,0.024661988359699943,1,0.745,0.37750000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_hops_noble,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.021233759873920236,0.021233759873920236,2,0.495,0.37750000000000006,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,F_hops_noble,3,ethyl_octanoate,Ethyl octanoate,0.02060379278657735,0.02060379278657735,3,0.285,0.37750000000000006,,B,化学机理同族(酯类)，与目标感官语义一致,low
+graph,F_hops_woody,1,manool,Manool,-0.018211517914914432,0.02002744228321261,1,0.66,0.2595,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,F_hops_woody,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.014896852714876794,0.016055024948448723,2,0.375,0.2595,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_hops_woody,3,isobutanol,Isobutanol,0.011651061876871103,0.014425142178561834,3,0.105,0.2595,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_hops_woody,1,manool,Manool,-0.018211517914914432,0.018211517914914432,1,0.665,0.28850000000000003,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,F_hops_woody,2,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.014896852714876794,0.014896852714876794,2,0.42,0.28850000000000003,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,F_hops_woody,3,geosmin,Geosmin,0.011729177123721068,0.011729177123721068,3,0.145,0.28850000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_esters_all,1,acetaldehyde,Acetaldehyde,0.0276170581900964,0.03201616014842861,1,0.93,0.41550000000000004,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_esters_all,2,n.hexanol,N-hexanol,0.020086400719172108,0.02527468836745,2,0.495,0.41550000000000004,,B,化学机理同族(醇类)，与目标感官语义一致,medium
+graph,F_esters_all,3,X1.10.di.epi.cubenol,Epicubenol,-0.019323426472252787,0.022197424107595072,3,0.245,0.41550000000000004,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,F_esters_all,1,acetaldehyde,Acetaldehyde,0.0276170581900964,0.0276170581900964,1,0.93,0.36700000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_esters_all,2,n.hexanol,N-hexanol,0.020086400719172108,0.020086400719172108,2,0.315,0.36700000000000005,,B,化学机理同族(醇类)，与目标感官语义一致,low
+no_graph,F_esters_all,3,X1.10.di.epi.cubenol,Epicubenol,-0.019323426472252787,0.019323426472252787,3,0.275,0.36700000000000005,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_esters_ethac,1,acetaldehyde,Acetaldehyde,0.015773356574383578,0.020654859886744967,1,0.745,0.278,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_esters_ethac,2,glycerol,Glycerol,0.012824941119996706,0.016636442349243958,2,0.335,0.278,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_esters_ethac,3,n.hexanol,N-hexanol,0.011607287135729658,0.015570850011088176,3,0.13,0.278,,B,化学机理同族(醇类)，与目标感官语义一致,low
+no_graph,F_esters_ethac,1,acetaldehyde,Acetaldehyde,0.015773356574383578,0.015773356574383578,1,0.52,0.213,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_esters_ethac,2,X2E.6Z.farnesal,"E,Z-farnesal",0.013456429662556349,0.013456429662556349,2,0.21,0.213,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,F_esters_ethac,3,glycerol,Glycerol,0.012824941119996706,0.012824941119996706,3,0.225,0.213,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_esters_isoaa,1,n.hexanol,N-hexanol,0.01808767247116431,0.022968837943763754,1,0.455,0.201,,B,化学机理同族(醇类)，与目标感官语义一致,medium
+graph,F_esters_isoaa,2,acetaldehyde,Acetaldehyde,0.016937724826073457,0.018908350849514633,2,0.235,0.201,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_esters_isoaa,3,isopentyl_acetate,Isoamyl acetate,0.01457258728033101,0.018771564940443727,3,0.16,0.201,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,F_esters_isoaa,1,n.hexanol,N-hexanol,0.01808767247116431,0.01808767247116431,1,0.295,0.1945,,B,化学机理同族(醇类)，与目标感官语义一致,low
+no_graph,F_esters_isoaa,2,acetaldehyde,Acetaldehyde,0.016937724826073457,0.016937724826073457,2,0.275,0.1945,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_esters_isoaa,3,X13.epi.manool.oxide,13-epi manool oxide,-0.01601797154117164,0.01601797154117164,3,0.27,0.1945,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_esters_flower,1,beta.phellandrene,Beta-phellandrene,0.01277009335446526,0.01494869748593008,1,0.36,0.20550000000000002,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_esters_flower,2,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.012279308193332993,0.012279308193332993,2,0.285,0.20550000000000002,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,F_esters_flower,3,DES,Diethyl sulfide,-0.008785918187230483,0.012219430644752009,3,0.255,0.20550000000000002,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_esters_flower,1,beta.phellandrene,Beta-phellandrene,0.01277009335446526,0.01277009335446526,1,0.295,0.231,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,F_esters_flower,2,X2.methyltetrahydrofuran.3.one,2-methyltetrahydrofuran-3-one,0.012279308193332993,0.012279308193332993,2,0.435,0.231,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_esters_flower,3,eucalyptol,Eucalyptol,0.011927514807377505,0.011927514807377505,3,0.275,0.231,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol,-0.018903426323211767,0.021947232843049284,1,0.535,0.2315,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,F_esters_fruity,2,beta.phellandrene,Beta-phellandrene,0.014917817123586665,0.01741257310050692,2,0.195,0.2315,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,F_esters_fruity,3,DES,Diethyl sulfide,-0.011108344404220805,0.017047058000253724,3,0.305,0.2315,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,F_esters_fruity,1,X1.10.di.epi.cubenol,Epicubenol,-0.018903426323211767,0.018903426323211767,1,0.495,0.16399999999999998,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,F_esters_fruity,2,beta.phellandrene,Beta-phellandrene,0.014917817123586665,0.014917817123586665,2,0.185,0.16399999999999998,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,F_esters_fruity,3,hydroxy.methyl.furfural,5-hydroxymethylfurfural,-0.014253532665495639,0.014253532665495639,3,0.08,0.16399999999999998,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,acidity,1,lactic_acid.mg.L.,Lactic acid,0.05656149965633929,0.06595172151130622,1,1.0,0.552,,A,身份标记物：Lactic acid 为 acidity 维度同名/直系化合物,high
+graph,acidity,2,acetic_acid.g.L.,Acetic acid,0.04866185227274944,0.04866185227274944,2,0.835,0.552,,A,身份标记物：Acetic acid 为 acidity 维度同名/直系化合物,high
+graph,acidity,3,E.cinnamaldehyde,Cinnamaldehyde,-0.026611883718483102,0.036888581673606,3,0.225,0.552,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,acidity,1,lactic_acid.mg.L.,Lactic acid,0.05656149965633929,0.05656149965633929,1,1.0,0.5825,,A,身份标记物：Lactic acid 为 acidity 维度同名/直系化合物,high
+no_graph,acidity,2,acetic_acid.g.L.,Acetic acid,0.04866185227274944,0.04866185227274944,2,0.975,0.5825,,A,身份标记物：Acetic acid 为 acidity 维度同名/直系化合物,high
+no_graph,acidity,3,CO2.PSI.,Carbon dioxide,-0.030080160119059812,0.030080160119059812,3,0.18,0.5825,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,bitternes,1,ethyl_octanoate,Ethyl octanoate,0.03320676315797386,0.04143868301764647,1,0.96,0.6884999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,bitternes,2,ethyl_decanoate,Ethyl decanoate,0.031134019756424856,0.036898239181412704,2,0.735,0.6884999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,bitternes,3,cis.dihydro.beta.terpineol,Cis-dihydro-Î²-terpineol,0.031133591433672576,0.03599827783466064,3,0.635,0.6884999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,bitternes,1,iron,Iron,-0.035034666018191066,0.035034666018191066,1,0.845,0.619,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,bitternes,2,ethyl_octanoate,Ethyl octanoate,0.03320676315797386,0.03320676315797386,2,0.815,0.619,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,bitternes,3,ethyl_decanoate,Ethyl decanoate,0.031134019756424856,0.031134019756424856,3,0.55,0.619,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,sweetness,1,ethyl_decanoate,Ethyl decanoate,-0.026197050669008598,0.032139715101387134,1,0.855,0.3775,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,sweetness,2,ethyl_octanoate,Ethyl octanoate,-0.022273467174768864,0.02702806501853027,2,0.305,0.3775,,B,化学机理同族(酯类)，与目标感官语义一致,low
+graph,sweetness,3,octyl_acetate,Octyl acetate,0.02422747362739867,0.024961446904826445,3,0.355,0.3775,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,sweetness,1,ethyl_decanoate,Ethyl decanoate,-0.026197050669008598,0.026197050669008598,1,0.705,0.385,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+no_graph,sweetness,2,iron,Iron,0.024929541492467285,0.024929541492467285,2,0.405,0.385,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,sweetness,3,octyl_acetate,Octyl acetate,0.02422747362739867,0.02422747362739867,3,0.45,0.385,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,X4vg,1,X4VG,4-vinylguaiacol,0.05515081205391623,0.05515081205391623,1,1.0,0.36450000000000005,,A,身份标记物：4-vinylguaiacol 为 X4vg 维度同名/直系化合物,high
+graph,X4vg,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,-0.020929991549672657,0.024401231070330442,2,0.32,0.36450000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,X4vg,3,DES,Diethyl sulfide,0.017024931827504607,0.02194155010304291,3,0.225,0.36450000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,X4vg,1,X4VG,4-vinylguaiacol,0.05515081205391623,0.05515081205391623,1,1.0,0.3820000000000001,,A,身份标记物：4-vinylguaiacol 为 X4vg 维度同名/直系化合物,high
+no_graph,X4vg,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,-0.020929991549672657,0.020929991549672657,2,0.29,0.3820000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,X4vg,3,camphor,Camphor,-0.017804048606925752,0.017804048606925752,3,0.29,0.3820000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,diacetyl,1,beta.phellandrene,Beta-phellandrene,-0.015290401022990126,0.01759781807716396,1,0.32,0.16649999999999998,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,diacetyl,2,ethyl_decanoate,Ethyl decanoate,-0.013134403999317932,0.01669062746184741,2,0.13,0.16649999999999998,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,diacetyl,3,pentyl.octanoate,Pentyl octanoate,-0.013323422274871252,0.016261607208259594,3,0.315,0.16649999999999998,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,diacetyl,1,beta.phellandrene,Beta-phellandrene,-0.015290401022990126,0.015290401022990126,1,0.305,0.154,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,diacetyl,2,X.E..beta.ionone,E-Î²-ionone,-0.013684103386816528,0.013684103386816528,2,0.12,0.154,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,diacetyl,3,pentyl.octanoate,Pentyl octanoate,-0.013323422274871252,0.013323422274871252,3,0.275,0.154,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,dms,1,X.Z..dihydro.apofarnesal,Z-dihydro-apofarnesal,0.01195927596466552,0.017659720846778474,1,0.34,0.22450000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,dms,2,SO2.mg.L.,Sulfur dioxide,0.016810228777940344,0.016810228777940344,2,0.32,0.22450000000000003,,B,化学机理同族(硫化物类)，与目标感官语义一致,low
+graph,dms,3,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",0.01472612750107805,0.016735633202592394,3,0.32,0.22450000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,dms,1,SO2.mg.L.,Sulfur dioxide,0.016810228777940344,0.016810228777940344,1,0.495,0.2005,,B,化学机理同族(硫化物类)，与目标感官语义一致,medium
+no_graph,dms,2,caryophylla.4.12..8.13..dien.5.alpha.ol,"Caryophylla-4,8-dien-5-ol",0.01472612750107805,0.01472612750107805,2,0.3,0.2005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,dms,3,X.Z..dihydro.apofarnesal,Z-dihydro-apofarnesal,0.01195927596466552,0.01195927596466552,3,0.105,0.2005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,metallic,1,iron,Iron,0.020277740889588065,0.020277740889588065,1,0.675,0.39800000000000013,,A,身份标记物：Iron 为 metallic 维度同名/直系化合物,high
+graph,metallic,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,-0.017479671729571586,0.019735142481236298,2,0.62,0.39800000000000013,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,metallic,3,neryl.formate,Neryl formate,-0.013361476918212448,0.01577119277503825,3,0.285,0.39800000000000013,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,metallic,1,iron,Iron,0.020277740889588065,0.020277740889588065,1,0.8,0.3685,,A,身份标记物：Iron 为 metallic 维度同名/直系化合物,high
+no_graph,metallic,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,-0.017479671729571586,0.017479671729571586,2,0.545,0.3685,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,metallic,3,X6.methyl.5.hepten.2.one,Methyl heptenone,-0.013762230040756407,0.013762230040756407,3,0.17,0.3685,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,stale_hops,1,X2.butyloctanoate,2-butyl octanoate,-0.01325025861459573,0.014227433176548548,1,0.325,0.1875,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,stale_hops,2,gamma.eudesmol,Gamma-eudesmol,0.01349669619174199,0.013770441492322651,2,0.38,0.1875,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.011683673508631675,0.013355406689686012,3,0.155,0.1875,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,stale_hops,1,gamma.eudesmol,Gamma-eudesmol,0.01349669619174199,0.01349669619174199,1,0.47,0.22150000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,stale_hops,2,X2.butyloctanoate,2-butyl octanoate,-0.01325025861459573,0.01325025861459573,2,0.365,0.22150000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,stale_hops,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.011683673508631675,0.011683673508631675,3,0.15,0.22150000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,t2n,1,germacrene.D,Germacrene D,-0.017593222843677647,0.01934888340986837,1,0.795,0.35900000000000004,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,t2n,2,isopentyl.hexanoate,Isopentyl hexanoate,-0.012789200688569542,0.014223296582316598,2,0.375,0.35900000000000004,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,t2n,3,glycerol,Glycerol,-0.01315682512278656,0.014198930457351907,3,0.305,0.35900000000000004,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,t2n,1,germacrene.D,Germacrene D,-0.017593222843677647,0.017593222843677647,1,0.8,0.37300000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,t2n,2,glycerol,Glycerol,-0.01315682512278656,0.01315682512278656,2,0.335,0.37300000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,t2n,3,isopentyl.hexanoate,Isopentyl hexanoate,-0.012789200688569542,0.012789200688569542,3,0.39,0.37300000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,orange,1,X1.alpha.terpineol,Alpha-terpineol,0.042498818731354325,0.04920948977041938,1,0.87,0.4705,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,orange,2,geraniol,Geraniol,0.029493983700240287,0.042453529508580126,2,0.61,0.4705,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+graph,orange,3,linalool,Linalool,0.025919091616679674,0.0369953270378483,3,0.305,0.4705,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+no_graph,orange,1,X1.alpha.terpineol,Alpha-terpineol,0.042498818731354325,0.042498818731354325,1,0.88,0.40049999999999997,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,orange,2,limonene,Limonene,0.03078849490134866,0.03078849490134866,2,0.4,0.40049999999999997,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,medium
+no_graph,orange,3,geraniol,Geraniol,0.029493983700240287,0.029493983700240287,3,0.335,0.40049999999999997,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low
+graph,coriander,1,geraniol,Geraniol,0.0211314081167986,0.031076701046437477,1,0.925,0.5939999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,coriander,2,linalool,Linalool,0.019890585859277752,0.026503684475077154,2,0.665,0.5939999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,coriander,3,x.methyl.1.octanol,X-methyl-1-octanol,-0.024271972511347682,0.02538639029242224,3,0.525,0.5939999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,coriander,1,x.methyl.1.octanol,X-methyl-1-octanol,-0.024271972511347682,0.024271972511347682,1,0.83,0.486,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,coriander,2,geraniol,Geraniol,0.0211314081167986,0.0211314081167986,2,0.505,0.486,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,coriander,3,X1.alpha.terpineol,Alpha-terpineol,0.020154214361957367,0.020154214361957367,3,0.505,0.486,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,clove,1,limonene,Limonene,0.024390419997014183,0.028418683811876545,1,0.56,0.4235,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,clove,2,linalool,Linalool,0.024273144467516397,0.028105212332286675,2,0.55,0.4235,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,clove,3,car.3.en.2.one,Car-3-en-2-one,-0.01903432996139706,0.024520300341645228,3,0.475,0.4235,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,clove,1,limonene,Limonene,0.024390419997014183,0.024390419997014183,1,0.485,0.32300000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,clove,2,linalool,Linalool,0.024273144467516397,0.024273144467516397,2,0.495,0.32300000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,clove,3,eucalyptol,Eucalyptol,0.021291063233999992,0.021291063233999992,3,0.37,0.32300000000000006,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,lactic,1,lactic_acid.mg.L.,Lactic acid,0.047017282189927644,0.05621072817387982,1,1.0,0.5855,,A,身份标记物：Lactic acid 为 lactic 维度同名/直系化合物,high
+graph,lactic,2,acetic_acid.g.L.,Acetic acid,0.0393238674205007,0.0393238674205007,2,0.63,0.5855,,A,直接机理物质(有机酸) 且 bootstrap 入选率 0.63≥0.5,high
+graph,lactic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate,0.026834919572825258,0.03622774918260698,3,0.465,0.5855,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,lactic,1,lactic_acid.mg.L.,Lactic acid,0.047017282189927644,0.047017282189927644,1,1.0,0.5045000000000001,,A,身份标记物：Lactic acid 为 lactic 维度同名/直系化合物,high
+no_graph,lactic,2,acetic_acid.g.L.,Acetic acid,0.0393238674205007,0.0393238674205007,2,0.94,0.5045000000000001,,A,直接机理物质(有机酸) 且 bootstrap 入选率 0.94≥0.5,high
+no_graph,lactic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate,0.026834919572825258,0.026834919572825258,3,0.045,0.5045000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,acetic,1,lactic_acid.mg.L.,Lactic acid,0.0464453640835908,0.056350893302257336,1,1.0,0.5820000000000001,,A,直接机理物质(有机酸) 且 bootstrap 入选率 1.00≥0.5,high
+graph,acetic,2,acetic_acid.g.L.,Acetic acid,0.046160564419906,0.046160564419906,2,0.8,0.5820000000000001,,A,身份标记物：Acetic acid 为 acetic 维度同名/直系化合物,high
+graph,acetic,3,ethyl_isovalerate,Ethyl 3-methylbutyrate,0.02572266193809041,0.03552216941719885,3,0.3,0.5820000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,acetic,1,lactic_acid.mg.L.,Lactic acid,0.0464453640835908,0.0464453640835908,1,1.0,0.563,,A,直接机理物质(有机酸) 且 bootstrap 入选率 1.00≥0.5,high
+no_graph,acetic,2,acetic_acid.g.L.,Acetic acid,0.046160564419906,0.046160564419906,2,0.955,0.563,,A,身份标记物：Acetic acid 为 acetic 维度同名/直系化合物,high
+no_graph,acetic,3,DES,Diethyl sulfide,-0.027336856396291867,0.027336856396291867,3,0.155,0.563,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,barnyard,1,gamma.eudesmol,Gamma-eudesmol,0.014783234556922962,0.015507129196193476,1,0.475,0.18950000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,barnyard,2,X2.butyloctanoate,2-butyl octanoate,-0.013115106328763376,0.01399403191773561,2,0.285,0.18950000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,barnyard,3,X.E..ortho.methoxy.cinnamaldehyde,E-ortho-methoxy cinnamaldehyde,0.01121495739361153,0.012877504395038023,3,0.11,0.18950000000000003,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,barnyard,1,gamma.eudesmol,Gamma-eudesmol,0.014783234556922962,0.014783234556922962,1,0.55,0.24250000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,barnyard,2,X2.butyloctanoate,2-butyl octanoate,-0.013115106328763376,0.013115106328763376,2,0.325,0.24250000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,barnyard,3,iron,Iron,-0.0113447049360522,0.0113447049360522,3,0.2,0.24250000000000005,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,alcohol,1,acetaldehyde,Acetaldehyde,0.03694651227278242,0.05199417954680216,1,0.985,0.8330000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,alcohol,2,ethyl_hexanoate,Ethyl hexanoate,0.03422422403488644,0.04812129492200822,2,0.915,0.8330000000000001,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,alcohol,3,ethyl_octanoate,Ethyl octanoate,0.03459168322667404,0.046517947820686634,3,0.76,0.8330000000000001,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+no_graph,alcohol,1,acetaldehyde,Acetaldehyde,0.03694651227278242,0.03694651227278242,1,0.8,0.6295000000000001,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,alcohol,2,ethyl_octanoate,Ethyl octanoate,0.03459168322667404,0.03459168322667404,2,0.765,0.6295000000000001,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+no_graph,alcohol,3,ethyl_hexanoate,Ethyl hexanoate,0.03422422403488644,0.03422422403488644,3,0.64,0.6295000000000001,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,aftertaste,1,acetaldehyde,Acetaldehyde,0.025638328467340335,0.036086350858322166,1,0.835,0.6039999999999999,,B,化学机理同族(醛类)，与目标感官语义一致,medium
+graph,aftertaste,2,glycerol,Glycerol,0.024126058936121915,0.03178284148447934,2,0.66,0.6039999999999999,,B,化学机理同族(甘油)，与目标感官语义一致,medium
+graph,aftertaste,3,ethyl_octanoate,Ethyl octanoate,0.02346662657879701,0.03145868816644913,3,0.66,0.6039999999999999,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+no_graph,aftertaste,1,acetaldehyde,Acetaldehyde,0.025638328467340335,0.025638328467340335,1,0.58,0.42050000000000004,,B,化学机理同族(醛类)，与目标感官语义一致,medium
+no_graph,aftertaste,2,ethyl_isovalerate,Ethyl 3-methylbutyrate,0.024988074971321585,0.024988074971321585,2,0.56,0.42050000000000004,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+no_graph,aftertaste,3,glycerol,Glycerol,0.024126058936121915,0.024126058936121915,3,0.495,0.42050000000000004,,B,化学机理同族(甘油)，与目标感官语义一致,medium
+graph,body,1,acetaldehyde,Acetaldehyde,0.026556874876104676,0.03673458194503974,1,0.97,0.6994999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,body,2,glycerol,Glycerol,0.02558192253400248,0.033308145178836346,2,0.8,0.6994999999999999,,B,化学机理同族(甘油)，与目标感官语义一致,medium
+graph,body,3,ethyl_hexanoate,Ethyl hexanoate,0.022540802878399727,0.03139714049302966,3,0.605,0.6994999999999999,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,body,1,acetaldehyde,Acetaldehyde,0.026556874876104676,0.026556874876104676,1,0.785,0.5835,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,body,2,glycerol,Glycerol,0.02558192253400248,0.02558192253400248,2,0.74,0.5835,,B,化学机理同族(甘油)，与目标感官语义一致,medium
+no_graph,body,3,X3.methyl.2.hexanol,3-methyl-2-hexanol,-0.023874660536438084,0.023874660536438084,3,0.565,0.5835,,B,化学机理同族(醇类)，与目标感官语义一致,medium
+graph,co2,1,ethyl_octanoate,Ethyl octanoate,0.023309041285599606,0.030220655440602286,1,0.95,0.6995,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,co2,2,ethyl_hexanoate,Ethyl hexanoate,0.02045864629820517,0.028131389650492486,2,0.82,0.6995,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,co2,3,X3.methyl.2.hexanol,3-methyl-2-hexanol,-0.02220044812755313,0.02695625582537697,3,0.6,0.6995,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,co2,1,ethyl_octanoate,Ethyl octanoate,0.023309041285599606,0.023309041285599606,1,0.905,0.6755,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,co2,2,X3.methyl.2.hexanol,3-methyl-2-hexanol,-0.02220044812755313,0.02220044812755313,2,0.755,0.6755,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+no_graph,co2,3,ethyl_hexanoate,Ethyl hexanoate,0.02045864629820517,0.02045864629820517,3,0.64,0.6755,,C,图邻域+1.csv 关联证据；机理仅间接，列为探索性候选,low
+graph,overall,1,ethyl_acetate,Ethyl acetate,0.018026261364392098,0.023401059281440578,1,0.765,0.3345,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+graph,overall,2,acetaldehyde,Acetaldehyde,0.012776296089563804,0.018840245738101072,2,0.29,0.3345,,B,化学机理同族(醛类)，与目标感官语义一致,low
+graph,overall,3,X2.butyloctanoate,2-butyl octanoate,0.01566581295952563,0.018658828966183757,3,0.29,0.3345,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,overall,1,ethyl_acetate,Ethyl acetate,0.018026261364392098,0.018026261364392098,1,0.59,0.24450000000000002,,B,化学机理同族(酯类)，与目标感官语义一致,medium
+no_graph,overall,2,X2.butyloctanoate,2-butyl octanoate,0.01566581295952563,0.01566581295952563,2,0.325,0.24450000000000002,,B,化学机理同族(酯类)，与目标感官语义一致,low
+no_graph,overall,3,X.E..beta.ocimene,E-Î²-ocimene,-0.014268572612386465,0.014268572612386465,3,0.16,0.24450000000000002,,B,化学机理同族(酒花萜类/倍半萜)，与目标感官语义一致,low

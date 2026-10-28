@@ -3,11 +3,11 @@
   "targets": 52,
   "labelled_panel_targets": 50,
   "model": "extra_trees__median",
-  "model_sha256": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+  "model_sha256": "82cf74966320e82d3a72a6585dcaa3c2c573a112c9c7f5e5e5fcae2fe80436ad",
   "input_sha256": "d00cc717bf29b775414a0ceb25eb1c1aa36319898b08856faac7cc4f651bacfd",
   "score_scale": "original_0_6_individual_rating_scale",
-  "grade_semantics": "integer_conditional_median_then_non_forced_high_grade_topk_with_parent_cap",
-  "grade_method": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+  "grade_semantics": "integer_conditional_median_then_fixed_threshold_high_grade_with_parent_cap",
+  "grade_method": "fixed_threshold_quantile",
   "grade_probability_calibrated": false,
   "missing_columns_imputed": [],
   "unlabelled_card_targets": [
@@ -31,12 +31,15 @@
     "probability_rating_6"
   ],
   "decision_rule": {
-    "rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+    "rule": "fixed_threshold_quantile",
     "forced": false,
     "middle_cap": 4,
     "rate_source": "observed_panel_weighted_median_high_grade_fractions_on_fixed_full_training_panel",
-    "implementation": "beer_models.q1_decision.runtime_decision",
-    "implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
-    "n_parent_child_pairs": 24
+    "implementation": "beer_models.q1_decision.runtime_threshold_decision",
+    "implementation_sha256": "721ff78b9949be3e7dd4ff16441ad31d2c0ea91da0d9f05ff8190fd2a10f0e0c",
+    "n_parent_child_pairs": 24,
+    "tau_source": "historical_inner_OOF_extra_trees_probabilities_on_fixed_full_training_panel",
+    "n_targets_without_ge5": 16,
+    "n_targets_without_6": 38
   }
 }

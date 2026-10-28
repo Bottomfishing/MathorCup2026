@@ -517,5 +517,68 @@ class SensoryReplayTests(unittest.TestCase):
         self.assertEqual(replay["delivered_table_sha256"], script.sha256_file(table))
 
 
+class DetRerunTests(unittest.TestCase):
+    """Task B: after the Q1 decision-rule switch the 66 spectra were re-graded.
+
+    These artifact checks pin the delivered audit: the deliverable was regenerated with the
+    current ``q1.joblib`` (sha recorded), no listed off-flavour grade got worse, and the
+    chemical / claim-level / style / defect-status evidence did not move.
+    """
+
+    OUTPUT = ROOT / "outputs" / "q3_migration_20261028"
+    MODEL = ROOT / "outputs" / "current_models" / "q1.joblib"
+
+    def verification(self):
+        path = self.OUTPUT / "verification.json"
+        if not path.exists():
+            self.skipTest("verification.json not generated")
+        return json.loads(path.read_text(encoding="utf-8"))
+
+    def test_verification_records_available_det_rerun(self):
+        det = self.verification()["det_rerun"]
+        self.assertTrue(det["available"])
+        self.assertTrue(det["model_sha_changed"])
+        self.assertTrue(det["grade_change_within_limit"])
+        self.assertEqual(det["changed_cells"], len(pd.read_csv(
+            self.OUTPUT / "s2c_det_grade_changes.csv")))
+        self.assertEqual(det["cells_compared"], 66 * 52 - 66 * 2)
+
+    def test_defect_target_grades_never_worse(self):
+        det = self.verification()["det_rerun"]
+        self.assertEqual(det["defect_worse_count"], 0, det["defect_worse_cells"])
+        for target in ("dms", "diacetyl", "X4vg", "t2n", "stale_hops"):
+            self.assertEqual(det["defect_target_counts"][target]["up"], 0)
+            self.assertEqual(det["defect_target_counts"][target]["unchanged"], 66)
+        changes = pd.read_csv(self.OUTPUT / "s2c_det_grade_changes.csv")
+        worse = changes[(changes["defect_target"]) & (changes["direction"] == "up")]
+        self.assertEqual(len(worse), 0, worse.to_dict("records"))
+
+    def test_evidence_counts_unchanged_by_decision_rule(self):
+        det = self.verification()["det_rerun"]
+        self.assertTrue(det["criteria_unchanged"])
+        self.assertEqual(det["claim_level_changed_cases"], [])
+        self.assertEqual(det["style_nearest_centroid_changed_cases"], [])
+        self.assertEqual(det["defect_status_changed_cases"], [])
+        self.assertEqual(det["claim_level_counts_old"], det["claim_level_counts_new"])
+
+    def test_grade_change_matrix_covers_66_spects(self):
+        matrix = pd.read_csv(self.OUTPUT / "s2c_det_grade_change_matrix.csv")
+        det = self.verification()["det_rerun"]
+        self.assertEqual(len(matrix), 66)
+        self.assertEqual(int(matrix["cells"].sum()), det["cells_total"])
+        self.assertEqual(int(matrix["up"].sum()), det["changed_up"])
+        self.assertEqual(int(matrix["down"].sum()), det["changed_down"])
+        self.assertEqual(int(matrix["defect_worse"].sum()), 0)
+
+    def test_model_sha_is_the_current_bundle(self):
+        if not self.MODEL.exists():
+            self.skipTest("current Q1 bundle absent")
+        verification = self.verification()
+        self.assertEqual(verification["sensory_pipeline"]["q1_model_sha256"],
+                         hashlib.sha256(self.MODEL.read_bytes()).hexdigest())
+        self.assertEqual(verification["det_rerun"]["current_model_sha256"],
+                         verification["sensory_pipeline"]["q1_model_sha256"])
+
+
 if __name__ == "__main__":
     unittest.main()

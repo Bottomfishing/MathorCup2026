@@ -1,0 +1,633 @@
+{
+  "status": "passed",
+  "generated_on": "2026-10-28",
+  "generated_at": "2026-10-28T09:49:18+08:00",
+  "script": "scripts/q3_evidence_20261028.py",
+  "output_directory": "q3_evidence_20261028",
+  "checks": [
+    {
+      "name": "style_methods",
+      "actual": [
+        "extra_trees",
+        "logistic",
+        "nearest_centroid_oof"
+      ],
+      "expected": [
+        "extra_trees",
+        "logistic",
+        "nearest_centroid_oof"
+      ],
+      "passed": true
+    },
+    {
+      "name": "logistic_n",
+      "actual": 250,
+      "expected": 250,
+      "passed": true
+    },
+    {
+      "name": "logistic_labels",
+      "actual": 22,
+      "expected": 22,
+      "passed": true
+    },
+    {
+      "name": "logistic_confusion_shape",
+      "actual": [
+        22,
+        22
+      ],
+      "expected": [
+        22,
+        22
+      ],
+      "passed": true
+    },
+    {
+      "name": "logistic_focus_supports",
+      "actual": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "expected": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "passed": true
+    },
+    {
+      "name": "logistic_accuracy_range",
+      "actual": true,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "extra_trees_n",
+      "actual": 250,
+      "expected": 250,
+      "passed": true
+    },
+    {
+      "name": "extra_trees_labels",
+      "actual": 22,
+      "expected": 22,
+      "passed": true
+    },
+    {
+      "name": "extra_trees_confusion_shape",
+      "actual": [
+        22,
+        22
+      ],
+      "expected": [
+        22,
+        22
+      ],
+      "passed": true
+    },
+    {
+      "name": "extra_trees_focus_supports",
+      "actual": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "expected": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "passed": true
+    },
+    {
+      "name": "extra_trees_accuracy_range",
+      "actual": true,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "nearest_centroid_oof_n",
+      "actual": 250,
+      "expected": 250,
+      "passed": true
+    },
+    {
+      "name": "nearest_centroid_oof_labels",
+      "actual": 22,
+      "expected": 22,
+      "passed": true
+    },
+    {
+      "name": "nearest_centroid_oof_confusion_shape",
+      "actual": [
+        22,
+        22
+      ],
+      "expected": [
+        22,
+        22
+      ],
+      "passed": true
+    },
+    {
+      "name": "nearest_centroid_oof_focus_supports",
+      "actual": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "expected": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "passed": true
+    },
+    {
+      "name": "nearest_centroid_oof_accuracy_range",
+      "actual": true,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "style_oof_no_missing_predictions",
+      "actual": true,
+      "expected": null,
+      "passed": true,
+      "note": "every beer receives exactly one out-of-fold prediction"
+    },
+    {
+      "name": "style_classifier_oof_rows",
+      "actual": 69,
+      "expected": 69,
+      "passed": true
+    },
+    {
+      "name": "nearest_centroid_global_present",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tripel_rows",
+      "actual": 11,
+      "expected": 11,
+      "passed": true
+    },
+    {
+      "name": "tripel_unique_cases",
+      "actual": 11,
+      "expected": 11,
+      "passed": true
+    },
+    {
+      "name": "tripel_target_style",
+      "actual": "{'Tripel'}",
+      "expected": "{'Tripel'}",
+      "passed": true
+    },
+    {
+      "name": "tripel_dms_cap_median",
+      "actual": 11,
+      "expected": 11,
+      "passed": true
+    },
+    {
+      "name": "tripel_centroid_defect_unsafe",
+      "actual": [
+        "DMS",
+        "Diacetyl"
+      ],
+      "expected": [
+        "DMS",
+        "Diacetyl"
+      ],
+      "passed": true
+    },
+    {
+      "name": "tripel_no_defect_safe_style_sample",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "no Tripel training beer satisfies every 0.9*threshold cap (median scenario)"
+    },
+    {
+      "name": "tripel_no_defect_safe_style_sample_mean",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "tripel_safe_reference_kind",
+      "actual": "projected_style_centroid_under_caps",
+      "expected": "projected_style_centroid_under_caps",
+      "passed": true
+    },
+    {
+      "name": "tripel_safe_reference_meets_caps",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tripel_tradeoff_safe_point_farther",
+      "actual": true,
+      "expected": null,
+      "passed": true,
+      "note": "d_target_after / d_safe_after > 1 means the defect-safe reference point is farther than the raw style centroid"
+    },
+    {
+      "name": "tripel_mean_distance_reduction",
+      "actual": 12.496,
+      "expected": 12.496,
+      "passed": true
+    },
+    {
+      "name": "tripel_safe_reduction_mean",
+      "actual": 12.4366,
+      "expected": 12.4366,
+      "passed": true
+    },
+    {
+      "name": "migrated_classifier_rows",
+      "actual": 33,
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "name": "migrated_classifier_consensus_counts",
+      "actual": {
+        "Tripel": 1,
+        "Kriek": 11,
+        "Lambic": 11
+      },
+      "expected": {},
+      "passed": true,
+      "note": "informational: per requested style use classifier_consensus_requested column"
+    },
+    {
+      "name": "migrated_classifier_model_sha256",
+      "actual": 64,
+      "expected": 64,
+      "passed": true
+    },
+    {
+      "name": "ablation_rows",
+      "actual": 45,
+      "expected": 45,
+      "passed": true
+    },
+    {
+      "name": "ablation_generators",
+      "actual": [
+        "copula_quantile_projected",
+        "donor_residual_projected",
+        "hybrid_support_projected",
+        "interp_quantile_projected",
+        "interpolate"
+      ],
+      "expected": [
+        "copula_quantile_projected",
+        "donor_residual_projected",
+        "hybrid_support_projected",
+        "interp_quantile_projected",
+        "interpolate"
+      ],
+      "passed": true
+    },
+    {
+      "name": "ablation_denominator_styles",
+      "actual": [
+        "Amber",
+        "Blond",
+        "Brett/cofermented",
+        "Brown",
+        "Brut",
+        "Christmas",
+        "Dubbel",
+        "Faro",
+        "Flanders old brown",
+        "Fruitbeer",
+        "Hoppy",
+        "Kriek",
+        "Lambic",
+        "Low/No alcohol",
+        "Pils/Lager",
+        "Saison",
+        "Scotch",
+        "Stout/Porter",
+        "Strong ale",
+        "Tripel",
+        "West Flanders ale",
+        "Wheat"
+      ],
+      "expected": [
+        "Amber",
+        "Blond",
+        "Brett/cofermented",
+        "Brown",
+        "Brut",
+        "Christmas",
+        "Dubbel",
+        "Faro",
+        "Flanders old brown",
+        "Fruitbeer",
+        "Hoppy",
+        "Kriek",
+        "Lambic",
+        "Low/No alcohol",
+        "Pils/Lager",
+        "Saison",
+        "Scotch",
+        "Stout/Porter",
+        "Strong ale",
+        "Tripel",
+        "West Flanders ale",
+        "Wheat"
+      ],
+      "passed": true
+    },
+    {
+      "name": "ablation_denominator_totals",
+      "actual": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "expected": {
+        "Tripel": 28,
+        "Kriek": 10,
+        "Lambic": 11
+      },
+      "passed": true
+    },
+    {
+      "name": "ablation_denominators_complete",
+      "actual": true,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "gate_v3_substantive_rules",
+      "actual": 13,
+      "expected": 13,
+      "passed": true
+    },
+    {
+      "name": "gate_v3_total_items",
+      "actual": 14,
+      "expected": 14,
+      "passed": true
+    },
+    {
+      "name": "gate_v3_aggregate_items",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "gate_v3_substantive_all_passed",
+      "actual": 13,
+      "expected": 13,
+      "passed": true
+    },
+    {
+      "name": "gate_v2_consistent",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "disclosure_mentions_固定验证折",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "disclosure_mentions_实质规则",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "disclosure_mentions_总汇总",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "disclosure_mentions_近重复",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "disclosure_mentions_不是独立泛化证明",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "frozen_migration_unmodified",
+      "actual": "90d0bc035510503c1222bdcfc5e80feaad068d434b70516c067eadb23b3d54ab",
+      "expected": "90d0bc035510503c1222bdcfc5e80feaad068d434b70516c067eadb23b3d54ab",
+      "passed": true,
+      "note": "sha256 recorded at read time; this script only reads the frozen directory"
+    },
+    {
+      "name": "frozen_generation_unmodified",
+      "actual": "fad4db2367ab8a5a7fe028a98f93be17d23eccf4cc893f64dcebb5556fbd6b7e",
+      "expected": "fad4db2367ab8a5a7fe028a98f93be17d23eccf4cc893f64dcebb5556fbd6b7e",
+      "passed": true,
+      "note": "sha256 of the three frozen generation validation tables"
+    },
+    {
+      "name": "input_hashes_recorded",
+      "actual": [
+        "1.csv",
+        "8.xlsx",
+        "s2c_migration_results.csv",
+        "v1/generation_validation.csv",
+        "v2/generation_validation.csv",
+        "v3/generation_validation.csv"
+      ],
+      "expected": [
+        "1.csv",
+        "8.xlsx",
+        "s2c_migration_results.csv",
+        "v1/generation_validation.csv",
+        "v2/generation_validation.csv",
+        "v3/generation_validation.csv"
+      ],
+      "passed": true
+    }
+  ],
+  "counts": {
+    "style_oof_rows": 69,
+    "style_methods": 3,
+    "tripel_cases": 11,
+    "migrated_classifier_rows": 33,
+    "ablation_rows": 45,
+    "ablation_generators": [
+      "interpolate",
+      "copula_quantile_projected",
+      "interp_quantile_projected",
+      "donor_residual_projected",
+      "hybrid_support_projected"
+    ],
+    "gate_v3_substantive": 13,
+    "gate_v3_aggregate": 1,
+    "gate_v3_total": 14
+  },
+  "headline": {
+    "style_accuracy": {
+      "logistic": 0.512,
+      "extra_trees": 0.544,
+      "nearest_centroid_oof": 0.224
+    },
+    "style_macro_recall": {
+      "logistic": 0.4782876193153061,
+      "extra_trees": 0.5226579565375494,
+      "nearest_centroid_oof": 0.2411438720844448
+    },
+    "style_focus_recall": {
+      "logistic": {
+        "Tripel": 0.6071428571428571,
+        "Kriek": 0.6,
+        "Lambic": 0.7272727272727273
+      },
+      "extra_trees": {
+        "Tripel": 0.6785714285714286,
+        "Kriek": 0.9,
+        "Lambic": 0.9090909090909091
+      },
+      "nearest_centroid_oof": {
+        "Tripel": 0.07142857142857142,
+        "Kriek": 0.0,
+        "Lambic": 0.6363636363636364
+      }
+    },
+    "tripel": {
+      "centroid_defects": {
+        "DMS": 38.61954027072579,
+        "Diacetyl": 0.5647340446071429,
+        "4VG": 0.014370294594175298
+      },
+      "dms_threshold_median": 19.0,
+      "dms_threshold_mean": 17.25,
+      "centroid_DMSO_threshold_ratio": 2.0326073826697786,
+      "centroid_Diacetyl_threshold_ratio": 6.274822717857144,
+      "centroid_4VG_threshold_ratio": 0.07185147297087649,
+      "centroid_caps_median": {
+        "DMS": 17.1,
+        "Diacetyl": 0.081,
+        "4VG": 0.18000000000000002
+      },
+      "centroid_exceeds_caps": {
+        "DMS": true,
+        "Diacetyl": true,
+        "4VG": false
+      },
+      "n_style_samples": 28,
+      "n_defect_safe_samples_median": 0,
+      "n_defect_safe_samples_mean": 0,
+      "defect_safe_reference_beers": [],
+      "safe_reference_kind": "projected_style_centroid_under_caps",
+      "safe_reference_defects": {
+        "DMS": 17.1,
+        "Diacetyl": 0.08100000000000002,
+        "4VG": 0.014370294594175298
+      },
+      "mean_dist_reduction_pct": 12.49600915769988,
+      "mean_residual_target_gap_pct": 87.50399084230011,
+      "mean_safe_reduction_pct": 12.436613012952082,
+      "mean_target_over_safe_distance": 1.0005368900566174,
+      "mean_d_safe_after": 0.36222507203081056,
+      "mean_d_target_after": 0.36242092735985326,
+      "mean_projection_change_share_pct": 6.472023740943061,
+      "mean_coordinates_clamped": 5.818181818181818,
+      "n_cases_dms_cap_median": 11,
+      "n_cases_dms_cap_mean": 6,
+      "n_cases_dms_below_threshold_median": 11
+    },
+    "ablation": [
+      {
+        "generator": "interpolate",
+        "marginal_w1": 0.40106944508398046,
+        "energy": 0.36664851542493826,
+        "variance_ratio": 0.7259862209576821,
+        "rank_correlation_rmse": 0.14728925834643716,
+        "heldout_coverage": 0.9487654320987653,
+        "exact_training_copy_rate": 0.0,
+        "near_training_copy_rate": 0.0022222222222222222,
+        "internal_near_duplicate_rate": 0.2688888888888889,
+        "model_median_w1": 0.12813086419753084
+      },
+      {
+        "generator": "donor_residual_projected",
+        "marginal_w1": 0.38554187464711975,
+        "energy": 0.3329993848540565,
+        "variance_ratio": 0.9834675797160176,
+        "rank_correlation_rmse": 0.09749171637738872,
+        "heldout_coverage": 0.8932098765432097,
+        "exact_training_copy_rate": 0.0,
+        "near_training_copy_rate": 0.0,
+        "internal_near_duplicate_rate": 0.0,
+        "model_median_w1": 0.14411111111111108
+      },
+      {
+        "generator": "hybrid_support_projected",
+        "marginal_w1": 0.385093005137515,
+        "energy": 0.33324176088051644,
+        "variance_ratio": 0.8401206871488544,
+        "rank_correlation_rmse": 0.13607538558966692,
+        "heldout_coverage": 0.9487654320987653,
+        "exact_training_copy_rate": 0.0,
+        "near_training_copy_rate": 0.0011111111111111111,
+        "internal_near_duplicate_rate": 0.07222222222222223,
+        "model_median_w1": 0.122158024691358
+      }
+    ],
+    "classifier_consensus": {
+      "Tripel": 1,
+      "Kriek": 11,
+      "Lambic": 11
+    },
+    "classifier_counts_by_method": {
+      "logistic": {
+        "Tripel": 11,
+        "Kriek": 11,
+        "Lambic": 11
+      },
+      "extra_trees": {
+        "Tripel": 1,
+        "Kriek": 11,
+        "Lambic": 11
+      },
+      "nearest_centroid": {
+        "Tripel": 0,
+        "Kriek": 11,
+        "Lambic": 2
+      }
+    }
+  },
+  "inputs": {
+    "migration_directory": "q3_migration_20261028",
+    "generation_directories": {
+      "v1": "q3_copula_20261028",
+      "v2": "q3_copula_v2_20261028",
+      "v3": "q3_copula_v3_20261028"
+    },
+    "sha256": {
+      "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+      "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a",
+      "s2c_migration_results.csv": "90d0bc035510503c1222bdcfc5e80feaad068d434b70516c067eadb23b3d54ab",
+      "v1/generation_validation.csv": "a2eb5f1ca8a2573d68118f3d78140c5b28a1ab62dce4af0511657ce1a943c142",
+      "v2/generation_validation.csv": "7d17aaae186f4c486cca6f119e6b85d35538e27fa82a45f4fc488166a9e966ee",
+      "v3/generation_validation.csv": "7796b6eeef7a8929fe8fce5a585480f1593a8297ed69efadd5620ad30a9da0ab"
+    }
+  },
+  "honesty": "These are secondary diagnostics on frozen Q3 outputs. Classifier scores are evidence about style support, not transfer certificates; the v3 gate is an internal validation on fixed folds that also informed the v3 design; the ablation means are over 3 folds with 3-10 held-out spectra per (fold, style)."
+}

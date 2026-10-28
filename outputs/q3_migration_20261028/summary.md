@@ -7,8 +7,9 @@
 - Lambic 仅 2/11 条迁移后最近质心为 Lambic，如实记录；风格可辨识度最近质心 LOO=0.132（多数类基线 0.124，22 类）。
 - 证据分级（s2c_evidence_by_case.csv）：claim_level {'conditional': 24, 'model_supported': 9}；风格诊断支持数 Tripel 0/11、Kriek 11/11、Lambic 2/11，Tripel 与 Lambic 标“风格诊断未支持”；缺陷状态 {'DMS': {'unchanged': 24, 'improved': 9}, 'Diacetyl': {'unchanged': 18, 'improved': 9, 'unknown': 6}, '4VG': {'unchanged': 33}, 't2n': {'unknown': 33}, 'Stale_hops': {'unknown': 33}}。
 - 完整谱与感官画像：s2c_migration_spectra_224_long.csv（66 行）、s2c_migration_spectra_224_wide.csv（33 行）、s2c_migration_after_input_33.csv（33×227）、s2c_sensory_before_after_52.csv（3432 行 = 66 谱 × 52 目标，官方 Q1 入口 beer_models.inference.run）。
-- 画像可复现性（N2 修复）：用存储谱 + 当前 q1.joblib（sha256 3312c314bf26ca8f…）重放，3432 行逐格比对 mismatch=0、max|Δ|=1.1e-15（容差 1e-12）；表 sha256 a36621b787e18f72…。
+- 画像可复现性（N2 修复）：用存储谱 + 当前 q1.joblib（sha256 82cf74966320e82d…）重放，3432 行逐格比对 mismatch=0、max|Δ|=1.3e-15（容差 1e-12）；表 sha256 395e51fc44e5bba3…。
 - 正式口径：estimated_grade_0_6 为决策层 top-k + 24 对父子 cap；prob_ge5/prob_6 为决策层概率，risk-head 概率另存 prob_ge5_risk_head/prob_6_risk_head。
+- 决策规则切换审计（task B）：对比 q3_migration_20261028_pre_det（旧 Q1，sha256 3312c314bf26ca8f…），66 谱 × 52 target 中可比 3300 格，变化 65 格（升 19 / 降 46 / 不变 3235）；五缺陷项（dms/diacetyl/X4vg/t2n/stale_hops）变差 0 格；A/B/C、claim_level、风格判定、缺陷状态计数未变。
 - t2n 无阈值、Stale hops 无化学坐标：状态记 unknown，不属预注册 A/B/C 范围。
 
 诚实说明：迁移谱是附件 1 坐标体系内的统计目标，不是酿造配方或实测酒；投影只认证所列缺陷坐标（0.9×阈值余量），不认证可酿造性与感官接受度。风格诊断整体很弱（LOO≈多数类基线），因此 Tripel/Lambic 的迁移只能表述为“化学判据通过的候选”，不是“已成功迁移为该风格”。

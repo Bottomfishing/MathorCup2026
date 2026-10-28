@@ -1,0 +1,5 @@
+﻿beer,classifier,predicted_style,Tripel_probability,calibration_established
+119,logistic,Pils/Lager,7.880056361799436e-05,False
+transfer119,logistic,Tripel,0.9001710147036465,False
+119,extra_trees,Pils/Lager,0.007610793239410308,False
+transfer119,extra_trees,Tripel,0.6089274634889682,False

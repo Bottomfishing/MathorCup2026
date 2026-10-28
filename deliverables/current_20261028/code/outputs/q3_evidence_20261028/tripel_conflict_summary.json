@@ -1,0 +1,43 @@
+{
+  "centroid_defects": {
+    "DMS": 38.61954027072579,
+    "Diacetyl": 0.5647340446071429,
+    "4VG": 0.014370294594175298
+  },
+  "dms_threshold_median": 19.0,
+  "dms_threshold_mean": 17.25,
+  "centroid_DMSO_threshold_ratio": 2.0326073826697786,
+  "centroid_Diacetyl_threshold_ratio": 6.274822717857144,
+  "centroid_4VG_threshold_ratio": 0.07185147297087649,
+  "centroid_caps_median": {
+    "DMS": 17.1,
+    "Diacetyl": 0.081,
+    "4VG": 0.18000000000000002
+  },
+  "centroid_exceeds_caps": {
+    "DMS": true,
+    "Diacetyl": true,
+    "4VG": false
+  },
+  "n_style_samples": 28,
+  "n_defect_safe_samples_median": 0,
+  "n_defect_safe_samples_mean": 0,
+  "defect_safe_reference_beers": [],
+  "safe_reference_kind": "projected_style_centroid_under_caps",
+  "safe_reference_defects": {
+    "DMS": 17.1,
+    "Diacetyl": 0.08100000000000002,
+    "4VG": 0.014370294594175298
+  },
+  "mean_dist_reduction_pct": 12.49600915769988,
+  "mean_residual_target_gap_pct": 87.50399084230011,
+  "mean_safe_reduction_pct": 12.436613012952082,
+  "mean_target_over_safe_distance": 1.0005368900566174,
+  "mean_d_safe_after": 0.36222507203081056,
+  "mean_d_target_after": 0.36242092735985326,
+  "mean_projection_change_share_pct": 6.472023740943061,
+  "mean_coordinates_clamped": 5.818181818181818,
+  "n_cases_dms_cap_median": 11,
+  "n_cases_dms_cap_mean": 6,
+  "n_cases_dms_below_threshold_median": 11
+}

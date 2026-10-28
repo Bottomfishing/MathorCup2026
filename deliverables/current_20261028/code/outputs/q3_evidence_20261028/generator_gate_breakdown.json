@@ -1,0 +1,160 @@
+{
+  "v3": {
+    "substantive_rules": 13,
+    "substantive_rules_passed": 13,
+    "aggregate_items": 1,
+    "aggregate_items_passed": 1,
+    "total_items": 14,
+    "rules": [
+      {
+        "rule": "marginal_w1",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "exact_training_copy_rate",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "variance_lower",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "variance_upper",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "rank_correlation_rmse",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "model_median_w1",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Kriek_energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Kriek_coverage",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Lambic_energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Lambic_coverage",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Tripel_energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Tripel_coverage",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "gate_all_passed",
+        "passed": true,
+        "kind": "aggregate"
+      }
+    ]
+  },
+  "v2": {
+    "substantive_rules": 13,
+    "substantive_rules_passed": 11,
+    "aggregate_items": 1,
+    "aggregate_items_passed": 0,
+    "total_items": 14,
+    "rules": [
+      {
+        "rule": "marginal_w1",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "exact_training_copy_rate",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "variance_lower",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "variance_upper",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "rank_correlation_rmse",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "model_median_w1",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Kriek_energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Kriek_coverage",
+        "passed": false,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Lambic_energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Lambic_coverage",
+        "passed": false,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Tripel_energy",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "Tripel_coverage",
+        "passed": true,
+        "kind": "substantive"
+      },
+      {
+        "rule": "gate_all_passed",
+        "passed": false,
+        "kind": "aggregate"
+      }
+    ]
+  }
+}

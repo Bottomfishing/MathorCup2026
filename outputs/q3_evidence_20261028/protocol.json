@@ -1,0 +1,31 @@
+{
+  "purpose": "T4/T6 evidence on frozen Q3 outputs; no criterion or gate change",
+  "generated_at": "2026-10-28T09:49:12+08:00",
+  "source_directory": "附件",
+  "migration_directory": "q3_migration_20261028",
+  "generation_directories": {
+    "v1": "q3_copula_20261028",
+    "v2": "q3_copula_v2_20261028",
+    "v3": "q3_copula_v3_20261028"
+  },
+  "style_protocol": {
+    "file": "configs/q3_style_protocol.json",
+    "seed": 20261024,
+    "oof_folds": 3
+  },
+  "generate_protocol": {
+    "file": "task4_raw_q3_protocol_20261026.json"
+  },
+  "inputs_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a",
+    "s2c_migration_results.csv": "90d0bc035510503c1222bdcfc5e80feaad068d434b70516c067eadb23b3d54ab",
+    "v1/generation_validation.csv": "a2eb5f1ca8a2573d68118f3d78140c5b28a1ab62dce4af0511657ce1a943c142",
+    "v2/generation_validation.csv": "7d17aaae186f4c486cca6f119e6b85d35538e27fa82a45f4fc488166a9e966ee",
+    "v3/generation_validation.csv": "7796b6eeef7a8929fe8fce5a585480f1593a8297ed69efadd5620ad30a9da0ab"
+  },
+  "q3_model": {
+    "path": "outputs\\current_models\\q3.joblib",
+    "sha256": "d8244e50d5566c50341b6d7d5b3af7ef9bc6b7f53143957f97da244358759634"
+  }
+}

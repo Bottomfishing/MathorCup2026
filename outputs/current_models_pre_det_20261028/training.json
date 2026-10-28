@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "deployment_fits_only": true,
+  "new_external_validation": false,
+  "q1_high_tail_resolved": false,
+  "Stale_resolved": false,
+  "q1_decision_rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+  "q1_decision_implementation": "beer_models.q1_decision.runtime_decision",
+  "q1_decision_implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+  "raw_sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628",
+  "calibration_sha256": "d60dcace3ea26ffe79bc0f1082ff0e4d29f6d8ea0a317f6278749eeb98ba1a72",
+  "source_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "8.xlsx": "f2316766792111d98281bd35c8403682be8c8069d166a7a7d5887ffbb227700a"
+  },
+  "model_sha256": {
+    "q1.joblib": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+    "q3.joblib": "d8244e50d5566c50341b6d7d5b3af7ef9bc6b7f53143957f97da244358759634"
+  }
+}

@@ -49,6 +49,10 @@ __all__ = [
     'apply_nested_quantile',
     'observed_high_grade_rates',
     'runtime_decision',
+    'fold_threshold',
+    'training_threshold',
+    'threshold_decision',
+    'runtime_threshold_decision',
 ]
 
 _GRADE_MIN = 0
@@ -64,6 +68,18 @@ def _as_1d_float(values, name):
         raise ValueError('%s must not be empty' % name)
     if not np.isfinite(array).all():
         raise ValueError('%s must contain only finite values' % name)
+    return array
+
+
+def _as_1d_threshold(values, name):
+    """Return a float64 1-D threshold array; ``+inf`` is allowed, ``NaN`` is not."""
+    array = np.asarray(values, dtype=float)
+    if array.ndim != 1:
+        raise ValueError('%s must be one-dimensional, got shape %r' % (name, array.shape))
+    if array.size == 0:
+        raise ValueError('%s must not be empty' % name)
+    if np.isnan(array).any():
+        raise ValueError('%s must not contain NaN' % name)
     return array
 
 
@@ -668,6 +684,221 @@ def observed_high_grade_rates(panel_median):
     if ((values < _GRADE_MIN) | (values > _GRADE_MAX)).any():
         raise ValueError('panel_median must lie on the 0-6 card scale')
     return (values >= 5.0).mean(axis=0), (values >= 6.0).mean(axis=0)
+
+
+def _quantile_threshold(probabilities, event_labels, threshold):
+    """Return the k-th largest probability with ``k = ceil(r * n)``.
+
+    ``r`` is the observed event rate ``labels >= threshold`` on the estimation
+    slice.  ``+inf`` is returned when the slice has no positive event, which by
+    construction suppresses grade 5/6 for that target (never a forced grade).
+    """
+    probs = np.asarray(probabilities, dtype=float)
+    labels = np.asarray(event_labels, dtype=float)
+    if probs.size == 0:
+        return float('inf')
+    rate = float((labels >= float(threshold)).mean())
+    if rate <= 0.0:
+        return float('inf')
+    support = int(probs.size)
+    k = int(np.ceil(rate * support))
+    k = min(max(k, 1), support)
+    order = np.argsort(-probs, kind='stable')
+    return float(probs[order[k - 1]])
+
+
+def fold_threshold(probabilities, labels, group_ids, fold_ids, threshold):
+    """Per-cell fixed grade threshold estimated on the *other* folds of its group.
+
+    This is the batch-independent replacement for the per-fold top-k promotion.
+    For every ``(group, fold)`` pair the training slice is all cells of the same
+    group in a different fold; the observed event rate ``r`` there fixes
+    ``k = ceil(r * n_train)``, and ``tau`` is the ``k``-th largest probability of
+    that slice.  Inference then compares each sample's own probability with
+    ``tau`` -- no batch size, rank or row position is involved.
+
+    Parameters
+    ----------
+    probabilities : array-like of float, shape (n,)
+        Probability of the event (``P(>=5)`` or ``P(=6)``) per cell.
+    labels : array-like of float, shape (n,)
+        Reference grade (panel-weighted median on the 0-6 card scale).
+    group_ids, fold_ids : array-like, shape (n,)
+        Target label and fold label of every cell.
+    threshold : numeric
+        Grade threshold that defines the event (5 or 6).
+
+    Returns
+    -------
+    numpy.ndarray of float, shape (n,)
+        Threshold for the cell's ``(group, fold)`` estimation slice.  Cells whose
+        estimation slice contains no positive event receive ``+inf``.
+
+    Notes
+    -----
+    * Only ``probabilities``/``labels`` of the *other* folds are read; a cell's own
+      label never enters its threshold.  This is exactly the property checked by
+      the leakage/purity perturbation test in the official script.
+    * Ties in the probability slice are ordered by ascending position (stable
+      sort), so the threshold is reproducible across platforms.
+    * Raises ``ValueError`` when a group/fold pair has no training cell, matching
+      :func:`fold_training_rate`.
+    """
+    probs = _as_1d_float(probabilities, 'probabilities')
+    values = _as_1d_float(labels, 'labels')
+    group_array, fold_array = _validate_keys(group_ids, fold_ids, probs.size)
+    if values.size != probs.size:
+        raise ValueError('labels must align with probabilities')
+    if ((probs < 0.0) | (probs > 1.0)).any():
+        raise ValueError('probabilities must lie in [0, 1]')
+    if ((values < _GRADE_MIN) | (values > _GRADE_MAX)).any():
+        raise ValueError('labels must lie on the 0-6 card scale')
+    tau = np.full(probs.size, np.inf)
+    for _group, _fold, train, test in _group_fold_slices(group_array, fold_array):
+        if not train.any():
+            raise ValueError('group %r fold %r has no training cells' % (_group, _fold))
+        tau[test] = _quantile_threshold(probs[train], values[train], threshold)
+    return tau
+
+
+def training_threshold(probabilities, labels, group_ids, threshold):
+    """One frozen threshold per group from a single training slice.
+
+    Used to write the runtime bundle: ``probabilities`` are historical inner-OOF
+    probabilities of the fixed training panel and ``labels`` are their panel
+    medians.  No validation data is involved.
+
+    Returns
+    -------
+    dict
+        ``keys`` (group labels in first-appearance order), ``tau``, ``rate``,
+        ``support`` and ``k`` arrays of length ``len(keys)``.
+    """
+    probs = _as_1d_float(probabilities, 'probabilities')
+    values = _as_1d_float(labels, 'labels')
+    group_array = np.asarray(group_ids, dtype=object)
+    if group_array.ndim != 1 or group_array.size != probs.size:
+        raise ValueError('group_ids must be one-dimensional and aligned with probabilities')
+    if values.size != probs.size:
+        raise ValueError('labels must align with probabilities')
+    if ((probs < 0.0) | (probs > 1.0)).any():
+        raise ValueError('probabilities must lie in [0, 1]')
+    if ((values < _GRADE_MIN) | (values > _GRADE_MAX)).any():
+        raise ValueError('labels must lie on the 0-6 card scale')
+    keys = _stable_unique(group_array)
+    tau = np.full(len(keys), np.inf)
+    rate = np.zeros(len(keys))
+    support = np.zeros(len(keys), dtype=np.int64)
+    k_values = np.zeros(len(keys), dtype=np.int64)
+    for position, key in enumerate(keys):
+        rows = np.flatnonzero(group_array == key)
+        support[position] = rows.size
+        rate[position] = float((values[rows] >= float(threshold)).mean()) if rows.size else 0.0
+        if rate[position] > 0.0:
+            k_values[position] = min(max(int(np.ceil(rate[position] * rows.size)), 1), rows.size)
+        tau[position] = _quantile_threshold(probs[rows], values[rows], threshold)
+    return dict(keys=keys, tau=tau, rate=rate, support=support, k=k_values)
+
+
+def threshold_decision(p_ge5, p6, base_grades, tau_ge5, tau_6, group_ids):
+    """Per-sample fixed-threshold grading (batch independent).
+
+    Each cell is graded from its own inputs only::
+
+        grade = 6                 if p6 >= tau_6[cell]
+        grade = 5                 if not 6 and p_ge5 >= tau_ge5[cell]
+        grade = min(base_grade, 4)  otherwise
+
+    Parameters
+    ----------
+    p_ge5, p6, base_grades, tau_ge5, tau_6 : array-like of float, shape (n,)
+        Per-cell probabilities, integer conditional median and the frozen
+        thresholds of the cell's target (``+inf`` suppresses that grade).
+    group_ids : array-like, shape (n,)
+        Target label of every cell.  All cells of one group must share the same
+        thresholds, which is validated here so a caller cannot silently mix
+        per-batch thresholds into a frozen rule.
+
+    Returns
+    -------
+    numpy.ndarray of int64, shape (n,)
+        Grades in ``[0, 6]``; identical for any batch decomposition of the same
+        cells.
+    """
+    prob5 = _as_1d_float(p_ge5, 'p_ge5')
+    prob6 = _as_1d_float(p6, 'p6')
+    base = _as_1d_float(base_grades, 'base_grades')
+    tau5 = _as_1d_threshold(tau_ge5, 'tau_ge5')
+    tau6 = _as_1d_threshold(tau_6, 'tau_6')
+    size = prob5.size
+    for name, array in (('p6', prob6), ('base_grades', base), ('tau_ge5', tau5), ('tau_6', tau6)):
+        if array.size != size:
+            raise ValueError('%s must align with p_ge5' % name)
+    for name, array in (('p_ge5', prob5), ('p6', prob6)):
+        if ((array < 0.0) | (array > 1.0)).any():
+            raise ValueError('%s must lie in [0, 1]' % name)
+    for name, array in (('tau_ge5', tau5), ('tau_6', tau6)):
+        if np.isnan(array).any():
+            raise ValueError('%s must not contain NaN' % name)
+    if ((base < _GRADE_MIN) | (base > _GRADE_MAX)).any():
+        raise ValueError('base_grades must lie in [0, 6]')
+    group_array = np.asarray(group_ids, dtype=object)
+    if group_array.ndim != 1 or group_array.size != size:
+        raise ValueError('group_ids must be one-dimensional and aligned with the probabilities')
+    for group, positions in _group_index(group_array):
+        if np.unique(tau5[positions]).size != 1 or np.unique(tau6[positions]).size != 1:
+            raise ValueError('group %r mixes several thresholds; the rule must be frozen per target' % (group,))
+
+    grades = np.minimum(base, 4).round().astype(np.int64)
+    is_six = prob6 >= tau6
+    is_five = (~is_six) & (prob5 >= tau5)
+    grades[is_six] = 6
+    grades[is_five] = 5
+    return grades
+
+
+def runtime_threshold_decision(p_ge5, p6, base_grades, tau_ge5, tau_6, target_order,
+                               parent_indices=None, child_indices=None):
+    """Apply the frozen per-target thresholds to a fresh beer block.
+
+    Parameters
+    ----------
+    p_ge5, p6, base_grades : array-like of float, shape (n_beers, n_targets)
+        Per-cell probabilities and the integer conditional median.
+    tau_ge5, tau_6 : array-like of float, shape (n_targets,)
+        Frozen per-target thresholds stored in the model bundle.
+    target_order : sequence of str, length ``n_targets``
+        Column order of the arrays (the bundle's ``targets``).
+    parent_indices, child_indices : array-like of int, optional
+        Card pairs; the parent cap is applied after grading.
+
+    Returns
+    -------
+    numpy.ndarray of int64, shape (n_beers, n_targets)
+        Grades; independent of how the beers are split into requests.
+    """
+    prob5 = np.asarray(p_ge5, dtype=float)
+    prob6 = np.asarray(p6, dtype=float)
+    base = np.asarray(base_grades, dtype=float)
+    if prob5.ndim != 2 or prob5.shape != prob6.shape or prob5.shape != base.shape:
+        raise ValueError('p_ge5, p6 and base_grades must share a (n_beers, n_targets) shape')
+    n_beers, n_targets = prob5.shape
+    order = [str(name) for name in target_order]
+    if len(order) != n_targets:
+        raise ValueError('target_order must name every column')
+    tau5 = _as_1d_threshold(tau_ge5, 'tau_ge5')
+    tau6 = _as_1d_threshold(tau_6, 'tau_6')
+    if tau5.size != n_targets or tau6.size != n_targets:
+        raise ValueError('threshold arrays must be one value per target')
+    groups = np.tile(np.asarray(order, dtype=object), n_beers)
+    grades = threshold_decision(prob5.ravel(), prob6.ravel(), base.ravel(),
+                                np.tile(tau5, n_beers), np.tile(tau6, n_beers), groups)
+    matrix = grades.reshape(n_beers, n_targets)
+    if parent_indices is None and child_indices is None:
+        return matrix
+    if parent_indices is None or child_indices is None:
+        raise ValueError('parent_indices and child_indices must be given together')
+    return enforce_parent_child(matrix, parent_indices, child_indices)
 
 
 def runtime_decision(p_ge5, p6, base_grades, rate_ge5, rate_6, target_order,

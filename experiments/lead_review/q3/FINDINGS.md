@@ -647,3 +647,192 @@ $env:PYTHONIOENCODING='utf-8'
 $env:Q3_SOURCE='<附件目录>'
 .venv\Scripts\python.exe -m unittest tests.test_q3_migration                                # 36 tests OK
 ```
+
+## 19. task-19（T4/T6）：风格证据、Tripel 冲突诊断、生成器消融（2026-10-28）
+
+本节只产生**证据**，不改变迁移判据、λ 网格、生成器协议或预注册门禁；历史目录
+`outputs/q3_migration_20261028/`、`outputs/q3_copula_v3_20261028/` 一律只读。脚本
+`scripts/q3_evidence_20261028.py`（模块 `src/beer_models/q3_evidence.py`），产物
+`outputs/q3_evidence_20261028/`（15 个文件，`verification.json` 52 项检查全 True）。
+
+### 19.1 风格分类器折外评估（T4 首要目标）
+
+真实 250 款啤酒、3 折分层折外（与冻结验证折同 seed 20261024；Faro 只有 3 款，5 折不可能），
+每折留出分母（Tripel/Kriek/Lambic）：fold0 9/4/4、fold1 9/3/4、fold2 10/3/3。
+分类器管线复用 `src/beer_models/style_models.py` 与 `configs/q3_style_protocol.json`，
+imputer/scaler 均在训练折内拟合；输入 223 列（官方 224 列去掉缺失 9 个值的双乙酰，与
+`outputs/current_models/q3.joblib` 的 `features` 逐列一致）。
+
+| 方法 | 总体准确率 | 宏平均召回 | Tripel 召回 | Kriek 召回 | Lambic 召回 |
+|---|---|---|---|---|---|
+| logistic（22 类，class_weight=balanced） | 0.512 | 0.478 | 17/28 = 0.607 | 6/10 = 0.600 | 8/11 = 0.727 |
+| extra_trees（300 棵） | **0.544** | **0.523** | **19/28 = 0.679** | **9/10 = 0.900** | **10/11 = 0.909** |
+| 最近质心折外（几何参照） | 0.224 | 0.241 | 2/28 = 0.071 | 0/10 = 0.000 | 7/11 = 0.636 |
+
+- 随机基线 1/22 = 0.045，多数类基线 31/250 = 0.124（Blond）。分类器显著高于这两个基线，
+  也显著高于此前引用的**全库最近质心 LOO 0.132**——即 "0.132 vs 0.124 证明风格不可辨识"
+  的说法过强：分类器可以部分辨识，但总体 0.54 仍远不足以支撑"迁移成功"。
+- 混淆细节（extra_trees）：Tripel 28 条中 19 条判对，误判为 Blond 4、Amber 2、Brett 1；
+  Kriek 9/10 正确、1 条判 Lambic；Lambic 10/11 正确、1 条判 West Flanders ale。
+  最近质心几何参照对 Tripel 几乎全错（主要判 Strong ale 11、Dubbel 3），说明本数据上
+  "欧氏质心"不是可靠的风格证据，分类器才是更公平的折外证据。
+- 结论：**风格支持是"部分可验证、总体偏弱"**。论文不得用 33/33 化学约束通过替代风格证据，
+  也不得把分类器 0.544 写成"风格生成正确率"；它是真实啤酒上的折外风格可辨识度上限参照。
+
+### 19.2 Tripel 冲突诊断（目标距离 vs 缺陷安全能否兼得）
+
+11 条 Tripel 案例（λ*：9 条 0.55、2 条 0.50，判据不改、不扩网格）：
+
+| 量 | 值 |
+|---|---|
+| 平均目标距离缩短（到原始 Tripel 质心） | 12.50%（剩余目标差 87.50%） |
+| 目标质心 DMS | 38.62 µg/L = **2.03 ×** 中位阈值 19.0 |
+| 目标质心双乙酰 | 0.565 mg/L = **6.27 ×** 中位阈值 0.09 |
+| 满足三项缺陷 cap（0.9×阈值）的 Tripel 训练样本 | **0 / 28**（median 与 mean 两情景都是 0） |
+| 缺陷安全参照点 | 无真实样本 → 改用投影到 cap 的质心（DMS 17.10 µg/L、双乙酰 0.081 mg/L、4VG 不变） |
+| 迁移谱到该安全点平均缩短 | 12.44% |
+| 安全点到源谱距离 / 原始质心到源谱距离 | **1.0005 倍**（平均） |
+| 硬投影代价 | 平均夹住 5.8 个坐标，占"源→目标"总改动的 6.47% |
+| 每案例 DMS 达标 cap | 11/11（median 与 mean 情景都 11/11） |
+
+结论（可直接写进论文）：
+
+1. **冲突的本质是数据支持，不是几何不可达**。Tripel 训练集的"典型谱"本身就不合缺陷 cap
+   （0/28 三条同时达标；质心 DMS 2.03×、双乙酰 6.27× 阈值）。因此任何"采样一个典型 Tripel"
+   的做法必然违反缺陷约束；而把目标点投影到 cap 上只多走 0.05% 的距离，说明"目标距离"与
+   "缺陷安全"在几何上几乎可以同时满足。
+2. 真正没被解决的是**风格支持**：见 19.3——迁移后的 Tripel 谱在冻结分类器与几何上都不被
+   承认为 Tripel。所以 19.2 的"距离缩短 12.5% 且 11/11 缺陷达标"只能证明**缺陷约束满足**，
+   不能证明**风格迁移成功**。
+3. 因此 Tripel 的正确表述是："目标风格区域本身超标，我们只能给出一个贴 cap 的**条件性**
+   迁移（λ*=0.5–0.55，距目标质心仍差 87.5%），并用分类器折外证据说明其风格支持有限"。
+
+### 19.3 迁移谱的冻结分类器应用（新增证据）
+
+将 33 条迁移后谱（官方 224 维）喂给 `outputs/current_models/q3.joblib`（全训练冻结分类器）：
+
+| 请求风格 | 一致判为目标（logistic ∧ extra_trees） | logistic 命中 | extra_trees 命中 | 最近质心命中 |
+|---|---|---|---|---|
+| Tripel | **1/11** | 11/11 | 1/11（10 条判 Blond） | **0/11**（11 条判 Brett/cofermented） |
+| Kriek | 11/11 | 11/11 | 11/11 | 11/11 |
+| Lambic | 11/11 | 11/11 | 11/11 | 2/11（其余判 Brown） |
+
+诚实解读：Kriek/Lambic 的 11/11 部分来自 **λ*=1.0**（迁移谱就是目标质心附近），不能当作
+迁移能力的独立证据；Tripel 的 λ*=0.5–0.55 混合谱不被 extra_trees（更可靠的折外模型）
+承认为 Tripel，logistic 却全部判 Tripel——**两个分类器结论相反，说明 Tripel 风格支持
+不确定**，只能报"证据冲突/不足"，不能报"迁移成功"。
+
+### 19.4 生成器消融（T6：同折、同生成量、同 seed）
+
+直接拼接三个冻结目录的 `generation_validation.csv`（3 折 × 3 风格 × 方法），并合并每
+(fold, style) 的留出分母；**没有重跑生成器，没有改任何门槛**：
+
+| 生成器 | marginal_w1 | energy | 方差比 | 秩相关误差 | 覆盖率 | 近重复率 | model_median_w1 |
+|---|---|---|---|---|---|---|---|
+| interpolate（官方基线） | 0.4011 | 0.3666 | 0.7260 | 0.1473 | 0.9488 | 0.2689 | 0.1281 |
+| copula_quantile_projected（v1） | 0.3854 | 0.3095 | 0.9824 | 0.3900 | 0.8654 | 0.0000 | 0.1213 |
+| interp_quantile_projected（v1.5） | 0.3854 | 0.3261 | 0.9824 | 0.1469 | 0.9210 | 0.0711 | 0.1281 |
+| donor_residual_projected（v2） | 0.3855 | 0.3330 | 0.9835 | **0.0975** | 0.8932 | 0.0000 | 0.1441 |
+| hybrid_support_projected（v3） | 0.3851 | 0.3332 | 0.8401 | 0.1361 | **0.9488** | 0.0722 | **0.1222** |
+
+- 每折留出分母（Tripel/Kriek/Lambic）：fold0 9/4/4、fold1 9/3/4、fold2 10/3/3；覆盖率
+  **一条谱 = 0.083（Kriek 12）/0.25（Lambic 4）/0.10–0.11（Tripel 9–10）**，所以覆盖率
+  0.05 的容差在 Kriek/Lambic 上不到一条谱，必须同时报分母与逐折值。
+- 近重复定义（来自 `q3_raw.spectrum_diagnostics`）：生成谱两两最近距离 ≤
+  `near_copy_radius = 0.05 × 训练集 LOO 最近距离中位数`；精确复制是最近真实谱距离 < 1e-10。
+  这不是"精确复制率"，不能混用。
+- v3 gate 的官方口径是 **13 条实质规则 + 1 条总汇总 = 14 项**（`gate_all_passed` 是汇总，
+  不是第 14 条独立规则）。v3 的 13 条实质规则全过（`generator_gate_rules.csv`），但——
+
+**披露（必须写进论文）**：v3 的设计在**同一批固定验证折**上使用了 v2 的覆盖诊断（诊断发现
+oracle 也过不了 Kriek/Lambic 的覆盖率规则，于是预注册了"内部插值分量 + 外部 donor 残差分
+量"的混合方案）。因此 v3 的 13/13 **不是独立泛化证明**，而是"在已知固定折上、预注册方案
+后一次通过"；正式替换建议仍应保留"内部验证"字样，并同时给出 v2（11/13）与插值基线
+（13/13 但方差比 0.726、近重复 26.9%）的对照。
+
+### 19.5 文件与复现
+
+产物（`outputs/q3_evidence_20261028/`）：`style_classifier_oof.json/.csv`、
+`tripel_conflict.csv`、`tripel_conflict_summary.json`、`tripel_defect_safe_samples.csv`、
+`migrated_style_classifier.csv`、`generator_ablation.csv`、`generator_ablation_summary.csv`、
+`generator_gate_rules.csv`、`generator_gate_breakdown.json`、`dev_use_disclosure.md`、
+`summary.json`、`summary.md`、`verification.json`、`protocol.json`（含全部输入 sha256）。
+
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+.venv\Scripts\python.exe scripts\q3_evidence_20261028.py --source '<附件目录>'      # 6.1 s，52 checks 全 True
+.venv\Scripts\python.exe -m unittest tests.test_q3_evidence -v                     # 21 tests OK
+```
+
+## 20. 决策规则切换后的重打分审计（task B，2026-10-28）
+
+### 20.1 背景与口径
+Q1 正式决策从 `non_forced_cumulative_probability_topk_with_parent_child_cap` 切到 T1 修复后的
+`fixed_threshold_quantile`，并重训 `outputs/current_models/q1.joblib`（sha256
+`82cf74966320e82d3a72a6585dcaa3c2c573a112c9c7f5e5e5fcae2fe80436ad`；旧模型
+`3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae` 备份在
+`outputs/current_models_pre_det_20261028/`）。task B 要求用新模型重跑 66 条前后谱 × 52 项感官画像，
+旧产物整体备份后替换，不保留两套并存。
+
+- 旧产物备份：`outputs/q3_migration_20261028_pre_det/`（13 文件，与交付目录同集）
+- 交付目录重跑：`outputs/q3_migration_20261028/`（现为新模型产物）
+- 复现命令：`PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/q3_official_migration_20261028.py --source "<附件目录>"`
+
+### 20.2 模型与可复现性
+- `protocol.json::sensory_pipeline.q1_model_sha256` = 新 sha；`replay_sensory_table()` 在新模型上
+  重放 3432 行（66 谱 × 52 target × 19 列）**mismatch_cells=0，max|Δ|=1.3e-15**（容差 1e-12），
+  模型 sha 与文件 sha 一致；交付表 sha256 `395e51fc44e5bba3…`。
+- `verification.json` 共 **90 项 checks 全部 True**（原 78 项 + 12 项 det 审计），含模型 sha 断言、
+  `det_rerun_cells_compared=3300`、五缺陷项变差 0、变化格数在 100 格上限内、证据计数未变。
+
+### 20.3 新旧 grade 方向变化
+可比格 = 3432 − 132（两个无原始标签的卡目标）= **3300 格**；变化 **65 格（升 19 / 降 46 / 不变 3235）**，
+涉及 **30/33 条 case**。
+
+| 角色 | 升 | 降 | 不变 |
+|---|---|---|---|
+| before | 2 | 19 | 1629 |
+| after | 17 | 27 | 1606 |
+
+- 变化幅度：降侧 −5 格 7、−4 格 3、−3 格 13、−2 格 20、−1 格 3；升侧 +3 格 11、+2 格 7、+1 格 1。
+  即新规则对部分子目标平均降 2–3 格，并非“±1 格微调”，这一点在论文里必须如实写。
+- 五缺陷项（dms / diacetyl / X4vg / t2n / stale_hops）：**up 0、down 0、unchanged 66/66**，
+  `defect_worse_count=0`、`defect_worse_cells=[]` → 满足 Lead 的“worse 必须为 0”。
+- 变化集中在感官子目标：lactic 11、A_esters_all 7、F_malt_all 5、A_malt_all 4、F_malt_burn 4、
+  alcohol 4、aftertaste 3、A_malt_burn 3 等；单条 case 最多 7 格（S028_TO_Tripel before）。
+- 方向解读：新规则总体“降多于升”（46 vs 19），说明逐样本固定阈值比旧 top-k 父子 cap 在该批谱上
+  更保守；after 侧升格 17 格是新规则对迁移后谱更宽松的子目标，但没有任何缺陷项升格。
+
+### 20.4 四口径计数与旧版对比（均未变）
+| 口径 | 旧 | 新 |
+|---|---|---|
+| 化学判据 A/B/C（33 条） | 33/33/33 | 33/33/33 |
+| claim_level | model_supported 9 / conditional 24 | model_supported 9 / conditional 24 |
+| style nearest centroid | target 13 / other 20 | target 13 / other 20 |
+| 缺陷状态（DMS improved/unchanged） | 9 / 24 | 9 / 24 |
+
+`claim_level_changed_cases=[]`、`style_nearest_centroid_changed_cases=[]`、
+`defect_status_changed_cases=[]`、`criteria_unchanged=true` —— 因为 A/B/C、claim_level 与缺陷状态
+来自迁移数学与几何，不读 Q1；Q1 只影响 52 项感官画像数值。
+
+### 20.5 新增交付文件
+- `s2c_det_grade_changes.csv`：65 行 × 10 列（case_id/source_beer/target_style/role/target_52/
+  grade_old/grade_new/delta/direction/defect_target）。
+- `s2c_det_grade_change_matrix.csv`：66 行（33 case × before/after）× 11 列（cells/up/down/
+  unchanged/defect_up/defect_down/defect_worse 等）。
+- `summary.json` 新增 `det_rerun` 段（模型 sha 旧/新、3300/65/19+46、五缺陷逐项 up/down/unchanged、
+  四口径旧/新计数与变化 case 列表、100 格上限判定）；`summary.md` 增一行审计结论。
+- `verification.json` 新增 12 项 det checks 与 `det_rerun` 段。
+
+### 20.6 测试
+`tests/test_q3_migration.py` 新增 `DetRerunTests` 5 项（表行数与 evidence 一致、缺陷项不升格、
+证据计数未变、矩阵 66 行与合计一致、模型 sha 匹配当前 bundle）；全套 **41 项 OK**（带 `Q3_SOURCE`
+6.5 s，不设时 skip 路径同样 exit 0）。
+
+### 20.7 诚实说明
+- 52 项画像仍是“全训练模型预测”，不是样本外精度；迁移前后的差异（65/3300 = 2.0%）只反映
+  Q1 决策规则变化，不等于迁移效果变化。
+- 新旧 grade 都是 0–6 序数尺度上的**同一种谱的不同打分**；升/降只在缺陷项上有“好/坏”方向，
+  其余子目标不能写成“感官改善/恶化”。
+- 五缺陷项等级完全不变，与 20.4 的缺陷状态未变一致；这不表示缺陷谱没变，而是迁移谱本身的
+  缺陷坐标与新规则下的等级判定都稳定。

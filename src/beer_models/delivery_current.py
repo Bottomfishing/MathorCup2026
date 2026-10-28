@@ -30,14 +30,17 @@ from .current_runtime import DEFECTS, ROOT, auxiliary_defects, generated_source,
 from .inference import official_scores
 
 VERSION = '20261028'
-Q1D = ROOT/'outputs/q1_decision_20261028'
+Q1D_OLD = ROOT/'outputs/q1_decision_20261028'
+Q1D = ROOT/'outputs/q1_decision_det_20261028'
 Q2 = ROOT/'outputs/q2_top3_20261028'
+Q2A = ROOT/'outputs/q2_ablation_20261028'
 Q3G = ROOT/'outputs/q3_copula_20261028'
 Q3G2 = ROOT/'outputs/q3_copula_v2_20261028'
 Q3M = ROOT/'outputs/q3_migration_20261028'
 Q1P = ROOT/'outputs/q1_panelmean_20261028'
 Q2S = ROOT/'outputs/q2_sensitivity_20261028'
 Q3G3 = ROOT/'outputs/q3_copula_v3_20261028'
+Q3E = ROOT/'outputs/q3_evidence_20261028'
 Q3_OLD = ROOT/'outputs/q3_missing_aware_20261027'
 GEN_OLD = ROOT/'outputs/task4_raw_q3_20261026'
 
@@ -54,8 +57,11 @@ GEN3_FILES = GEN2_FILES
 TABLES = {
     'q1_decision': (Q1D, ['q1__submission_long_12500.csv',
         'q1__submission_wide_250x50.csv', 'q1__evaluation_long_12500.csv',
-        'q1__metrics_summary.csv', 'q1__high_grade_coverage_by_target.csv',
-        'q1__calibrated_panel_mean_12500.csv', 'q1__metric_calibers.csv']),
+        'q1__metrics_summary.csv', 'q1__metric_calibers.csv',
+        'q1__batch_invariance.csv', 'q1__thresholds.csv']),
+    'q1_decision_history': (Q1D_OLD, ['q1__submission_long_12500.csv',
+        'q1__submission_wide_250x50.csv', 'q1__metrics_summary.csv',
+        'q1__metric_calibers.csv']),
     'q2_top3': (Q2, ['q2__top3_all50_150.csv', 'q2__top3_wide_50.csv',
         'q2__stability_bootstrap.csv', 'q2__method_jaccard.csv',
         'q2__network_edges_0_5.csv', 'q2__network_communities.csv',
@@ -64,7 +70,7 @@ TABLES = {
 }
 TABLES.update({'history_'+group: value for group, value in legacy.TABLES.items()})
 
-NEW_EVIDENCE = [Q1D, Q2, Q3G, Q3G2, Q3M, Q1P, Q2S, Q3G3]
+NEW_EVIDENCE = [Q1D, Q1D_OLD, Q2, Q2A, Q3G, Q3G2, Q3M, Q1P, Q2S, Q3G3, Q3E]
 EVIDENCE_FOLDERS = NEW_EVIDENCE+legacy.EVIDENCE_FOLDERS
 
 TRAIN_ASSETS = legacy.TRAIN_ASSETS
@@ -72,11 +78,13 @@ RENDER_ASSETS = ['outputs/q3_copula_v3_20261028/generated_profiles.csv',
                  'outputs/q3_copula_v3_20261028/generated_metadata.csv']+legacy.RENDER_ASSETS
 
 SCRIPTS = ['scripts/current.py', 'scripts/predict_q1.py', 'scripts/fetch_raw_sensory.py',
-           'scripts/q1_official_20261028.py', 'scripts/q1_panelmean_20261028.py',
+           'scripts/q1_official_det_20261028.py', 'scripts/q1_panelmean_20261028.py',
            'scripts/q2_official_20261028.py', 'scripts/q2_sensitivity_20261028.py',
+           'scripts/q2_ablation_20261028.py',
            'scripts/q3_official_generation_20261028.py',
-           'scripts/q3_official_migration_20261028.py']
-CONFIGS = ['configs/q1_decision_20261028.json', 'configs/q1_panel_mean_20261028.json',
+           'scripts/q3_official_migration_20261028.py',
+           'scripts/q3_evidence_20261028.py']
+CONFIGS = ['configs/q1_decision_det_20261028.json', 'configs/q1_panel_mean_20261028.json',
            'configs/q2_top3_20261028.json',
            'configs/task4_raw_q3_protocol_20261026.json']
 
@@ -113,6 +121,14 @@ def dynamic_tables():
             groups['q2_sensitivity'] = (Q2S, names)
     if (Q3G3/'generated_profiles.csv').exists():
         groups['q3_generation_v3'] = (Q3G3, GEN3_FILES)
+    if Q2A.exists():
+        names = sorted(p.name for p in Q2A.glob('*.csv'))
+        if names:
+            groups['q2_ablation'] = (Q2A, names)
+    if Q3E.exists():
+        names = sorted(p.name for p in Q3E.glob('*.csv'))
+        if names:
+            groups['q3_evidence'] = (Q3E, names)
     return groups
 
 
@@ -148,28 +164,32 @@ def _migration_summary():
 
 
 def conclusions():
-    metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index('method')
+    metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index(['scope', 'method'])
     q1_summary = read_json(Q1D/'summary.json')
+    legacy_q1 = read_json(Q1D_OLD/'summary.json')
     q2_summary = read_json(Q2/'q2__summary.json')
     q3_summary = read_json(Q3G/'summary.json')
     adopted = _adopted_generated()
     gate = _gate_state(adopted)
-    old = metrics.loc['q1_et_integer_median']
-    top = metrics.loc['q1_topk_nonforced_parent_capped']
-    precap = metrics.loc['q1_topk_nonforced']
+    old = metrics.loc[('beer_level', 'q1_integer_median_legacy')]
+    top = metrics.loc[('beer_level', 'q1_fixed_threshold_quantile')]
+    capped = metrics.loc[('beer_level', 'q1_topk_parent_capped_old_baseline')]
     calibers = pd.read_csv(Q1D/'q1__metric_calibers.csv')
     beer_cal = calibers[(calibers.scope == 'beer_level')
-                        & (calibers.prediction_set == 'q1_topk_nonforced_parent_capped')]
+                        & (calibers.prediction_set == 'q1_fixed_threshold_quantile')]
     exact5 = beer_cal[beer_cal.caliber == 'exact5'].iloc[0]
     exact6 = beer_cal[beer_cal.caliber == 'exact6'].iloc[0]
     ge5 = beer_cal[beer_cal.caliber == 'ge5'].iloc[0]
-    indiv = q1_summary.get('individual_weighted', {})
-    oracle = q1_summary.get('panel_median_oracle', {})
-    calib = list(q1_summary.get('calibration', {}).values())
+    indiv = legacy_q1.get('individual_weighted', {})
+    oracle = legacy_q1.get('panel_median_oracle', {})
+    calib = list(legacy_q1.get('calibration', {}).values())
     linear = next((c for c in calib if 'fold-wise linear' in c.get('method', '')), {})
     style = next((c for c in calib if 'style' in c.get('method', '')), {})
-    leak = q1_summary.get('leakage_fix', {})
-    parents = q1_summary.get('parent_child', {})
+    leak = legacy_q1.get('leakage_fix', {})
+    parents = legacy_q1.get('parent_child', {})
+    fallback = q1_summary.get('threshold_fallback', {})
+    invar = q1_summary.get('batch_invariance', {})
+    over = q1_summary.get('over_promotion_diagnostic', {})
     boot = q2_summary.get('bootstrap_freq', {})
     jac = q2_summary.get('bootstrap_jaccard', {})
     method = q2_summary.get('method_jaccard', {}).get('graphridge_vs_ridge', {})
@@ -198,28 +218,37 @@ def conclusions():
          '原始评分卡未填分；0-6 标签来自外部 Zenodo raw（DOI 10.5281/zenodo.23624915），论文/交付必须披露'],
         ['Q1', 'ET 整数中位：面板中位 MAE', old['panel_median_mae'], '0-6 分',
          '题面口径（啤酒 x 维度）；高分为结构性截断'],
-        ['Q1', '决策层 top-k：面板中位 MAE', top['panel_median_mae'], '0-6 分',
-         '同一模型换决策规则；代价 +%.4f；cap 前 %.4f' % (
-             top['panel_median_mae']-old['panel_median_mae'], precap['panel_median_mae'])],
-        ['Q1', '决策层 top-k：完全命中', top['exact_match'], '比例', '整数中位 %.5f' % old['exact_match']],
-        ['Q1', '决策层 top-k：±1', top['within_one'], '比例', '整数中位 %.5f' % old['within_one']],
+        ['Q1', '正式决策（逐样本固定阈值）：面板中位 MAE', top['panel_median_mae'], '0-6 分',
+         '正确性优先：批次无关（整批/逐条/分块同值）；历史批次 top-k 表 %.4f 仅作历史对照' % capped['panel_median_mae']],
+        ['Q1', '正式决策：完全命中', top['exact_match'], '比例', '整数中位 %.5f；历史批次 top-k %.5f' % (
+            old['exact_match'], capped['exact_match'])],
+        ['Q1', '正式决策：±1', top['within_one'], '比例', '整数中位 %.5f；历史批次 top-k %.5f' % (
+            old['within_one'], capped['within_one'])],
         ['Q1', '预测≥5 分：格数/精确/召回', int(ge5.n_predicted),
          '格 / %.4f / %.4f' % (ge5.precision, ge5.recall),
-         '基准率 %.4f（198/12500）；lift %.1fx；cap 前 204 格版本保留为历史谈判行' % (
+         '基准率 %.4f（198/12500）；lift %.1fx；历史批次 top-k 194 格 0.2629/0.2576 保留为历史对照' % (
              198/12500, ge5.precision/(198/12500))],
         ['Q1', '预测恰好 5 分：格数/精确/召回', int(exact5.n_predicted),
          '格 / %.4f / %.4f' % (exact5.precision, exact5.recall),
-         '不得与 ≥5 口径混写；证据见 q1__metric_calibers.csv'],
+         '不得与 ≥5 口径混写；证据见 q1__metric_calibers.csv（历史批次版本 180 格 0.2111/0.2123）'],
         ['Q1', '预测恰好 6 分：格数/精确/召回', int(exact6.n_predicted),
          '格 / %.4f / %.4f' % (exact6.precision, exact6.recall),
          '观测仅 19 格，结论不稳定，需如实写'],
-        ['Q1', '父子约束（24 对）', '违规 %d→%d' % (
-            parents.get('precap_violations', -1), parents.get('postcap_violations', -1)), '处',
-         '仅下调 %d 格；子项不超过父项' % parents.get('changed_cells', -1)],
+        ['Q1', '批次无关性', '%d/%d 场景一致' % (
+            sum(1 for c in invar.values() if c.get('pass_ok')),
+            len(invar)), '场', '逐条/每10/非等长/打乱/追加 及运行时 train->joblib->predict 全 mismatch=0'],
+        ['Q1', '固定阈值回退 target 数', '无 ≥5 级 %d / 无 6 级 %d' % (
+            len(fallback.get('no_ge5', [])), len(fallback.get('no_6', []))), '个',
+         '训练折无观测正例的目标不产 5/6；已列名单，不因结果调整阈值'],
+        ['Q1', '高提升代价', '≥5 %d 格（历史批次 %d）' % (
+            int(ge5.n_predicted), int(capped['n_pred_ge5'])), '格',
+         '固定阈值无法在单请求内约束提升数；%s' % str(over.get('note', ''))[:80]],
+        ['Q1', '父子约束（24 对）', '交付表 0 违规', '处',
+         '运行时 cap；历史批次 top-k 由 %d 处违规降至 %d 处（仅下调 %d 格）' % (
+             parents.get('precap_violations', -1), parents.get('postcap_violations', -1),
+             parents.get('changed_cells', -1))],
         ['Q1', '个体级加权 MAE', indiv.get('individual_weighted_mae'), '0-6 分',
-         '决策层版本 %.6f（更差）；信息下界 %.6f' % (
-             indiv.get('q1_topk_nonforced_individual_weighted', {}).get('individual_weighted_mae', float('nan')),
-             oracle.get('individual_weighted_mae', float('nan')))],
+         '信息下界 %.6f；个体信号来自面板均值，噪声主导' % oracle.get('individual_weighted_mae', float('nan'))],
         ['Q1', '面板均值标定（嵌套，防泄漏）', linear.get('panel_mean_mae'), '0-6 分',
          '泄漏修复后；风格先验 %.4f；扰动测试 max|Δ| %.1e' % (
              style.get('panel_mean_mae', float('nan')), leak.get('perturbation_worst', float('nan')))],
@@ -242,7 +271,8 @@ def conclusions():
         ['Q3', '生成谱缺陷 cap',
          'DMS %.1f' % safety_dms, '按阈值 x0.9', '五项超阈缺陷逐项验收见 defect_safety.csv'],
         ['Q3', '迁移 case 数', '33', '11 款 x 3 风格', '题面口径 A/B/C 各 33/33（详见 q3__migration 表）'],
-        ['Q3', '风格可辨识度', 'LOO 0.132', '准确率', '基线 0.124；迁移是条件投影，不是真实酿造证明'],
+        ['Q3', '风格可辨识度', 'ET 折外 0.544 / 最近质心 0.132', '准确率',
+         '多数类 0.124；风格部分可辨识但不足证明迁移成功（迁移是条件投影，非真实酿造）'],
     ]
     if (Q3M/'summary.json').exists():
         mig = read_json(Q3M/'summary.json')
@@ -268,6 +298,14 @@ def conclusions():
              '—', 'worse 合计 %d；4VG 全 unchanged（119 号 0.1438→0.0405 mg/L，均低于阈值）' % sum(
                  v.get('worse', 0) for v in defects.values() if isinstance(v, dict))],
         ])
+        det = mig.get('det_rerun', {})
+        if det:
+            rows.append(['Q3', '迁移评分随 Q1 决策切换（det 重跑）',
+                         '变化 %d 格（升 %d / 降 %d）' % (
+                             det.get('changed_cells', 0), det.get('changed_up', 0),
+                             det.get('changed_down', 0)), '格',
+                         '可比 %d 格；五缺陷项 up/down 均 0、unchanged 66/66；'
+                         '四口径计数未变（Q1 只影响感官画像数值）' % det.get('cells_compared', 0)])
     if (Q3G2/'summary.json').exists():
         rows.extend([
             ['Q3', '生成器 v2（donor 残差）rank_rmse', float(v2_rank), 'RMSE',
@@ -310,6 +348,42 @@ def conclusions():
                          '社区分辨率 0.8/1.0/1.2 得 59/60/60 社区、最大 33/29/29；主表未改'])
         except Exception as exc:
             rows.append(['Q2', '参数敏感性', '见正式表', '—', '读数失败：%s' % exc])
+    if Q2A.exists():
+        try:
+            q2a = read_json(Q2A/'summary.json')
+            ov = q2a['overlap_summary']
+            ver = q2a['verdict']
+            rows.append(['Q2', '图邻域消融（w=0.5 vs 0）',
+                         'Jaccard %.3f，稳定性增益 %.4f' % (ov['jaccard_mean'],
+                                                       ov['freq_difference_mean']), '—',
+                         '预测增益 %.4f（p=%.2f，不显著）；verdict=%s：图只提升稳定性，不提预测' % (
+                             ver['observed']['mae_gain_mean'], ver['observed']['mae_p_value'],
+                             ver['verdict'])])
+        except Exception as exc:
+            rows.append(['Q2', '图邻域消融', '见正式表', '—', '读数失败：%s' % exc])
+    if Q3E.exists():
+        try:
+            q3e = read_json(Q3E/'summary.json')
+            style = q3e['style_evidence']
+            conflict = q3e['tripel_conflict']
+            rows.extend([
+                ['Q3', '风格分类器折外准确率', float(style['accuracy']['extra_trees']), '准确率',
+                 'logistic %.3f；最近质心 %.3f；多数类 0.124 → 部分可辨识，但仍不足以证明迁移成功' % (
+                     style['accuracy']['logistic'], style['accuracy']['nearest_centroid_oof'])],
+                ['Q3', 'Tripel 缺陷安全冲突', '0/28 达标样本', '—',
+                 '质心 DMS %.2fx/双乙酰 %.2fx 阈值；安全参照（cap 投影质心）距离仅原始质心 %.4fx，'
+                 '投影改 %.1f%% 谱、%d/11 达 DMS cap → 冲突源于典型 Tripel 本身超标（数据支持）' % (
+                     conflict['centroid_DMSO_threshold_ratio'],
+                     conflict['centroid_Diacetyl_threshold_ratio'],
+                     conflict['mean_target_over_safe_distance'],
+                     conflict['mean_projection_change_share_pct'],
+                     conflict['n_cases_dms_cap_median'])],
+                ['Q3', '迁移谱风格分类', 'Tripel 一致命中 1/11', '—',
+                 'logistic 11/11 vs ET 1/11 结论相反 → 风格支持不确定；Kriek/Lambic 11/11 来自 λ*=1.0，'
+                 '不能当迁移能力证据'],
+            ])
+        except Exception as exc:
+            rows.append(['Q3', '任务 B 证据', '见正式表', '—', '读数失败：%s' % exc])
     if (Q3G3/'summary.json').exists():
         gate3 = _gate_state(Q3G3)
         try:
@@ -335,7 +409,12 @@ def unresolved():
                    if gate['replacement_gate_passed'] else '未通过')
     return pd.DataFrame([
         ['Q1', '个人 5/6 分精确识别', '部分解决',
-         '决策层可输出 5/6，但 6 分级仅 19 格、阈值不稳；5 分 F1 约 0.26', '如实写 trade-off，不宣称解决'],
+         '正式决策可输出 5/6（阈值来自训练折分位）：≥5 380 格精确 9.5%、恰好 6 分 59 格精确 5.1%；'
+         '固定阈值不能约束单请求提升数，阈值不稳如实写', '不宣称解决，高分以概率列辅助'],
+        ['Q1', '批次依赖（整批 vs 逐条）', '已解决',
+         '逐样本固定阈值决策：整批/逐条/每10/非等长/打乱/追加 9/9 场景 mismatch=0，'
+         '运行时 train->joblib->predict 一致；历史批次 top-k 表仅作历史对照',
+         '交付主表为固定阈值版本；对照表标 history'],
         ['Q1', '面板均值直接回归', '未采纳（未过预注册门槛）',
          'ET 直接回归 MAE 0.4519 优于嵌套标定基线 0.4661（−0.0142，95%% [0.0082,0.0197]），'
          '但 round 后 ±1 0.91136 比预注册绝对下限 0.9119 低 0.054pt（gate4 未过）',
@@ -345,18 +424,26 @@ def unresolved():
          '交付与论文披露数据来源'],
         ['Q2', '因果解释', '未主张', '全部为关联/预测证据，无干预实验', '写成"关键因素化合物"而非因果'],
         ['Q2', '弱信号维度', '有限', 'diacetyl/dms/t2n/clove 等维度信号弱', '标探索性，不强行归因'],
+        ['Q2', '图邻域的作用', '已量化（partial_gain）',
+         'Top-3 Jaccard 0.600、稳定性频率 +0.028 达预注册增益；预测 MAE 增益 +0.0011（p=0.31）不显著',
+         '写"图提升稳定性、不提升预测"，不宣称图提升准确性'],
         ['Q3', '生成替换门槛', gate_status, '采用目录 %s；失败项：%s' % (
             adopted.name, ', '.join(gate['failures']) or '无'),
          '预注册门槛不允许事后改规则；插值谱保留为历史基线'],
         ['Q3', 'Stale hops 缺陷', '无法数值验证', '无化学坐标，仅感官 stale_hops', '不声称其不恶化已被证明'],
         ['Q3', 'trans-2-nonenal 阈值', '题面未给', '无阈值可比', '按坐标不增处理并声明'],
-        ['Q3', 'Tripel 自身 DMS', '结构性冲突', 'Tripel 自身 DMS 中位 38.69 = 2.24x 阈值',
-         '迁移目标选缺陷安全点而非质心'],
+        ['Q3', 'Tripel 自身 DMS', '结构性冲突（已诊断）',
+         'Tripel 训练样本 0/28 满足三项缺陷 cap；质心 DMS 2.03x、双乙酰 6.27x 阈值；'
+         '安全参照（cap 投影质心）距离仅原始质心 1.0005x、11/11 达 DMS cap',
+         '冲突源于典型 Tripel 本身超标（数据支持），目标距离与缺陷安全几何上可兼得'],
         ['Q3', 'Lambic 风格判定', '弱', '迁移后仅 2/11 判 Lambic', '如实报告，不隐藏'],
-        ['Q3', 'Tripel 风格判定', '未支持', '迁移后 0/11 判 Tripel；最近质心判器 LOO 0.132 vs 基线 0.124',
+        ['Q3', 'Tripel 风格判定', '未支持',
+         '迁移后 ET 分类器仅 1/11、logistic 11/11（结论相反）；ET 折外准确率 0.544 但不足以证明迁移成功',
          'claim_level=conditional，不宣称达到 Tripel 风格'],
         ['Q3', '迁移后感官画像', '已补齐', '33 条前后 66 谱 x 52 项（正式 Q1 入口）',
          '模型推断非实测；t2n/Stale 保持 unknown'],
+        ['Q3', '迁移谱风格受 supports 证据', '不确定', 'logistic 与 extra_trees 对迁移谱判读相反',
+         '不把 λ*=1.0 的 Kriek/Lambic 命中当作迁移能力'],
         ['Q3', '酿造工艺可行性', '未验证', '全部为数学谱，无真实酿造', '不写"可酿造"'],
     ], columns=['question', 'issue', 'status', 'evidence', 'current_handling'])
 
@@ -365,7 +452,8 @@ def current_constraints():
     return pd.DataFrame([
         ['data', '五缺陷阈值', 'DMS 17.25/19 ug/L；双乙酰 0.29925/0.09 mg/L；4VG 0.206333/0.20 mg/L；t2n 无阈值；Stale hops 无化学坐标'],
         ['data', '单位', '1.csv 为附件坐标；物理浓度仅对已给单位字段解释，其余按坐标处理'],
-        ['Q1', '主表', 'ET 整数条件中位（正式）+ 决策层 top-k（同一模型换规则）'],
+        ['Q1', '主表', '正式决策=逐样本固定阈值（批次无关，q1_decision_det_20261028）；'
+         'ET 整数条件中位为对照；历史批次 top-k 表仅作历史对照（q1_decision_history）'],
         ['Q1', '标定', '嵌套折外线性/风格先验标定（泄漏修复后 0.5055/0.4661）仅用于面板均值参考列，不改正式等级；'
          '面板均值直接回归（ET 0.4519）因 ±1 0.91136 < 预注册下限 0.9119 按协议不采纳'],
         ['Q2', '口径', '50 维全覆盖；2.csv 实为 Spearman 共表达图；bootstrap 200 次按啤酒重采样'],
@@ -381,14 +469,18 @@ def draw_figures(output):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
 
-    metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index('method')
+    metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index(['scope', 'method'])
     fig, axes = plt.subplots(1, 3, figsize=(13, 3.6), layout='constrained')
-    names = ['q1_et_integer_median', 'q1_topk_nonforced_parent_capped']
-    labels = ['integer median', 'decision top-k (capped)']
+    names = [('beer_level', 'q1_integer_median_legacy'),
+             ('beer_level', 'q1_fixed_threshold_quantile'),
+             ('beer_level', 'q1_topk_parent_capped_old_baseline')]
+    labels = ['integer median', 'fixed threshold\n(official)', 'batch top-k\n(historical)']
     for ax, col, title in zip(axes, ['panel_median_mae', 'exact_match', 'macro_spearman'],
                               ['Panel-median MAE (lower better)', 'Exact match', 'Macro Spearman']):
-        ax.bar(np.arange(2), [metrics.loc[n, col] for n in names], color=['#287a9b', '#bf8548'])
-        ax.set(xticks=range(2), xticklabels=labels, title=title)
+        ax.bar(np.arange(3), [metrics.loc[n, col] for n in names],
+               color=['#287a9b', '#bf8548', '#8a8a8a'])
+        ax.set(xticks=range(3), xticklabels=labels, title=title)
+        ax.tick_params(axis='x', labelsize=7)
     for ext in ['.png', '.svg']:
         fig.savefig(output/('Q1_决策层对照'+ext), dpi=170)
     plt.close(fig)
@@ -442,8 +534,8 @@ def draw_figures(output):
 def status():
     print('当前交付版本：'+VERSION+'（决策层 Q1 / 全覆盖 Q2 / copula Q3 / 33 条迁移）')
     for _, row in conclusions().iterrows():
-        if row['claim'] in {'ET 整数中位：面板中位 MAE', '决策层 top-k：面板中位 MAE',
-                            'Top-3 覆盖', '替换门槛状态', '迁移 case 数'}:
+        if row['claim'] in {'ET 整数中位：面板中位 MAE', '正式决策（逐样本固定阈值）：面板中位 MAE',
+                            '批次无关性', 'Top-3 覆盖', '替换门槛状态', '迁移 case 数'}:
             print('%s %s：%s %s' % (row['question'], row['claim'], row['value'], row['unit']))
     print(unresolved()[['question', 'issue', 'status']].to_string(index=False))
 
@@ -504,7 +596,7 @@ def build(output, rendered=None):
                                  'docs/待优化问题.md']+TRAIN_ASSETS+RENDER_ASSETS:
         if (ROOT/name).exists():
             include(ROOT/name, 'code/'+name, 'runnable_dependency')
-    for folder in [Q1D, Q2, Q3G, Q3G2, Q3M, Q1P, Q2S, Q3G3]:
+    for folder in [Q1D, Q1D_OLD, Q2, Q2A, Q3G, Q3G2, Q3M, Q3E, Q1P, Q2S, Q3G3]:
         if not folder.exists():
             continue
         for p in sorted(folder.iterdir()):
@@ -533,9 +625,12 @@ def build(output, rendered=None):
 
 本目录是 20261028 版本：先读 conclusions.csv、unresolved.csv，再按 file_index.csv 查表。
 与 20261027 的差别（历史组仍以 history_ 前缀保留）：
-Q1 增加决策层 top-k（同一 ET 模型，输出 5/6，代价与 lift 如实记录）+ 面板均值折外标定参考列；
-Q2 换为 50/50 维全覆盖的图 Top-3（150 条）与 bootstrap/Jaccard 稳定性；
-Q3 增加 copula 生成器的预注册门槛判定：v3 混合谱 14/14 通过并替换官方插值谱（v1/v2 作诊断保留）；迁移 11 款×3 风格=33 条题面口径案例。
+Q1 决策层改为逐样本固定阈值（批次无关，整批/逐条/分块同值），历史批次 top-k 表降为对照；
+另含面板均值折外标定参考列与面板均值直接回归（未过预注册门槛，不采纳）证据；
+Q2 换为 50/50 维全覆盖的图 Top-3（150 条）与 bootstrap/Jaccard 稳定性，并含图邻域消融（只提升稳定性、不提升预测）；
+Q3 增加 copula 生成器的预注册门槛判定：v3 混合谱 14/14 通过并替换官方插值谱（v1/v2 作诊断保留）；
+迁移 11 款×3 风格=33 条题面口径案例，含完整谱、前后感官画像与证据分级；
+另有风格分类器折外证据（ET 0.544）、Tripel 缺陷安全冲突诊断与生成器消融。
 
 数据披露：3.xlsx 为空白评分模板；0-6 标签来自外部 Zenodo 23624915 原始记录；2.csv 为 Spearman 矩阵。
 本包不含原始附件、个人评分记录与模型二进制。
@@ -603,6 +698,13 @@ def _replay_checks(models, source, package):
     assert len(merged) == 12500, len(merged)
     panel_diff = max(float((merged[c+'_ref']-merged[c+'_replay']).abs().max()) for c in scored)
     assert panel_diff <= 1e-12, panel_diff
+    # The packaged submission table is the OOF prediction, while this replay is the
+    # full-fit deployment portrait; only the full-fit reference is replayable, so the
+    # submission table is checked for shape/domain here rather than equality.
+    submission = pd.read_csv(package/'tables/q1_decision__q1__submission_wide_250x50.csv')
+    assert submission.shape == (250, 51)
+    assert submission.set_index('beer').to_numpy().min() >= 0
+    assert submission.set_index('beer').to_numpy().max() <= 6
 
     generated = pd.read_csv(_adopted_generated()/'generated_profiles.csv').rename(
         columns={'generated_id': 'beer'})
@@ -636,7 +738,7 @@ def verify(output, models=None, source=None, package=None):
     assert long.grade_0_6.isin(range(7)).all()
     summary = read_json(Q1D/'summary.json')
     dist = long.grade_0_6.value_counts().sort_index().to_dict()
-    assert dist == {int(k): int(v) for k, v in summary['grade_distribution'].items()}, dist
+    assert dist == {int(k): int(v) for k, v in summary['new_distribution'].items()}, dist
     wide = pd.read_csv(Q1D/'q1__submission_wide_250x50.csv')
     assert wide.shape == (250, 51)
     pivot = long.pivot(index='beer', columns='target', values='grade_0_6')
@@ -644,33 +746,40 @@ def verify(output, models=None, source=None, package=None):
                                   pivot.to_numpy())
     checks.update(q1_rows=12500, q1_targets=50, q1_wide_shape='250x50',
                   q1_grade_distribution=dist)
-    metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index('method')
-    official = metrics.loc['q1_topk_nonforced_parent_capped']
-    precap = metrics.loc['q1_topk_nonforced']
-    np.testing.assert_allclose(official['panel_median_mae'], 0.40648, atol=1e-9)
-    np.testing.assert_allclose(precap['panel_median_mae'], 0.408, atol=1e-9)
-    np.testing.assert_allclose(metrics.loc['q1_et_integer_median', 'panel_median_mae'], 0.3928, atol=1e-9)
-    coverage = pd.read_csv(Q1D/'q1__high_grade_coverage_by_target.csv')
-    assert coverage.n_predicted_ge5_parent_capped.sum() == int(official['n_pred_ge5']) == 194
-    assert coverage.n_predicted_6_parent_capped.sum() == int(official['n_pred_6']) == 14
-    assert coverage.n_predicted_ge5.sum() == 204 and coverage.n_predicted_6.sum() == 16
-    assert precap['n_pred_ge5'] == 204 and precap['n_pred_6'] == 16
+    metrics = pd.read_csv(Q1D/'q1__metrics_summary.csv').set_index(['scope', 'method'])
+    official = metrics.loc[('beer_level', 'q1_fixed_threshold_quantile')]
+    np.testing.assert_allclose(official['panel_median_mae'], 0.47968, atol=1e-9)
+    np.testing.assert_allclose(metrics.loc[('beer_level', 'q1_integer_median_legacy'),
+                                           'panel_median_mae'], 0.3928, atol=1e-9)
+    np.testing.assert_allclose(metrics.loc[('beer_level', 'q1_topk_parent_capped_old_baseline'),
+                                           'panel_median_mae'], 0.40648, atol=1e-9)
     calibers = pd.read_csv(Q1D/'q1__metric_calibers.csv')
     beer = calibers[(calibers.scope == 'beer_level')
-                    & (calibers.prediction_set == 'q1_topk_nonforced_parent_capped')]
+                    & (calibers.prediction_set == 'q1_fixed_threshold_quantile')]
     exact5 = beer[beer.caliber == 'exact5'].iloc[0]
     exact6 = beer[beer.caliber == 'exact6'].iloc[0]
     ge5 = beer[beer.caliber == 'ge5'].iloc[0]
-    assert int(exact5.n_predicted) == 180 and int(exact5.true_positive) == 38
-    assert int(exact6.n_predicted) == 14 and int(exact6.true_positive) == 1
-    assert int(ge5.n_predicted) == 194 and int(ge5.true_positive) == 51
+    assert int(exact5.n_predicted) == 321 and int(exact5.true_positive) == 23
+    assert int(exact6.n_predicted) == 59 and int(exact6.true_positive) == 3
+    assert int(ge5.n_predicted) == 380 and int(ge5.true_positive) == 36
     np.testing.assert_allclose(ge5.precision, official['precision_ge5'], atol=1e-9)
     np.testing.assert_allclose(ge5.recall, official['recall_ge5'], atol=1e-9)
-    leakage = summary['leakage_fix']
+    batch = pd.read_csv(Q1D/'q1__batch_invariance.csv')
+    assert batch.mismatch_cells.eq(0).all() and batch.pass_ok.all()
+    invar = summary['batch_invariance']
+    assert all(bool(c.get('pass_ok')) for c in invar.values())
+    thresholds = pd.read_csv(Q1D/'q1__thresholds.csv')
+    fallback = summary['threshold_fallback']
+    assert thresholds.groupby('target')['emits_ge5'].any().sum() == 34
+    assert thresholds.groupby('target')['emits_6'].any().sum() == 12
+    assert len(fallback['no_ge5']) == 16 and len(fallback['no_6']) == 38
+    legacy_q1 = read_json(Q1D_OLD/'summary.json')
+    leakage = legacy_q1['leakage_fix']
     assert leakage['perturbation_worst'] == 0.0
-    assert summary['parent_child']['postcap_violations'] == 0
-    checks.update(q1_high_grade_coverage_consistent=True,
-                  q1_metric_calibers='exact5/exact6/ge5 (180/14/194)',
+    assert legacy_q1['parent_child']['postcap_violations'] == 0
+    checks.update(q1_batch_invariance='9/9 scenarios mismatch 0',
+                  q1_metric_calibers='exact5/exact6/ge5 (321/59/380)',
+                  q1_fixed_threshold_fallbacks='no_ge5 16 / no_6 38',
                   q1_calibration_leakage_perturbation_worst=leakage['perturbation_worst'],
                   q1_parent_child_postcap_violations=0)
 
@@ -688,6 +797,43 @@ def verify(output, models=None, source=None, package=None):
     assert {k: tiers[k] for k in ('A', 'B', 'C')} == {'A': 8, 'B': 70, 'C': 72}
     checks.update(q2_rows=150, q2_targets=50, q2_communities=len(communities),
                   q2_evidence_tiers=tiers)
+
+    if Q2A.exists():
+        q2a = read_json(Q2A/'summary.json')
+        av = q2a['verification']
+        assert all(av['checks'].values()), av
+        overlap = q2a['overlap_summary']
+        np.testing.assert_allclose(overlap['jaccard_mean'], 0.6, atol=1e-12)
+        assert overlap['n_targets_identical'] == 13
+        assert overlap['n_targets_jaccard_ge_0_5'] == 45
+        np.testing.assert_allclose(overlap['freq_difference_mean'], 0.028166666666666663,
+                                   atol=1e-12)
+        verdict = q2a['verdict']
+        assert verdict['verdict'] == 'partial_gain'
+        assert verdict['stability_reliable'] is True and verdict['predictive_reliable'] is False
+        checks.update(q2_ablation_graph_vs_no_graph_jaccard=0.6,
+                      q2_ablation_stability_freq_gain=0.028166666666666663,
+                      q2_ablation_predictive_p=verdict['observed']['mae_p_value'],
+                      q2_ablation_verdict='partial_gain')
+
+    if Q3E.exists():
+        q3e = read_json(Q3E/'summary.json')
+        ev = read_json(Q3E/'verification.json')
+        assert ev['status'] == 'passed' and len(ev['checks']) == 52
+        style = q3e['style_evidence']
+        np.testing.assert_allclose(style['accuracy']['extra_trees'], 0.544, atol=1e-9)
+        np.testing.assert_allclose(style['accuracy']['logistic'], 0.512, atol=1e-9)
+        np.testing.assert_allclose(style['accuracy']['nearest_centroid_oof'], 0.224, atol=1e-9)
+        conflict = q3e['tripel_conflict']
+        assert conflict['n_defect_safe_samples_median'] == 0
+        assert conflict['n_cases_dms_cap_median'] == 11
+        np.testing.assert_allclose(conflict['mean_dist_reduction_pct'], 12.49600915769988,
+                                   atol=1e-9)
+        checks.update(q3_style_classifier_oof_accuracy=0.544,
+                      q3_style_classifier_nearest_centroid=0.224,
+                      q3_tripel_defect_safe_samples=0,
+                      q3_tripel_cases_dms_cap=11,
+                      q3_evidence_checks=52)
 
     adopted = _adopted_generated()
     profiles = pd.read_csv(adopted/'generated_profiles.csv')
@@ -771,6 +917,16 @@ def verify(output, models=None, source=None, package=None):
                       q3_migration_claim_level_counts=mig['claim_level_counts'],
                       q3_migration_style_diagnostic_counts=mig['style_diagnostic_counts'],
                       q3_migration_defect_status_counts=mig['defect_status_counts'])
+        det = mig.get('det_rerun', {})
+        if det:
+            assert det['defect_worse_count'] == 0, det['defect_worse_cells']
+            assert det['grade_change_within_limit'] is True, det
+            assert det['model_sha_changed'] is True and det['changed_cells'] <= 100, det
+            assert det['criteria_unchanged'] is True
+            checks.update(q3_migration_det_changed_cells=int(det['changed_cells']),
+                          q3_migration_det_changed_up=int(det['changed_up']),
+                          q3_migration_det_changed_down=int(det['changed_down']),
+                          q3_migration_det_defect_worse_count=int(det['defect_worse_count']))
     if (Q3G3/'generated_profiles.csv').exists():
         v3_profiles = pd.read_csv(Q3G3/'generated_profiles.csv')
         assert len(v3_profiles) == 300

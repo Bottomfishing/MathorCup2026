@@ -1,0 +1,138 @@
+{
+  "name": "q3_migration_20261028",
+  "written_before_results": true,
+  "problem_statement_note": "缺陷化合物以所列 DMS/Diacetyl/4VG/trans-2-nonenal/Stale hops 等超阈值项为准",
+  "source_style": "Pils/Lager",
+  "target_styles": [
+    "Tripel",
+    "Kriek",
+    "Lambic"
+  ],
+  "lambda_grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "lambda_selection": "largest lambda whose projected spectrum is still nearest to the target-style centroid; fallback = smallest target-centroid distance",
+  "criteria": {
+    "A": "set form of the problem note: the set of over-threshold defects does not expand and the severity of each over-threshold defect does not increase",
+    "B": "per-defect severity e_after <= e_before with e(c, T) = max(c / T - 1, 0)",
+    "C": "aggregated severity sum_d e_after <= sum_d e_before"
+  },
+  "threshold_scenarios": [
+    "median",
+    "mean"
+  ],
+  "primary_threshold_scenario": "median",
+  "defect_specs": [
+    {
+      "name": "DMS",
+      "column": "DMS",
+      "transform": "log10",
+      "unit": "ug/L",
+      "threshold_field": "DMS"
+    },
+    {
+      "name": "Diacetyl",
+      "column": "X2.3.butanedione",
+      "transform": "identity",
+      "unit": "mg/L",
+      "threshold_field": "2,3-butanedione"
+    },
+    {
+      "name": "4VG",
+      "column": "X4VG",
+      "transform": "log10",
+      "unit": "mg/L",
+      "threshold_field": "X4VG"
+    },
+    {
+      "name": "t2n",
+      "column": "X.E..2.nonenal",
+      "transform": "identity",
+      "unit": "mg/L",
+      "threshold_field": null
+    }
+  ],
+  "defect_projection": {
+    "threshold_defects": "coordinate <= min(source, 0.9 * threshold)",
+    "no_threshold_defects": "coordinate <= source",
+    "stale_hop_proxies": "coordinate <= source",
+    "missing_source": "cap = min(target-style median, 0.9 * threshold), flagged conditional",
+    "headroom": 0.9,
+    "note": "0.9 x threshold headroom is a modelling choice, not a measured safety limit"
+  },
+  "stale_hop_proxies": [
+    "humulene.epoxide.II",
+    "caryophyllene.oxide",
+    "dihydroisocaryophyllene.epoxide",
+    "X4.8.alpha.epoxy.caryophyllane",
+    "X14.hydroxy.alpha.humulene",
+    "X14.hydroxy.9.epi..E..caryophyllene"
+  ],
+  "style_identifiability_expected": "tasting_category_fine is weakly separable in the supplied coordinates; accuracy is reported, not used as a hard gate",
+  "honesty": "A migrated spectrum is a statistical destination inside the supplied coordinate space, not a brewing recipe and not a measured beer; the projection certifies only the listed defect coordinates at the 0.9 x threshold headroom and does not certify physical brewability or sensory acceptance.",
+  "evidence_grading": {
+    "defect_status_rule": "severity e(c,T)=max(c/T-1,0) on the median threshold: improved if e_after<e_before, worse if e_after>e_before, unchanged otherwise; trans-2-nonenal has no threshold and Stale hops has no coordinate, so both are 'unknown'",
+    "style_nearest_centroid_rule": "target = migrated spectrum is nearest to the target centroid; source_baseline = still nearest to Pils/Lager; other = another style centroid",
+    "style_diagnostic_supported_rule": "a target style's diagnostic supports a case only if all 11 source beers migrate to that centroid (Kriek 11/11); Tripel 0/11 and Lambic 2/11 are reported as unsupported",
+    "claim_level_rule": {
+      "model_supported": "A/B/C pass and nearest centroid is the target style and the target style diagnostic supports all 11 cases and no evaluated defect worsened and no conditional cap was used",
+      "conditional": "A/B/C pass but at least one of: style diagnostic unsupported, an evaluated defect worsened, conditional diacetyl cap used",
+      "undecidable": "A/B/C do not all pass"
+    },
+    "claim_levels": [
+      "model_supported",
+      "conditional",
+      "undecidable"
+    ],
+    "defect_statuses": [
+      "improved",
+      "unchanged",
+      "worse",
+      "unknown"
+    ],
+    "no_change_to_migration_protocol": true,
+    "note": "these are labelling rules for the evidence table; they do not change the migration math, the lambda grid, the projection or the A/B/C criteria"
+  },
+  "sensory_pipeline": {
+    "entry": "beer_models.inference.run (same call as scripts/current.py predict --task q1)",
+    "q1_model_path": "outputs/current_models/q1.joblib",
+    "q1_model_sha256": "3312c314bf26ca8f5f08b995ba0a1a8b701db23ed3b3359433890e95a5b9c3ae",
+    "q1_model_grade_semantics": {
+      "official_column": "estimated_grade_0_6",
+      "grade_method": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+      "point_semantics": "integer_conditional_median_then_non_forced_high_grade_topk_with_parent_cap",
+      "decision_rule": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+      "legacy_column": "grade_legacy_integer_median",
+      "parent_child_pairs": 24,
+      "implementation_sha256": "e972cfe42043b35aa65c7e1808e0745cb0ad0cec923b3e6bd3fcfcea9c6f1e99",
+      "note": "estimated_grade_0_6 is the official decision layer: non-forced high-grade top-k from cumulative probability with parent-child caps. It is not the legacy integer conditional median (kept in grade_legacy_integer_median)."
+    },
+    "run_at": "2026-10-28T00:46:42+08:00",
+    "score_scale": "original 0-6 individual rating scale",
+    "targets": 52,
+    "note": "full-training-model predictions are not out-of-sample accuracy estimates; grade_raw is the official decision-layer grade (top-k high grades with 24 parent-child caps), prob_ge5/prob_6 are the decision-layer probabilities, and prob_ge5_risk_head/prob_6_risk_head are the legacy calibrated risk-head probabilities kept for traceability"
+  },
+  "sources": {
+    "source_directory": "附件"
+  },
+  "no_post_result_retuning": true
+}

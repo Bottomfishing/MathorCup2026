@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "overlap_rows_50": true,
+    "stability_rows_2": true,
+    "predictive_rows_50": true,
+    "top3_rows_300": true,
+    "targets_50": true,
+    "three_slots_unique": true,
+    "graph_variant_equals_main_table": true,
+    "no_graph_importance_equals_abs_ridge_coef": true,
+    "bootstrap_rerun_identical": true,
+    "predictive_folds_5": true,
+    "no_missing_core_values": true
+  },
+  "all_pass": true,
+  "detail": {
+    "graph_vs_main_mismatch": [],
+    "no_graph_importance_max_abs_error": 0.0,
+    "predictive_fold_sizes": [
+      50,
+      50,
+      50,
+      50,
+      50
+    ],
+    "seed": 20261027
+  }
+}

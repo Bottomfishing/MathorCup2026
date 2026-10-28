@@ -1,0 +1,218 @@
+{
+  "protocol_id": "q1_decision_det_20261028",
+  "stage": "protocol_written_before_computation",
+  "frozen_before_results": true,
+  "config": {
+    "protocol_id": "q1_decision_det_20261028",
+    "revision": "1 (T1 batch-independent decision layer)",
+    "frozen_before_results": true,
+    "post_result_threshold_retuning": false,
+    "task": "T1: replace the batch-dependent per-fold top-k promotion with a per-sample fixed-threshold decision whose parameters are frozen from training-internal OOF probabilities",
+    "date": "2026-10-28",
+    "main_decision_object": "panel_weighted_median_integer_grade_0_6 (250 beers x 50 targets, 12500 cells; the two acetaldehyde card slots stay NA)",
+    "decision_rule": {
+      "name": "fixed_threshold_quantile",
+      "middle": "min(legacy_integer_median, 4)",
+      "grade_6": "p6 >= tau_6[target]",
+      "grade_5": "not grade_6 and p_ge5 >= tau_ge5[target]",
+      "otherwise": "min(legacy_integer_median, 4)",
+      "per_sample": true,
+      "uses_batch_size": false,
+      "uses_rank_within_batch": false,
+      "uses_row_position_for_ties": false,
+      "parent_child_cap": "after the per-sample assignment, child_grade = min(child_grade, parent_grade) for the 24 checkbox_zero_or_parent pairs (same deterministic post-processing as before)",
+      "binding": "same implementation used by the official OOF evaluation script and by current_runtime/inference"
+    },
+    "threshold_estimation": {
+      "event_ge5": "panel_weighted_median >= 5",
+      "event_6": "panel_weighted_median >= 6",
+      "source": "inner-OOF predicted probabilities of the outer-training beers only; outer-validation labels never enter threshold estimation",
+      "rate": "r = fraction of the target's training cells whose panel median reaches the event",
+      "support": "n = number of training cells for that target in the estimation slice",
+      "quantile": "k = ceil(r * n) clipped to [1, n] when r > 0; tau = k-th largest probability over the slice",
+      "fallback": "r == 0 or n == 0 -> tau = +inf, i.e. the target emits no 5 (or no 6); such targets are listed in the summary",
+      "frozen": "tau is computed once from training-internal OOF probabilities and stored in the model bundle; inference never recomputes it from the request",
+      "runtime_slice": "data/current/risk_full_training.csv.gz source=extra_trees (historical inner-OOF probabilities of all 250 training beers) with the fixed full-training panel medians; documented caveat: those probabilities are inner-OOF while the deployed model emits full-fit probabilities, which is the conservative direction (deployed probabilities are not used to choose tau)"
+    },
+    "legacy_baseline": {
+      "name": "non_forced_cumulative_probability_topk_with_parent_child_cap",
+      "status": "historical baseline only; kept to reproduce old tables, no longer the official path",
+      "why_replaced": "k = round(rate * n_rows) depends on the request batch; the same beer/target can change grade when the batch changes (217 cells whole-batch vs per-row; 214 -> 0 >=5 cells when scored row by row)"
+    },
+    "inputs": {
+      "oof_probabilities": "outputs/task6_final_20261026/paper/tables/q1__oof_scores_all52.csv",
+      "observed_panel_distribution": "outputs/r2_raw_q1_20261026/observed_panel_distribution.csv",
+      "oof_predictions": "outputs/r2_raw_q1_20261026/oof_predictions.csv.gz",
+      "rating_weights_and_folds": "outputs/r2_raw_q1_20261026/rating_weights_and_folds.csv",
+      "raw_sensory": "data/reference/zenodo23624915/Raw sensory data anonymized.csv",
+      "panel_protocol": "configs/r2_raw_panel_protocol_20261026.json",
+      "scorecard_scope": "outputs/task1_acceptance_20261025/scorecard_scope.csv",
+      "training_inner_oof_probabilities": "data/current/risk_full_training.csv.gz",
+      "chemistry": "<附件目录>/1.csv"
+    },
+    "outputs": {
+      "directory": "outputs/q1_decision_det_20261028",
+      "files": [
+        "q1__submission_long_12500.csv",
+        "q1__submission_wide_250x50.csv",
+        "q1__evaluation_long_12500.csv",
+        "q1__metrics_summary.csv",
+        "q1__metric_calibers.csv",
+        "q1__batch_invariance.csv",
+        "q1__thresholds.csv",
+        "protocol.json",
+        "summary.json",
+        "verification.json"
+      ],
+      "columns": {
+        "submission_long": [
+          "beer",
+          "target",
+          "target_family",
+          "grade_0_6",
+          "probability_rating_ge5",
+          "probability_rating_6"
+        ],
+        "submission_wide": "beer + 50 target columns",
+        "evaluation_long": [
+          "beer",
+          "target",
+          "target_family",
+          "grade_integer_median_old",
+          "grade_0_6",
+          "panel_mean_reference",
+          "panel_median_reference",
+          "probability_rating_ge1",
+          "probability_rating_ge5",
+          "probability_rating_6",
+          "outer_fold",
+          "tau_ge5",
+          "tau_6"
+        ],
+        "metrics_summary": [
+          "scope",
+          "method",
+          "panel_median_mae",
+          "panel_mean_mae",
+          "exact_match",
+          "within_one",
+          "macro_spearman",
+          "n_pred_ge5",
+          "precision_ge5",
+          "recall_ge5",
+          "n_pred_6",
+          "precision_6",
+          "recall_6"
+        ],
+        "metric_calibers": [
+          "scope",
+          "prediction_set",
+          "caliber",
+          "n_predicted",
+          "true_positive",
+          "precision",
+          "n_observed",
+          "recall"
+        ],
+        "batch_invariance": [
+          "scenario",
+          "batch_size",
+          "n_rows",
+          "n_compared",
+          "max_abs_grade_diff",
+          "mismatch_cells",
+          "pass"
+        ],
+        "thresholds": [
+          "target",
+          "r_ge5",
+          "r_6",
+          "n_train_ge5",
+          "n_train_6",
+          "k_ge5",
+          "k_6",
+          "tau_ge5",
+          "tau_6",
+          "estimator_slice",
+          "fold",
+          "emits_ge5",
+          "emits_6"
+        ]
+      }
+    },
+    "metrics": {
+      "primary": "panel medians: MAE, exact match, within-one",
+      "secondary": "per-grade support/precision/recall for grades 0..6, per-target macro Spearman, panel-mean MAE",
+      "high_grade_events": ">=5 and ==6 precision/recall on 12500 cells",
+      "individual": "weighted per-taster raw MAE/exact/within-one (weights from rating_weights_and_folds)",
+      "new_vs_old": "old official cap distribution {0: 8279, 1: 856, 2: 1363, 3: 1655, 4: 153, 5: 180, 6: 14}; old pre-cap {0: 8279, 1: 856, 2: 1361, 3: 1648, 4: 152, 5: 188, 6: 16}"
+    },
+    "verification": {
+      "checks": [
+        "q1_rows_12500",
+        "q1_grade_range_0_6",
+        "q1_acetaldehyde_slots_na",
+        "q1_parent_child_violations_zero",
+        "q1_thresholds_training_only",
+        "q1_threshold_purity_perturbation",
+        "q1_batch_invariance_whole_vs_per_row",
+        "q1_batch_invariance_chunks_of_10",
+        "q1_batch_invariance_uneven_chunks",
+        "q1_batch_invariance_shuffled",
+        "q1_batch_invariance_appended_irrelevant_rows",
+        "q1_runtime_batch_invariance",
+        "q1_runtime_vs_official_scores_identical",
+        "q1_old_decision_directory_unchanged",
+        "q1_metrics_present",
+        "q1_threshold_fallback_targets_listed"
+      ],
+      "tolerances": {
+        "grade_diff": 0,
+        "probability_diff": 1e-12
+      },
+      "old_decision_directory": "outputs/q1_decision_20261028"
+    },
+    "non_claims": [
+      "do_not_tune_thresholds_to_match_old_high_grade_counts",
+      "fixed thresholds change the high-grade trade-off; report it honestly",
+      "no causal claims"
+    ]
+  },
+  "inputs": {
+    "oof_probabilities": {
+      "path": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\task6_final_20261026\\paper\\tables\\q1__oof_scores_all52.csv",
+      "sha256": "a5ab47767cea3ac0708192c1fd1388369e4e36420fc480317767c5f3f81b0213"
+    },
+    "observed_panel_distribution": {
+      "path": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\observed_panel_distribution.csv",
+      "sha256": "c2513c76c52fbb5d534c782758459ab2c4d861bde18a7c6f7f567880d42352c6"
+    },
+    "oof_predictions": {
+      "path": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\oof_predictions.csv.gz",
+      "sha256": "14c5979794e10190dacc465b3b0ee4f540614bedd0030f8370c24eac4325a3c0"
+    },
+    "rating_weights_and_folds": {
+      "path": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\r2_raw_q1_20261026\\rating_weights_and_folds.csv",
+      "sha256": "5f6dd1f5a0ebccecbf1971db48be09e5b3fa8d9641192a66f016ef0aeda4b8f1"
+    },
+    "raw_sensory": {
+      "path": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\data\\reference\\zenodo23624915\\Raw sensory data anonymized.csv",
+      "sha256": "78525c8cbbbd498578c451b06641969a20ada87d0fe4c67fe1e634ad34569628"
+    },
+    "training_inner_oof": {
+      "path": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\data\\current\\risk_full_training.csv.gz",
+      "sha256": "d60dcace3ea26ffe79bc0f1082ff0e4d29f6d8ea0a317f6278749eeb98ba1a72"
+    },
+    "scorecard_scope": {
+      "path": "C:\\Users\\wb198\\Desktop\\MathorCup数学应用挑战赛文件\\outputs\\task1_acceptance_20261025\\scorecard_scope.csv",
+      "sha256": "f75850ad4a48136ce651730d078f9b1a0fad3c297d1b7ab4a6b74162f064374d"
+    }
+  },
+  "implementation": {
+    "module": "src/beer_models/q1_decision.py",
+    "sha256": "721ff78b9949be3e7dd4ff16441ad31d2c0ea91da0d9f05ff8190fd2a10f0e0c",
+    "runtime_sha256": "eda5490c22d700843924d9606e9226b758a81d49febebdd1abc7d7efaa3d1589",
+    "inference_sha256": "11eef3786a74e57eefc08bb8d0bbb9caff909b5883da7f1dcf331795474e90f4",
+    "script_sha256": "96a076521ca86696555d26a8e0ef4b5bf84d50ec5f6e1f7289738be5387cb247"
+  }
+}

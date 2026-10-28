@@ -10,12 +10,14 @@ from .scorecard import predict_scorecard_frame
 def _official_grade_frame(frame, bundle):
     """Apply the bundle's frozen Q1 decision rule to fresh inputs.
 
-    Returns ``(grades, p_ge5, p6, legacy)`` where ``grades`` is the official
-    integer matrix produced by :func:`beer_models.q1_decision.runtime_decision`
-    -- the same function the official evaluation script uses.
+    Returns ``(grades, p_ge5, p6, legacy)``.  The official rule is the per-sample
+    fixed-threshold decision (:func:`beer_models.q1_decision.runtime_threshold_decision`);
+    bundles built before T1 carry the historical batch-dependent top-k parameters
+    instead and are dispatched to :func:`beer_models.q1_decision.runtime_decision`
+    so old artifacts keep replaying exactly.  No rule depends on the request size.
     """
     from beer_audit.checks import numeric_frame
-    from beer_models.q1_decision import runtime_decision
+    from beer_models.q1_decision import runtime_decision, runtime_threshold_decision
     from beer_models.tail_risk import base_probabilities
     decision = bundle['q1_decision']
     values = numeric_frame(frame.reindex(columns=bundle['features'])).to_numpy(float)
@@ -25,12 +27,20 @@ def _official_grade_frame(frame, bundle):
     p_ge5 = probabilities[:, :, 5:].sum(axis=2)
     p6 = probabilities[:, :, 6]
     pairs = decision['parent_child_pairs']
-    grades = runtime_decision(
-        p_ge5, p6, legacy,
-        np.asarray(decision['rate_ge5'], dtype=float),
-        np.asarray(decision['rate_6'], dtype=float),
-        decision['targets'], [int(pair[0]) for pair in pairs],
-        [int(pair[1]) for pair in pairs])
+    parent_indices = [int(pair[0]) for pair in pairs]
+    child_indices = [int(pair[1]) for pair in pairs]
+    if decision.get('rule') == 'fixed_threshold_quantile':
+        grades = runtime_threshold_decision(
+            p_ge5, p6, legacy,
+            np.asarray(decision['tau_ge5'], dtype=float),
+            np.asarray(decision['tau_6'], dtype=float),
+            decision['targets'], parent_indices, child_indices)
+    else:
+        grades = runtime_decision(
+            p_ge5, p6, legacy,
+            np.asarray(decision['rate_ge5'], dtype=float),
+            np.asarray(decision['rate_6'], dtype=float),
+            decision['targets'], parent_indices, child_indices)
     return grades, p_ge5, p6, legacy
 
 
@@ -81,8 +91,23 @@ def official_scores(frame, bundle):
     return long, primary, wide
 
 
-def run(model, input_path, output, experimental_tail=False):
+def run(model, input_path, output, experimental_tail=False, legacy_decision=False):
+    """Predict a batch with the deployed bundle.
+
+    The deployed official path requires the frozen per-sample fixed-threshold
+    decision layer (``rule='fixed_threshold_quantile'``).  Bundles built before
+    T1 carry the historical batch-dependent top-k rule; they are refused unless
+    ``legacy_decision=True`` is passed explicitly, so a deployed entry point can
+    never silently fall back to a rule whose output depends on the request size.
+    """
     bundle = joblib.load(model)
+    if bundle.get('bundle_kind') in ['r2_raw_panel', 'r2b_raw_panel']:
+        decision = bundle.get('q1_decision') or {}
+        if decision.get('rule') != 'fixed_threshold_quantile' and not legacy_decision:
+            raise ValueError(
+                'bundle has no fixed-threshold Q1 decision layer (rule=%r); '
+                'retrain with scripts/current.py train or pass legacy_decision=True '
+                'to replay the historical batch-dependent rule' % decision.get('rule'))
     if experimental_tail:
         if 'experimental_point_model' not in bundle:
             raise ValueError('This bundle has no explicit experimental tail decision')
@@ -138,7 +163,10 @@ def run(model, input_path, output, experimental_tail=False):
                     middle_cap=int(decision['middle_cap']), rate_source=decision['rate_source'],
                     implementation=decision['implementation'],
                     implementation_sha256=decision['implementation_sha256'],
-                    n_parent_child_pairs=len(decision['parent_child_pairs'])))
+                    n_parent_child_pairs=len(decision['parent_child_pairs']),
+                    tau_source=decision.get('tau_source'),
+                    n_targets_without_ge5=len(decision.get('fallback_no_ge5', [])),
+                    n_targets_without_6=len(decision.get('fallback_no_6', []))))
         if 'q1_target_protocol' in bundle:
             info.update(grade_method='q1_target_distribution_median',
                 point_validation_status=bundle['q1_target_protocol']['validation_status'],

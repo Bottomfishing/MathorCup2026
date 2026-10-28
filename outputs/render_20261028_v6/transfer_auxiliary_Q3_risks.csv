@@ -1,0 +1,11 @@
+﻿beer,target,auxiliary_grade,probability_ge1,probability_ge5,probability_6,nonzero_validation_supported,tail_validation_established,probability_source,safety_certified
+119,dms,1,0.5778589299589294,0.02361316584649842,0.010777777777776998,True,False,Q3_missing_aware_ET223_uncalibrated,False
+119,diacetyl,0,0.2684713787755453,0.01226516986100279,0.0003827160493823367,True,False,Q3_missing_aware_ET223_uncalibrated,False
+119,X4vg,0,0.3798424698758026,0.011376179376178741,0.004672709235208572,True,False,Q3_missing_aware_ET223_uncalibrated,False
+119,t2n,0,0.36444540906624223,0.0070466200466198226,0.00583760683760659,True,False,Q3_missing_aware_ET223_uncalibrated,False
+119,stale_hops,0,0.18356444250194281,0.002443550893551194,0.0007090909090912145,False,False,Q3_missing_aware_ET223_uncalibrated,False
+transfer119,dms,0,0.30063325676381236,0.007926014417681149,0.0014157828282829188,True,False,Q3_missing_aware_ET223_uncalibrated,False
+transfer119,diacetyl,0,0.2178136820484039,0.011037662954329064,0.002315586419752491,True,False,Q3_missing_aware_ET223_uncalibrated,False
+transfer119,X4vg,0,0.27675047868797886,0.019372647722647907,0.006011680295013866,True,False,Q3_missing_aware_ET223_uncalibrated,False
+transfer119,t2n,0,0.18854015125820567,0.0032602175602163275,0.001755555555554289,True,False,Q3_missing_aware_ET223_uncalibrated,False
+transfer119,stale_hops,0,0.12930189239772516,0.003500233100232397,0.001778787878787158,False,False,Q3_missing_aware_ET223_uncalibrated,False

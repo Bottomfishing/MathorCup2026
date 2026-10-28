@@ -1,0 +1,10 @@
+﻿scenario,batch_size,n_rows,n_compared,max_abs_grade_diff,mismatch_cells,pass_ok
+per_row,1,12500,12500,0,0,True
+chunks_of_10,10,12500,12500,0,0,True
+uneven_chunks,0,12500,12500,0,0,True
+shuffled,0,12500,12500,0,0,True
+appended_irrelevant_rows,0,12500,12500,0,0,True
+runtime_per_row,1,12500,12500,0,0,True
+runtime_chunks_of_10,10,12500,12500,0,0,True
+runtime_shuffled,0,12500,12500,0,0,True
+runtime_appended_rows,0,12500,12500,0,0,True

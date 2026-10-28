@@ -17,7 +17,7 @@ import pandas as pd
 
 from beer_models.current_runtime import ROOT, q1_decision_bundle
 from beer_models.inference import run
-from beer_models.q1_decision import runtime_decision
+from beer_models.q1_decision import runtime_decision, runtime_threshold_decision
 
 TARGETS = ['A_a', 'A_b', 'F_c']
 
@@ -109,7 +109,7 @@ class RuntimeDecisionBundleTest(unittest.TestCase):
             input_path = folder / 'input.csv'
             frame.to_csv(input_path, index=False)
             output = folder / 'predict'
-            run(model_path, input_path, output)
+            run(model_path, input_path, output, legacy_decision=True)
             long = pd.read_csv(output / 'scores_all52_long.csv')
             wide = pd.read_csv(output / 'estimated_grades_all52.csv')
             info = json.loads((output / 'prediction_info.json').read_text(encoding='utf-8'))
@@ -131,7 +131,34 @@ class RuntimeDecisionBundleTest(unittest.TestCase):
         parent, child = bundle['q1_decision']['parent_child_pairs'][0]
         self.assertTrue((grid.iloc[:, child].to_numpy() <= grid.iloc[:, parent].to_numpy()).all())
 
-    def test_bundle_without_rule_keeps_legacy_columns(self):
+    def test_fixed_threshold_bundle_runs_without_legacy_flag(self):
+        bundle = _bundle()
+        decision = bundle['q1_decision']
+        decision = dict(decision, rule='fixed_threshold_quantile',
+                        tau_ge5=[0.5, 0.0, 1.0], tau_6=[1.0, 0.0, 0.05],
+                        implementation='beer_models.q1_decision.runtime_threshold_decision')
+        bundle['q1_decision'] = decision
+        bundle['grade_method'] = decision['rule']
+        frame = pd.DataFrame({'beer': ['b1', 'b2'], 'c1': [0.1, 0.2], 'c2': [0.3, 0.4]})
+        expected = runtime_threshold_decision(
+            np.stack([p[:, 5:].sum(axis=1) for p in _probabilities()], axis=1),
+            np.stack([p[:, 6] for p in _probabilities()], axis=1),
+            np.argmax(np.stack(_probabilities(), axis=1), axis=2).astype(float),
+            np.asarray(decision['tau_ge5']), np.asarray(decision['tau_6']),
+            TARGETS, [1], [2])
+        with tempfile.TemporaryDirectory() as folder:
+            folder = Path(folder)
+            model_path = folder / 'q1.joblib'
+            joblib.dump(bundle, model_path)
+            input_path = folder / 'input.csv'
+            frame.to_csv(input_path, index=False)
+            run(model_path, input_path, folder / 'predict')
+            long = pd.read_csv(folder / 'predict' / 'scores_all52_long.csv')
+        grid = long.pivot(index='beer', columns='target',
+                          values='estimated_grade_0_6').loc[['b1', 'b2'], TARGETS]
+        np.testing.assert_array_equal(grid.to_numpy(), expected)
+
+    def test_bundle_without_rule_is_refused_unless_legacy_requested(self):
         bundle = _bundle()
         bundle.pop('q1_decision')
         bundle['grade_method'] = 'r2_raw_panel_median'
@@ -142,8 +169,13 @@ class RuntimeDecisionBundleTest(unittest.TestCase):
             joblib.dump(bundle, model_path)
             input_path = folder / 'input.csv'
             frame.to_csv(input_path, index=False)
-            run(model_path, input_path, folder / 'predict')
+            with self.assertRaises(ValueError):
+                run(model_path, input_path, folder / 'refused')
+            self.assertFalse((folder / 'refused').exists())
+            run(model_path, input_path, folder / 'predict', legacy_decision=True)
             long = pd.read_csv(folder / 'predict' / 'scores_all52_long.csv')
+            self.assertIn('scores_all52_long.csv',
+                          [path.name for path in (folder / 'predict').iterdir()])
         self.assertNotIn('grade_legacy_integer_median', long.columns)
         self.assertNotIn('probability_rating_ge5', long.columns)
 
