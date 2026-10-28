@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-27",
-  "method": "Ridge (alpha=1000.0) on 219 individual analytes + 2.csv |rho|>=0.5 co-expression graph neighbourhood weighting (score = |coef| + 0.5*neighbour_mean|coef|) + 200x beer bootstrap + 4-method Top-3 Jaccard",
+  "generated": "2026-10-28",
+  "method": "Ridge (alpha=1000.0) on 219 individual-analyte candidates + 2.csv |rho|>=0.5 co-expression graph neighbourhood weighting (score = |coef| + 0.5*neighbour_mean|coef|) + 200x beer-level bootstrap + 4-method Top-3 Jaccard",
   "n_targets": 50,
   "n_top3_rows": 150,
   "n_candidate_compounds": 219,
@@ -83,33 +83,48 @@
     "n_targets_mean_ge_0.5": 5,
     "n_targets_all_six_pairs_ge_0.5": 3
   },
-  "team_ridge_overlap": {
-    "mean_jaccard": 0.354,
-    "median_jaccard": 0.5,
-    "n_targets_ge_0.5": 28,
-    "n_targets": 50
-  },
   "evidence": {
     "tier_counts": {
-      "C": 72,
+      "A": 8,
       "B": 70,
-      "A": 8
+      "C": 72
     },
     "tier_A_share": 0.05333333333333334,
     "tier_AB_share": 0.52,
     "confidence_counts": {
-      "low": 107,
+      "high": 8,
       "medium": 35,
-      "high": 8
+      "low": 107
     },
     "targets_with_identity_marker_in_top3": 5,
     "n_rows_6csv_crosscorr_available": 84
+  },
+  "data_lineage": {
+    "2csv_recomputed_from_1csv": "spearman",
+    "positional_order": "2.csv row/column order equals 1.csv non-meta column order",
+    "spearman_max_abs_diff": 6.661338147750939e-16,
+    "spearman_mean_abs_diff": 1.6021924986637158e-16,
+    "pearson_max_abs_diff": 1.1234263749065518,
+    "pearson_mean_abs_diff": 0.08730394533051206,
+    "note": "The brief names 2.csv Pearson; recomputation shows it is the Spearman matrix of 1.csv under the positional mapping (max abs difference ~1e-16)."
+  },
+  "cross_pipeline": {
+    "table": "outputs\\task6_final_20261026\\paper\\tables\\q2_standardized__top3_panel_all50.csv",
+    "mean_jaccard": 0.354,
+    "median_jaccard": 0.5,
+    "n_targets_ge_0.5": 28,
+    "n_targets": 50
   },
   "previous_team_table": {
     "q2_standardized__top3_panel_all50_rows": 150,
     "ridge_coverage": "50/50",
     "gbr_raw_nonzero_targets": 17,
     "gbr_identified_rows": 51,
-    "interpretation": "17/50 is a GBR-raw-score sub-table, not Q2 coverage; Ridge sub-table already 50/50"
+    "interpretation": "17/50 is a GBR-raw-score sub-table, not Q2 coverage; the Ridge sub-table already covers 50/50"
+  },
+  "field_notes": {
+    "bootstrap_freq": "no nan: all 150 Top-3 slots carry a bootstrap frequency",
+    "off_flavors": "nan = the feature dictionary has no off-flavour annotation for this compound; it is not a missing Top-3 slot",
+    "threshold_mean": "nan = no sensory threshold recorded in the feature dictionary for this compound"
   }
 }

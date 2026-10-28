@@ -1,4 +1,4 @@
-chemical_name,field,degree_graph,community_id,community_size,top3_neighbors
+﻿chemical_name,field,degree_graph,community_id,community_size,top3_neighbors
 Acetaldehyde,acetaldehyde,6,1,23,Ethanol(0.691); Caloric value(0.640); Ethyl acetate(0.576)
 Carbon disulfide,CS2,0,12,1,
 Diethyl sulfide,DES,2,1,23,Total sulfur compounds(0.519); Methanethiol(0.507)

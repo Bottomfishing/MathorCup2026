@@ -1,4 +1,4 @@
-target,source_beer,n_lambda,n_lambda_target_nearest,n_pass_A_mean,n_pass_B_mean,n_pass_C_mean,n_pass_A_median,n_pass_B_median,n_pass_C_median
+﻿target_style,source_beer,n_candidates,n_target_nearest,n_pass_A_median,n_pass_B_median,n_pass_C_median,n_pass_A_mean,n_pass_B_mean,n_pass_C_mean
 Tripel,124,20,0,20,20,20,20,20,20
 Tripel,81,20,0,20,20,20,20,20,20
 Tripel,218,20,0,20,20,20,20,20,20

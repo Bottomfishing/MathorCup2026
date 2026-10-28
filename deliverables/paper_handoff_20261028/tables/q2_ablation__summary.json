@@ -1,0 +1,147 @@
+{
+  "protocol_id": "q2_ablation_20261028",
+  "baseline_commit": "9fb9e57",
+  "purpose": "graph-neighbourhood ablation (w=0.5 vs w=0.0) for the Q2 Top-3 table",
+  "targets": 50,
+  "candidates": 219,
+  "weights": {
+    "graph": 0.5,
+    "no_graph": 0.0
+  },
+  "overlap_summary": {
+    "jaccard_mean": 0.6,
+    "jaccard_median": 0.5,
+    "jaccard_min": 0.2,
+    "overlap_n_mean": 2.16,
+    "n_targets_identical": 13,
+    "n_targets_jaccard_ge_0_5": 45,
+    "rank_spearman_mean": 0.91633493664812,
+    "rank_spearman_min": 0.8852034229437775,
+    "top3_rank_spearman_mean": 0.7244897959183674,
+    "freq_difference_mean": 0.028166666666666663,
+    "evidence_A_graph": 8,
+    "evidence_A_no_graph": 8,
+    "evidence_B_graph": 70,
+    "evidence_B_no_graph": 64,
+    "evidence_C_graph": 72,
+    "evidence_C_no_graph": 78
+  },
+  "stability": [
+    {
+      "variant": "graph",
+      "n_top3_rows": 150,
+      "freq_mean": 0.47400000000000003,
+      "freq_median": 0.4025,
+      "freq_min": 0.105,
+      "freq_max": 1.0,
+      "n_slots_freq_ge_0_5": 57,
+      "n_targets_mean_freq_ge_0_5": 20,
+      "bootstrap_jaccard_mean": 0.36111000000000004,
+      "bootstrap_jaccard_min": 0.16649999999999998
+    },
+    {
+      "variant": "no_graph",
+      "n_top3_rows": 150,
+      "freq_mean": 0.44583333333333336,
+      "freq_median": 0.3975,
+      "freq_min": 0.035,
+      "freq_max": 1.0,
+      "n_slots_freq_ge_0_5": 52,
+      "n_targets_mean_freq_ge_0_5": 19,
+      "bootstrap_jaccard_mean": 0.32864999999999994,
+      "bootstrap_jaccard_min": 0.154
+    }
+  ],
+  "predictive": {
+    "mae": {
+      "gain_mean": 0.0010556390349801754,
+      "p_value": 0.30968308786748044,
+      "ci95_low": -0.0014464785275749442,
+      "ci95_high": 0.0035435294124152037,
+      "graph_non_worse_fraction": 0.6,
+      "n_graph_better": 27,
+      "n_no_graph_better": 20,
+      "n_ties": 3
+    },
+    "spearman": {
+      "gain_mean": -0.0010514357732549784,
+      "p_value": 0.8241384743806146,
+      "ci95_low": -0.012507988832807283,
+      "ci95_high": 0.009911874701926171,
+      "graph_non_worse_fraction": 0.54,
+      "n_graph_better": 24,
+      "n_no_graph_better": 23,
+      "n_ties": 3
+    },
+    "folds": 5,
+    "fold_seed": 20261028,
+    "small_ridge_alpha": 1.0,
+    "graph_rebuilt_per_fold": true
+  },
+  "verdict": {
+    "verdict": "partial_gain",
+    "predictive_reliable": false,
+    "stability_reliable": true,
+    "criteria": {
+      "mae_gain_threshold": 0.01,
+      "spearman_gain_threshold": 0.02,
+      "stability_jaccard_delta": 0.02,
+      "stability_freq_delta": 0.05,
+      "min_non_worse_fraction": 0.6,
+      "significance": 0.05,
+      "mae_reliable": false,
+      "spearman_reliable": false
+    },
+    "observed": {
+      "mae_gain_mean": 0.0010556390349801754,
+      "mae_p_value": 0.30968308786748044,
+      "mae_graph_non_worse_fraction": 0.6,
+      "spearman_gain_mean": -0.0010514357732549784,
+      "spearman_p_value": 0.8241384743806146,
+      "spearman_graph_non_worse_fraction": 0.54,
+      "jaccard_gain": 0.0324600000000001,
+      "freq_gain": 0.028166666666666673
+    }
+  },
+  "boundaries": [
+    "50 targets x 3 compounds; 219 candidate compounds; alpha=1000; graph threshold 0.5",
+    "bootstrap: 200 beer-level resamples, seed 20261027, identical draws for both variants",
+    "predictive: 5 beer-level folds, seed 20261028, graph rebuilt from training beers only",
+    "descriptive Top-3 table keeps the full-sample 2.csv graph (as delivered)",
+    "Jaccard is a similarity measure only; held-out predictive utility is not causal evidence"
+  ],
+  "verification": {
+    "checks": {
+      "overlap_rows_50": true,
+      "stability_rows_2": true,
+      "predictive_rows_50": true,
+      "top3_rows_300": true,
+      "targets_50": true,
+      "three_slots_unique": true,
+      "graph_variant_equals_main_table": true,
+      "no_graph_importance_equals_abs_ridge_coef": true,
+      "bootstrap_rerun_identical": true,
+      "predictive_folds_5": true,
+      "no_missing_core_values": true
+    },
+    "all_pass": true,
+    "detail": {
+      "graph_vs_main_mismatch": [],
+      "no_graph_importance_max_abs_error": 0.0,
+      "predictive_fold_sizes": [
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "seed": 20261027
+    }
+  },
+  "inputs_sha256": {
+    "1.csv": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+    "2.csv": "415709ac10f2f730d31f249bd6ac108250bdfbfd62e0055f4d8db9b41ec9cc4c",
+    "4.csv": "43a7b38682ed81ce64d97ebc1874c09dffac023ade4877f34e3c83ef7d42dc1c",
+    "6.csv": "a55004fb0390299a5c8089f0c37d3bfc006e7049963c84d7d9652affabe614ae"
+  }
+}

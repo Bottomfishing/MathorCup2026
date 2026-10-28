@@ -1,5 +1,7 @@
-chemical_evidence,confidence,n_compound_slots
-A,high,8
-B,low,35
-B,medium,35
-C,low,72
+﻿item,count,share
+A,8,0.05333333333333334
+B,70,0.4666666666666667
+C,72,0.48
+high,8,0.05333333333333334
+medium,35,0.23333333333333334
+low,107,0.7133333333333334

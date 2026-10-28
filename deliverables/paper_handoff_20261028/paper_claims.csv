@@ -1,0 +1,34 @@
+﻿claim_id,question,claim,value,evidence
+C01,Q1,Q1 的正式决策是逐样本固定阈值，与请求批次大小无关,batch_invariance 5 个场景 mismatch_cells 全 0,tables/q1__batch_invariance.csv
+C02,Q1,固定阈值主表的面板中位 MAE,0.4797,tables/q1__metrics_summary.csv
+C03,Q1,固定阈值主表完全命中率与 ±1 命中率,72.17% / 89.62%,tables/q1__metrics_summary.csv
+C04,Q1,固定阈值主表预测 ≥5 分格数与精确率/召回率,380 格 / 9.47% / 18.18%,tables/q1__metric_calibers.csv
+C05,Q1,固定阈值主表恰好 5 分与恰好 6 分的格数与精确率,321 格 7.17%；59 格 5.08%,tables/q1__metric_calibers.csv
+C06,Q1,ET 整数中位基线的面板中位 MAE（无任何 5/6 预测）,0.3928,tables/q1__metrics_summary.csv
+C07,Q1,历史批次 top-k 表（固定整批 250 款）的面板中位 MAE 与 ≥5 格数,0.4065 / 194 格,tables/q1_history__metrics_summary.csv
+C08,Q1,个体品评员加权的 MAE 与信息下界,0.8629（下界 0.6636）,tables/q1__metrics_summary.csv
+C09,Q1,嵌套折外标定到面板均值（未采纳为主表，仅作对照）,线性 0.5055；风格+线性 0.4661,tables/q1_panelmean__metrics.csv
+C10,Q1,面板均值直接回归相对嵌套基线的改善与门槛,+0.0142；gate4 ±1 0.9114 < 0.9119（未采纳）,tables/q1_panelmean__metrics.csv
+C11,Q1,父子约束：24 对 child<=parent 的违规数,cap 前 12 → cap 后 0（仅下调 12 格）,tables/q1__evaluation_long_12500.csv
+C12,Q1,固定阈值的过度提升诊断（clove 单维贡献）,84 / 380 个 ≥5 分,outputs/q1_decision_det_20261028/summary.json
+C13,Q2,Q2 Top-3 覆盖与行数,50/50 维、150 行、219 候选,tables/q2__summary.json
+C14,Q2,共表达图规模,231 节点 / 645 边 / 60 社区（最大 29）,tables/q2__summary.json
+C15,Q2,bootstrap 入选频率（Top-3 槽位均值）与 Jaccard,0.4740 / 0.3611,tables/q2__stability_bootstrap.csv
+C16,Q2,graph-ridge 与 ridge 的 Top-3 方法 Jaccard,0.6000（45/50 维≥0.5）,tables/q2__method_jaccard.csv
+C17,Q2,证据分级,A 8 / B 70 / C 72,tables/q2__evidence_tier_counts.csv
+C18,Q2,图邻域消融：Top-3 Jaccard 与稳定性增益,0.6000；频率 +0.0282,tables/q2_ablation__overlap.csv
+C19,Q2,图邻域对预测的作用（不显著）,MAE 增量 +0.0011（p=0.3097）→ partial_gain,tables/q2_ablation__predictive.csv
+C20,Q3,v3 生成器的预注册替换门槛,通过 14/14（gate_failures = 0）,tables/q3_generation__gate.csv
+C21,Q3,v3 生成谱质量：方差比 / 秩相关误差 / 近重复,0.8401 / 0.1361 / 7.22%,tables/q3_generation__validation.csv
+C22,Q3,插值基线对照（方差比 / 秩相关误差 / 近重复）,0.7260 / 0.1473 / 26.89%,tables/q3_generation__validation.csv
+C23,Q3,生成谱缺陷 cap 达标（三风格 × 三缺陷）,defect_safety 全 pass（DMS 17.1 / 双乙酰 0.081 / 4VG 按风格 cap）,tables/q3_generation__validation.csv
+C24,Q3,迁移三口径（A/B/C）通过数,各 33/33（候选级 660/660）,tables/q3_migration__results_33.csv
+C25,Q3,迁移到目标质心的平均距离降幅,Tripel 12.4960% / Kriek 99.3460% / Lambic 81.1654%,tables/q3_migration__results_33.csv
+C26,Q3,迁移后缺陷状态（五缺陷）,improved/unchanged 66/66，worse 0；t2n 与 Stale hops 均 unknown,tables/q3_migration__results_33.csv
+C27,Q3,迁移感官画像（66 条 × 52 维）与决策层一致性,3432 行，replay mismatch 0,tables/q3_migration__sensory_3432.csv
+C28,Q3,迁移证据分级 claim_level,model_supported 9 / conditional 24 / undecidable 0,tables/q3_migration__evidence.csv
+C29,Q3,风格分类器折外准确率（ET / logistic / 最近质心）,0.5440 / 0.5120 / 0.2240,tables/q3_evidence__style_classifier.csv
+C30,Q3,Tripel 训练样本自身满足三缺陷 cap 的比例,0/28（质心 DMS 2.0326×、双乙酰 6.2748×）,tables/q3_evidence__tripel_conflict.csv
+C31,Q3,缺陷安全参照与源距离（几何可兼得）,距离比 1.0005，投影只改 6.4720% 坐标，11/11 达 DMS cap,tables/q3_evidence__tripel_conflict.csv
+C32,Q3,生成器消融（插值 → v2 → v3，秩相关误差）,0.1473 → 0.0975 → 0.1361,tables/q3_evidence__generator_ablation.csv
+C33,Q3,迁移评分随 Q1 决策切换的格数变化,65 格（升 19 / 降 46，可比 3300）,tables/q3_migration__det_grade_changes.csv

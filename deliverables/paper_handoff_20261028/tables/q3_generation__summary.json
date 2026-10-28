@@ -1,0 +1,189 @@
+{
+  "generated_on": "2026-10-28",
+  "script": "scripts/q3_official_generation_20261028.py",
+  "generator_variant": "v3",
+  "source_directory": "附件",
+  "output_directory": "q3_copula_v3_20261028",
+  "styles": [
+    "Tripel",
+    "Kriek",
+    "Lambic"
+  ],
+  "generation_count": 100,
+  "primary_method": "hybrid_support_projected",
+  "baseline_method": "interpolate",
+  "comparison_method": "donor_residual_projected",
+  "replacement_gate_passed": true,
+  "replacement_recommendation": "replace interpolate with hybrid_support_projected",
+  "gate_failures": [],
+  "adoption_recommendation": "replace the official interpolated spectra: the pre-registered replacement gate is satisfied for hybrid_support_projected (all 13 rules pass); see protocol.json 'no_post_result_retuning'",
+  "comparison_gate_passed": false,
+  "comparison_gate_failures": [
+    "Kriek_coverage",
+    "Lambic_coverage"
+  ],
+  "method_comparison": {
+    "interpolate": {
+      "marginal_w1": 0.4010694450839805,
+      "energy": 0.3666485154249383,
+      "variance_ratio": 0.7259862209576821,
+      "rank_correlation_rmse": 0.14728925834643722,
+      "heldout_coverage": 0.9487654320987653,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0022222222222222222,
+      "internal_near_duplicate_rate": 0.2688888888888889,
+      "model_median_w1": 0.12813086419753084
+    },
+    "donor_residual_projected": {
+      "marginal_w1": 0.38554187464711975,
+      "energy": 0.3329993848540565,
+      "variance_ratio": 0.9834675797160176,
+      "rank_correlation_rmse": 0.09749171637738878,
+      "heldout_coverage": 0.8932098765432097,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0,
+      "internal_near_duplicate_rate": 0.0,
+      "model_median_w1": 0.1441111111111111
+    },
+    "hybrid_support_projected": {
+      "marginal_w1": 0.385093005137515,
+      "energy": 0.33324176088051644,
+      "variance_ratio": 0.8401206871488544,
+      "rank_correlation_rmse": 0.13607538558966698,
+      "heldout_coverage": 0.9487654320987653,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0011111111111111111,
+      "internal_near_duplicate_rate": 0.07222222222222223,
+      "model_median_w1": 0.12215802469135803
+    }
+  },
+  "delivery_decision": {
+    "retain_official_interpolate": false,
+    "official_spectra": "outputs/task4_raw_q3_20261026/generated_profiles.csv (unchanged)",
+    "candidate_spectra": "q3_copula_v3_20261028/generated_profiles.csv",
+    "reason": "pre-registered generation_replacement gate not satisfied (); the protocol requires retaining interpolation and reporting its diagnosed weaknesses, with no post-result retuning, so the official interpolated spectra are kept and this candidate is reported as a diagnostic comparison only",
+    "retained_interpolate_diagnosed_weaknesses": {
+      "variance_ratio": 0.7259862209576821,
+      "internal_near_duplicate_rate": 0.2688888888888889,
+      "marginal_w1": 0.4010694450839805
+    },
+    "candidate_improves_on": {
+      "variance_ratio": 0.8401206871488544,
+      "marginal_w1": 0.385093005137515,
+      "energy": 0.33324176088051644,
+      "internal_near_duplicate_rate": 0.07222222222222223
+    },
+    "candidate_shortfalls": {
+      "rank_correlation_rmse": 0.13607538558966698,
+      "rank_correlation_rmse_limit": 0.19728925834643724,
+      "Kriek_coverage": 0.9166666666666666,
+      "Lambic_coverage": 1.0,
+      "coverage_note": "per fold each small style contributes 12 (Kriek) / 4 (Lambic) held-out spectra, so a 0.05 drop allowance is below the resolution floor"
+    },
+    "compared_with_previous_generator": "donor_residual_projected",
+    "previous_generator_gate_passed": false,
+    "previous_generator_gate_failures": [
+      "Kriek_coverage",
+      "Lambic_coverage"
+    ]
+  },
+  "validation_means": {
+    "donor_residual_projected": {
+      "marginal_w1": 0.38554187464711975,
+      "energy": 0.3329993848540565,
+      "variance_ratio": 0.9834675797160176,
+      "rank_correlation_rmse": 0.09749171637738878,
+      "heldout_coverage": 0.8932098765432097,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0,
+      "internal_near_duplicate_rate": 0.0,
+      "model_median_w1": 0.1441111111111111
+    },
+    "hybrid_support_projected": {
+      "marginal_w1": 0.385093005137515,
+      "energy": 0.33324176088051644,
+      "variance_ratio": 0.8401206871488544,
+      "rank_correlation_rmse": 0.13607538558966698,
+      "heldout_coverage": 0.9487654320987653,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0011111111111111111,
+      "internal_near_duplicate_rate": 0.07222222222222223,
+      "model_median_w1": 0.12215802469135803
+    },
+    "interpolate": {
+      "marginal_w1": 0.4010694450839805,
+      "energy": 0.3666485154249383,
+      "variance_ratio": 0.7259862209576821,
+      "rank_correlation_rmse": 0.14728925834643722,
+      "heldout_coverage": 0.9487654320987653,
+      "exact_training_copy_rate": 0.0,
+      "near_training_copy_rate": 0.0022222222222222222,
+      "internal_near_duplicate_rate": 0.2688888888888889,
+      "model_median_w1": 0.12813086419753084
+    }
+  },
+  "quality_by_style": [
+    {
+      "style": "Tripel",
+      "n_generated": 100,
+      "variance_ratio": 0.7304078992828065,
+      "near_duplicate_rate": 0.0,
+      "pair_distance_ratio": 0.8452727302765577,
+      "maha_generated": 2.196242586511783,
+      "maha_real": 2.642268403321377,
+      "coverage_95": 1.0,
+      "marginal_w1": 0.10828233335442021
+    },
+    {
+      "style": "Kriek",
+      "n_generated": 100,
+      "variance_ratio": 0.7433508435573961,
+      "near_duplicate_rate": 0.02,
+      "pair_distance_ratio": 0.8044845036476237,
+      "maha_generated": 2.3394698254885746,
+      "maha_real": 2.6813797823190946,
+      "coverage_95": 1.0,
+      "marginal_w1": 0.11534956556416784
+    },
+    {
+      "style": "Lambic",
+      "n_generated": 100,
+      "variance_ratio": 0.7250872673320309,
+      "near_duplicate_rate": 0.02,
+      "pair_distance_ratio": 0.8000910192760569,
+      "maha_generated": 2.306878553804682,
+      "maha_real": 2.6694692961916155,
+      "coverage_95": 1.0,
+      "marginal_w1": 0.09815772855526343
+    }
+  ],
+  "defect_thresholds": {
+    "DMS": 19.0,
+    "X2.3.butanedione": 0.09,
+    "X4VG": 0.2
+  },
+  "threshold_scenario": "median",
+  "cap_fraction": 0.9,
+  "defect_max_physical": {
+    "Tripel": {
+      "DMS": 17.1,
+      "X2.3.butanedione": 0.081,
+      "X4VG": 0.18000000000000002
+    },
+    "Kriek": {
+      "DMS": 17.1,
+      "X2.3.butanedione": 0.081,
+      "X4VG": 0.009701583345085071
+    },
+    "Lambic": {
+      "DMS": 17.1,
+      "X2.3.butanedione": 0.081,
+      "X4VG": 0.03542000001190285
+    }
+  },
+  "not_capped": {
+    "X.E..2.nonenal": "no threshold in 8.xlsx (field_name_R X.E..2.nonenal has NaN threshold)"
+  },
+  "honesty": "generated spectra are a style-conditional statistical reference; they are not measured brews and are not certified as physically brewable",
+  "elapsed_seconds": 16.2
+}

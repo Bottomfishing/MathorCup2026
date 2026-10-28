@@ -1,29 +1,53 @@
 {
-  "q1_topk_matches_report": true,
-  "q2_150rows_50targets": [
-    true,
-    true,
-    0,
-    0
-  ],
-  "q3_33_of_33_pass": {
-    "n_pass_A_mean": 33,
-    "n_pass_B_mean": 33,
-    "n_pass_C_mean": 33
+  "status": "passed",
+  "checks": {
+    "q1_det_panel_median_mae": 0.47968,
+    "q1_hist_panel_median_mae": 0.40648,
+    "q1_et_panel_median_mae": 0.3928,
+    "q1_batch_invariance_all_pass": true,
+    "q1_batch_invariance_mismatch_sum": 0,
+    "q1_fallback_no_ge5": 16,
+    "q1_fallback_no_6": 38,
+    "q1_parent_pairs_postcap_violations": 0,
+    "q2_top3_rows": 150,
+    "q2_graph_communities": 60,
+    "q2_ablation_verdict": "partial_gain",
+    "q3_generation_gate_failures": 0,
+    "q3_migration_defect_worse": 0,
+    "q3_migration_changed_cells": 65,
+    "q3_migration_sensory_mismatch": 0,
+    "paper_claims_rows": 33
   },
-  "q3_migration_rows": 33,
-  "q3_dist_reduction_range": [
-    11.63689969389795,
-    99.50714376790016
-  ],
-  "q1_submission_dist": {
-    "0": 8279,
-    "1": 856,
-    "2": 1361,
-    "3": 1648,
-    "4": 152,
-    "5": 188,
-    "6": 16
+  "expected": {
+    "q1_det_panel_median_mae": 0.47968,
+    "q1_hist_panel_median_mae": 0.40648,
+    "q1_et_panel_median_mae": 0.3928,
+    "q1_batch_invariance_all_pass": true,
+    "q1_batch_invariance_mismatch_sum": 0,
+    "q1_fallback_no_ge5": 16,
+    "q1_fallback_no_6": 38,
+    "q1_parent_pairs_postcap_violations": 0,
+    "q2_top3_rows": 150,
+    "q2_graph_communities": 60,
+    "q2_ablation_verdict": "partial_gain",
+    "q3_generation_gate_failures": 0,
+    "q3_migration_defect_worse": 0,
+    "q3_migration_changed_cells": 65,
+    "q3_migration_sensory_mismatch": 0,
+    "paper_claims_rows": 33
   },
-  "q1_rows": 12500
+  "mismatches": {},
+  "inputs": {
+    "outputs/q1_decision_det_20261028/summary.json": "924e9ccc88ad4a0e186021aa437d552a5942f1793b45e88350b1f6fc600207d2",
+    "outputs/q1_decision_20261028/summary.json": "231dd82101bef221ab50ef56541cb115e6b356f28e198052a622b91f9c44ae6c",
+    "outputs/q2_top3_20261028/q2__summary.json": "34d845b143e56d2e6dc9951910c6def7e42fb958ea88a7c2b44f5cc4b729bf18",
+    "outputs/q2_ablation_20261028/summary.json": "024df4cc9b3a1467079f075bd2dc698dcf2595d9de5fe9cbd919d6a15ed7888c",
+    "outputs/q3_copula_v3_20261028/summary.json": "b1d0df84aba83beb7dc03a5965e33daca16d9b1a03e15ab87e0044bb82694b07",
+    "outputs/q3_evidence_20261028/summary.json": "3879c28891f5902dce207f65c3882d153fa55719ebcf13c356c1cc1a4d157e04",
+    "outputs/q3_migration_20261028/summary.json": "efeebb9e246eae628dd2316c43ddb0c49f87cbe7782b305521cfabeef1b82515"
+  },
+  "outputs": {
+    "论文取数与口径.md": "b939929ca2db60511dab9df75aa008898bfbba081bea37c861fa7b49c24f7a01",
+    "paper_claims.csv": "d6063cd451924608105c1c88eea2d33584faf76c35090e9002e9e28e7a5f8d6b"
+  }
 }

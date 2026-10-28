@@ -1,10 +1,6 @@
-scope,method,panel_median_mae,panel_mean_mae,exact_match,within_one,macro_spearman,n_pred_ge5,precision_ge5,recall_ge5,n_pred_6,precision_6,recall_6
-beer_level,q1_et_integer_median,0.3928,0.6123350468420469,0.74128,0.91688,0.3283480117633879,0.0,0.0,0.0,0.0,0.0,0.0
-beer_level,q1_topk_nonforced,0.408,0.6230642185592186,0.7388,0.91312,0.2903117240975349,204.0,0.2549019607843137,0.26262626262626265,16.0,0.0625,0.05263157894736842
-individual_taster,extra_trees_integer_median,0.795214,,0.604919,0.783035,,,,,,,
-lower_bound,panel_median_oracle_individual_level,0.663567,,0.658689,0.818681,,,,,,,
-beer_level,calibration:ET integer median (current),0.3928,0.6123350468420469,0.74128,0.91688,,0.0,0.0,0.0,,,
-beer_level,calibration:ET integer + fold-wise linear calibration -> panel mean,0.7172351032737873,0.5027213833304683,0.41792,0.93056,,1.0,1.0,0.005050505050505,,,
-beer_level,calibration:ET integer + fold-wise isotonic calibration -> panel mean,0.7175732432527534,0.5025975663309868,0.41808,0.92952,,0.0,0.0,0.0,,,
-beer_level,"calibration:ET integer + style mean, fold-wise linear",0.6894686353463448,0.4622337899166068,0.47536,0.91112,,0.0,0.0,0.0,,,
-beer_level,calibration:ET integer + fold-wise marginal (quantile) calibration,0.41952,0.6502882443112443,0.73688,0.9048,,80.0,0.125,0.0505050505050505,,,
+﻿scope,method,panel_median_mae,panel_mean_mae,exact_match,within_one,macro_spearman,n_pred_ge5,precision_ge5,recall_ge5,n_pred_6,precision_6,recall_6
+beer_level,q1_integer_median_legacy,0.3928,0.6123350468420469,0.74128,0.91688,0.3283480117633879,0.0,0.0,0.0,0.0,0.0,0.0
+beer_level,q1_fixed_threshold_quantile,0.47968,0.6844263046953047,0.72168,0.89624,0.2868098152180307,380.0,0.09473684210526316,0.18181818181818182,59.0,0.05084745762711865,0.15789473684210525
+beer_level,q1_topk_parent_capped_old_baseline,0.40648,0.6212882185592186,0.7388,0.91336,0.29035575856351675,194.0,0.26288659793814434,0.25757575757575757,14.0,0.07142857142857142,0.05263157894736842
+individual_taster_weighted,q1_fixed_threshold_quantile,0.8629017753357753,,0.5910180590520591,0.7688673166093166,,,,,,,
+individual_taster_weighted,q1_integer_median_legacy,0.7952135744255745,,0.6049185212010213,0.7830350998815998,,,,,,,

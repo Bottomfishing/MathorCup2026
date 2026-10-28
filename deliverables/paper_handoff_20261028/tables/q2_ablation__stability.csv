@@ -1,0 +1,3 @@
+﻿variant,n_top3_rows,freq_mean,freq_median,freq_min,freq_max,n_slots_freq_ge_0_5,n_targets_mean_freq_ge_0_5,bootstrap_jaccard_mean,bootstrap_jaccard_min
+graph,150,0.47400000000000003,0.4025,0.105,1.0,57,20,0.36111000000000004,0.16649999999999998
+no_graph,150,0.44583333333333336,0.3975,0.035,1.0,52,19,0.32864999999999994,0.154
