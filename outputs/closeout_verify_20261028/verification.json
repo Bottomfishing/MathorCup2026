@@ -1,0 +1,196 @@
+{
+  "status": "passed",
+  "version": "20261028",
+  "source_verifications_pass": true,
+  "q1_rows": 12500,
+  "q1_targets": 50,
+  "q1_wide_shape": "250x50",
+  "q1_grade_distribution": {
+    "0": 8096,
+    "1": 856,
+    "2": 1355,
+    "3": 1667,
+    "4": 146,
+    "5": 321,
+    "6": 59
+  },
+  "q1_batch_invariance": "9/9 scenarios mismatch 0",
+  "q1_metric_calibers": "exact5/exact6/ge5 (321/59/380)",
+  "q1_fixed_threshold_fallbacks": "no_ge5 16 / no_6 38",
+  "q1_calibration_leakage_perturbation_worst": 0.0,
+  "q1_parent_child_postcap_violations": 0,
+  "q2_rows": 150,
+  "q2_targets": 50,
+  "q2_communities": 231,
+  "q2_evidence_tiers": {
+    "A": 8,
+    "B": 70,
+    "C": 72,
+    "high": 8,
+    "medium": 35,
+    "low": 107
+  },
+  "q2_ablation_graph_vs_no_graph_jaccard": 0.6,
+  "q2_ablation_stability_freq_gain": 0.028166666666666663,
+  "q2_ablation_predictive_p": 0.30968308786748044,
+  "q2_ablation_verdict": "partial_gain",
+  "q3_style_classifier_oof_accuracy": 0.544,
+  "q3_style_classifier_nearest_centroid": 0.224,
+  "q3_tripel_defect_safe_samples": 0,
+  "q3_tripel_cases_dms_cap": 11,
+  "q3_evidence_checks": 52,
+  "q3_generated": 300,
+  "q3_generated_source": "outputs/q3_copula_v3_20261028",
+  "q3_integrity_passed": true,
+  "q3_replacement_gate_passed": true,
+  "q3_gate_checks": 14,
+  "q3_gate_failures": [],
+  "q3_defect_caps_all_pass": true,
+  "q3_generation_v1_gate_passed": false,
+  "q3_generation_v1_gate_failures": [
+    "gate_rank_correlation_rmse",
+    "gate_Kriek_coverage",
+    "gate_Lambic_coverage",
+    "gate_all_passed"
+  ],
+  "q3_generation_v2": 300,
+  "q3_generation_v2_integrity_passed": true,
+  "q3_generation_v2_gate_passed": false,
+  "q3_generation_v2_gate_failures": [
+    "gate_Kriek_coverage",
+    "gate_Lambic_coverage",
+    "gate_all_passed"
+  ],
+  "q3_migration_cases": 33,
+  "q3_migration_criteria_pass": {
+    "A_median": 33,
+    "B_median": 33,
+    "C_median": 33,
+    "A_mean": 33,
+    "B_mean": 33,
+    "C_mean": 33
+  },
+  "q3_migration_candidate_pass": {
+    "A_median": 660,
+    "B_median": 660,
+    "C_median": 660,
+    "A_mean": 660,
+    "B_mean": 660,
+    "C_mean": 660
+  },
+  "q3_migration_mean_distance_reduction_pct": {
+    "Tripel": 12.496,
+    "Kriek": 99.346,
+    "Lambic": 81.1654
+  },
+  "q3_migration_status": "passed",
+  "q3_migration_spectra": 66,
+  "q3_migration_sensory_rows": 3432,
+  "q3_migration_sensory_replay_mismatch_cells": 0,
+  "q3_migration_sensory_replay_model_sha256": "82cf74966320e82d3a72a6585dcaa3c2c573a112c9c7f5e5e5fcae2fe80436ad",
+  "q3_migration_claim_level_counts": {
+    "conditional": 24,
+    "model_supported": 9
+  },
+  "q3_migration_style_diagnostic_counts": {
+    "Tripel": 0,
+    "Kriek": 11,
+    "Lambic": 2
+  },
+  "q3_migration_defect_status_counts": {
+    "DMS": {
+      "unchanged": 24,
+      "improved": 9
+    },
+    "Diacetyl": {
+      "unchanged": 18,
+      "improved": 9,
+      "unknown": 6
+    },
+    "4VG": {
+      "unchanged": 33
+    },
+    "t2n": {
+      "unknown": 33
+    },
+    "Stale_hops": {
+      "unknown": 33
+    }
+  },
+  "q3_migration_det_changed_cells": 65,
+  "q3_migration_det_changed_up": 19,
+  "q3_migration_det_changed_down": 46,
+  "q3_migration_det_defect_worse_count": 0,
+  "q3_generation_v3": 300,
+  "q3_generation_v3_integrity_passed": true,
+  "q3_generation_v3_gate_passed": true,
+  "q3_generation_v3_replacement_gate_passed": true,
+  "q3_generation_v3_gate_failures": [],
+  "q1_panelmean_rows": 12500,
+  "q1_panelmean_best_mae": 0.4512178825142204,
+  "q1_panelmean_adoption": "do_not_adopt_keep_baseline",
+  "q2_sensitivity_verdict": {
+    "threshold_stable": true,
+    "threshold_criterion": "for thresholds [0.45, 0.5, 0.55]: jaccard_mean >= 0.5 and at least 40/50 dimensions with overlap >= 2 of 3",
+    "threshold_details": {
+      "0.45": {
+        "jaccard_mean": 0.77,
+        "jaccard_median": 1.0,
+        "n_targets_overlap_ge_2": 50,
+        "n_targets_jaccard_ge_0.5": 50,
+        "pass": true
+      },
+      "0.50": {
+        "jaccard_mean": 1.0,
+        "jaccard_median": 1.0,
+        "n_targets_overlap_ge_2": 50,
+        "n_targets_jaccard_ge_0.5": 50,
+        "pass": true
+      },
+      "0.55": {
+        "jaccard_mean": 0.768,
+        "jaccard_median": 1.0,
+        "n_targets_overlap_ge_2": 48,
+        "n_targets_jaccard_ge_0.5": 48,
+        "pass": true
+      }
+    },
+    "resolution_stable": true,
+    "resolution_criterion": "for resolutions [0.8, 1.0, 1.2]: 40 <= communities <= 80 and largest community < 20% of nodes",
+    "resolution_details": {
+      "0.8": {
+        "n_communities": 59,
+        "largest_community": 33,
+        "largest_share": 0.14285714285714285,
+        "pass": true
+      },
+      "1.0": {
+        "n_communities": 60,
+        "largest_community": 29,
+        "largest_share": 0.12554112554112554,
+        "pass": true
+      },
+      "1.2": {
+        "n_communities": 60,
+        "largest_community": 29,
+        "largest_share": 0.12554112554112554,
+        "pass": true
+      }
+    },
+    "resolution_stable_range": [
+      0.6,
+      1.6
+    ],
+    "headline": "主结论对图阈值与社区分辨率均不敏感，Top-3 主表不是调参产物"
+  },
+  "q1_replay_panel_rows": 12500,
+  "q1_replay_panel_grade5": 468,
+  "q1_replay_panel_grade6": 98,
+  "q1_replay_panel_max_abs_diff": 1.6653345369377348e-16,
+  "q1_replay_generated_rows": 15000,
+  "q1_replay_generated_max_abs_diff": 1.3877787807814457e-16,
+  "q1_replay_models_sha256": "82cf74966320e82d3a72a6585dcaa3c2c573a112c9c7f5e5e5fcae2fe80436ad",
+  "q1_replay_source_sha256": "419849227a02e0c792cd405e6865035b7f58af1a92efa362dbb68a7ca2882f69",
+  "package_files_hashed": 398,
+  "package_excludes_raw_records_and_model_binaries": true
+}
